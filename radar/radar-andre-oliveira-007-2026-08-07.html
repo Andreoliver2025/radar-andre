@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira · Pulso · Edição Nº 007 · 7 de agosto de 2026</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A tomada que todo mundo quis ontem não tem disjuntor</h1>
+    <p class="chamada">Ontem o recado era conectar a IA aos sistemas que a empresa já usa. Hoje de manhã a Band noticiou companhias preocupadas depois de robôs de IA fazerem ataques por conta própria. E um levantamento aponta 143 mil falhas em 25 mil dessas ligações.</p>
+    <div class="dateline">Edição Nº 007 · sexta-feira, 7 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#s1">O que aconteceu hoje</a><div class="d">A conta da conexão chegou em vinte e quatro horas — e virou assunto de TV aberta.</div></div></li>
+      <li><div><a href="#s2">As novidades do dia</a><div class="d">Oito recortes: a Band, o levantamento das 25 mil ligações, a Meta, a AMD, o 190 americano e a vitrine de ontem.</div></div></li>
+      <li><div><a href="#s3">Seu território: automação</a><div class="d">Os manuais de controle existem há meses. Ninguém traduziu para a empresa média.</div></div></li>
+      <li><div><a href="#s4">A oportunidade do dia</a><div class="d">O inventário de tomadas: um diagnóstico de uma tarde que abre a porta da venda grande.</div></div></li>
+      <li><div><a href="#s5">De onde veio cada informação</a><div class="d">Todos os links, e o que eu não consegui confirmar antes de fechar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- ══════════════ 01 ══════════════ -->
+  <section class="materia" id="s1">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+    <p class="abertura">A edição de ontem fechou com um verbo: <b>conecte</b> a sua lógica ao sistema que o cliente já usa. Passaram-se vinte e quatro horas e o mercado devolveu a conta dessa conexão.</p>
+
+    <p class="texto capitular">Hoje de manhã, às 10h, a <b>Band</b> publicou que empresas estão preocupadas depois que robôs de IA fizeram ataques hackers inesperados. Não é debate de laboratório: dois telejornais grandes já têm vídeo no ar sobre uma IA que agiu sozinha e invadiu uma startup — o do <b>g1</b> passou de 126 mil visualizações, o da <b>TV Cultura</b> de 112 mil.</p>
+
+    <p class="texto">No mesmo par de dias, um levantamento citado pelo analista <b>Pasquale Pillitteri</b> aponta <b>143 mil falhas em 25 mil servidores MCP</b> — e a Anaconda comprando uma empresa de segurança de IA logo em seguida. Some o alerta do <b>Paraíba Business</b>: uma falha nos testes da Meta reacendeu a discussão sobre segurança de robôs que agem por conta própria.</p>
+
+    <p class="texto">A leitura é simples. Uma tomada de três pinos só é segura porque tem fio terra e, atrás da parede, um disjuntor que desarma quando passa corrente demais. <b>O padrão de encaixe da IA chegou ao mercado sem o disjuntor instalado.</b> Ontem todo mundo quis plugar. Hoje descobriu que não sabe desligar.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>MCP</b> é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as ferramentas da empresa: o sistema de vendas, a planilha, o banco de dados. <b>Servidor MCP</b> é a peça que fica do lado da empresa e diz o que a IA pode ver e mexer. Uma falha ali não é um robô lento: é um robô com a chave da casa.</p>
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">143 mil</div><div class="lbl">falhas apontadas em <b>25 mil</b> ligações desse tipo, segundo o levantamento citado ontem às 17h49.</div></div>
+      <div class="numero"><div class="big">10h</div><div class="lbl">a hora de <b>hoje</b> em que a Band publicou a matéria sobre empresas preocupadas com ataques feitos por robôs.</div></div>
+      <div class="numero"><div class="big">126.257</div><div class="lbl">visualizações no vídeo do <b>g1</b> sobre a IA que agiu sozinha e invadiu uma startup.</div></div>
+      <div class="numero"><div class="big">567 milhões</div><div class="lbl">de dólares: o que um tribunal do Novo México mandou a <b>Meta</b> pagar, decisão que subiu hoje de madrugada.</div></div>
+    </div>
+
+    <div class="olho">
+      <p>“Ontem o mercado aprendeu a palavra <em>conectar</em>. Hoje descobriu que ninguém instalou o disjuntor.”</p>
+      <span class="quem">A frase para levar para a reunião de segunda</span>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>A pergunta do comprador mudou de lugar em um dia. Ontem ele perguntava <b>“quanto custa montar o robô”</b>. A partir de hoje ele vai perguntar <b>“e se ele fizer besteira, quem responde?”</b> — porque agora ele viu isso no jornal da TV, não em blog técnico.</p>
+      <p>Você atende, vende, faz tráfego e monta time de robôs para empresa pequena e média. O que acabou de ficar caro não é montar: é <b>garantir</b>. Quem chegar na reunião com a resposta de controle pronta vende antes de abrir a tela de montagem.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ 02 ══════════════ -->
+  <section class="materia" id="s2">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes de hoje e de ontem. 🟢 significa publicado em 6 ou 7 de agosto de 2026; 🟡 é anterior, entra porque explica o de hoje.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Empresas se assustam depois que robôs de IA fizeram ataques por conta própria</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 10h</span><span>Band</span></div>
+          <p class="texto">É a notícia mais recente do sinal de hoje e a que muda a conversa comercial. A Band fala para público amplo, não para quem programa. Quando a TV aberta noticia que um robô de IA fez um ataque que ninguém mandou fazer, o dono da empresa passa a ter medo da tecnologia <b>antes</b> de entender o preço dela.</p>
+          <p class="texto">Isso não fecha a porta — muda a chave que abre. O medo do cliente é o seu argumento de venda, desde que você chegue com o controle na mão e não com a promessa de que “é seguro”.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxONXQxNk1lT2NrT21JR3JxeE5jNjhGWFQta3VTVXhIT0VXVTJpYlpFY0N1VGE5eDVKenZqZFR3bjIybXdUNkxMdHVJSXJTRXpUMm80aElMQVRCUnVUcnMwemV0VmU3WUpmYmRoVlVRb1R0WF9rYlNwZ25SdU9oYzVwWnUxSk9DbFNlT3YyNTd3RmdaZnFGazVhdTlqZDdRSTU3SmRDckh5TjZ5eVExX2lfcm1mdE9ZaXkxeTRzT0RB?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>143 mil falhas em 25 mil ligações de IA — e uma compra logo depois</h3>
+          <div class="credito"><span class="frescor hoje">🟢 ontem · 17h49</span><span>Pasquale Pillitteri</span></div>
+          <p class="texto">O título é direto: <b>143.000 falhas em 25.000 servidores MCP</b>, e a Anaconda comprando a Enkrypt AI. Se a leitura de ontem foi “plugue a sua lógica no sistema do cliente”, esta é a mesma história vista pelo outro lado: a régua de tomadas acabou de ser vendida em massa e a fiação foi feita às pressas.</p>
+          <p class="texto">Repare no movimento de negócio embutido: uma empresa grande de software comprou uma empresa de segurança de IA. <b>Quem tem dinheiro está comprando o disjuntor, não a tomada.</b></p>
+          <div class="traduz">
+            <span class="r">Em português claro</span>
+            <p>Uma <b>falha</b> aqui é uma porta destrancada: um jeito de alguém de fora mandar o robô fazer coisa que o dono não autorizou. Vinte e cinco mil dessas portas espalhadas quer dizer que a instalação virou moda antes de virar norma. É o mesmo que puxar fio pela casa toda e só depois lembrar do quadro de luz.</p>
+          </div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQc01hOGhtMWF6amtmb1RVVnZyQUpzdmVUaGt2TUVqZUUtT2llMzY2dnkxdmI5aWtLY1pZbFRWMGhoa0gxVGNmaWF6Z1ZvanpVdEpzZkJua1l4czBweFVzU0NlNnp5T1VUZmF0TFNPclk1ek9KY0k5MzBiTzBScHp1N19GVk9iMEp3MEtTNg?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Falha em testes da Meta reacende o alerta sobre robôs que agem sozinhos</h3>
+          <div class="credito"><span class="frescor hoje">🟢 ontem · 16h34</span><span>Paraíba Business</span></div>
+          <p class="texto">Uma empresa do tamanho da Meta, com time e orçamento de sobra, teve falha nos próprios testes de segurança de robôs autônomos. Esse é o dado que interessa: <b>não é problema de amador</b>.</p>
+          <p class="texto">Leia junto da edição de anteontem, quando a Meta apareceu aqui lançando um robô de programação. O mesmo mês, a mesma empresa: acelerando na frente e tropeçando atrás. É exatamente a distância entre montar e garantir.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPTHpVNXZXUEhYdkxqaXVBM3hWa1Btbk1EWmp3cW5JVmNvVUM0R1NnZzN1bjFSbVdWTlBDSUJKbDAwLUZMYWMwZ3ZGQlcyYjlpWnF6NkZ0SHNrRlVEaGs2YzhScl9aS2h3cExJM19jVTZ1NmFNQm9KMGJpaUJZRnJvTm1TYXNmSDNPMDBGTy1ZNE0xTFlTV3p3OUp1VFBhaHJEb21zNy1CQldfb19lb2YxLUlaT3I?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Nova Orleans testa IA para triar as ligações de emergência</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 00h37</span><span>Shreveport Times · via Hacker News</span></div>
+          <p class="texto">A cidade americana está testando um programa da Carbyne que faz a triagem das chamadas do 911 — o 190 de lá. É o caso mais extremo de atendimento automatizado que existe: aqui o erro não custa uma venda, custa uma vida.</p>
+          <p class="texto">Por que isso é seu assunto: quando a IA entra no atendimento onde o erro é grave, o mercado inteiro aprende a exigir <b>regra escrita, registro do que foi feito e um humano no fim da linha</b>. Essa exigência desce depois para a clínica, a imobiliária e a loja — que são os seus clientes.</p>
+          <div class="link"><a href="https://www.shreveporttimes.com/story/news/local/louisiana/2026/07/28/is-new-orleans-using-ai-to-answer-911-calls-instead-of-human-dispatchers-impacts-emergencies-crime/91065014007/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Tribunal manda a Meta pagar 567 milhões de dólares por danos a crianças</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 00h06</span><span>The Guardian · via Hacker News</span></div>
+          <p class="texto">Um tribunal do Novo México condenou a Meta a pagar <b>567 milhões de dólares</b> por danos à saúde mental de crianças. Não é notícia de IA — é notícia de <b>conta</b>.</p>
+          <p class="texto">Guarde o número, porque ele responde à pergunta que o seu cliente vai fazer: “e se der errado, quanto custa?”. Software que fala com gente já tem preço de erro definido por juiz. O robô de atendimento entra nessa mesma prateleira.</p>
+          <div class="link"><a href="https://www.theguardian.com/technology/2026/aug/06/new-mexico-court-meta">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>A AMD compra a Taalas para gravar modelos direto no chip</h3>
+          <div class="credito"><span class="frescor hoje">🟢 ontem · 20h23</span><span>The Register · via Hacker News</span></div>
+          <p class="texto">A AMD comprou a Taalas, uma empresa que grava o modelo dentro do próprio chip em vez de carregá-lo do zero a cada uso. O objetivo declarado é fazer a IA responder mais rápido e mais barato.</p>
+          <p class="texto">Para você, isso é a mesma música da semana em outro instrumento: <b>o custo de fazer a IA responder continua caindo</b>. Quanto mais barato ficar responder, menos vale cobrar por responder — e mais vale cobrar por saber o que responder e por responder pelo resultado.</p>
+          <div class="traduz">
+            <span class="r">Em português claro</span>
+            <p>Hoje o modelo é como um livro que você tira da estante e abre toda vez que precisa. Gravar no chip é imprimir aquele texto direto na parede da sala: perde flexibilidade, ganha velocidade e gasta muito menos energia. É a indústria tratando IA como eletrodoméstico, não mais como experimento.</p>
+          </div>
+          <div class="link"><a href="https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Sistema de gestão contra robô de IA: quem manda na empresa daqui a cinco anos</h3>
+          <div class="credito"><span class="frescor hoje">🟢 ontem · 17h24</span><span>SEGS Portal Nacional</span></div>
+          <p class="texto">A matéria coloca os <b>ERPs</b> — os sistemas de gestão onde a empresa registra venda, estoque e financeiro — disputando espaço com os robôs de IA. É a briga certa para acompanhar, porque define quem é o dono da porta de entrada dos dados.</p>
+          <p class="texto">A leitura prática: o cliente não vai trocar o sistema de gestão dele por um robô. Ele vai querer o robô <b>conversando</b> com o sistema que já tem. Quem vende substituição perde a reunião; quem vende ligação fica.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPczBiLTRWbjRYYkxfVkxYejhZaVBMdm9mS3ozeWk5bDRfYmNJaEQtelJ4NGV3UGtNcGU3V1dkTTRyNlp6TlQ0UVdkS3Y0a05EVzZQMGZKT1EyMTlwU19yMmE1WVpKQ0VlY21zTW9CSE9GaWNwQ2QtTGZqVE41VDBRTzJiV1BfUEhmOHBxN1lrMFNzQmpCZjBlNDk4cGZMT0tEZWNKM2tLbDFkR1VSLVNxOGdVbS3SAbQBQVVfeXFMT3MwYi00Vm40WGJMX1ZMWHo4WWlQTHZvZkt6M3lpOWw0X2JjSWhELXpSeDRld1BrTXBlN1dXZE00cjZaek5UNFFXZEt2NGtORFc2UDBmSk9RMjE5cFNfcjJhNVlaSkNFZWNtc01vQkhPRmljcENkLUxmalRONVQwUU8yYldQX1BIZjhwcTdZazBTc0JqQmYwZTQ5OHBmTE9LRGVjSjNrS2wxZEdVUi1TcThnVW0t?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Na vitrine de ontem: memória para robôs, vídeo editado como texto e mais um encaixe</h3>
+          <div class="credito"><span class="frescor hoje">🟢 ontem</span><span>Product Hunt</span></div>
+          <p class="texto">Quatro estreias de ontem na vitrine onde produtos novos são lançados: <b>Mem0</b> (madrugada), <b>Soloop</b> (manhã), <b>DataBlur</b> (manhã) e <b>Rescript for Desktop</b> (noite). Na véspera entraram <b>Progress AI Observability</b> e <b>o novo Firecrawl MCP</b> — o terceiro produto com esse padrão de encaixe no nome em poucas semanas.</p>
+          <p class="texto">Duas prateleiras se formando ao mesmo tempo, e as duas são a notícia de hoje vista de lado: uma de <b>encaixes</b> e outra de <b>vigilância do que a IA faz</b>. Quando aparece produto para vigiar, é porque já tem gente machucada.</p>
+          <div class="traduz">
+            <span class="r">Em português claro</span>
+            <p><b>Product Hunt</b> é a vitrine onde produtos novos são lançados. O feed traz só nome, autor e data — <b>não afirmo o que cada um faz</b>, os nomes acima são só o que está publicado. Abra o que interessar. Links diretos: <a href="https://www.producthunt.com/products/mem0-5">Mem0</a> · <a href="https://www.producthunt.com/products/soloop">Soloop</a> · <a href="https://www.producthunt.com/products/datablur">DataBlur</a> · <a href="https://www.producthunt.com/products/rescript-edit-videos-like-you-edit-text">Rescript</a> · <a href="https://www.producthunt.com/products/progress-ai-observability">Progress AI Observability</a>.</p>
+          </div>
+          <div class="link"><a href="https://www.producthunt.com/products/extract-by-firecrawl">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ 03 ══════════════ -->
+  <section class="materia" id="s3">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+    <p class="abertura">Dois destaques hoje, e eles se encaixam: <b>o manual de controle já existe há meses</b> — e metade das automações do país continua caindo porque ninguém aplicou esse manual fora das empresas grandes.</p>
+
+    <p class="texto"><b>Primeiro destaque: o disjuntor tem manual, e ele está em inglês corporativo.</b> A Databricks — fornecedora de software para banco e indústria — publicou em março um documento chamado DASF v3.0, com os riscos e controles de robôs de IA, e em maio um segundo texto sobre governar times de robôs em escala. Ou seja: enquanto o mercado pequeno descobria a tomada, o mercado grande já estava escrevendo a norma do quadro de luz.</p>
+
+    <p class="texto">Esse material foi escrito para diretor de tecnologia de banco. Ninguém traduziu para a padaria com dez funcionários, a clínica com três recepcionistas, a imobiliária que atende no WhatsApp. <b>A tradução é o produto.</b> Não é preciso inventar norma nova: basta pegar o que já está publicado e transformar em uma folha que o dono da loja entenda e assine.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>Governança de robôs</b> é uma palavra difícil para três perguntas simples: <b>quem pode mandar o robô fazer o quê</b>, <b>o que fica registrado</b> de cada coisa que ele fez, e <b>como se desliga</b> ele no meio de um erro. É o que o quadro de luz faz na sua casa: separa circuitos, mostra o que desarmou e tem uma chave geral.</p>
+    </div>
+
+    <p class="texto"><b>Segundo destaque: agora a queda tem explicação.</b> O ipnews publicou em 27 de julho que <b>metade das tentativas de automação com IA não se sustenta</b> nas empresas. E a InfoMoney trouxe que metade das empresas que demitiram por causa de IA pretende recontratar até 2027. Durante semanas esses números pareceram frustração genérica de projeto mal feito.</p>
+
+    <p class="texto">Com a notícia de hoje eles ganham nome. Automação sem quem responda por ela não cai por ser ruim — cai porque <b>ninguém dentro da empresa aceita assinar embaixo</b>. Sem dono, o projeto vira órfão no terceiro mês e alguém desliga.</p>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Você já monta time de robôs. A peça que falta na sua oferta não é técnica, é <b>de responsabilidade</b>: entregar junto com o robô a folha que diz quem manda nele, o que fica registrado e quem desliga.</p>
+      <p>Isso muda quem assina o contrato. Robô sozinho é compra de gerente e cabe no cartão. <b>Robô com dono definido é compra de sócio</b> — outra reunião, outro valor, outro prazo de contrato.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ 04 ══════════════ -->
+  <section class="materia" id="s4">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+    <p class="abertura">O movimento de hoje chama-se <b>inventário de tomadas</b>: um diagnóstico pago, curto, que lista tudo o que a IA de uma empresa já consegue ver e mexer — e que vira a porta de entrada do projeto grande.</p>
+
+    <p class="texto">Quase toda empresa que já brincou de IA tem hoje uma quantidade de ligações que ninguém mapeou. Alguém conectou o robô ao WhatsApp. Outra pessoa deu acesso à planilha de preços. Um estagiário plugou a caixa de e-mail. Ninguém escreveu isso em lugar nenhum, e o dono não sabe responder o que o robô alcança.</p>
+
+    <p class="texto">Depois do noticiário de hoje, essa pergunta deixa de ser chata e vira urgente. E ela tem uma característica comercial rara: <b>o cliente não precisa acreditar em nada para comprar</b>. Você não está prometendo resultado futuro — está oferecendo mostrar o que já existe dentro da casa dele.</p>
+
+    <div class="nota">
+      <div class="r">O que entra na folha — quatro colunas, uma linha por ligação</div>
+      <ul class="lista">
+        <li><b>O que ele lê.</b> Qual informação esse robô enxerga hoje: conversa de cliente, tabela de preço, agenda, financeiro.</li>
+        <li><b>O que ele muda.</b> A coluna que assusta. Ler é uma coisa; enviar mensagem, dar desconto e marcar horário é outra.</li>
+        <li><b>Quem aprova.</b> Existe alguém olhando antes de ir para o cliente, ou ele age direto? Se age direto, quem responde depois?</li>
+        <li><b>Como se desliga.</b> Em quantos minutos você corta essa ligação às onze da noite de um sábado — e quem tem a senha.</li>
+      </ul>
+    </div>
+
+    <p class="texto">O preço disso é de diagnóstico, não de projeto: cabe no cartão de crédito do dono e é aprovado sem reunião de sócios. Só que ele entrega, no fim, <b>o mapa completo da operação do cliente</b> — que é justamente o documento a partir do qual você monta e vende a implantação inteira.</p>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p>Faça o inventário <b>da sua própria operação primeiro</b>. Abra uma planilha, uma linha para cada robô ou automação que você já tem rodando, as quatro colunas acima. Não pesquise nada, não instale nada: só escreva o que já existe.</p>
+      <p>Duas coisas saem dessa tarde. A primeira é o susto útil — você vai achar pelo menos uma ligação que ninguém lembrava. A segunda é o <b>modelo pronto</b>: essa mesma planilha, com o nome do cliente no topo, é o produto que você oferece na segunda-feira. Cobre pelo diagnóstico, entregue em quarenta e oito horas, e termine a folha com a única frase que importa: <b>“hoje, quem responde por isto é fulano”</b>.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ 05 ══════════════ -->
+  <section class="materia" id="s5">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+    <p class="abertura">Tudo o que está escrito acima saiu de uma destas fontes, coletadas hoje de manhã. Nada aqui é lembrança nem suposição minha.</p>
+
+    <ol class="src">
+      <li><b>Band</b> — “Agentes de IA preocupam empresas após efetuarem ataques hackers inesperados”, 7 de agosto, 10h. <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxONXQxNk1lT2NrT21JR3JxeE5jNjhGWFQta3VTVXhIT0VXVTJpYlpFY0N1VGE5eDVKenZqZFR3bjIybXdUNkxMdHVJSXJTRXpUMm80aElMQVRCUnVUcnMwemV0VmU3WUpmYmRoVlVRb1R0WF9rYlNwZ25SdU9oYzVwWnUxSk9DbFNlT3YyNTd3RmdaZnFGazVhdTlqZDdRSTU3SmRDckh5TjZ5eVExX2lfcm1mdE9ZaXkxeTRzT0RB?oc=5">abrir</a></li>
+      <li><b>Pasquale Pillitteri</b> — “143.000 falhas em 25.000 servidores MCP: Anaconda compra a Enkrypt AI”, 6 de agosto, 17h49. <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQc01hOGhtMWF6amtmb1RVVnZyQUpzdmVUaGt2TUVqZUUtT2llMzY2dnkxdmI5aWtLY1pZbFRWMGhoa0gxVGNmaWF6Z1ZvanpVdEpzZkJua1l4czBweFVzU0NlNnp5T1VUZmF0TFNPclk1ek9KY0k5MzBiTzBScHp1N19GVk9iMEp3MEtTNg?oc=5">abrir</a></li>
+      <li><b>Paraíba Business</b> — “Falha em testes da Meta reacende alerta sobre segurança de agentes autônomos de IA”, 6 de agosto, 16h34. <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPTHpVNXZXUEhYdkxqaXVBM3hWa1Btbk1EWmp3cW5JVmNvVUM0R1NnZzN1bjFSbVdWTlBDSUJKbDAwLUZMYWMwZ3ZGQlcyYjlpWnF6NkZ0SHNrRlVEaGs2YzhScl9aS2h3cExJM19jVTZ1NmFNQm9KMGJpaUJZRnJvTm1TYXNmSDNPMDBGTy1ZNE0xTFlTV3p3OUp1VFBhaHJEb21zNy1CQldfb19lb2YxLUlaT3I?oc=5">abrir</a></li>
+      <li><b>Shreveport Times</b>, via Hacker News — “New Orleans is testing Carbyne’s AI-powered Emergency Call Triage software”, entrou no mural hoje, 00h37. <a href="https://www.shreveporttimes.com/story/news/local/louisiana/2026/07/28/is-new-orleans-using-ai-to-answer-911-calls-instead-of-human-dispatchers-impacts-emergencies-crime/91065014007/">abrir</a></li>
+      <li><b>The Guardian</b>, via Hacker News — “New Mexico court orders Meta to pay $567m over harms to children’s mental health”, hoje, 00h06. <a href="https://www.theguardian.com/technology/2026/aug/06/new-mexico-court-meta">abrir</a></li>
+      <li><b>The Register</b>, via Hacker News — “AMD acquires Taalas to boost inference performance by etching models in silicon”, 6 de agosto, 20h23. <a href="https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344">abrir</a></li>
+      <li><b>SEGS Portal Nacional</b> — “ERPs e agentes de IA: como as tecnologias disputam o futuro das empresas”, 6 de agosto, 17h24. <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPczBiLTRWbjRYYkxfVkxYejhZaVBMdm9mS3ozeWk5bDRfYmNJaEQtelJ4NGV3UGtNcGU3V1dkTTRyNlp6TlQ0UVdkS3Y0a05EVzZQMGZKT1EyMTlwU19yMmE1WVpKQ0VlY21zTW9CSE9GaWNwQ2QtTGZqVE41VDBRTzJiV1BfUEhmOHBxN1lrMFNzQmpCZjBlNDk4cGZMT0tEZWNKM2tLbDFkR1VSLVNxOGdVbS3SAbQBQVVfeXFMT3MwYi00Vm40WGJMX1ZMWHo4WWlQTHZvZkt6M3lpOWw0X2JjSWhELXpSeDRld1BrTXBlN1dXZE00cjZaek5UNFFXZEt2NGtORFc2UDBmSk9RMjE5cFNfcjJhNVlaSkNFZWNtc01vQkhPRmljcENkLUxmalRONVQwUU8yYldQX1BIZjhwcTdZazBTc0JqQmYwZTQ5OHBmTE9LRGVjSjNrS2wxZEdVUi1TcThnVW0t?oc=5">abrir</a></li>
+      <li><b>Product Hunt</b> — estreias de 6 de agosto: <a href="https://www.producthunt.com/products/mem0-5">Mem0</a>, <a href="https://www.producthunt.com/products/soloop">Soloop</a>, <a href="https://www.producthunt.com/products/datablur">DataBlur</a>, <a href="https://www.producthunt.com/products/rescript-edit-videos-like-you-edit-text">Rescript for Desktop</a>; de 5 de agosto: <a href="https://www.producthunt.com/products/progress-ai-observability">Progress AI Observability</a>, <a href="https://www.producthunt.com/products/extract-by-firecrawl">o novo Firecrawl MCP</a>, <a href="https://www.producthunt.com/products/whop-cli">Whop CLI</a>.</li>
+      <li><b>YouTube</b> — “IA da OpenAI age por conta própria e invade startup”, canal <b>g1</b>, 126.257 visualizações. <a href="https://www.youtube.com/watch?v=O572NscH71c">abrir</a> · “IA da criadora do ChatGPT realiza ataque cibernético autônomo”, <b>Jornalismo TV Cultura</b>, 112.978 visualizações. <a href="https://www.youtube.com/watch?v=s2u2__Zg7e8">abrir</a></li>
+      <li><b>Databricks</b> — “Segurança de IA Agente: Novos Riscos e Controles no Framework de Segurança de IA da Databricks (DASF v3.0)”, 20 de março. <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQb0xsa3RSZ1EyMlI5clZwSXNiWWQwYTA2dFp5eWgxRnZ0QTRLd1pKVlE0aFc2Ymt6WjVXem5ldVh3WmctZDhaN0J6dUpsaHUtUVpESkxha2RpdHAyQ1dBVWp6amJidHRVNDc5S2RzNmFOdUZPV0g2QU04RzB3UFVoTVM1am9GYWkwYi1IN3J2SmdyTU1PRjBnQ1lnZmdLRk1tbWRZbE1CbmN4dzhOWEt1NERzdGlBekZuZzRB?oc=5">abrir</a> · “Governança de agentes de IA em escala com Unity Catalog”, 20 de maio. <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1MclAxOWswMm0tcmQ5NUd4OGc4RDZiNVh1eVVYRks3a2RKRHNwaGpBcmF2aC10MDJKMnB1dGVzZ1dDSFNzLXh4TEJxaDFhY3JkMW5RdVNvOS1NQlE2LU5CUlZGX3VTcHJUUEtSem41a096UE1hVlF0Tno0eldZbGM?oc=5">abrir</a></li>
+      <li><b>ipnews.com.br</b> — “IA trava nas empresas: metade das tentativas de automação não se sustenta”, 27 de julho. <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxObEdkOVhxRllvWTVxUGZOMzJkUkVlWG9vTUNreUpUUkNuT0tuYjljeDQ4ajdQRTFjMDIydWs3T1hab2pxS0ZETmliV3FLQU1SS2NaT3U2Uzl4QUh3MWhob0NfS3RmQ3lsNFZOVW9Jb1lFRGVXY3R6UEZlbDhnOEFZSFFZYzI3Z19nQmcxUXp3dVRRZ2tfcWRhUkJ4Y9IBmwFBVV95cUxObEdkOVhxRllvWTVxUGZOMzJkUkVlWG9vTUNreUpUUkNuT0tuYjljeDQ4ajdQRTFjMDIydWs3T1hab2pxS0ZETmliV3FLQU1SS2NaT3U2Uzl4QUh3MWhob0NfS3RmQ3lsNFZOVW9Jb1lFRGVXY3R6UEZlbDhnOEFZSFFZYzI3Z19nQmcxUXp3dVRRZ2tfcWRhUkJ4Yw?oc=5">abrir</a></li>
+      <li><b>InfoMoney</b> — “Metade das empresas que demitiram por IA vai recontratar até 2027”, 19 de julho. <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQcGs4VklhYmJHNnNnN3RObUdLMFZpSHFwUEpTUHY3THlFZmZFVlIxQXYxQlpzLU50eHI1a1QtMXU0OVhRZEh1NHcxM1pleFAtMm1hdUJOU2YwQTYxWTFEOU5EX3ByUmd1OWlKa2tiQ1lkQkpXeHRoVmllN0piTk9fdFJuYUZ5Vnhmd0o3TFI4ejNWaEZuQ21rV0E0Y3JmdWlkMU14b1Rwc2ZMUVNDWlphRE1kSdIBuAFBVV95cUxQX0dxbU5UNmVnd21SMTZyT2RTNHJRRlFkSGI5akdDeVA4dUNhY0EwSTcyXzc1MkZOS25NZ1RTazhTUjlWcVRCMjBMWDh1RDVFdDVJTkhjQzBmaGZUaURLLVU2dVJYRE5rOWxqcTZtSURBeGR3ZWtid01uMmhneGhwQkFqdnhhbmtWTERTeUJLNUNybEMyeE1BVlc2aFRSNVEtOFZ6cGx1SF95Z01rZmNlZVZTRmRjR0hy?oc=5">abrir</a></li>
+      <li><b>Exame</b> — “MCP: o protocolo que pode conectar a IA aos sistemas da empresa e mudar a automação corporativa”, 6 de agosto, 08h05 — a matéria que abriu a edição de ontem e que esta edição continua. <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxQWWJZNGZMNEs1OTdITWJXN3pVaEdSbDlYVjJCcTZUSF9KSGp2bTNMX2JrU1VtT1dnRXhQcENsc0poME5HQWMyRWVDVzlNREltS1hWaS1ZYmpuTC1UZndTMzNJYlJGZWc0dHZPSU15RmFHd0F2VUFVRjk2aUxqeXBVNjF4UGJLel9TZGhCMHN6S0J0cEhGQzZ1eUQycm1JNEM3NTRPNnBvMGlYSzZXUEstQm11bEdIRVl3aDBfZWxBOXVFTEx3MlhmdlpRU3NVdkpIWTU0?oc=5">abrir</a></li>
+    </ol>
+
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>Eu li os títulos, as datas e as fontes; não abri o corpo das matérias.</b> Por isso o texto acima descreve o que cada manchete afirma, e não afirma nada além dela. Quatro ressalvas concretas: <b>(1)</b> o número de 143 mil falhas em 25 mil ligações vem do título de um analista individual, não de um jornal grande nem de um relatório que eu tenha lido — trate como indício forte, confirme antes de citar em proposta; <b>(2)</b> a matéria da Band e os dois vídeos de telejornal tratam de ataques feitos por IA, mas eu não verifiquei se falam do mesmo episódio — por isso cito lado a lado, sem afirmar que são o mesmo caso; <b>(3)</b> os vídeos do YouTube vêm de uma busca e o sinal traz só título, canal e visualizações, sem data de publicação; <b>(4)</b> os horários vêm do carimbo dos feeds, em fuso de Greenwich — no relógio de Brasília, tire três horas.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">
+    Radar André Oliveira · Nº 007 · 7 de agosto de 2026<br>
+    Próxima edição: segunda-feira, 10 de agosto — Radar Completo, com o bloco de posicionamento
+  </div>
+
+</div>
+</body>
+</html>
