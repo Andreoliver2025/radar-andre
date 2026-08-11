@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 009 — Pulso de terça, 11 de agosto de 2026</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A tomada que todo mundo instalou às pressas deu o primeiro choque</h1>
+    <p class="chamada">Ontem o radar avisou: o encaixe que liga a IA aos sistemas da empresa cresceu quase cinco vezes e ninguém instalou disjuntor junto. Hoje de manhã saiu o primeiro caso documentado. Vinte e quatro horas entre o aviso e o estrago.</p>
+    <div class="dateline">Edição Nº 009 · terça-feira, 11 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#s1">O que aconteceu hoje</a><div class="d">O encaixe da IA virou porta de entrada — e alguém já mostrou como.</div></div></li>
+      <li><div><a href="#s2">As novidades do dia</a><div class="d">Oito recortes: o vazamento, a França proibindo ligação de venda e o modelo que agora roda no Mac.</div></div></li>
+      <li><div><a href="#s3">Seu território: automação</a><div class="d">Onde o encaixe está entrando na operação de verdade — escritório de advocacia e sistema de gestão.</div></div></li>
+      <li><div><a href="#s4">A oportunidade do dia</a><div class="d">A revisão de tomadas: um serviço de uma tarde que abre porta em cliente que já é seu.</div></div></li>
+      <li><div><a href="#s5">De onde veio cada informação</a><div class="d">As fontes, uma a uma, e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- ═════════════ 01 ═════════════ -->
+  <section class="materia" id="s1">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+    <p class="abertura">Hoje às 8h07 saiu a matéria que fecha o arco de três dias: <b>servidores falsos do encaixe que liga a IA às ferramentas da empresa conseguem convencer o robô a entregar a chave de acesso do servidor e o código-fonte do sistema</b>.</p>
+
+    <p class="texto capitular">Sábado o número apareceu: o uso desse encaixe cresceu 375% em um ano. Ontem esta edição escreveu que ninguém instalou disjuntor junto. Hoje de manhã veio o relato de como a coisa pega fogo. Não é teoria — é o passo a passo do golpe.</p>
+
+    <p class="texto">O ataque é simples de entender. Você não instala um programa estranho; você instala um <b>encaixe</b>. Ele parece útil, promete conectar a IA ao seu banco de dados, à sua agenda, ao seu repositório. Só que quem escreveu o encaixe também escreveu as instruções que o robô lê ao ligar. E o robô obedece.</p>
+
+    <p class="texto">É o eletricista que instala a tomada e deixa um fio a mais atrás da parede, indo para a casa dele. A tomada funciona. A geladeira liga. E o medidor também roda do outro lado.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>MCP</b> é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. <b>Chave SSH</b> é a chave-mestra do servidor: quem tem ela entra sem senha, como quem tem a cópia da chave da porta dos fundos. <b>Código-fonte</b> é a receita do sistema: o que a empresa mandou construir e ninguém devia poder copiar.</p>
+    </div>
+
+    <p class="texto">O que isso significa para você, na prática: em todo cliente onde você montou automação nos últimos meses, existe hoje uma pergunta sem resposta — <b>quantos encaixes estão ligados, quem instalou cada um e o que cada um alcança</b>. Ninguém tem essa lista. Nem as empresas grandes.</p>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">375%</div><div class="lbl">de crescimento no uso do encaixe em um ano, segundo o <b>Times Brasil</b> (sábado)</div></div>
+      <div class="numero"><div class="big">2 chaves</div><div class="lbl">é o que um encaixe falso consegue puxar: a <b>chave do servidor</b> e o <b>código do sistema</b></div></div>
+      <div class="numero"><div class="big">24h</div><div class="lbl">entre o alerta desta edição, ontem, e o <b>caso documentado</b>, hoje de manhã</div></div>
+      <div class="numero"><div class="big">metade</div><div class="lbl">das tentativas de automação nas empresas <b>não se sustenta</b> (ipnews, 27/07)</div></div>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Você passou meses vendendo <b>ligar</b>. Hoje abriu a segunda venda no mesmo cliente: <b>revisar o que está ligado</b>. É o serviço mais fácil de explicar que apareceu no radar este mês — dono de empresa entende "quem tem a chave da sua casa?" sem precisar de uma palavra técnica.</p>
+      <p>E é um serviço que só quem montou a instalação sabe fazer. O consultor de segurança tradicional não conhece esses encaixes. Você conhece.</p>
+    </div>
+  </section>
+
+  <!-- ═════════════ 02 ═════════════ -->
+  <section class="materia" id="s2">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes das últimas vinte e quatro horas. Dois deles mexem direto na sua conta de fim de mês.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Encaixes falsos convencem o robô a entregar a chave do servidor e o código do sistema</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 8h07</span><span>Cyber Security Brazil</span></div>
+          <p class="texto">A reportagem descreve servidores MCP maliciosos — encaixes plantados de propósito — que induzem o robô de IA a vazar chave SSH e código-fonte. O robô não é invadido: ele é convencido.</p>
+          <p class="texto">Guarde a sequência: quinta a Exame explicou o que é o encaixe. Sábado o Times Brasil deu o número do crescimento e o risco. Hoje saiu o caso. Cinco dias do "o que é isso" até o "olha o estrago".</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Você contratou um manobrista para estacionar o carro. Ele estaciona direitinho, todo dia. Só que a chave dele abre o porta-malas — e ninguém checou o que ele leva de lá.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQN0RiM19XMEFMVTh5VzJocXVMc0ExcEdpcVBZOEpwV2FyZnZ2djM4M0JLUGNpQjVxeENqTkhOeU1iWVNEWE1rNDN5bnFxemRvQVBIc0ZUbElhc1I5NDVDWjRzNG84VTFBRE5uaDh6NzVWYzRVUDJuS0tlQkFod2xaSDJScXBOdUNobnhuS2pvWEZwZVRsV1MyYkp1ZEpwUzBkRGtqbnpITENwa3hEUXVXMUppeVhrTzJDaEVFaG5WQ1pTbGJBblZGZnBEaw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>A França proíbe, a partir de hoje, a ligação de venda que ninguém pediu</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h15</span><span>Le Monde, via Hacker News</span></div>
+          <p class="texto">Entra em vigor hoje, 11 de agosto, a proibição francesa às ligações comerciais não solicitadas. Não é uma lista de bloqueio: é a inversão da regra — sem autorização prévia, não liga.</p>
+          <p class="texto">Isso não é notícia de IA, mas é notícia sobre o seu ganha-pão. O telefone frio está sendo fechado por lei em um país do G7 no mesmo mês em que robô de conversa fica barato. Quem depende de volume de ligação perde o canal; quem trabalha com conversa pedida pelo cliente ganha o cliente inteiro.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu no dia. Quando uma lei de telefonia aparece lá em cima, é sinal de que o pessoal que constrói ferramenta de vendas está lendo isso como aviso de rota.</p></div>
+          <div class="link"><a href="https://www.lemonde.fr/en/france/article/2026/08/06/france-to-ban-unsolicited-telemarketing-calls-from-august-11_6756208_7.html">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Alguém lançou de madrugada um jeito de o robô gastar menos usando os encaixes</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 2h26</span><span>Hacker News</span></div>
+          <p class="texto">Chama-se Mcptoon. É um programa de linha de comando que conversa com os encaixes gastando menos do que o padrão. O anúncio é do autor, publicado hoje de madrugada.</p>
+          <p class="texto">Repare no mesmo dia: de manhã sai o risco do encaixe, de madrugada sai a otimização de custo do encaixe. Os dois problemas — segurança e conta — nascem juntos e viram serviço juntos.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Token</b> é a unidade que as empresas de IA cobram, como o minuto na conta de telefone antiga. Cada vez que o robô lê a descrição de um encaixe, ele gasta minutos. Vinte encaixes ligados é conta de telefone rodando parada.</p></div>
+          <div class="link"><a href="https://github.com/activeing123/mcptoon">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Um projeto que era aberto fechou o código hoje de manhã</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h16</span><span>rapha.land, via Hacker News</span></div>
+          <p class="texto">O autor do Canario Terminal publicou hoje o texto explicando por que está fechando o código do produto. Ontem a manchete era a Meta abrindo um modelo de graça; hoje um criador independente fecha o dele.</p>
+          <p class="texto">A leitura de negócio é a mesma dos dois lados: quem tem escala usa o aberto para atrair; quem vive do produto precisa de algo que não dá para copiar em uma tarde.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Código aberto</b> quer dizer que qualquer um baixa e roda por conta. Fechar o código é o dono da padaria parando de dar a receita do pão junto com o pão.</p></div>
+          <div class="link"><a href="https://rapha.land/closing-canario-terminal-source-code/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Um modelo grande passou a rodar direto no chip do Mac, sem nuvem</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 22h22</span><span>Hacker News</span></div>
+          <p class="texto">Saiu o H3-metal: um programa que faz o modelo MiniMax-H3 rodar de forma nativa no processador dos Macs novos. Sem servidor, sem mensalidade, sem o dado saindo da mesa.</p>
+          <p class="texto">É a continuação direta do que a Meta anunciou ontem. Duas peças na mesma semana empurrando para o mesmo lugar: <b>a IA descendo da nuvem para a máquina de quem trabalha</b>.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Antes você alugava o motor por minuto de um fornecedor lá fora. Agora dá para instalar o motor no seu próprio carro. Muda a conta, muda a conversa sobre sigilo com o cliente — e muda quem consegue vender.</p></div>
+          <div class="link"><a href="https://github.com/antirez/h3.c">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Enquanto a IA consome a web, a memória coletiva da internet está sumindo</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 19h36</span><span>The Walrus</span></div>
+          <p class="texto">A reportagem sustenta que, à medida que a IA passa a responder no lugar do link, sites param de receber visita, param de ser mantidos e desaparecem. O arquivo comum da internet encolhe.</p>
+          <p class="texto">Para quem vive de SEO, isso é aviso de rota, não filosofia. O tráfego que vinha do buscador está migrando para dentro da resposta da IA. O trabalho não acabou — mudou de balcão.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>GEO</b> é o trabalho de aparecer nas respostas da IA, como antes se trabalhava para aparecer no Google. É a mesma loja mudando de rua porque a prefeitura mudou o sentido do trânsito.</p></div>
+          <div class="link"><a href="https://thewalrus.ca/google-search-is-dying/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Robôs de IA começam a mudar quanto vale uma empresa de software</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 17h56</span><span>Administradores</span></div>
+          <p class="texto">Em entrevista, o presidente da AFPAR avalia que o avanço dos robôs de IA está mudando o preço das empresas que vendem software por assinatura. Se o cliente monta sozinho parte do que comprava pronto, o contrato encolhe.</p>
+          <p class="texto">Guarde isso para a conversa de sócio, não para a de cliente: é o argumento que explica por que <b>serviço de implantar e manter</b> ficou mais valioso que <b>licença de sistema</b>.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNTDNSTGt5RHM4S2VwLXNoSmQ3ZG1tMGFKNXBSQnMtUWRobzBQRzIxSUMzOG5UdXNXLXFBRW5sdFV1VW9jdTlGWXR4cnZFbHkyN29jMF81RW1KZjZ5RUgtMDk1NGFmQk9yVmxaenViNkprc3ZZOFpvd2V5Snk0OS1xWEczWFI0QkR5Z0Vxek5CLW8wSG5NeVliaWtXeGJTU0phWHZCSGQ4Zms0aERKbHV1VlRrcGxlaHJ0bTVrVQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Na vitrine de produtos novos: anotar em cima da tela e um funil de admissão</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem e madrugada</span><span>Product Hunt</span></div>
+          <p class="texto">Entraram na vitrine o ScreenMark, para anotar e desenhar por cima da tela, mais dois lançamentos chamados AdmitRaven e Xirp. Nenhum deles tem número público de uso.</p>
+          <p class="texto">O sinal aqui não é o produto — é o padrão. A vitrine desta semana está cheia de ferramenta pequena de trabalho do dia, não de modelo gigante. Quando o dinheiro desce para a ferramenta miúda, é porque o problema grande já tem dono.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Product Hunt</b> é a vitrine onde produtos novos são lançados todo dia. Aparecer lá não prova que funciona — prova que alguém apostou dinheiro naquele problema esta semana.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/screenmark-annotation-draw">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="olho">
+      <p>Todo mundo instalou tomada. Ninguém instalou disjuntor. O eletricista que chegar primeiro com o disjuntor na mão não vai precisar vender nada.</p>
+      <span class="quem">A frase para levar para a reunião de hoje</span>
+    </div>
+  </section>
+
+  <!-- ═════════════ 03 ═════════════ -->
+  <section class="materia" id="s3">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+    <p class="abertura">Enquanto o susto de segurança ocupa a manchete, o encaixe continua entrando na operação de quem trabalha. Dois lugares onde ele apareceu desde ontem — e nenhum dos dois é empresa de tecnologia.</p>
+
+    <p class="texto"><b>No escritório de advocacia.</b> A Migalhas publicou ontem à tarde um texto sobre usar o encaixe padrão para reduzir o risco de a IA citar jurisprudência que não existe. O robô deixa de responder de cabeça e passa a consultar a base oficial antes de escrever.</p>
+
+    <p class="texto">Esse é o formato mais vendável de automação que existe hoje: não é "a IA vai fazer o trabalho", é <b>"a IA não vai mais inventar"</b>. Advogado não compra produtividade. Advogado compra não passar vergonha no processo.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p>Isso se chama <b>RAG</b>: fazer a IA responder consultando os documentos certos em vez de responder de memória. É a diferença entre o funcionário que responde ao cliente de cabeça e o que abre a pasta antes de falar. O segundo demora dez segundos a mais e erra dez vezes menos.</p>
+    </div>
+
+    <p class="texto"><b>No sistema de gestão.</b> A Totalsoft anunciou ontem de manhã a IA conversacional dentro do ERP Cegid PHC CS — o sistema onde a empresa lança nota, estoque e financeiro. E ontem também saiu matéria mostrando a IA assumindo a gestão de documentos nas empresas.</p>
+
+    <p class="texto">Repare no movimento: o robô parou de ser uma janelinha à parte e foi morar dentro do sistema que a empresa já usa. É a diferença entre pôr um ventilador na sala e trocar o ar-condicionado central. O segundo ninguém desliga no fim do expediente.</p>
+
+    <div class="nota">
+      <div class="r">O arco das três últimas edições</div>
+      <ul class="lista">
+        <li><b>Quinta e sábado:</b> o encaixe apareceu como assunto e ganhou número — crescimento de 375%.</li>
+        <li><b>Ontem, segunda:</b> o modelo desceu para a máquina do cliente (Meta) e ganhou quarto isolado para trabalhar (Docker).</li>
+        <li><b>Hoje:</b> o encaixe entrou no escritório de advocacia e no sistema de gestão — e, na mesma manhã, mostrou por onde vaza.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Pare de vender "automação" como categoria. Passe a vender <b>o encaixe entre a IA e o sistema que o cliente já paga</b>. É mais fácil de aprovar: não pede troca de fornecedor, não pede treinamento de equipe, não aparece como projeto novo no orçamento.</p>
+      <p>E, a partir de hoje, esse encaixe vem com uma pergunta de segurança embutida — que você responde e o concorrente que monta caixinha na tela não responde.</p>
+    </div>
+  </section>
+
+  <!-- ═════════════ 04 ═════════════ -->
+  <section class="materia" id="s4">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+    <p class="abertura">A <b>revisão de tomadas</b>: um diagnóstico curto, de preço baixo, que abre porta em cliente que já é seu — e que nasce da notícia desta manhã, não de uma ideia sua.</p>
+
+    <p class="texto">Toda empresa que ligou IA em alguma ferramenta nos últimos seis meses tem encaixes instalados que ninguém mapeou. Foi o estagiário, foi o fornecedor, foi você mesmo em uma sexta-feira. Ninguém anotou.</p>
+
+    <p class="texto">A entrega cabe em uma folha: <b>lista do que está ligado, quem ligou, o que cada um alcança e o que sai se aquele encaixe for falso</b>. Sem palavra técnica. Uma coluna com o nome da ferramenta, uma coluna com "o que ele consegue ver", uma coluna com verde, amarelo ou vermelho.</p>
+
+    <p class="texto">O preço não é de segurança da informação — é de diagnóstico. Baixo o suficiente para o dono aprovar no WhatsApp. E o relatório vermelho é o orçamento do próximo serviço, que é o conserto.</p>
+
+    <div class="traduz">
+      <span class="r">Por que isso vende hoje e não vendia semana passada</span>
+      <p>Até sábado, "o encaixe pode vazar dado" era opinião de consultor. Desde hoje de manhã existe reportagem descrevendo como. Você não precisa mais convencer ninguém do risco — você manda o link e pergunta se ele sabe quantos encaixes tem ligados. Ele não sabe. Aí começa a conversa.</p>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p><b>1.</b> Faça em você primeiro. Abra a sua própria operação e escreva a lista: cada encaixe ligado, quem instalou, o que ele alcança. Se demorar mais de uma hora, você achou o tamanho do problema do cliente.</p>
+      <p><b>2.</b> Transforme essa lista em uma folha só, com as três colunas e o farol de cores. Essa folha é o produto.</p>
+      <p><b>3.</b> Mande hoje mesmo para <b>três clientes seus</b> — os três em que você montou automação mais recentemente. Uma linha: "saiu isto hoje de manhã; eu fiz a revisão na minha operação e achei X pontos. Quer que eu faça na sua?" Anexe a sua folha preenchida como amostra.</p>
+      <p>Regra: não mande para quem nunca automatizou nada. Este serviço só faz sentido para quem já tem tomada instalada.</p>
+    </div>
+  </section>
+
+  <!-- ═════════════ 05 ═════════════ -->
+  <section class="materia" id="s5">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+    <p class="abertura">Tudo que está escrito acima veio de uma destas fontes, coletadas no sinal de hoje às 8h19. Nada foi inferido sem indicação.</p>
+
+    <ol class="src">
+      <li><b>Cyber Security Brazil</b> (hoje, 8h07) — servidores MCP maliciosos podem induzir agentes de IA a vazar chaves SSH e código-fonte. <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQN0RiM19XMEFMVTh5VzJocXVMc0ExcEdpcVBZOEpwV2FyZnZ2djM4M0JLUGNpQjVxeENqTkhOeU1iWVNEWE1rNDN5bnFxemRvQVBIc0ZUbElhc1I5NDVDWjRzNG84VTFBRE5uaDh6NzVWYzRVUDJuS0tlQkFod2xaSDJScXBOdUNobnhuS2pvWEZwZVRsV1MyYkp1ZEpwUzBkRGtqbnpITENwa3hEUXVXMUppeVhrTzJDaEVFaG5WQ1pTbGJBblZGZnBEaw?oc=5">clique aqui</a></li>
+      <li><b>Le Monde</b>, via Hacker News (hoje, 5h15) — França proíbe ligações de venda não solicitadas a partir de 11 de agosto. <a href="https://www.lemonde.fr/en/france/article/2026/08/06/france-to-ban-unsolicited-telemarketing-calls-from-august-11_6756208_7.html">clique aqui</a></li>
+      <li><b>Hacker News</b> (hoje, 2h26) — Mcptoon, cliente de linha de comando para encaixes MCP com menos gasto. <a href="https://github.com/activeing123/mcptoon">clique aqui</a></li>
+      <li><b>rapha.land</b>, via Hacker News (hoje, 5h16) — o autor explica por que está fechando o código do Canario Terminal. <a href="https://rapha.land/closing-canario-terminal-source-code/">clique aqui</a></li>
+      <li><b>Hacker News</b> (ontem, 22h22) — H3-metal: rodar o modelo MiniMax-H3 de forma nativa em Mac. <a href="https://github.com/antirez/h3.c">clique aqui</a></li>
+      <li><b>The Walrus</b>, via Hacker News (ontem, 19h36) — enquanto a IA consome a web, a memória coletiva da internet desaparece. <a href="https://thewalrus.ca/google-search-is-dying/">clique aqui</a></li>
+      <li><b>Administradores</b> (ontem, 17h56) — avanço dos agentes de IA muda o preço das empresas de software por assinatura, avalia o CEO da AFPAR. <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNTDNSTGt5RHM4S2VwLXNoSmQ3ZG1tMGFKNXBSQnMtUWRobzBQRzIxSUMzOG5UdXNXLXFBRW5sdFV1VW9jdTlGWXR4cnZFbHkyN29jMF81RW1KZjZ5RUgtMDk1NGFmQk9yVmxaenViNkprc3ZZOFpvd2V5Snk0OS1xWEczWFI0QkR5Z0Vxek5CLW8wSG5NeVliaWtXeGJTU0phWHZCSGQ4Zms0aERKbHV1VlRrcGxlaHJ0bTVrVQ?oc=5">clique aqui</a></li>
+      <li><b>Migalhas</b> (ontem, 13h33) — IA para advogados: como o MCP jurídico reduz o risco de jurisprudência falsa. <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQV0o5OTlyaF91VUJmUmg4TEZyNEFhc2ZIQ08yQThOV2FVUkFoeG5YQTZrZ091MV9ncVpYZ0diaUszeld5cnlKZ044NEFxNlVYMU4tVThOdEdMRWtMUXhZQnp1LWRvbVd1bHNqcHhHTVM0TlBBZkVpaVdyZUhEc3lWRy10aVRUTmZ0Y2hIT21WUzZ4MG9xbUQ3dFdKTkpiZ2xjR2oyRTVpekZnU1Zs?oc=5">clique aqui</a></li>
+      <li><b>Portal ERP</b> (ontem, 7h29) — Totalsoft leva a IA conversacional ao ERP Cegid PHC CS. <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOdTE3bVducU05dmpyeXIxcVVxX0xGZ09SNnRhUEIxekttY1JocE1SWG1nbjl3NXM4TnlfaTZjdjdXVkx1OUZOQXRrZS04X2tkOGZubFJINExyZ1ptZlNVU1d2TGs5NnhMSVd2bG02TC01WTRFa29ibHc4VTBuUWxHNFQ3XzFwMkJ4V3h1U0F4M3I?oc=5">clique aqui</a></li>
+      <li><b>Contadores.cnt.br</b> (ontem, 9h23) — IA amplia o papel da gestão documental nas empresas. <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcVNIRHNPU0U0alJwaWVJdlZUZWRWeDc3LUZaRlFrdE8xX2ZYZGJ5UnlDNGxUS244Q21hNXlkY3JkZmtWSW0yQ2ZjRl9pWHhmUUN1UGFUSDE0dDl6OExTRmlmM2cyMHIyVTdMdkJienhMXzd4RzdDZV9mTTJVMGI0RGx1ZFlSSmFRX2J3Z3ZQaXRpUmt1MGFQOHJkTWN6QlpnUGNURW43eWhBbDRzQVA0RThOYUo2Uzda?oc=5">clique aqui</a></li>
+      <li><b>Times Brasil | CNBC</b> (08/08) — uso do protocolo MCP cresce 375% e eleva o risco de vazamento de dados. <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOC1pTmpTWWxiQUx2S0RTTXdadjREOEthYUZ1TjI4VmpzVThydGNjZVRoMkxXYzlCX1AzMFgwZEV1dlFya3lkV3lYMTY4aXNJSUV4cjlBZHB2QVdUazhMQjgzZktWdS04X3RrRXVkcXFjNG5aQnFTVWhGSTQyQ1JsN1FfRG5saTNZT3JCRWRZZGZ6N3BzeEVVbzQ2c0ltUXk0YlJ5d2xHWWJ2cEFfS281VkxUSDU0T0FoOS1KRXFBV0s?oc=5">clique aqui</a></li>
+      <li><b>ipnews</b> (27/07) — IA trava nas empresas: metade das tentativas de automação não se sustenta. <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxObEdkOVhxRllvWTVxUGZOMzJkUkVlWG9vTUNreUpUUkNuT0tuYjljeDQ4ajdQRTFjMDIydWs3T1hab2pxS0ZETmliV3FLQU1SS2NaT3U2Uzl4QUh3MWhob0NfS3RmQ3lsNFZOVW9Jb1lFRGVXY3R6UEZlbDhnOEFZSFFZYzI3Z19nQmcxUXp3dVRRZ2tfcWRhUkJ4Yw?oc=5">clique aqui</a></li>
+      <li><b>Mundo do Marketing</b> (ontem) — IA aplicada a contas-alvo: priorizar as contas certas em vez de escalar volume. <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQR3ZRMXBLYjZvd2xVWmRSQ1ZObUVLSExhUmpRVHF1eGZ2cjh4SmFka09oU2hiTGdtdTdybHBPMXczX2huclVJMDVldWlvX0lUUDJmUVQyUDBUd0RnVWNINXNEbE5pRi03b2dHQnNUSlN4MUMwZ211NmozM3JSVXdKRUprZXN2a2VNQjFHWFNxT1Y4ZTR4QkdXN1U1RmpmWnp4b3I1eEx3?oc=5">clique aqui</a></li>
+      <li><b>Product Hunt</b> (ontem e madrugada de hoje) — ScreenMark, AdmitRaven e Xirp. <a href="https://www.producthunt.com/products/screenmark-annotation-draw">clique aqui</a></li>
+      <li><b>Hacker News</b> (hoje, 4h00) — estudo sobre o consumo de água da IA, publicado em revista científica. <a href="https://doi.org/10.1016/j.watres.2026.125866">clique aqui</a></li>
+    </ol>
+
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>1.</b> Os links de notícia vêm do agregador do Google. Ele leva à matéria original, mas o endereço é intermediário — se algum não abrir, procure o título no site do veículo.<br><br>
+      <b>2.</b> A matéria do vazamento pelos encaixes foi lida <b>pelo título e pelo resumo do agregador</b>. Não deu para conferir se o ataque foi demonstrado em laboratório ou se já houve empresa afetada de verdade. Ao falar com cliente, diga "pesquisadores mostraram que é possível", nunca "empresas já foram atacadas".<br><br>
+      <b>3.</b> Os 375% de crescimento vêm da reportagem do Times Brasil de sábado, que não detalha no título a base de comparação nem o período. Cite como "cresceu quase cinco vezes, segundo o Times Brasil".<br><br>
+      <b>4.</b> O Mcptoon e o H3-metal saíram na madrugada e <b>não foram testados por ninguém ainda</b>, inclusive por este radar. "Gasta menos" e "roda no Mac" é o que os anúncios dizem.<br><br>
+      <b>5.</b> Do AdmitRaven e do Xirp só existe o nome no sinal de hoje — não há descrição, e este radar não sabe o que eles fazem. Só o ScreenMark tem a função declarada no próprio endereço.<br><br>
+      <b>6.</b> A regra francesa vale para a França. Não existe, no sinal de hoje, nada indicando mudança equivalente no Brasil. Use como leitura de tendência, não como aviso legal.<br><br>
+      <b>7.</b> As buscas em alta do Google no Brasil hoje são futebol, clima e política — <b>nenhum sinal de IA no público amplo</b>. Segundo dia seguido. O assunto ainda está no meio profissional, não na conversa de rua.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">
+    Radar André Oliveira · Nº 009 · 11 de agosto de 2026<br>
+    Próxima edição: Pulso de quarta-feira, 12 de agosto
+  </div>
+
+</div>
+</body>
+</html>
