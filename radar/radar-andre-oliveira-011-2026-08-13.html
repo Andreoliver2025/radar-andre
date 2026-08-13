@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 011 — Pulso de quinta, 13 de agosto de 2026</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A IA passou a deixar digital no texto — e o robô sem contexto ficou caro</h1>
+    <p class="chamada">Hoje de manhã o mural dos programadores acordou com uma briga: a Anthropic passou a marcar o texto que o Claude escreve, e quem entregava esse texto como próprio não gostou. Na mesma madrugada, um jornal brasileiro publicou a outra metade da história — empresa que liga robô sem arrumar a própria casa gasta e não colhe. O que se vende deixou de ser o texto pronto. Passou a ser quem monta a máquina.</p>
+    <div class="dateline">Edição Nº 011 · quinta-feira, 13 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A máquina começou a assinar o que produz — e isso muda o que você cobra.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Oito recortes: marca no texto, ChatGPT no Linux e quatro empresas brasileiras ligando robô.</div></div></li>
+      <li><div><a href="#automacao">Seu território: automação</a><div class="d">O encaixe da IA ficou mais barato de escalar — e por que isso importa para o seu bolso.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O mapa de contexto: a oferta de entrada que cabe numa tarde.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, os horários convertidos e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- ══════════ 01 ══════════ -->
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O QUE ACONTECEU HOJE</h2><span class="fio"></span></div>
+
+    <p class="abertura">Duas notícias de hoje contam a mesma história por lados opostos. <b>A máquina começou a assinar o que produz.</b> E a empresa que liga a máquina sem arrumar a casa paga a conta duas vezes.</p>
+
+    <p class="texto capitular">Hoje às 7h23 da manhã, o mural onde os programadores do mundo todo postam o que saiu subiu uma reportagem do TechCrunch. Usuários do Claude — o assistente de IA da Anthropic, concorrente do ChatGPT — estão irritados. A empresa passou a colocar uma marca no texto que a ferramenta escreve. Quem entregava esse texto no trabalho ou na faculdade como se fosse seu ficou exposto.</p>
+
+    <p class="texto">Sete horas antes, à meia-noite e quarenta e seis, um jornal brasileiro publicou a outra metade. Sem organizar o vocabulário da própria empresa, a corrida pela IA vira gasto sem retorno. Não é falta de modelo bom. É falta de alguém explicar para a máquina como aquela casa funciona.</p>
+
+    <p class="texto">Junte as duas. O texto bonito virou commodity rastreável. O que continua raro é a pessoa que entra na empresa, entende o processo e monta o robô que aguenta o dia a dia. Você já faz exatamente isso há anos — só chamava de outro nome.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Marca d'água em texto de IA:</b> um sinal escondido dentro das palavras, como o selo que aparece na nota de dinheiro quando você levanta contra a luz. Dá para checar depois quem escreveu. <b>"Contexto semântico":</b> o vocabulário da sua empresa escrito de um jeito que a máquina entende — o que "cliente ativo", "pedido travado" e "desconto liberado" significam ali dentro. É o manual do balcão que você daria para um funcionário novo.</p></div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">mais de 50%</div><div class="lbl">do <b>esforço cortado</b> com robôs por uma empresa brasileira parceira da Anthropic, segundo a Exame.</div></div>
+      <div class="numero"><div class="big">50 milhões</div><div class="lbl">de reais investidos pela <b>Benner</b> antes de colocar robôs em processos que não podem parar.</div></div>
+      <div class="numero"><div class="big">100 milhões</div><div class="lbl">de reais é o alvo da <b>startup nascida na universidade</b> que automatiza processos de empresas.</div></div>
+      <div class="numero"><div class="big">4 de 8</div><div class="lbl">das novidades desta edição são <b>empresas brasileiras</b> ligando robô em processo de verdade. Contagem desta edição.</div></div>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Pare de vender "conteúdo feito com IA". Isso agora tem digital e qualquer um percebe. <b>Comece a vender a montagem:</b> o processo mapeado, o robô ligado nele e o resultado medido.</p>
+      <p>É a diferença entre vender o bolo e vender a padaria montada. O bolo qualquer um copia hoje. A padaria funcionando, não.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 02 ══════════ -->
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>AS NOVIDADES DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes de hoje e de ontem à noite. Três chegaram nas últimas dez horas. E quatro deles são empresa brasileira colocando robô para trabalhar — não em teste, em processo que dá prejuízo se parar.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>A IA passou a marcar o texto que escreve — e quem escondia não gostou</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 7h23</span><span>TechCrunch, via o mural dos programadores</span></div>
+          <p class="texto">A Anthropic passou a colocar uma marca no texto que o Claude produz. A reportagem conta que parte dos usuários reclamou: a marca denuncia quem entregava aquele texto no trabalho ou na faculdade como se fosse próprio.</p>
+          <p class="texto">A reclamação é a notícia. Ela mostra quanta gente estava vendendo texto de máquina como trabalho de gente. Esse mercado acabou de encolher.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Anthropic</b> é a empresa americana dona do Claude, um assistente de IA que concorre com o ChatGPT. O <b>mural dos programadores</b> (Hacker News) é onde gente do mundo todo posta o que saiu no dia — quando algo sobe lá, chega na mesa de quem constrói.</p></div>
+          <div class="link"><a href="https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>A OpenAI levou para o Linux o programa do ChatGPT que escreve código</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 1h53</span><span>OpenAI</span></div>
+          <p class="texto">De madrugada apareceu a versão para Linux do programa de mesa do ChatGPT voltado a escrever código, o Codex. Antes ele vivia em outros sistemas.</p>
+          <p class="texto">Parece detalhe de programador, mas não é. Linux é o sistema que roda na maioria dos servidores do mundo. Colocar a ferramenta lá é colocá-la onde as operações de verdade moram.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Programa de mesa</b> é o aplicativo que você instala no computador, em vez de abrir pelo navegador. <b>Linux</b> é o sistema operacional gratuito que roda a maior parte dos servidores — o andar de baixo do prédio, onde ficam as máquinas.</p></div>
+          <div class="link"><a href="https://openai.com/codex/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Sem o vocabulário da casa organizado, a corrida da IA vira dinheiro jogado fora</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 0h46</span><span>Jornal do Comércio</span></div>
+          <p class="texto">A matéria bate numa tecla que ninguém quer ouvir. Empresa que compra IA sem antes organizar o significado das próprias palavras faz um exercício caro e não colhe.</p>
+          <p class="texto">É o que você já viu no atendimento. Se o time novo não sabe o que a empresa chama de "cliente inativo", ele erra. Com o robô é igual — só que mais rápido e em escala.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Antes de ligar qualquer robô, alguém precisa escrever em uma página o que cada termo significa dentro daquela empresa. Sem isso, a máquina responde bonito e errado.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxQMUY4ZUhuVi1fUFctSFhJWWIwM3l1UXJ2dlBJNWtyWWN5NjI2Ukh4eEJCNGpnMUJpR0c4YVRLTWtEYWdnYVl2RUoxRmRlWmtON3RVZVkzbDEyRk0zb1BBNzM1OEc3MDVGYnVXVnVjVzd6LXdGRTNVN2xPMlYtUjhjNlZVUHpNSi12S0hLSk50SlRsa190aTZjVmkxUTBBQTlKemhGcXJoV3BwUUdrbE11Y1UyaFBKM210MUNCdG9mUFhhaWo4TXVEejFNMmNwbUR0bFJsRGhybVNKUVp1UTBDT3BR?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Um levantamento inédito mostra como as empresas brasileiras estão montando o primeiro robô</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 18h17</span><span>SEGS Portal Nacional</span></div>
+          <p class="texto">Saiu ontem à noite uma pesquisa sobre como as empresas do Brasil estão construindo seus primeiros robôs de IA. É a foto do estágio em que o país está.</p>
+          <p class="texto">Vale abrir por um motivo simples. Quem vende montagem precisa saber onde o cliente já tentou e travou. O levantamento entrega isso de graça.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxQS1gtWlFrQUt6OXRGQnpMeWtnZzhJRm8tdGNpMURmVjlPTVFBdlhGcmZmd2tZWjNQRTZPWl80VFM3N3VHVDJqdDdmeWlGLWlRLWViLVRzSXhFZ2tHX1FfMFZNbkRROVZhb3lxWGI4WWlrWEFrTjdPMF9aSlF5NEp5TE5IcnNuVEU1Z3ZBX0FsSC1CVnM1VVVTYmNON3pPRzZQbXJOR0F2OUY1RTh6X3F6M1BTLU81OTRhekp3dnFuZlVPN0FxVmZvZ3ZBMV8tQ2FybjJGY2xB?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Os robôs já estão fazendo compra de empresa para empresa</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 16h17</span><span>Terra</span></div>
+          <p class="texto">A reportagem mostra robôs avançando nas compras entre empresas. Não é o consumidor pedindo pizza. É o setor de compras de uma empresa negociando com a outra.</p>
+          <p class="texto">Se do outro lado do balcão vai ter um robô comparando, quem vende precisa que a própria oferta esteja legível para máquina. Preço, prazo e condição escritos de forma que um programa leia sem ligar para você.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Compra entre empresas</b> é a venda de empresa para empresa — o famoso B2B. Uma indústria comprando de um fornecedor, não uma pessoa comprando no site.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQXzlVWGZLUi0tMUpDTS1UQ09IYXJpQlZqTXN2V294MHJJQlg4RTA2VHM5UzJGOGVlUnpRcUVmYmc3ejRvWWJBNUxzV2NvMzJkU1dmUmxBZ3BIU05HNUZKcUljYTRmMHkycXJkQnc1Y2tiTkY2SDBhUXA2N1J0N0ZXUm9oZFhKb1NCdnVIN1U3eVJqcm8zLU42T0M2Yk04RGU2SkdjY29DZ1NjY3A4ZGY5em45alRMQlNvZ3RYX1JkOGVoUlAxVHFv?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>A Benner pôs robô em processo que não pode parar, depois de investir 50 milhões de reais</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 17h28</span><span>Mobile Time</span></div>
+          <p class="texto">A Benner, empresa de sistemas de gestão, investiu 50 milhões de reais e agora aposta em robôs de IA para processos críticos. Crítico aqui quer dizer: se travar, a empresa sente no caixa no mesmo dia.</p>
+          <p class="texto">Repare no sinal. Robô saiu da vitrine e entrou na sala de máquinas. Quem sabe montar isso passa a ser contratado por risco, não por curiosidade.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNMlpaWFhwN0w1dW9uRXRxb182MEZHZ3FCQXZPU0k3dG1qUVBnVUtYVEtkRnd0VEl0dnB2Sk5hMkt6b2U3d0I4TW9xWmhJNFpaS2s1ZUw3UHRsVGZjSE11Zy1EanBYSzVtaERieUlqR3JjMTF0cWZnQ3JiM1lCd0xkWQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Empresa brasileira parceira da Anthropic diz ter cortado mais da metade do esforço com robôs</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 11h18</span><span>Exame</span></div>
+          <p class="texto">Uma empresa brasileira que trabalha junto com a Anthropic afirma ter reduzido em mais de 50% o esforço usando robôs de IA. É número de caso, não de laboratório.</p>
+          <p class="texto">Guarde esse dado. Ele é a única resposta que serve quando o cliente pergunta "mas isso dá retorno?". Metade do esforço é meio time liberado para outra coisa.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTEVCN1hMRnNfWWZ3c0w2cnVGTkp3WVNvQ0prYXEzMTJHdVN3S2ZwdWxFal9BanZ4UlNTZDhGTURGbGdLVmdLZzhud2dIMGFtNFQyTHMzWmxOREU5MTRja0xNUWhpazladEtfUERXb2ltcWZwVEx6cUpEWjMxQ0ttN0JXMFpmRll0ZGxLTVBQNkVoUTV6dHRWQzNkTHZJNkhaamFYSXhfM2FQMExQNE42WUMtbTVGekJmYlBfa256Z0RYRDNUWl85Yg?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Na vitrine de produtos novos: três nomes que apontam para o mesmo lado</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 17h05</span><span>Product Hunt</span></div>
+          <p class="texto">A vitrine onde produtos novos são lançados mostrou ontem, entre outros, o Qencode MCP, o Skilldocs e o Mem Agent. Encaixe, habilidade e memória — os três pedaços que faltam num robô para ele parar de esquecer o que você ensinou.</p>
+          <p class="texto">Aviso honesto: a vitrine mostra só o nome e quem apresentou. O que cada um faz de fato, só abrindo. Ficam anotados como pista, não como recomendação.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Product Hunt</b> é a vitrine onde gente do mundo todo lança produto novo e o público vota. Serve como termômetro do que vai aparecer nos próximos meses.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/qencode">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══════════ 03 ══════════ -->
+  <section class="materia" id="automacao">
+    <div class="titulo"><span class="n">03</span><h2>SEU TERRITÓRIO: AUTOMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Ontem à tarde saiu um texto técnico que quase ninguém do lado de negócios vai ler. Ele explica como <b>fazer o encaixe da IA funcionar sem precisar lembrar de nada</b> — e é isso que derruba o custo de rodar robô para muitos clientes ao mesmo tempo.</p>
+
+    <p class="texto">O padrão de encaixe da IA — aquele que faz o robô conversar com as suas ferramentas — normalmente guarda uma conversa aberta com cada usuário. É como um atendente que precisa lembrar de todo mundo que passou no balcão. Funciona com dez pessoas. Com mil, ele derrete.</p>
+
+    <p class="texto">O modo "sem sessão" vira o jogo. Cada pedido chega inteiro, com tudo dentro. É a senha da padaria: o papelzinho já traz o pedido completo, e o atendente não precisa lembrar de ninguém. Quebra menos, custa menos e aguenta mais gente junto.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>MCP</b> é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. <b>Sem sessão</b> quer dizer que o servidor não guarda memória da conversa anterior: cada chamada vem completa. Menos coisa para dar errado, menos máquina ligada à toa.</p></div>
+
+    <p class="texto">O segundo sinal vem do lado do dinheiro. A Benner colocou robô em processo crítico depois de 50 milhões de reais investidos. Uma parceira da Anthropic no Brasil relata mais de 50% de esforço a menos. Nos dois casos o robô entrou depois que a casa foi arrumada, não antes.</p>
+
+    <div class="olho">
+      <p>Quando a máquina começa a assinar o que escreve, o que se vende não é mais o texto. É quem montou a máquina.</p>
+      <span class="quem">A frase para levar na próxima reunião</span>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Seu time de robôs já existe. O que muda hoje é o argumento de venda: <b>não é "eu automatizo", é "eu deixo aguentar mil ao mesmo tempo sem quebrar"</b>.</p>
+      <p>Na próxima proposta, troque a lista de ferramentas por uma frase: quantos atendimentos por dia aquilo aguenta e quanto custa cada um. É o que o dono da empresa consegue comparar.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 ══════════ -->
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A OPORTUNIDADE DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">A notícia da madrugada entrega uma oferta pronta: <b>o mapa de contexto</b>. Uma página por processo, escrita antes de ligar qualquer robô. É barata de fazer, cara de não ter — e hoje ninguém está vendendo isso com nome.</p>
+
+    <p class="texto">Todo mundo chega vendendo robô. O cliente liga, o robô responde errado, ele conclui que IA não serve para o negócio dele. O problema quase nunca é o robô. É que ninguém escreveu o que as palavras significam ali dentro.</p>
+
+    <p class="texto">Você já faz esse mapa sem cobrar. Toda vez que monta um atendimento ou um follow-up, você para e entende o processo antes. Só que entrega isso de graça, embutido. Separe, dê nome e coloque preço — vira a porta de entrada de todo cliente novo.</p>
+
+    <div class="nota">
+      <div class="r">O que entra em uma página de mapa de contexto</div>
+      <ul class="lista">
+        <li><b>Vocabulário:</b> o que a casa chama de cliente ativo, pedido travado, lead frio. Com exemplo real de cada um.</li>
+        <li><b>Regras:</b> o que pode ser prometido e o que nunca pode. Desconto, prazo, troca.</li>
+        <li><b>Exceções:</b> os três casos que fogem do padrão e derrubam qualquer robô mal montado.</li>
+        <li><b>Quem decide:</b> em que ponto o robô para e chama uma pessoa — e qual pessoa.</li>
+        <li><b>Como se mede:</b> um número só, que diz se aquilo funcionou na semana.</li>
+      </ul>
+    </div>
+
+    <p class="texto">Cobrado como diagnóstico, ele se paga na primeira hora. E deixa o cliente comprando a montagem em seguida, porque ele mesmo enxerga o buraco que a página revelou.</p>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p>Pegue <b>um</b> processo seu que já roda — o follow-up de venda serve. Abra um documento em branco e preencha os cinco campos da lista acima. Sem consultar ninguém, do que você tem na cabeça.</p>
+      <p>Leve de duas a três horas. No fim, você tem duas coisas: um robô que vai errar menos e <b>um produto novo com nome, formato e preço</b> para oferecer amanhã ao primeiro cliente que disser "já tentei IA e não funcionou".</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 05 ══════════ -->
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>DE ONDE VEIO CADA INFORMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Tudo que está escrito acima veio de um destes links. Nada foi inferido sem fonte. Os horários estão no horário de Brasília.</p>
+
+    <ol class="src">
+      <li><b>TechCrunch</b> — usuários do Claude reclamam das novas marcas d'água da Anthropic (hoje, 7h23, via Hacker News). <a href="https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/">abrir</a></li>
+      <li><b>OpenAI</b> — ChatGPT Desktop (Codex Desktop) para Linux (hoje, 1h53, via Hacker News). <a href="https://openai.com/codex/">abrir</a></li>
+      <li><b>Jornal do Comércio</b> — "Sem contexto semântico, a corrida pela IA nas empresas pode virar um exercício caro" (hoje, 0h46). <a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxQMUY4ZUhuVi1fUFctSFhJWWIwM3l1UXJ2dlBJNWtyWWN5NjI2Ukh4eEJCNGpnMUJpR0c4YVRLTWtEYWdnYVl2RUoxRmRlWmtON3RVZVkzbDEyRk0zb1BBNzM1OEc3MDVGYnVXVnVjVzd6LXdGRTNVN2xPMlYtUjhjNlZVUHpNSi12S0hLSk50SlRsa190aTZjVmkxUTBBQTlKemhGcXJoV3BwUUdrbE11Y1UyaFBKM210MUNCdG9mUFhhaWo4TXVEejFNMmNwbUR0bFJsRGhybVNKUVp1UTBDT3BR?oc=5">abrir</a></li>
+      <li><b>SEGS Portal Nacional</b> — levantamento inédito sobre como empresas brasileiras estão construindo seus primeiros agentes de IA (ontem, 18h17). <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxQS1gtWlFrQUt6OXRGQnpMeWtnZzhJRm8tdGNpMURmVjlPTVFBdlhGcmZmd2tZWjNQRTZPWl80VFM3N3VHVDJqdDdmeWlGLWlRLWViLVRzSXhFZ2tHX1FfMFZNbkRROVZhb3lxWGI4WWlrWEFrTjdPMF9aSlF5NEp5TE5IcnNuVEU1Z3ZBX0FsSC1CVnM1VVVTYmNON3pPRzZQbXJOR0F2OUY1RTh6X3F6M1BTLU81OTRhekp3dnFuZlVPN0FxVmZvZ3ZBMV8tQ2FybjJGY2xB?oc=5">abrir</a></li>
+      <li><b>Terra</b> — "Agentes de IA avançam nas compras entre empresas" (ontem, 16h17). <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQXzlVWGZLUi0tMUpDTS1UQ09IYXJpQlZqTXN2V294MHJJQlg4RTA2VHM5UzJGOGVlUnpRcUVmYmc3ejRvWWJBNUxzV2NvMzJkU1dmUmxBZ3BIU05HNUZKcUljYTRmMHkycXJkQnc1Y2tiTkY2SDBhUXA2N1J0N0ZXUm9oZFhKb1NCdnVIN1U3eVJqcm8zLU42T0M2Yk04RGU2SkdjY29DZ1NjY3A4ZGY5em45alRMQlNvZ3RYX1JkOGVoUlAxVHFv?oc=5">abrir</a></li>
+      <li><b>Mobile Time</b> — "Após investimento de R$ 50 milhões, Benner aposta em agentes de IA para processos críticos" (ontem, 17h28). <a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNMlpaWFhwN0w1dW9uRXRxb182MEZHZ3FCQXZPU0k3dG1qUVBnVUtYVEtkRnd0VEl0dnB2Sk5hMkt6b2U3d0I4TW9xWmhJNFpaS2s1ZUw3UHRsVGZjSE11Zy1EanBYSzVtaERieUlqR3JjMTF0cWZnQ3JiM1lCd0xkWQ?oc=5">abrir</a></li>
+      <li><b>Exame</b> — "Parceira da Anthropic, empresa brasileira corta mais de 50% do esforço com agentes de IA" (ontem, 11h18). <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTEVCN1hMRnNfWWZ3c0w2cnVGTkp3WVNvQ0prYXEzMTJHdVN3S2ZwdWxFal9BanZ4UlNTZDhGTURGbGdLVmdLZzhud2dIMGFtNFQyTHMzWmxOREU5MTRja0xNUWhpazladEtfUERXb2ltcWZwVEx6cUpEWjMxQ0ttN0JXMFpmRll0ZGxLTVBQNkVoUTV6dHRWQzNkTHZJNkhaamFYSXhfM2FQMExQNE42WUMtbTVGekJmYlBfa256Z0RYRDNUWl85Yg?oc=5">abrir</a></li>
+      <li><b>Exame</b> — "Startup criada na universidade mira R$ 100 milhões com IA para automatizar processos de empresas" (ontem, 11h37). <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNYW1scE56Vnl1a045VXdBTFVONjF4c1BRbUVTLXhzX2d0TlFweWF6aGRUOWFRLVhCLUNnVVRGNHJRUy10SW5QSGJGYks2T19COEs0eF9vUG5uMjhDS0ViTXJGQ1JEc0xtUldDVXFJREZQTW1sYmFpYTJoVDhyM3lMYkxNdGw5OXh5bUZrYUZwcE5OeTBUTjNZYXdnRFR1UlN5dEdGZzBoLVpoUHVNNnN5dGJzZjRHMzhibVA0Y1pUVVI?oc=5">abrir</a></li>
+      <li><b>iMasters</b> — "MCP stateless: migrando um servidor Streamable HTTP para o modo sem sessão" (ontem, 13h49). <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxPdUV0anBlZmwzZGRBc0x6QmdqUkp2VXA1c3Jia2IwR3pCNXZCdnUyTW9ROHRoMkNkNllaaEVldlBVWm9iZUZwYmlzcmpoQmpKTDhBeTRCYkRTakRyN3pTMFg5RmdFa1hDX2tycHhGRUNWU09iZkk2dWh4eVlCYU5lU2lmbmxUdmRVRUpnN2IwbGlxaWUyOUptQVh4V00xMG95ZmlkZ1BMRnFpY3RtNzh6aDFYcjlGOW1odlJiZWZ3?oc=5">abrir</a></li>
+      <li><b>Product Hunt</b> — Qencode MCP (ontem, 17h36), Skilldocs (ontem, 18h07) e Mem Agent (anteontem, 15h55). <a href="https://www.producthunt.com/products/qencode">abrir</a></li>
+    </ol>
+
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>1.</b> Sobre a marca no texto: a manchete diz que ela existe e que os usuários reclamaram. Como a marca funciona, o que ela detecta e com que precisão — isso não está na manchete e não foi verificado aqui.<br><b>2.</b> Sobre a vitrine de produtos novos: só temos o nome e quem apresentou. O que Qencode MCP, Skilldocs e Mem Agent fazem de fato não foi confirmado. Trate como pista para abrir, não como indicação.<br><b>3.</b> Os links de notícia brasileira passam por um redirecionador do agregador de notícias do Google. O título é o que a fonte publicou; o texto completo só abrindo.<br><b>4.</b> Os horários vieram no padrão internacional das fontes e foram convertidos para o horário de Brasília.<br><b>5.</b> Os números de 50 e 100 milhões de reais são o que cada reportagem afirma. Não foram checados em balanço.</p></div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Nº 011 · 13 de agosto de 2026<br>Próxima edição: sexta-feira, 14 de agosto — Pulso diário</div>
+</div>
+</body>
+</html>
