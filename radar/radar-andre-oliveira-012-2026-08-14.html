@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 012 — Produzir ficou barato. Entender virou o gargalo.</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>Produzir ficou barato. Entender virou o gargalo.</h1>
+    <p class="chamada">Esta madrugada o preço da IA caiu de dois lados: um motor novo mirando o topo em programação e uma tabela de preço com horário de pico, como a conta de luz. E, no mesmo dia, quatro textos de origens diferentes disseram a mesma frase por caminhos separados — o trabalho escasso agora é entender o que a máquina fez. Não produzir.</p>
+    <div class="dateline">Edição Nº 012 · sexta-feira, 14 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#s1">O que aconteceu hoje</a><div class="d">O preço de fabricar caiu e a fila de quem revisa ficou maior.</div></div></li>
+      <li><div><a href="#s2">As novidades do dia</a><div class="d">Oito recortes: motor novo, tarifa por horário, o estudo da OpenAI e o SEO que perdeu o clique.</div></div></li>
+      <li><div><a href="#s3">Seu território: automação</a><div class="d">O padrão da fila de madrugada — o que responde agora e o que pode esperar até as três da manhã.</div></div></li>
+      <li><div><a href="#s4">A oportunidade do dia</a><div class="d">A folha de prestação de contas do robô: uma página por semana que o dono lê em três minutos.</div></div></li>
+      <li><div><a href="#s5">De onde veio cada informação</a><div class="d">As dezoito fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- ══════════ 01 ══════════ -->
+  <section class="materia" id="s1">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+    <p class="abertura">Em nove horas, o mural onde programadores do mundo todo postam o que saiu recebeu <b>três notícias sobre o motor da IA</b> — e todas empurram o preço para baixo.</p>
+
+    <p class="texto capitular">Às 2h19 de hoje saiu o anúncio de um motor chinês que mira o topo em escrever programa. Às 6h55, a DeepSeek publicou uma tabela de preço com <b>horário de pico e fora de pico</b> — igual à conta de luz, que cobra menos de madrugada. E às 7h12 subiu um texto de um programador reclamando que a última versão do Claude, da Anthropic, ficou pior de trabalhar.</p>
+
+    <p class="texto">As três juntas dizem uma coisa só: fabricar texto e código está virando commodity de madrugada. O que era caro em janeiro custa menos agora, e sobra escolha de fornecedor.</p>
+
+    <p class="texto">A outra metade do dia veio de quatro lugares que não se falam. Um ensaio no mural dos programadores, uma reportagem brasileira, uma entrevista de futurista no NeoFeed e um estudo da própria OpenAI. Todos apontam o mesmo dedo: <b>quando a máquina escreve, o gargalo passa a ser entender e desenhar</b> — não produzir.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Gargalo</b> é o ponto mais estreito da mangueira: por mais que você abra a torneira, só passa o que ele deixa. <b>Motor da IA</b> é o programa que faz o ChatGPT — ou o Claude — responder. <b>Fora de pico</b> é a tarifa mais barata em horário de pouca gente usando, como a energia de madrugada na indústria.</p></div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">122</div><div class="lbl">itens varridos hoje nas <b>cinco fontes</b> do radar: notícias, buscas, vídeos, o mural dos programadores e a vitrine de produtos novos</div></div>
+      <div class="numero"><div class="big">6 de 10</div><div class="lbl">dos assuntos do mural dos programadores <b>entraram nas últimas 24 horas</b> — dia de movimento acima do normal</div></div>
+      <div class="numero"><div class="big">3 de 10</div><div class="lbl">desses assuntos falam do <b>motor da IA</b>: preço, qualidade e um concorrente novo</div></div>
+      <div class="numero"><div class="big">4</div><div class="lbl">textos de <b>origens diferentes</b>, no mesmo dia, dizendo que o trabalho escasso virou entender</div></div>
+    </div>
+
+    <div class="olho">
+      <p>Fabricar virou serviço de madrugada, com tarifa de madrugada. O que ninguém terceiriza é entender o que saiu.</p>
+      <span class="quem">A frase da edição</span>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Você passou anos vendendo <b>entrega</b>: a campanha, o texto, a automação montada. O preço dessa entrega cai todo mês, e essa queda não vai parar.</p>
+      <p>O que subiu de preço no mesmo movimento é o cargo que ninguém contratou ainda: <b>a pessoa que lê o que o robô fez e responde se está certo</b>. Isso não é uma ferramenta nova para aprender. É a mesma coisa que você já faz quando abre a conta de tráfego de um cliente e diz onde o dinheiro está vazando.</p>
+      <p>Só que agora tem nome, tem hora marcada e cabe num contrato mensal.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 02 ══════════ -->
+  <section class="materia" id="s2">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes, na ordem em que chegaram. Os três primeiros entraram de madrugada, enquanto você dormia.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Saiu um motor chinês novo que mira o topo em escrever programa</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 2h19</span><span>z.ai, no mural dos programadores</span></div>
+          <p class="texto">A empresa chinesa Z.ai anunciou o GLM-5.3 e diz que ele briga com os melhores em escrever programa. O próprio anúncio avisa que o motor desenvolveu habilidades ligadas a segurança de computador que não estavam previstas.</p>
+          <p class="texto">Para você isso é preço. Cada motor novo que encosta nos líderes puxa a conta de todo mundo para baixo — e tira o poder de qualquer fornecedor único sobre a sua operação.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Motor</b> aqui é o programa que gera as respostas, o mesmo tipo de peça que faz o ChatGPT funcionar. <b>Habilidade que não estava prevista</b> é quando a máquina passa a fazer algo que ninguém programou nela — como um carro de fábrica que sai andando melhor na chuva sem ninguém ter pedido. É motivo de cuidado, não de festa.</p></div>
+          <div class="link"><a href="https://z.ai/blog/glm-5.3">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>A conta da IA agora tem horário de pico, como a de luz</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 6h55</span><span>DeepSeek</span></div>
+          <p class="texto">A DeepSeek publicou uma atualização da tabela de preço separando horário cheio de horário vazio. Quem roda fora do pico paga menos pela mesma coisa.</p>
+          <p class="texto">É a segunda vez que o mercado copia um mecanismo antigo da indústria: a fábrica que liga o forno de madrugada gasta menos por peça. A diferença é que aqui basta escolher a hora de disparar.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Token</b> é a unidade que as empresas de IA cobram — como o minuto na conta de telefone antiga. Você paga por texto que entra e por texto que sai. <b>Fora de pico</b> é o horário de menos gente usando, com preço menor, igual à tarifa noturna de energia.</p></div>
+          <div class="link"><a href="https://api-docs.deepseek.com/news/news260813/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>"Por que o Opus 5 parece pior de trabalhar?" — o texto que subiu no mural hoje de manhã</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 7h12</span><span>blog pessoal, no mural dos programadores</span></div>
+          <p class="texto">Um programador publicou um texto dizendo que a última versão do Claude, o assistente da Anthropic, ficou pior de usar no dia a dia. É opinião de uma pessoa, não comunicado de empresa — mas subiu no mural e virou conversa.</p>
+          <p class="texto">O que interessa para você não é quem tem razão. É que <b>a troca de versão mexe na sua operação sem avisar</b>. Quem montou automação amarrada a um fornecedor só sente isso no bolso do cliente.</p>
+          <div class="link"><a href="https://mun-logadan.github.io/why-does-opus-5-feel-worse/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>"Entender virou o gargalo": o ensaio que fechou o raciocínio do dia</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h47</span><span>Geoffrey Litt, no mural dos programadores</span></div>
+          <p class="texto">O argumento é curto: quando a máquina passa a escrever rápido e barato, o que trava a fila deixa de ser a produção. Passa a ser a capacidade humana de entender o que foi produzido antes de assinar embaixo.</p>
+          <p class="texto">É a mesma lógica da obra. Levantar parede ficou rápido; o que segura a entrega é o engenheiro que assina que aquilo está de pé.</p>
+          <div class="link"><a href="https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>A OpenAI publicou um levantamento sobre como as organizações usam o ChatGPT</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 16h25</span><span>OpenAI (documento em PDF)</span></div>
+          <p class="texto">O documento é da própria dona do ChatGPT e usa dados de uso das empresas que pagam pelo serviço. É a fonte com mais acesso a esse dado no mundo — e, justamente por isso, é parte interessada.</p>
+          <p class="texto">Vale abrir com calma na segunda. Um levantamento com número de uso real é o tipo de material que você cita numa proposta e cala a mesa.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>PDF</b> aqui é só o formato do arquivo — o documento abre e imprime igual em qualquer aparelho. O conteúdo dele não foi lido nesta edição: está na lista do que não deu para confirmar, no fim da página.</p></div>
+          <div class="link"><a href="https://cdn.openai.com/pdf/how-organizations-use-chatgpt.pdf">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Quando o robô escreve o código, sobra para alguém desenhar o negócio</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 21h04</span><span>Foco Cidade</span></div>
+          <p class="texto">A reportagem brasileira chega ao mesmo lugar do ensaio, pelo caminho do negócio. Se a parte de escrever programa fica automática, o trabalho que sobra é decidir <b>o que</b> construir e para quem.</p>
+          <p class="texto">Esse é o cargo que a sua bagagem já cobre. Você não vende linha de código: você vende a decisão de qual processo entra na máquina primeiro.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxORFFuZ3NsM0VlbDJzMUtvV2tDXzhhS21nQWFQaWt4VTJQVmx0amxLME1SaS16dUpjTVpSQjEwcWxENEtUcHFqWUdVbmt1VW9Ya05MdHFRbHozYTlpZTlkVDdUOWZBbjJScHE2SzZFUndUak15OXU1Y2RaYkNWeFhncUpnZmE4WlVucjZURDNFTTBZZm12VEhuMmRVZVhKQzlWYVhscWlraw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>No SEO entre empresas, o clique deixou de ser o placar</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h48</span><span>iMasters</span></div>
+          <p class="texto">A análise trata de venda de empresa para empresa: o comprador pergunta na IA, lê a resposta pronta e não clica em ninguém. O site continua influenciando a compra — só que sem aparecer no relatório de visitas.</p>
+          <p class="texto">Quem só mede clique vai jurar que o trabalho parou de funcionar. Quem mede <b>menção</b> — se a sua marca aparece na resposta — enxerga o que está acontecendo de verdade.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>SEO</b> é o trabalho de fazer o seu site aparecer nas buscas. <b>Aparecer nas respostas da IA</b> é a versão nova disso: em vez de brigar pela primeira posição do Google, você briga para ser o nome citado quando a IA responde. É a vitrine da loja quando a rua muda de lugar.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPYUxrMlV1U3NNMTZFSXRYakEzU0hZNXM4WHM4M3FfdGJjUDJoOE1PZC1wYkNPNTBYcWZ6a1hScTFvVHhUY2lGSkRibU52S0JhVTA2V29UbkN3Q1F1OGhZTkZpNGl4R295TGtxN1ZDM1pwTUdwYkdKTFB3M29UaWs2RkZZNFBLZlc4Z0ZsUmdWOWh0cGpoeUJEeg?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Na vitrine de produtos novos: tarefas, música e um motor rápido do Google</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 0h29</span><span>Product Hunt</span></div>
+          <p class="texto">Entraram, nessa ordem: <b>Basedash Tasks</b> hoje de madrugada, <b>Suno Studio 2.0</b> — de música — ontem às 17h42, e <b>Gemini 3.7 Flash</b>, um motor rápido do Google, ontem às 15h16.</p>
+          <p class="texto">Da vitrine só temos o nome e quem apresentou. Serve como termômetro do que vai bater na sua mesa daqui a alguns meses, não como indicação de compra.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Product Hunt</b> é a vitrine onde produtos novos são lançados e o público vota. <b>Motor rápido</b> é a versão mais barata e ligeira de um motor de IA: responde na hora, custa menos, acerta menos em tarefa difícil.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/basedash">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══════════ 03 ══════════ -->
+  <section class="materia" id="s3">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+    <p class="abertura">Se a mesma tarefa custa menos às três da manhã, <b>a hora do disparo virou uma decisão de arquitetura</b> — e quase ninguém está tomando essa decisão.</p>
+
+    <p class="texto">A padaria não assa às sete da manhã porque o pão fica melhor. Assa de madrugada porque o forno está livre e a conta é outra. A tabela publicada hoje pela DeepSeek traz esse mesmo raciocínio para dentro da sua automação.</p>
+
+    <p class="texto">A pergunta prática é uma só: <b>o que precisa responder agora e o que pode esperar até de madrugada?</b> A maior parte da operação que você monta para cliente é da segunda categoria — e roda no horário caro sem ninguém ter pensado nisso.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Fila de madrugada</b> é guardar as tarefas que não têm pressa numa lista e mandar todas juntas na hora barata. <b>Tempo real</b> é o contrário: o cliente está do outro lado esperando, então tem que sair agora, custe o que custar.</p></div>
+
+    <div class="nota">
+      <div class="r">O corte, na prática, na operação que você já monta</div>
+      <ul class="lista">
+        <li><b>Responde agora (horário caro, sem discussão):</b> a conversa no WhatsApp com o cliente, a resposta do robô de atendimento, a triagem de quem acabou de preencher o formulário.</li>
+        <li><b>Pode esperar até as três da manhã (horário barato):</b> resumir as conversas do dia, classificar a base de contatos, gerar as variações de anúncio, escrever os textos de acompanhamento da semana, limpar e organizar planilha de venda.</li>
+        <li><b>Nem precisa de IA:</b> tudo que uma regra simples resolve. Se é "se acontecer X, mande Y", isso não é trabalho de robô — é trabalho de gatilho, e custa zero.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Essa separação vale dinheiro sem trocar uma linha do que já está montado. É a mesma automação, rodando em outra hora.</p>
+      <p>E ela abre uma conversa fácil com quem já é seu cliente: <b>"a sua automação roda toda no horário caro; dá para mover metade dela para a madrugada"</b>. Você não está vendendo tecnologia nova. Está vendendo a leitura da conta — que é exatamente o assunto do dia de hoje.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 ══════════ -->
+  <section class="materia" id="s4">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+    <p class="abertura">Na edição de ontem, o movimento era escrever o vocabulário da casa <b>para a máquina te entender</b>. Hoje o mundo pediu o caminho de volta: a folha em que o robô presta contas <b>para você entender ele</b>.</p>
+
+    <p class="texto">Todo cliente que ligou um robô está na mesma situação: a coisa roda, manda mensagem, responde gente — e ninguém sabe dizer o que ela fez na semana passada. É empregado sem holerite e sem relatório.</p>
+
+    <p class="texto">O futurista Neil Redding disse ao NeoFeed que o novo trabalho do dono é reger um time de robôs. Só que maestro sem partitura não rege nada. A partitura é uma folha simples, semanal, em português, que o dono lê em três minutos.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Prestação de contas do robô</b> é uma página por semana com quatro coisas: quantas vezes ele agiu, o que ele decidiu sozinho, onde ele errou e quanto custou. É o extrato do banco — ninguém aceitaria uma conta bancária sem extrato, mas todo mundo aceita um robô sem extrato.</p></div>
+
+    <p class="texto">O ponto comercial é este: <b>a folha não é um brinde da automação — é um serviço separado, mensal, que sobrevive quando a automação já está paga</b>. É o mesmo lugar que o relatório de tráfego ocupa hoje na sua rotina.</p>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p><b>1.</b> Escolha <b>uma</b> automação sua que já roda há mais de um mês. Abra tudo que ela produziu nos últimos sete dias e leia com olho de auditor, não de quem montou.</p>
+      <p><b>2.</b> Escreva em uma folha só, sem termo técnico: quantas vezes ela agiu · quantas decisões ela tomou sem perguntar a ninguém · <b>as três respostas mais estranhas que ela deu</b> · o custo da semana. Se você não conseguir preencher algum campo, esse buraco é o produto.</p>
+      <p><b>3.</b> Mande essa folha hoje para <b>dois clientes</b> com uma frase: "fiz isso na minha operação e achei três coisas que eu não sabia; quer que eu faça na sua na semana que vem?".</p>
+      <p>Esforço: uma tarde · Ativo gerado: um relatório repetível todo mês, com preço próprio · Risco: descobrir que o seu robô anda dizendo bobagem — que é justamente a venda</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 05 ══════════ -->
+  <section class="materia" id="s5">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+    <p class="texto">Tudo que está escrito acima saiu de uma destas fontes, varridas hoje pela manhã. Horários convertidos para o horário de Brasília.</p>
+
+    <ol class="src">
+      <li><b>Z.ai — GLM-5.3: Frontier coding with emergent cyber capabilities.</b> Hoje, 2h19. <a href="https://z.ai/blog/glm-5.3">z.ai/blog/glm-5.3</a></li>
+      <li><b>DeepSeek — peak/off-peak pricing update.</b> Hoje, 6h55. <a href="https://api-docs.deepseek.com/news/news260813/">api-docs.deepseek.com</a></li>
+      <li><b>"Why does Opus 5 feel worse to work with?"</b> Blog pessoal, hoje, 7h12. <a href="https://mun-logadan.github.io/why-does-opus-5-feel-worse/">mun-logadan.github.io</a></li>
+      <li><b>Geoffrey Litt — "Understanding is the new bottleneck".</b> Ontem, 15h47. <a href="https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck">geoffreylitt.com</a></li>
+      <li><b>OpenAI — "How Organizations Use AI: Evidence from ChatGPT".</b> Ontem, 16h25. <a href="https://cdn.openai.com/pdf/how-organizations-use-chatgpt.pdf">cdn.openai.com (PDF)</a></li>
+      <li><b>Foco Cidade — "Quando os agentes de IA escrevem o código, quem desenha o negócio".</b> Ontem, 21h04. <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxORFFuZ3NsM0VlbDJzMUtvV2tDXzhhS21nQWFQaWt4VTJQVmx0amxLME1SaS16dUpjTVpSQjEwcWxENEtUcHFqWUdVbmt1VW9Ya05MdHFRbHozYTlpZTlkVDdUOWZBbjJScHE2SzZFUndUak15OXU1Y2RaYkNWeFhncUpnZmE4WlVucjZURDNFTTBZZm12VEhuMmRVZVhKQzlWYVhscWlraw?oc=5">abrir a matéria</a></li>
+      <li><b>NeoFeed — "A nova missão dos CEOs é ser um maestro de agentes de IA", com o futurista Neil Redding.</b> Ontem, 14h30. <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNRTlzaWJKMTc5T0xTOFBjSVdMZGxEbHlBemtWUzAxaURzbnlTSlFCUHRDSjd1NnI1ZVRzaTJmWnBLSVJwTThYV0xQQk4xU0pJOGpvZklyRkl2Q3dTNkhab1RkT1NWZWVkeEQ5SUI3VkI5UUJUNzZubXZseF9weHN5ZWI4cGJpSnRoU1F2YVp6RjZDLVROM0JLdjd3M2ZZSEVMb0k0Z1pnMEN6RXgyNnBLQ0Y0LU1RRHpvVDlzNFljaw?oc=5">abrir a matéria</a></li>
+      <li><b>iMasters — "SEO B2B e AI Overviews: além do clique".</b> Ontem, 15h48. <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxPYUxrMlV1U3NNMTZFSXRYakEzU0hZNXM4WHM4M3FfdGJjUDJoOE1PZC1wYkNPNTBYcWZ6a1hScTFvVHhUY2lGSkRibU52S0JhVTA2V29UbkN3Q1F1OGhZTkZpNGl4R295TGtxN1ZDM1pwTUdwYkdKTFB3M29UaWs2RkZZNFBLZlc4Z0ZsUmdWOWh0cGpoeUJEeg?oc=5">abrir a matéria</a></li>
+      <li><b>Product Hunt — Basedash Tasks.</b> Hoje, 0h29. <a href="https://www.producthunt.com/products/basedash">producthunt.com</a></li>
+      <li><b>Product Hunt — Suno Studio 2.0.</b> Ontem, 17h42. <a href="https://www.producthunt.com/products/suno">producthunt.com</a></li>
+      <li><b>Product Hunt — Gemini 3.7 Flash.</b> Ontem, 15h16. <a href="https://www.producthunt.com/products/gemini-3-7-flash">producthunt.com</a></li>
+      <li><b>ClienteSA — "Como as empresas brasileiras estão construindo os agentes de IA".</b> Ontem, 10h45. Já tratado na edição Nº 011.</li>
+      <li><b>Mural dos programadores (Hacker News)</b> — 10 assuntos varridos hoje pela manhã, dos quais 6 entraram nas últimas 24 horas.</li>
+      <li><b>Vitrine de produtos novos (Product Hunt)</b> — 10 lançamentos varridos.</li>
+      <li><b>Notícias em português</b> — 13 buscas, 78 matérias varridas.</li>
+      <li><b>Vídeos</b> — 4 buscas, 24 vídeos varridos. Nada publicado hoje entrou nesta edição.</li>
+      <li><b>Buscas em alta no Brasil</b> — 10 termos varridos. Nenhum era sobre IA; por isso não há bloco de buscas nesta edição.</li>
+      <li><b>Total varrido nesta edição:</b> 122 itens.</li>
+    </ol>
+
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>1.</b> Do estudo da OpenAI, temos o título e o arquivo. <b>Nenhum número dele foi lido aqui</b> — não cite conclusão desse documento sem abrir o PDF.<br><b>2.</b> Do motor GLM-5.3, temos o anúncio da própria empresa. Se ele é de código aberto — se dá para baixar e rodar por conta — não foi verificado. Comparação com concorrente é afirmação de quem vende.<br><b>3.</b> Da tabela da DeepSeek, sabemos que existe preço de pico e fora de pico. <b>Os valores e os horários exatos não foram lidos</b>; confira na página antes de prometer economia a cliente.<br><b>4.</b> O texto sobre o Opus 5 é opinião de uma pessoa em blog pessoal, não posição da Anthropic nem medição.<br><b>5.</b> Da vitrine de produtos novos temos nome, data e quem apresentou. O que cada produto faz não foi confirmado.<br><b>6.</b> Os links de notícia brasileira passam pelo redirecionador do agregador do Google. O título é o que a fonte publicou; o texto completo só abrindo.<br><b>7.</b> Os horários vieram no padrão internacional das fontes e foram convertidos para o horário de Brasília.</p></div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Nº 012 · 14 de agosto de 2026<br>Próxima edição: segunda-feira, 17 de agosto — Radar Completo, com o bloco de posicionamento</div>
+
+</div>
+</body>
+</html>
