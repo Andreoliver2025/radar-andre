@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 013 — O Brasil ligou os robôs e esqueceu de contratar o chefe deles</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Edição completa</div>
+    <h1>O Brasil ligou os robôs antes de contratar o chefe deles</h1>
+    <p class="chamada">Na sexta saiu o número: 76 em cada 100 empresas brasileiras já têm robô de IA trabalhando de verdade — mais que nos Estados Unidos. Na mesma semana, os vazamentos de dado envolvendo IA mais que dobraram e uma empresa daqui criou um cargo só para responder pelos robôs. Montar deixou de ser a vaga. Responder por eles é a vaga.</p>
+    <div class="dateline">Edição Nº 013 · segunda-feira, 17 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#movimento">O movimento da semana</a><div class="d">O Brasil virou o país com mais robô ligado — e o menos preparado para responder por eles.</div></div></li>
+      <li><div><a href="#novidades">As novidades da semana</a><div class="d">Nove recortes entre imprensa, mural de programadores e vitrine de lançamentos.</div></div></li>
+      <li><div><a href="#territorio">Seu território: robôs, automação e encaixes</a><div class="d">O que saiu no seu terreno e a distância entre quem monta e quem mantém.</div></div></li>
+      <li><div><a href="#negocio">IA aplicada a negócio</a><div class="d">Vendas, atendimento, follow-up, busca e tráfego: onde a conta já fecha.</div></div></li>
+      <li><div><a href="#imagem">IA de imagem e vídeo</a><div class="d">Semana quieta em lançamento e barulhenta em prova: o que mudou de lugar.</div></div></li>
+      <li><div><a href="#futuro">🔭 Para onde o mundo vai</a><div class="d">Espaços em aberto, o recado do chefe da Anthropic e a primeira startup.</div></div></li>
+      <li><div><a href="#onde-estar">⭐ Onde você deve estar agora</a><div class="d">Três movimentos cruzando a semana com o que você já entrega — e o primeiro passo de cada.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">A lista completa de fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 01 ═══════════ -->
+  <section class="materia" id="movimento">
+    <div class="titulo"><span class="n">01</span><h2>O movimento da semana</h2><span class="fio"></span></div>
+
+    <p class="abertura">Durante dois anos a pergunta das empresas brasileiras foi <b>"será que isso funciona aqui?"</b>. Na sexta-feira a resposta chegou em forma de número, e ela desmontou a pergunta: já funciona, já está ligado, e já está ligado em mais empresas daqui do que de lá.</p>
+
+    <p class="texto capitular">Na sexta ao meio-dia, a Rádio Guaíba publicou o dado que fecha o assunto: <b>76% das empresas brasileiras já operam robôs de IA em produção</b> — quer dizer, trabalhando de verdade no dia a dia, não em teste. Duas horas antes, o Olhar Digital tinha publicado a outra metade da mesma notícia: o Brasil passou os Estados Unidos na adoção de robôs de IA pelas empresas. Não é promessa. É inventário.</p>
+
+    <p class="texto">Agora ponha ao lado o que saiu na mesma semana. Na terça, o IT Forum publicou que as <b>violações de dados envolvendo IA mais que dobraram</b> conforme os robôs ganharam autonomia. Na mesma terça de manhã, o Cyber Security Brazil mostrou como isso acontece na prática: servidores de encaixe falsificados conseguem induzir o robô a entregar chaves de acesso e código-fonte da empresa.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Em produção</b> quer dizer que o robô já está no ar atendendo cliente ou rodando processo — não é mais piloto, é operação. <b>Servidor de encaixe</b> é o MCP: um padrão de tomada de três pinos que faz a IA conversar com as ferramentas da empresa. Um encaixe falsificado é uma tomada pirata: por fora é igual, por dentro está ligada na casa do vizinho.</p></div>
+
+    <p class="texto">E, na madrugada de sexta, a peça que amarra o raciocínio. A Teltec Solutions anunciou que criou <b>uma liderança dedicada só a estratégia e automação de IA</b>. Não uma ferramenta nova. Um cargo. Alguém com nome, mesa e responsabilidade sobre o que os robôs fazem.</p>
+
+    <p class="texto">Três fatos, uma história só. O país instalou o robô mais rápido que o resto do mundo. A conta apareceu na forma de dado saindo por porta que ninguém vigiava. E a primeira resposta do mercado não foi comprar mais tecnologia — foi <b>criar um responsável</b>.</p>
+
+    <div class="olho">
+      <p>O Brasil ligou setenta e seis por cento dos robôs e não contratou ninguém para responder por eles. Essa cadeira está vazia em quase toda empresa do país.</p>
+      <span class="quem">A leitura da semana</span>
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">76%</div><div class="lbl">das empresas brasileiras já têm <b>robô de IA trabalhando em produção</b>, não em teste. <br><i>Rádio Guaíba, sexta ao meio-dia</i></div></div>
+      <div class="numero"><div class="big">mais que o dobro</div><div class="lbl">foi o salto nas <b>violações de dados envolvendo IA</b> conforme os robôs ganharam autonomia. <br><i>IT Forum, terça 16h24</i></div></div>
+      <div class="numero"><div class="big">2,7 milhões</div><div class="lbl">de visualizações somam os cinco vídeos de <b>"como montar seu robô"</b> do sinal desta semana.</div></div>
+      <div class="numero"><div class="big">44 mil</div><div class="lbl">de visualizações somam os seis vídeos de <b>"como manter o robô de pé e fazer follow-up"</b>. Sessenta vezes menos.</div></div>
+    </div>
+
+    <p class="texto">Repare na assimetria dos dois últimos quadros. Quase três milhões de pessoas estudando como montar. Quarenta e quatro mil estudando como manter. É a mesma distância entre a fila da autoescola e a fila da oficina mecânica — só que o país acabou de comprar carro em massa.</p>
+
+    <div class="nota">
+      <div class="r">O arco das últimas edições completas</div>
+      <ul class="lista">
+        <li><b>Nº 008 (10/08):</b> o robô desceu da nuvem e pediu um quarto dentro da empresa. A venda era instalar e pôr parede em volta.</li>
+        <li><b>Meio de semana:</b> a IA passou a marcar o próprio texto, e o robô sem o vocabulário da casa organizado ficou caro.</li>
+        <li><b>Nº 012 (14/08):</b> produzir ficou barato; entender o que a máquina fez virou o gargalo.</li>
+        <li><b>Nº 013 (hoje):</b> o parque já está instalado. Falta quem assine embaixo. A escada é a mesma: instalar → entender → <b>responder</b>.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Você passou os últimos anos montando: atendimento, follow-up, tráfego, automações, times de robôs. Essa habilidade continua valendo — só parou de ser <b>escassa</b>. O que ficou escasso nesta semana é uma pessoa que olhe para os robôs que já estão ligados e diga, em português, o que eles fizeram, o que eles tocaram e quanto isso rendeu.</p>
+      <p>Não é um curso novo. É a mesma disciplina de follow-up que você já aplica em cliente, aplicada a robô. <b>A vaga não é técnica. É de responsabilidade.</b></p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 02 ═══════════ -->
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades da semana</h2><span class="fio"></span></div>
+
+    <p class="abertura">Nove recortes entre imprensa brasileira, o mural onde os programadores do mundo postam o que saiu e a vitrine de produtos novos. Estão em ordem de peso para o seu trabalho, não de horário.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>O Brasil passou os Estados Unidos: 76 em cada 100 empresas daqui já têm robô trabalhando</h3>
+          <div class="credito"><span class="frescor antes">🟡 sexta · meio-dia</span><span>Rádio Guaíba e Olhar Digital</span></div>
+          <p class="texto">O levantamento diz que 76% das empresas brasileiras já operam robôs de IA em produção. Duas horas antes, o Olhar Digital tinha publicado que o Brasil superou os Estados Unidos nessa adoção.</p>
+          <p class="texto">Guarde a diferença entre os dois verbos. <b>Testar</b> é ligar numa sala fechada e ver o que acontece. <b>Operar em produção</b> é o robô já falando com cliente, mexendo em pedido, tocando o sistema da empresa. O segundo tem consequência.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Robô de IA aqui quer dizer um programa que executa uma tarefa do início ao fim sozinho — recebe a mensagem do cliente, consulta o sistema, responde e registra. Não é o chat que só responde pergunta.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOSEwzNVFxNWZYYThNZFJpZ3F1OXN5aC0zdWd0WXpzbWo4dkNYdUhqYTFjanRMaHZiVUpiYk9XQ2tUb25wcFFKd0FpRkNZZ3dwYWVBY3JVMnZuT3ZyTGNqVkQ2RDNvNnB5VFZWc3JMNTRSNWNrNVBwaUo2NFJMMUNENWlSbmN6S0RkdGR2azZjeEZ2TmJYM2lhSHh6Sjg?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>"Funcionários de IA" chegam ao balcão do lojista — e a confederação dos dirigentes lojistas resolveu explicar o que é isso</h3>
+          <div class="credito"><span class="frescor antes">🟡 sábado · 16h33</span><span>CNDL — Confederação Nacional de Dirigentes Lojistas</span></div>
+          <p class="texto">O recorte mais fresco da semana não saiu de uma empresa de tecnologia. Saiu da entidade que representa lojista no Brasil inteiro. O texto fala em "funcionários de IA" ganhando espaço nas empresas e redefinindo a produtividade.</p>
+          <p class="texto">Quando a linguagem muda de <b>ferramenta</b> para <b>funcionário</b>, o comprador muda junto. Ferramenta quem compra é o técnico. Funcionário quem contrata é o dono. E dono contrata perguntando três coisas: o que ele faz, quanto custa e quem responde se ele errar.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Funcionário de IA" é o mesmo robô de sempre, vendido com outro nome — um que o dono da loja entende sem tradução. Repare: é você que precisa aprender a falar assim, não ele que precisa aprender a falar como você.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPN2dLMlVUMDhRYmRJcEtzLXZWSmxDNXlVdDFQWHNKWXp0VWhHWHVjQThYUzEtQ1R2a2FjLUp1TmVwS3VGeTVTM2gwNHF4cjczNW9OQkg0eHZ1M2FHcTRRQ1BVWG9YMktYaTVLWThDTzdFcEthUUpvZWhpcTJoUV9UOGQwRDRXaTFWY243RG9VcXF1NEZMalNpendRS2NRenhxeEtkdlIzTTV0RGh3RHFlcnRtYVg3Y0lBdGNSeTFaUVRTSDU1RThaWQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>As violações de dados envolvendo IA mais que dobraram conforme os robôs ganharam autonomia</h3>
+          <div class="credito"><span class="frescor antes">🟡 terça · 16h24</span><span>IT Forum</span></div>
+          <p class="texto">Um estudo citado pelo IT Forum mostra que os incidentes de vazamento envolvendo IA mais que dobraram, e aponta o avanço dos robôs autônomos como o motivo.</p>
+          <p class="texto">Faz sentido aritmético. Um chat que só responde texto tem uma porta. Um robô que consulta o sistema de pedidos, lê o e-mail e mexe na planilha tem quatro. Cada tarefa nova que você entrega ao robô é uma fechadura a mais para cuidar.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Não é que a IA virou mais perigosa. É que ela ganhou chave de mais portas da casa. O risco cresceu junto com a permissão — e permissão foi dada às pressas, na correria de sair na frente.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTFBzR0xhSl9oY0FNTGt4MzNMd0YyQkpaUThna3pQNllHdnU2UVl3enI3am11TFhqQmFQMkJrT1JXLTkwVjkxdGJUZWZaSTJ3R3VQeUJrblRVaVVHa1NTbVNZNzAxNmFBVmt4YTFRaG9fWW9QUG1nd3RUd1FSZjA?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Tomada pirata: encaixe falsificado consegue fazer o robô entregar as chaves da casa</h3>
+          <div class="credito"><span class="frescor antes">🟡 terça · 8h07</span><span>Cyber Security Brazil</span></div>
+          <p class="texto">A reportagem mostra o caminho concreto do estrago da notícia anterior. Servidores de encaixe maliciosos conseguem induzir robôs de IA a vazar chaves de acesso e código-fonte da empresa.</p>
+          <p class="texto">O detalhe comercial é este: o encaixe é justamente a peça que todo mundo está instalando às pressas para o robô conversar com os sistemas. É o item da moda e o item sem inspeção ao mesmo tempo.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>MCP é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. Um encaixe malicioso é uma extensão comprada em camelô: entra no lugar certo, mas o fio vai para outro endereço.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQN0RiM19XMEFMVTh5VzJocXVMc0ExcEdpcVBZOEpwV2FyZnZ2djM4M0JLUGNpQjVxeENqTkhOeU1iWVNEWE1rNDN5bnFxemRvQVBIc0ZUbElhc1I5NDVDWjRzNG84VTFBRE5uaDh6NzVWYzRVUDJuS0tlQkFod2xaSDJScXBOdUNobnhuS2pvWEZwZVRsV1MyYkp1ZEpwUzBkRGtqbnpITENwa3hEUXVXMUppeVhrTzJDaEVFaG5WQ1pTbGJBblZGZnBEaw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Uma empresa brasileira criou o cargo de chefe da estratégia e da automação de IA</h3>
+          <div class="credito"><span class="frescor antes">🟡 sexta · madrugada</span><span>noticenter.com.br</span></div>
+          <p class="texto">A Teltec Solutions anunciou uma liderança dedicada só a estratégia e automação de IA. É a notícia mais curta da semana e provavelmente a mais importante para você.</p>
+          <p class="texto">Empresa cria cargo quando o problema deixou de caber no expediente de alguém que já tinha outra função. É o mesmo movimento de quando as lojas passaram a ter alguém só para cuidar do site: primeiro era o sobrinho, depois virou vaga.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Tradução comercial direta: a competência que você vende acabou de ganhar um nome dentro do organograma. Onde existe cargo, existe orçamento. E onde a empresa é pequena demais para contratar o cargo, ela terceiriza.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPZFp6QlFuV0tYNTFwNEVEWmdIMlQ0U0RCbnlPU2xiOU9PbkdIUEdCakRONGF6V1lCdEFoTDMxZ0tDdS1mZGpGeVNUNkN4VllyMEpHZnRZZ3E0NklVSDJnRFM1cXNNX2ozZHdpc0Uzekk0empuVmlqNjMxdktEenc4VUc4eDBVUXRHZ3VkX19zQzQxNmMwdW92YVU4akE3VkFnTk56OEZKNWtkWFk2TVR1TU9IZlVfZw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Os robôs já estão fazendo compra de empresa para empresa</h3>
+          <div class="credito"><span class="frescor antes">🟡 quarta · 16h17</span><span>Terra</span></div>
+          <p class="texto">A reportagem trata do avanço dos robôs de IA nas compras entre empresas — o robô pesquisando fornecedor, comparando e encaminhando a decisão.</p>
+          <p class="texto">Pare um segundo nisso, porque muda o seu trabalho de SEO e de anúncio. Se quem está do outro lado da pesquisa é um programa, ele não é sensível a cor de botão, a fila de anúncio nem a promessa bonita. Ele lê o que está escrito e compara.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Até agora você otimizava para uma pessoa que rola a tela. Agora existe um segundo cliente do outro lado: um programa que lê a página inteira, não se distrai e não tem paciência para página que esconde preço e condição.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQXzlVWGZLUi0tMUpDTS1UQ09IYXJpQlZqTXN2V294MHJJQlg4RTA2VHM5UzJGOGVlUnpRcUVmYmc3ejRvWWJBNUxzV2NvMzJkU1dmUmxBZ3BIU05HNUZKcUljYTRmMHkycXJkQnc1Y2tiTkY2SDBhUXA2N1J0N0ZXUm9oZFhKb1NCdnVIN1U3eVJqcm8zLU42T0M2Yk04RGU2SkdjY29DZ1NjY3A4ZGY5em45alRMQlNvZ3RYX1JkOGVoUlAxVHFv?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>O visitante que veio da IA converte mais que o do anúncio pago</h3>
+          <div class="credito"><span class="frescor antes">🟡 sexta · 16h02</span><span>iMasters</span></div>
+          <p class="texto">O texto sustenta que o visitante que chega pela resposta de uma IA converte mais que o que chega por anúncio pago. A explicação é de bom senso comercial: quem chega por anúncio foi interrompido; quem chega pela resposta da IA já fez a pergunta e já recebeu uma recomendação.</p>
+          <p class="texto">É menos gente, mas gente com a decisão mais adiantada. Do lado do custo, o número é ainda mais interessante: você não paga por esse clique.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>PPC é anúncio pago por clique — o que você já faz há anos. Tráfego de IA é a visita que chega porque o ChatGPT (ou outra IA de conversa) citou o site na resposta. Uma é aluguel de vitrine. A outra é indicação.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQbjVNaWVyMnAwQjY1R1JFY0huQl9EZ2QxWlFLMUE5anpzRWR6TlRCWXJhaUF4Zm9hY3hsd05WWFVmN011dXptLXhpYlphM1ZrV0hkcS1TOTZwQ2YzWmVWNHFfVTZVY0RmX2pMNi1Yc0J5QmhIZU9DWUZNaXNFbWVUUVNPOE04VFBIdkZVcXUyNXpGSHlsbFNEWmF4X28?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>No mural dos programadores: o chefe da Anthropic falou de regulação, e um motor aberto chinês virou assunto por pensar demais</h3>
+          <div class="credito"><span class="frescor antes">🟡 domingo à noite</span><span>Hacker News</span></div>
+          <p class="texto">Dois assuntos subiram no mural de programadores neste fim de semana. Dario Amodei, que dirige a Anthropic, publicou um texto sobre regulação de IA e sobre como o assunto vem sendo comunicado. É a empresa que mais defende regra publicamente puxando o debate de novo.</p>
+          <p class="texto">O outro é prático. Simon Willison, um dos analistas mais lidos do setor, testou o Qwen 3.8 de 27 bilhões — um motor de código aberto — e resumiu: excelente, mas ele pensa demais por padrão. Traduzindo para custo: o motor é bom e é seu, mas gasta mais raciocínio do que precisa se você não puser rédea.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu. <b>Código aberto</b> quer dizer que qualquer um baixa e roda por conta, sem pedir licença. <b>Pensar demais</b> aqui não é elogio: cada volta a mais de raciocínio é tempo e dinheiro na conta de quem usa.</p></div>
+          <div class="link"><a href="https://simonwillison.net/2026/Aug/16/qwen-38-27b/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">09</div>
+        <div>
+          <h3>Na vitrine de produtos novos: os nomes do fim de semana apontam todos para o mesmo lugar</h3>
+          <div class="credito"><span class="frescor antes">🟡 domingo · fim da tarde</span><span>Product Hunt</span></div>
+          <p class="texto">Três lançamentos entraram na vitrine no domingo — Hansel, Vendo e Skriptr — e dois na sexta, Omni e OpenTrade. O sinal desta edição traz nome e endereço, não a descrição de cada um, então fica só o que o nome sustenta.</p>
+          <p class="texto">Um deles vale o registro pelo próprio endereço, que se descreve sozinho: o <b>Treg</b> aparece na vitrine sob o rótulo "central de escolha de ferramentas". A leitura é a mesma da semana: quando alguém lança uma central para organizar as ferramentas do robô, é porque já tem ferramenta demais ligada e ninguém sabe qual está sendo usada.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Product Hunt é a vitrine onde produtos novos são lançados todo dia. Um produto que só organiza o que já existe é sempre um bom termômetro: significa que a bagunça virou grande o bastante para alguém cobrar por arrumá-la.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/treg-openrouter-for-tools">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ 03 ═══════════ -->
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: robôs, automação e encaixes</h2><span class="fio"></span></div>
+
+    <p class="abertura">Esta é a seção do seu terreno — agentes, squads, skills, automações e os encaixes que ligam tudo. E o terreno mudou de fase nesta semana: saiu do "como faço" e entrou no "quem cuida".</p>
+
+    <p class="texto">Na terça à noite, o portal SEGS publicou um texto com um título que resume a virada: <b>o fim da automação superficial nas empresas</b>. Automação superficial é aquela que responde bonito e não muda número nenhum. Serve para a reunião de apresentação e some no terceiro mês.</p>
+
+    <p class="texto">Uma hora e meia depois, no mesmo dia, o Sala da Notícia publicou o outro lado da moeda: as empresas <b>investem em robôs de IA mas não sabem o que fazer com os dados</b> que eles produzem. As duas notícias, no mesmo dia, descrevem o mesmo buraco por fora e por dentro.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>Pense num restaurante que instalou câmera em todas as mesas e nunca assistiu à gravação. O equipamento está lá, custou dinheiro, e não respondeu nenhuma pergunta do dono. É exatamente o que acontece com robô ligado sem ninguém lendo o que ele registrou.</p></div>
+
+    <p class="texto">Na quinta, a ClienteSA publicou um levantamento de como as empresas brasileiras estão montando os robôs por dentro. Na sexta, a Nutanix anunciou uma oferta de IA que age sozinha, pronta para empresa. E na terça, o iMasters publicou um guia de como construir <b>times de robôs</b> no ambiente da Microsoft. Repare no movimento: o "como montar" está virando produto de prateleira e material de curso ao mesmo tempo.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Time de robôs</b> é um squad de agentes: vários programas trabalhando juntos, cada um com uma função, como uma equipe de cozinha. Um recebe o pedido, outro prepara, outro confere. Quando o "como montar" vira prateleira, montar deixa de ser diferença.</p></div>
+
+    <div class="nota">
+      <div class="r">A conta de quem monta contra a de quem mantém — números do sinal desta semana</div>
+      <ul class="lista">
+        <li><b>901.733</b> visualizações · "montei um time de marketing com um agente só, sem programar"</li>
+        <li><b>758.411</b> · curso gratuito de automação para iniciantes</li>
+        <li><b>712.994</b> · "quatro robôs para automatizar 99% da sua vida"</li>
+        <li><b>206.598</b> · "como criar um robô de WhatsApp em 10 minutos"</li>
+        <li><b>14.800</b> · robô de pré-venda ligado ao sistema de clientes, com follow-up</li>
+        <li><b>10.829</b> · follow-up automático com memória do que já foi conversado</li>
+        <li><b>82</b> · follow-up personalizado pelo histórico da conversa, sem perder o toque humano</li>
+      </ul>
+    </div>
+
+    <p class="texto">Oitenta e duas visualizações. Esse é o tamanho da plateia que estuda a parte que sustenta o contrato. Não é que o assunto seja ruim — é que ele não tem promessa de atalho, então não vende curso. É por isso mesmo que ele tem preço.</p>
+
+    <div class="hoje">
+      <div class="r">O que fazer com isso</div>
+      <p>Pare de vender "eu monto o robô". Isso está no YouTube de graça para quase três milhões de pessoas. Comece a vender <b>"eu respondo pelo robô"</b>: a lista do que ele pode tocar, o registro do que ele fez e um número por mês.</p>
+      <p>O material que sustenta essa oferta você já tem. É o mesmo hábito de follow-up que você usa com cliente — voltar, medir, corrigir, mostrar. Só troca o sujeito.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 04 ═══════════ -->
+  <section class="materia" id="negocio">
+    <div class="titulo"><span class="n">04</span><h2>IA aplicada a negócio</h2><span class="fio"></span></div>
+
+    <p class="abertura">Vendas, atendimento, follow-up, busca e tráfego. Nesta semana, a novidade não foi uma ferramenta — foi o <b>comprador</b> mudar de espécie em duas frentes ao mesmo tempo.</p>
+
+    <p class="texto">Comece pela busca. Na quinta à tarde, o guairanews publicou que o SEO deixou de ser o único caminho pelo qual uma marca é descoberta. Na sexta, o iMasters mostrou o outro lado do mesmo tabuleiro: o visitante que vem da resposta de uma IA converte mais que o do anúncio pago. E, na semana anterior, o E-Commerce Brasil já tinha publicado um guia sobre otimização feita para robô.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>SEO é o trabalho de fazer o site aparecer no Google. O que está nascendo ao lado é o mesmo trabalho, mas para aparecer <b>dentro da resposta da IA</b> — quando alguém pergunta "qual a melhor clínica de X" e recebe três nomes de volta. Mesma disciplina, outro juiz.</p></div>
+
+    <p class="texto">Agora junte com a notícia de quarta: os robôs já estão comprando de empresa para empresa. Se o cliente do seu cliente delegou a pesquisa a um programa, aparecer virou uma questão de <b>ser legível</b>, não de estar em primeiro lugar. Página que esconde preço, condição e prazo some para esse tipo de leitor.</p>
+
+    <div class="olho">
+      <p>Quando quem pesquisa é um robô, aparecer deixou de ser questão de posição e virou questão de ser legível.</p>
+      <span class="quem">A frase para levar à reunião</span>
+    </div>
+
+    <p class="texto">Do lado do atendimento, o sinal desta semana confirma o que o Valor Econômico já tinha publicado no começo do mês: a IA de conversa virou a <b>interface principal</b> entre marca e consumidor. E os casos brasileiros que aparecem no radar têm número, não adjetivo: a Energisa chegou a 93,8% de acerto ao automatizar o atendimento de falta de energia, o Banco do Brasil viu o fluxo de Pix crescer 69% com IA de conversa e a Wine reorganizou o atendimento no WhatsApp.</p>
+
+    <p class="texto">Do lado de vendas, dois recortes úteis. O Mundo do Marketing publicou na segunda passada um texto sobre usar IA para <b>priorizar as contas certas em vez de aumentar o volume</b> — que é o oposto do que quase toda automação de prospecção faz hoje. E o "Já é Notícia" publicou no sábado anterior um apanhado sobre onde a IA realmente ajuda o time comercial, em vez de só produzir mais mensagem.</p>
+
+    <div class="nota">
+      <div class="r">O padrão que se repete nos casos com número</div>
+      <ul class="lista">
+        <li>Todos são <b>um processo só</b>, escolhido a dedo: falta de energia, Pix, atendimento no WhatsApp. Nenhum é "IA na empresa inteira".</li>
+        <li>Todos têm <b>uma métrica única</b> definida antes de ligar: acerto, fluxo, tempo de resposta.</li>
+        <li>Nenhum aparece na imprensa sem o número. <b>Caso sem número não vira notícia — e também não vira venda.</b></li>
+      </ul>
+    </div>
+
+    <p class="texto">É a mesma lição que a Agência Sebrae repetiu no começo do mês para pequenos negócios, e que o Arena de Notícias resumiu numa manchete boa: a pequena empresa com IA já disputa espaço com marca grande. Disputa — desde que escolha uma briga por vez.</p>
+
+    <div class="hoje">
+      <div class="r">O que fazer com isso</div>
+      <p>Escolha <b>um</b> processo de um cliente seu que hoje já tem número — tempo de primeira resposta, taxa de retorno do follow-up, orçamento que virou venda. Meça esta semana, sem mexer em nada. Esse número de partida é o que transforma qualquer entrega sua em caso publicável daqui a sessenta dias.</p>
+      <p>Sem o número de antes, você entrega o mesmo trabalho e não consegue provar nada. <b>Medir antes custa uma tarde e vale o ano inteiro de portfólio.</b></p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 05 ═══════════ -->
+  <section class="materia" id="imagem">
+    <div class="titulo"><span class="n">05</span><h2>IA de imagem e vídeo</h2><span class="fio"></span></div>
+
+    <p class="abertura">Semana quieta em lançamento e barulhenta em consequência. Nenhum motor novo de imagem ou vídeo apareceu no radar entre segunda e domingo — e essa ausência, por si só, já conta uma história.</p>
+
+    <p class="texto">O que o radar capturou na frente de imagem e vídeo veio quase todo de meses anteriores, e todos os itens frescos o bastante para importar tratam do mesmo assunto: <b>prova</b>. Não "como gerar", mas "como saber se aquilo é real".</p>
+
+    <p class="texto">O Jornal da USP publicou uma análise sobre a evolução que torna os vídeos gerados cada vez mais parecidos com a realidade. O Estadão precisou desmentir um vídeo falso de uma cena diplomática entre duas figuras públicas. A polícia de São Paulo investiga um caso de manipulação de imagens de jovens em igrejas. E o Instagram entrou em polêmica ao permitir que terceiros gerem imagens a partir das fotos de uma conta.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>A fronteira mudou de lugar. Fazer imagem e vídeo bons ficou fácil e barato — a essa altura é um botão. O que ficou difícil, e portanto valioso, é <b>provar de onde a peça veio</b>: quem gerou, com que material e com autorização de quem.</p></div>
+
+    <p class="texto">Isso encosta direto no seu trabalho. Você usa IA de imagem e vídeo em conteúdo de cliente. Se o cliente é uma clínica, uma imobiliária, uma escola ou uma loja com rosto de pessoa real na campanha, a pergunta que vai chegar na sua mesa não é "consegue fazer?". Já é <b>"e se alguém disser que isso é falso?"</b>.</p>
+
+    <p class="texto">No lado das ferramentas, o único registro fresco é da vitrine de produtos: no domingo de manhã entrou um lançamento chamado <b>Skriptr</b>. O nome sugere roteiro, mas o sinal desta edição só traz o nome e o endereço — então fica registrado como pista, não como fato.</p>
+
+    <div class="hoje">
+      <div class="r">O que fazer com isso</div>
+      <p>Adote uma regra de casa e escreva ela em uma folha: <b>toda peça gerada por IA que sai do seu estúdio tem origem registrada</b> — o que foi gerado, a partir de que material, com autorização de quem, em que data. Uma linha por peça, numa planilha.</p>
+      <p>Custa dez segundos por entrega e é a diferença entre "acho que a gente fez em maio" e uma resposta com data. Quando o primeiro cliente for questionado publicamente, essa folha vira o seu maior argumento de venda — e você vai estar entre os poucos que a têm.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 06 ═══════════ -->
+  <section class="materia" id="futuro">
+    <div class="titulo"><span class="n">06</span><h2>🔭 Para onde o mundo vai</h2><span class="fio"></span></div>
+
+    <p class="abertura">Três correntes se cruzaram nesta semana: a regra chegando por cima, o motor ficando de graça por baixo, e — no meio — um espaço largo e vazio que ninguém está ocupando.</p>
+
+    <p class="texto">Por cima: no domingo à noite, Dario Amodei, que dirige a Anthropic, publicou um texto sobre regulação de IA e sobre como esse debate está sendo comunicado. Quando o dono de uma das maiores empresas do setor volta a puxar o assunto de regra em público, o recado para quem vende serviço é simples: exigência de prestação de contas vem vindo, e vem de cima.</p>
+
+    <p class="texto">Por baixo: no mesmo fim de semana, um motor de código aberto de 27 bilhões foi testado e aprovado publicamente por um dos analistas mais lidos do setor. Quer dizer que a qualidade continua descendo para dentro de máquinas comuns, de graça. Motor bom deixou de ser vantagem competitiva de ninguém.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>Imagine o mercado de carro. Por cima, o governo aperta a regra de emissão e de segurança. Por baixo, o motor fica barato e todo mundo consegue comprar. O dinheiro, nesse cenário, não está em vender motor. Está em quem sabe montar o carro que passa na vistoria.</p></div>
+
+    <p class="texto">E no meio, o espaço vazio. Nesta mesma semana: 76% das empresas com robô em produção, vazamentos dobrando, uma empresa criando o cargo de chefe da automação, quase três milhões de pessoas estudando como montar e quarenta e quatro mil estudando como manter. Todo mundo aprendeu a construir. Quase ninguém aprendeu a responder.</p>
+
+    <div class="nota">
+      <div class="r">Como prosperar na primeira startup — a leitura desta semana</div>
+      <ul class="lista">
+        <li><b>O tema já está validado pelo mercado, não por você.</b> Quando 76% das empresas já operam robôs, você não precisa mais convencer ninguém de que a categoria existe. Isso poupa o gasto mais caro de toda primeira startup, que é educar mercado.</li>
+        <li><b>Comece pelo serviço, não pelo produto.</b> Na quarta, a Exame noticiou uma startup nascida na universidade mirando 100 milhões de reais automatizando processos de empresa. Ela sabe quais processos porque atendeu empresas antes. Serviço é a pesquisa de mercado que o cliente paga.</li>
+        <li><b>Os balcões estão abertos.</b> O sinal registra Startup Summit 2026, o RIW e uma plataforma com mais de 26 mil startups cadastradas. Nenhum deles é dinheiro — todos são distribuição, que é o que falta na primeira startup.</li>
+        <li><b>A vaga tem prazo.</b> A Teltec criou o cargo interno nesta sexta. Empresa grande resolve internalizando. Sua janela é a empresa média — que tem o problema e não tem tamanho para contratar alguém só para isso.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>A aposta de posicionamento não é "IA". É <b>a camada entre o robô e a responsabilidade</b>. Ela está sendo criada agora, tem nome de cargo em empresa grande, orçamento em empresa média e nenhum fornecedor com sua bagagem de operação.</p>
+      <p>Você não vai ganhar de quem escreve o motor. Você ganha de quem só sabe montar — porque você sabe <b>o que acontece depois</b>. E é depois que a empresa descobre que precisa de alguém.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 07 ═══════════ -->
+  <section class="materia" id="onde-estar">
+    <div class="titulo"><span class="n">07</span><h2>⭐ Onde você deve estar agora</h2><span class="fio"></span></div>
+
+    <p class="abertura">Cruzando as suas forças — atendimento, vendas, tráfego pago, SEO, growth, follow-ups, IA de imagem e vídeo, segundo cérebro, IA conversacional, automações, agentes, squads e skills — com o sinal desta semana, <b>três movimentos</b> têm alavanca fora do normal. Os três nascem da mesma frase.</p>
+
+    <div class="nota">
+      <div class="r">A tese da semana, em uma frase</div>
+      <p class="texto">O Brasil ligou os robôs mais rápido que o resto do mundo e não contratou ninguém para responder por eles. <b>Montar virou aula gratuita. Responder virou cargo — e cargo tem orçamento.</b></p>
+      <p class="texto"><i>Ancorado em:</i> 76% das empresas com robô em produção (Rádio Guaíba, sexta) · Brasil à frente dos Estados Unidos (Olhar Digital, sexta) · violações envolvendo IA mais que dobrando (IT Forum, terça) · encaixe malicioso vazando chaves (Cyber Security Brazil, terça) · cargo dedicado criado numa empresa daqui (noticenter, sexta) · e a assimetria de 2,7 milhões contra 44 mil visualizações medida na seção 03.</p>
+    </div>
+
+    <!-- MOVIMENTO 1 -->
+    <p class="abertura" style="margin-top:var(--sp-5)"><b>Movimento 01 · maior alavanca imediata</b><br>A prestação de contas da frota — o contrato mensal de quem responde pelos robôs que já estão ligados</p>
+
+    <p class="texto">A oferta é um contrato mensal, não um projeto. Você assume os robôs que a empresa <b>já tem no ar</b> — montados por você ou por qualquer outro — e entrega, todo mês, três coisas em uma página: o que cada robô fez, o que ele pode tocar (e o que foi cortado) e o número que ele moveu.</p>
+
+    <p class="texto"><b>Por que agora:</b> 76% das empresas já estão com robô em produção. O parque existe, está instalado e ninguém está olhando. E a semana entregou o argumento de urgência de graça — vazamento envolvendo IA mais que dobrou, e o caminho do estrago passa exatamente pelos encaixes que essas empresas instalaram às pressas.</p>
+
+    <p class="texto"><b>Por que você:</b> follow-up é literalmente isto — voltar, medir, corrigir e não deixar cair. Você faz isso com cliente há anos. E atendimento e vendas te deram o hábito de olhar operação antes de olhar ferramenta, que é a única forma de escrever essa página em português.</p>
+
+    <p class="texto"><b>Por que o ticket é maior que o de montar:</b> montagem é receita de uma vez e concorre com quase três milhões de pessoas que assistiram ao tutorial. Prestação de contas é receita todo mês, sobrevive à troca do gestor que te contratou e cresce sozinha conforme a empresa liga mais robôs.</p>
+
+    <p class="texto"><b>Cuidado real:</b> não aceite responder por robô que você não consegue enxergar. Sem acesso ao registro do que ele fez, você assume responsabilidade sem instrumento — que é o pior negócio possível. <b>A primeira cláusula do contrato é a visibilidade</b>, e ela não é negociável.</p>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, esta semana</div>
+      <p>Pegue <b>um</b> robô que você mesmo entregou a um cliente há mais de dois meses e escreva a página que você venderia: o que ele fez no mês, o que ele tem permissão de tocar, e um número. Mande de graça, sem proposta junto, com uma frase só: <i>"achei que você ia querer ver isso — é o que ele andou fazendo"</i>.</p>
+      <p>Duas coisas vão acontecer. Ou o cliente responde perguntando quanto custa receber isso todo mês — e você tem a oferta. Ou você descobre que <b>não consegue montar a página</b> porque não tem o registro — e aí acabou de encontrar o produto anterior, que é instalar a visibilidade.</p>
+      <p><b>Esforço:</b> meio dia · <b>Ativo gerado:</b> um modelo de página reutilizável em todo cliente · <b>Risco:</b> só o seu tempo</p>
+    </div>
+
+    <!-- MOVIMENTO 2 -->
+    <p class="abertura" style="margin-top:var(--sp-5)"><b>Movimento 02 · o que usa a sua base de SEO, tráfego e growth</b><br>Ser encontrado por quem não tem olhos — o diagnóstico de uma página de quem a IA indica no lugar do seu cliente</p>
+
+    <p class="texto">Os robôs já estão fazendo compra de empresa para empresa. O visitante que vem da resposta da IA converte mais que o do anúncio pago. E o SEO deixou de ser o único caminho de descoberta. Três reportagens de três veículos diferentes, na mesma semana, descrevendo o mesmo cliente novo: <b>um que lê e não olha</b>.</p>
+
+    <p class="texto">A oferta é o diagnóstico mais barato do seu portfólio. Você pega as dez perguntas que o cliente do seu cliente faz antes de comprar, faz cada uma para as IAs de conversa e anota <b>quem é citado na resposta</b>. Entrega uma página com os nomes que aparecem, as vezes em que o seu cliente não aparece e a lista do que falta estar escrito na página dele para ser citável.</p>
+
+    <p class="texto"><b>Por que você:</b> SEO, tráfego pago e growth são a sua base. A diferença entre aparecer no Google e aparecer na resposta da IA é de método, não de fundamento — e você já tem o fundamento e o hábito de mostrar posição para cliente sem enrolação.</p>
+
+    <p class="texto"><b>Por que abre porta:</b> é a entrega que dá o susto mais barato. O dono vê o nome de dois concorrentes e não vê o dele, numa página, em cinco minutos de leitura. Nenhum argumento seu produz esse efeito. E ela cria a conversa seguinte sozinha, que é a arrumação da página e do conteúdo — trabalho que você já sabe fazer e já cobra.</p>
+
+    <p class="texto"><b>Cuidado real:</b> a resposta da IA varia de uma vez para outra. Não venda como placar fixo. Rode cada pergunta três vezes, anote a frequência e apresente como <b>tendência com data</b>, não como posição travada. Prometer posição garantida na resposta da IA é a forma mais rápida de perder o cliente no mês seguinte.</p>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, esta semana</div>
+      <p>Faça em você mesmo primeiro. Escolha as dez perguntas que <b>um cliente seu faria antes de contratar</b> alguém como você, rode cada uma três vezes nas IAs de conversa e anote quem é citado. Guarde a página com a data de hoje.</p>
+      <p>Ela serve para duas coisas ao mesmo tempo: é o exemplo pronto que você mostra na proposta — <i>"é este relatório, olha o meu"</i> — e é o retrato inicial do seu próprio posicionamento, que é o assunto que este radar existe para responder.</p>
+      <p><b>Esforço:</b> duas horas · <b>Ativo gerado:</b> amostra de venda e linha de base do seu próprio nome · <b>Risco:</b> nenhum</p>
+    </div>
+
+    <!-- MOVIMENTO 3 -->
+    <p class="abertura" style="margin-top:var(--sp-5)"><b>Movimento 03 · o de entrada mais rápida e menor atrito de venda</b><br>O funcionário de IA com descrição de cargo — para o comércio, vendido ao dono e não ao técnico</p>
+
+    <p class="texto">No sábado, quem publicou sobre "funcionários de IA" não foi uma empresa de tecnologia. Foi a confederação que representa os lojistas do país. É o sinal de que a conversa chegou ao balcão, e chegou com a palavra certa já traduzida.</p>
+
+    <p class="texto">A oferta é embalagem, não tecnologia: você entrega um robô de atendimento e follow-up com <b>nome, descrição de cargo e horário</b>. Uma folha diz o que ele faz, o que ele não faz, para quem ele passa quando não sabe, e qual o número que ele precisa entregar no mês. O dono contrata como contrata gente — porque é assim que ele já sabe decidir.</p>
+
+    <p class="texto"><b>Por que você:</b> atendimento, vendas, follow-up e IA de conversa são o seu núcleo mais antigo. A parte técnica você resolve num dia. O que quase ninguém do seu mercado faz é <b>escrever a folha</b> — porque exige entender a operação da loja, não a ferramenta.</p>
+
+    <p class="texto"><b>Por que entra rápido:</b> é o menor ticket dos três e o de decisão mais curta. Dono de comércio decide sozinho e decide na semana. Serve como porta de entrada e como fábrica de casos com número — que é o insumo dos outros dois movimentos.</p>
+
+    <p class="texto"><b>Cuidado real:</b> não deixe o "funcionário" sem chefe. É exatamente o que a semana mostrou dar errado: robô ligado sem ninguém lendo o que ele fez. Já venda a folha do mês junto, mesmo que barata. Assim o Movimento 03 alimenta o Movimento 01 no mesmo contrato, em vez de virar mais uma automação que cai no terceiro mês.</p>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, esta semana</div>
+      <p>Pegue a melhor automação de atendimento ou follow-up que você já tem rodando e escreva a <b>descrição de cargo dela em uma folha</b>: nome, horário, o que faz, o que não faz, para quem passa, e o número do mês. Sem termo técnico nenhum — teste lendo em voz alta para alguém que não é da área.</p>
+      <p>Mande essa folha para três donos de comércio da sua rede com uma pergunta só: <i>"se esse funcionário existisse, quanto ele valeria por mês para você?"</i>. Você não está vendendo ainda — está descobrindo o preço com quem paga, antes de gastar um dia montando.</p>
+      <p><b>Esforço:</b> uma folha e três mensagens · <b>Ativo gerado:</b> preço de referência dito pelo cliente · <b>Risco:</b> nenhum</p>
+    </div>
+
+    <div class="nota">
+      <div class="r">Como os três se encaixam</div>
+      <ul class="lista">
+        <li><b>03 abre a porta</b> — ticket pequeno, decisão em uma semana, gera caso com número.</li>
+        <li><b>02 gera o susto</b> — diagnóstico barato que cria a próxima conversa sozinho, na sua base mais forte.</li>
+        <li><b>01 paga a conta todo mês</b> — o contrato recorrente que os dois anteriores alimentam.</li>
+        <li>Se for para fazer só um: <b>faça o 02 esta semana</b>, porque o primeiro passo dele é sobre você mesmo, custa duas horas e não depende de nenhum cliente responder.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ 08 ═══════════ -->
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">08</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+    <p class="abertura">Tudo o que está escrito acima veio de uma destas fontes, coletadas no sinal de hoje, 17 de agosto de 2026, às 8h03. Nada foi inventado, estimado ou completado de memória.</p>
+
+    <ol class="src">
+      <li><b>Rádio Guaíba</b> — "Brasil lidera corrida da IA: 76% das empresas já operam agentes em produção", sexta 14/08. <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOSEwzNVFxNWZYYThNZFJpZ3F1OXN5aC0zdWd0WXpzbWo4dkNYdUhqYTFjanRMaHZiVUpiYk9XQ2tUb25wcFFKd0FpRkNZZ3dwYWVBY3JVMnZuT3ZyTGNqVkQ2RDNvNnB5VFZWc3JMNTRSNWNrNVBwaUo2NFJMMUNENWlSbmN6S0RkdGR2azZjeEZ2TmJYM2lhSHh6Sjg?oc=5">ler</a></li>
+      <li><b>Olhar Digital</b> — "Brasil supera EUA na adoção de agentes de IA pelas empresas", sexta 14/08. <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxOU2JlZ0xHQTdjZTJvaWFVUHNSTUJHal9wS09NUFVFTnFZc0hKSjkzYjlwTkxsMDhSNFdEVlBvUmVZazBUX0FLY2RRWDEteTlVTGtMZ2p5QjJpSWlfbUlOZURZSktkYlpreThnRnpHNTBlc2RTbXU3M3ZmWktCbE4zUlpaMmR6TXQ3MmtsZmlGM1NCS3JYTmtoWm5JX3BIU3lIdUtzNldQemwtcTJwMDBIZXB5N0xSU1kzZ053TkhjVTY?oc=5">ler</a></li>
+      <li><b>CNDL</b> — "'Funcionários de IA' ganham espaço nas empresas e redefinem a produtividade com automação inteligente", sábado 15/08. <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxPN2dLMlVUMDhRYmRJcEtzLXZWSmxDNXlVdDFQWHNKWXp0VWhHWHVjQThYUzEtQ1R2a2FjLUp1TmVwS3VGeTVTM2gwNHF4cjczNW9OQkg0eHZ1M2FHcTRRQ1BVWG9YMktYaTVLWThDTzdFcEthUUpvZWhpcTJoUV9UOGQwRDRXaTFWY243RG9VcXF1NEZMalNpendRS2NRenhxeEtkdlIzTTV0RGh3RHFlcnRtYVg3Y0lBdGNSeTFaUVRTSDU1RThaWQ?oc=5">ler</a></li>
+      <li><b>IT Forum</b> — "Violações de dados envolvendo IA mais que dobram com avanço de agentes autônomos, mostra estudo", terça 11/08. <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTFBzR0xhSl9oY0FNTGt4MzNMd0YyQkpaUThna3pQNllHdnU2UVl3enI3am11TFhqQmFQMkJrT1JXLTkwVjkxdGJUZWZaSTJ3R3VQeUJrblRVaVVHa1NTbVNZNzAxNmFBVmt4YTFRaG9fWW9QUG1nd3RUd1FSZjA?oc=5">ler</a></li>
+      <li><b>Cyber Security Brazil</b> — "Servidores MCP maliciosos podem induzir agentes de IA a vazar chaves SSH e código-fonte", terça 11/08. <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxQN0RiM19XMEFMVTh5VzJocXVMc0ExcEdpcVBZOEpwV2FyZnZ2djM4M0JLUGNpQjVxeENqTkhOeU1iWVNEWE1rNDN5bnFxemRvQVBIc0ZUbElhc1I5NDVDWjRzNG84VTFBRE5uaDh6NzVWYzRVUDJuS0tlQkFod2xaSDJScXBOdUNobnhuS2pvWEZwZVRsV1MyYkp1ZEpwUzBkRGtqbnpITENwa3hEUXVXMUppeVhrTzJDaEVFaG5WQ1pTbGJBblZGZnBEaw?oc=5">ler</a></li>
+      <li><b>noticenter.com.br</b> — "Teltec Solutions cria liderança dedicada à estratégia e automação de IA", sexta 14/08. <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPZFp6QlFuV0tYNTFwNEVEWmdIMlQ0U0RCbnlPU2xiOU9PbkdIUEdCakRONGF6V1lCdEFoTDMxZ0tDdS1mZGpGeVNUNkN4VllyMEpHZnRZZ3E0NklVSDJnRFM1cXNNX2ozZHdpc0Uzekk0empuVmlqNjMxdktEenc4VUc4eDBVUXRHZ3VkX19zQzQxNmMwdW92YVU4akE3VkFnTk56OEZKNWtkWFk2TVR1TU9IZlVfZw?oc=5">ler</a></li>
+      <li><b>Terra</b> — "Agentes de IA avançam nas compras entre empresas", quarta 12/08. <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQXzlVWGZLUi0tMUpDTS1UQ09IYXJpQlZqTXN2V294MHJJQlg4RTA2VHM5UzJGOGVlUnpRcUVmYmc3ejRvWWJBNUxzV2NvMzJkU1dmUmxBZ3BIU05HNUZKcUljYTRmMHkycXJkQnc1Y2tiTkY2SDBhUXA2N1J0N0ZXUm9oZFhKb1NCdnVIN1U3eVJqcm8zLU42T0M2Yk04RGU2SkdjY29DZ1NjY3A4ZGY5em45alRMQlNvZ3RYX1JkOGVoUlAxVHFv?oc=5">ler</a></li>
+      <li><b>iMasters</b> — "Tráfego de LLM: por que converte mais que PPC", sexta 14/08. <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQbjVNaWVyMnAwQjY1R1JFY0huQl9EZ2QxWlFLMUE5anpzRWR6TlRCWXJhaUF4Zm9hY3hsd05WWFVmN011dXptLXhpYlphM1ZrV0hkcS1TOTZwQ2YzWmVWNHFfVTZVY0RmX2pMNi1Yc0J5QmhIZU9DWUZNaXNFbWVUUVNPOE04VFBIdkZVcXUyNXpGSHlsbFNEWmF4X28?oc=5">ler</a></li>
+      <li><b>guairanews.com</b> — "SEO deixa de ser o único fator para a descoberta de marcas na era da inteligência artificial", quinta 13/08. <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE4ycmEzakJwRm4tQ0hzWEc4TEZfSWtaai1aUjRDV3I5VmNlTkN2ZXdlQklNTkxhMC13X3pTV09nSUNPUElQTlZGaW13UjZEbWtQdjRjOEQ3VUNDQ1pKWHpCQUZKTi1sTzFZQ2FCN045YmgtZzlMZ0E?oc=5">ler</a></li>
+      <li><b>E-Commerce Brasil</b> — "Conheça o novo SEO para agentes de IA", sexta 07/08. <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPX2RoWDN4QjdaVzlvVjRXSzNsVEhuZEJLcVUyTy1YMFpndHRVclpaMnBOMGlUS3VseGhZWWNudlBoTFR5SjlrN1BNX19tMzF2VzFFRWdJUk1KWFIwSFdKRm5lbWVjNUFtOVNvdk9fcXd0X0VJQTgwZFdiRjJqN2VCU1lhdWplc2s?oc=5">ler</a></li>
+      <li><b>SEGS</b> — "IA agêntica: o fim da automação superficial nas empresas", terça 11/08. <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxON1hPRDk1azBNUGxSallwZmNkZU0tY3JidmVRS2tvckdPNFRBNDdYSFBHN2NOaTRTcnFIaFI5QWpaVXNTYklLTEVGRGFhYjBMXzJjU1g1b0ozZEZYQVF6SEZKTVNTODF3T1VtTGU1bDJoUk5PbWhCdnV2NjhSMlJLYlptNXdmU1RFRUZrbUJzSUFybzg4b09xRXp3?oc=5">ler</a></li>
+      <li><b>Sala da Notícia</b> — "O paradoxo da automação: empresas investem em robôs com IA, mas não sabem o que fazer com os dados", terça 11/08. <a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxQdHdaTVk0ZzV3Z0I1ZExvZHd6UHIzcXZnSE9IVXZ0MFFqN2lxdFEtYkRJYmhFQmVYbDYtSkJLTEdHd2NmUHNZRHFab3FpUDZxY3dGbkwyaHBuVlJ1dC1SOWI3djN3U1dwQlItREpuYXhFQzVjZjFlY0lhR2MtX1d1ZlAzNjl0eUdMYTBVQ3NnZ2dqNHVMZlRmYUR3eTdBTkJWMHFORktEZ21mMmxIMUN2ZVFBNWVkdC1JNTk1LVhGclhJdE1tdjFDU0xXWEhxLVA1UTRzbmRoY0ZhcXY0SEtN?oc=5">ler</a></li>
+      <li><b>ClienteSA</b> — "Como as empresas brasileiras estão construindo os agentes de IA", quinta 13/08. <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPeG4ydFZ3SmR3clF2dVg0ZjhvWUI5dGU3a1Q3eVl6UHpZbHRKVGJRbVBaR3ZuOFJLVmhZNnJEbi1YTTB5MGJua0ZING5Ma3RFcGxvaGFDVWZhZ1ZFazVsTkN1WmdXU2F4V0U5ekdvX3N1ZndsQWJTN0hsS3hsbVYyUU5fMW5FUHEzRmRremV6a1U4b3l0RTJVWnR5UjQ?oc=5">ler</a></li>
+      <li><b>Data Center Dynamics</b> — "Nutanix coloca à disposição IA agêntica para empresas", sexta 14/08. <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPRkh6OHplVFhXU281NU5NNjlEdlhzWHdJei0zU003Mk1reTJBYlliTS1pWkhXV21KSEsxRUpfQjg0NEFPcVVodmdtSVIwRG9yNWtLbllaNDloTmVoN3hORUY3Y2FnSDF2eTVEQ0szUWUyWDEydWR1bmxwN2ZHbjJhcnVVWlczY0VGUlNob25jMFVnVlF4TXdhaUZSa2gxUnhsaXNKTGx1Z0dOSXNfT04tYmdHRzhWLTZ4YklPdm5PcWpjQld0?oc=5">ler</a></li>
+      <li><b>iMasters</b> — ".NET – Construindo Sistemas Multiagentes com o MAF", terça 11/08. <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNcVdINm5MRmJxdEV1MlEwd0FMZ2NWSHUzeHJoaGNzSmxBcUFwX1dBdk8wTGV3cHhsRzlvZmE4VjgzWU1lOGxLSDFncHhMM3dRdjF6SG5mbmVaelFIdVlvMG95aUtueVpfYWU2VVJPUGlVa1hGUG9CVWV0QmM1a0s5SEY2OWM?oc=5">ler</a></li>
+      <li><b>Valor Econômico</b> — "IA conversacional assume papel de nova interface entre marcas e consumidores", quarta 05/08. <a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxNODdKU01SZ282MHg0c2tjcDlncGwwaTBwd29sc2JhTURxcS1VcEE4SzhLeU5mU2NvNzBTQ2lnVGQ5VFdsb3BaVnhVTDVhUE1KeTZEWklyRkkxRkItRHVwZ2tGNXhVclNBTGpfbkhUcVFFR0VWX2ZUQzRZdzg1TXdqQ0RHMXpSWFczU1pzYmNxYUQ2STVnd202aXdTczlFM2R0dW5kTVVBd2tSNXdpMDBHM1JXS1M1a1doREd5UWNPc3k5TDhVOXQ5ZFVHbGVrUUl3bm15NFNfMktiRW5iSkJfLVQ1Z0ZxaV9lVFE?oc=5">ler</a></li>
+      <li><b>TI INSIDE Online</b> — "Energisa utiliza IA conversacional para automatizar jornada de atendimento e alcança 93,8% de assertividade", 18/06. <a href="https://news.google.com/rss/articles/CBMihwJBVV95cUxNMExxUkhPZHpFX0lyeXgxQnNUSzdRb3pyX19GUVpGR0gxTGtjb2FBdm42TV9aS21tYlJ3N09tcjJ4RHJWcWVfejBZblNQTmhrV2ptdC1sckhrQk1hWHotLVd5eXh2dFN3NTVzRUs5eFJJRmpXNmRHZ0k0UTFPVUczelpWUWJIVEhjcDB6eXI0dVNyTGlMN3NsbENPQ3ZHNWdGb3hqSHVsUUtua2lZb0x6alZmYldyZXdZVnlpblpMaHR0R0o1ZFBhbWo4VG1STWhBdTFLckNHRnl1cjY0MUZ3SDYtS1h3V1cxZmwwMDZ2Vks3REJTOEs0QXFCa0hGb2dPblFlWEx3Yw?oc=5">ler</a></li>
+      <li><b>Mobile Time</b> — "BB tem 69% de aumento no fluxo do Pix com IA conversacional", 09/07. <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5mY2hfM29zbWlkUkxqQ1NWLXp6d3QtcDNjajROeUl4Mlc2YlJUOW5tNjZZUzdkdFRYYWRzMjlkczJvcGJUdFg4cEFMNHZhVl9YajdhcnRSM1hTMy1ncG91a1FiY0lLNFNrOWQzcm5CeWtDd2RaY19J?oc=5">ler</a></li>
+      <li><b>ClienteSA</b> — "Wine transforma atendimento com IA conversacional no WhatsApp", 21/05. <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNdjRkOW45Rk1vUjJBWlJxdFQ0RU40bndWazQ5UFFFQVp2VWlHdTFYMVJrYnNwdkpkdHpsbGFjNzFmMW1QOXZRQ1cwZ1JlQ0NoMDc3clItZVBUVG56U0Q3TFRfZ3dhYWd0NFBJQjBWWWhWOWRGa2hsUFU0Wmw0ZHVQUER0ZlA0MmNjVUVWLTMxMlBYWU02b1pHbVpR?oc=5">ler</a></li>
+      <li><b>Mundo do Marketing</b> — "IA aplicada a ABM: como priorizar contas certas em vez de escalar volume", segunda 10/08. <a href="https://news.google.com/rss/articles/CBMipoFBVV95cUxQR3ZRMXBLYjZvd2xVWmRSQ1ZObUVLSExhUmpRVHF1eGZ2cjh4SmFka09oU2hiTGdtdTdybHBPMXczX2huclVJMDVldWlvX0lUUDJmUVQyUDBUd0RnVWNINXNEbE5pRi03b2dHQnNUSlN4MUMwZ211NmozM3JSVXdKRUprZXN2a2VNQjFHWFNxT1Y4ZTR4QkdXN1U1RmpmWnp4b3I1eEx3?oc=5">ler</a></li>
+      <li><b>Já é Notícia</b> — "IA aplicada a vendas: onde ela realmente ajuda o seu time comercial", sábado 08/08. <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxOdFZ1TjROWHJRRldZcTl1TlNCeHVjc1VQOFNlQ1E5b01VZHhpV0JvSUVma0NvOU81aElrTXB2YkREUXBFUDZfbHJ0akttNkFZZmJEOWxBZFRVYXBkVnRyVUZxLUNYUlZ1T0xLTFNPMnJlbnJJdnJ5RWxrMURYREl0U244Z2QzOHFKQW5fUm9fUU02d1ZlQ2oxTERDTGE4TXphT3dqa1BKSVpUTXJyVXJYR1lWM1FCSFMzWXc?oc=5">ler</a></li>
+      <li><b>Arena de Notícias</b> — "PME com IA já disputa espaço de grande marca", quinta 06/08. <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOaGlycHVVdjR5cXdXcjFLa2wwbkNlS3RMNXhLOU5YdEZlYnY1X3RSMDkzT1lEdGVpazhTVXRoU0tqU1c2N1JTaXkwV1JBblVFd0J6djZWdHdvQlh6STNvOW43M1NpMzJwX0VzNEtnaXBsbXI1RWlidlFrWmpzdUpHV2p0TUpBNGpUS2ZTTDR5d0IwbnIx?oc=5">ler</a></li>
+      <li><b>Agência Sebrae de Notícias</b> — "Especialista apresenta estratégias para pequenos negócios ampliarem vendas com marketing digital e IA", terça 04/08. <a href="https://news.google.com/rss/articles/CBMi7AFBVV95cUxPbk9XSVgwWkRaeld3LTVVM3pBSUt2UmkzakVkTUJybTZjd0hsWlFFdUd6ZXJMZy16anRZLXY3X1RVdkRYZktCc25LUm84THJuV3pjdGtUS0VFQzJic05abzN3NTBocDdkUkpiRDNiQ0ZrZVBKczNlWkEwUkhvbW1YSTI2Vi05Rm5sTnRWWk5nY0VVUWJyNEhydS1FazI4WEtWX1oyYUFHOUFYV1k4MTd4cjk4LVFNT2pwYmFXWEl5d2x2RzVWdVNUQTA4M0NkaV9lYnh5aUpTek9qekpheDJEb3N3M3R1S1R5N0pNeg?oc=5">ler</a></li>
+      <li><b>Exame</b> — "Startup criada na universidade mira R$ 100 milhões com IA para automatizar processos de empresas", quarta 12/08. <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNYW1scE56Vnl1a045VXdBTFVONjF4c1BRbUVTLXhzX2d0TlFweWF6aGRUOWFRLVhCLUNnVVRGNHJRUy10SW5QSGJGYks2T19COEs0eF9vUG5uMjhDS0ViTXJGQ1JEc0xtUldDVXFJREZQTW1sYmFpYTJoVDhyM3lMYkxNdGw5OXh5bUZrYUZwcE5OeTBUTjNZYXdnRFR1UlN5dEdGZzBoLVpoUHVNNnN5dGJzZjRHMzhibVA0Y1pUVVI?oc=5">ler</a></li>
+      <li><b>Hacker News</b> — "On A.I. regulation and messaging", Dario Amodei, domingo à noite 16/08. <a href="https://twitter.com/DarioAmodei/status/2088758816376807762">ler</a></li>
+      <li><b>Simon Willison</b> — "Qwen 3.8 27B is excellent, but it defaults to overthinking things", domingo 16/08. <a href="https://simonwillison.net/2026/Aug/16/qwen-38-27b/">ler</a></li>
+      <li><b>Product Hunt</b> — Treg ("central de escolha de ferramentas"), Hansel by Seedling, Vendo, Skriptr, Omni by xpander, OpenTrade e Meridian, entre 11/08 e 16/08. <a href="https://www.producthunt.com/products/treg-openrouter-for-tools">ler</a></li>
+      <li><b>YouTube</b> — as contagens de visualização citadas na seção 03 vieram do sinal de hoje: Nate Herk (901.733), NoCode StartUp (758.411 e 14.800), Sandeep Swadia (712.994), Hora de Negócios (206.598), Anderson Adelino (10.829), Kommo/RBMIDIA (12.161) e Sistema Britto (82). <a href="https://www.youtube.com/watch?v=ldETapkr8Hg">ler</a></li>
+      <li><b>Jornal da USP</b> — "Evolução da inteligência artificial cria vídeos cada vez mais reais", 12/03. <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNeUNJUktsOTl5bHJvUVVFdGQ3SVFiVWhpaW5zVTJIbDdBZllSbmdZcHJHWnNmOUFrNTJ1Y3JEV2lzdjdub1RQVDFfV1Z0dHBVdkFhamhyVi1KeDZHSDVocW9OSGJTbnp0LTRwNldMYjR5REVvenZCNGFTX0kyRF9McF9BOEcyclBhZWhVOFJqdVo1aWZrQVUtVkVsWWhYeVdKU2c?oc=5">ler</a></li>
+      <li><b>Estadão</b> — "É falso vídeo em que Giorgia Meloni recusa cumprimento de Benjamin Netanyahu", 06/05. <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxNbWZCS0pPYXYwRnp0LTVGOThZQlVMalhWZGdsQkFvVWRwTWpxc0xDOGdjYk90eXpoZmlTcGxMNmxRTzlqdnZmd3Bvb1F1OS1qVGJ5eWxJZlNiR282eGlKYzhjN1QzMXBpRnBOdlRsQkhvR0R0Rk5tRkdPTlR6WGw1dGc2ZThsRk96cjV5SmdJRDBPcTF4cEp1Y0lOZW9wVmFXcXBoUHlaYWszcmhSNXVwTHZnM1ZkRVlMS2xWNGtwb1A0Nkw2RmJKbmx3?oc=5">ler</a></li>
+      <li><b>Terra</b> — "Nova ferramenta de IA do Instagram permite que outras pessoas gerem imagens a partir das fotos da sua conta", 11/07. <a href="https://news.google.com/rss/articles/CBMivAJBVV95cUxORTBickptQXM4aHNud0pyNEptVDRhQlc1M2RkTk5nYmkwd0F1bzBXN2VyTXRDdFl6N0tmSlphNFB1NDhPQ25rTXctSlFUTV9LNmxReG55Q2NuUjhJSlVyelZqd1BZTm5CRTZBdFVhMTNQb3FRTG5VRThZZEM0OFI1OEtDUG5mTVF5TkFhazNYZzZ1OVRRZnZRQlRxNWlUMEs5X3ktblRnZTgzczh2RUhwQVdfZml0djNnQXpYVlUwTHhsbUV2allmOXU0dllvRFUxQUZhNGNXMkdkYmNncnRoT2V3M0xDODVTWGdNeUEzTHBCZnZTUFlyZHpWLXExcVYzM1VweEFTSFFLaFI5aW9BbVg4TndtY2xWaDY1TjJ5ZXQxMWRzcE4teTdTY0NscFp0cEl1eWwxekpvSkJv?oc=5">ler</a></li>
+      <li><b>Sinal bruto</b> — <code>signal/signal-2026-08-17.json</code>, coletado hoje às 8h03 (Google News, Google Trends, YouTube, Hacker News e Product Hunt).</li>
+    </ol>
+
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>1.</b> Os 76% e a comparação com os Estados Unidos vêm de duas reportagens publicadas na sexta (Rádio Guaíba e Olhar Digital) que citam um levantamento. O radar não teve acesso ao estudo original, à metodologia nem ao tamanho da amostra. Use como <b>ordem de grandeza e argumento de conversa</b>, sempre citando a fonte — nunca como dado auditado numa proposta comercial.</p>
+      <p><b>2.</b> A vitrine de produtos novos (Product Hunt) chega ao radar só com <b>nome e endereço</b> — sem descrição. Hansel, Vendo, Skriptr, Omni, OpenTrade e Meridian estão citados apenas pelo que o nome ou o endereço sustentam. Não trate nenhum deles como recomendação: clique e confira antes.</p>
+      <p><b>3.</b> "Violações mais que dobraram" é o que a reportagem do IT Forum afirma sobre um estudo. O radar não abriu o estudo, não sabe o período comparado nem a base. Vale como direção, não como percentual.</p>
+      <p><b>4.</b> Os horários foram convertidos para o fuso de Brasília a partir do que o sinal traz. Vários itens do Google News chegam com hora padronizada (07h00) em vez da hora real de publicação — por isso, nesses casos, só o dia foi citado.</p>
+      <p><b>5.</b> Os números de visualização do YouTube são a foto do momento da coleta, hoje às 8h03. Eles sobem sozinhos. A comparação entre "montar" e "manter" continua válida em proporção mesmo quando os números mudarem.</p>
+      <p><b>6.</b> As buscas em alta do Google no Brasil hoje (vestibular, futebol, política) não tinham relação com IA. Nada nesta edição foi construído sobre elas.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">
+    Radar André Oliveira · Nº 013 · 17 de agosto de 2026<br>
+    Próxima edição: Pulso diário, terça-feira 18 de agosto
+  </div>
+
+</div>
+</body>
+</html>
