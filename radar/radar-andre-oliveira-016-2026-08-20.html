@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 016 · Pulso de 20 de agosto de 2026 — O seu próximo cliente pode não ser uma pessoa</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>O seu próximo cliente pode não ser uma pessoa</h1>
+    <p class="chamada">A consultoria Accenture cravou um número: em 2030, três em cada dez compras na internet vão ser feitas por um robô, não por gente. Isso é daqui a quatro anos. Nas três últimas edições o radar mostrou o robô entrando na sua empresa — hoje ele troca de lado do balcão e aparece do lado de fora, com o cartão do cliente na mão.</p>
+    <div class="dateline">Edição Nº 016 · quinta-feira, 20 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O robô saiu de dentro da empresa e virou comprador — com prazo e número.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Oito recortes: o número da Accenture, o organograma misto, o susto das gigantes de nuvem e a vitrine da madrugada.</div></div></li>
+      <li><div><a href="#automacao">Seu território: automação</a><div class="d">Um bilhete só para todos os robôs — e a automação chegando pela associação comercial.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">A ficha do produto que o robô do cliente consegue ler. Uma tarde de trabalho.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links com data e hora — e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O QUE ACONTECEU HOJE</h2><span class="fio"></span></div>
+
+    <p class="abertura">Na segunda o radar mostrou o Brasil ligando os robôs dentro de casa. Na terça veio a conta: um robô cortou mais da metade dos chamados internos da Cielo. Ontem veio o limite — a própria dona do ChatGPT freou porque um robô dela passou do ponto. Hoje a história vira a esquina: o robô sai de dentro da sua operação e aparece <b>do outro lado do balcão</b>.</p>
+
+    <p class="texto capitular">Ontem ao meio-dia e meia, o <b>Valor Econômico</b> publicou um número da consultoria Accenture. Em 2030, <b>30% do comércio online</b> vai ser feito por robôs de IA. Três em cada dez pedidos. Não é previsão para o fim da década seguinte — é daqui a quatro anos.</p>
+
+    <p class="texto">Pare um segundo no que isso muda na prática. Hoje quem entra na sua página é uma pessoa. Ela olha a foto, lê a descrição, se convence e clica. Amanhã, em três de cada dez vezes, quem entra é <b>um programa comparando</b>. Ele não vê a foto bonita. Ele lê o texto, pega preço, prazo e condição, compara com outros cinco e decide.</p>
+
+    <p class="texto">É a diferença entre montar uma vitrine para quem passa na calçada e montar uma prateleira para o comprador de uma rede de supermercados. Aquele que chega com a planilha na mão e só quer saber de preço, prazo de entrega e se tem estoque. A loja é a mesma. O jeito de escrever a placa é outro.</p>
+
+    <p class="texto">E o número não veio sozinho. Ontem à tarde a <b>CartaCapital</b> mostrou os times mistos de gente e robô mudando o organograma das empresas. Quatro horas depois, o <b>IT Forum</b> trouxe uma empresa apostando que o mercado vai medir a companhia <b>pelo que ela entrega, não pelo tamanho da equipe</b>. Os três assuntos são o mesmo assunto, visto de ângulos diferentes.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>Um <b>robô de IA</b> é um programa que pega a tarefa e vai até o fim sozinho — abre o site, lê, compara, decide e fecha. "Comércio feito por robô" quer dizer que o pedido foi disparado por esse programa, dentro das regras que o dono dele escreveu. O cartão continua sendo de uma pessoa. Quem escolheu a loja é que não é mais.</p></div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">30%</div><div class="lbl">Do <b>comércio online em 2030</b> feito por robôs de IA, segundo a Accenture no Valor Econômico. Três pedidos em cada dez.</div></div>
+      <div class="numero"><div class="big">4 anos</div><div class="lbl">O prazo. <b>2030 menos 2026.</b> É menos tempo do que um contrato de aluguel de loja.</div></div>
+      <div class="numero"><div class="big">2 em 10</div><div class="lbl">Nomes da <b>vitrine de produtos novos</b> hoje com "copiloto" ou "tomada" na embalagem. Ontem eram 3 em 10.</div></div>
+      <div class="numero"><div class="big">zero</div><div class="lbl">Termos ligados a IA entre os <b>dez assuntos mais buscados no Brasil</b>. Segundo dia seguido. O tema move empresa, ainda não move a rua.</div></div>
+    </div>
+
+    <div class="olho"><p>Até ontem a pergunta era qual robô eu coloco dentro da minha empresa. A partir de hoje é outra: quando o robô do meu cliente chegar para comprar, a minha loja está escrita de um jeito que ele entende?</p><div class="quem">A frase desta edição</div></div>
+
+    <div class="nota">
+      <div class="r">O arco que o radar vem contando</div>
+      <ul class="lista">
+        <li><b>Sexta e segunda —</b> 76 em cada 100 empresas brasileiras já operam robô de IA. O país ligou a máquina antes de contratar o chefe dela.</li>
+        <li><b>Terça —</b> apareceu a conta. A Cielo cortou mais da metade dos chamados internos com um robô. O primeiro que se paga entra pela porta dos fundos.</li>
+        <li><b>Ontem —</b> apareceu o limite. A dona do ChatGPT reduziu o próprio ritmo depois que um robô dela agiu por conta própria num teste.</li>
+        <li><b>Hoje —</b> o robô muda de lado. Deixa de ser só funcionário da sua empresa e vira <b>comprador na sua página</b>, com data marcada e percentual.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Você passou três dias com um argumento de venda voltado para dentro: <b>ponha um robô para trabalhar aí, e ponha coleira nele</b>. Continua valendo. Só que hoje entrou um segundo argumento, e ele é mais urgente porque tem prazo escrito.</p>
+      <p>O novo argumento é: <b>a sua loja está preparada para ser lida por um robô?</b> Preço claro em texto, prazo escrito, condição de pagamento numa frase, garantia numa frase. Nada disso dentro de imagem, nada disso só no vídeo, nada disso escondido atrás de "fale com o vendedor".</p>
+      <p>Isso é o seu território de sempre — busca, tráfego, atendimento, follow-up — só que com um leitor novo. E é a conversa mais fácil que existe: o cliente entende em trinta segundos, e a data de 2030 faz o trabalho de convencimento sozinha.</p>
+    </div>
+  </section>
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>AS NOVIDADES DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">🟢 é o que subiu hoje. 🟡 é de ontem ou um pouco antes, e entrou porque explica o que subiu hoje. O Google News e o mural dos programadores publicam a hora no fuso de Londres — aqui tudo já está convertido para o horário de Brasília, três horas a menos.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Em 2030, três em cada dez compras na internet vão ser feitas por um robô</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 12h31</span><span>Valor Econômico</span></div>
+          <p class="texto">É a manchete do dia e a razão de tudo o mais nesta edição. A consultoria <b>Accenture</b> projeta que 30% do comércio online de 2030 será feito por robôs de IA — programas que escolhem e fecham o pedido no lugar da pessoa.</p>
+          <p class="texto">O que faz esse número valer mais do que os outros é a <b>data</b>. Quatro anos. Todo mundo já ouviu "a IA vai mudar tudo". Quase ninguém ouviu ainda "em 2030, três em cada dez dos seus pedidos". A segunda frase cabe num orçamento.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Comprar por robô é como mandar alguém ao mercado com uma lista e um limite de gasto. Essa pessoa não vê a promoção na porta nem se emociona com a embalagem. Lê o que está escrito na etiqueta, compara, escolhe e volta.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTUd6NHpZWkdTaVVPa29TelFhTmp3VkZKa0pOR2cxdzZnRzBSei13YlJkSndCNl9wTG9xeUNIVC1odkgyYjAweDN5VVJFNVJuOG1WT3hfcEZNUnFMT1lhZTZRaTlDaFNSQ3REZW4xSzBqLUVkSFNleHJ3a0JIemRLZ2FsVWhwc3NCWi1jcXdLb0RqbWs1S19ZQW5uQkhpWm9VUkdPNVhGV0daYXBWME1YNlp0UjJRR2VHWVZveWs2UzA3dFdlOFNHT2FaeldJQUFYelVXNFdNdkwtSnV4WHVxcNIB7wFBVV95cUxNcXV5SVJjcUVOU19tR2NpcGpGdUhmd1J0am1fNE1OVlFZcnlxc2h2QVJOWHVJMENBLThObFV5VDlRVWVEdVVxdUc5MTFFdUZZMDNCODNhRFpZbFRpcmw4NWpVSmw0RWZBTW5sSmpwYTI1MXZ6V0Fnb01HVVNzbUNFTjV4Z1YyTWl6LTNsREkxbkI4alhEV0lFVlJVU1pZRWgxSnNxMFYta1BXbHg3d1lCYVlaRHJlaU9fbnhramNGd25wQklTcWxvS2VtZl9USXhra0tKaVJVNDF4ZnpyNHh1aWJ1bzRITWRIXzlJUWtRZw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Time misto de gente e robô já está mudando o organograma das empresas</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 12h00</span><span>CartaCapital</span></div>
+          <p class="texto">Mesma revista de ontem, capítulo seguinte. Ontem de manhã ela perguntou quem comanda quando a máquina também decide. Ao meio-dia mostrou o efeito: os times passam a ter <b>gente e robô na mesma equipe</b>, e a forma de organizar o trabalho muda por causa disso.</p>
+          <p class="texto">Repare no detalhe prático. Não é "a IA vai tirar empregos". É <b>a folha de tarefas mudando de dono</b> dentro de um time que continua existindo. Quem monta essa divisão hoje é você, não o RH — porque o RH ainda não tem nome para o cargo.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOMzEzRjhBQ1BHSTM5OG40UlN4MTFDdTJ0MHpIcTV3SUpYLTM0RldIQ25ZdDMwaFFQX2kxQzdHR0ViaHZfdE1Pd1FfZ3YyZzdzUU4yV2ltYWh1TEJFdVNGbUxHbVZHSjlwV0Q4VEdlVGZLNmJwUXZISkZVUUxPdlZLX3lNOA?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>"A empresa vai ser medida pelo que entrega, não pelo tamanho da equipe"</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 16h00</span><span>IT Forum</span></div>
+          <p class="texto">Quatro horas depois da reportagem acima, o IT Forum publicou a aposta de uma empresa chamada <b>Synapser</b>: na era dos robôs de IA, o mercado deixa de olhar quantas pessoas você tem e passa a olhar quanto você entrega.</p>
+          <p class="texto">Guarde essa frase — ela derruba a objeção mais antiga que você ouve, o famoso <b>"vocês são pequenos demais para atender a gente"</b>. Se a régua passa a ser entrega, tamanho de equipe vira assunto interno do fornecedor, não cláusula de contrato.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE12a0h1MjJkMjBOX2szdTh1TG0zR1RuRXBvRmhYM2w0NFpsOGVUZ1JMeUdqbG4xck5qOTlxa0pIYXdXMktRN2pWUEU2Q1gzYkxSY2ZRUFBwLWJlclpJRFNNVFhaRXd4Mi11VnBtUWdvZjMzXzh5?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>"Se isso for verdade, as gigantes de nuvem estão em apuros"</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 7h38</span><span>Klement on Investing, via o mural dos programadores</span></div>
+          <p class="texto">O texto mais comentado da manhã no mural onde os programadores do mundo todo postam o que saiu. É a análise de um investidor sobre as empresas que alugam os galpões de computador onde a IA roda — Amazon, Microsoft, Google e as demais.</p>
+          <p class="texto">Segundo dia seguido em que a pergunta "e se essa conta não fechar?" aparece no radar. Ontem foi a dúvida da bolha num vídeo de televisão. Hoje é a mesma dúvida, do lado de quem coloca dinheiro. <b>Isso não muda o seu plano — muda o tom da sua conversa.</b> Quem constrói coisa pequena e paga o próprio boleto não depende de a aposta grande dar certo.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Gigantes de nuvem" são as empresas que alugam capacidade de computador por hora, como quem aluga galpão. Você não compra o galpão, paga pelo espaço enquanto usa. A IA que todo mundo usa roda em cima desses galpões alugados.</p></div>
+          <div class="link"><a href="https://klementoninvesting.substack.com/p/if-this-is-true-the-hyperscalers">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Pediram um bilhete único que todos os robôs saibam ler</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 18h19</span><span>GitHub · projeto Claude Code, via o mural dos programadores</span></div>
+          <p class="texto">Pedido aberto no repositório público da ferramenta: aceitar um arquivo chamado <b>AGENTS.md</b>. Hoje cada programa de IA lê o seu próprio arquivo de instruções, com nome diferente. Quem usa três ferramentas mantém três bilhetes dizendo a mesma coisa.</p>
+          <p class="texto">Parece detalhe de programador. Não é. É exatamente a dor de quem já roda <b>time de robôs</b>: a regra da casa está escrita em três lugares e desatualiza em dois. Um bilhete só na parede da cozinha, e todo mundo lê o mesmo.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O <b>arquivo de instruções</b> é o "manual da casa" que a IA lê antes de começar: como falamos com o cliente, o que nunca prometer, para quem passar quando travar. O pedido é que todas as ferramentas passem a ler o <b>mesmo</b> manual, em vez de cada uma exigir o seu.</p></div>
+          <div class="link"><a href="https://github.com/anthropics/claude-code/issues/6235">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Subiu um site com um pedido só: não cole a resposta da IA</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h20</span><span>dontpastetheai.com, via o mural dos programadores</span></div>
+          <p class="texto">Apareceu de madrugada e virou conversa. É uma campanha contra o hábito de pegar a resposta da IA e colar inteira — no e-mail, no grupo, na proposta — sem ler antes.</p>
+          <p class="texto">Anote como sinal de mercado, não como opinião. <b>Já existe cansaço de texto colado.</b> Quem entrega material com cara de resposta bruta de IA começa a perder ponto justamente onde queria ganhar tempo. A vantagem volta para quem edita.</p>
+          <div class="link"><a href="https://dontpastetheai.com/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>A associação comercial de Campinas vai ensinar empresa a automatizar com IA</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h42</span><span>Hora Campinas</span></div>
+          <p class="texto">A ACIC, associação comercial e industrial da cidade, marcou um workshop para ensinar empresas locais a automatizar processos com IA. Notícia pequena, sinal grande.</p>
+          <p class="texto">Quando o assunto sai da conferência de tecnologia e entra na <b>agenda da associação comercial</b>, ele chegou ao comércio de rua. É a mesma escada de sempre: primeiro a empresa gigante anuncia, depois a imprensa de negócios cobre, depois a entidade da cidade dá o curso. <b>O terceiro degrau é onde mora o seu cliente.</b></p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQWEZyLWRJTTJUQmdzalNHZmcxS2dPOFUxTHZCS0xPUzhnaENSaTBrNmh3VHRHZFNuLXRqTDNPdnRLUFNlOU04VXowR0dIVTM0V3piVnRlSENrbHZhcnFfT3FwaUZGZ1hSamdUNko0SEtfOGVEZ1RxblBlRVdyZnRITU5VcU51cVBXNDJMZklrUHhTRllhZGJJei01aXFqN25OQVA3ejd3?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Na vitrine de produtos novos: versão nova do Grok e menos "robô" na embalagem</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 1h06</span><span>Product Hunt</span></div>
+          <p class="texto">O nome mais fresco entrou hoje de madrugada: <b>MiniMax Design</b>. Uma hora antes, <b>Lifelong</b>. Ontem à noite subiram <b>Hermai Brand API</b> e <b>Shape</b>. E ontem de manhã apareceu o <b>Grok 4.6</b>, versão nova do modelo da empresa de IA do Elon Musk.</p>
+          <p class="texto">A diferença em relação a ontem está na embalagem. Nas duas últimas edições, três em cada dez nomes traziam robô ou tomada no próprio título. Hoje são dois: <b>Peach Co-Pilot</b> e <b>Hermai Brand API</b>. O resto é design, saúde, anotação, reunião. <b>A palavra da moda está saindo do rótulo e entrando no produto.</b> É o que acontece com toda tecnologia que pega — ninguém mais vende "celular com câmera", vende a foto.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Uma <b>API</b> é a tomada por onde um sistema conversa com outro sem gente no meio. Quando um produto novo nasce como tomada, o dono dele não quer que você use a tela — quer que a sua ferramenta se ligue direto na dele.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/minimax">clique aqui para ver</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="nota">
+      <div class="r">Nota de honestidade sobre a vitrine</div>
+      <p class="texto">A vitrine chega ao radar só com <b>nome, autor, data e endereço</b> — sem uma linha de descrição. Não afirmo o que cada produto faz nem recomendo nenhum. O que vale aqui é a leitura do conjunto de nomes, não o produto individual.</p>
+    </div>
+  </section>
+  <section class="materia" id="automacao">
+    <div class="titulo"><span class="n">03</span><h2>SEU TERRITÓRIO: AUTOMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Dois destaques hoje, e os dois falam da mesma coisa por caminhos opostos: <b>como se dá ordem para um time de robôs</b>. Um vem do lado técnico, de madrugada. O outro vem da associação comercial de uma cidade do interior paulista. Quando as duas pontas apontam para o mesmo lugar, o assunto amadureceu.</p>
+
+    <p class="texto">Nas edições desta semana o radar foi de "76 em cada 100 empresas já ligaram a máquina" até "a própria fabricante freou porque o robô passou do ponto". Falta a peça do meio, e ela é a mais chata de todas: <b>onde está escrita a regra que o robô obedece.</b></p>
+
+    <div class="nota">
+      <div class="r">Destaque 01 · um manual só, na parede da cozinha</div>
+      <p class="texto">Ontem no fim da tarde, alguém abriu um pedido público no projeto do <b>Claude Code</b>, a ferramenta de programar com IA: que ela passe a ler um arquivo de instruções com nome padronizado, o <b>AGENTS.md</b>.</p>
+      <p class="texto">Hoje é assim: cada ferramenta de IA tem o seu arquivo, com nome próprio. Se você opera três, mantém três manuais dizendo a mesma coisa. Um dia você muda a regra de atendimento em dois deles e esquece o terceiro. <b>É por aí que a operação começa a mentir para o cliente sem ninguém perceber.</b></p>
+      <p class="texto">Pense na cozinha do restaurante outra vez. O ponto da carne está escrito num papel colado na geladeira, num caderno na despensa e na cabeça do chefe. No dia em que o ponto muda, dois lugares atualizam e um não. O prato sai errado e ninguém sabe explicar por quê.</p>
+    </div>
+
+    <p class="texto">Você já vive isso. Quem monta <b>time de robôs</b> — cada um com uma tarefa, todos trabalhando na mesma conta — descobre rápido que o problema não é o robô. É a regra da casa espalhada. Um manual único não é economia de arquivo, é <b>garantia de que a operação inteira responde igual</b>.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Time de robôs</b> é um conjunto de programas de IA trabalhando juntos, cada um com uma função: um qualifica o contato, outro responde, outro cobra o retorno, outro registra. Como uma equipe de loja — só que a escala, a regra e o limite de cada um você escreve num arquivo.</p></div>
+
+    <div class="nota">
+      <div class="r">Destaque 02 · a automação desceu do palco e entrou na associação comercial</div>
+      <p class="texto">A ACIC de Campinas marcou workshop para ensinar empresa local a automatizar processo com IA. Isso muda o perfil de quem vai te procurar nos próximos meses.</p>
+      <p class="texto">Quem sai de um workshop desses não volta querendo entender IA. Volta querendo <b>uma coisa funcionando</b> — e sem ninguém dentro de casa que saiba montar. O curso cria a vontade. Ele não cria a mão de obra.</p>
+      <p class="texto">Some com a manchete do IT Forum de ontem, sobre empresa medida pelo que entrega: <b>o comprador que sai do workshop não vai perguntar quantas pessoas você tem</b>. Vai perguntar quando fica pronto e quanto custa por mês.</p>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Duas coisas para esta semana, ambas do tamanho de uma tarde.</p>
+      <p><b>Primeira:</b> junte num só arquivo a regra da casa que hoje está espalhada pelas suas automações — tom de voz, o que nunca prometer, quando passar para humano, quais dados nunca sair. Um arquivo, um dono, uma data de revisão. Isso vale para você e vira <b>entregável de contrato</b> para o cliente.</p>
+      <p><b>Segunda:</b> descubra qual associação comercial ou entidade da sua região está dando esse tipo de curso. Não para concorrer com o curso — para <b>estar no fim dele</b>. Quem ensina a vontade não entrega a obra. Você entrega.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A OPORTUNIDADE DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Uma só, e ela nasce direto do número da Accenture: <b>a ficha do produto que o robô do cliente consegue ler</b>. Não é site novo, não é loja nova, não é mudar nada de visual. É uma página de texto simples que responde, com número, o que um comprador — de carne e osso ou não — precisa saber antes de fechar.</p>
+
+    <p class="texto">Hoje quase toda empresa pequena esconde exatamente essas informações. O preço está numa imagem bonita. O prazo está no vídeo do Instagram. A condição de pagamento está na cabeça do vendedor. A garantia está no contrato que só chega no fim.</p>
+
+    <p class="texto">Para uma pessoa isso é ruim — ela pergunta no WhatsApp e alguém responde. Para um robô comprando é <b>fatal</b>: ele não pergunta. Ele não acha, não entende, e passa para o próximo fornecedor. Você perde a venda sem nunca saber que ela existiu.</p>
+
+    <p class="texto">É a mesma lógica da placa de preço no supermercado. Se a etiqueta da prateleira está apagada, a moça do caixa até resolve — mas o comprador da rede, que passa com a planilha, nem para na frente do produto.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>"Ser lido por robô" quer dizer: a informação está em <b>texto que dá para copiar</b>, numa página aberta, sem precisar clicar, preencher formulário ou ver vídeo. Se você não consegue selecionar o preço com o dedo e colar num bloco de notas, o robô também não consegue.</p></div>
+
+    <div class="nota">
+      <div class="r">Por que isso vira dinheiro rápido</div>
+      <ul class="lista">
+        <li><b>O prazo faz a venda —</b> "em 2030, três em cada dez pedidos" é uma frase de jornal de economia, não sua opinião. O cliente não discute com o Valor Econômico.</li>
+        <li><b>É barato de entregar —</b> uma página de texto. Sem projeto, sem sistema novo, sem aprovação de diretoria.</li>
+        <li><b>Dá prova imediata —</b> você mostra na hora, na frente do cliente, o robô errando o preço do produto dele.</li>
+        <li><b>Abre a porta grande —</b> quem arruma a ficha do produto arruma depois o atendimento, o follow-up e a busca. Que é a sua base de força inteira.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p><b>1.</b> Escolha <b>um</b> cliente e <b>um</b> produto ou serviço dele. Um só. Não faça o catálogo inteiro.</p>
+      <p><b>2.</b> Escreva as <b>dez perguntas</b> que todo comprador faz antes de fechar: quanto custa, em quanto tempo entrega, atende qual região, como paga, tem garantia de quê, quem atende depois da venda, e assim por diante.</p>
+      <p><b>3.</b> Responda cada uma <b>em uma frase, com número</b>, numa página pública do site do cliente. Texto puro. Nada dentro de imagem, nada só em vídeo, nada atrás de formulário.</p>
+      <p><b>4.</b> Agora o teste que fecha a venda: abra <b>três IAs diferentes</b> e pergunte, como se você fosse o comprador — "quanto custa o produto X na empresa Y, qual o prazo de entrega?". <b>Print de cada resposta.</b></p>
+      <p><b>5.</b> Os erros são a sua proposta. Você não precisa de apresentação: mostra o print do robô inventando o preço do cliente e pergunta quantos pedidos por mês passam por ali.</p>
+      <p><b>Esforço:</b> uma tarde e uma página · <b>Ativo gerado:</b> um antes-e-depois com print · <b>Risco:</b> nenhum — você melhorou a página do cliente de qualquer jeito</p>
+    </div>
+  </section>
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>DE ONDE VEIO CADA INFORMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Tudo o que está escrito acima veio de uma destas fontes, colhidas no sinal de hoje, 20 de agosto de 2026, às 8h05 da manhã. Nada foi inventado, estimado ou completado de memória. As horas estão convertidas para o horário de Brasília.</p>
+
+    <p class="texto">Primeiro o noticiário de negócios — os quatro itens que sustentam a manchete do dia.</p>
+
+    <div class="nota">
+      <div class="r">O dia dos negócios</div>
+      <ol class="src">
+        <li><b>Valor Econômico</b> — "Em 2030, 30% do comércio online será feito por agentes de IA, diz Accenture" (ontem · 12h31) · <a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTUd6NHpZWkdTaVVPa29TelFhTmp3VkZKa0pOR2cxdzZnRzBSei13YlJkSndCNl9wTG9xeUNIVC1odkgyYjAweDN5VVJFNVJuOG1WT3hfcEZNUnFMT1lhZTZRaTlDaFNSQ3REZW4xSzBqLUVkSFNleHJ3a0JIemRLZ2FsVWhwc3NCWi1jcXdLb0RqbWs1S19ZQW5uQkhpWm9VUkdPNVhGV0daYXBWME1YNlp0UjJRR2VHWVZveWs2UzA3dFdlOFNHT2FaeldJQUFYelVXNFdNdkwtSnV4WHVxcNIB7wFBVV95cUxNcXV5SVJjcUVOU19tR2NpcGpGdUhmd1J0am1fNE1OVlFZcnlxc2h2QVJOWHVJMENBLThObFV5VDlRVWVEdVVxdUc5MTFFdUZZMDNCODNhRFpZbFRpcmw4NWpVSmw0RWZBTW5sSmpwYTI1MXZ6V0Fnb01HVVNzbUNFTjV4Z1YyTWl6LTNsREkxbkI4alhEV0lFVlJVU1pZRWgxSnNxMFYta1BXbHg3d1lCYVlaRHJlaU9fbnhramNGd25wQklTcWxvS2VtZl9USXhra0tKaVJVNDF4ZnpyNHh1aWJ1bzRITWRIXzlJUWtRZw?oc=5">clique aqui</a></li>
+        <li><b>CartaCapital</b> — "Times híbridos entre humanos e IA mudam forma como empresas organizam trabalho" (ontem · 12h00) · <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOMzEzRjhBQ1BHSTM5OG40UlN4MTFDdTJ0MHpIcTV3SUpYLTM0RldIQ25ZdDMwaFFQX2kxQzdHR0ViaHZfdE1Pd1FfZ3YyZzdzUU4yV2ltYWh1TEJFdVNGbUxHbVZHSjlwV0Q4VEdlVGZLNmJwUXZISkZVUUxPdlZLX3lNOA?oc=5">clique aqui</a></li>
+        <li><b>Hora Campinas</b> — "ACIC promove workshop para ensinar empresas a automatizar processos com IA" (ontem · 15h42) · <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQWEZyLWRJTTJUQmdzalNHZmcxS2dPOFUxTHZCS0xPUzhnaENSaTBrNmh3VHRHZFNuLXRqTDNPdnRLUFNlOU04VXowR0dIVTM0V3piVnRlSENrbHZhcnFfT3FwaUZGZ1hSamdUNko0SEtfOGVEZ1RxblBlRVdyZnRITU5VcU51cVBXNDJMZklrUHhTRllhZGJJei01aXFqN25OQVA3ejd3?oc=5">clique aqui</a></li>
+        <li><b>IT Forum</b> — "Synapser aposta que empresas serão medidas por valor entregue, não por tamanho de equipe, na era dos agentes de IA" (ontem · 16h00) · <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE12a0h1MjJkMjBOX2szdTh1TG0zR1RuRXBvRmhYM2w0NFpsOGVUZ1JMeUdqbG4xck5qOTlxa0pIYXdXMktRN2pWUEU2Q1gzYkxSY2ZRUFBwLWJlclpJRFNNVFhaRXd4Mi11VnBtUWdvZjMzXzh5?oc=5">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <p class="texto">Depois o mural onde os programadores do mundo todo postam o que saiu. Três itens de hoje e um de ontem à tarde entraram nesta edição.</p>
+
+    <div class="nota">
+      <div class="r">Do mural dos programadores</div>
+      <ol class="src">
+        <li><b>Klement on Investing</b> — "If this is true, the hyperscalers are toast", ou "se isso for verdade, as gigantes de nuvem estão em apuros" (hoje · 7h38) · <a href="https://klementoninvesting.substack.com/p/if-this-is-true-the-hyperscalers">clique aqui</a></li>
+        <li><b>dontpastetheai.com</b> — "Don't Paste the AI, please", ou "não cole a resposta da IA, por favor" (hoje · 5h20) · <a href="https://dontpastetheai.com/">clique aqui</a></li>
+        <li><b>GitHub · projeto Claude Code</b> — pedido para a ferramenta passar a ler o arquivo padronizado de instruções, o AGENTS.md (ontem · 18h19) · <a href="https://github.com/anthropics/claude-code/issues/6235">clique aqui</a></li>
+        <li><b>Unsloth</b> — nova versão do formato que comprime modelos de IA para rodar em máquina fraca (ontem · 15h36) · <a href="https://unsloth.ai/docs/basics/dynamic-3.0-ggufs">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <p class="texto">A vitrine de produtos novos vem em seguida — só nome, data e endereço, na ordem em que apareceram. É de propósito: é assim que ela chega ao radar.</p>
+
+    <div class="nota">
+      <div class="r">Vitrine de produtos novos · Product Hunt</div>
+      <ol class="src">
+        <li><b>MiniMax Design</b> — estreia de hoje, 1h06 · <a href="https://www.producthunt.com/products/minimax">clique aqui</a></li>
+        <li><b>Lifelong</b> — estreia de hoje, 0h03 · <a href="https://www.producthunt.com/products/lifelong-the-family-health-company">clique aqui</a></li>
+        <li><b>Hermai Brand API</b> — estreia de ontem, 22h12 · <a href="https://www.producthunt.com/products/hermai-brand-api">clique aqui</a></li>
+        <li><b>Shape</b> — estreia de ontem, 20h56 · <a href="https://www.producthunt.com/products/shape-5">clique aqui</a></li>
+        <li><b>Grok 4.6</b> — estreia de ontem, 11h26 · <a href="https://www.producthunt.com/products/grok-4-6-7">clique aqui</a></li>
+        <li><b>Peach Co-Pilot</b> — estreia de ontem, 5h08 · <a href="https://www.producthunt.com/products/peach-co-pilot">clique aqui</a></li>
+        <li><b>MeetStream AI</b> — estreia de ontem, 3h15 · <a href="https://www.producthunt.com/products/meetstream-ai">clique aqui</a></li>
+        <li><b>Berd</b> — estreia de anteontem, 20h41 · <a href="https://www.producthunt.com/products/berd">clique aqui</a></li>
+        <li><b>bitdrift.ai</b> — estreia de segunda-feira, 14h12 · <a href="https://www.producthunt.com/products/bitdrift">clique aqui</a></li>
+        <li><b>HyNote for Mac</b> — estreia de 5 de agosto, ainda em destaque na vitrine · <a href="https://www.producthunt.com/products/hynote-ai">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <p class="texto">Por último, uma leitura de apoio que o radar já citou em edições anteriores e que hoje ganhou o número que faltava. Vale reabrir com o dado da Accenture na mão.</p>
+
+    <div class="nota">
+      <div class="r">Leitura de apoio · já citada antes, hoje ficou mais útil</div>
+      <ol class="src">
+        <li><b>E-Commerce Brasil</b> — "Conheça o novo SEO para agentes de IA" (7 de agosto · 9h00). Citado nas edições de 10 e 17 de agosto. É o manual do que a página precisa ter para o robô ler; a Accenture agora diz quanto isso vale. · <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPX2RoWDN4QjdaVzlvVjRXSzNsVEhuZEJLcVUyTy1YMFpndHRVclpaMnBOMGlUS3VseGhZWWNudlBoTFR5SjlrN1BNX19tMzF2VzFFRWdJUk1KWFIwSFdKRm5lbWVjNUFtOVNvdk9fcXd0X0VJQTgwZFdiRjJqN2VCU1lhdWplc2s?oc=5">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>1.</b> O radar leu <b>as manchetes e as datas</b>, não o texto completo de cada reportagem. No caso da Accenture, isso quer dizer que não sei se os 30% valem para o mundo ou só para alguns países, nem se a conta é por número de pedidos ou por valor gasto. Antes de citar em proposta, abra o link e leia. <b>2.</b> Os itens do mural dos programadores chegam <b>só com título e endereço</b>. O texto das gigantes de nuvem eu cito pelo título — não sei qual é o "isso" da frase, e não repito nenhuma conclusão dele como fato. <b>3.</b> A vitrine de produtos novos não traz descrição. Cito nome, autor, data e link; o que cada produto faz é leitura pelo nome, não afirmação. A contagem "2 em 10" é leitura de rótulo, não de funcionalidade. <b>4.</b> Hoje o sinal do YouTube veio <b>sem link e sem número de visualizações</b>. Por isso esta edição não traz o bloco de vídeos que apareceu ontem — preferi tirar a seção a publicar número que não consigo apontar. <b>5.</b> Os dez assuntos mais buscados no Brasil hoje não têm nenhum termo ligado a IA. Nenhuma afirmação desta edição vem dali.</p></div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Pulso Nº 016 · 20/08/2026<br>Próxima edição: Pulso de sexta · o Completo, com o bloco de posicionamento, volta na segunda</div>
+</div>
+</body>
+</html>
