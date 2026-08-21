@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 017 · Pulso de 21 de agosto de 2026 — Ninguém está vendendo o robô, estão vendendo a tomada</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>Ninguém está vendendo o robô. Estão vendendo a tomada onde ele se liga</h1>
+    <p class="chamada">Ontem à noite subiu o primeiro ponto de encaixe da imprensa brasileira. Na quarta foi o das finanças da América Latina; na segunda, o de recursos humanos. Na mesma semana em que uma revista de negócios calculou o prejuízo dos robôs que falham, o Brasil começou a resolver o problema por baixo — pela ligação, não pelo robô.</p>
+    <div class="dateline">Edição Nº 017 · sexta-feira, 21 de agosto de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">Três setores brasileiros instalaram a própria tomada para IA em cinco dias.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Oito recortes: a tomada do jornalismo, a conta dos robôs que falham, o robô que investe sozinho e o aviso do FMI.</div></div></li>
+      <li><div><a href="#automacao">Seu território: automação</a><div class="d">O robô que reescreve o próprio manual — e a tomada por setor virando produto.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O mapa das tomadas do cliente. Uma tarde, uma página, uma proposta.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links com data e hora — e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O QUE ACONTECEU HOJE</h2><span class="fio"></span></div>
+
+    <p class="abertura">A semana inteira o radar falou do robô: quem liga, quanto economiza, quem freia, quem compra. Hoje a notícia é sobre <b>o fio</b>. Três setores brasileiros anunciaram, em cinco dias, o próprio ponto de encaixe para IA — imprensa, finanças e recursos humanos. E, no meio disso, chegou a conta de quem tentou pular essa etapa.</p>
+
+    <p class="texto capitular">Ontem, quase onze da noite, o <b>Observatório da Imprensa</b> publicou o Jor-MCP: o primeiro ponto de encaixe para IA feito para o jornalismo brasileiro. Na quarta ao meio-dia, a Belvo lançou o dela para dados financeiros da América Latina. Na segunda de manhã, o <b>Valor Econômico</b> já tinha mostrado a da Senior, para gestão de pessoas. Três setores, cinco dias, o mesmo movimento.</p>
+
+    <p class="texto">Repare que nenhum dos três lançou um robô. Lançaram <b>o lugar onde o robô encosta para pegar o dado</b>. É a diferença entre vender geladeira e instalar a rede elétrica do prédio. A geladeira aparece na propaganda; a fiação é que decide se ela liga.</p>
+
+    <p class="texto">E o contraponto chegou na mesma janela. Ontem às cinco e quarenta da tarde, a <b>Capital Digital</b> publicou que os robôs de IA estão falhando nas empresas e que o custo disso não tem precedentes. Em julho, o <b>ipnews</b> já tinha mostrado que metade das tentativas de automação com IA não se sustenta.</p>
+
+    <p class="texto">Junte as duas metades e você tem a manchete de verdade do dia. O robô não falha porque é burro. Falha porque não alcança o dado da empresa — e aí inventa, trava ou responde errado. Quem está instalando tomada esta semana está atacando exatamente essa causa.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>MCP é um padrão de encaixe — como a tomada de três pinos. Antes dela, cada aparelho vinha com um plugue diferente e você precisava de um adaptador para cada um. Com a tomada padronizada, qualquer aparelho liga em qualquer parede. Aqui o "aparelho" é a IA e a "parede" são os sistemas da empresa: o banco de dados, o arquivo de contratos, a folha de pagamento, o acervo do jornal.</p></div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">3</div><div class="lbl">Pontos de encaixe brasileiros anunciados em cinco dias: jornalismo, finanças da América Latina e gestão de pessoas.</div></div>
+      <div class="numero"><div class="big">1 em 2</div><div class="lbl">Tentativas de automação com IA que não se sustentam nas empresas, segundo o ipnews em julho deste ano.</div></div>
+      <div class="numero"><div class="big">zero</div><div class="lbl">Termos ligados a IA entre os dez assuntos mais buscados no Brasil hoje. Terceiro dia seguido.</div></div>
+      <div class="numero"><div class="big">5 dias</div><div class="lbl">O arco da semana: de "76 em cada 100 empresas já ligaram o robô" até "a conta de quando ele falha".</div></div>
+    </div>
+
+    <div class="olho"><p>Robô que não alcança o dado da empresa não é robô. É um estagiário eloquente com a porta trancada.</p><div class="quem">A frase desta edição</div></div>
+
+    <div class="nota">
+      <div class="r">O arco que o radar vem contando</div>
+      <ul class="lista">
+        <li><b>Sexta e segunda —</b> 76 em cada 100 empresas brasileiras já operam robô de IA. O país ligou a máquina antes de contratar o chefe dela.</li>
+        <li><b>Terça —</b> apareceu a conta que fecha: a Cielo cortou mais da metade dos chamados internos com um robô.</li>
+        <li><b>Quarta —</b> apareceu o limite. A dona do ChatGPT reduziu o próprio ritmo depois que um robô dela agiu por conta própria num teste.</li>
+        <li><b>Ontem —</b> o robô mudou de lado do balcão. Em 2030, três em cada dez compras na internet feitas por programa, não por gente.</li>
+        <li><b>Hoje —</b> apareceu a peça que faltava, e é a mais chata: <b>a ligação</b>. Sem ela, tudo o que veio acima não passa de demonstração.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>A semana te deu argumento de venda para dentro (ponha um robô), para fora (o seu cliente vai ser um robô) e de risco (ponha coleira nele). Hoje entrou o quarto, e ele é o mais defensável de todos: <b>antes de instalar robô, veja onde ele consegue encostar</b>.</p>
+      <p>Isso muda a ordem da sua proposta. Em vez de começar por "vou montar um time de robôs para o seu atendimento", começa por "vou mapear o que a IA já consegue alcançar aí dentro e o que está trancado". O segundo é mais barato de vender, mais rápido de entregar e é a resposta direta para o medo que a Capital Digital acabou de publicar.</p>
+      <p>E tem uma vantagem que quase ninguém está usando: <b>a tomada é vendida por setor</b>. Jornalismo já tem. Finanças já tem. Gestão de pessoas já tem. Contratos já tem desde junho. Todo setor que não tem é uma conversa aberta esperando alguém aparecer.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>AS NOVIDADES DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">🟢 é o que subiu hoje. 🟡 é de ontem ou um pouco antes, e entrou porque explica o que subiu hoje. O Google News e o mural dos programadores publicam a hora no fuso de Londres — aqui tudo já está convertido para o horário de Brasília, três horas a menos.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>O jornalismo brasileiro ganhou a sua tomada para IA</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 22h52</span><span>Observatório da Imprensa</span></div>
+          <p class="texto">Chama-se Jor-MCP e é apresentado como o primeiro ponto de encaixe para IA feito para o jornalismo brasileiro. A ideia é simples: em vez de cada redação inventar o próprio jeito de deixar a IA consultar o acervo, existe um encaixe só, e qualquer ferramenta liga nele.</p>
+          <p class="texto">Guarde o padrão, não a notícia. Em setembro passado ninguém falava disso. Agora aparece um por semana, sempre igual: <b>uma entidade do setor publica o encaixe e as ferramentas se ligam</b>. Onde isso já aconteceu, a discussão pula de "será que dá?" para "quem faz para mim?".</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Servidor MCP" soa técnico, mas é a tomada da parede. Alguém precisa instalar o ponto; depois disso, qualquer IA que tenha o plugue certo liga ali sem obra nova. E quem instala escolhe o que a tomada alimenta — e o que fica desligado.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQSE5jdzFWaHdTU05kcEZKc1BULXJNREhjUDNCRzRwOV84a0lwMWJjSkxNYUU3T2N1cW1GRWVpZ2poS0MwQ3dVLUFDRnJuQnVxNXh3VVZxMUJzbHdpRlV3cFFyd0NIQ1ZzT0VyOVJrWmtzOG9zODhhLXZoWjFDX0hLNTN1UzUxd3pFSGMxc3BiWm1XYmlSM3R4NUt3bU5wQlZjZGhxZW5HOVFhbkRnQnowUHJzTQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>"Os robôs de IA estão falhando, e a conta para as empresas não tem precedentes"</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 17h42</span><span>Capital Digital</span></div>
+          <p class="texto">É a manchete mais desconfortável da semana e a mais útil para você. Depois de quatro dias de "todo mundo já ligou o robô", chegou a coluna do outro lado da planilha: o que se perde quando ele não funciona.</p>
+          <p class="texto">Não trate isso como notícia ruim. Trate como <b>a objeção que o seu próximo cliente vai levar para a reunião</b>. Ele leu, ou vai ler. Quem chega com a resposta pronta para essa objeção vende; quem chega com mais entusiasmo, não.</p>
+          <p class="texto">E a resposta está na própria edição de hoje: robô falha quando não alcança o dado certo, no formato certo, na hora certa. É problema de instalação, não de inteligência.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOUHlicWc3bFJwYVdfZGlXSGlETFlGQXlCT2JNemhmS2xKZmNDRmtFMFpFLTF0U1pNMzBRV2h2VHF1SEZNMjJWZm1pOFpZeWxfYUpGeHNLU0pmclR0RnRXc1BReTE0VGhPRGpCdEVIOGFGZ0EwYVBXSDZtZHV2eE84RW5CRUJrWnJiQzgzbXd3Xy1xRmxka1BLZDg4ajJLWUVVMUw4ZVBsbERFQQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>A Binance soltou um sistema para o robô negociar criptomoeda sozinho</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 00h54</span><span>Cointelegraph Brasil</span></div>
+          <p class="texto">Entrou no radar quase uma da manhã. A maior corretora de criptomoedas do mundo lançou o Agent OS, um sistema para robôs de IA negociarem dentro da plataforma.</p>
+          <p class="texto">Você não precisa gostar de cripto para ler o sinal. Ontem o radar mostrou o robô virando <b>comprador</b>. Hoje ele aparece com <b>a mão no dinheiro</b>, num ambiente que roda vinte e quatro horas e onde ninguém espera o horário comercial.</p>
+          <p class="texto">É o laboratório do resto. O que der certo e o que der errado ali vai chegar ao comércio comum com uns dois anos de atraso — e com a lição já paga por outro.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Agent OS" quer dizer, na prática, o painel de controle de um robô: onde você define o que ele pode fazer, com quanto dinheiro, dentro de qual limite. É como dar o cartão da empresa para um funcionário — mas com o limite programado antes, não combinado no corredor.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQWE1qUjFUQnptZ2ZEeGVtR0tLQVJpbnprY3RXWjJYdzVoYmo0LTdoVlVLaDRqRTVlRWdUTXBycXBROTViMHRDbHZELTdoaVpfMFF3T2kySGVlLWt0TURCaVhtRnV2LW5na2J5ZlhsOFk2ZDZzZmJqX2pTN0FPX29qYzhzdTN3VXZiWXZvUkpMbDdEUjhJak02UjRFSHRVd1U?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>A Belvo instalou a tomada dos dados financeiros da América Latina</h3>
+          <div class="credito"><span class="frescor antes">🟡 quarta · 12h20</span><span>Gazeta da Semana</span></div>
+          <p class="texto">Dois dias antes do jornalismo, a empresa de dados financeiros Belvo lançou o seu ponto de encaixe para ligar IA a dados financeiros na região. Extrato, movimentação, informação de conta — o material que a IA precisa alcançar para responder qualquer coisa útil sobre dinheiro.</p>
+          <p class="texto">Esta é a segunda peça do trio da semana. E é a que mais importa para quem atende negócio pequeno: <b>a conversa sobre caixa é a que abre porta</b>. Nenhum dono de loja quer ouvir sobre IA; todo dono de loja quer saber quanto entrou e quanto sai amanhã.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQTTFpVkRYNHU1cmVsZjFfMUoyTGVpUjVzeGhCZklFLU1MeHpEX2RWLWd5V0FUOWZva0xjSnJsRHRfSG5HbUdaT0hCbnhldnBQZ3pCMmx4c0d2UlF3ZWdMelF0VnR4S3R6MktFUlZvbmZDSEpVcTZvYXY0eGs1T3pJVVBuNFhEb0x6U0trbWo1U1Y5OVRSNm83QkF3dXB3TzlNWnhLbHNDaHNGRmR2eEJyNEIxbkdjQQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>A chinesa DeepSeek publicou a documentação de um modelo que enxerga imagem</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 07h33</span><span>DeepSeek, via o mural dos programadores</span></div>
+          <p class="texto">Foi o item mais fresco da manhã no mural onde os programadores do mundo todo postam o que saiu. A página é o manual de uso de um modelo chamado v4-flash-vision-exp — pelo nome, uma versão rápida e ainda experimental que trabalha com imagem.</p>
+          <p class="texto">Sendo honesto com você: eu vi o manual, não vi teste independente nem preço confirmado. O que registro é o ritmo. <b>A pressão de preço vem sempre do mesmo lugar</b>, e ela é a razão pela qual o custo de rodar IA cai a cada três meses.</p>
+          <p class="texto">Para o seu bolso isso importa mais do que quase qualquer lançamento americano. Quanto mais barato fica o motor, mais margem sobra em cima da entrega — que é onde você cobra.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Modelo que enxerga" é a IA que aceita uma foto como pergunta: você manda o print do boleto, a etiqueta do produto, o cardápio, e ela lê. E o manual é a folha que vem na caixa do aparelho — a que explica como ligar aquilo no seu sistema.</p></div>
+          <div class="link"><a href="https://api-docs.deepseek.com/guides/vision/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>O economista-chefe do FMI avisou: o ganho de produtividade da IA pode não segurar a inflação</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 09h48</span><span>Terra</span></div>
+          <p class="texto">Ontem de manhã, o economista-chefe do Fundo Monetário Internacional disse que os ganhos de produtividade trazidos pela IA podem não ser suficientes para conter a inflação.</p>
+          <p class="texto">Parece assunto de caderno de economia, mas mexe direto na sua proposta. <b>Ninguém compra automação como aposta de futuro em ano de juro apertado.</b> Compra como corte de custo com prazo curto para aparecer.</p>
+          <p class="texto">Ajuste a conversa: menos "isso transforma o seu negócio", mais "isso tira tantas horas por semana da sua equipe, e você vê no mês que vem".</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxQRGxIbEpkajlGWWZPeTJ1eWJCR0Y0VUZZZU5QRHNkdUJCYWpkOUNSTDJNNHpNZ2NFX2ZXMGxHa016b2RYcVRjbU1IYTB5bWpLWm84S05yck5jMjNrWjNJZDBZLXFWOF9RcXZTUlZHTW9mcV9VQ2x4Z2s3eEVlZWR5aFNfYWdBRW5abGhKRWhRYXJvd3JZZHBVdm5nd21jeU83SEZtSkh2SmxtYzFCRUthcmRWYlFFTU5UelN5RjFrWGxyZU1mamJJUUp4OWY5TUhZUUJWZFhQNWhTRUEtS2diMVdMWXhkMWZ4Q0FyNWwxZ2NzUWpQcHhMbXFYZw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>"Aparecer no Google já não é suficiente" — agora numa reportagem de cidade</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 12h31</span><span>Jornal de Brasília</span></div>
+          <p class="texto">Ao meio-dia e meia de ontem, o Jornal de Brasília publicou uma reportagem local sobre marketing digital com essa tese no título. Não é revista de tecnologia nem blog de agência: é jornal de cidade falando com comércio de cidade.</p>
+          <p class="texto">Esse é o degrau que interessa. O assunto sai da conferência, passa pela imprensa de negócios e desce para o jornal local — que é onde o seu cliente lê. <b>Quando o tema chega aí, ele deixa de ser novidade e vira preocupação.</b></p>
+          <p class="texto">E casa exatamente com a edição de ontem: se três em cada dez compras vão ser feitas por programa em 2030, aparecer na primeira página do Google resolve cada vez menos.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Durante vinte anos, ser achado significou aparecer na lista azul do Google. Agora significa também ser citado dentro da resposta que a IA escreve — quando a pessoa pergunta e recebe um parágrafo pronto, sem lista nenhuma. Virar essa citação é trabalho novo, e quase ninguém está fazendo ainda.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQR2UySFNQZkF4VC0ta0kwd0lhN3NqQ19MbVIwQ21YQW1MY3J2TFRTTm44ZUZmOGFZZ2tKa3ZKTnhyRVpCX2NfMFg3bzRjUVJJeGFid1FrT1FQZE9HV1duajJSeGRUZklNUi00N0IweWdiQnVhaXdCV3NRdmN3MWFWeHI1U05XQlo4QXVlLUZGSEg4NVR5aHZRNG51X0p3d1ljLWhNTmVpdUNmSVJYeTM0Zmw1R3Y3Q0gzakE?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Na vitrine de produtos novos: o Google entrou de madrugada e a ferramenta de programar foi para a nuvem</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 03h58</span><span>Product Hunt</span></div>
+          <p class="texto">O nome mais fresco da madrugada é do Google: <b>Antigravity IDE Extensions</b>, entrou às quatro menos dois. Antes dele, à meia-noite e quarenta e três, o <b>Project SKY</b>. Ontem ao meio-dia apareceu o <b>Epho</b>, apresentado como a ferramenta Claude Code rodando na nuvem; de manhã, o <b>Router by Ramp</b>; e de madrugada o <b>fx</b>, da Vercel.</p>
+          <p class="texto">O padrão do dia é um só, e é o mesmo da edição inteira: <b>quase tudo que subiu é encaixe, não é robô</b>. Extensão para o programa que você já usa, roteador, ferramenta que sai da sua máquina e vai para a nuvem. Ninguém está lançando o assistente mágico. Estão lançando a fiação.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Ir para a nuvem" quer dizer sair do seu computador e passar a rodar no computador de outra pessoa, alugado por hora. A vantagem é continuar trabalhando com a sua máquina desligada. A desvantagem é que o boleto vem por uso, e não fixo no fim do mês.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/google-antigravity">clique aqui para ver</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="nota">
+      <div class="r">Nota de honestidade sobre a vitrine</div>
+      <p class="texto">A vitrine chega ao radar só com nome, autor, data e endereço — sem uma linha de descrição. Não afirmo o que cada produto faz nem recomendo nenhum. O que vale aqui é a leitura do conjunto de nomes, não o produto individual.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="automacao">
+    <div class="titulo"><span class="n">03</span><h2>SEU TERRITÓRIO: AUTOMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Dois destaques hoje, e eles são opostos de propósito. Um é um projeto minúsculo, publicado às duas da manhã, de um robô que reescreve o próprio manual. O outro é o movimento das empresas grandes instalando tomada por setor. Um mostra até onde dá para ir. O outro mostra o que dá para vender na segunda-feira.</p>
+
+    <p class="texto">Você monta time de robôs. Então a pergunta que interessa não é "a IA consegue?". É outra, de duas partes: <b>onde a regra fica guardada e de onde vem o dado</b>. Os destaques de hoje respondem uma parte cada.</p>
+
+    <div class="nota">
+      <div class="r">Destaque 01 · o robô que reescreve o próprio manual</div>
+      <p class="texto">Às duas e vinte da manhã subiu no mural dos programadores um projeto chamado <b>Seed</b>: uma estrutura mínima de robô de IA que modifica a si mesma. Ou seja, o robô pode alterar as próprias instruções enquanto trabalha.</p>
+      <p class="texto">É uma ideia bonita e um pesadelo operacional. Bonita porque o robô corrige o que deu errado sem esperar por você. Pesadelo porque, na quarta-feira, você não sabe mais qual regra ele está seguindo — nem por quê.</p>
+      <p class="texto">Pense no funcionário que pode reescrever o manual da loja sozinho, à noite, sem avisar ninguém. Um dia ele melhora o atendimento. No outro, ele decide que dar 40% de desconto resolve mais rápido.</p>
+      <p class="texto">Registre como fronteira, não como receita. E use como argumento na direção contrária: <b>o que você vende é previsibilidade</b>. Robô com manual fixo, escrito por gente, revisado com data. Depois da manchete de ontem sobre robôs falhando, "o meu não muda sozinho" vale mais do que qualquer demonstração bonita.</p>
+      <div class="traduz"><span class="r">Em português claro</span><p>Time de robôs é um conjunto de programas de IA trabalhando juntos, cada um com uma função: um qualifica o contato, outro responde, outro cobra o retorno, outro registra. A "estrutura" é o esqueleto onde eles rodam — quem chama quem, quem pode o quê, e onde está escrita a regra da casa.</p></div>
+    </div>
+
+    <div class="nota">
+      <div class="r">Destaque 02 · a tomada virou produto, e é vendida por setor</div>
+      <p class="texto">Olhe o calendário da semana: segunda a Senior, em gestão de pessoas. Quarta a Belvo, em dados financeiros. Ontem à noite o Jor-MCP, no jornalismo. Em junho a Contraktor, em contratos. Sempre a mesma jogada: quem já tem o dado do setor instala o ponto de encaixe e vira caminho obrigatório.</p>
+      <p class="texto">O que isso te diz é operacional, não filosófico. Nos setores que já têm tomada, <b>metade do seu trabalho de ligação acabou de sumir</b> — e a disputa passa a ser sobre a regra e a entrega, que é onde você é bom.</p>
+      <p class="texto">Nos setores que não têm — clínica, escritório de advocacia pequeno, distribuidora, escola, imobiliária de bairro — a tomada não existe e não vai existir tão cedo. Ali quem instala o encaixe é você, na mão, cliente por cliente. É trabalho menos bonito de mostrar e muito mais difícil de trocar por outro fornecedor.</p>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Uma tarefa esta semana, e ela é de arquivo, não de código: <b>faça a sua lista de tomadas</b>. Duas colunas. À esquerda, os setores que você atende. À direita, se já existe ponto de encaixe pronto para o sistema que aquele cliente usa.</p>
+      <p>Onde tiver tomada, a sua proposta muda de "vou integrar tudo" para "já está integrado, vamos combinar as regras". Prazo menor, risco menor, preço mais fácil de defender.</p>
+      <p>Onde não tiver, você acabou de encontrar o serviço que dá para cobrar por mês sem virar refém de fornecedor nenhum. Instalar fiação é chato, e é exatamente por isso que paga bem.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A OPORTUNIDADE DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Uma só, e ela nasce do encontro das duas manchetes de hoje: <b>o mapa das tomadas do cliente</b>. Uma página que responde, com nome e número, o que a IA já consegue alcançar dentro da empresa dele — e o que está trancado. Não é projeto. É diagnóstico, e é o que abre o projeto.</p>
+
+    <p class="texto">Todo mundo que tentou automatizar e falhou tem a mesma história. Contrataram a ferramenta, ligaram o robô, e ele respondeu bonito e errado. A conclusão que ficou foi "IA não funciona para o meu caso". A conclusão certa era outra: o robô nunca teve acesso ao dado que responderia a pergunta.</p>
+
+    <p class="texto">O mapa desmonta isso em uma tarde. Você lista os sistemas que a empresa usa de verdade — o de vendas, o de estoque, o financeiro, o de agendamento, a caixa de e-mail, o WhatsApp. Para cada um, marca uma de três coisas: <b>tem tomada pronta</b>, <b>dá para improvisar uma</b>, ou <b>está trancado</b>.</p>
+
+    <p class="texto">O resultado é uma página que o dono entende sozinho. E ela faz um trabalho que nenhuma apresentação faz: mostra que o problema nunca foi a IA. Foi a instalação. Quem entrega esse mapa deixa de ser mais um vendendo robô e vira o único que explicou por que o anterior não funcionou.</p>
+
+    <div class="traduz"><span class="r">Em português claro</span><p>"Ter tomada pronta" significa que o sistema já oferece um jeito oficial de outro programa conversar com ele. "Improvisar" é fazer a ligação por fora, com uma planilha no meio ou uma exportação diária — funciona, mas alguém tem que cuidar. "Trancado" é sistema antigo que só abre na tela, para uma pessoa, com senha. Desses ainda tem muito, e é onde mora a maior parte do dinheiro do cliente.</p></div>
+
+    <div class="nota">
+      <div class="r">Por que isso vende agora, e não daqui a três meses</div>
+      <ul class="lista">
+        <li><b>A objeção já está publicada.</b> A manchete de ontem sobre robôs falhando e custo alto vai circular em grupo de empresário na semana que vem. Chegar com a explicação antes da objeção vale mais do que responder depois dela.</li>
+        <li><b>O preço é fácil.</b> Diagnóstico é valor pequeno, decisão rápida, sem reunião de comitê. É a porta de entrada que não assusta.</li>
+        <li><b>Não depende de nenhuma aposta dar certo.</b> Se a IA melhorar, o mapa continua valendo. Se travar, o mapa continua valendo. Você mapeou os sistemas do cliente — isso serve para qualquer coisa.</li>
+        <li><b>É o seu território de sempre.</b> Atendimento, vendas, follow-up: você já sabe quais perguntas o cliente recebe todo dia. O mapa só responde de onde viria cada resposta.</li>
+      </ul>
+    </div>
+
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p><b>1.</b> Escolha um cliente que você já atende e conhece por dentro. Não precisa avisar ninguém — o primeiro mapa é seu, para calibrar.</p>
+      <p><b>2.</b> Liste numa folha os sistemas que ele usa de verdade num dia comum. Não o que está no contrato: o que está aberto na tela do funcionário.</p>
+      <p><b>3.</b> Para cada um, escreva <b>pronto</b>, <b>improviso</b> ou <b>trancado</b>. Se não souber, escreva "verificar" — a lista das dúvidas também é entrega.</p>
+      <p><b>4.</b> Embaixo, escreva as cinco perguntas que os clientes dele mais fazem por WhatsApp. Ao lado de cada uma, de qual sistema viria a resposta. As que não vierem de lugar nenhum são o seu diagnóstico.</p>
+      <p><b>5.</b> Passe para uma página com o nome da empresa no topo. Uma tabela e um parágrafo. Nada de apresentação de dez telas.</p>
+      <p><b>Tempo:</b> uma tarde · <b>Ativo gerado:</b> um modelo que você repete em todo cliente novo · <b>Risco:</b> nenhum — mesmo que ele não feche, você entendeu a operação dele melhor do que qualquer concorrente</p>
+    </div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>DE ONDE VEIO CADA INFORMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Tudo o que está escrito acima veio de uma destas fontes, colhidas no sinal de hoje, 21 de agosto de 2026, às 8h23 da manhã. Nada foi inventado, estimado ou completado de memória. As horas estão convertidas para o horário de Brasília.</p>
+
+    <p class="texto">Primeiro o noticiário — os itens que sustentam a manchete do dia e o contraponto dela.</p>
+
+    <div class="nota">
+      <div class="r">O dia dos negócios</div>
+      <ol class="src">
+        <li><b>Observatório da Imprensa</b> — "Jor-MCP: o primeiro servidor para IA do jornalismo brasileiro" (ontem · 22h52) · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxQSE5jdzFWaHdTU05kcEZKc1BULXJNREhjUDNCRzRwOV84a0lwMWJjSkxNYUU3T2N1cW1GRWVpZ2poS0MwQ3dVLUFDRnJuQnVxNXh3VVZxMUJzbHdpRlV3cFFyd0NIQ1ZzT0VyOVJrWmtzOG9zODhhLXZoWjFDX0hLNTN1UzUxd3pFSGMxc3BiWm1XYmlSM3R4NUt3bU5wQlZjZGhxZW5HOVFhbkRnQnowUHJzTQ?oc=5">clique aqui</a></li>
+        <li><b>Capital Digital</b> — "Agentes de IA estão falhando e o custo para as empresas não têm precedentes" (ontem · 17h42) · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOUHlicWc3bFJwYVdfZGlXSGlETFlGQXlCT2JNemhmS2xKZmNDRmtFMFpFLTF0U1pNMzBRV2h2VHF1SEZNMjJWZm1pOFpZeWxfYUpGeHNLU0pmclR0RnRXc1BReTE0VGhPRGpCdEVIOGFGZ0EwYVBXSDZtZHV2eE84RW5CRUJrWnJiQzgzbXd3Xy1xRmxka1BLZDg4ajJLWUVVMUw4ZVBsbERFQQ?oc=5">clique aqui</a></li>
+        <li><b>Cointelegraph Brasil</b> — "Binance lança Agent OS para negociação de criptomoedas com IA" (hoje · 00h54) · <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxQWE1qUjFUQnptZ2ZEeGVtR0tLQVJpbnprY3RXWjJYdzVoYmo0LTdoVlVLaDRqRTVlRWdUTXBycXBROTViMHRDbHZELTdoaVpfMFF3T2kySGVlLWt0TURCaVhtRnV2LW5na2J5ZlhsOFk2ZDZzZmJqX2pTN0FPX29qYzhzdTN3VXZiWXZvUkpMbDdEUjhJak02UjRFSHRVd1U?oc=5">clique aqui</a></li>
+        <li><b>Gazeta da Semana</b> — "Belvo lança MCP para conectar IA a dados financeiros na América Latina" (quarta · 12h20) · <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQTTFpVkRYNHU1cmVsZjFfMUoyTGVpUjVzeGhCZklFLU1MeHpEX2RWLWd5V0FUOWZva0xjSnJsRHRfSG5HbUdaT0hCbnhldnBQZ3pCMmx4c0d2UlF3ZWdMelF0VnR4S3R6MktFUlZvbmZDSEpVcTZvYXY0eGs1T3pJVVBuNFhEb0x6U0trbWo1U1Y5OVRSNm83QkF3dXB3TzlNWnhLbHNDaHNGRmR2eEJyNEIxbkdjQQ?oc=5">clique aqui</a></li>
+        <li><b>Valor Econômico</b> — "Com MCP da Senior, IA passa a falar a língua das empresas na gestão de pessoas" (segunda · 11h00) · <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxQOTZBaFo3NGZUWFVQeUsyLTdFWVZjWTQtdTAxQXFMNXFLVjlxOVRGaXhGamZfRUhyLTFUczJ4d09rRjZTZ1lScDBEZ2lQa09ERk5iSmRXVnVvTXoza3l0Y0M5ZGU0NzZnblowdVh5N0NUUEp2cWZBYlU1ckw2V3FEWnIwUDN2MG9rY3VWYzh2ekZ3cnI5cXpOdVFpNExVWjZiTk5uaGl2ckpsMUwxaHJBLXRoUVN4MFdVUjBVNF85M0lUem9YWF9McmdRRlRHMVJvaXA2cEY1SHIxLWtvc3cxN3J1VW55Z9IB9AFBVV95cUxQemdrTVBNVldkN1dCcm9BRHd6cEFaTXduc3UxZkwtVjhyUjdIa0NqVFZZYUFpLTlMRVhfOG1jdzlwYnVzeGRtbFJhVk9HaFhCZk9rN0RRc2NrU2RRcWI3eXNHMHhfakdnVms0ekxLZzNwWkdEWEo3TmZyRFdHNVhlSXdUQjliTHZCZkN1RENibWpfY3Nhd08yN0NJVkRCM01kNGQycEZ3ZzcxOXVfcFVqeUF1MTdNVm1qajJRSHRMVmpjc2dUZTU1LThuWEhRbWpfQk1IQmVGT0tCMFlfY3p5WTdBcE5BdGNhbDYtYnhreERINERN?oc=5">clique aqui</a></li>
+        <li><b>Terra</b> — "Ganhos de produtividade com IA podem não conter inflação, alerta economista-chefe do FMI" (ontem · 09h48) · <a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxQRGxIbEpkajlGWWZPeTJ1eWJCR0Y0VUZZZU5QRHNkdUJCYWpkOUNSTDJNNHpNZ2NFX2ZXMGxHa016b2RYcVRjbU1IYTB5bWpLWm84S05yck5jMjNrWjNJZDBZLXFWOF9RcXZTUlZHTW9mcV9VQ2x4Z2s3eEVlZWR5aFNfYWdBRW5abGhKRWhRYXJvd3JZZHBVdm5nd21jeU83SEZtSkh2SmxtYzFCRUthcmRWYlFFTU5UelN5RjFrWGxyZU1mamJJUUp4OWY5TUhZUUJWZFhQNWhTRUEtS2diMVdMWXhkMWZ4Q0FyNWwxZ2NzUWpQcHhMbXFYZw?oc=5">clique aqui</a></li>
+        <li><b>Jornal de Brasília</b> — "Marketing Digital em Brasília: por que aparecer no Google já não é suficiente" (ontem · 12h31) · <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQR2UySFNQZkF4VC0ta0kwd0lhN3NqQ19MbVIwQ21YQW1MY3J2TFRTTm44ZUZmOGFZZ2tKa3ZKTnhyRVpCX2NfMFg3bzRjUVJJeGFid1FrT1FQZE9HV1duajJSeGRUZklNUi00N0IweWdiQnVhaXdCV3NRdmN3MWFWeHI1U05XQlo4QXVlLUZGSEg4NVR5aHZRNG51X0p3d1ljLWhNTmVpdUNmSVJYeTM0Zmw1R3Y3Q0gzakE?oc=5">clique aqui</a></li>
+        <li><b>ipnews</b> — "IA trava nas empresas: metade das tentativas de automação não se sustenta" (27 de julho de 2026) · <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxObEdkOVhxRllvWTVxUGZOMzJkUkVlWG9vTUNreUpUUkNuT0tuYjljeDQ4ajdQRTFjMDIydWs3T1hab2pxS0ZETmliV3FLQU1SS2NaT3U2Uzl4QUh3MWhob0NfS3RmQ3lsNFZOVW9Jb1lFRGVXY3R6UEZlbDhnOEFZSFFZYzI3Z19nQmcxUXp3dVRRZ2tfcWRhUkJ4Y9IBmwFBVV95cUxObEdkOVhxRllvWTVxUGZOMzJkUkVlWG9vTUNreUpUUkNuT0tuYjljeDQ4ajdQRTFjMDIydWs3T1hab2pxS0ZETmliV3FLQU1SS2NaT3U2Uzl4QUh3MWhob0NfS3RmQ3lsNFZOVW9Jb1lFRGVXY3R6UEZlbDhnOEFZSFFZYzI3Z19nQmcxUXp3dVRRZ2tfcWRhUkJ4Yw?oc=5">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <p class="texto">Depois o mural onde os programadores do mundo todo postam o que saiu. Dois itens da madrugada de hoje entraram no corpo desta edição.</p>
+
+    <div class="nota">
+      <div class="r">Do mural dos programadores</div>
+      <ol class="src">
+        <li><b>DeepSeek</b> — manual de uso do modelo "v4-flash-vision-exp", que trabalha com imagem (hoje · 7h33) · <a href="https://api-docs.deepseek.com/guides/vision/">clique aqui</a></li>
+        <li><b>GitHub · projeto Seed</b> — "Seed: Minimal, self-modifying agent harness", ou "estrutura mínima de robô que modifica a si mesma" (hoje · 2h20) · <a href="https://github.com/vivekhaldar/seed">clique aqui</a></li>
+        <li><b>Micron</b> — anúncio de um centro de pesquisa de dez bilhões de dólares em memória e IA (hoje · 0h51). Não entrou no corpo da edição; fica registrado porque é a fábrica da peça que faz a IA rodar · <a href="https://investors.micron.com/news/press-release/2026/Micron-Unveils-Micron-Research-Labs-a-U-S--Based-Long-Horizon-Innovation-Hub-to-Shape-the-Future-of-Memory-and-AI/default.aspx">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <p class="texto">A vitrine de produtos novos vem em seguida — só nome, autor, data e endereço, na ordem em que apareceram. É de propósito: é assim que ela chega ao radar.</p>
+
+    <div class="nota">
+      <div class="r">Vitrine de produtos novos · Product Hunt</div>
+      <ol class="src">
+        <li><b>Antigravity IDE Extensions</b> — indicado por Zac Zuo (hoje · 3h58) · <a href="https://www.producthunt.com/products/google-antigravity">clique aqui</a></li>
+        <li><b>Project SKY</b> — indicado por Pratham Solanki (hoje · 0h43) · <a href="https://www.producthunt.com/products/project-sky">clique aqui</a></li>
+        <li><b>Flunkey</b> — indicado por Rohan Sharvesh (ontem · 15h50) · <a href="https://www.producthunt.com/products/flunkey">clique aqui</a></li>
+        <li><b>Epho</b> — apresentado como "Claude Code na nuvem", indicado por Burak Karakan (ontem · 12h33) · <a href="https://www.producthunt.com/products/epho-claude-code-in-the-cloud">clique aqui</a></li>
+        <li><b>Wizstar</b> — indicado por Chris Messina (ontem · 12h05) · <a href="https://www.producthunt.com/products/wizstar">clique aqui</a></li>
+        <li><b>Router by Ramp</b> — indicado por KP (ontem · 10h50) · <a href="https://www.producthunt.com/products/ramp-router">clique aqui</a></li>
+        <li><b>fx</b> — da Vercel, indicado por Justin Jincaid (ontem · 5h24) · <a href="https://www.producthunt.com/products/fx-by-vercel">clique aqui</a></li>
+        <li><b>OneCLI</b> — indicado por Garry Tan (quarta · 4h59) · <a href="https://www.producthunt.com/products/onecli">clique aqui</a></li>
+      </ol>
+    </div>
+
+    <p class="texto">E, por fim, o termômetro da rua — mais a lista do que eu não consegui confirmar.</p>
+
+    <div class="nota">
+      <div class="r">Os dez assuntos mais buscados no Brasil hoje</div>
+      <p class="texto">atlas · lito · 21 de agosto · mandaguaçu · escudo das américas · zona leste de são paulo · premier league · federação psdb cidadania · f1 horários · maracanã</p>
+      <p class="texto">Nenhum termo ligado a IA, pelo terceiro dia seguido. Nenhuma afirmação desta edição vem daqui. Serve como medida de temperatura: o assunto move empresa, ainda não move a rua.</p>
+    </div>
+
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>1.</b> As notícias do Google News chegam ao radar com título, veículo, data e link — <b>sem o texto da matéria</b>. Eu não abri as reportagens. Tudo o que está escrito acima se apoia no título e na data; onde interpretei, deixei explícito que a leitura é minha. <b>2.</b> Do Jor-MCP eu sei o que o título diz: é apresentado como o primeiro ponto de encaixe para IA do jornalismo brasileiro. Não verifiquei quem mantém, o que ele libera nem se qualquer redação pode usar. <b>3.</b> Do modelo da DeepSeek eu vi a página de manual, e só. Não há teste independente, comparação nem preço confirmado nesta edição — e o próprio nome traz "exp", de experimental. <b>4.</b> A manchete da Capital Digital sobre o custo dos robôs que falham eu cito pelo título. <b>Não tenho o número</b> e não repito nenhuma cifra. <b>5.</b> A vitrine de produtos novos não traz descrição. Cito nome, autor, data e link; o que cada produto faz é leitura pelo nome, não afirmação — inclusive o "Claude Code na nuvem" do Epho, que é como o próprio anúncio se apresenta. <b>6.</b> O sinal do YouTube veio outra vez <b>sem link e sem número de visualizações</b>. Por isso esta edição não traz bloco de vídeos — prefiro tirar a seção a publicar número que não consigo apontar.</p></div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Pulso Nº 017 · 21/08/2026<br>Próxima edição: segunda-feira, o Completo — com o bloco de posicionamento da semana</div>
+</div>
+</body>
+</html>
