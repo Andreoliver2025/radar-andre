@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 027 — Três bilhões de euros para que o motor da IA caiba dentro da sua empresa</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>Três bilhões de euros para que o motor da IA caiba dentro da sua empresa</h1>
+    <p class="chamada">De madrugada, uma empresa europeia levantou três bilhões de euros com uma promessa só: fazer um motor de IA de primeira linha que qualquer um pode baixar e rodar na própria máquina. Três horas depois, no mesmo mural, subiu um estudo dizendo que quase toda a Europa que põe site no ar depende de uma fornecedora só. As duas notícias falam do mesmo medo — e ele tem nome: dependência.</p>
+    <div class="dateline">Edição Nº 027 · terça-feira, 8 de setembro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#s1">O que aconteceu hoje</a><div class="d">Três bilhões de euros apostados em não depender do motor dos outros.</div></div></li>
+      <li><div><a href="#s2">As novidades do dia</a><div class="d">Oito recortes — cinco deles saíram entre uma e seis da manhã de hoje.</div></div></li>
+      <li><div><a href="#s3">Seu território: automação</a><div class="d">A tomada padrão chegou aos sites, e um time de robôs virou receita pública.</div></div></li>
+      <li><div><a href="#s4">A oportunidade do dia</a><div class="d">A folha 5 do pacote: de quem é o motor que a sua automação usa.</div></div></li>
+      <li><div><a href="#s5">De onde veio cada informação</a><div class="d">Os links, os horários e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="s1">
+    <div class="titulo"><span class="n">01</span><h2>O QUE ACONTECEU HOJE</h2><span class="fio"></span></div>
+
+    <p class="abertura">Hoje às 2h06 da manhã subiu no mural dos programadores uma linha curta: a francesa Mistral levantou três bilhões de euros. A página do anúncio diz para que serve o dinheiro — fazer um motor de IA soberano, de peso aberto, no nível dos melhores do mundo.</p>
+
+    <p class="texto capitular">Traduzindo o que está em jogo: hoje, quando você monta uma automação, ela liga numa tomada que pertence a três ou quatro empresas americanas. Se elas mudam o preço, você muda o seu preço. Se elas mudam a regra, você refaz o trabalho.</p>
+
+    <p class="texto">Três bilhões de euros é o tamanho da aposta de que existe mercado para a outra opção: um motor que você baixa e roda dentro de casa. Não é bandeira política. É a diferença entre alugar a loja e comprar a loja.</p>
+
+    <p class="texto">Três horas e meia depois, às 5h42, o mesmo mural subiu o outro lado da moeda. Um levantamento diz que, entre as empresas europeias que usam entregador de site, quase nove em cada dez usam a mesma fornecedora, a Cloudflare. Concentração medida, com número em cima.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>Peso aberto</b> quer dizer que a empresa publica o motor inteiro para download — você roda no seu computador, sem pedir licença e sem pagar por uso. O contrário é o modelo de hoje: o motor fica na casa deles e você bate na porta a cada pergunta. <b>Entregador de site</b> é a empresa que guarda cópias do seu site espalhadas pelo mundo para ele abrir rápido — como um centro de distribuição que deixa o produto perto do cliente.</p>
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">3 bilhões</div><div class="lbl">de euros levantados <b>de madrugada pela Mistral</b>, com a promessa de um motor aberto no nível dos melhores. Anúncio na página oficial da empresa, hoje às 2h06.</div></div>
+      <div class="numero"><div class="big">9 em 10</div><div class="lbl">é a fatia das <b>empresas europeias que usam entregador de site</b> e escolheram a mesma fornecedora, segundo levantamento publicado hoje às 5h42.</div></div>
+      <div class="numero"><div class="big">metade</div><div class="lbl">das empresas <b>já usa robô que executa tarefa</b>, mas só no trabalho operacional. Reportagem da CartaCapital de ontem de manhã.</div></div>
+      <div class="numero"><div class="big">0</div><div class="lbl">assuntos de IA na <b>lista dos dez mais buscados</b> do Brasil hoje às 8h03. Como na sexta: o país está procurando férias, abono e trem.</div></div>
+    </div>
+
+    <div class="olho">
+      <p>Três bilhões de euros não compram um motor melhor. Compram o direito de não depender do motor dos outros — e é isso que o seu cliente vai querer comprar de você em algum momento.</p>
+      <span class="cred">a frase do dia</span>
+    </div>
+
+    <p class="texto">Enquanto isso, no Brasil, o vídeo mais visto da semana no assunto não fala de lançamento nenhum. Fala de bolha: a BBC News Brasil está com trezentas e onze mil visualizações num vídeo sobre analistas que acham que a IA vai estourar.</p>
+
+    <p class="texto">Guarde essa temperatura. Lá fora se investe bilhões. Aqui se pergunta se vai durar. Quem vende automação precisa saber responder as duas coisas na mesma reunião.</p>
+
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>Nenhuma tarefa técnica hoje. A ação é comercial e cabe numa frase de reunião: <b>&ldquo;a sua automação depende do motor de quem?&rdquo;</b>. Quase ninguém que contrata robô no Brasil hoje sabe responder isso. Você sabe. Enquanto o mercado discute se a IA é bolha, quem leva a pergunta da dependência para a mesa muda de categoria — sai de fornecedor de ferramenta e vira quem cuida do risco. É a mesma diferença entre o eletricista que troca a lâmpada e o que olha o quadro de força antes de ir embora.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s2">
+    <div class="titulo"><span class="n">02</span><h2>AS NOVIDADES DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes, do mais quente para o mais frio. Cinco saíram entre uma e seis da manhã de hoje — foi uma madrugada cheia. Os outros três vieram de ontem e ainda não tinham cabido no radar.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>A Mistral levantou três bilhões de euros para fazer um motor que você baixa</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 2h06</span><span>Mistral, via Hacker News</span></div>
+          <p class="texto">O anúncio subiu de madrugada na página da própria empresa. O endereço da página já entrega a tese: motor soberano, de peso aberto, no nível de fronteira. É a maior rodada europeia do assunto até agora.</p>
+          <p class="texto">Para você, o que importa não é o valor. É a existência da alternativa. Cada motor sério que roda fora da nuvem americana é uma carta a mais na sua mão quando o cliente pergunta o que acontece se o preço dobrar.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu. <b>Motor de fronteira</b> é o jeito da indústria de dizer &ldquo;do mesmo nível dos melhores&rdquo; — a primeira prateleira, não a de baixo.</p></div>
+          <div class="link"><a href="https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Publicaram de graça a receita de um time de robôs que opera na bolsa</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 2h20</span><span>Tauric Research, via Hacker News</span></div>
+          <p class="texto">Catorze minutos depois da notícia da Mistral, subiu no mural um projeto aberto: um time de robôs montado para decidir compra e venda no mercado financeiro. Está no armário público de código, qualquer um baixa.</p>
+          <p class="texto">Não olhe o assunto. Olhe o formato. É o desenho de um time de robôs com papéis separados aplicado ao lugar onde errar custa dinheiro na hora. O mesmo desenho serve para atendimento, cobrança e pós-venda.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Time de robôs</b> é vários programas trabalhando juntos, cada um com uma função — um levanta a informação, outro critica, outro decide. Como a cozinha de um restaurante: ninguém faz o prato inteiro sozinho. <b>GitHub</b> é o armário público onde os programadores guardam e compartilham código.</p></div>
+          <div class="link"><a href="https://github.com/TauricResearch/TradingAgents">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Abriram o capô: em que máquina roda o robô que você aciona pelo celular</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 1h36</span><span>blog pessoal, via Hacker News</span></div>
+          <p class="texto">O texto explica quais máquinas ficam por trás dos robôs que a gente aciona do telefone — e cita nominalmente o Instinct e o Claude Code. O título já entrega: não é o seu celular que faz o trabalho.</p>
+          <p class="texto">Isso tem conta no fim do mês. Quando o robô roda numa máquina alugada por segundo, o custo da sua automação cresce com o uso, e não com o número de clientes. São duas matemáticas de preço bem diferentes.</p>
+          <div class="link"><a href="https://rohanadwankar.github.io/posts/platforms.html">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Nove em cada dez empresas europeias dependem da mesma fornecedora para o site abrir</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h42</span><span>CipherCue, via Hacker News</span></div>
+          <p class="texto">O levantamento mede uma coisa só: entre as empresas europeias que contratam entregador de site, quase nove em cada dez contrataram a Cloudflare. É um retrato de concentração com número em cima.</p>
+          <p class="texto">Leia junto com a manchete de hoje e a história fecha. A Europa acordou apostando bilhões em independência de IA — no mesmo dia em que descobriu que já não tem independência nem para colocar site no ar.</p>
+          <div class="link"><a href="https://ciphercue.com/blog/european-cdn-concentration-cloudflare-nine-in-ten">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>A tomada padrão da IA saiu dos sistemas de empresa e chegou aos sites</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 11h55</span><span>ISTOÉ Dinheiro</span></div>
+          <p class="texto">A reportagem apresenta o WebMCP, um padrão aberto para que a IA converse com sites. É o mesmo encaixe que este radar vem seguindo desde agosto, agora aplicado à página comum de internet.</p>
+          <p class="texto">Se pegar, muda o desenho de um site institucional. Ele deixa de ser só uma vitrine para olho humano e passa a ter uma porta de serviço, feita para o robô entrar e resolver.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>MCP</b> é um padrão de encaixe — como a tomada de três pinos. Antes dele, ligar um robô em cada sistema era serviço de marceneiro, sob medida. O <b>WebMCP</b> é a mesma ideia levada para dentro dos sites.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNeWo2N2pTX1RZU3BvaE56N094Z05aaGRiZFBjZFpJbUR4SmFKd1hpWDlwM3owNkxNQnFqbXFWQkRUMWxTOFlPUWVtMUxZVlp2TFdMQklELS1NLW81R2JuQzZJdVZNakhiNEExQUdkT1JSbzU2STh2NFc3VG5PT3FHZUZvMA?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Metade das empresas já tem robô — mas só deixam ele fazer o trabalho de baixo</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 7h00</span><span>CartaCapital</span></div>
+          <p class="texto">A reportagem diz que cerca de metade das empresas já usa robô que executa tarefa, e que esse uso está preso ao operacional. Ninguém deixou o programa chegar perto de decisão que pesa.</p>
+          <p class="texto">Esse é o mapa do seu mercado em uma linha. A venda fácil, de instalar robô no operacional, está encolhendo. A venda cara — deixar o robô encostar em decisão — não começou, porque falta a folha que diz até onde ele pode ir.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPT1NHWjA2OU9EM25MUWVyc0ZrNGF6X2NIdGV3bXZNQUJZUHl5OG96Rm9zNTFWUU1SY1RVUmlpay1DT1JyZ2M4N3RlelI1QUdidG1Qa1N1VnBiMkNMWWxaYlhFdFRMVGZWUEhmbFc3N1YtY1ZfNXJRM0IxZDBfeWVDZzdxa3Zqd2E3SjNiQU1pMFRCRnZwRllz?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>O ChatGPT entrou na corretora e passou a ajudar a comprar e vender ação</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 5h00</span><span>Estadão</span></div>
+          <p class="texto">Segundo a matéria, o ChatGPT agora ajuda no processo de comprar e vender ações. É o mesmo movimento do robô que fechou a compra de passagem na semana passada, agora num assunto onde o erro é imediato e em dinheiro.</p>
+          <p class="texto">Repare no encaixe com o recorte 02 desta edição. No mesmo intervalo de horas, a IA chegou ao mercado financeiro pela porta da frente, com marca grande, e pela porta dos fundos, como projeto aberto no armário público.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQTHFOU1Fta1hzRnVBY2J0cWhMU3p6ZzZGcU5RQkZwYTJScklTWlNURXpzSzVkVUh5bjZoTjVKSUJCQTZVd0FWQjZBUlI2bFE0cUhwS21fdExpRGZnTW00TDdkTWU0RldDWmEwaW0zNHc0WXJHaXRkd01vbHVCdkZ5ZW5EVVVXVGpKZ1dQSEx0MDUwSVZoODVUbGhZX29CNkpraDdhSEN3akJ2ZXNDLWRFTW4zWVNzZTh0UnfSAb8BQVVfeXFMTWZWbXFSTWVXUUl3ZFJaSjRSNk1wZThiRS0tcGpvcUgzbmUwblJtcmxzNzRoaHZxYVE1Y3FqVW9VbXBjRHZTZTFQOUFzY0hRZk1XeG9kczM2Nm5aZV9BbG9NRkVnYTBGRmxWYUxXSVR0ME1Jdi1tZ0hyMVNMRUVrcE42ZnpiaHRrYy1aNFdYam5yU1ZuU1ZWY0VnRkk3VzlnenVYMGsyeHJQMGVzSWJzcFljbmdpYmxvNFJlN2luRWc?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>A Arm anunciou um chip de vídeo de celular feito pensando em IA</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 1h06</span><span>Arm, via Hacker News</span></div>
+          <p class="texto">A Arm apresentou de madrugada um chip de vídeo novo para celular. A promessa do anúncio é jogo com qualidade de computador de mesa e gráficos pensados desde o começo para IA.</p>
+          <p class="texto">É a mesma história da manchete, contada pelo lado da peça. Enquanto uns querem o motor rodando na sua máquina, outros estão deixando a sua máquina forte o bastante para aguentar. As duas pontas caminham para o mesmo lugar.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Chip de vídeo</b> é a peça do aparelho que desenha a imagem na tela — e que, hoje, é também a peça que faz a conta pesada da IA. Quando ela fica mais forte no celular, coisa que só rodava na nuvem começa a rodar no bolso.</p></div>
+          <div class="link"><a href="https://newsroom.arm.com/blog/arm-mali-g2-ultra-nx-ai-native-mobile-graphics">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="s3">
+    <div class="titulo"><span class="n">03</span><h2>SEU TERRITÓRIO: AUTOMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Duas coisas caem direto na sua mesa nesta terça: a tomada padrão da IA chegou aos sites comuns, e alguém publicou de graça o desenho de um time de robôs para a tarefa mais cara que existe — decidir onde entra dinheiro.</p>
+
+    <p class="texto">Comece pela primeira. Ontem às 11h55, a ISTOÉ Dinheiro apresentou o <b>WebMCP</b>, um padrão aberto para a IA conversar com sites. Não é sistema de empresa grande. É a página comum, aquela que o seu cliente já tem.</p>
+
+    <p class="texto">Hoje, quando um robô precisa fazer alguma coisa num site, ele finge que é gente: lê a tela, procura o botão, clica torto. Com um padrão de encaixe, o site passa a ter uma porta de serviço, com placa e maçaneta.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p>Pense num prédio comercial. A entrada social é para as pessoas: portaria, elevador, recepção. A entrada de serviço é para quem vem trabalhar: mais estreita, sem enfeite, direta. Um site hoje só tem entrada social. O <b>WebMCP</b> propõe a entrada de serviço — a porta pela qual o robô entra, resolve e sai.</p>
+    </div>
+
+    <div class="nota">
+      <div class="rot">O arco da tomada padrão, nas últimas três semanas</div>
+      <ul class="lista">
+        <li>17 de agosto — um sistema de gestão de pessoas ganhou a tomada padrão (Valor Econômico).</li>
+        <li>28 de agosto — as ferramentas de SEO ganharam a tomada padrão (iMasters).</li>
+        <li>Sexta, 20h03 — o Figma, onde se desenha tela, ganhou a dele (iMasters).</li>
+        <li>4 de setembro — o Salesforce, onde o mundo corporativo guarda a carteira de clientes.</li>
+        <li>Ontem — os sites em geral, com o WebMCP (ISTOÉ Dinheiro).</li>
+      </ul>
+      <p class="texto">Cinco em três semanas, todos citados por este radar. A sequência importa mais que cada item: primeiro os sistemas caros, depois as ferramentas de trabalho, agora a página que todo mundo tem. É assim que padrão vira norma — de cima para baixo, até chegar na padaria da esquina.</p>
+    </div>
+
+    <p class="texto">A segunda novidade chegou hoje às 2h20. Um grupo chamado Tauric Research publicou <a href="https://github.com/TauricResearch/TradingAgents">no armário público de código um time de robôs</a> montado para decidir compra e venda no mercado financeiro.</p>
+
+    <p class="texto">De novo: ignore o assunto. Olhe a planta. Quando alguém publica um time de robôs para mexer com dinheiro de verdade, publica também as peças que fazem esse time não sair do lugar — quem levanta a informação, quem contesta, quem tem a palavra final.</p>
+
+    <p class="texto">Essa planta é reaproveitável. Um time que discute uma compra na bolsa e um time que decide se um desconto pode ser dado têm a mesma estrutura. Muda o assunto, não o encaixe das peças.</p>
+
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>Duas mãos, nesta ordem. <b>A curta:</b> a próxima vez que você entregar um site para um cliente, entregue com a entrada de serviço já pensada — mesmo que o padrão ainda esteja verde. É meia hora de conversa e coloca você um ano à frente na cabeça dele. <b>A longa:</b> baixe o time de robôs da bolsa e não olhe o mercado financeiro. Olhe só quem faz o quê lá dentro, e desenhe o mesmo mapa de papéis para a operação de atendimento que você já mantém. Robô que levanta, robô que contesta, humano que assina. Esse mapa é o que você vende quando a instalação virar commodity — e, pelo ritmo do arco aí em cima, ela vai virar.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s4">
+    <div class="titulo"><span class="n">04</span><h2>A OPORTUNIDADE DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">O pacote de folhas que você vem montando ganha hoje a quinta: <b>de quem é o motor</b>. Uma página que responde de qual empresa a automação do seu cliente depende, quanto isso custa por mês e o que acontece se aquela porta fechar.</p>
+
+    <p class="texto">A notícia da madrugada deu a essa folha um argumento que ela não tinha na sexta. Três bilhões de euros acabaram de ser postos em cima da ideia de que ter o motor em casa vale dinheiro.</p>
+
+    <p class="texto">E o número das nove em cada dez, do mesmo mural, na mesma manhã, mostra o outro lado: quando ninguém pergunta de quem é a peça, um dia se acorda com o continente inteiro pendurado numa fornecedora só.</p>
+
+    <p class="texto">O comprador dessa folha existe e está identificado. A Exame publicou no sábado que as pequenas empresas estão adotando robôs mais rápido que as grandes. Quem adota rápido é exatamente quem não parou para perguntar de quem é o motor.</p>
+
+    <div class="olho">
+      <p>A grande empresa demora porque pergunta antes. A pequena anda rápido porque não pergunta. Você pode ser a pessoa que faz a pergunta sem tirar a velocidade dela.</p>
+      <span class="cred">a oferta em uma frase</span>
+    </div>
+
+    <div class="nota">
+      <div class="rot">O pacote, até aqui</div>
+      <ul class="lista">
+        <li><b>Folha 1</b> — até onde o robô decide sozinho.</li>
+        <li><b>Folha 2</b> — o que não pode faltar em cada resposta dele.</li>
+        <li><b>Folha 3</b> — o que ele pode fechar e até quanto pode gastar.</li>
+        <li><b>Folha 4</b> — o diário do que ele fez, e o botão que desliga.</li>
+        <li><b>Folha 5</b> — de quem é o motor, quanto custa e qual é o plano B (hoje).</li>
+      </ul>
+      <p class="texto">Cinco folhas, cinco tardes. Nenhuma delas é trabalho de programador. Todas são o tipo de papel que o dono da empresa lê sozinho, sem tradutor do lado — e é justamente por isso que valem preço.</p>
+    </div>
+
+    <p class="texto">Um cuidado, para não vender medo. Ninguém precisa trocar de motor hoje, e trocar por trocar dá prejuízo. O que se vende aqui é a página que diz onde você está pisando, não a mudança.</p>
+
+    <div class="hoje">
+      <span class="r">O primeiro passo, hoje, em uma tarde</span>
+      <p>Pegue a automação sua que mais roda. Monte uma folha com quatro linhas, em português, sem nada técnico: <b>1)</b> qual empresa é dona do motor que ela usa; <b>2)</b> quanto foi a conta do mês passado; <b>3)</b> o que para de funcionar amanhã se essa empresa dobrar o preço ou fechar a porta; <b>4)</b> qual seria o motor substituto e quantos dias levaria a troca. Se você travar na linha 4, escreva &ldquo;não existe hoje&rdquo; — a folha honesta vale mais que a folha bonita. Depois mande para o seu melhor cliente com uma frase só: &ldquo;hoje de madrugada uma empresa europeia levantou três bilhões de euros pra que ninguém dependa de motor dos outros; fiz a conta de quanto a sua operação depende, dá uma olhada&rdquo;. Não é proposta. É a página que ele não tem e não sabe pedir.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s5">
+    <div class="titulo"><span class="n">05</span><h2>DE ONDE VEIO CADA INFORMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">A nota fiscal desta edição. Todos os horários já convertidos para o <b>horário de Brasília</b>. Se algo aqui não bater, o link está aberto para você conferir.</p>
+
+    <ol class="src">
+      <li>🟢 hoje, 2h06 — &ldquo;Mistral raises €3B&rdquo;, <b>Mistral</b>, via Hacker News · <a href="https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/">clique aqui</a></li>
+      <li>🟢 hoje, 2h20 — &ldquo;Multi-Agents LLM Financial Trading Framework&rdquo;, <b>Tauric Research</b>, via Hacker News · <a href="https://github.com/TauricResearch/TradingAgents">clique aqui</a></li>
+      <li>🟢 hoje, 1h36 — &ldquo;The VMs Powering Mobile Agents (Instinct, Claude Code)&rdquo;, <b>Rohan Adwankar</b>, via Hacker News · <a href="https://rohanadwankar.github.io/posts/platforms.html">clique aqui</a></li>
+      <li>🟢 hoje, 1h06 — &ldquo;Arm Mali G2-Ultra NX GPU: desktop-class mobile gameplay with AI-native graphics&rdquo;, <b>Arm</b>, via Hacker News · <a href="https://newsroom.arm.com/blog/arm-mali-g2-ultra-nx-ai-native-mobile-graphics">clique aqui</a></li>
+      <li>🟢 hoje, 5h42 — &ldquo;Among European Companies That Use a CDN, Nearly 9 in 10 Use Cloudflare&rdquo;, <b>CipherCue</b>, via Hacker News · <a href="https://ciphercue.com/blog/european-cdn-concentration-cloudflare-nine-in-ten">clique aqui</a></li>
+      <li>🟡 ontem, 11h55 — &ldquo;WebMCP: novo padrão aberto otimiza IA e comunicação com sites&rdquo;, <b>ISTOÉ Dinheiro</b> · <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNeWo2N2pTX1RZU3BvaE56N094Z05aaGRiZFBjZFpJbUR4SmFKd1hpWDlwM3owNkxNQnFqbXFWQkRUMWxTOFlPUWVtMUxZVlp2TFdMQklELS1NLW81R2JuQzZJdVZNakhiNEExQUdkT1JSbzU2STh2NFc3VG5PT3FHZUZvMA?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 7h00 — &ldquo;Metade das empresas usam IA agêntica mas uso é restrito a tarefas operacionais&rdquo;, <b>CartaCapital</b> · <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPT1NHWjA2OU9EM25MUWVyc0ZrNGF6X2NIdGV3bXZNQUJZUHl5OG96Rm9zNTFWUU1SY1RVUmlpay1DT1JyZ2M4N3RlelI1QUdidG1Qa1N1VnBiMkNMWWxaYlhFdFRMVGZWUEhmbFc3N1YtY1ZfNXJRM0IxZDBfeWVDZzdxa3Zqd2E3SjNiQU1pMFRCRnZwRllz?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 5h00 — &ldquo;ChatGPT já pode ajudar a comprar e vender ações; entenda como&rdquo;, <b>Estadão</b> · <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQTHFOU1Fta1hzRnVBY2J0cWhMU3p6ZzZGcU5RQkZwYTJScklTWlNURXpzSzVkVUh5bjZoTjVKSUJCQTZVd0FWQjZBUlI2bFE0cUhwS21fdExpRGZnTW00TDdkTWU0RldDWmEwaW0zNHc0WXJHaXRkd01vbHVCdkZ5ZW5EVVVXVGpKZ1dQSEx0MDUwSVZoODVUbGhZX29CNkpraDdhSEN3akJ2ZXNDLWRFTW4zWVNzZTh0UnfSAb8BQVVfeXFMTWZWbXFSTWVXUUl3ZFJaSjRSNk1wZThiRS0tcGpvcUgzbmUwblJtcmxzNzRoaHZxYVE1Y3FqVW9VbXBjRHZTZTFQOUFzY0hRZk1XeG9kczM2Nm5aZV9BbG9NRkVnYTBGRmxWYUxXSVR0ME1Jdi1tZ0hyMVNMRUVrcE42ZnpiaHRrYy1aNFdYam5yU1ZuU1ZWY0VnRkk3VzlnenVYMGsyeHJQMGVzSWJzcFljbmdpYmxvNFJlN2luRWc?oc=5">clique aqui</a></li>
+      <li>🟡 sábado, 6h09 — &ldquo;Pequenas empresas adotam agentes de IA mais rápido que as grandes: entenda por quê&rdquo;, <b>Exame</b> · <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQdkZJaDBUZjZzZ0tyZ2xIM1ZndEF5QWxQZnRZSWNUUVc1eHFJRnFRQ042WENhMHRROVVTY3hMcWxiblp1UHk0NnM0UC1iNDJLbk92UFd5ejBGbEZUd01UOUgwVFBDTWF1c0ZFU0lTaXNpcklNTHFVNGtFWUQyWjZ5eFA3ODFiSUhpV3Z5N0tKX3lwdFlLUFltTjJKVU40VkZ1TjkyWTcwZU1jdGpUTW5aUDg0M2lkaXNRbS15VXRzVHU4UQ?oc=5">clique aqui</a></li>
+      <li>🟡 sexta, 20h03 — &ldquo;Figma Dev Mode MCP Server: código fiel ao design system&rdquo;, <b>iMasters</b> · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcDNTWS1ZaHNmT1Vjdl9LMXZ0czBlNENuRXdQWkUxSXAzVlJkTm8zM2Q1R2lMYUNGUFAwQ3dtV0hlZUVZNnppcHpyUW9OdFZZUEgyX0FBT1hueFg1OTh5Rm52UFVNM3d0ZjAwcmhfbHJQWnVpUUpUSWlIZ0Q3ajRFaFZETVpWYklQY19qd2F0QUdwajNBQmZXek1VV0hhSjVvTkVqNEVGNEJLQQ?oc=5">clique aqui</a></li>
+      <li>🟡 vídeo com 311 mil visualizações — &ldquo;Por que cada vez mais analistas falam em &lsquo;bolha&rsquo; da inteligência artificial prestes a estourar&rdquo;, <b>BBC News Brasil no YouTube</b> · <a href="https://www.youtube.com/watch?v=65AnDszCevA">clique aqui</a></li>
+      <li>🟢 hoje, 8h03 — <b>lista dos dez assuntos mais buscados do Brasil</b> (Google Trends): nenhum termo de IA na coleta. Coleta própria do radar, sem link público.</li>
+    </ol>
+
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>1.</b> Da <b>Mistral</b>, este radar leu o título no mural dos programadores e o endereço da página oficial. Não abriu o comunicado inteiro. <b>Quem colocou o dinheiro, a que preço e em que condições não foi verificado aqui</b> — abra o link antes de citar em reunião. A leitura de &ldquo;motor soberano de peso aberto&rdquo; vem do próprio endereço da página do anúncio.</p>
+      <p><b>2.</b> O número das <b>nove em cada dez</b> é de um blog privado publicando medição própria, sem revisão de terceiros. Use como ordem de grandeza, não como dado auditado.</p>
+      <p><b>3.</b> Do <b>time de robôs da bolsa</b> o radar viu o título e o endereço do projeto no armário público de código. Não rodou, não leu o código e não avalia se funciona. Ele entra nesta edição como desenho para copiar, não como ferramenta recomendada.</p>
+      <p><b>4.</b> Do texto sobre <b>as máquinas por trás dos robôs de celular</b> e do anúncio da <b>Arm</b>, o radar leu os títulos. Nenhum dos dois foi aberto por inteiro, e o chip da Arm é anúncio de fabricante — não existe teste independente citado aqui.</p>
+      <p><b>5.</b> Os números do <b>WebMCP</b>, da <b>metade das empresas</b> e do <b>ChatGPT na corretora</b> são o que as reportagens afirmam. O radar não teve acesso à metodologia das pesquisas nem testou as ferramentas.</p>
+      <p><b>6.</b> A lista dos dez assuntos mais buscados é uma foto do momento da coleta, hoje às 8h03. Ela muda ao longo do dia.</p>
+      <p><b>7.</b> Não houve Radar Completo nesta segunda-feira, 7 de setembro. O pacote das folhas fechadas num documento só fica para o próximo Completo.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">
+    Radar André Oliveira · Nº 027 · 8 de setembro de 2026<br>
+    Próxima edição: quarta-feira, 9 de setembro — Pulso diário.
+  </div>
+</div>
+
+</body>
+</html>
