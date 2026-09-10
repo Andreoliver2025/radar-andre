@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 028 — A Meta comprou uma empresa para pôr robô dentro do WhatsApp</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A Meta comprou uma empresa para pôr robô dentro do WhatsApp</h1>
+    <p class="chamada">Ontem à tarde, a Meta comprou uma empresa sueca de inteligência artificial com um objetivo declarado: acelerar os robôs que atendem dentro do WhatsApp. No mesmo dia, uma pesquisa disse que as empresas brasileiras estão quatro vezes mais confiantes no retorno desses robôs — e outra disse que só dezoito em cada cem usam IA de forma integrada. O canal onde você já trabalha vai começar a vir com robô de fábrica.</p>
+    <div class="dateline">Edição Nº 028 · quinta-feira, 10 de setembro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#s1">O que aconteceu hoje</a><div class="d">O dono do canal comprou empresa para pôr robô lá dentro. Isso muda o que você vende.</div></div></li>
+      <li><div><a href="#s2">As novidades do dia</a><div class="d">Oito recortes — dois da madrugada de hoje, seis de ontem, que o radar não pegou.</div></div></li>
+      <li><div><a href="#s3">Seu território: automação</a><div class="d">A tomada padrão chegou à loja virtual e à assinatura de contrato. E um buraco no YouTube brasileiro.</div></div></li>
+      <li><div><a href="#s4">A oportunidade do dia</a><div class="d">A folha 6: o retrato do WhatsApp do seu cliente antes do robô de fábrica chegar.</div></div></li>
+      <li><div><a href="#s5">De onde veio cada informação</a><div class="d">Os links, os horários e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="s1">
+    <div class="titulo"><span class="n">01</span><h2>O QUE ACONTECEU HOJE</h2><span class="fio"></span></div>
+
+    <p class="abertura">Ontem às 16h30, o portal Startups noticiou uma compra: a Meta, dona do WhatsApp, comprou uma empresa sueca de inteligência artificial. O motivo declarado na matéria é um só — acelerar os robôs que atendem dentro do WhatsApp.</p>
+
+    <p class="texto capitular">Pare um segundo no tamanho disso. O WhatsApp é onde a sua operação de atendimento, de venda e de segundo contato já mora. Quando o dono do canal compra uma empresa inteira para pôr robô lá dentro, o robô deixa de ser uma coisa que alguém instala. Vira uma coisa que já vem ligada.</p>
+
+    <p class="texto">Isso mata um produto e cria outro. Morre a venda de &ldquo;eu ligo um robô no seu WhatsApp&rdquo; — daqui a pouco isso é um botão que o próprio dono da loja aperta. Nasce a venda de &ldquo;eu digo o que esse robô fala, até onde ele vai e em que hora ele chama uma pessoa&rdquo;.</p>
+
+    <p class="texto">É a mesma virada da maquininha de cartão. Dez anos atrás, vender a maquininha era o negócio. Hoje a maquininha sai de graça e o negócio virou a taxa, o prazo e quem cuida do lojista depois.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>Robô</b>, aqui, é um programa que executa uma tarefa do começo ao fim sozinho — lê a mensagem que chegou, entende o pedido, responde e registra. <b>Segundo contato</b> é o que o mercado chama de <i>follow-up</i>: voltar a falar com quem não respondeu, no dia certo, sem parecer cobrança.</p>
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">4 vezes</div><div class="lbl">é o quanto cresceu a <b>confiança das empresas brasileiras</b> no retorno em dinheiro dos robôs, segundo levantamento publicado ontem às 18h55 pelo Baguete.</div></div>
+      <div class="numero"><div class="big">18 em 100</div><div class="lbl">é a fatia das empresas que <b>usa IA de forma integrada</b>, ligada ao resto da operação. O resto usa em pedaços soltos. Mobile Time, ontem às 16h37.</div></div>
+      <div class="numero"><div class="big">397 mil</div><div class="lbl">visualizações no vídeo brasileiro de <b>&ldquo;ferramenta de automação do zero&rdquo;</b>. O vídeo mais visto sobre <b>o segundo contato feito por IA</b> tem 12.298. Coleta do radar hoje às 8h03.</div></div>
+      <div class="numero"><div class="big">0</div><div class="lbl">assuntos de IA na <b>lista dos dez mais buscados do Brasil</b> hoje às 8h03. O país está procurando futebol, clima e um cantor. Como na terça.</div></div>
+    </div>
+
+    <div class="olho">
+      <p>O WhatsApp vai passar a vir com robô de fábrica. O que não vem de fábrica é saber o que ele deve dizer, quando parar e para quem passar. Essa parte continua sendo sua.</p>
+      <span class="cred">a frase do dia</span>
+    </div>
+
+    <p class="texto">Repare no encaixe dos dois números lá em cima. A confiança quadruplicou. A integração está em dezoito em cada cem. Ou seja: muita gente já acredita que o robô paga a conta, e quase ninguém conseguiu ligar ele no resto da casa.</p>
+
+    <p class="texto">Esse vão entre acreditar e conseguir é o seu mercado inteiro. Não é falta de vontade nem de ferramenta. É falta de desenho — quem faz o quê, com qual informação, e o que acontece quando dá errado.</p>
+
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>Tire hoje uma linha da sua oferta e troque por outra. Sai <b>&ldquo;monto o robô do seu WhatsApp&rdquo;</b>. Entra <b>&ldquo;desenho o que o robô do seu WhatsApp fala&rdquo;</b>. A diferença parece de palavra, mas é de preço: a primeira você compete com um botão que a Meta vai lançar; a segunda ninguém consegue apertar sozinho. E use a notícia de ontem como argumento, sem drama: &ldquo;o dono do WhatsApp acabou de comprar uma empresa para acelerar isso — quando chegar, quem já tiver o roteiro pronto liga em uma tarde; quem não tiver vai improvisar na frente do cliente&rdquo;.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s2">
+    <div class="titulo"><span class="n">02</span><h2>AS NOVIDADES DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes, do mais quente para o mais frio. Dois saíram na madrugada de hoje. Os outros seis são de ontem — o radar não circulou na quarta-feira, então a quinta chega com a mesa cheia.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>A Meta comprou uma empresa sueca para acelerar os robôs do WhatsApp</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 16h30</span><span>Startups</span></div>
+          <p class="texto">A matéria diz o essencial em uma linha: a dona do WhatsApp comprou uma empresa sueca de inteligência artificial, e o alvo declarado é acelerar os robôs que atendem dentro do aplicativo.</p>
+          <p class="texto">Não é um lançamento, é um recado. Quando o dono do canal compra tecnologia em vez de esperar o mercado entregar, ele está dizendo que quer isso pronto e nativo — e rápido.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Comprar uma empresa por causa da equipe e da tecnologia dela é o jeito caro e rápido de pular fila. É como uma padaria comprar a confeitaria da esquina em vez de aprender a fazer bolo: sai mais caro, mas o bolo está na vitrine na segunda-feira.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPcGx2NWZ5U3VSLWF6NVJPQ2RqTlZ4R1BUeTJZbzVIdEFXSnhPOWRCN2Z1NFFCa3pWdzBLbjhYSHJWRTZybjNrNVZsd09UcktDbE5ZenE4dEFUYkJYakUwSUZzOXczSnF6S0wxa1RpMkNLRWxNSkZ5djlfT0hTdU0zejNrSnhCOGE4eDFESjZUTlUxWWxsWWo0VG10YXMwZVdF?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>As empresas brasileiras estão quatro vezes mais confiantes de que o robô se paga</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 18h55</span><span>Baguete</span></div>
+          <p class="texto">O levantamento mede uma coisa só: quanto as empresas daqui acreditam que o dinheiro posto em robô volta. Essa confiança está quatro vezes maior do que na medição anterior.</p>
+          <p class="texto">Para quem vende, isso muda o começo da conversa. Você não precisa mais provar que a ideia funciona. Precisa provar que <b>você</b> entrega — e essa objeção cai com um caso na mão.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTklLZzNzTG9GWENIblFKT0RwOVBuOGJ0WjNYNVQ3YU9EbG1GRmZxMks1alFmaFliTDVROXJzT2JJQ1VuRE5CSGNzNVNVem05cVNqNjNHOG9YQ3dWX1h0cEs4SURVb2s1M2Rpb3NDVXk2T1FpdUxFS0lqeThoNjlYN01uTS1XOGtKZXBEbEQzYzNZY1VUV0lWaVNjNmJzTmh2ODNvMVZ2NWhzalU?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Só dezoito em cada cem empresas usam IA ligada ao resto da operação</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 16h37</span><span>Mobile Time</span></div>
+          <p class="texto">A reportagem traz o outro lado do número anterior. A maioria usa IA em pedaços soltos: um pouco no atendimento, um pouco no texto do anúncio, nada conversando com nada.</p>
+          <p class="texto">É a diferença entre ter três aparelhos de ar-condicionado na casa e ter a instalação elétrica pronta para os três. Todo mundo comprou o aparelho. Quase ninguém mexeu no quadro de força.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQc2Rvc1U0WVpwcE5qRzladmN2bTI1bW85aDlIN3M2ajhveE1sRHgwV0M3NFBsYnJlRktkY2FBRVR1bG5YWXpjX3NPVWJmU1QtdEo1ZGhpRzFiMDd2aXRaZzFuMndmalVFeWFxSEtibUJXR1ExNUd3VF9SNE42M0RWX2dJUlFhZzN2d09QY2hQUQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>A chinesa DeepSeek anunciou de madrugada a versão rápida do motor dela</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 3h11</span><span>DeepSeek, via Hacker News</span></div>
+          <p class="texto">O anúncio subiu no mural dos programadores às três e onze da manhã, direto do perfil oficial da empresa. O nome já entrega a intenção: é a versão feita para ser rápida e barata, não a mais poderosa.</p>
+          <p class="texto">Guarde o padrão, não o nome. Toda casa de IA está lançando duas linhas: a cara, para o trabalho difícil, e a leve, para o volume. Automação de atendimento vive na segunda — e é lá que o preço cai todo mês.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Motor</b> é a peça que faz o ChatGPT responder — a mesma que faz o seu robô entender a mensagem do cliente. <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu, antes de virar notícia.</p></div>
+          <div class="link"><a href="https://twitter.com/deepseek_ai/status/2097930608790167907">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Saiu a versão 6 do programa que faz música pronta por encomenda</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 2h13</span><span>Suno, via Product Hunt</span></div>
+          <p class="texto">A nova versão do Suno apareceu de madrugada na vitrine de lançamentos. É a ferramenta que transforma uma frase escrita em música gravada, com voz e instrumento.</p>
+          <p class="texto">Parece assunto de músico, mas cai na sua conta de tráfego. Trilha de anúncio em vídeo, vinheta de podcast e áudio de espera do telefone deixaram de ser item de orçamento e viraram item de tarde.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Product Hunt</b> é a vitrine onde produtos novos são lançados e o público vota. Aparecer lá não é prova de qualidade — é prova de que existe e de que já tem gente testando.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/suno">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Alguém treinou um motor de IA do zero por 998 dólares e publicou a conta</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 23h04</span><span>blog pessoal, via Hacker News</span></div>
+          <p class="texto">O título é a notícia inteira: um motor de 3,8 bilhões de peças, treinado do zero, com o gasto total declarado em 998 dólares. O autor publicou junto a nota que o motor tirou no teste que a área usa para comparar.</p>
+          <p class="texto">Não é um motor de primeira linha e nem quer ser. O que importa é o piso: fazer um motor próprio saiu do território de quem tem cofre e entrou no território de quem tem cartão de crédito.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Treinar um motor do zero</b> é montar a peça inteira do nada, em vez de alugar a de outra empresa. Até pouco tempo isso custava milhões. Quando o preço de fazer o seu cai, o preço de alugar o dos outros cai atrás.</p></div>
+          <div class="link"><a href="https://hugovergnes.github.io/little-lm-3-8b/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>A Apple pôs no ar a página de um iPhone novo, o Duo</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h15</span><span>Apple, via Hacker News e Product Hunt</span></div>
+          <p class="texto">A página oficial do aparelho apareceu ontem à tarde e subiu quase ao mesmo tempo no mural dos programadores e na vitrine de lançamentos. É o lançamento de consumo da semana.</p>
+          <p class="texto">Para você, o que interessa é o calendário, não o aparelho. Semana de lançamento da Apple é a semana em que o seu cliente lê sobre tecnologia sem ninguém pedir. A atenção está barata e você tem assunto.</p>
+          <div class="link"><a href="https://www.apple.com/iphone-duo/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>&ldquo;O maior erro das empresas é achar que inteligência e automação são a mesma coisa&rdquo;</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 12h27</span><span>ClienteSA</span></div>
+          <p class="texto">A tese da matéria é direta. Automatizar é repetir a mesma tarefa mais rápido. Inteligência é decidir o que fazer quando o caso sai do roteiro. Confundir as duas gera projeto caro que entrega pouco.</p>
+          <p class="texto">Essa frase vale como argumento de venda porque ela protege o cliente. Boa parte do que ele quer resolver não precisa de IA nenhuma — precisa de uma régua. Dizer isso na primeira reunião compra confiança para o resto.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPU1VNTy1oNHNWZkY3YjhVd190MmVhcG5NYklod2lHTmdQV2ZBOGxnb0g5UjZ3OUFYRk5NUzlmak1ZQzR2QVc4dG0tdm9fSmFOeW9GMmhXWU1CcV9oNjczWWNMbFJfNndNeWhpZXJXWG9pS0FvZnZkNW5wc0tsMWlkWnI0Si1EV19QdURuUnpjN09Xcnh1aXN2ejBKXzN2alhzRVZNU3dGaWN5c0tf?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="s3">
+    <div class="titulo"><span class="n">03</span><h2>SEU TERRITÓRIO: AUTOMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">Duas coisas caem direto na sua mesa nesta quinta. A tomada padrão da IA chegou aos dois lugares onde a venda acontece de verdade — a loja virtual e a assinatura do contrato. E o YouTube brasileiro mostrou um buraco grande no meio do seu assunto.</p>
+
+    <p class="texto">Comece pela tomada. Na terça às 7h58, a Docusign — a empresa da assinatura eletrônica — liberou o encaixe dela para qualquer robô. Ontem às 9h00, o E-Commerce Brasil publicou a mesma ideia aplicada à loja virtual.</p>
+
+    <p class="texto">Junte as duas com o que já estava no radar e o ciclo fecha. O robô consegue olhar o catálogo, montar o pedido, mandar o contrato para assinar e registrar tudo — sem que ninguém programe cada ponta na mão.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>MCP</b> é um padrão de encaixe, como a tomada de três pinos. Antes dele, ligar um robô em cada sistema era serviço de marceneiro: cada ligação feita sob medida, cada uma quebrando sozinha. Com o padrão, o robô chega com o plugue certo e entra. <b>Assinatura eletrônica</b> é o contrato fechado pelo celular, com validade jurídica, sem papel.</p>
+    </div>
+
+    <div class="nota">
+      <div class="rot">O arco da tomada padrão, das últimas quatro semanas</div>
+      <ul class="lista">
+        <li>17 de agosto — um sistema de gestão de pessoas ganhou a tomada (Valor Econômico).</li>
+        <li>28 de agosto — as ferramentas de SEO ganharam a delas (iMasters).</li>
+        <li>4 de setembro — o Figma, onde se desenha tela (iMasters).</li>
+        <li>4 de setembro — o Salesforce, onde o mundo corporativo guarda a carteira de clientes.</li>
+        <li>7 de setembro — os sites em geral, com o WebMCP (ISTOÉ Dinheiro).</li>
+        <li><b>Terça, 7h58</b> — a Docusign, a assinatura do contrato (Inforchannel).</li>
+        <li><b>Ontem, 9h00</b> — a loja virtual (E-Commerce Brasil).</li>
+      </ul>
+      <p class="texto">Sete em quatro semanas, todos acompanhados por este radar. A ordem é o recado: primeiro os sistemas caros, depois as ferramentas de trabalho, agora o dinheiro entrando e o contrato sendo assinado. O padrão andou da sala da diretoria até o caixa.</p>
+    </div>
+
+    <p class="texto">Agora o buraco. O radar mediu hoje de manhã o que o brasileiro assiste sobre o seu assunto, e a conta não fecha do jeito que se imagina.</p>
+
+    <p class="texto">Um vídeo de &ldquo;ferramenta de automação do zero&rdquo; tem 397 mil visualizações. Outro, de &ldquo;como criar e usar robôs para automatizar tudo&rdquo;, tem 203 mil. A ferramenta lota a sala.</p>
+
+    <p class="texto">Do lado do segundo contato feito por IA — cobrar o orçamento parado, voltar em quem sumiu — o maior vídeo tem 12.298 visualizações. Os outros cinco, somados, dão mil e trinta e seis.</p>
+
+    <div class="olho">
+      <p>Trezentas e noventa e sete mil pessoas querem aprender a ferramenta. Doze mil querem aprender o que fazer com ela. A conta que sobra é a sua.</p>
+      <span class="cred">o buraco do dia</span>
+    </div>
+
+    <p class="texto">Repare no encaixe com a notícia da capa. A Meta vai entregar o robô pronto no WhatsApp. Quem hoje enche a sala ensinando a montar a ferramenta está ensinando a parte que vai virar botão.</p>
+
+    <p class="texto">Sobra a parte que ninguém está ensinando porque dá trabalho e não rende vídeo bonito: quando voltar, com que frase, quantas vezes, e a hora exata de parar e chamar gente.</p>
+
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>Você tem um assunto com demanda comprovada, quase nenhuma oferta e prazo de validade curto — porque quando a Meta soltar o robô nativo, todo mundo vai correr para cá. <b>A ação:</b> escreva hoje, em uma folha, a sua régua de segundo contato. Quatro linhas bastam: em quanto tempo depois do silêncio a primeira mensagem sai, o que ela diz, quantas tentativas no total, e o sinal que faz o robô parar e passar para uma pessoa. Não precisa de programa nenhum para isso — é decisão de negócio escrita em português. Depois grave você mesmo em sete minutos falando essa folha em voz alta. É o vídeo que 12 mil pessoas procuraram e não acharam direito.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s4">
+    <div class="titulo"><span class="n">04</span><h2>A OPORTUNIDADE DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">O pacote de folhas que você vem montando ganha hoje a sexta: <b>o retrato do WhatsApp antes do robô de fábrica chegar</b>. Uma página com quatro números do atendimento do seu cliente, medidos agora, enquanto ainda é tudo gente.</p>
+
+    <p class="texto">A razão é simples e nada tem de técnica. Quando o robô nativo da Meta aparecer no WhatsApp do seu cliente, ninguém vai saber dizer se melhorou. Não vai existir o &ldquo;antes&rdquo;.</p>
+
+    <p class="texto">Quem tiver o antes na mão manda na conversa depois. É a mesma lógica da foto da parede antes da reforma: sem ela, o pintor discute preço; com ela, ele mostra resultado.</p>
+
+    <p class="texto">E os dois números de ontem dizem que existe comprador. A confiança de que o robô se paga está quatro vezes maior, mas só dezoito em cada cem conseguiram ligar isso ao resto da operação. Gente convencida e travada é exatamente quem contrata alguém para destravar.</p>
+
+    <div class="olho">
+      <p>Todo mundo vai vender o depois. Ninguém guardou o antes. Guardar o antes custa uma tarde e vale a discussão inteira do ano que vem.</p>
+      <span class="cred">a oferta em uma frase</span>
+    </div>
+
+    <div class="nota">
+      <div class="rot">O pacote, até aqui</div>
+      <ul class="lista">
+        <li><b>Folha 1</b> — até onde o robô decide sozinho.</li>
+        <li><b>Folha 2</b> — o que não pode faltar em cada resposta dele.</li>
+        <li><b>Folha 3</b> — o que ele pode fechar e até quanto pode gastar.</li>
+        <li><b>Folha 4</b> — o diário do que ele fez, e o botão que desliga.</li>
+        <li><b>Folha 5</b> — de quem é o motor, quanto custa e qual é o plano B.</li>
+        <li><b>Folha 6</b> — o retrato do WhatsApp antes do robô chegar (hoje).</li>
+      </ul>
+      <p class="texto">Seis folhas, seis tardes. Nenhuma é trabalho de programador. Todas são o tipo de papel que o dono do negócio lê sozinho, sem tradutor do lado — e é justamente por isso que valem preço.</p>
+    </div>
+
+    <p class="texto">Um cuidado, para a folha não virar armadilha. Meça o que você vai conseguir medir de novo daqui a seis meses, do mesmo jeito. Número bonito que ninguém consegue repetir não serve de comparação.</p>
+
+    <div class="hoje">
+      <span class="r">O primeiro passo, hoje, em uma tarde</span>
+      <p>Escolha um cliente — o que mais atende pelo WhatsApp. Exporte as conversas dos últimos trinta dias, coisa que o próprio aplicativo faz, e conte quatro números na mão: <b>1)</b> quantas conversas novas entraram no período; <b>2)</b> quanto tempo, em média, o cliente esperou pela primeira resposta; <b>3)</b> quantas conversas morreram sem ninguém responder; <b>4)</b> quantas receberam um segundo contato depois do silêncio. Escreva os quatro numa folha só, com a data em cima e a frase &ldquo;medido antes de qualquer robô entrar&rdquo;. Mande com uma linha: &ldquo;o dono do WhatsApp comprou uma empresa esta semana para pôr robô aqui dentro; guardei como está hoje, para a gente saber depois se melhorou&rdquo;. Você não vendeu nada, não prometeu nada, e virou a pessoa que tem o número. No dia da decisão, é para você que ele liga.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s5">
+    <div class="titulo"><span class="n">05</span><h2>DE ONDE VEIO CADA INFORMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">A nota fiscal desta edição. Todos os horários já convertidos para o <b>horário de Brasília</b>. Se algo aqui não bater, o link está aberto para você conferir antes de repetir em reunião.</p>
+
+    <ol class="src">
+      <li>🟡 ontem, 16h30 — &ldquo;Meta compra startup sueca de IA para acelerar agentes no WhatsApp&rdquo;, <b>Startups</b> · <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPcGx2NWZ5U3VSLWF6NVJPQ2RqTlZ4R1BUeTJZbzVIdEFXSnhPOWRCN2Z1NFFCa3pWdzBLbjhYSHJWRTZybjNrNVZsd09UcktDbE5ZenE4dEFUYkJYakUwSUZzOXczSnF6S0wxa1RpMkNLRWxNSkZ5djlfT0hTdU0zejNrSnhCOGE4eDFESjZUTlUxWWxsWWo0VG10YXMwZVdF?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 18h55 — &ldquo;Brasileiras estão quatro vezes mais confiantes no ROI dos agentes de IA&rdquo;, <b>Baguete</b> · <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTklLZzNzTG9GWENIblFKT0RwOVBuOGJ0WjNYNVQ3YU9EbG1GRmZxMks1alFmaFliTDVROXJzT2JJQ1VuRE5CSGNzNVNVem05cVNqNjNHOG9YQ3dWX1h0cEs4SURVb2s1M2Rpb3NDVXk2T1FpdUxFS0lqeThoNjlYN01uTS1XOGtKZXBEbEQzYzNZY1VUV0lWaVNjNmJzTmh2ODNvMVZ2NWhzalU?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 16h37 — &ldquo;IA: só 18% usam tecnologia de forma integrada&rdquo;, <b>Mobile Time</b> · <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQc2Rvc1U0WVpwcE5qRzladmN2bTI1bW85aDlIN3M2ajhveE1sRHgwV0M3NFBsYnJlRktkY2FBRVR1bG5YWXpjX3NPVWJmU1QtdEo1ZGhpRzFiMDd2aXRaZzFuMndmalVFeWFxSEtibUJXR1ExNUd3VF9SNE42M0RWX2dJUlFhZzN2d09QY2hQUQ?oc=5">clique aqui</a></li>
+      <li>🟢 hoje, 3h11 — &ldquo;DeepSeek v4.1 Flash&rdquo;, <b>perfil oficial da DeepSeek</b>, via Hacker News · <a href="https://twitter.com/deepseek_ai/status/2097930608790167907">clique aqui</a></li>
+      <li>🟢 hoje, 2h13 — &ldquo;Suno v6&rdquo;, <b>Product Hunt</b> · <a href="https://www.producthunt.com/products/suno">clique aqui</a></li>
+      <li>🟡 ontem, 23h04 — &ldquo;Training a 3.8B LLM to 0.384 CORE for $998&rdquo;, <b>Hugo Vergnes</b>, via Hacker News · <a href="https://hugovergnes.github.io/little-lm-3-8b/">clique aqui</a></li>
+      <li>🟡 ontem, 15h15 — &ldquo;iPhone Duo&rdquo;, <b>Apple</b>, via Hacker News e Product Hunt · <a href="https://www.apple.com/iphone-duo/">clique aqui</a></li>
+      <li>🟡 ontem, 12h27 — &ldquo;O maior erro das empresas na era da IA é tratar inteligência como automação&rdquo;, <b>ClienteSA</b> · <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPU1VNTy1oNHNWZkY3YjhVd190MmVhcG5NYklod2lHTmdQV2ZBOGxnb0g5UjZ3OUFYRk5NUzlmak1ZQzR2QVc4dG0tdm9fSmFOeW9GMmhXWU1CcV9oNjczWWNMbFJfNndNeWhpZXJXWG9pS0FvZnZkNW5wc0tsMWlkWnI0Si1EV19QdURuUnpjN09Xcnh1aXN2ejBKXzN2alhzRVZNU3dGaWN5c0tf?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 9h00 — &ldquo;MCP: como este protocolo pode transformar o e-commerce?&rdquo;, <b>E-Commerce Brasil</b> · <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNUlZsWGxkbFUzeEt4RVM1S2dCcDV2MXlpd3ViM25fM0NqSkYzSi1PLVFfejJrNDVaS0NFbVV2X0I0d2dmRjJNS3NVQlk5eE9CMmJITC1fU3V0cUhWTkxLNkRDeUdGb3NLVWxYNHMtaUZ6RV9qNjZnMjdkT3JfZ0xMX0JiRHBxc3g5Q29qTHRzUG0wODZPaTZmTjNxczQ?oc=5">clique aqui</a></li>
+      <li>🟡 terça, 7h58 — &ldquo;Docusign disponibiliza seu Servidor MCP para todos os agentes de IA&rdquo;, <b>Inforchannel</b> · <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWkpZTEFic0dTM3dmWGpZZ0xvSUJfdllUU1lYanVQM0pYbDkwQW5JS0l0c2xiQUVtT213Ui03eG1RbzZOZThfbHRhZnh1Qk9UTzkyS1JHX3hEMUJMNjhGcUtZTXktZU14TVlkdVFnV2JZaDQtOEs3NFgxZXhUOVZkVkxER2xUenc1VE1hLUF6Mk82dlp4cEpuYnNyWnFxakZkbWNZVF9Sb3RwZDQ?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 6h03 — &ldquo;Tecnologia virou ponto de partida: a aposta da Gupy em agentes de IA para o RH&rdquo;, <b>Exame</b> · <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUUI2SGxYOWZudXBWZXZpN0h3WVdnLVU3SVlMOGQ2N1VsbGFCWEl5TVdFOXhNS2poS1o2OGJNcU5ZVEZYbmw1STF6SHFMTTZLakQ3SzluQXJDU2lMUUd6ekJoYjdVVTdGeURlT0xhRVpBQ0dwV3UxQUZ2aU1JUDhFbXQtdGRKNjFiRFdHZG9nMmNFcTMxVC1TSnJJUzAwcG9qemJaTFRZMko?oc=5">clique aqui</a></li>
+      <li>🟢 hoje, 5h00 — &ldquo;IA nas empresas: 10 aplicações que já estão transformando os negócios&rdquo;, <b>Economia SC</b> · <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNNkUxYlVSMjFLQlBOcUphZU82S0R0V2NjZC1fejVOdDVjdzk4d3VLb25NQzlVVTh0aU5CcW9Idnh4Ty1NcDZJMExzcW1rMG1lZkN1c00tTzh2dEtVd3hZM0V3bkpDbDZGY3hXRjRIWE5IT3I3blZEVUdUR280bFFNY0FCZVNhdENrOC0xVHNzRjE5a2ZFNUpwMTNrUnE3XzJUWG5TallR?oc=5">clique aqui</a></li>
+      <li>🟢 hoje, 8h03 — <b>o que o Brasil assiste sobre o seu assunto</b> (coleta própria do radar no YouTube): &ldquo;N8n do zero&rdquo;, canal Karine Lago, 397.294 · <a href="https://www.youtube.com/watch?v=dERk7d4OdjA">clique aqui</a> — &ldquo;AI Agents: como criar e usar&rdquo;, canal Negócios em Mente, 203.026 · <a href="https://www.youtube.com/watch?v=UiK9pl8tKao">clique aqui</a> — &ldquo;Follow-up com IA no Kommo CRM&rdquo;, canal RBMIDIA, 12.298 · <a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">clique aqui</a> — &ldquo;Automação do WhatsApp Business com o agente da Meta&rdquo;, canal Caroline Manchini, 22.409 · <a href="https://www.youtube.com/watch?v=vdjN537MpsA">clique aqui</a></li>
+      <li>🟢 hoje, 8h03 — os outros cinco vídeos sobre segundo contato com IA, somados: 1.036 visualizações. Canais Sistema Britto (86), Agents Lab (742), Nexxus Academy (46), Simples Dental (120) e Conversa com Agente (42). Coleta própria do radar.</li>
+      <li>🟢 hoje, 8h03 — <b>lista dos dez assuntos mais buscados do Brasil</b> (Google Trends): nenhum termo de IA na coleta. Coleta própria do radar, sem link público.</li>
+    </ol>
+
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>1.</b> Da compra da <b>empresa sueca pela Meta</b>, este radar leu o título e a chamada da reportagem. <b>Não foi verificado aqui</b>: o nome da empresa comprada, o valor pago, a data de fechamento nem se o negócio já foi aprovado. Abra o link antes de citar em reunião — e não repita valor nenhum, porque este radar não viu valor nenhum.</p>
+      <p><b>2.</b> Os números das <b>quatro vezes mais confiança</b> e dos <b>dezoito em cada cem</b> são o que as duas reportagens afirmam. Não são a mesma pesquisa e podem não usar a mesma base de empresas. O radar não teve acesso à metodologia de nenhuma das duas. Use como ordem de grandeza, não como dado auditado.</p>
+      <p><b>3.</b> Do anúncio da <b>DeepSeek</b>, o radar leu apenas o título publicado no perfil oficial, via mural dos programadores. Não abriu o comunicado, não viu preço, não viu teste independente e não sabe se já está disponível no Brasil.</p>
+      <p><b>4.</b> Dos <b>998 dólares</b>, o radar leu o título do blog do próprio autor. É medição de uma pessoa, sem revisão de terceiros. O radar não rodou nada, não conferiu a conta e não avalia se o motor presta.</p>
+      <p><b>5.</b> Do <b>iPhone Duo</b>, o radar viu a página oficial listada no mural dos programadores e na vitrine de lançamentos. Não abriu a página, não conferiu preço, especificação nem data de venda no Brasil.</p>
+      <p><b>6.</b> Da <b>Docusign</b> e do <b>e-commerce</b>, o radar leu os títulos das duas reportagens. Não testou nenhum dos encaixes e não sabe quais planos de assinatura dão acesso a eles.</p>
+      <p><b>7.</b> Os números do <b>YouTube</b> e a <b>lista dos dez mais buscados</b> são uma foto do momento da coleta, hoje às 8h03. Visualização é acumulada desde a publicação de cada vídeo, não é audiência de hoje — ela serve para comparar tamanho de interesse, não para medir o dia.</p>
+      <p><b>8.</b> <b>Não houve Pulso na quarta-feira, 9 de setembro.</b> Por isso seis dos oito recortes de hoje têm selo amarelo: são de ontem e não tinham sido publicados aqui.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">
+    Radar André Oliveira · Nº 028 · 10 de setembro de 2026<br>
+    Próxima edição: sexta-feira, 11 de setembro — Pulso diário.
+  </div>
+</div>
+
+</body>
+</html>
