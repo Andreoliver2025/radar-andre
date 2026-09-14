@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar de Passagens Nº 002 · 2026-09-14</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">✈️ Radar de Passagens · Edição de segunda-feira</div>
+    <h1>Fortaleza–Belo Horizonte ida e volta no fim de novembro por R$ 782, metade do preço normal</h1>
+    <p class="chamada">O Google calcula R$ 1.577 como preço normal dessa ida e volta, de 28 de novembro a 1º de dezembro. Hoje sai por R$ 782 com uma parada, ou R$ 999 direto. Não tem prazo: é preço do dia e pode subir a qualquer hora.</p>
+    <div class="dateline">Edição Nº 002 · segunda-feira, 14 de setembro de 2026 · saindo de Fortaleza</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <span class="rot">Nesta edição</span>
+    <ol>
+      <li><div><a href="#melhor">A melhor da edição</a><div class="d">Belo Horizonte ida e volta pela metade do preço, com a conta e o passo a passo.</div></div></li>
+      <li><div><a href="#dinheiro">Saindo de Fortaleza, em dinheiro</a><div class="d">Belém em outubro por R$ 703 ida e volta, Brasília e Natal no fim de novembro, Lisboa só ida por R$ 1.670.</div></div></li>
+      <li><div><a href="#milhas">Com milhas: onde a milha rende</a><div class="d">Buenos Aires direto com Smiles: a conta mostra que a milha rende pouco. E as emissões que seguem de olho.</div></div></li>
+      <li><div><a href="#bonus">Bônus, compra de pontos e clubes</a><div class="d">Clube Esfera com até 100 mil pontos de bônus até domingo, e para que ele serve saindo de Fortaleza.</div></div></li>
+      <li><div><a href="#estadias">Estadias e pacotes</a><div class="d">Resort em Aquiraz, na Grande Fortaleza, com até 35% de desconto até domingo.</div></div></li>
+      <li><div><a href="#internacional">Garimpo internacional</a><div class="d">Nova York que pode sair de Fortaleza (a confirmar), executiva curta na Europa com Smiles e o que não compensa.</div></div></li>
+      <li><div><a href="#regua">A régua de Fortaleza</a><div class="d">22 destinos conferidos hoje no Google, e o que mudou desde ontem.</div></div></li>
+      <li><div><a href="#calendario">Calendário: o que vence quando</a><div class="d">Três prazos acabam hoje. Dois vencem no domingo.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">As fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- ══════════ 01 ══════════ -->
+  <section class="materia" id="melhor">
+    <div class="titulo"><span class="n">01</span><h2>A melhor da edição</h2><span class="fio"></span></div>
+    <p class="abertura">Fim de novembro virou liquidação para quem sai de Fortaleza. A rota que mais caiu hoje foi <b>Belo Horizonte: ida e volta pela metade do preço</b>.</p>
+    <p class="texto capitular">O Google Flights mostra ida no sábado, 28 de novembro, e volta na terça, 1º de dezembro, por R$ 782. É a Gol, com uma parada. Quem prefere voo direto paga R$ 999 na Azul, ainda bem abaixo do normal.</p>
+    <p class="texto"><span class="frescor hoje">🔥 Imperdível</span> sem prazo (preço de hoje) · sai de FOR · Google Flights, 14/09</p>
+    <p class="texto">Por que é a melhor: é a maior economia em reais conferida hoje, e o próprio Google diz que o preço está baixo para a data. Não depende de milha, de clube nem de cupom.</p>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">R$ 795</div><div class="lbl"><b>Maior economia do dia:</b> BH ida e volta, contra o preço normal do Google.</div></div>
+      <div class="numero"><div class="big">R$ 30,82</div><div class="lbl"><b>Milheiro Esfera abaixo da referência:</b> Clube VIP com o bônus (seção 04).</div></div>
+      <div class="numero"><div class="big">Hoje</div><div class="lbl"><b>Prazo mais curto:</b> Clube Smiles às 10h e compra de pontos Livelo.</div></div>
+      <div class="numero"><div class="big">10</div><div class="lbl"><b>Ofertas conferidas:</b> 2 🔥, 5 ✅ e 3 👀. Mais 13 consultas ao Google Flights.</div></div>
+    </div>
+
+    <div class="traduz"><span class="r">A conta</span><p>Preço normal dessa ida e volta, segundo o Google: R$ 1.577. Com uma parada: R$ 782. Economia de R$ 795, ou 50%. Direto pela Azul: R$ 999. Economia de R$ 578, ou 37% (a régua do Google vale para a busca inteira, não só para o voo direto). Para duas pessoas, a opção com parada poupa R$ 1.590.</p></div>
+    <div class="traduz"><span class="r">Como pegar, passo a passo</span><p>1) Abra o link abaixo: a busca já vem com as datas. 2) Compare os dois voos: R$ 217 a mais compram o voo direto, sem conexão. 3) Clique no voo e compre no site da própria companhia. 4) A tarifa mais barata costuma levar só mala de mão. Se for despachar, some a mala antes de decidir.</p></div>
+    <p class="texto"><b>Prazo e riscos.</b> Não existe prazo. É preço de hoje e pode subir amanhã, como tomate na feira. A consulta foi para 1 adulto, classe econômica, às 7h17 de Brasília. Horário e bagagem mudam o valor final. <a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20CNF%20on%202026-11-28%20through%202026-12-01&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">Abrir a busca no Google Flights</a>.</p>
+
+    <div class="olho">
+      <p>“Tá dando para ir a BH e voltar no fim de novembro por R$ 782. O normal é R$ 1.577.”</p>
+      <span class="quem">A frase para o grupo da família</span>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Se BH está nos planos para o fim de novembro, <b>compre hoje</b>: o preço não tem garantia de amanhã.</p>
+      <p>Se não está, não compre só porque está barato. Passagem barata para uma viagem que você não ia fazer é gasto, não economia.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 02 ══════════ -->
+  <section class="materia" id="dinheiro">
+    <div class="titulo"><span class="n">02</span><h2>Saindo de Fortaleza, em dinheiro</h2><span class="fio"></span></div>
+    <p class="abertura">Todos os preços abaixo foram conferidos hoje no Google Flights. <b>Nenhum veio de blog</b>: é o garimpo que ninguém noticiou.</p>
+    <p class="texto">Duas passagens só de ida, em companhias diferentes, às vezes saem mais baratas que uma ida e volta. É como comprar o arroz num mercado e o feijão em outro.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Fortaleza → Belém ida e volta de 14 a 18 de outubro por R$ 703, voo direto</h3>
+          <div class="credito"><span class="frescor hoje">✅ Vale a pena</span><span>sem prazo (preço de hoje)</span><span>sai de FOR</span><span>Google Flights, 14/09</span></div>
+          <p class="texto">Ida na quarta, 14 de outubro, volta no domingo, 18. LATAM, voo direto de 2 horas nos dois sentidos. O Google marca o preço como "baixo" para essas datas, mas não informa quanto seria o normal.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Sem o normal do Google para outubro, a régua é a de novembro: R$ 534 só ida (Google, 13/09), ou R$ 1.068 ida e volta. Hoje: R$ 703. Economia de cerca de R$ 365, ou 34%. Outro sinal: no mesmo 14/10, o direto da Azul custa R$ 791 só na ida.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Abra a busca pelo link. 2) Escolha o voo direto da LATAM nos dois trechos. 3) Compre no site da LATAM. 4) Confira a mala: na tarifa mais barata ela não vem.</p></div>
+          <div class="link"><a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20BEL%20on%202026-10-14%20through%202026-10-18&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir a busca</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Fortaleza → Brasília só ida em 28 de novembro por R$ 600, voo direto</h3>
+          <div class="credito"><span class="frescor hoje">🔥 Imperdível</span><span>sem prazo (preço de hoje)</span><span>sai de FOR</span><span>Google Flights, 14/09</span></div>
+          <p class="texto">Sábado, 28 de novembro, voo direto de 2h40. Gol e LATAM cobram o mesmo: R$ 600. É só a ida: a volta você busca à parte. Ontem, a véspera (27/11) saía por R$ 492, preço não conferido hoje.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Preço normal para a data, segundo o Google: R$ 975. Hoje: R$ 600. Economia de R$ 375, ou 38%.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Abra a busca. 2) Escolha Gol ou LATAM, direto. 3) Compre no site da companhia. 4) Busque a volta separada e compare com uma ida e volta.</p></div>
+          <div class="link"><a href="https://www.google.com/travel/flights?q=Voos%20de%20FOR%20para%20BSB%20em%202026-11-28%20s%C3%B3%20ida&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir a busca</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Fortaleza → Natal só ida em 28 de novembro por R$ 467, voo direto</h3>
+          <div class="credito"><span class="frescor hoje">✅ Vale a pena</span><span>sem prazo (preço de hoje)</span><span>sai de FOR</span><span>Google Flights, 14/09</span></div>
+          <p class="texto">Sábado, 28 de novembro, LATAM direto em 1 hora. Serve para um fim de semana no litoral potiguar. A Gol, na mesma data, cobra R$ 1.118 com parada.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Preço normal para a data, segundo o Google: R$ 646. Hoje: R$ 467. Economia de R$ 179, ou 28%. Ontem, a véspera (27/11) saía por R$ 429.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Abra a busca. 2) Escolha o direto da LATAM. 3) Compre no site da LATAM. 4) Busque a volta separada.</p></div>
+          <div class="link"><a href="https://www.google.com/travel/flights?q=Voos%20de%20FOR%20para%20NAT%20em%202026-11-28%20s%C3%B3%20ida&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir a busca</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Fortaleza → Lisboa só ida em 28 de novembro por R$ 1.670, voo direto</h3>
+          <div class="credito"><span class="frescor hoje">✅ Vale a pena</span><span>sem prazo (preço de hoje)</span><span>sai de FOR</span><span>Google Flights, 14/09</span></div>
+          <p class="texto">Sábado, 28 de novembro, LATAM direto, 7h25 de voo. É só a ida. A ida e volta de 28/11 a 12/12 custa R$ 4.831, preço normal: quem pesa é a volta.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Preço normal da ida nessa data, segundo o Google: R$ 2.260. Hoje: R$ 1.670. Economia de R$ 590, ou 26%. A volta Lisboa → Fortaleza em 14/12 custa R$ 3.892 no direto da LATAM. Por isso vale pensar em ida em dinheiro e volta com milhas (seção 03).</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Antes de pagar, veja se há vaga de volta com milhas LATAM Pass. 2) Compre a ida no site da LATAM. 3) Confira passaporte e seguro-viagem.</p></div>
+          <div class="link"><a href="https://www.google.com/travel/flights?q=Voos%20de%20FOR%20para%20LIS%20em%202026-11-28%20s%C3%B3%20ida&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir a busca</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="nota"><span class="r">Ainda valendo, da edição passada</span>
+      <ul class="lista">
+        <li><b>Fortaleza–Recife ida e volta, 20 a 22/11:</b> R$ 805 hoje (era R$ 750). Ainda "baixo", R$ 672 abaixo do normal.</li>
+        <li><b>Fortaleza–Brasília ida e volta, 20 a 22/11:</b> R$ 1.175 hoje (era R$ 1.023). Ainda "baixo", R$ 616 abaixo do normal.</li>
+        <li><b>Fortaleza–Lisboa só ida, 3/12:</b> R$ 1.670, o mesmo preço de ontem.</li>
+        <li><b>Fortaleza–BH e Fortaleza–Belém em 26/11:</b> não conferidas hoje. Em 28/11, BH só ida sai por R$ 400 com parada, R$ 431 abaixo do normal.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>O feriado de 20/11 já subiu <b>R$ 55 para Recife e R$ 152 para Brasília</b> desde ontem. Se a viagem é certa, não espere o fim da semana.</p>
+      <p>Nenhuma dessas passagens tem prazo: é preço do dia.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 03 ══════════ -->
+  <section class="materia" id="milhas">
+    <div class="titulo"><span class="n">03</span><h2>Com milhas: onde a milha rende</h2><span class="fio"></span></div>
+    <p class="abertura">Milha é moeda, e moeda forte num lugar vale pouco em outro, como o real na casa de câmbio. Hoje <b>a conta mostra onde não gastar</b>.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Milheiro</b> é cada lote de mil milhas, a unidade de preço do mercado, como o quilo na feira. <b>Emissão</b> é comprar a passagem usando milhas. <b>Taxas</b> são o valor em dinheiro que sempre se paga à parte. A conta: (preço em dinheiro − taxas) ÷ milhas × 1.000. Se o resultado passa de 1,3 vez o preço de comprar milhas, a emissão compensa.</p></div>
+    <p class="texto">Nenhuma emissão nova de Fortaleza chegou ao selo ✅ hoje. A única que apareceu não se paga.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Smiles: Fortaleza → Buenos Aires direto por 42.500 milhas em 30 de novembro. Faça a conta antes</h3>
+          <div class="credito"><span class="frescor antes">👀 De olho</span><span>sem prazo informado</span><span>sai de FOR</span><span>Pontos pra Voar, 11/09</span></div>
+          <p class="texto">A Smiles tem o voo direto da Gol para o Aeroparque, em Buenos Aires, no dia 30 de novembro. São 42.500 milhas para quem é do Clube Smiles e 45.000 para os demais, mais taxas que a fonte não informou. Em dinheiro, o mesmo voo direto custa R$ 1.044 hoje.</p>
+          <div class="traduz"><span class="r">A conta</span><p>R$ 1.044 ÷ 42,5 = R$ 24,56 por milheiro, antes das taxas. Comprar milhas Smiles custa R$ 16,84 o milheiro: a milha renderia 1,46 vez o custo. Se as taxas passarem de R$ 114, cai abaixo de 1,3 vez e deixa de valer. Sem Clube (45.000 milhas), o limite é R$ 59 de taxas. A conta fica pendente até você ver as taxas.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Entre na Smiles e busque Fortaleza → Buenos Aires em 30/11. 2) Anote milhas e taxas. 3) Refaça: (1.044 − taxas) ÷ 42,5. 4) Deu menos de R$ 22? Compre em dinheiro e guarde as milhas.</p></div>
+          <div class="link"><a href="https://pontospravoar.com/alerta-ppv-smiles-passagens-argentina-partir-29-mil-milhas/">abrir a oferta</a> · <a href="https://www.google.com/travel/flights?q=Voos%20de%20FOR%20para%20AEP%20em%202026-11-30%20s%C3%B3%20ida&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">preço em dinheiro</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="nota"><span class="r">Ainda de olho, da edição passada (vaga não conferida hoje)</span>
+      <ul class="lista">
+        <li><b>LATAM Pass Fortaleza ⇄ Lisboa direto por 54.034 milhas o trecho</b> (3 e 14/12, Pontos pra Voar, 13/09). Com a volta em dinheiro a R$ 3.892 hoje, cada milheiro vale R$ 72 antes das taxas, 2,8 vezes o custo de comprar (R$ 25,90). Casa com a ida em dinheiro do recorte 05.</li>
+        <li><b>Smiles → Air France Fortaleza → Paris direto a partir de 83.100 milhas o trecho</b> (Melhores Destinos, ago/2026). R$ 43,69 por milheiro antes das taxas, com o direto a R$ 3.631.</li>
+        <li><b>Iberia Fortaleza → Madri direto por 16.000 Avios na econômica</b>, sujeito a vaga. Ainda sem confirmar se a tabela subiu para 22.000. A seção 04 mostra quanto custa juntar esses Avios pela Esfera.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Não gaste milha Smiles em Buenos Aires sem ver as taxas. Na Air France para Paris, a mesma milha rende <b>R$ 43,69 antes das taxas, quase o dobro</b>. Guarde para lá.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 ══════════ -->
+  <section class="materia" id="bonus">
+    <div class="titulo"><span class="n">04</span><h2>Bônus, compra de pontos e clubes</h2><span class="fio"></span></div>
+    <p class="abertura">A Esfera é a chave para a Europa, porque manda pontos para a Iberia a 2 por Avios. Até domingo, <b>o Clube Esfera dá até 100 mil pontos de bônus</b>.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p><b>Clube</b> é uma assinatura mensal que dá pontos todo mês e costuma liberar bônus maiores. Funciona como academia: só compensa se você usa. <b>Avios</b> é a milha da Iberia, a companhia que voa Fortaleza–Madri direto. <b>Paridade</b> é a taxa de câmbio entre pontos do cartão e milhas da companhia.</p></div>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Clube Esfera: até 100 mil pontos de bônus em 12 meses, milheiro a R$ 30,82 no plano VIP</h3>
+          <div class="credito"><span class="frescor hoje">✅ Vale a pena</span><span>até domingo, 20/09 (hora não informada)</span><span>pontos servem para voar de FOR</span><span>Alta Renda Blog, 14/09</span></div>
+          <p class="texto">Entre 14 e 20 de setembro, quem assina o Clube Esfera ou sobe de plano ganha pontos extras, pagos em 12 parcelas junto com os pontos do mês. Vale para quem nunca assinou, para quem está há mais de 12 meses fora e para upgrade imediato. Os planos Essencial e Premium ficam de fora.</p>
+          <p class="texto">É preciso ficar 12 meses. Quem cancela antes perde as parcelas que faltam.</p>
+          <p class="texto"><b>Para que serve saindo de Fortaleza:</b> a Iberia cobra 16.000 Avios no trecho FOR–Madri direto, econômica, sujeito a vaga. Pela Esfera são 32.000 pontos: R$ 986 no plano VIP. O direto em dinheiro custava R$ 4.023 (27/11, Google, 13/09). O mais barato com parada sai R$ 2.130 (10/11, hoje).</p>
+          <div class="traduz"><span class="r">A conta</span><p>Mensalidade × 12 ÷ (pontos do ano + bônus). Pro: R$ 526,80 por 15.500 pontos = R$ 33,99 o milheiro. Master: R$ 1.282,80 por 40.000 = R$ 32,07. VIP: R$ 2.542,80 por 82.500 = <b>R$ 30,82</b>. Exclusive: R$ 9.598,80 por 340.000 = R$ 28,23. A melhor compra Esfera registrada no radar era R$ 31,50 (abr/2026): só VIP e Exclusive ficam abaixo. Mil Avios saem a R$ 61,64 no VIP e rendem de R$ 133 a R$ 251 antes das taxas, de 2,2 a 4 vezes o custo. Por que ✅ e não 🔥: o VIP fica só 2% abaixo da referência, e o Passageiro de Primeira já anunciou campanha de 100 mil pontos "a partir de R$ 25,40" (não deu para abrir e ver a data).</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Antes de assinar, entre em iberia.com e veja se há vaga em Avios FOR–MAD nas suas datas. 2) Na Esfera, vá em Clube e escolha o plano. O VIP é o menor que fica abaixo da referência. 3) Leia o regulamento e confira se você é elegível. 4) Os pontos chegam por mês: no VIP, 6.875 por mês, uns 5 meses para juntar 32.000. 5) Transfira para a Iberia só com a passagem escolhida: não tem volta. O mínimo é 15 mil pontos.</p></div>
+          <div class="link"><a href="https://altarendablog.com.br/2026/09/14/%F0%9F%9A%A8-clube-esfera-assine-ou-atualize-seu-plano-e-ganhe-ate-100-mil-pontos-bonus/">abrir a oferta</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="olho">
+      <p>“A Esfera dá até 100 mil pontos de bônus até domingo. Só vale se você vai mesmo usar numa viagem para Madri.”</p>
+      <span class="quem">A frase para o grupo da família</span>
+    </div>
+
+    <div class="nota"><span class="r">Ainda valendo, da edição passada</span>
+      <ul class="lista">
+        <li><b>Clube Livelo Classic anual:</b> 25 mil pontos por R$ 511,80 com o cupom QUEROPONTOS, R$ 20,47 o milheiro. Até terça, 22/09, só novos assinantes (não reconferido hoje). Para Smiles e Azul, sai mais barato que a Esfera. Para a Iberia, não: são 3,5 pontos Livelo por Avios, R$ 71,65 por mil Avios, contra R$ 61,64 no Clube Esfera VIP.</li>
+        <li><b>Compra de pontos Livelo com até 58% de desconto,</b> só para assinantes do Clube: acaba hoje, 14/09 (hora não informada).</li>
+        <li><b>Clube Smiles com até 30 mil milhas de bônus</b> para novas adesões: acaba hoje às 10h (Pontos pra Voar).</li>
+        <li><b>De olho, sem confirmação:</b> o Pontos pra Voar lista o aniversário da Esfera (22/09) e o do Clube Smiles (20 a 30/09) como datas em que costuma haver promoção. Em 2025, a Esfera deu até 30% de bônus para a Iberia. É previsão, não oferta.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Até <b>domingo, 20/09</b>. Se você pretende voar para Madri e quer juntar Avios aos poucos, o VIP faz sentido. Se não tem viagem à vista, não assine: clube é mensalidade, não desconto.</p>
+      <p>Assinou? Não transfira nada antes do dia 22. Se vier bônus para a Iberia no aniversário da Esfera, os mesmos pontos viram mais Avios.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 05 ══════════ -->
+  <section class="materia" id="estadias">
+    <div class="titulo"><span class="n">05</span><h2>Estadias e pacotes</h2><span class="fio"></span></div>
+    <p class="abertura">Nem toda folga precisa de avião. <b>Aquiraz fica na Grande Fortaleza</b> e tem resort com desconto até domingo.</p>
+    <p class="texto">Desconto de hotel é como promoção de supermercado: só vale se você lembra do preço de antes. Por isso, confira a diária cheia antes de fechar.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Dom Pedro Laguna, em Aquiraz: diárias a partir de R$ 449,51, com até 35% de desconto</h3>
+          <div class="credito"><span class="frescor hoje">✅ Vale a pena</span><span>até domingo, 20/09 (hora não informada)</span><span>Aquiraz (CE), sem voo</span><span>O Maranhense, 14/09</span></div>
+          <p class="texto">A rede WAM faz a Semana do Cliente de 7 a 20 de setembro em dez hotéis. O único do Ceará é o Dom Pedro Laguna Beach Resort &amp; Golf. A estadia pode ser usada até 30 de junho de 2027, fora feriados, Natal e Ano Novo.</p>
+          <div class="traduz"><span class="r">A conta</span><p>A fonte fala em 25% de desconto mais 10% no Pix, até 35%, e diária a partir de R$ 449,51. Se esse valor já tem os 35%, a diária cheia seria cerca de R$ 692, e a economia, R$ 242 por noite. O Skyscanner mostra o resort "a partir de R$ 720" (data não informada). A conta depende da diária cheia nas suas datas.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Entre em descontos.wamhoteis.com.br ou ligue 0800 620 7575. 2) Escolha datas fora de feriado. 3) Peça o preço cheio e o preço com desconto. 4) Pague no Pix para os 10% extras. 5) Pergunte o que a diária inclui.</p></div>
+          <div class="link"><a href="https://omaranhense.com/semana-do-cliente-oferece-ate-40-de-desconto-em-hoteis-da-wam-experience/">abrir a oferta</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="nota"><span class="r">Ainda valendo, da edição passada</span>
+      <ul class="lista">
+        <li><b>Livelo: até 20% em hotéis com o cupom HOTEISSET20,</b> mais 30% de pontos de volta. Acaba hoje, 14/09 (hora não informada).</li>
+        <li><b>Jericoacoara:</b> pousadas com até 20% no Hoteis.com e cupom HOTEISPP6. Segue de olho, sem preço de diária publicado.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Se a ideia é descansar perto de casa entre outubro e junho, reserve <b>até domingo</b> e pague no Pix. Evite feriados: o desconto não vale neles.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 06 ══════════ -->
+  <section class="materia" id="internacional">
+    <div class="titulo"><span class="n">06</span><h2>Garimpo internacional</h2><span class="fio"></span></div>
+    <p class="abertura">Promoção de outra cidade é produto barato em outra loja: <b>some o frete antes de comemorar</b>. Hoje, quase nada sobrou.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">09</div>
+        <div>
+          <h3>Nova York por R$ 2.488 ida e volta: a matéria aparece nas buscas por Fortaleza, mas o preço de FOR não foi confirmado</h3>
+          <div class="credito"><span class="frescor antes">👀 De olho</span><span>sem prazo informado</span><span>saída de FOR não confirmada</span><span>Melhores Destinos, 11/09</span></div>
+          <p class="texto">O Melhores Destinos publicou em 11/09 passagens para Nova York por R$ 2.488, ou a partir de R$ 2.729 no fim de ano. O coletor do radar achou a matéria numa busca por Fortaleza. Não deu para abrir e ver o preço de cada cidade.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Referência conferida hoje: Fortaleza–Nova York ida e volta de 5 a 15/11 custa R$ 5.832 no Google (Gol e Copa, 2 paradas, preço normal). Se Fortaleza estiver mesmo a R$ 2.488, seriam R$ 3.344 a menos, 57%. Se o preço for de São Paulo, some Fortaleza–São Paulo (R$ 703 a R$ 774 só ida hoje): perto de R$ 3.900 a R$ 4.050, ainda uns 31% abaixo. Conta pendente.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Abra a matéria pelo link. 2) Procure Fortaleza na lista de cidades. 3) Clique na data e confira o preço final na companhia. 4) Lembre: precisa de visto americano.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNNWcyb3h3TGdXZldRYkxZWTVwUjJuUTdscVZpTkR4bG1QaXpQOXdrN3NCUVU0eHpQTHZmOGprMEZUeXBDdk1Ka2F1c3E2M2RpY3JsRlltNmpJbk9EbFI1Q1ZOWUxzT1Rrd0xDOVBnM01BUkhCRnlHX2RnMW1KV1J0VXFYOU1KLW9Ncm5pMFpaVkE?oc=5">abrir a matéria</a> · <a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20JFK%20on%202026-11-05%20through%202026-11-15&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">preço de referência</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">10</div>
+        <div>
+          <h3>Executiva Lisboa → Madri por 23.400 milhas Smiles e R$ 174 de taxas</h3>
+          <div class="credito"><span class="frescor antes">👀 De olho</span><span>sem prazo informado</span><span>sai de Lisboa</span><span>Passageiro de Primeira, 11/09</span></div>
+          <p class="texto">Para quem já vai a Lisboa: o trecho curto até Madri na executiva, a cabine da poltrona larga, aparece por 23.400 milhas Smiles e R$ 174,06 de taxas. É um jeito de experimentar a cabine melhor gastando pouca milha. Data e companhia não foram confirmadas.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Sem preço em dinheiro da executiva para comparar, a conta fica pendente. Comprar essas milhas custaria R$ 394 (23,4 × R$ 16,84). Com as taxas, R$ 568 no total.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Na Smiles, busque Lisboa → Madri na classe executiva. 2) Use o calendário para achar 23.400 milhas. 3) Compare com o preço em dinheiro da mesma data antes de emitir.</p></div>
+          <div class="link"><a href="https://passageirodeprimeira.com/5-sugestoes-de-voos-em-classe-executiva-a-partir-de-23-mil-milhas-smiles/">abrir a oferta</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="nota"><span class="r">Não compensa saindo de Fortaleza</span>
+      <ul class="lista">
+        <li><b>Europa 2x1 a partir de R$ 4.459, saindo de Salvador</b> (Melhores Destinos, 10/09). Somando Fortaleza–Salvador (R$ 599 a R$ 732 só ida hoje, ida e volta estimada em R$ 1.198 a R$ 1.464), passa de R$ 5.600. A ida e volta Fortaleza–Lisboa direta custava R$ 4.322 (3 a 14/12, Google, 13/09). O 2x1 inclui um trecho dentro da Europa, mas começa R$ 1.300 mais caro.</li>
+        <li><b>Punta Cana a partir de R$ 888 o trecho:</b> sai de São Paulo, pela Copa. Fortaleza–São Paulo custa R$ 703 a R$ 774 só ida hoje.</li>
+        <li><b>Flying Blue Promo Rewards de setembro:</b> as passagens com desconto não incluem saídas do Brasil.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Abra a matéria de Nova York e procure Fortaleza. Se aparecer perto de R$ 2.500, <b>é a melhor passagem internacional da semana</b>. Se não aparecer, deixe para a próxima edição.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 07 ══════════ -->
+  <section class="materia" id="regua">
+    <div class="titulo"><span class="n">07</span><h2>A régua de Fortaleza</h2><span class="fio"></span></div>
+    <p class="abertura">Toda edição, o radar confere 22 destinos em duas datas. Hoje: <b>quarta, 14 de outubro, e sábado, 28 de novembro</b>.</p>
+    <p class="texto">O "nível" é a leitura do próprio Google. "Baixo" quer dizer mais barato que o normal para aquela data. "Alto", mais caro. É a plaquinha da feira comparada com a da semana passada.</p>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">7 de 21</div><div class="lbl"><b>Destinos mais baratos que o normal</b> em 28/11.</div></div>
+      <div class="numero"><div class="big">1 de 22</div><div class="lbl"><b>Em 14/10,</b> só Belém está abaixo do normal.</div></div>
+      <div class="numero"><div class="big">R$ 313</div><div class="lbl"><b>Menor preço do dia:</b> Belém direto, só ida, 14/10.</div></div>
+      <div class="numero"><div class="big">R$ 523</div><div class="lbl"><b>Quanto Salvador caiu</b> trocando 13/10 por 14/10.</div></div>
+    </div>
+
+    <p class="texto">Um dia muda tudo. Ontem o radar mediu 13/10, a terça depois do feriado: Salvador, São Paulo, Brasília e Santiago estavam "normais" ou "altos". No dia seguinte, os mesmos destinos custam de R$ 320 a R$ 523 menos.</p>
+
+    <div class="nota"><span class="r">Os 22 destinos, só ida, 1 adulto (menor preço · nível · ontem)</span>
+      <ul class="lista">
+        <li><b>Belém:</b> 14/10 R$ 313 direto, mais barato que o normal (sem valor do normal) · 28/11 R$ 372, R$ 162 abaixo do normal. Ontem: 13/10 R$ 276 · 27/11 R$ 242. Ficou mais caro.</li>
+        <li><b>Belo Horizonte:</b> 14/10 R$ 705, normal · 28/11 R$ 400, R$ 431 abaixo do normal. Ontem: R$ 584 · R$ 400. Outubro subiu.</li>
+        <li><b>Recife:</b> 14/10 R$ 417 direto, normal · 28/11 R$ 561, R$ 212 abaixo do normal. Ontem: R$ 699 · R$ 316. Outubro caiu, novembro subiu.</li>
+        <li><b>Natal:</b> 14/10 R$ 690, normal · 28/11 R$ 467, R$ 179 abaixo do normal. Ontem: R$ 672 · R$ 429.</li>
+        <li><b>Salvador:</b> 14/10 R$ 732, normal · 28/11 R$ 599, normal. Ontem: R$ 1.255 (alto) · R$ 497.</li>
+        <li><b>Brasília:</b> 14/10 R$ 916, normal · 28/11 R$ 600, R$ 375 abaixo do normal. Ontem: R$ 1.236 · R$ 492.</li>
+        <li><b>São Paulo (GRU):</b> 14/10 R$ 774, normal · 28/11 R$ 703 direto, normal. Ontem: R$ 1.239 (alto) · R$ 648.</li>
+        <li><b>Florianópolis:</b> 14/10 R$ 993 · 28/11 R$ 707, os dois normais. Ontem: R$ 741 · R$ 597 (baixo). Ficou mais caro.</li>
+        <li><b>Porto Alegre:</b> 14/10 R$ 805, normal · 28/11 R$ 730, R$ 87 abaixo do normal. Ontem: R$ 832 · R$ 674.</li>
+        <li><b>Rio (GIG):</b> 14/10 R$ 1.006 · 28/11 R$ 780, os dois normais. Ontem: R$ 771 · R$ 723. Ficou mais caro.</li>
+        <li><b>Montevidéu:</b> 14/10 R$ 1.066, normal · 28/11 R$ 1.866, alto. Ontem: R$ 1.346 · R$ 2.176.</li>
+        <li><b>Santiago:</b> 14/10 R$ 1.402, alto · 28/11 R$ 1.086, normal. Ontem: R$ 1.804 · R$ 1.081.</li>
+        <li><b>Buenos Aires (EZE):</b> 14/10 R$ 1.570, alto · 28/11 R$ 1.285, normal. Igual a ontem.</li>
+        <li><b>Lisboa:</b> 14/10 R$ 3.030 TAP direto, normal · 28/11 R$ 1.670 LATAM direto, R$ 590 abaixo do normal. Ontem: R$ 2.281 · R$ 1.728.</li>
+        <li><b>Panamá:</b> 14/10 R$ 2.313, normal · 28/11 sem leitura. Ontem: R$ 2.887 em 13/10.</li>
+        <li><b>Cancún:</b> 14/10 R$ 2.458 · 28/11 R$ 2.316, os dois normais. Ontem: R$ 2.759 · R$ 2.209.</li>
+        <li><b>Madri:</b> 14/10 R$ 2.940 · 28/11 R$ 2.354, os dois normais. Igual a ontem.</li>
+        <li><b>Miami:</b> R$ 2.683 nas duas datas, alto. Ontem: R$ 2.429 · R$ 2.373. Ficou mais caro.</li>
+        <li><b>Porto:</b> 14/10 R$ 2.987 · 28/11 R$ 2.698, os dois normais. Ontem: R$ 2.987 · R$ 2.769.</li>
+        <li><b>Paris:</b> 14/10 R$ 3.474 · 28/11 R$ 3.092, os dois normais. Ontem: R$ 3.479 · R$ 3.009.</li>
+        <li><b>Orlando:</b> 14/10 R$ 3.323 · 28/11 R$ 4.367, os dois altos. Ontem: R$ 4.031 · R$ 4.056.</li>
+        <li><b>Fernando de Noronha:</b> 14/10 R$ 3.860, normal · 28/11 R$ 3.860, alto. Ontem: 27/11 estava R$ 1.281 (baixo). Subiu muito.</li>
+      </ul>
+      <p class="texto">Como ler: "ontem" é a coleta de 13/09, que mediu os dias vizinhos (13/10 e 27/11). Não é o mesmo voo, é o mesmo tipo de data. Fonte: Google Flights, página pública de resultados, 14/09/2026 às 7h04 de Brasília.</p>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Viagem logo depois de feriado? <b>Teste o dia seguinte</b> antes de comprar. Em outubro, um dia de diferença valeu até R$ 523 só na ida.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 08 ══════════ -->
+  <section class="materia" id="calendario">
+    <div class="titulo"><span class="n">08</span><h2>Calendário: o que vence quando</h2><span class="fio"></span></div>
+    <p class="abertura">Como conta de casa: <b>o que vence primeiro, resolve primeiro</b>.</p>
+
+    <div class="nota"><span class="r">Em ordem de prazo</span>
+      <ul class="lista">
+        <li><b>Hoje, segunda 14/09, às 10h:</b> Clube Smiles com até 30 mil milhas de bônus, só novas adesões. Se você lê depois das 10h, já acabou. Seção 04.</li>
+        <li><b>Hoje, segunda 14/09 (hora não informada):</b> compra de pontos Livelo com até 58%, só para o Clube. Seção 04.</li>
+        <li><b>Hoje, segunda 14/09 (hora não informada):</b> cupom HOTEISSET20 da Livelo em hotéis. Seção 05.</li>
+        <li><b>Domingo, 20/09 (hora não informada):</b> Clube Esfera com até 100 mil pontos de bônus. Seção 04.</li>
+        <li><b>Domingo, 20/09 (hora não informada):</b> Semana do Cliente WAM, Dom Pedro Laguna em Aquiraz. Seção 05.</li>
+        <li><b>Terça, 22/09 (hora não informada):</b> Clube Livelo Classic com o cupom QUEROPONTOS. Seção 04.</li>
+        <li><b>Sem prazo, preço do dia:</b> todas as passagens em dinheiro das seções 01 e 02, e as emissões com milhas das seções 03 e 06.</li>
+        <li><b>Previsão, não é promoção:</b> quarta, 16/09, dia em que a Smiles costuma soltar bônus de transferência; 20 a 30/09, aniversário do Clube Smiles; terça, 22/09, aniversário da Esfera.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">Se só der para fazer uma coisa hoje, faça esta</span>
+      <p>Entre em iberia.com e veja se há vaga em Avios de Fortaleza para Madri nas datas que você quer. <b>Custa zero</b> e decide se o Clube Esfera vale a pena até domingo.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 09 ══════════ -->
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">09</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Todo número desta edição tem origem. <b>O que não deu para abrir está no fim</b>, antes de você comprar.</p>
+
+    <ol class="src">
+      <li><b>Google Flights</b> — coleta automática de 22 destinos (14/10 e 28/11) e 13 consultas manuais: FOR–AEP 30/11, FOR–LIS 28/11–12/12, FOR–MAD 10/11, FOR–REC 9–12/10, FOR–REC 20–22/11, FOR–BEL 14/10, FOR–BEL 14–18/10, FOR–LIS 3/12, FOR–BSB 20–22/11, LIS–FOR 14/12, FOR–JFK 5–15/11, FOR–GRU 9–12/10, FOR–CNF 28/11–1/12. 14/09/2026.</li>
+      <li><b>Alta Renda Blog</b> — <a href="https://altarendablog.com.br/2026/09/14/%F0%9F%9A%A8-clube-esfera-assine-ou-atualize-seu-plano-e-ganhe-ate-100-mil-pontos-bonus/">"Clube Esfera: assine ou atualize seu plano e ganhe até 100 mil pontos bônus"</a> — 14/09/2026.</li>
+      <li><b>Passageiro de Primeira</b> — <a href="https://passageirodeprimeira.com/ganhe-ate-100-000-pontos-bonus-em-12-meses-na-adesao-ou-upgrade-do-clube-esfera-milheiro-a-partir-de-r-2540-3/">"Ganhe até 100.000 pontos bônus em 12 meses na adesão ou upgrade do Clube Esfera — Milheiro a partir de R$ 25,40"</a> — data não lida (título via busca).</li>
+      <li><b>Pontos pra Voar</b> — <a href="https://pontospravoar.com/alerta-ppv-smiles-passagens-argentina-partir-29-mil-milhas/">"Alerta PPV! Smiles tem passagens para a Argentina a partir de 29 mil milhas"</a> — 11/09/2026.</li>
+      <li><b>Pontos pra Voar</b> — <a href="https://pontospravoar.com/alerta-ppv-resgate-passagens-internacionais-partir-17680-milhas-taxas/">"Alerta PPV! Resgate passagens internacionais a partir de 17.680 milhas + taxas"</a> — 13/09/2026.</li>
+      <li><b>Pontos pra Voar</b> — <a href="https://pontospravoar.com/ultimas-horas-assine-clube-smiles-receba-ate-30-mil-milhas-bonus/">"Últimas horas! Assine o Clube Smiles e receba até 30 mil milhas bônus"</a> — 13/09/2026.</li>
+      <li><b>Pontos pra Voar</b> — <a href="https://pontospravoar.com/promocoes-milhas-setembro-2026/">"Promoções de milhas em setembro: 7 datas de 2026"</a> — previsões, data não lida.</li>
+      <li><b>Pontos pra Voar, Passageiro de Primeira e Alta Renda</b> — <a href="https://pontospravoar.com/compre-pontos-livelo-ate-58-porcento-desconto-2-porcento-off-pix/">"Compre pontos Livelo com até 58% de desconto + 2% OFF no Pix"</a> — setembro de 2026; Alta Renda, "Últimos dias", 11/09/2026.</li>
+      <li><b>O Maranhense</b> — <a href="https://omaranhense.com/semana-do-cliente-oferece-ate-40-de-desconto-em-hoteis-da-wam-experience/">"Semana do Cliente oferece até 40% de desconto em hotéis da WAM Experience"</a> — 14/09/2026.</li>
+      <li><b>Melhores Destinos</b> — <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNNWcyb3h3TGdXZldRYkxZWTVwUjJuUTdscVZpTkR4bG1QaXpQOXdrN3NCUVU0eHpQTHZmOGprMEZUeXBDdk1Ka2F1c3E2M2RpY3JsRlltNmpJbk9EbFI1Q1ZOWUxzT1Rrd0xDOVBnM01BUkhCRnlHX2RnMW1KV1J0VXFYOU1KLW9Ncm5pMFpaVkE?oc=5">"Big Apple! Passagens para Nova York por R$ 2.488 ou no fim de ano a partir de R$ 2.729"</a> — 11/09/2026 (não aberta).</li>
+      <li><b>Passageiro de Primeira</b> — <a href="https://passageirodeprimeira.com/5-sugestoes-de-voos-em-classe-executiva-a-partir-de-23-mil-milhas-smiles/">"5 sugestões de voos em Classe Executiva a partir de 23 mil milhas Smiles"</a> — 11/09/2026 (site bloqueia leitura; números via resumo de busca).</li>
+      <li><b>Melhores Destinos</b> — <a href="https://www.melhoresdestinos.com.br/promocao/passagens-aereas-2-em-1-europa-10-09-26">"Europa 2x1! Passagens aéreas para 2 destinos na Europa a partir de R$ 4.459!"</a> — 10/09/2026.</li>
+      <li><b>Passageiro de Primeira</b> — <a href="https://passageirodeprimeira.com/partiu-caribe-trecho-para-punta-cana-a-partir-de-r-888-ou-74-mil-pontos-azul-taxas/">"Partiu Caribe? Trecho para Punta Cana a partir de R$ 888 ou 74 mil pontos Azul + taxas"</a> — 10/09/2026.</li>
+      <li><b>Comprar Passagem Aérea e Passageiro de Primeira</b> — <a href="https://www.comprarpassagemaerea.com.br/prorrogado-assine-o-clube-livelo-e-ganhe-ate-25-mil-pontos-ou-desconto/">"Prorrogado! Assine o Clube Livelo e ganhe até 25 mil pontos ou desconto"</a> — 13/09/2026 (edição 001).</li>
+      <li><b>Melhores Destinos</b> — <a href="https://www.melhoresdestinos.com.br/milhas/voos-air-france-paris-smiles-ago26">"Voos diretos de Fortaleza para Paris com bagagem a partir de 83 mil milhas Smiles o trecho"</a> — 25/08/2026 (edição 001).</li>
+      <li><b>Comprar Passagem Aérea</b> — <a href="https://www.comprarpassagemaerea.com.br/livelo-oferece-ate-20-de-desconto-na-reserva-de-hoteis/">"Livelo oferece até 20% de desconto na reserva de hotéis"</a> — 12/09/2026 (edição 001).</li>
+      <li><b>Upgraded Points</b> — <a href="https://upgradedpoints.com/news/flying-blue-promo-rewards/">"Air France-KLM Flying Blue Promo Rewards for September 2026"</a> — setembro de 2026.</li>
+    </ol>
+
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de comprar</span><p><b>Preços do Google Flights:</b> são de hoje, 1 adulto, econômica, tarifa mais barata (em geral sem mala). Mudam a qualquer hora. Para Belém em outubro, o Google não informou o preço normal: a régua usada é de novembro. <b>Clube Esfera:</b> a página oficial não mostrou a campanha. Os preços dos planos e os bônus vêm do Alta Renda (aberto hoje), confirmados por títulos do Passageiro de Primeira e resumos de busca. O milheiro é conta do radar com 12 mensalidades, sem desconto de plano anual. Não deu para abrir a matéria do Passageiro de Primeira que fala em R$ 25,40. <b>Iberia:</b> ainda sem confirmar se FOR–Madri custa 16.000 ou 22.000 Avios. <b>LATAM Pass 54.034 milhas e Smiles Buenos Aires:</b> vagas vistas pelo Pontos pra Voar em 11 e 13/09, sem taxas informadas e sem conferência no site. <b>Nova York:</b> a matéria não abriu. Não há confirmação de preço saindo de Fortaleza. <b>Executiva Lisboa–Madri:</b> o site bloqueia leitura; data e companhia não confirmadas. <b>WAM:</b> o site oficial não mostrou detalhes; só um veículo aberto. Não se sabe se os R$ 449,51 já têm os 10% do Pix. <b>Clube Smiles às 10h:</b> considerado horário de Brasília. <b>Livelo (compra de pontos e hotéis) e Clube Livelo:</b> hora final não informada; não reconferidos hoje. <b>Descartado:</b> pacotes Azul Viagens e bônus de 110% da Azul (acabaram em 13/09; o bônus nem incluía Livelo ou Esfera); 20% em resgates do Clube Azul (acabou em 13/09); Avios por US$ 12 (exige cartão Amex dos EUA); Costa do Sauípe (sem cidade de saída nem prazo); Chile a partir de R$ 1.192 (matéria não abriu; Fortaleza–Santiago custa R$ 1.086 a R$ 1.402 só ida no Google); Semana do Cliente ALL Accor e Beach Park (as páginas achadas são de 2023 e 2025); Mega Promo LATAM Pass Lisboa/Madri (acabou em 31/08). <b>Buscas sem resultado:</b> erro tarifário, bônus Esfera→Iberia de setembro, promoção de resgate TAP Miles&amp;Go.</p></div>
+  </section>
+
+  <div class="assinatura">Radar de Passagens · Nº 002 · 2026-09-14<br>Próxima edição: quarta-feira, 16 de setembro de 2026</div>
+</div>
+</body>
+</html>
