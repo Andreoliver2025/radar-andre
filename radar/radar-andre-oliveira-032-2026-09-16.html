@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 032 — Um cartão sem trava gastou 118 mil dólares. O robô que compra vem aí.</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>Um cartão sem trava gastou 118 mil dólares em três semanas — e o robô que compra já está a caminho.</h1>
+    <p class="chamada">Hoje às 8h12, circulou a história de um menino de 9 anos que transformou uma promoção de 20 dólares numa conta de 118 mil. Ontem, a Visa mostrou que só uma minoria do comércio brasileiro está pronta para o robô que faz compras. Antes de o robô ganhar cartão, alguém precisa colocar a trava.</p>
+    <div class="dateline">Edição Nº 032 · quarta-feira, 16 de setembro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#s1">O que aconteceu hoje</a><div class="d">Um cartão sem trava e um robô que compra: as duas pontas passam pelo cartão do seu cliente.</div></div></li>
+      <li><div><a href="#s2">As novidades do dia</a><div class="d">Oito recortes: o menino dos 118 mil, a Visa, a queda do sistema de vendas Salesforce, Mistral e Mozilla, a foto com carimbo da Apple e mais três.</div></div></li>
+      <li><div><a href="#s3">Seu território: automação</a><div class="d">O robô que inventa dados quando ninguém entrega o mundo real — e a tomada padrão chegando à proposta comercial.</div></div></li>
+      <li><div><a href="#s4">A oportunidade do dia</a><div class="d">A revisão das travas de gasto: três torneiras, quatro perguntas, uma página.</div></div></li>
+      <li><div><a href="#s5">De onde veio cada informação</a><div class="d">Os links, os horários de Brasília e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="s1">
+    <div class="titulo"><span class="n">01</span><h2>O QUE ACONTECEU HOJE</h2><span class="fio"></span></div>
+
+    <p class="abertura">Hoje às 8h12, chegou ao mural dos programadores a história de um <b>menino de 9 anos que gastou 118 mil dólares em anúncios no YouTube</b> com o cartão de uma empresa. Ontem às 9h38, o Valor trouxe a outra ponta: segundo a Visa, <b>só uma minoria do comércio brasileiro está pronta para compras feitas por robôs de IA</b>.</p>
+
+    <p class="texto capitular">Leia as duas juntas. Pelo endereço da reportagem, era para ser uma única promoção de 20 dólares no canal de Minecraft do menino. Virou uma conta de 118 mil em três semanas. Não havia robô nenhum ali. Bastou um cartão sem limite e um botão fácil de apertar.</p>
+
+    <p class="texto">Agora troque o menino por um robô que compra em nome do cliente. É esse robô que a Visa foi medir no varejo brasileiro. E a maior parte das lojas, pelo título, ainda não se preparou para recebê-lo.</p>
+
+    <p class="texto">O banco resolveu esse problema há décadas com o cartão adicional. O pai dá o cartão ao filho, com limite de 300 reais. O filho compra o lanche, não compra um carro. A trava não desconfia do filho. Ela só impede que um erro vire tragédia.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>Compras com agentes de IA</b>, o termo da reportagem, é quando um robô — um programa que executa uma tarefa do começo ao fim sozinho — escolhe o produto e paga em nome de alguém. A <b>Visa</b> é a bandeira de cartão. O <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu; a história do menino chegou por lá, publicada pelo site Tom&rsquo;s Hardware.</p>
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">5.900×</div><div class="lbl">o quanto a conta do menino passou do combinado: <b>118 mil dólares</b> gastos onde a ideia era gastar 20. Em três semanas.</div></div>
+      <div class="numero"><div class="big">4.818 × 246</div><div class="lbl">visualizações novas em cerca de 24 horas: vídeos de &ldquo;monte seu robô&rdquo; contra vídeos de &ldquo;traga de volta o cliente que sumiu&rdquo;. Cerca de <b>20 para 1</b> — ontem era 15.</div></div>
+      <div class="numero"><div class="big">+5.776</div><div class="lbl">visualizações no vídeo da Exame <b>&ldquo;a IA pode acabar com a humanidade&rdquo;</b>. Menos da metade do que ele cresceu ontem.</div></div>
+      <div class="numero"><div class="big">0</div><div class="lbl">assuntos de IA entre os <b>dez mais buscados do Brasil</b> hoje às 8h50. Sexta edição seguida com zero.</div></div>
+    </div>
+
+    <p class="texto">Repare no segundo e no terceiro número. O vídeo do susto cresceu menos da metade do que cresceu ontem. Os de montar robô cresceram mais do que ontem. E a conversa sobre limite continua fora das duas listas.</p>
+
+    <p class="texto">Ontem, o radar propôs a ficha de contratação do robô, com a alçada escrita em número. Hoje as notícias mostram onde essa alçada vira dinheiro de verdade: no cartão ligado a tudo que gasta sozinho.</p>
+
+    <div class="olho">
+      <p>O problema nunca foi quem aperta o botão. É o cartão que não tem trava.</p>
+      <span class="quem">a frase para levar à reunião</span>
+    </div>
+
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>A história do menino não é sobre criança nem sobre YouTube. É a prova, com valor na fatura, de que <b>gasto automático sem limite dá errado mesmo sem IA nenhuma</b>. E a Visa confirma que o robô comprador chega antes de a loja se preparar.</p>
+      <p>Você trabalha com tráfego pago e com robô. <b>As duas pontas passam pelo cartão do seu cliente.</b> A seção 04 transforma isso numa revisão que cabe numa tarde.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s2">
+    <div class="titulo"><span class="n">02</span><h2>AS NOVIDADES DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Oito recortes, do mais quente para o mais frio. Quatro chegaram hoje, entre a madrugada e o começo da manhã. Quatro são de ontem, da manhã até a noite.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Um menino de 9 anos gastou 118 mil dólares em anúncios no YouTube com o cartão de uma empresa</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 8h12</span><span>Tom&rsquo;s Hardware, via Hacker News</span></div>
+          <p class="texto">O título conta que o pai está arrasado. O endereço da reportagem traz o resto: o dinheiro foi para campanhas do canal de Minecraft do menino, a conta se formou em três semanas, e a ideia era uma promoção só, de 20 dólares.</p>
+          <p class="texto">Quem cuida de tráfego pago conhece esse medo. Uma campanha configurada errado na sexta, e na segunda o cliente liga. A diferença aqui é o tamanho: 5.900 vezes o combinado, num cartão de empresa.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Campanha de anúncio</b> é quando você paga à plataforma para mostrar o seu vídeo a mais gente. A cobrança é automática: enquanto houver cartão e ninguém mandar parar, o anúncio continua rodando e cobrando. <b>Minecraft</b> é um jogo de construir com blocos, muito popular entre crianças.</p></div>
+          <div class="link"><a href="https://www.tomshardware.com/video-games/devastated-father-says-his-9-year-old-son-spent-usd118-000-on-youtube-ad-campaigns-for-his-minecraft-channel-using-a-company-credit-card-bill-racked-up-in-just-three-weeks-was-supposed-to-be-one-usd20-promotion">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>O Salesforce, sistema onde empresas do mundo todo guardam clientes e vendas, apareceu com queda global</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 7h37</span><span>página de status do Salesforce, via Hacker News</span></div>
+          <p class="texto">O aviso chegou ao mural dos programadores com três palavras: queda global do Salesforce. O link leva à página oficial onde a empresa mostra, produto por produto, o que está funcionando.</p>
+          <p class="texto">É como faltar luz no shopping inteiro. Não fecha uma loja; fecham todas de uma vez. Para quem monta automação, fica o lembrete: todo robô que depende de um sistema só para no minuto em que esse sistema para.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Salesforce</b> é um dos maiores programas de <b>CRM</b> do mundo — o caderno digital de clientes, onde a empresa anota cada contato, proposta e venda. A mesma empresa vende robôs de atendimento que trabalham lá dentro. <b>Página de status</b> é o painel público onde o fornecedor avisa se está no ar.</p></div>
+          <div class="link"><a href="https://status.salesforce.com/products/all">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>A Mistral e a Mozilla, dona do Firefox, anunciam navegar na internet com IA privada e em várias línguas</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h08</span><span>Mistral, via Hacker News</span></div>
+          <p class="texto">O anúncio saiu no site da própria Mistral. O título promete uma navegação com IA que guarda a sua privacidade e fala vários idiomas, numa parceria com a Mozilla.</p>
+          <p class="texto">O ponto para você é a porta de entrada. Quando o navegador ganha uma IA dentro, parte das pessoas para de digitar na busca e pergunta ali mesmo. O cliente do seu cliente passa a achar a loja por uma resposta, não por uma lista de links.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Mistral</b> é uma empresa francesa que faz motores de IA — o mesmo tipo de motor que faz o ChatGPT responder. <b>Mozilla</b> é a organização por trás do <b>Firefox</b>, um dos <b>navegadores</b>: o programa que você usa para abrir sites.</p></div>
+          <div class="link"><a href="https://mistral.ai/news/mistral-x-mozilla/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>A Apple apresentou um jeito de provar que uma foto é de verdade</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 23h07</span><span>blog de segurança da Apple, via Hacker News</span></div>
+          <p class="texto">O título fala em uma nova abordagem para &ldquo;fotografia verificada&rdquo;. Saiu no blog de segurança da própria Apple, com o nome de Reference Image — imagem de referência.</p>
+          <p class="texto">Pense no cartório que reconhece firma. A assinatura sempre existiu; o carimbo é que prova que foi você. Com imagem de IA por todo lado, a foto original começa a precisar de carimbo. Quem vende com foto de produto, de obra ou de antes e depois vai ouvir essa pergunta do cliente.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Fotografia verificada</b> é a foto que carrega uma prova de que saiu de uma câmera de verdade, sem montagem. Como a Apple faz essa prova e quando ela chega ao iPhone, o radar não sabe.</p></div>
+          <div class="link"><a href="https://security.apple.com/blog/apple-reference-image/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>A Ubots amplia o uso da IA que conversa com o cliente</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 14h42</span><span>TI Inside Online</span></div>
+          <p class="texto">A Ubots é uma empresa brasileira que vende atendimento automatizado. Pelo título, ela amplia o uso da IA conversacional para transformar o negócio dos clientes dela.</p>
+          <p class="texto">Sozinha, a notícia é pequena. Somada à Blip, que o radar mostrou na segunda, desenha um movimento: as grandes de atendimento do Brasil estão empacotando robô de conversa. Quem instala robô sob medida precisa de um motivo claro para não ser trocado pelo pacote.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>IA conversacional</b> é o robô que conversa por escrito ou por voz com o cliente — no WhatsApp, no site, no telefone — e responde como um atendente.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQMk1sREJXVFRYN0NzV2w5OTZHakVWVmhwZEk4ckNaVG1pT05fUEI3SmNYdE9xMkQ0N182cFllbHVVNktLTFZrcDVWSmI5WVJSTzJtVWtKanAwRmNSLWFTZFhqNG1uU0ZzcDdGTllZNjRScGRhdm9NNHVMa2JWZ2JQOGdheVdmdUpKcW1TMTZ0c3hpRHNfUFVhMWxTdl8yekEyMjM4OTZkb3lIQ29fckxZeUgzTnozdw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>A IA muda o marketing digital: sai &ldquo;ser encontrado&rdquo;, entra &ldquo;ser compreendido&rdquo;</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 11h06</span><span>Cartão de Visita News</span></div>
+          <p class="texto">O título resume a mudança em uma frase: de ser encontrado a ser compreendido. Antes, o jogo era aparecer na lista do Google. Agora, é a IA entender o seu negócio bem o bastante para recomendá-lo.</p>
+          <p class="texto">Encaixa com a notícia da Mistral e da Mozilla. Se a pessoa pergunta à IA dentro do navegador, a IA precisa saber o que a loja vende, onde fica e para quem é. É o trabalho de SEO com endereço novo — o seu terreno.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>SEO</b> é o trabalho de aparecer bem colocado no Google. <b>GEO</b>, o nome que o mercado dá à versão nova, é aparecer nas respostas da IA, como antes se buscava aparecer no Google.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNSGpGOHU3TmVIdmhaY3U2TWFJaVpkbEluU0tQLW83c3NQQk1tNkRmUW5mNi1xS0JoR0t2Y0sxcGZBLV9jUHZ6MVYtaU5yRlVUcGZJS0Z3OE55anJGeHRQVV9TWEJfMDk5TXdXNE5KTUkzV19KSEpYNWgxZGdaN29sazVwdGZEWl9xS0FHcC1GTUpXTHdEeFZTcTBmNEZJcUwtdjJqcUJhS1BLZWRLVzA3c2JGYWZnVmY0R1E?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Só uma minoria do comércio brasileiro está pronta para vender a robôs de IA, mostra a Visa</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 9h38</span><span>Valor Econômico</span></div>
+          <p class="texto">O Valor publicou um levantamento da Visa sobre o varejo brasileiro e as compras feitas por robôs. Pelo título, a maior parte das lojas ainda não está preparada.</p>
+          <p class="texto">Duas leituras para você. A primeira: o robô comprador já entrou na pauta de quem processa pagamento no país. A segunda: a loja do seu cliente provavelmente está no grupo que não se preparou. Diagnóstico também é serviço.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPUEhob0JTSlRvQ2tJWjlzUGdjWlJvQVZDSUE4YmRXZHd3WnR2a3l6N2JtMWQ3Z1JFWFdJY2lXWDlCQ2VoV3hZaDNGOG1CZTJZVVN5bE95bGY5MWN5OFV2aU5uYWYwRm9NM1V6bHZjNHMzeGNmOWdEb0pDM0V1aHRqRGxCcEs5NjY3WW9FYzgyVHZBNndxVGZBN0xvWFRnWERaclNfa0UwQTFlZHN4cF8wMDRTaFZxcndWZEpRcWRvakY3N0tVVnQwTVA2blBpeHlET3lqOU0xelpTSk9C0gHrAUFVX3lxTFBERE9GZ0FkZWdxUU1qNzdjcGVlc0ppSjFnLWFJRHRlT0NZX2wyN3BEX0I3bWd3NDJnZG1zRTZXVTl3cVlZTUhGY1d3NU1ac3I3ZmhpeXZndDhSV0o3dkpSZnRjTzhLUHh0WF9xenh6QmM4dnU5M3p2d3d2bnNnZlZlVTR6MXhneWE2TXN0Yi14aXZuOGxvYk9ZLUpXdEg2ZUhkY0kzV0ZHOW9LYWhpYlFhMlNwTjE4Zm9DRV9pOUFFRG1TcUF1YXhHMlh5ZXIwYURpUm9YZzREZnZ6YzNNTVFmU1otWTZCdEo3bGs?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>O Appwrite, caixa de ferramentas para montar aplicativo, chegou à versão 2.0</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 6h56</span><span>Appwrite, via Product Hunt</span></div>
+          <p class="texto">Apareceu ontem cedo na vitrine de lançamentos. O Appwrite cuida do bastidor de aplicativos: o login, o lugar onde os dados ficam guardados, os arquivos.</p>
+          <p class="texto">Para quem constrói, é mais uma laje pré-moldada. Você não faz a fundação do prédio do zero; usa a laje pronta e gasta o tempo no que o cliente vê. O que muda na versão 2.0, o radar não conseguiu ver.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><b>Product Hunt</b> é a vitrine onde produtos novos são lançados e o público vota — aparecer lá prova que saiu, não que é bom. O Appwrite é <b>de código aberto</b>: qualquer um pode baixar e rodar por conta. <b>Bastidor</b> é a parte que o usuário não vê.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/appwrite">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="s3">
+    <div class="titulo"><span class="n">03</span><h2>SEU TERRITÓRIO: AUTOMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">No seu terreno, duas notícias que falam da mesma coisa por lados opostos. Um projeto quer impedir que <b>o robô programador invente dados de mentira</b>. E a <b>tomada padrão chegou aos modelos de documento das empresas</b>.</p>
+
+    <p class="texto">Comece pelo robô que inventa. Hoje às 1h58, chegou ao mural dos programadores o Datamimic. O título é um conselho: não deixe o seu robô programador inventar o próprio mundo de teste.</p>
+
+    <p class="texto">Imagine pedir a um estagiário para testar a planilha de comissão sem dar a ele a lista real de vendedores. Ele inventa nomes, valores e datas. A conta fecha. No mês seguinte, com os dados de verdade, não fecha mais. O robô faz igual quando ninguém entrega o mundo real a ele.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>Robô programador</b> — o <i>coding agent</i> do título — é o programa de IA que escreve e testa outros programas sozinho. <b>Mundo de teste</b> são os dados de exemplo usados para ver se um programa funciona antes de colocar no ar.</p>
+    </div>
+
+    <p class="texto">Agora a tomada. Ontem às 11h41, o Estadão Blue Studio publicou que a Templafy levou robôs de documentos para dentro do Claude, do ChatGPT e do Copilot, da Microsoft, pela tomada padrão.</p>
+
+    <div class="nota">
+      <span class="r">A contagem das tomadas</span>
+      <p class="texto">A edição de ontem contou sete tomadas novas em pouco mais de uma semana. A da Templafy saiu ontem de manhã e escapou da contagem.</p>
+      <ul class="lista">
+        <li><b>Até ontem</b> — site (WebMCP), contrato (Docusign), loja virtual, manual de robôs da Mistral, o programa de design Figma, a ferramenta Buddy e o HITS, sistema de hotel.</li>
+        <li><b>Ontem, 11h41</b> — a Templafy, onde empresas guardam os modelos oficiais de proposta, contrato e apresentação. É a oitava da lista.</li>
+      </ul>
+      <p class="texto">A diferença desta é o papel. Não é sistema de venda nem de reserva. É o lugar onde nasce a proposta que a empresa manda ao cliente.</p>
+    </div>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p><b>MCP</b> é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. <b>Claude</b>, <b>ChatGPT</b> e <b>Copilot</b> são os assistentes de IA da Anthropic, da OpenAI e da Microsoft. Com a tomada, é como se o modelo oficial de proposta ficasse na mesa do assistente, em vez de trancado no armário.</p>
+    </div>
+
+    <p class="texto">Junte as duas e sai uma regra de construção. O robô programador inventa quando não recebe o mundo real. O robô de documentos só acerta porque a tomada entrega a ele o modelo verdadeiro.</p>
+
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p><b>Robô bom trabalha com o mundo real do cliente, não com um mundo inventado.</b> Tabela de preço de verdade, modelo de proposta de verdade, regra de desconto de verdade. A tomada é o caminho que entrega esse mundo real ao robô, sem copiar e colar.</p>
+      <p>Antes de montar o próximo robô, peça ao cliente três arquivos: <b>a tabela de preço atual, o modelo de proposta que ele manda e a regra de desconto por escrito</b>. Se algum não existir, o robô vai inventar. E o que ele inventar sai com a sua assinatura.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s4">
+    <div class="titulo"><span class="n">04</span><h2>A OPORTUNIDADE DO DIA</h2><span class="fio"></span></div>
+
+    <p class="abertura">Ontem, o radar propôs a ficha do robô com a alçada em número. Hoje, o menino de 9 anos mostrou onde a alçada precisa estar escrita primeiro: <b>no cartão ligado a tudo que gasta sozinho</b>.</p>
+
+    <p class="texto">Todo negócio que você atende tem pelo menos três torneiras abertas no cartão. A conta de anúncio. A conta da IA, que cobra por uso. E as assinaturas das ferramentas de automação. Nenhuma das três pede licença antes de cobrar.</p>
+
+    <p class="texto">As plataformas de anúncio e as empresas de IA costumam ter um campo para limite de gasto. Pouca gente preenche. O campo fica vazio pelo mesmo motivo que o menino ficou com o cartão: parecia que nada ia dar errado.</p>
+
+    <div class="traduz">
+      <span class="r">Em português claro</span>
+      <p>A <b>conta da IA</b> cobra por <b>token</b> — a unidade que as empresas de IA cobram, como o minuto na conta de telefone antiga. Um robô que entra em repetição fica falando sozinho, e a conta sobe como uma ligação interurbana esquecida fora do gancho.</p>
+    </div>
+
+    <div class="nota">
+      <span class="r">A revisão, em quatro perguntas por torneira</span>
+      <ul class="lista">
+        <li><b>Onde gasta</b> — o nome da conta: anúncio no Meta, anúncio no Google, a conta da IA, a ferramenta de automação.</li>
+        <li><b>Qual cartão</b> — os quatro últimos números do cartão ligado. Se for o cartão pessoal do dono, marque em vermelho.</li>
+        <li><b>Tem limite?</b> — o valor máximo por dia ou por mês. &ldquo;Não sei&rdquo; conta como não.</li>
+        <li><b>Quem recebe o alerta</b> — o nome de uma pessoa avisada quando o gasto passa de um ponto. Nome, não e-mail genérico.</li>
+      </ul>
+    </div>
+
+    <p class="texto">A revisão termina numa tabela de uma página: uma linha por torneira, uma coluna por pergunta. Cada célula vazia é um risco com preço. E cada risco com preço é uma conversa de venda que você não precisa forçar.</p>
+
+    <p class="texto">Repare que isso não compete com a ficha de ontem. A ficha diz até onde o robô decide. A tabela garante que, se ele errar, o erro para num valor que o dono aguenta pagar.</p>
+
+    <div class="hoje">
+      <span class="r">O primeiro passo, hoje, em uma tarde</span>
+      <p>Escolha <b>um cliente com anúncio rodando</b>. Com o acesso que você já tem, abra a conta de anúncio, a conta da IA e a ferramenta de automação. Preencha a tabela: onde gasta, qual cartão, tem limite, quem recebe o alerta.</p>
+      <p>Não mexa em nada sem o ok do dono. Mande a tabela com um recado curto: <b>&ldquo;esta semana, um menino gastou 118 mil dólares em três semanas num cartão de empresa sem trava. Conferi as suas torneiras: estas aqui não têm limite. Posso colocar hoje?&rdquo;</b></p>
+      <p>Anote quanto tempo ele leva para responder. Se for em minutos, você achou uma dor que ele não sabia que tinha — e o primeiro item de um serviço mensal de vigilância de gasto.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="s5">
+    <div class="titulo"><span class="n">05</span><h2>DE ONDE VEIO CADA INFORMAÇÃO</h2><span class="fio"></span></div>
+
+    <p class="abertura">A nota fiscal desta edição. Todos os horários já estão no <b>horário de Brasília</b>. Selo 🟢 quando saiu hoje, 🟡 quando é dos dias anteriores. Títulos em inglês vêm com a tradução ao lado.</p>
+
+    <ol class="src">
+      <li>🟢 hoje, 8h12 — &ldquo;Devastated father says his 9-year-old son spent $118,000 on YouTube ads&rdquo; (&ldquo;pai arrasado diz que o filho de 9 anos gastou 118 mil dólares em anúncios no YouTube&rdquo;), <b>Tom&rsquo;s Hardware</b>, pelo mural dos programadores (Hacker News) · <a href="https://www.tomshardware.com/video-games/devastated-father-says-his-9-year-old-son-spent-usd118-000-on-youtube-ad-campaigns-for-his-minecraft-channel-using-a-company-credit-card-bill-racked-up-in-just-three-weeks-was-supposed-to-be-one-usd20-promotion">clique aqui</a></li>
+      <li>🟢 hoje, 7h37 — &ldquo;Salesforce Global Outage&rdquo; (&ldquo;queda global do Salesforce&rdquo;), <b>página de status do Salesforce</b>, pelo Hacker News · <a href="https://status.salesforce.com/products/all">clique aqui</a></li>
+      <li>🟢 hoje, 5h08 — &ldquo;Mistral X Mozilla: Private, Multilingual AI Browsing&rdquo; (&ldquo;Mistral e Mozilla: navegação com IA privada e em várias línguas&rdquo;), <b>mistral.ai</b>, pelo Hacker News · <a href="https://mistral.ai/news/mistral-x-mozilla/">clique aqui</a></li>
+      <li>🟢 hoje, 1h58 — &ldquo;Datamimic – don&rsquo;t let your coding agent invent its own test world&rdquo; (&ldquo;não deixe o seu robô programador inventar o próprio mundo de teste&rdquo;), <b>página do projeto no GitHub</b>, pelo Hacker News · <a href="https://github.com/rapiddweller/datamimic">clique aqui</a></li>
+      <li>🟡 ontem, 23h07 — &ldquo;Apple Reference Image: A New Approach for Verified Photography&rdquo; (&ldquo;imagem de referência da Apple: uma nova abordagem para fotografia verificada&rdquo;), <b>blog de segurança da Apple</b>, pelo Hacker News · <a href="https://security.apple.com/blog/apple-reference-image/">clique aqui</a></li>
+      <li>🟡 ontem, 14h42 — &ldquo;Ubots amplia uso da IA conversacional para transformar negócios dos clientes&rdquo;, <b>TI Inside Online</b> · <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQMk1sREJXVFRYN0NzV2w5OTZHakVWVmhwZEk4ckNaVG1pT05fUEI3SmNYdE9xMkQ0N182cFllbHVVNktLTFZrcDVWSmI5WVJSTzJtVWtKanAwRmNSLWFTZFhqNG1uU0ZzcDdGTllZNjRScGRhdm9NNHVMa2JWZ2JQOGdheVdmdUpKcW1TMTZ0c3hpRHNfUFVhMWxTdl8yekEyMjM4OTZkb3lIQ29fckxZeUgzTnozdw?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 11h41 — &ldquo;Templafy Inclui Agentes de Documentos no Claude, ChatGPT e Microsoft Copilot com o MCP&rdquo;, <b>Estadão Blue Studio</b> · <a href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxQbXFZVFJ6cHEzMnNLUlQwSFh5SXFpYklQS2lUSW5OWG1VUzI3NXpCeE51NzBVdVRadEE1MXpYaTRsWE9XUm5wd3FOR2EySDVsOHNDS3pVbVRDOUdkNG54VXJYYlJNZFZXTFh5alRTdk4zZm5CTEdFa0k4ZnpTOURIRGtmVVNvR2lEWFIwUVBCU25HNjRnZjFMSGdleGZPc3RRRlh2S09UYXdZLUZMcmlVWERuTlV2TXVZRWdsMUtqX3VJWEllVWVEVmFZMWcyb0RXWnBPT3lFSXhQQl91eU5wWURWRXZIMGdjQnRldFhGQWZwQktXVkYtNzFzWQ?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 11h06 — &ldquo;De ser encontrado a ser compreendido: o que a IA muda no marketing digital&rdquo;, <b>Cartão de Visita News</b> · <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNSGpGOHU3TmVIdmhaY3U2TWFJaVpkbEluU0tQLW83c3NQQk1tNkRmUW5mNi1xS0JoR0t2Y0sxcGZBLV9jUHZ6MVYtaU5yRlVUcGZJS0Z3OE55anJGeHRQVV9TWEJfMDk5TXdXNE5KTUkzV19KSEpYNWgxZGdaN29sazVwdGZEWl9xS0FHcC1GTUpXTHdEeFZTcTBmNEZJcUwtdjJqcUJhS1BLZWRLVzA3c2JGYWZnVmY0R1E?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 9h38 — &ldquo;Minoria do comércio brasileiro está preparada para compras com agentes de IA, mostra Visa&rdquo;, <b>Valor Econômico</b> · <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPUEhob0JTSlRvQ2tJWjlzUGdjWlJvQVZDSUE4YmRXZHd3WnR2a3l6N2JtMWQ3Z1JFWFdJY2lXWDlCQ2VoV3hZaDNGOG1CZTJZVVN5bE95bGY5MWN5OFV2aU5uYWYwRm9NM1V6bHZjNHMzeGNmOWdEb0pDM0V1aHRqRGxCcEs5NjY3WW9FYzgyVHZBNndxVGZBN0xvWFRnWERaclNfa0UwQTFlZHN4cF8wMDRTaFZxcndWZEpRcWRvakY3N0tVVnQwTVA2blBpeHlET3lqOU0xelpTSk9C0gHrAUFVX3lxTFBERE9GZ0FkZWdxUU1qNzdjcGVlc0ppSjFnLWFJRHRlT0NZX2wyN3BEX0I3bWd3NDJnZG1zRTZXVTl3cVlZTUhGY1d3NU1ac3I3ZmhpeXZndDhSV0o3dkpSZnRjTzhLUHh0WF9xenh6QmM4dnU5M3p2d3d2bnNnZlZlVTR6MXhneWE2TXN0Yi14aXZuOGxvYk9ZLUpXdEg2ZUhkY0kzV0ZHOW9LYWhpYlFhMlNwTjE4Zm9DRV9pOUFFRG1TcUF1YXhHMlh5ZXIwYURpUm9YZzREZnZ6YzNNTVFmU1otWTZCdEo3bGs?oc=5">clique aqui</a></li>
+      <li>🟡 ontem, 6h56 — &ldquo;Appwrite 2.0&rdquo;, na vitrine de produtos novos (<b>Product Hunt</b>) · <a href="https://www.producthunt.com/products/appwrite">clique aqui</a></li>
+      <li>🟢 hoje, 8h50 — <b>crescimento em cerca de 24 horas dos vídeos de &ldquo;monte seu robô&rdquo;</b>, entre a coleta de ontem (8h13) e a de hoje: Negócios em Mente +3.217 · <a href="https://www.youtube.com/watch?v=UiK9pl8tKao">clique aqui</a> — Caroline Manchini +661 · <a href="https://www.youtube.com/watch?v=vdjN537MpsA">clique aqui</a> — Karine Lago +522 · <a href="https://www.youtube.com/watch?v=dERk7d4OdjA">clique aqui</a> — Jason Wardrop +328 · <a href="https://www.youtube.com/watch?v=Dgs1tQngbec">clique aqui</a> — AI Master +90 · <a href="https://www.youtube.com/watch?v=aha9UH04lFE">clique aqui</a>. Soma dos cinco: 4.818. Coleta própria do radar.</li>
+      <li>🟢 hoje, 8h50 — <b>crescimento em cerca de 24 horas dos vídeos de trazer de volta o cliente que sumiu</b>: RBMIDIA, &ldquo;Kommo CRM | Follow-up com IA&rdquo;, +242 · <a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">clique aqui</a> — Agents Lab +4 · <a href="https://www.youtube.com/watch?v=MHGD093HyvU">clique aqui</a> — Sistema Britto +0 · <a href="https://www.youtube.com/watch?v=9ZYre0SsAgk">clique aqui</a>. Soma dos três: 246. Coleta própria do radar.</li>
+      <li>🟢 hoje, 8h50 — <b>&ldquo;Pesquisador do Claude faz alerta: a IA pode acabar com a humanidade&rdquo;</b>, Exame — de 413.833 para 419.609 visualizações, +5.776 · <a href="https://www.youtube.com/watch?v=1HYyOEH1yZU">clique aqui</a>. E &ldquo;A inteligência artificial pode significar a destruição do capitalismo como conhecemos hoje?&rdquo;, BBC News Brasil — de 587.294 para 588.869, +1.575 · <a href="https://www.youtube.com/watch?v=gN9QAFG2A2w">clique aqui</a>. Coleta própria do radar.</li>
+      <li>🟢 hoje, 8h50 — <b>os dez assuntos mais buscados do Brasil</b>, pelo Google Trends: linha amarela · seleção brasileira de voleibol masculino · 21 de setembro · celina leão · previsão do tempo · érick jacquin · joinville · temperatura · globo esporte · horóscopo. Nenhum é sobre IA. Coleta própria do radar, sem link público.</li>
+    </ol>
+
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>1.</b> O radar lê o título, a fonte, a data e a hora de cada item. <b>Ele não abre e não lê a reportagem inteira.</b> Quando o texto diz &ldquo;pelo título&rdquo; ou &ldquo;pelo endereço&rdquo;, é literal. Antes de citar em proposta ou reunião, abra o link.</p>
+      <p><b>2.</b> Do <b>menino de 9 anos</b>, os detalhes — canal de Minecraft, cartão de empresa, três semanas, promoção de 20 dólares — saíram do endereço da reportagem, não da leitura do texto. O radar não sabe o país, de quem era a empresa, nem se o dinheiro foi devolvido. <b>Os 5.900×</b> são conta do radar (118 mil ÷ 20). O caso não envolve IA: entra aqui como exemplo de gasto automático sem limite. O horário 8h12 é quando a história chegou ao Hacker News; a reportagem pode ser anterior.</p>
+      <p><b>3.</b> Da <b>Visa</b>, o radar não sabe o tamanho da &ldquo;minoria&rdquo;, quantas lojas foram ouvidas nem o que conta como &ldquo;preparada&rdquo;. A Visa vende meios de pagamento e tem interesse no assunto. &ldquo;Robô comprador&rdquo; é a leitura do radar para &ldquo;compras com agentes de IA&rdquo;.</p>
+      <p><b>4.</b> Do <b>Salesforce</b>, &ldquo;queda global&rdquo; é o título de quem postou no Hacker News, não necessariamente as palavras da empresa. O radar não abriu a página de status: não sabe quanto tempo durou, quais produtos caíram, se afetou o Brasil nem se já voltou. Que robôs de atendimento tenham parado junto é hipótese, não fato.</p>
+      <p><b>5.</b> Da <b>Mistral e da Mozilla</b>, só o título. O radar não sabe se a IA vai morar dentro do Firefox, se fala português, se já está disponível nem o que &ldquo;privada&rdquo; garante na prática. Da <b>Apple</b>, o nome e a expressão &ldquo;fotografia verificada&rdquo; vêm do título; o cartório é analogia do radar.</p>
+      <p><b>6.</b> O <b>Estadão Blue Studio</b> é, pelo nome, o espaço de conteúdo de marca do Estadão — é provável que o texto da <b>Templafy</b> seja comunicado da própria empresa, e não reportagem independente. A descrição da Templafy vem do que o radar já sabia sobre ela. A <b>contagem de tomadas</b> é do radar, não uma lista oficial; pode haver outras.</p>
+      <p><b>7.</b> Do <b>Datamimic</b>, só a página do projeto listada no mural; nada foi testado, e o estagiário da planilha é analogia do radar. Da <b>Ubots</b>, a descrição vem do que o radar já sabia; &ldquo;as grandes estão empacotando robô&rdquo; é leitura do radar somando Ubots e Blip. Do <b>Cartão de Visita News</b>, só o título. Do <b>Appwrite</b>, só a listagem na vitrine: a descrição vem do que o produto já era antes da versão 2.0.</p>
+      <p><b>8.</b> A <b>revisão das travas</b> é proposta do radar. Que as plataformas de anúncio e as empresas de IA oferecem limite de gasto é conhecimento geral, mas o nome e o lugar do campo mudam — confira no painel de cada uma. <b>Nunca altere a conta de um cliente sem autorização dele.</b></p>
+      <p><b>9.</b> Os números do <b>YouTube</b> são diferenças entre duas coletas próprias, ontem às 8h13 e hoje às 8h50 — cerca de 24 horas e meia. Os cinco vídeos de &ldquo;monte seu robô&rdquo; e os três de acompanhamento são os mesmos de ontem, então a comparação com o 15 para 1 de ontem é direta. Ainda assim, <b>dois dias não fazem tendência</b>. O radar não assistiu ao vídeo da Exame.</p>
+      <p><b>10.</b> A <b>lista dos dez mais buscados</b> é uma foto do momento da coleta. Muda ao longo do dia e não é ranking oficial.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Nº 032 · quarta-feira, 16 de setembro de 2026<br>Próxima edição: Pulso diário de quinta-feira, 17 de setembro</div>
+</div>
+
+</body>
+</html>
