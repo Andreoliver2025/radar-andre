@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Radar André Oliveira Nº 043 · Pulso de 1 de outubro de 2026 — O robô que trabalha sem você pedir</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>A OpenAI pôs dentro do ChatGPT um robô que trabalha sem você pedir. E hoje cada resposta no WhatsApp passou a ter preço.</h1>
+  <p class="chamada">Os "dots" da OpenAI ficam ligados o dia todo, cada um com o próprio computador, e vão atrás de um objetivo sozinhos. No mesmo dia em que o robô ganha autonomia, a Meta começa a cobrar das empresas cada resposta pelo WhatsApp oficial. Robô solto, agora, também gasta dinheiro.</p>
+  <div class="dateline">Edição Nº 043 · quinta-feira, 1 de outubro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O funcionário digital que não espera ordem, e a conta do WhatsApp que começa a correr hoje.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Seis recortes: os dots da OpenAI, a IA que desenha chips, o aplicativo grátis da DeepSeek, um robô de "aparecer na IA", uma central de ajuda com pagamento único e a IA no supermercado.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">A tomada de três pinos chegou ao supermercado do Nordeste. O que isso diz sobre o seu próximo cliente.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O robô que cobra boleto atrasado no WhatsApp, mas só envia depois do seu "ok".</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============ 01 ============ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Até ontem, o robô do ChatGPT esperava você perguntar. Com os dots, ele recebe uma meta e vai atrás dela sozinho, entre uma conversa e outra.</p>
+
+  <p class="texto capitular">A OpenAI apresentou os dots na terça, no seu evento anual para desenvolvedores, em São Francisco. Cada dot tem o próprio computador na nuvem, o próprio navegador e acesso a mais de 4 mil aplicativos. Você dá um nome, um papel e um objetivo. Ele trabalha em segundo plano e te chama quando tem algo pronto para revisar.</p>
+
+  <p class="texto">O exemplo da própria divulgação é de negócio puro: o dot percebe uma fatura não paga, prepara a cobrança e envia depois da sua aprovação. Por enquanto, só para quem assina os planos mais caros do ChatGPT, o Pro e o Business Premium.</p>
+
+  <p class="texto">Do outro lado do balcão, começa a valer hoje a cobrança que o radar mostrou ontem. Cada resposta que a empresa manda pelo WhatsApp oficial custa 3,5 centavos, depois de mil grátis por mês. Juntando as duas notícias: o robô ficou mais livre e cada passo dele no WhatsApp passou a ter preço. É como dar o cartão da empresa para um estagiário que não dorme.</p>
+
+  <div class="traduz">
+    <span class="r">Em português claro</span>
+    <p>Um <b>dot</b> é um <b>agente de IA</b>: um robô que executa uma tarefa do início ao fim sozinho. A diferença para o ChatGPT de sempre é a mesma entre um balconista, que só atende quem chega, e um vendedor externo, que sai de manhã com uma meta e volta com o pedido.</p>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>O robô que trabalha sozinho deixou de ser coisa de laboratório: a maior empresa do setor está vendendo isso como produto. Seu cliente vai ouvir falar disso esta semana. O que ele não vai saber sozinho é <b>o que deixar o robô fazer, o que exigir aprovação e quanto isso custa por mês</b>. É exatamente o que você já monta. A seção 04 transforma isso em serviço.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Seis recortes. O fio que liga todos: a IA está saindo da janela de conversa e indo trabalhar dentro das ferramentas do dia a dia, do chip ao caixa do supermercado.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>A OpenAI lança os dots: robôs ligados o dia todo, cada um com o próprio computador</h3>
+        <div class="credito"><span class="frescor antes">🟡 terça, 29 de setembro</span><span>TechCrunch · BetaNews · Product Hunt</span></div>
+        <p class="texto">Os dots rodam no GPT-6 Astra, o motor novo da OpenAI. Cada um trabalha de um computador próprio na nuvem, com navegador e mais de 4 mil aplicativos conectados. Dá para conversar com eles pelo ChatGPT, pelo Slack e pelo Teams, e a OpenAI promete mensagem de texto em breve.</p>
+        <p class="texto">A divulgação fala em "regras personalizadas", em uma tela que mostra tudo o que o robô fez e em revisão antes da entrega. O primeiro dot vem incluído nos planos Pro e Business Premium. Na Europa e no Reino Unido, o plano Pro fica de fora por enquanto.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>"Motor" é o que faz o ChatGPT responder; o mercado chama de modelo de linguagem. O Product Hunt, onde os dots também apareceram, é a vitrine onde produtos novos são lançados. Ali, ficaram em quarto lugar do dia.</p></div>
+        <div class="link"><a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>OpenAI e Synopsys criam uma IA que opera o software de desenhar chips</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h21</span><span>Sala de imprensa da Synopsys, via Hacker News</span></div>
+        <p class="texto">A Synopsys faz o software que as fabricantes usam para projetar chips. O GPT-Synopsys deixa robôs mexerem nesse software sozinhos: rodam o projeto, leem o resultado e ajustam para o chip gastar menos energia e ocupar menos espaço. Algumas fabricantes já testam. Não há data de lançamento.</p>
+        <p class="texto">Para o seu cliente, o recado não é o chip. É o padrão: o robô não substitui o software caro da área, ele aprende a operar o software. A promessa é que os dados dos projetos dos clientes não serão usados para treinar a IA.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O Hacker News é o mural onde programadores do mundo todo postam o que saiu. Pense na IA como um operador novo que senta na cadeira da máquina que a fábrica já tem, em vez de a fábrica trocar de máquina.</p></div>
+        <div class="link"><a href="https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>A DeepSeek lança um aplicativo grátis para o robô dela rodar no seu computador</h3>
+        <div class="credito"><span class="frescor antes">🟡 esta semana</span><span>Product Hunt</span></div>
+        <p class="texto">O DSH Desktop é a versão para Mac e Windows da estrutura de robôs da DeepSeek, a empresa chinesa de IA. Antes, era preciso digitar comandos numa tela preta. Agora é um aplicativo comum: você instala, entra com a conta e deixa tarefas rodando sozinhas, inclusive em horário marcado.</p>
+        <p class="texto">É de graça e de código aberto. Enquanto a OpenAI cobra o plano mais caro pelos dots, a concorrência entrega a mesma ideia, mais crua, sem custo de assinatura.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p><b>Código aberto</b>: qualquer um pode baixar e rodar por conta. É como uma receita de bolo publicada no jornal, em vez de guardada no cofre da padaria.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/deepseek">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Um robô que trabalha para a sua marca aparecer nas respostas da IA</h3>
+        <div class="credito"><span class="frescor antes">🟡 segunda, 28 de setembro</span><span>Product Hunt · Omnia</span></div>
+        <p class="texto">O Omnia Agent descobre o que os clientes perguntam para a IA, mostra onde o concorrente é citado no seu lugar e reescreve as páginas do site para mudar isso. Também rascunha contatos com sites que a IA já usa como fonte. Nada vai para o ar sem a sua aprovação.</p>
+        <p class="texto">A frase de venda deles: o robô faz 95% do trabalho e você comanda os outros 5%. Para quem vende SEO, é um aviso: o serviço de ontem está virando ferramenta de assinatura.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O nome técnico disso é <b>GEO</b>: aparecer nas respostas da IA, como antes se buscava aparecer no Google. É a vitrine nova da rua. Quem não está nela não é visto quando o cliente pergunta "qual a melhor clínica de Fortaleza?".</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/omnia-2">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Central de ajuda com IA vendida por pagamento único, sem mensalidade</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem de madrugada</span><span>Product Hunt · Chat.sh</span></div>
+        <p class="texto">O Chat.sh monta a página de ajuda da empresa, aquela das perguntas frequentes, com uma busca que entende a pergunta e responde citando o artigo certo. O criador fez a ferramenta depois de se irritar com a busca de um concorrente grande.</p>
+        <p class="texto">O modelo de cobrança chama atenção: 399 dólares uma vez, sem mensalidade, com um limite de uso da IA por mês. É o oposto da conta por mensagem do WhatsApp. Antes de levar a ideia para cliente, confira se o limite mensal cobre o volume dele.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/chat-sh">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Supermercados do Nordeste e do Sudeste vão perguntar ao ChatGPT o que o cliente comprou</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 16h24</span><span>SA+ Varejo · Portal ClienteSA</span></div>
+        <p class="texto">A IdEver, que faz sistemas de relacionamento com cliente para supermercados, ligou o ChatGPT, o Claude e o Grok aos dados de compra das redes. O gerente pergunta por texto ou voz, sem abrir relatório. As redes Cricaré, Delta, Nordestão e Tonin vão testar primeiro.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>A ligação é feita por <b>MCP</b>, um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. A história completa está na seção 03.</p></div>
+        <div class="link"><a href="https://portal.clientesa.com.br/idever-conecta-modelos-de-ia-aos-dados-do-crm-integrados-aos-erps-e-pds/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">4 mil</div><div class="lbl">aplicativos que cada dot da OpenAI consegue usar sozinho</div></div>
+    <div class="numero"><div class="big">R$ 0,035</div><div class="lbl">o preço de cada resposta da empresa no WhatsApp oficial, valendo a partir de hoje</div></div>
+    <div class="numero"><div class="big">14 mil</div><div class="lbl">produtos diferentes na prateleira que a IA da IdEver consegue cruzar com o histórico de compra</div></div>
+    <div class="numero"><div class="big">399 dólares</div><div class="lbl">pagamento único da central de ajuda com IA do Chat.sh, sem mensalidade</div></div>
+  </div>
+
+  <div class="olho">
+    <p>O robô deixou de esperar você perguntar. Agora alguém precisa decidir o que ele pode assinar sozinho.</p>
+    <span class="quem">a frase do dia</span>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Até agora, ligar a IA aos dados da empresa era assunto de quadro branco e de programador. Esta semana, chegou ao supermercado de bairro do Nordeste.</p>
+
+  <p class="texto">A IdEver usou o padrão de encaixe para conectar o ChatGPT, o Claude e o Grok ao sistema de clientes das redes. O sistema já recebe dados do caixa e da gestão da loja. São milhões de registros de compra e mais de 14 mil produtos diferentes por operação.</p>
+
+  <p class="texto">O gerente pergunta, por texto ou voz, que categoria perdeu espaço na cesta, que marca briga pelo mesmo público ou quem tem mais chance de aceitar uma oferta. A resposta vem pronta para a campanha ou para negociar com o fornecedor. O Nordestão, uma das redes que vão testar, é de Natal: território vizinho seu.</p>
+
+  <p class="texto">Leia isso ao lado dos dots. A OpenAI entrega o funcionário que trabalha sozinho; a IdEver entrega a tomada que liga esse funcionário ao estoque e ao caixa. É como um prédio: um vende o elevador, o outro instala a tomada em cada andar. Quem junta as duas peças para um negócio específico é o eletricista. Esse é o seu lugar.</p>
+
+  <div class="nota">
+    <span class="r">O arco das últimas edições</span>
+    <ul class="lista">
+      <li><b>Terça (Nº 041):</b> a Meta vende o próprio robô de atendimento no WhatsApp.</li>
+      <li><b>Quarta (Nº 042):</b> a lista de tomadas aprovadas; quem decide onde o robô encosta.</li>
+      <li><b>Hoje (Nº 043):</b> o robô ganha autonomia e a tomada chega ao varejo comum.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Quando a tomada chega ao supermercado, ela chega também à clínica, à loja de roupa e ao escritório de contabilidade. A pergunta do seu cliente vai mudar de "a IA funciona?" para "como eu ligo a IA no meu sistema sem o robô fazer besteira?". Tenha pronta uma resposta de uma página: <b>o que o robô só lê, o que ele pode fazer e o que precisa do ok de alguém</b>.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">O exemplo que a OpenAI escolheu para vender os dots foi uma cobrança: achar a fatura atrasada, preparar a mensagem e enviar depois do ok do dono. Você não precisa do plano mais caro do ChatGPT para entregar isso a um cliente pequeno.</p>
+
+  <p class="texto">O serviço: um robô que todo dia olha a lista de boletos vencidos, escreve uma cobrança educada e personalizada para cada cliente e manda para o dono aprovar. Só depois do "ok" a mensagem sai pelo WhatsApp. Cobrança é acompanhamento de cliente com dinheiro na ponta, e esse é o seu terreno.</p>
+
+  <p class="texto">A conta do WhatsApp agora ajuda a vender. Uma clínica com 200 boletos atrasados, a três mensagens por cobrança, gasta cerca de 21 reais por mês em mensagens. Se recuperar um único boleto de 150 reais, pagou a conta sete vezes. Os números são exemplo do radar, não caso real.</p>
+
+  <p class="texto">O passo de aprovação não é detalhe: é o que vende. É ele que deixa o dono dormir tranquilo, depois de uma semana de manchetes sobre robôs que fizeram o que não deviam.</p>
+
+  <div class="hoje">
+    <span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Escolha <b>um</b> cliente que vende a prazo, como clínica, escola ou escritório. Peça a planilha de boletos vencidos do mês. Escreva três mensagens de cobrança: no 1º dia, no 7º e no 15º de atraso. Monte o fluxo com uma etapa de aprovação: o robô prepara a mensagem, manda para o dono no WhatsApp e só envia ao cliente depois do "ok". Rode com cinco boletos. Na sexta, mostre quanto voltou para o caixa e quanto custou em mensagens.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Todo recorte tem link. As horas estão em horário de Brasília.</p>
+
+  <ol class="src">
+    <li>🟡 terça, 29 de setembro — <b>"OpenAI launches Dots, its bubbly agentic avatar"</b>, TechCrunch · <a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">clique aqui</a> · <b>"OpenAI launches dots, always-on ChatGPT agents with their own computers"</b>, BetaNews · <a href="https://betanews.com/article/openai-dots-agents-chatgpt/">clique aqui</a> · página no Product Hunt · <a href="https://www.producthunt.com/products/dots-by-openai">clique aqui</a></li>
+    <li>🟢 hoje, 7h21 (postagem no Hacker News); anúncio de quarta, 30 — <b>"OpenAI and Synopsys Announce GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design"</b>, Synopsys · <a href="https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design">clique aqui</a></li>
+    <li>🟡 terça, 29 de setembro, 23h21 (Product Hunt) — <b>"DSH Desktop"</b>, DeepSeek · <a href="https://www.producthunt.com/products/deepseek">clique aqui</a></li>
+    <li>🟡 segunda, 28 de setembro, 13h47 — <b>"Omnia Agent"</b>, Product Hunt · <a href="https://www.producthunt.com/products/omnia-2">clique aqui</a></li>
+    <li>🟡 quarta, 30 de setembro, 2h27 — <b>"Chat.sh"</b>, Product Hunt · <a href="https://www.producthunt.com/products/chat-sh">clique aqui</a></li>
+    <li>🟡 quarta, 30 de setembro, 16h24 — <b>"idEver conecta inteligência artificial aos dados de CRM de supermercados"</b>, SA+ Ecossistema de Varejo · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcXZwNGlMR1d5d2JIdWpib2I2VW05UnlIeVk2VXNNdHdlUC1hbDZybVBtNVJ3cmlOQngzd3FfYzBPcFBQaGpSUXpPSkZkUjhWS3l0UnBkNGNBNWlPTzBqaUFxOE5mcm9XTlZRRXM3Q3lSQkpIU21rdDdKZHM5QnEzRWhPYjlrRGw4ZFFFOGpfdjBaRUR5WXZUQ3FiSkRxRVBoMlNoVjRSWlM0dw?oc=5">clique aqui</a> · anúncio original de 25 de setembro, Portal ClienteSA · <a href="https://portal.clientesa.com.br/idever-conecta-modelos-de-ia-aos-dados-do-crm-integrados-aos-erps-e-pds/">clique aqui</a></li>
+    <li>🟢 vale a partir de hoje — cobrança das respostas no WhatsApp oficial, já detalhada na edição Nº 042: <b>"WhatsApp pago força empresas a otimizar interações, integrar áreas e adotar agentes de IA, afirma VP da TOTVS"</b>, Times Brasil · CNBC · <a href="https://timesbrasil.com.br/empresas-e-negocios/whatsapp-pago-forca-empresas-a-otimizar-interacoes-integrar-areas-e-adotar-agentes-de-ia-afirma-vp-da-totvs/">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz">
+    <span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>1.</b> O radar <b>abriu</b> o TechCrunch, o anúncio da Synopsys, o Portal ClienteSA e as páginas do Product Hunt. A BetaNews entrou por resumo de busca. As descrições do DSH Desktop, do Omnia e do Chat.sh são das próprias empresas, sem teste independente. O "95% do trabalho" é frase de venda do Omnia.</p>
+    <p><b>2.</b> Os dots rodam no <b>GPT-6 Astra</b>. A edição de ontem falou do <b>GPT-6.1 Astra</b>, que a OpenAI engavetou. Pelos nomes, são versões diferentes, mas o radar não achou explicação oficial da relação entre os dois. O preço dos planos Pro e Business Premium no Brasil não foi conferido, nem se os dots já estão liberados aqui.</p>
+    <p><b>3.</b> A página do DSH Desktop indica lançamento em 1º de outubro, mas o sinal registra a postagem na terça à noite. Por isso o radar marcou "esta semana". O texto da SA+ Varejo não abriu: os detalhes da IdEver vêm do Portal ClienteSA, que não diz se a IA só lê os dados ou também pode alterá-los.</p>
+    <p><b>4.</b> A conta da clínica na seção 04 é <b>exemplo do radar</b>. Ela usa o preço da Meta de 3,5 centavos por resposta, que vale para a plataforma oficial do WhatsApp. Mensagens de cobrança enviadas fora da janela de 24 horas após o cliente escrever podem cair em outra tabela de preço da Meta: confira antes de orçar. Ficaram de fora o guia do Figma no iMasters (o texto não abriu), a melhoria de velocidade da Netlify e os assuntos do Google Trends de hoje, sem relação com IA.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 043 · quinta-feira, 1 de outubro de 2026<br>
+  Próxima edição: Pulso de sexta-feira, 2 de outubro
+</div>
+
+</div>
+
+</body>
+</html>
