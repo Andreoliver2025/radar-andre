@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 046 · Sem regra, o robô é desligado</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>Quatro em cada dez empresas podem desligar os robôs de IA até 2027. Não por falta de inteligência: por falta de regra.</h1>
+  <p class="chamada">O Gartner, uma das maiores consultorias de tecnologia do mundo, prevê que 40% das empresas vão rebaixar ou desligar os robôs que puseram para trabalhar. O motivo é ninguém saber direito o que eles podem tocar nem quem aperta o botão de parar. Na mesma noite, um pesquisador mostrou a mesma brecha aberta no Google, no JPMorgan e em dois governos.</p>
+  <div class="dateline">Edição Nº 046 · terça-feira, 6 de outubro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A previsão do Gartner e por que ela é uma boa notícia para quem monta robôs.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Oito recortes: a previsão, a brecha repetida em cinco organizações, o WordPress de portas abertas aos robôs, cartuns falsos com assinatura real, três ferramentas novas e cursos grátis do Santander.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">Robô com crachá: a ideia que um serviço novo de programadores já pôs em prática.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">A ficha de cada robô: o inventário que o dono não tem e paga para manter em dia.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============ 01 ============ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Imagine uma loja que contratou dez funcionários temporários, sem crachá e sem chefe definido. Um dia some dinheiro do caixa. O dono não sabe quem foi, então dispensa todo mundo.</p>
+
+  <p class="texto capitular">É isso que o Gartner prevê para os robôs de IA. Segundo a pesquisa, publicada pela Exame ontem às 23h29, 40% das empresas podem rebaixar ou desligar esses robôs até 2027. A causa não é o robô ser burro. É falta de controle, de segurança e de alguém responsável.</p>
+
+  <p class="texto">O dado que explica tudo: em abril, só 13% das empresas tinham regras adequadas para os seus robôs. O erro mais comum, diz o Gartner, é tratar o assunto como tudo ou nada. Ou o robô é proibido, ou faz o que quer.</p>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Na sexta, o radar perguntou quem paga quando o robô faz estrago. Na segunda, mostrou que o próximo cliente pode chegar por um robô. Hoje vem a conta: <b>quem não puser regra vai desligar o robô</b>, e o dinheiro investido vai junto. Quem vende robô com regra pronta vende o que o Gartner diz que falta a 87 de cada 100 empresas.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Oito recortes. O fio que liga quase todos: os robôs já entraram nas empresas. Agora começa a fase de pôr ordem na casa.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>Quatro em cada dez empresas podem desligar os robôs de IA até 2027</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 23h29</span><span>Exame, com dados do Gartner</span></div>
+        <p class="texto">A previsão vale para robôs que trabalham sozinhos dentro da empresa. O Gartner recomenda regras de tamanhos diferentes, conforme o quanto cada robô decide sozinho. Pede também vigilância contínua, um botão de parar, um jeito de desfazer o que o robô fez e um responsável com nome.</p>
+        <p class="texto">Outro número da mesma matéria: até 2028, uma grande empresa americana poderá ter mais de 150 mil robôs. Ninguém controla 150 mil de nada sem uma lista.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>"Governança" é o nome chique para três perguntas: <b>o que o robô pode fazer, quem responde por ele e como se desliga</b>. "IA de sombra" é o robô que alguém da equipe instalou por conta, sem o dono saber — como a extensão de tomada que ninguém lembra quem puxou.</p></div>
+        <div class="link"><a href="https://exame.com/inteligencia-artificial/40-das-empresas-podem-desativar-agentes-de-ia-ate-2027-por-falhas-de-governanca-aponta-pesquisa/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>A mesma brecha apareceu no Google, no JPMorgan e em dois governos</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 20h01</span><span>Unite.AI</span></div>
+        <p class="texto">O pesquisador independente Syed Anas Mohiuddin testou as "tomadas" que ligam robôs de IA aos sistemas das empresas. Achou o mesmo defeito em cinco organizações que não têm nada em comum: Google, o banco JPMorgan, a empresa Weaviate, o governo da França e a prefeitura de Tangerang, na Indonésia. Todas já corrigiram.</p>
+        <p class="texto">O defeito: a tomada aceita qualquer endereço que o robô pede, sem conferir para onde está indo. É como um porteiro que abre qualquer sala para quem diz "o chefe mandou". Cinco sistemas do governo americano, um deles de pedidos de benefício de veteranos, ainda estão com a falha aberta.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>A "tomada" aqui é o MCP: um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. O recado do pesquisador é simples: <b>não confie no que passa pela tomada só porque passou</b>. Ele publicou de graça uma ferramenta que testa seis tipos desse erro.</p></div>
+        <div class="link"><a href="https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>O WordPress agora tem uma tomada oficial para os robôs de IA</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 4h55</span><span>pasqualepillitteri.it · WordPress.org</span></div>
+        <p class="texto">O WordPress, sistema por trás de boa parte dos sites do mundo, colocou no seu catálogo oficial de extensões o MCP Adapter. Ele deixa robôs de IA lerem e mexerem no site pelo padrão de encaixe. A versão 0.7.0 saiu em 2 de outubro, a primeira no catálogo, depois de mais de um ano só para programadores.</p>
+        <p class="texto">Para quem atende negócio local, isso pesa: o site da clínica ou da loja quase sempre é WordPress. Em breve, "o robô atualiza o site" vira pedido comum.</p>
+        <div class="link"><a href="https://wordpress.org/plugins/mcp-adapter/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>O ChatGPT anda assinando cartuns falsos com o nome de cartunistas de verdade</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 19h46</span><span>Nieman Lab, via Hacker News</span></div>
+        <p class="texto">O Nieman Lab, centro de estudos de jornalismo de Harvard, achou cartuns no estilo da revista New Yorker feitos pelo ChatGPT. Muitos vinham com a assinatura de cartunistas reais. Mais de 15 artistas tiveram o nome usado sem autorização nem pagamento, e alguns desses desenhos viralizaram.</p>
+        <p class="texto">Depois do aviso, o ChatGPT passou a responder que o pedido "pode violar" as regras sobre semelhança com conteúdo de terceiros. Para quem produz imagem com IA para cliente, o lembrete é revisar o canto da arte antes de publicar.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O Hacker News é o mural onde programadores do mundo todo postam o que saiu. Foi lá que a notícia subiu.</p></div>
+        <div class="link"><a href="https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Um atendente de IA grátis que aprende sozinho com o seu site</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 12h33</span><span>Product Hunt · Cosmic</span></div>
+        <p class="texto">O Cosmic AI Support Agent entra no site com uma linha de código colada na página. Ele responde ao visitante com base no que já está publicado. Mudou a página de preços? A resposta muda junto. Quando não sabe, pede o e-mail do visitante e passa a dúvida para a sua equipe. É grátis.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O Product Hunt é a vitrine onde produtos novos são lançados. O jeito de funcionar do Cosmic tem nome técnico, RAG: fazer a IA responder consultando os documentos da empresa — no caso, as páginas do próprio site.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/cosmic">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Um navegador em que você aponta para a página e o robô começa a trabalhar</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 3h40</span><span>Product Hunt · Rill</span></div>
+        <p class="texto">O Rill é um navegador para Mac. Viu algo numa página que deu uma ideia? Um atalho de teclado transforma aquilo em tarefa para o seu robô programador, o Claude Code ou o Codex. O robô trabalha no projeto certo enquanto você continua navegando. É grátis, mas usa a assinatura que você já paga desses robôs.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/rill-3">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>O ditado por voz que já sabe como você escreve</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 13h56</span><span>Product Hunt · Willow</span></div>
+        <p class="texto">O Willow, aplicativo de ditado por voz, lançou o Willow Knowledge. Ele importa do ChatGPT, do Claude ou do Gemini o seu jeito de escrever e o contexto do seu trabalho. Você dita o e-mail e ele sai com a sua cara, com a despedida de sempre e o tamanho certo. É grátis, para Mac e Windows.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/willow-voice">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">08</div>
+      <div>
+        <h3>Santander abre mais de 60 cursos grátis de IA e marketing para pequenas empresas</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 4h11</span><span>Santander Imprensa · Revista Empreende</span></div>
+        <p class="texto">A plataforma Santander X mantém mais de 60 cursos online gratuitos de IA, marketing digital, finanças e dados para pequenas e médias empresas. Não precisa ser cliente do banco. Para o seu cliente, é um jeito sem custo de pôr a equipe no mesmo vocabulário antes de você instalar qualquer robô.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSjRtSVExejAtWmpVb29naVhwZlROQmpsak15OVFNZUN1cUpQRXRueGpYRmZmNFkwbV9FXzhac0YyZ3NsUUJpUm84QTA5TXJaVmZuZk0tUUZuN1hJbFdDNmxhN0otRzlVME9NdEpnV1FVN21oZXd6QUt0ZG81WUhWTnkxRGlKc3kwMkJOcEVYN0FDQWFvZGNWZ1NBdWlSb01tR2IyR0t5UjFsYTZaYWtZYzlmend5cnVZY0R1dDlPRWhwamNSb3F1aTc4Nms1bzBMbUhDdXN3?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">40%</div><div class="lbl">das empresas podem rebaixar ou desligar os robôs de IA até 2027, prevê o Gartner</div></div>
+    <div class="numero"><div class="big">13%</div><div class="lbl">das empresas tinham regras adequadas para os robôs em abril, segundo o mesmo Gartner</div></div>
+    <div class="numero"><div class="big">150 mil</div><div class="lbl">robôs numa grande empresa americana, em média, até 2028</div></div>
+    <div class="numero"><div class="big">mais de 15</div><div class="lbl">cartunistas tiveram a assinatura copiada pelo ChatGPT em cartuns falsos</div></div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Em obra séria, ninguém entra sem crachá. O crachá diz quem você é, quem te contratou e onde pode circular. Os robôs estão ganhando o deles.</p>
+
+  <p class="texto">Ontem foi lançado no Product Hunt o Brnch, um lugar para guardar o código de programas feito para equipes de pessoas e robôs. A ideia central é simples. Cada robô ganha uma identidade própria e trabalha sob a responsabilidade de uma pessoa, o "padrinho".</p>
+
+  <p class="texto">Toda alteração que o robô faz aparece linha por linha. Cada entrega gera um recibo assinado, que prova quem fez o quê. E os robôs avisam uns aos outros para não pisarem no trabalho do colega. O criador conta que fez a ferramenta depois de apanhar coordenando vários robôs no mesmo projeto.</p>
+
+  <p class="texto">Junte com as outras duas notícias do dia. O Gartner diz que a empresa precisa saber quantos robôs tem e quem responde por eles. O pesquisador da brecha diz que a tomada não pode confiar em tudo o que o robô pede. São a mesma lição dita por três bocas.</p>
+
+  <div class="olho">
+    <p>Robô sem crachá é funcionário temporário sem chefe. No primeiro problema, dispensam a turma inteira.</p>
+    <span class="quem">a frase do dia</span>
+  </div>
+
+  <div class="nota">
+    <span class="r">O arco das últimas edições</span>
+    <ul class="lista">
+      <li><b>Sexta (Nº 044):</b> robôs forçam a porta de sites do governo. Quem paga o estrago? Quem instalou.</li>
+      <li><b>Segunda (Nº 045):</b> o próximo cliente pode chegar por um robô, e o Google começa a contar o que ele enxerga.</li>
+      <li><b>Hoje (Nº 046):</b> sem regra, o robô é desligado. A ficha de cada robô vira pré-requisito.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Tudo o que você montar a partir de hoje sai com <b>crachá</b>: um nome para o robô, a pessoa do cliente que responde por ele, a lista do que ele pode tocar e o jeito de desligá-lo. Não precisa de ferramenta nova. Precisa de uma página escrita antes de colocar no ar.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Todo prédio tem o quadro de luz com a etiqueta em cada disjuntor: "cozinha", "ar do quarto", "chuveiro". Na hora do curto, é ele que evita desligar o prédio inteiro.</p>
+
+  <p class="texto">O serviço: <b>o quadro de robôs do cliente</b>. Uma lista de todos os robôs e automações que rodam no negócio, um por linha. Cada linha diz o que o robô faz, o que ele pode tocar, quem é o padrinho, como se desliga e como se desfaz o que ele fez.</p>
+
+  <p class="texto">Por que vende agora: a previsão do Gartner saiu na Exame, e o dono de empresa lê a Exame. Quem tem robô vai se perguntar se está nos 40%. Quem chega com o quadro pronto vende a resposta. E transforma uma instalação avulsa numa revisão mensal: robô novo entra no quadro, robô velho sai.</p>
+
+  <p class="texto">Ele soma com a caixa-preta da edição de sexta. O quadro diz quais robôs existem. A caixa-preta diz o que cada um fez. Juntos, viram um pacote de manutenção com nome e preço.</p>
+
+  <div class="hoje">
+    <span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Comece pelo seu. Abra uma planilha com seis colunas: <b>nome do robô, o que faz, o que pode tocar, padrinho, como desliga, como desfaz</b>. Preencha com tudo o que você já tem rodando — este próprio Radar é a primeira linha. Depois mande a planilha vazia para um cliente com uma pergunta: "quantas linhas você consegue preencher sem me ligar?". A resposta é a sua proposta.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Todo recorte tem link. As horas estão em horário de Brasília.</p>
+
+  <ol class="src">
+    <li>🟢 ontem, 23h29 — <b>"40% das empresas podem desativar agentes de IA até 2027 por falhas de governança, aponta pesquisa"</b>, Exame · <a href="https://exame.com/inteligencia-artificial/40-das-empresas-podem-desativar-agentes-de-ia-ate-2027-por-falhas-de-governanca-aponta-pesquisa/">clique aqui</a></li>
+    <li>🟢 ontem, 20h01 — <b>"Researcher Discloses Same MCP Flaw at Google, JPMorgan, Two Governments"</b>, Unite.AI · <a href="https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/">clique aqui</a> · <b>"Google, JPMorgan and two governments fixed the same MCP flaw"</b>, The Next Web · <a href="https://thenextweb.com/news/mcp-flaw-ssrf-google-jpmorgan-dinum-protocol-pivoting">clique aqui</a></li>
+    <li>🟢 hoje, 4h55 — <b>"MCP Adapter chega ao WordPress, plugin oficial para agentes de IA na versão 0.7.0"</b>, pasqualepillitteri.it · <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOakp2dTZnaU5ramRSblNib1FFNnp1YVVxVDhsUWZ2ajkxRmFPRm5EbEI2MmloN2lYQjhtWlZaTmFzOEMwRVVSb3NVLUlkY2NtNWxQTzVuX0dDQUV3azhhUy1hZTJtVkVfM2ptejFWYndtbm5RUU9OdUV1ZHRoYlB2ZG9iaFRocVU?oc=5">clique aqui</a> · página oficial do <b>MCP Adapter</b>, WordPress.org · <a href="https://wordpress.org/plugins/mcp-adapter/">clique aqui</a> · notas da versão no GitHub do WordPress · <a href="https://github.com/WordPress/mcp-adapter/releases">clique aqui</a></li>
+    <li>🟢 ontem, 19h46 (postagem no Hacker News) — <b>"ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons"</b>, Nieman Lab · <a href="https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/">clique aqui</a></li>
+    <li>🟢 ontem, 12h33 — <b>"Cosmic AI Support Agent"</b>, Product Hunt · <a href="https://www.producthunt.com/products/cosmic">clique aqui</a></li>
+    <li>🟢 ontem, 3h40 — <b>"Rill Browser"</b>, Product Hunt · <a href="https://www.producthunt.com/products/rill-3">clique aqui</a></li>
+    <li>🟢 ontem, 13h56 — <b>"Willow Knowledge"</b>, Product Hunt · <a href="https://www.producthunt.com/products/willow-voice">clique aqui</a></li>
+    <li>🟢 hoje, 4h11 — <b>"Santander X oferece mais de 60 cursos online gratuitos de IA, marketing digital, finanças e dados para PMEs"</b>, Santander Imprensa · <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSjRtSVExejAtWmpVb29naVhwZlROQmpsak15OVFNZUN1cUpQRXRueGpYRmZmNFkwbV9FXzhac0YyZ3NsUUJpUm84QTA5TXJaVmZuZk0tUUZuN1hJbFdDNmxhN0otRzlVME9NdEpnV1FVN21oZXd6QUt0ZG81WUhWTnkxRGlKc3kwMkJOcEVYN0FDQWFvZGNWZ1NBdWlSb01tR2IyR0t5UjFsYTZaYWtZYzlmend5cnVZY0R1dDlPRWhwamNSb3F1aTc4Nms1bzBMbUhDdXN3?oc=5">clique aqui</a> · <b>"Santander X mantém cursos gratuitos de IA, marketing e finanças"</b>, Revista Empreende · <a href="https://revistaempreende.com.br/santander-x-mantem-cursos-gratuitos-de-ia-marketing-e-financas/">clique aqui</a></li>
+    <li>🟢 ontem, 12h30 — <b>"Brnch"</b>, Product Hunt · <a href="https://www.producthunt.com/products/brnch">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz">
+    <span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>1.</b> O radar <b>abriu</b> a matéria da Exame, o texto da Unite.AI e as páginas do Product Hunt. O WordPress, o Nieman Lab (o site recusou o acesso) e o Santander entraram por resumo de busca. Do Santander, o radar não conferiu prazo de inscrição nem a lista completa de cursos.</p>
+    <p><b>2.</b> A frase "87 de cada 100 empresas" na seção 01 é a conta inversa dos 13% do Gartner, medidos em abril. Um resumo de busca citava "87% das empresas brasileiras sem política de IA", mas esse número <b>não está</b> na matéria da Exame, e por isso ficou de fora.</p>
+    <p><b>3.</b> As descrições do Cosmic, do Rill, do Willow e do Brnch são das próprias empresas, sem teste independente. A brecha da tomada foi relatada pelo próprio pesquisador; as correções no Google e no JPMorgan são informação dele, repassada pela Unite.AI.</p>
+    <p><b>4.</b> Ficaram de fora: a notificação estranha enviada a clientes do app da ASOS (o texto da BBC não abriu), o cancelamento do modelo novo da OpenAI, já tratado na segunda, e os assuntos do Google Trends de hoje, sem relação com IA.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 046 · terça-feira, 6 de outubro de 2026<br>
+  Próxima edição: Pulso diário de quarta-feira, 7 de outubro
+</div>
+
+</div>
+</body>
+</html>
