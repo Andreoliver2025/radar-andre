@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Fábrica de robôs de 1,2 bilhão chega a São Paulo — Radar André Oliveira Nº 052</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>Uma fábrica de robôs de 1,2 bilhão de dólares abriu escritório em São Paulo. E promete o primeiro robô trabalhando em quatro semanas</h1>
+  <p class="chamada">A americana HappyRobot chegou ao Brasil para vender robôs que fazem o serviço inteiro: ligam, mandam WhatsApp, cobram, agendam. O alvo são as grandes empresas. Isso deixa um corredor livre para quem atende a empresa média, com o mesmo método e conta menor.</p>
+  <div class="dateline">Edição Nº 052 · quarta-feira, 14 de outubro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A HappyRobot desembarca em São Paulo, e o jeito como ela vende diz mais do que o valor da empresa.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Oito recortes: um laboratório que entregou os lasers ao Claude, um fundador que deixou robôs tocarem a empresa e duas ferramentas novas.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">O freio de emergência fica fora do robô. E, quando o robô aprende a receita, ele sai da sala.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">Reativar quem já conversou com o seu cliente: a carteira esquecida dentro da caixa de e-mail.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ===================== 01 ===================== -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Quando a construtora grande chega no bairro, ela não constrói casa. Constrói prédio de vinte andares. Quem reforma a casa do vizinho continua com a agenda cheia.</p>
+
+  <p class="texto capitular">Hoje cedo, O Globo e a Bloomberg Línea noticiaram a mesma chegada. A HappyRobot, empresa do Vale do Silício avaliada em <b>1,2 bilhão de dólares</b>, abriu escritório na Vila Olímpia, em São Paulo.</p>
+
+  <p class="texto">Ela vende robôs que fazem um trabalho do começo ao fim. Ligam para o caminhoneiro, mandam WhatsApp, e-mail e SMS, consultam o histórico do cliente. Começou na logística e hoje atende cobrança, vendas, atendimento e agendamento em saúde.</p>
+
+  <p class="texto">No Brasil, a mira está em quatro setores: logística, telefonia, energia e serviços financeiros. Hoje são cinco pessoas no escritório. A meta é chegar a cerca de 35 no começo de 2027.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Unicórnio</b> é como o mercado chama uma empresa nova avaliada em mais de 1 bilhão de dólares. E o "agente de IA" que ela vende é um <b>robô que executa uma tarefa do início ao fim sozinho</b>. Não responde uma pergunta e para: liga, confere, anota e resolve.</p></div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">1,2 bilhão</div><div class="lbl">de dólares é quanto a <b>HappyRobot</b> vale, depois de captar 150 milhões em agosto</div></div>
+    <div class="numero"><div class="big">4 semanas</div><div class="lbl">é o prazo que a empresa promete para o <b>primeiro robô</b> trabalhando no cliente</div></div>
+    <div class="numero"><div class="big">695 de 700</div><div class="lbl">testes em que o robô do laboratório <b>QuEra</b> religou o laser sozinho, segundo a própria empresa</div></div>
+    <div class="numero"><div class="big">45 de 209</div><div class="lbl">pessoas responderam quando o criador do <b>Blade</b> escreveu para contatos antigos do e-mail</div></div>
+  </div>
+
+  <p class="texto">O detalhe que interessa a você está no jeito de vender. A cobrança é por projeto, misturando volume atendido e gente da empresa trabalhando dentro do cliente. O contrato dura pelo menos um ano.</p>
+
+  <div class="olho">
+    <p>O robô de um bilhão não é vendido como software. É vendido como obra: com engenheiro no canteiro, prazo de entrega e contrato de um ano.</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>A HappyRobot acabou de validar, com dinheiro grande, o desenho que você já usa: <b>robô que faz o serviço inteiro, instalado por alguém que entra na operação</b>.</p>
+    <p>Ela só vai atender quem paga uma equipe de cinco a dez pessoas por um ano. A empresa média, que tem os mesmos problemas de cobrança e follow-up, fica do lado de fora. É ali que você cabe.</p>
+  </div>
+</section>
+
+<!-- ===================== 02 ===================== -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Oito recortes. Pense numa feira de bairro: as quatro primeiras bancas mostram como os robôs estão trabalhando de verdade. As quatro do fim mostram o que deu errado e o que acabou de chegar.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>Empresa de robôs avaliada em 1,2 bilhão de dólares desembarca no Brasil atrás de clientes grandes</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 5h</span><span>O Globo e Bloomberg Línea</span></div>
+        <p class="texto">A HappyRobot atende mais de 150 clientes no mundo, como DHL, Uber e Naturgy. Nos Estados Unidos, diz atender nove das dez maiores transportadoras.</p>
+        <p class="texto">André Leite, responsável comercial no Brasil, resumiu: "não é um agente respondendo a uma pergunta ou outra, é um agente fazendo de fato um trabalho de ponta a ponta". Para ele, as grandes empresas brasileiras estão "mal atendidas".</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>A empresa usa o que chama de <b>forward deployed engineers</b>: engenheiros que vão "morar" no cliente até o robô funcionar. É o mestre de obras que fica no canteiro, em vez de mandar a planta por e-mail. Ela ainda conecta o robô aos <b>sistemas legados</b>, os programas antigos que a empresa já usa e não quer trocar.</p></div>
+        <div class="link"><a href="https://www.bloomberglinea.com.br/startups/unicornio-de-agentes-de-ia-avaliado-em-us-12-bi-happyrobot-desembarca-no-brasil/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>Laboratório de computador quântico entrega ao Claude o ajuste dos lasers, e o conserto cai de 10 minutos para segundos</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h26</span><span>blog da QuEra, no mural dos programadores</span></div>
+        <p class="texto">Os lasers dessas máquinas saem do ponto com qualquer tremor. Antes, um especialista levava de 5 a 10 minutos para acertar. O robô, montado sobre o Claude, acerta em segundos.</p>
+        <p class="texto">Segundo a empresa, ele resolveu 695 de 700 testes. Numa rodada de 19 horas, o laser não caiu nenhuma vez sem supervisão. Antes eram 1,6 quedas por hora. Um ajuste que levava semanas saiu numa noite.</p>
+        <div class="link"><a href="https://www.quera.com/blog-posts/holding-the-light-teaching-an-ai-to-lock-and-tune-our-quantum-computers-lasers">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Fundador deixa um time de robôs tocar a empresa por uma semana e conta o que funcionou</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h25</span><span>Tiny Projects, no mural dos programadores</span></div>
+        <p class="texto">Ben Stokes toca sozinho o PromptBase, uma loja de instruções para IA. Montou cinco robôs: um de atendimento por e-mail, um programador, um de segurança, um de marketing e um gerente de projeto.</p>
+        <p class="texto">Os robôs consertaram juntos um defeito de cliente enquanto ele estava fora. Numa trilha de cinco horas no País de Gales, ele comandou tudo pelo celular. Diz que rendeu mais que em dias de nove horas no computador.</p>
+        <p class="texto">O lado ruim: a instalação foi lenta e exigiu entregar muitos dados. As ideias ousadas continuaram vindo dele. E ele avisa que o dono pode perder a noção do que acontece na própria empresa.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O que ele montou é um <b>squad de agentes</b>: um time de robôs trabalhando juntos, cada um com uma função, como os funcionários de uma loja pequena. O caixa não arruma a vitrine, mas os dois conversam.</p></div>
+        <div class="link"><a href="https://daily.tinyprojects.dev/221">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Quatro robôs de redes sociais em um só serviço: um planeja, um grava, um escuta e um publica</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 4h51</span><span>AdAnt 2.0, via Product Hunt</span></div>
+        <p class="texto">O primeiro robô estuda o seu nicho no TikTok, no Instagram, no YouTube e nos anúncios da Meta, e escreve a estratégia. O segundo transforma a estratégia em um lote de vídeos.</p>
+        <p class="texto">O terceiro procura conversas no X e no Reddit onde vale entrar. O quarto monta o calendário e publica. Há 40 créditos grátis para testar. Os fundadores dizem que o método cortou em 60% o custo de anúncio dos clientes. Não mostram a prova.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. Os créditos funcionam como fichas de fliperama: cada vídeo ou pesquisa gasta algumas, e quando acabam você compra mais.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/adant-ai">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Ferramenta acha, na sua caixa de e-mail, as pessoas que já conversaram com você e sumiram</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 12h07</span><span>Blade, via Product Hunt</span></div>
+        <p class="texto">O Blade filtra a caixa de entrada por frequência de conversa, data do último contato e se a pessoa é de fora da sua empresa. Depois você escreve um a um, pelo seu próprio Gmail.</p>
+        <p class="texto">O criador, Paul English, achou cerca de 400 pessoas com quem trocou cinco e-mails ou mais num ano. Escolheu 209 e escreveu. 45 responderam pedindo mais informação. É grátis pelos próximos 30 dias.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/blade-4">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Jornal sueco diz que um robô apagou a temporada inteira de um reality semanas antes da estreia</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h21</span><span>Aftonbladet, no mural dos programadores</span></div>
+        <p class="texto">O título que circulou fala em "centenas de dias de trabalho perdidos" na versão sueca do The Challenge. O radar não conseguiu abrir a reportagem. Não sabemos como aconteceu, nem se houve recuperação.</p>
+        <p class="texto">Entra aqui como lembrete, não como fato apurado. Robô com permissão para apagar precisa de cópia de segurança fora do alcance dele.</p>
+        <div class="link"><a href="https://www.aviaduct.com/?l=og+en&amp;u=https%3A%2F%2Fwww.aftonbladet.se%2Fnojesbladet%2Fa%2F31oE8A%2Fthe-challenge-sverige-raderad-av-ai-bara-veckor-innan-premiaren">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>Empresas colocam um segundo vigia sobre os robôs, porque um erro acontece rápido demais</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 11h47</span><span>Olhar Digital</span></div>
+        <p class="texto">O radar leu só a manchete. Ela diz que as empresas estão pondo uma segunda camada de vigilância sobre os robôs, porque uma única ação errada pode acontecer rápido demais para alguém perceber.</p>
+        <p class="texto">É a mesma conversa das últimas edições, agora chegando ao noticiário comum: quem vigia o robô, e quem aperta o botão de parar.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMizwJBVV95cUxOOGtRVzQwbWdmU1BRMWZtaW9fNmNTRnI2eGdaNVEwLUp3OFBxOFpRS3ljRG5BMzhBQ2tsZ09uTjBVZ2NyNS1mQ1lBRWVJNjdFQkdEbS1jQ0w5M0R6OGpPZm1GRlhzR2NWWmdSajA1U2xKLVZjeDQtNzJxd1NSWVdyci1YdDZOVGdSZjE3cURadC1tMmNnYWlxREROT1JJM2M0TkN0ZDY4Ym1wUFBxZTZzZm56U1dCUUl5Qk5IcXVabEhxV3JST2hPWlNYWUpyUTJ5OFFNMk8wSE5kZWFwZU9tX0s5MHZZUXJBaW51R2lkOWdnNnFtMXhVTC1qSC15aHBsMnlfWUhWbmZXODV0Z0JEZm1RZHg2bHhCdzRlSUNPYUpMM0ZfRllORW5qcm5YbXJ6VVpKaXEyM2JnOEY4Wk96X1dSNGpfdV9ZVE4xVlpPaw?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">08</div>
+      <div>
+        <h3>Vigiar a IA cansa: a Exame volta ao estudo da BCG sobre a "fritura mental" no trabalho</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 17h25</span><span>Exame</span></div>
+        <p class="texto">O radar leu só a manchete. O estudo da consultoria BCG é de março e ganhou o apelido de "brain fry", o cérebro frito. Segundo a cobertura anterior, o que mais cansa não é usar muita IA. É ficar conferindo o que ela faz.</p>
+        <p class="texto">Vale como contrapeso aos recortes 03 e 07. Cada robô novo cria um trabalho novo: alguém precisa revisar. Se esse alguém for o dono, a conta não fecha.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPQTFxa3lGS0E4LU9VVjByRWZpWGhicmZqUXhiQU9sY2F5MWYzZXNkdkpESm5BeDU3VGk2ZlhfTlI2MUVZbUs2Nmd6NFFob3hFdHJfX2pyaFFtbXNka1JrTGd3eWFCWUp1aVhRa3FhQl9kNUJIcWhHU01wQzFoMVZmSHRrTVJrRVdoRmM5RU1QWlp1M3VwWk90NzNaRnZqX2R6ODhFTm0xQmFlZXB0MWt3WGN0SkYwTXhDNXpMckJWT0FWUjU1Yjd3WUpJYw?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== 03 ===================== -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Elevador tem dois freios. Um é o motor, que obedece ao painel. O outro é uma trava mecânica que segura a cabine mesmo se o motor enlouquecer. Ninguém pede licença ao motor para acionar a trava.</p>
+
+  <p class="texto"><b>Primeiro destaque: a trava fica fora do robô.</b> O laboratório QuEra deu ao Claude o controle de quase 700 mil dólares em equipamento. Mas os limites de segurança, as travas e o botão de emergência funcionam de forma independente do robô.</p>
+
+  <p class="texto">Ou seja: o robô decide o ajuste, mas não decide se pode passar do limite. E ele só declara "consertado" quando dois medidores confirmam. Não basta ele achar que deu certo.</p>
+
+  <p class="texto"><b>Segundo destaque: quando aprende a receita, o robô sai da sala.</b> Depois da fase de testes, o conserto do laser virou um programa fixo, que roda sem IA nenhuma. A IA ficou só na parte que ainda exige julgamento, o ajuste fino.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span><p>Um <b>programa fixo</b>, ou script, é uma receita de bolo seguida à risca: sempre os mesmos passos, sem improviso. É mais barato, não cobra por uso e não inventa. A IA é o confeiteiro que cria a receita. Depois que ela está pronta, qualquer ajudante segue.</p></div>
+
+  <div class="nota">
+    <span class="r">Junte com as edições anteriores</span>
+    <ul class="lista">
+      <li><b>Ontem</b> a pergunta era onde o robô mora e onde fica a chave para desligar.</li>
+      <li><b>Hoje</b> a QuEra mostra a resposta de quem leva a sério: a chave fica fora do robô, e ele precisa de prova para dizer "pronto".</li>
+      <li><b>O fundador do recorte 03</b> mostra o outro lado: cinco robôs, nenhuma trava descrita, e o medo de perder a noção da própria empresa.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Em cada robô que você instala, escreva duas linhas a mais. <b>Qual é a trava que não depende dele</b> (limite de valor, lista de ações proibidas, cópia de segurança). E <b>qual parte já pode virar receita fixa</b>.</p>
+    <p>A segunda linha é dinheiro. Toda tarefa que vira receita fixa sai da conta mensal de IA do cliente. Você entrega a economia como parte do serviço.</p>
+  </div>
+</section>
+
+<!-- ===================== 04 ===================== -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Toda loja antiga tem um caderno de fiado com nomes de quem já comprou e sumiu. Ninguém liga para essa gente. Não por falta de vontade: por falta de tempo de procurar o caderno.</p>
+
+  <p class="texto">O Blade, do recorte 05, faz exatamente isso com o e-mail. Acha quem já trocou cinco mensagens ou mais com você num ano. O criador escreveu para 209 dessas pessoas e 45 responderam pedindo mais.</p>
+
+  <p class="texto">Junte com a manchete. A HappyRobot vende robôs de cobrança e follow-up para gigantes, com equipe dentro do cliente por um ano. A empresa média tem o mesmo caderno esquecido, no e-mail e no WhatsApp, e ninguém vai instalar nada para ela.</p>
+
+  <p class="texto"><b>Onde isso encaixa em você:</b> follow-up, vendas e atendimento. É a sua base de força, agora com um número de vitrine para mostrar e um gigante validando o modelo.</p>
+
+  <div class="traduz"><span class="r">O cuidado, antes de vender isso</span><p>Os 45 de 209 são do criador da ferramenta, escrevendo para a própria rede, sobre o próprio livro. Não é média de mercado. E mandar mensagem em massa para contato antigo sem pedir licença pode esbarrar na lei de proteção de dados. Por isso o desenho abaixo é uma a uma, com o dono aprovando cada envio.</p></div>
+
+  <p class="texto"><b>Como vira serviço:</b> "reativação da carteira esquecida". Em quatro semanas, o mesmo prazo da HappyRobot: a lista de quem sumiu, o robô escreve o rascunho de cada mensagem com base na última conversa, o dono aprova, e você mede quantos voltaram.</p>
+
+  <div class="hoje">
+    <span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Faça na sua própria caixa de e-mail primeiro. Liste <b>as 20 pessoas</b> com quem você mais conversou no último ano e que estão sumidas há três meses ou mais. Pode ser com o Blade, no período grátis, ou com uma busca manual no Gmail.</p>
+    <p>Peça à IA um rascunho por pessoa, citando a última conversa de vocês. Revise e envie um a um. Anote quantos responderam em sete dias. Esse número, com o seu nome, é o primeiro estudo de caso do serviço.</p>
+    <p><b>Esforço:</b> uma tarde, mais sete dias de espera · <b>Ativo gerado:</b> o roteiro da reativação e o seu próprio número · <b>Risco:</b> quase nenhum, são pessoas que já te conhecem</p>
+  </div>
+</section>
+
+<!-- ===================== 05 ===================== -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">A nota fiscal da edição. Horários convertidos para Brasília. Selo 🟢 quando saiu hoje, 🟡 quando é de ontem. Títulos em inglês com a tradução ao lado.</p>
+
+  <ol class="src">
+    <li>🟢 hoje, 5h — <b>"Unicórnio de agentes de IA avaliado em US$ 1,2 bi, HappyRobot desembarca no Brasil"</b>, Bloomberg Línea Brasil · <a href="https://www.bloomberglinea.com.br/startups/unicornio-de-agentes-de-ia-avaliado-em-us-12-bi-happyrobot-desembarca-no-brasil/">clique aqui</a> · também em O Globo: <b>"HappyRobot, que 'vende' agentes de IA a empresas globais e vale US$ 1,2 bilhão, sai à caça de clientes no Brasil"</b> · <a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQX0FuUDhOUHE0TkQ2d3kxZm90dDk1MXI1NzBMZHdxTnZRa0dWODdyZThCVUlPQmgxX1Vsejg4anlFTzNJbi1Na2lpeGx3cXFGWmQwSXFJYURIeVBqNXpLQUNhTXBtTjhHdHVGenpENzdhbXRNOHZlbHRmamdxdVg0TVRmeTdUaUI3dldNNXNGcXpxN09PQXZkdXNUWU5qeEJqb21uNzJ1OEhkWndRZFdGcWRUWkJHZzdURzMyUWF2U3pmcHNra01rdFpmc1lOTmRUb3NFdVU4SlBlZHplWWlPbGpNTWM2Ul9LOTJuNElmX2MyY29OeEJR0gGGAkFVX3lxTE1jeENoQ3pQd1NldjFjQnpnRDVfX1JwMGVTbGlpazBfdS1keGdpVG9JT0tsalFsVmVKaDlSRll4WC1idExlb19nOTJfbl9qZ3NmNTVtT000ZGdkQVNReTFYM3BwRTA1U0lSUFZGV3ZOTmZIbVN0OFRvNGMyNXpYdnBWSnlacjR4RzBHOUtwMWpuWVVRQ0JqaV9VZ0l2TzlOMWd3OVh4eXZmRDhsVTJmQkZVeU9lMWM4cFVWYVg3STg1MnZqZkJOejJ4N2pjeDQyUUJYRXMtSERnSkN6MDRyYlNqSDhURmdBbV9iZFVwSDJ4cWpVUWRIeWthM3RINzA0WFR3V1dLVHc?oc=5">clique aqui</a> · rodada de agosto conferida no Brazil Journal · <a href="https://braziljournal.com/happyrobot-a-superinteligencia-corporativa-para-grandes-empresas-que-ja-vale-us-12-bi/">clique aqui</a></li>
+    <li>🟢 hoje, 7h26 (postagem no Hacker News, o mural onde programadores do mundo todo postam o que saiu) — <b>"AI Laser Locking for Quantum Computers: How QuEra Automates It"</b> ("travamento de laser com IA em computadores quânticos: como a QuEra automatiza"), blog da QuEra · <a href="https://www.quera.com/blog-posts/holding-the-light-teaching-an-ai-to-lock-and-tune-our-quantum-computers-lasers">clique aqui</a></li>
+    <li>🟢 hoje, 7h25 (postagem no Hacker News) — <b>"I let an AI run my startup for a week"</b> ("deixei uma IA tocar a minha empresa por uma semana"), Ben Stokes, Tiny Projects · <a href="https://daily.tinyprojects.dev/221">clique aqui</a></li>
+    <li>🟡 ontem, 4h51, na vitrine — <b>"AdAnt 2.0"</b> ("quatro robôs para marketing nas redes sociais"), Product Hunt, a vitrine onde produtos novos são lançados · <a href="https://www.producthunt.com/products/adant-ai">clique aqui</a></li>
+    <li>🟡 ontem, 12h07, na vitrine — <b>"Blade"</b> ("ache no seu e-mail quem já conversou com você"), Product Hunt · <a href="https://www.producthunt.com/products/blade-4">clique aqui</a></li>
+    <li>🟢 hoje, 7h21 (postagem no Hacker News) — <b>"Agent erased full season of 'The Challenge Swe': 'Hundreds of days of work gone'"</b> ("robô apagou a temporada inteira do The Challenge sueco: 'centenas de dias de trabalho perdidos'"), Aftonbladet · <a href="https://www.aviaduct.com/?l=og+en&amp;u=https%3A%2F%2Fwww.aftonbladet.se%2Fnojesbladet%2Fa%2F31oE8A%2Fthe-challenge-sverige-raderad-av-ai-bara-veckor-innan-premiaren">clique aqui</a></li>
+    <li>🟡 ontem, 11h47 — <b>"Empresas estão colocando uma segunda camada de monitoramento sobre agentes de IA porque uma única ação errada pode acontecer rápido demais"</b>, Olhar Digital · <a href="https://news.google.com/rss/articles/CBMizwJBVV95cUxOOGtRVzQwbWdmU1BRMWZtaW9fNmNTRnI2eGdaNVEwLUp3OFBxOFpRS3ljRG5BMzhBQ2tsZ09uTjBVZ2NyNS1mQ1lBRWVJNjdFQkdEbS1jQ0w5M0R6OGpPZm1GRlhzR2NWWmdSajA1U2xKLVZjeDQtNzJxd1NSWVdyci1YdDZOVGdSZjE3cURadC1tMmNnYWlxREROT1JJM2M0TkN0ZDY4Ym1wUFBxZTZzZm56U1dCUUl5Qk5IcXVabEhxV3JST2hPWlNYWUpyUTJ5OFFNMk8wSE5kZWFwZU9tX0s5MHZZUXJBaW51R2lkOWdnNnFtMXhVTC1qSC15aHBsMnlfWUhWbmZXODV0Z0JEZm1RZHg2bHhCdzRlSUNPYUpMM0ZfRllORW5qcm5YbXJ6VVpKaXEyM2JnOEY4Wk96X1dSNGpfdV9ZVE4xVlpPaw?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 17h25 — <b>"'Brain fry': estudo da BCG mostra como excesso de IA no trabalho gera fadiga mental e erros"</b>, Exame · <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPQTFxa3lGS0E4LU9VVjByRWZpWGhicmZqUXhiQU9sY2F5MWYzZXNkdkpESm5BeDU3VGk2ZlhfTlI2MUVZbUs2Nmd6NFFob3hFdHJfX2pyaFFtbXNka1JrTGd3eWFCWUp1aVhRa3FhQl9kNUJIcWhHU01wQzFoMVZmSHRrTVJrRVdoRmM5RU1QWlp1M3VwWk90NzNaRnZqX2R6ODhFTm0xQmFlZXB0MWt3WGN0SkYwTXhDNXpMckJWT0FWUjU1Yjd3WUpJYw?oc=5">clique aqui</a> · contexto do estudo, de março, no Olhar Digital · <a href="https://olhardigital.com.br/2026/03/31/inteligencia-artificial/a-ia-esta-fritando-nossos-cerebros/">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz">
+    <span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>1.</b> O radar abriu e leu: a Bloomberg Línea, o blog da QuEra, o texto do Tiny Projects e as páginas do AdAnt e do Blade. <b>Só o título</b> foi usado de: O Globo, Olhar Digital e Exame. A reportagem do Aftonbladet não abriu, nem direto nem pelo tradutor.</p>
+    <p><b>2.</b> HappyRobot: a Bloomberg Línea não cita nenhum cliente brasileiro, nem valor investido no país, nem preço. DHL, Uber e Naturgy são clientes de fora. Outro veículo fala em 15 funcionários até o fim de 2026. A Bloomberg fala em cerca de 35 no começo de 2027. Os números não batem; o radar usou o da Bloomberg.</p>
+    <p><b>3.</b> QuEra: todos os números (695 de 700, 19 horas sem queda, 5 a 10 minutos do especialista) vêm da própria empresa. Ninguém de fora conferiu. O equipamento de cerca de 700 mil dólares é o valor que ela informa.</p>
+    <p><b>4.</b> O robô que apagou o reality sueco é só uma manchete. O radar não sabe que ferramenta era, se houve falha humana junto, nem se o material foi recuperado. Não cite como caso confirmado.</p>
+    <p><b>5.</b> AdAnt e Blade: descrições e números (60% menos custo de anúncio, 45 respostas de 209) são dos próprios criadores. A vitrine mostra os dois como "lançando hoje", mas o sinal do radar registra ontem. Nada foi testado.</p>
+    <p><b>6.</b> O estudo da BCG sobre "fritura mental" é de março de 2026. A cobertura cita amostras entre 1.400 e 1.500 pessoas, e os percentuais variam entre veículos. Há críticas ao método: são respostas dos próprios entrevistados, sem grupo de comparação. A "reativação da carteira esquecida" é proposta do radar, não pesquisa de mercado.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 052 · quarta-feira, 14 de outubro de 2026<br>
+  Próxima edição: Pulso diário de quinta-feira, 15 de outubro
+</div>
+
+</div>
+</body>
+</html>
