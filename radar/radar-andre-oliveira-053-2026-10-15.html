@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>72% dos brasileiros deixariam um robô comprar por eles — Radar André Oliveira Nº 053</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>72% dos brasileiros já deixariam um robô escolher e comprar por eles. Só a China está na frente</h1>
+  <p class="chamada">Em um ano, a fatia quase dobrou: era 39%. A pesquisa da Global Payments ouviu oito mil pessoas em sete países. A pergunta para o seu cliente mudou: quando o robô do comprador chegar, ele consegue comprar da sua loja?</p>
+  <div class="dateline">Edição Nº 053 · quinta-feira, 15 de outubro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O brasileiro está pronto para mandar um robô às compras. Mas quer segurar a carteira.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: a regra da Amazon para robôs, uma IA que roda no notebook e um editor de vídeo que obedece ao seu robô.</div></div></li>
+    <li><div><a href="#automacao">Seu território: automação</a><div class="d">O botão de parar virou peça de série. E os robôs aprenderam a trabalhar enquanto você faz outra coisa.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O teste "o robô consegue comprar de você?" — um serviço novo para vender a lojistas.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ═══════════ 01 ═══════════ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Pense no cliente que manda o filho ao mercado com a lista na mão. Agora troque o filho por um robô. <b>72% dos brasileiros</b> dizem que já fizeram isso ou fariam em até um ano.</p>
+
+  <p class="texto capitular">O número vem do relatório de comércio com robôs de 2026 da Global Payments, uma das maiores empresas de maquininha e pagamento do mundo. A Startups publicou ontem à tarde. A pesquisa ouviu 8.027 pessoas em sete países, em maio.</p>
+
+  <p class="texto">O Brasil ficou em segundo, atrás só da China (86%). Ficou à frente de Estados Unidos, Reino Unido, França, Cingapura e Austrália. E foi o país que mais subiu: de 39% em 2025 para 72% agora.</p>
+
+  <p class="texto">Dos 72%, 24% já testaram. Os outros 48% dizem que usariam agora ou nos próximos doze meses. A confiança no robô pessoal também subiu, de 3,18 para 3,80 numa nota de 1 a 5.</p>
+
+  <div class="traduz">
+    <span class="r">Em português claro</span>
+    <p><b>Comércio agêntico</b> é quando um <b>robô — programa que executa uma tarefa do início ao fim sozinho —</b> pesquisa, compara e compra no seu lugar. Você diz "preciso de um tênis de corrida até 400 reais". Ele volta com o pedido pronto, ou já pago.</p>
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">72%</div><div class="lbl">dos brasileiros <b>já testaram ou aceitariam</b> deixar um robô comprar por eles</div></div>
+    <div class="numero"><div class="big">+33 pontos</div><div class="lbl">foi a alta do Brasil em um ano, <b>a maior</b> entre os sete países</div></div>
+    <div class="numero"><div class="big">50%</div><div class="lbl">têm medo pela <b>segurança dos dados de pagamento</b> — a principal trava</div></div>
+    <div class="numero"><div class="big">17%</div><div class="lbl">das compras devem passar por <b>robôs</b> em cinco anos, segundo os próprios consumidores</div></div>
+  </div>
+
+  <p class="texto">O detalhe que interessa a você está nos medos. Metade teme pelos dados do cartão. 41% têm medo de o robô escolher errado. E 36% não sabem quem responde se der problema.</p>
+
+  <div class="olho">
+    <p>O próximo cliente da sua loja pode não ser uma pessoa. Pode ser o robô que a pessoa mandou comprar. E robô não se encanta com vitrine: ele lê preço, prazo e política de troca.</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Ontem a HappyRobot mostrou o robô trabalhando <b>dentro</b> da empresa. Hoje a pesquisa mostra o robô chegando pelo lado de <b>fora</b>: o do cliente que compra.</p>
+    <p>Quem já entende de SEO, atendimento e vendas tem a tradução pronta. É o mesmo trabalho de "aparecer no Google", agora para um comprador que não é gente. Pouca empresa média sabe disso ainda.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 02 ═══════════ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Sete recortes. Pense numa loja de ferragens: na frente, a notícia que muda o balcão. No fundo, as ferramentas novas que acabaram de chegar na prateleira.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>Brasil é o país do Ocidente mais disposto a deixar um robô fazer as compras</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 15h41</span><span>Startups, sobre relatório da Global Payments</span></div>
+        <p class="texto">A pesquisa foi feita pela The Lantern para a Global Payments. É a segunda edição. O Brasil saltou de 39% para 72% de gente que testou ou aceitaria a compra feita por robô.</p>
+        <p class="texto">O executivo da empresa para a América Latina, Juan Pablo D'Antiochia, resumiu: as pessoas querem conveniência, "mas também querem manter o controle, especialmente na hora de pagar".</p>
+        <div class="link"><a href="https://startups.com.br/dados-e-agentes/brasil-lidera-comercio-agentico-no-ocidente-aponta-global-payments/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>A Amazon publica, de graça, um manual que põe aprovação humana no meio do trabalho dos robôs programadores</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 4h20</span><span>AWS Labs, no mural dos programadores</span></div>
+        <p class="texto">Chama-se AI-DLC. Organiza o trabalho de robôs que escrevem programas em 5 fases e 33 etapas, com 14 robôs especializados. Entre as fases há "portões" onde uma pessoa precisa aprovar antes de seguir.</p>
+        <p class="texto">Tudo fica registrado, como o livro de ocorrências de um prédio. Funciona com Claude Code, Cursor, Codex, GitHub Copilot e outros. A licença deixa qualquer um usar, até em produto comercial.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu. A <b>AWS</b> é o braço da Amazon que aluga computadores e sistemas para empresas. O manual é <b>de código aberto</b>: qualquer um pode baixar e rodar por conta.</p></div>
+        <div class="link"><a href="https://github.com/awslabs/aidlc-workflows">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Uma IA feita para robôs que roda no notebook, sem precisar de internet</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 20h59</span><span>blog da Liquid AI, no mural dos programadores</span></div>
+        <p class="texto">A Liquid AI lançou o LFM2.5-24B-A2B. É grande no armário e leve no uso: tem 24 bilhões de peças, mas só 2 bilhões trabalham em cada palavra. Por isso roda rápido num Mac ou num PC bom.</p>
+        <p class="texto">A empresa diz que ele bate rivais maiores em testes de uso de ferramentas e automação. E admite que perde em perguntas de conhecimento geral e em programação pesada.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>É um <b>motor que faz o ChatGPT responder</b>, só que instalado na sua máquina. Pense numa cozinha grande em que só dois cozinheiros trabalham por prato: a comida sai rápido e a conta de luz fica baixa. Para cliente com dado sensível, a informação não sai do escritório.</p></div>
+        <div class="link"><a href="https://www.liquid.ai/blog/lfm2-5-24b-a2b">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Editor de vídeo que você comanda conversando com o seu robô: "corta as pausas e põe legenda"</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 12h35</span><span>Rushilo, via Product Hunt</span></div>
+        <p class="texto">O Rushilo funciona no Mac e no Windows. Você pede ao Claude Code ou ao Codex: corta, divide, legenda, tira os "é... né", muda o formato. Cada mudança aparece numa linha do tempo normal, e dá para desfazer.</p>
+        <p class="texto">O programa não traz IA própria: usa a assinatura que você já paga. Custa 99 dólares uma vez só, para até três computadores.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. A ideia aqui é o carro sem motor: você traz o seu motor de IA, e ele só dá o volante e os pedais.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/rushilo">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Prova de contratação que mede quem sabe trabalhar junto com um robô</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 7h18</span><span>CmdRound, via Product Hunt</span></div>
+        <p class="texto">O CmdRound dá ao candidato 55 minutos com o Claude Code para resolver uma tarefa num sistema real. Quem contrata recebe uma nota em quatro perguntas e a gravação de cada pedido que o candidato fez ao robô.</p>
+        <p class="texto">Custa 49 dólares para dez candidatos. O sinal é maior que o produto: saber mandar no robô virou critério de contratação.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/cmdround">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>OpenCode 2.0: o robô programador ganha "segundo plano" e encadeia várias tarefas de uma vez</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 17h48</span><span>OpenCode, no mural dos programadores</span></div>
+        <p class="texto">O OpenCode é um concorrente gratuito do Claude Code. Na versão 2.0, os robôs auxiliares podem trabalhar em segundo plano enquanto você segue em outra coisa. Um atalho de teclado manda o serviço para lá.</p>
+        <p class="texto">Ele também ganhou um modo que junta vários passos num só roteiro, em vez de ir e voltar a cada passo. Quem já usa a versão antiga precisa adaptar: muita coisa mudou.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>As ferramentas da IA agora são ligadas pelo <b>MCP</b>: um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Na 2.0, toda tomada já vem ligada por padrão.</p></div>
+        <div class="link"><a href="https://anoma.ly/notes/opencode-2-0/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>Personagem 3D mexe a boca sozinho a partir do áudio, sem mandar nada para a internet</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 2h09</span><span>Audio Lip Sync Pro, via Product Hunt</span></div>
+        <p class="texto">É um complemento para o Blender, programa gratuito de animação 3D. Você dá o arquivo de voz e ele gera o movimento dos lábios do personagem. Tudo roda no computador, sem conta e sem internet.</p>
+        <p class="texto">É compra única, sem mensalidade. Vale para quem produz vídeo com mascote ou personagem para marca.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/audio-lip-sync-pro-for-blender">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Três recortes contam a mesma história: <b>você traz o seu robô</b>, e a ferramenta só dá o volante. Rushilo, OpenCode e a prova de contratação partem do mesmo ponto.</p>
+    <p>Para quem monta times de robôs, isso barateia a obra. Você não paga a IA de cada programa. Paga uma vez e pluga em todos.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 03 ═══════════ -->
+<section class="materia" id="automacao">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Elevador de prédio tem botão de emergência desde sempre. Ninguém compra elevador sem ele. Com os robôs de IA, o botão está virando peça de série.</p>
+
+  <p class="texto">Nas últimas edições a pergunta era: onde fica a chave para desligar o robô? Hoje a Amazon respondeu por escrito. O manual AI-DLC já vem com os "portões" de aprovação humana e o registro de tudo o que cada robô fez.</p>
+
+  <p class="texto">São 14 robôs, cada um com sua função, e 11 roteiros prontos para tipos diferentes de projeto. O mesmo motor funciona em sete ferramentas diferentes. É a planta do prédio, não o prédio: dá para copiar a ideia em qualquer automação.</p>
+
+  <div class="traduz">
+    <span class="r">Em português claro</span>
+    <p>Um <b>time de robôs trabalhando juntos</b> é como a cozinha de restaurante: um corta, outro cozinha, outro monta o prato. O "portão de aprovação" é o chef provando antes de o prato sair. A <b>trilha de auditoria</b> é a comanda guardada: dá para saber quem fez o quê.</p>
+  </div>
+
+  <p class="texto">O segundo movimento vem do OpenCode 2.0: robôs trabalhando em segundo plano. Você pede, vira as costas e volta depois. Somado ao portão, o desenho fica claro: o robô trabalha sozinho, mas para na porta e espera a sua assinatura.</p>
+
+  <div class="nota">
+    <span class="r">O arco das edições</span>
+    <ul class="lista">
+      <li><b>Nº 052, ontem:</b> a HappyRobot vende o robô como obra, com engenheiro no canteiro. A QuEra deixa a chave de desligar fora do robô.</li>
+      <li><b>Nº 053, hoje:</b> a Amazon transforma o freio em manual público, e a ferramenta de código aberto põe o robô para trabalhar em segundo plano.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Quando vender um time de robôs, <b>mostre os portões antes de mostrar o robô</b>. Desenhe no papel: onde ele para, quem aprova, onde fica o registro.</p>
+    <p>Isso responde ao maior medo da pesquisa de hoje: 36% não sabem quem responde se algo der errado. O seu desenho responde por eles.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 04 ═══════════ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Há vinte anos, o lojista descobriu que precisava aparecer no Google. Agora vai descobrir que precisa ser <b>comprável por um robô</b>. Quem chegar primeiro com o teste pronto vende o serviço.</p>
+
+  <p class="texto">O robô do comprador não vê foto bonita nem banner de promoção. Ele lê. Procura preço claro, estoque, prazo de entrega e política de troca. Se não acha, passa para a loja do lado. Sem reclamar, sem avisar.</p>
+
+  <p class="texto">E 41% dos consumidores querem confirmar antes de o robô pagar, segundo a InfoMoney sobre a mesma pesquisa. Quem facilita esse "confere e aprova", pelo WhatsApp ou por e-mail, ganha a venda.</p>
+
+  <div class="traduz">
+    <span class="r">Em português claro</span>
+    <p>O serviço é o primo do <b>GEO — aparecer nas respostas da IA, como antes se buscava aparecer no Google</b>. Só que vai um passo além: não basta o robô citar a loja. Ele precisa conseguir fechar a compra.</p>
+  </div>
+
+  <p class="texto">Você junta três coisas que já entrega: SEO, atendimento e vendas. O produto é um diagnóstico de uma página: "o robô consegue comprar de você?". Ele vira porta de entrada para o projeto maior, de arrumar o catálogo e o atendimento.</p>
+
+  <div class="hoje">
+    <span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p><b>1.</b> Escolha uma loja de cliente ou conhecido. Peça ao ChatGPT ou ao Claude, com busca ligada: "ache o melhor [produto] até [preço] e me diga onde comprar".</p>
+    <p><b>2.</b> Veja se a loja aparece. Depois pergunte prazo, frete e troca daquele produto. Anote cada vez que o robô errar ou disser "não encontrei".</p>
+    <p><b>3.</b> Monte uma página com três colunas: o que o robô achou, o que faltou e o conserto. Leve ao lojista com o número de hoje: <b>72% dos brasileiros</b> já topam comprar assim.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 05 ═══════════ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">A nota fiscal da edição. Horários convertidos para Brasília. Selo 🟢 quando saiu hoje, 🟡 quando é de ontem. Títulos em inglês com a tradução ao lado.</p>
+
+  <ol class="src">
+    <li>🟡 ontem, 15h41 — <b>"Brasil lidera comércio agêntico no Ocidente, aponta Global Payments"</b>, Startups · <a href="https://startups.com.br/dados-e-agentes/brasil-lidera-comercio-agentico-no-ocidente-aponta-global-payments/">clique aqui</a></li>
+    <li>9 de outubro — <b>"Comércio agêntico avança no Brasil, mas consumidor ainda não confia cegamente na IA"</b>, InfoMoney (a mesma pesquisa, com as ressalvas e os 41% que querem confirmar antes de pagar) · <a href="https://www.infomoney.com.br/minhas-financas/comercio-agentico-avanca-no-brasil-mas-consumidor-ainda-nao-confia-cegamente-na-ia/">clique aqui</a></li>
+    <li>🟢 hoje, 4h20 (postagem no Hacker News, o mural onde programadores do mundo todo postam o que saiu) — <b>"Aidlc: Adaptive workflow steering rules for AI coding agents"</b> ("regras adaptáveis para guiar robôs programadores"), AWS Labs no GitHub · <a href="https://github.com/awslabs/aidlc-workflows">clique aqui</a></li>
+    <li>🟡 ontem, 20h59 (Hacker News) — <b>"LFM2.5-24B-A2B: Built for fast on-device agents"</b> ("feito para robôs rápidos que rodam no próprio aparelho"), blog da Liquid AI · <a href="https://www.liquid.ai/blog/lfm2-5-24b-a2b">clique aqui</a></li>
+    <li>🟡 ontem, 12h35, na vitrine — <b>"Rushilo"</b> ("editor de vídeo comandado pelo seu robô"), Product Hunt, a vitrine onde produtos novos são lançados · <a href="https://www.producthunt.com/products/rushilo">clique aqui</a></li>
+    <li>🟡 ontem, 7h18, na vitrine — <b>"CmdRound"</b> ("prova de contratação com robô programador"), Product Hunt · <a href="https://www.producthunt.com/products/cmdround">clique aqui</a></li>
+    <li>🟡 ontem, 17h48 (Hacker News) — <b>"OpenCode 2.0"</b>, notas de lançamento · <a href="https://anoma.ly/notes/opencode-2-0/">clique aqui</a></li>
+    <li>🟢 hoje, 2h09, na vitrine — <b>"Audio Lip Sync Pro for Blender"</b> ("sincronia de lábios a partir do áudio para o Blender"), Product Hunt · <a href="https://www.producthunt.com/products/audio-lip-sync-pro-for-blender">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz">
+    <span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>1.</b> O radar abriu e leu: a Startups, a InfoMoney, a página do AI-DLC, o blog da Liquid, as notas do OpenCode e as páginas do Rushilo, do CmdRound e do Audio Lip Sync Pro.</p>
+    <p><b>2.</b> Os 72% <b>misturam quem já usou com quem diz que usaria</b>. Só 24% de fato testaram. É intenção declarada numa pesquisa, não compra medida. A pesquisa é de maio e foi encomendada por uma empresa que vende pagamento: ela tem interesse no tema. A InfoMoney já tinha os números em 9 de outubro; a novidade de ontem é a cobertura da Startups.</p>
+    <p><b>3.</b> Os 17% das compras em cinco anos são uma previsão dos próprios consumidores, somando os sete países. Não é estimativa de mercado.</p>
+    <p><b>4.</b> Liquid AI: todos os resultados de testes são da própria empresa. Ninguém de fora conferiu ainda. Rushilo, CmdRound e Audio Lip Sync Pro: descrições e preços são dos criadores. Nada foi testado pelo radar. O preço do Audio Lip Sync Pro não aparece na página.</p>
+    <p><b>5.</b> Ficaram de fora, por o radar ter lido só a manchete: o mercado de robôs crescendo 49,6% ao ano até 2033 (SINDPD) e a Salvy, que lançou IA para cuidar da telefonia de empresas. Os trends do Google de hoje não trouxeram nada de IA.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 053 · quinta-feira, 15 de outubro de 2026<br>
+  Próxima edição: Pulso diário de sexta-feira, 16 de outubro
+</div>
+
+</div>
+</body>
+</html>
