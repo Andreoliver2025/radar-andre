@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Todos os seus robôs numa tela só — Radar André Oliveira Nº 055</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>Agora dá para comandar todos os seus robôs de uma tela só — e duas empresas lançaram isso no mesmo dia</h1>
+  <p class="chamada">Ontem, a vitrine de produtos novos recebeu dois "painéis de comando" para quem já tem vários robôs trabalhando ao mesmo tempo. Um deles vem com um robô-gerente que puxa de volta quem sai da linha. O problema mudou: já não é ter robô, é tomar conta de vários.</p>
+  <div class="dateline">Edição Nº 055 · sexta-feira, 16 de outubro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">Os dois painéis que juntam todos os robôs numa tela — e por que isso chega ao seu cliente.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: a empresa de robôs de 1,2 bilhão de dólares que veio caçar cliente no Brasil, uma voz de IA que você dirige como ator e uma busca que acha qualquer cena em milhares de horas de vídeo.</div></div></li>
+    <li><div><a href="#automacao">Seu território: automação</a><div class="d">O robô-gerente de turno e o aviso de hoje cedo: o padrão de encaixe das IAs também quebra.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "mapa dos robôs": pôr numa página tudo o que a IA faz pelo seu cliente, e quem confere cada coisa.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ═══════════ 01 ═══════════ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Pense numa portaria de prédio com dez câmeras, cada uma num monitor diferente, espalhados por três salas. O porteiro passa o dia andando. Foi esse o problema que dois lançamentos de ontem atacaram — só que com robôs no lugar das câmeras.</p>
+
+  <p class="texto capitular">O primeiro é o Harness, da Autonomous. Ele junta numa tela só os robôs programadores mais usados: Claude Code, Codex, Cursor e Hermes. Funciona no Mac, no Linux e tem aplicativo de celular para você responder aos robôs falando.</p>
+
+  <p class="texto">O segundo é o Parallax, de uma empresa saída da Y Combinator, a aceleradora mais famosa do Vale do Silício. Ele aceita mais de 40 robôs diferentes. E traz um "Capitão": um robô que vigia os outros e puxa de volta quem se desvia do objetivo.</p>
+
+  <p class="texto">Os dois são gratuitos. E os dois partem da mesma ideia: quem trabalha com IA hoje não usa um robô, usa vários, ao mesmo tempo, e se perde entre as janelas.</p>
+
+  <div class="traduz">
+    <span class="r">Em português claro</span>
+    <p>Robô programador é um programa que executa uma tarefa do início ao fim sozinho — no caso, escrever e consertar programas de computador. "Painel de comando" é a sala de controle onde todos aparecem lado a lado, como os monitores de uma central de segurança.</p>
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">2</div><div class="lbl">painéis para comandar <b>vários robôs</b> de uma vez, lançados no mesmo dia</div></div>
+    <div class="numero"><div class="big">40+</div><div class="lbl">robôs programadores diferentes que o Parallax consegue <b>juntar numa tela</b></div></div>
+    <div class="numero"><div class="big">1,2 bilhão</div><div class="lbl">de dólares é quanto vale a HappyRobot, que vende robôs a empresas e <b>chegou ao Brasil</b></div></div>
+    <div class="numero"><div class="big">49,6%</div><div class="lbl">ao ano é o crescimento previsto para o <b>mercado de robôs de IA</b> até 2033</div></div>
+  </div>
+
+  <div class="olho">
+    <p>O gargalo saiu da máquina e foi para a pessoa. Robô já tem de sobra. Falta quem tome conta deles.</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Na quarta, o radar mostrou empresas pondo um segundo vigia sobre os robôs. Ontem, um fiscal de fora entrou na Anthropic e apareceu o "taxímetro" que corta gasto. Hoje, o vigia virou produto de prateleira: a tela única com um robô-gerente.</p>
+    <p>Para quem programa, isso já existe de graça. Para a clínica, a imobiliária e a loja que têm robô no WhatsApp, no e-mail e no CRM, <b>ainda não existe nada</b>. É essa a lacuna da seção 04.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 02 ═══════════ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Sete recortes. Pense na feira de sexta: as bancas da frente têm o que todo mundo veio buscar; as do fundo têm o que só quem é do ramo sabe procurar.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>Harness: uma central de graça para comandar todos os robôs programadores, até pelo celular</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 10h27</span><span>Autonomous, via Product Hunt</span></div>
+        <p class="texto">É uma das duas notícias da capa. O Harness roda no Mac e no Linux, com aplicativo para iPhone e Android. Cada robô trabalha num rascunho separado do projeto, e continua trabalhando mesmo com o aplicativo fechado.</p>
+        <p class="texto">Você pode responder aos robôs por voz, do celular. A conversa é protegida de ponta a ponta. E vem com 49 "moldes" prontos para áreas como desenho técnico, circuitos, robótica, jogos e música. É de código aberto: qualquer um pode baixar e rodar por conta.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O Product Hunt é a vitrine onde produtos novos são lançados. "Rascunho separado" é como dar a cada pedreiro uma parede própria: ninguém derruba o trabalho do outro sem querer.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/harness-by-autonomous">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>Parallax: mais de 40 robôs numa tela, com um "Capitão" que corrige quem sai da linha</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 16h25</span><span>Conifer, via Product Hunt</span></div>
+        <p class="texto">A outra notícia da capa. O Parallax junta Claude Code, Codex e mais de 40 robôs. Dá acesso a mais de 240 motores de IA, usando as assinaturas que você já paga.</p>
+        <p class="texto">Três peças chamam atenção. O "Capitão" acompanha cada sessão e traz de volta o robô que se perdeu. A entrega do trabalho pronto sai num clique. E quando a franquia de uma assinatura acaba, ele passa o serviço para outra, sozinho. É gratuito.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>"Motor de IA" é o motor que faz o ChatGPT responder — e existem centenas, de várias empresas. A troca automática funciona como o celular com dois chips: acabou o pacote de um, a ligação segue pelo outro.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/parallax-5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>HappyRobot, que vende robôs a grandes empresas e vale 1,2 bilhão de dólares, veio caçar cliente no Brasil</h3>
+        <div class="credito"><span class="frescor antes">🟡 quarta · 5h</span><span>O Globo</span></div>
+        <p class="texto">O Globo noticiou que a HappyRobot, empresa que vende robôs de IA para companhias no mundo todo, está procurando clientes no Brasil. O valor de mercado citado na manchete é de 1,2 bilhão de dólares.</p>
+        <p class="texto">Para quem monta robôs para empresas aqui, é sinal de duas coisas: o mercado brasileiro entrou no mapa das grandes, e a concorrência vai subir de nível. O radar só leu a manchete — veja a seção de fontes.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQX0FuUDhOUHE0TkQ2d3kxZm90dDk1MXI1NzBMZHdxTnZRa0dWODdyZThCVUlPQmgxX1Vsejg4anlFTzNJbi1Na2lpeGx3cXFGWmQwSXFJYURIeVBqNXpLQUNhTXBtTjhHdHVGenpENzdhbXRNOHZlbHRmamdxdVg0TVRmeTdUaUI3dldNNXNGcXpxN09PQXZkdXNUWU5qeEJqb21uNzJ1OEhkWndRZFdGcWRUWkJHZzdURzMyUWF2U3pmcHNra01rdFpmc1lOTmRUb3NFdVU4SlBlZHplWWlPbGpNTWM2Ul9LOTJuNElmX2MyY29OeEJR?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>A voz de IA que você dirige como um ator: sussurro, risada e pausa no meio da frase</h3>
+        <div class="credito"><span class="frescor antes">🟡 terça · 21h37</span><span>Fish Audio, via Product Hunt</span></div>
+        <p class="texto">A Fish Audio lançou o Drama 3. Ele transforma um roteiro em fala, e você controla emoção, ritmo, sussurros, risadas e pausas — até dentro de uma mesma frase. Faz cenas com vários personagens e fala 83 idiomas.</p>
+        <p class="texto">Serve para audiolivro, diálogo de jogo e narração. Para quem faz vídeo de anúncio, é a locução que obedece à direção, em vez de ler tudo no mesmo tom. Tem opção gratuita; os planos pagos não aparecem na página.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>A Fish Audio também libera o motor para download, com licença própria. Quer dizer que uma empresa pode rodar a voz no próprio computador, sem pagar por uso — dentro das regras da licença.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/fish-speech">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Jockey: pergunte ao Claude ou ao ChatGPT e ache qualquer cena em milhares de horas de vídeo</h3>
+        <div class="credito"><span class="frescor antes">🟡 sexta passada · 5h49</span><span>TwelveLabs, via Product Hunt</span></div>
+        <p class="texto">O Jockey, da TwelveLabs, lê uma biblioteca inteira de fotos e vídeos. Você procura pessoas, momentos e contexto em milhares de horas de gravação, como quem busca uma palavra num documento.</p>
+        <p class="texto">Funciona dentro do Claude ou do ChatGPT. Aceita links do YouTube, TikTok e Instagram, monta vídeos e gera cortes prontos para compartilhar. O preço não aparece; há uma área gratuita para testar.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>É o arquivo morto de vídeo da empresa virando uma estante com índice. A live de duas horas do mês passado vira dez cortes de redes sociais sem ninguém assistir tudo de novo.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/twelvelabs">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Guia de hoje cedo: o que quebra quando o padrão de encaixe das IAs muda de versão</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 6h07</span><span>iMasters</span></div>
+        <p class="texto">O iMasters publicou hoje cedo um texto sobre o que quebra, na prática, com a versão de junho de 2025 do MCP. No mesmo minuto, saiu outro sobre como ligar o Figma, a ferramenta de design, à IA pelo mesmo padrão.</p>
+        <p class="texto">O recado do título vale para qualquer um que já entregou robô a cliente: a tomada muda, e o que funcionava ontem pode parar amanhã. O radar só leu as manchetes.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O MCP é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. Quando o padrão muda, é como trocar o modelo da tomada: o aparelho antigo pode precisar de adaptador.</p></div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPM3BJaXF0WllBOWpMbk5YZ3Vkb085VWJJazF3MjlRTWx5cUdkYzNVZzZMYjVpWEpsOTVOelF0MlY5VGRxOFZ4aGRKQTB1UDV1OF9OMnlMYURrdTBadE5MMUtidElKY3NpQ1cycUlIVHBDWFpnc1pwejJqVXNTblFkekMtYlBlUnRGMUNTUVFJMnYwR2g2a1RrNDF0VERWMGxWNnFkNWlHUGdHdEZmNFlBOGtVN3F1SVpvclJxZ01PbXZWRkFrUzZn?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>Novas regras da Meta deixariam copiar sites de notícia em massa, dizem especialistas</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 20h37</span><span>Nieman Lab, no mural dos programadores</span></div>
+        <p class="texto">O Nieman Lab, laboratório de jornalismo da Universidade Harvard, publicou que os novos termos comerciais da Meta permitiriam copiar automaticamente o conteúdo de sites de notícia. A leitura é de especialistas em direito ouvidos pela reportagem.</p>
+        <p class="texto">A conversa por trás é a mesma de sempre: quem alimenta a IA com conteúdo e quem fica com o dinheiro. Para quem produz conteúdo de marca, vale saber que o que você publica pode virar matéria-prima de robô alheio. A página não abriu para o radar.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O Hacker News é o mural onde programadores do mundo todo postam o que saiu. "Copiar em massa" (o mercado chama de <i>scraping</i>) é um programa que visita milhares de páginas e guarda o texto de todas, como um aspirador de pó passando pela internet.</p></div>
+        <div class="link"><a href="https://www.niemanlab.org/2026/10/metas-new-commercial-terms-will-allow-the-scraping-of-news-sites-legal-experts-say/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════ 03 ═══════════ -->
+<section class="materia" id="automacao">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Dois sinais desta semana falam do mesmo assunto por lados opostos: quem toma conta do time de robôs enquanto ele trabalha, e o que acontece quando a tomada que liga esses robôs às ferramentas muda.</p>
+
+  <p class="texto"><b>O gerente de turno.</b> O "Capitão" do Parallax é a peça mais interessante da semana. Ele não faz o trabalho: ele acompanha quem faz. Quando um robô se desvia do objetivo, o Capitão puxa de volta.</p>
+
+  <p class="texto">É o encarregado de obra que passa de andar em andar conferindo se cada equipe está levantando a parede certa. Somado ao "taxímetro" de ontem e ao fiscal de fora da Anthropic, o time de robôs começa a ter hierarquia: quem faz, quem confere, quem paga.</p>
+
+  <div class="traduz">
+    <span class="r">Em português claro</span>
+    <p>Time de robôs é um grupo de robôs trabalhando juntos, cada um numa parte da tarefa. O "gerente" é só mais um robô, com uma função diferente: vigiar os outros, não produzir.</p>
+  </div>
+
+  <p class="texto"><b>A tomada que muda.</b> O texto de hoje cedo do iMasters sobre "o que quebra em produção" é o lembrete que ninguém gosta de ouvir. Robô entregue não é robô terminado. Os padrões mudam, e a manutenção vira parte do serviço.</p>
+
+  <p class="texto">Também hoje cedo, a Startupi publicou um texto sobre como a forma de trabalhar dos programadores pode orientar as regras para robôs dentro das empresas. O radar só leu o título, mas a direção é a mesma: regra, conferência e manutenção.</p>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Se você monta robôs de atendimento e follow-up para clientes, o seu contrato precisa de duas linhas que quase ninguém escreve: <b>quem confere o robô</b> e <b>quem conserta quando a tomada muda</b>. As duas são cobrança mensal, não serviço de uma vez só.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 04 ═══════════ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">O "mapa dos robôs": uma página que mostra tudo o que a IA faz pelo seu cliente, onde cada robô mora e quem confere cada um.</p>
+
+  <p class="texto">Pense na planta elétrica de uma casa. Ninguém precisa dela até o dia em que um disjuntor cai e o eletricista pergunta "o que está ligado onde?". A empresa pequena que já usa IA está nesse ponto, só que ainda não percebeu.</p>
+
+  <p class="texto">O robô do WhatsApp foi o sobrinho que pôs. O follow-up roda no CRM. O ChatGPT escreve os posts. Ninguém sabe quantos são, quanto custam juntos nem quem olha o que eles dizem.</p>
+
+  <p class="texto">Os programadores ganharam ontem dois painéis grátis para isso. O dono de loja não tem nenhum. E a Exame perguntava na quarta se "a sua empresa está pronta para delegar trabalho à IA". O mapa é o primeiro passo dessa resposta.</p>
+
+  <div class="nota">
+    <p><b>Por que você, e não a HappyRobot:</b></p>
+    <ul class="lista">
+      <li>A empresa de 1,2 bilhão de dólares vende robô novo para grande empresa. O seu cliente já tem robô e precisa de alguém que organize o que tem.</li>
+      <li>Você conhece atendimento, vendas e follow-up. Sabe ler o mapa pelo lado do dinheiro: onde o robô perde venda, não só onde ele trava.</li>
+      <li>O mapa abre a porta para os serviços mensais da seção 03: conferência e manutenção.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Escolha um cliente ou conhecido que já usa IA no negócio. Numa conversa de 30 minutos, liste cada robô e cada ferramenta de IA: o que faz, onde roda, quanto custa por mês e quem confere.</p>
+    <p>Devolva uma página com quatro colunas e marque em vermelho o que ninguém confere. No fim, ofereça manter o mapa em dia todo mês. A cara dele ao ver o vermelho é o seu teste de preço.</p>
+  </div>
+</section>
+
+<!-- ═══════════ 05 ═══════════ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">A nota fiscal da edição. Horários convertidos para Brasília. Selo 🟢 quando saiu hoje, 🟡 quando é de ontem ou antes. Títulos em inglês com a tradução ao lado.</p>
+
+  <ol class="src">
+    <li>🟡 ontem, 10h27, na vitrine — <b>"Harness by Autonomous"</b> ("Harness, da Autonomous"), Product Hunt, a vitrine onde produtos novos são lançados · <a href="https://www.producthunt.com/products/harness-by-autonomous">clique aqui</a></li>
+    <li>🟡 ontem, 16h25, na vitrine — <b>"Parallax"</b>, Product Hunt · <a href="https://www.producthunt.com/products/parallax-5">clique aqui</a></li>
+    <li>🟡 quarta, 5h — <b>"HappyRobot, que ‘vende’ agentes de IA a empresas globais e vale US$ 1,2 bilhão, sai à caça de clientes no Brasil"</b>, O Globo, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQX0FuUDhOUHE0TkQ2d3kxZm90dDk1MXI1NzBMZHdxTnZRa0dWODdyZThCVUlPQmgxX1Vsejg4anlFTzNJbi1Na2lpeGx3cXFGWmQwSXFJYURIeVBqNXpLQUNhTXBtTjhHdHVGenpENzdhbXRNOHZlbHRmamdxdVg0TVRmeTdUaUI3dldNNXNGcXpxN09PQXZkdXNUWU5qeEJqb21uNzJ1OEhkWndRZFdGcWRUWkJHZzdURzMyUWF2U3pmcHNra01rdFpmc1lOTmRUb3NFdVU4SlBlZHplWWlPbGpNTWM2Ul9LOTJuNElmX2MyY29OeEJR?oc=5">clique aqui</a></li>
+    <li>🟡 terça, 21h37, na vitrine — <b>"Fish Audio Drama 3"</b> ("Drama 3, da Fish Audio"), Product Hunt · <a href="https://www.producthunt.com/products/fish-speech">clique aqui</a></li>
+    <li>🟡 sexta passada (9/10), 5h49, na vitrine — <b>"Jockey by TwelveLabs"</b> ("Jockey, da TwelveLabs"), Product Hunt · <a href="https://www.producthunt.com/products/twelvelabs">clique aqui</a></li>
+    <li>🟢 hoje, 6h07 — <b>"MCP 2025-06-18: o que quebra em produção"</b>, iMasters, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPM3BJaXF0WllBOWpMbk5YZ3Vkb085VWJJazF3MjlRTWx5cUdkYzNVZzZMYjVpWEpsOTVOelF0MlY5VGRxOFZ4aGRKQTB1UDV1OF9OMnlMYURrdTBadE5MMUtidElKY3NpQ1cycUlIVHBDWFpnc1pwejJqVXNTblFkekMtYlBlUnRGMUNTUVFJMnYwR2g2a1RrNDF0VERWMGxWNnFkNWlHUGdHdEZmNFlBOGtVN3F1SVpvclJxZ01PbXZWRkFrUzZn?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 6h06 — <b>"Figma Dev Mode MCP Server: como conectar e o que muda no handoff"</b>, iMasters, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNVjI1RmZ4cjNvdXBIdjM2RkJyU3dNcHFNWlRkOERDRE9MakU2RUY2NGx4MFU2TkV5eGNYdUV4Q2s2c09nM0pkVkliVE0zbUJpVnNKZDBiTzJuUGVMcVRGOFdnN3NTOEdSUGh2N2ZUbktwUjljMF8xOEp4UHp1VERpX2RVeUxiNXppZGxWbk1RNDFMRVVpTUNwaHVwa2tNZFEwTF9nU0cyNUpoYUhzZ0VMNGp2RlM?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 20h37 (postagem no Hacker News, o mural onde programadores do mundo todo postam o que saiu) — <b>"Meta’s new commercial terms will allow the scraping of news sites: experts"</b> ("novos termos comerciais da Meta vão permitir copiar sites de notícia em massa, dizem especialistas"), Nieman Lab · <a href="https://www.niemanlab.org/2026/10/metas-new-commercial-terms-will-allow-the-scraping-of-news-sites-legal-experts-say/">clique aqui</a></li>
+    <li>🟢 hoje, 3h59 — <b>"Como o desenvolvimento de software pode orientar a governança de agentes de IA nas empresas"</b>, Startupi, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPaldJdFRuU0Y4bkJkOVZKZll4WnBiVFNXTHpPT0trZ1kxLUhBNVpwVmloX20tSFZ5TFZZTVl2TTJiYXI4aVFVb0RrWFN4SE9mQnlYX19kanMyQ2pIYThUSVpiZXltR1pMWWZaT3RYNWR1Vk1nMXo0NDF5VnV3Z2FVYXF4eERlYWI5RlV1ZU5qLUNLRHp3aHMxQ1p0WUQwM2Fs?oc=5">clique aqui</a></li>
+    <li>🟡 quarta, 10h32 — <b>"Sua empresa está pronta para delegar trabalho à IA?"</b>, Exame, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQT25QRXVaSnRGanpEV0U0YWVrcWlTMFZuVGV0eWtEbXhTekJkZ2NrQzh1LUxEbDEwVzJZeHg1WWJIcEZxWkRxdUd0cDA4cGxYQ2E2cHdJN1ctN1V4S3dkUnhzamdNT3Z4aDhmZXJCV1FETzhWRlk4QW51Q1daNUF5RDVTbXU?oc=5">clique aqui</a></li>
+    <li>🟡 quarta, 14h47 — <b>"Mercado global de agentes de IA pode crescer 49,6% ao ano até 2033"</b>, SINDPD, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE01ck0yeGg0NEhCVVNqXzZQbWR5V2VQMmtoNFdubkdUUkFfT2c2UktfY0o1bWJDb3JfZzFmUGt6Y0V3dWI1WmpjVTczOXVMeHBjVXhaMUpEd0IyY2lZdkx6U0czaS1LU05lZk9nWQ?oc=5">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz">
+    <span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>1.</b> O radar abriu e leu as páginas do Harness, do Parallax, do Drama 3 e do Jockey no Product Hunt. Tudo o que está nesses recortes — funções, preços, números — é descrição dos próprios criadores. Nada foi testado pelo radar.</p>
+    <p><b>2.</b> Só a manchete foi lida em seis casos: HappyRobot (O Globo), os dois textos do iMasters, Startupi, Exame e SINDPD. Os links do Google Notícias não abriram o texto. Tudo além do título nesses itens é contexto do radar, não detalhe confirmado.</p>
+    <p><b>3.</b> O valor de 1,2 bilhão de dólares da HappyRobot e o crescimento de 49,6% ao ano vêm das manchetes. O radar não viu de onde saiu a previsão do SINDPD nem quem a calculou.</p>
+    <p><b>4.</b> Meta: a página do Nieman Lab bloqueou o acesso do radar. O que está no recorte 07 é só o que diz o título — a interpretação é de especialistas ouvidos pela reportagem, não uma posição da Meta.</p>
+    <p><b>5.</b> Ficaram de fora: o resto do mural dos programadores de hoje não trouxe nada de IA aplicada a negócio. Os assuntos mais buscados no Google também não — família real britânica, tênis e Bradesco lideram.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 055 · sexta-feira, 16 de outubro de 2026<br>
+  Próxima edição: Radar Completo de segunda-feira, 19 de outubro, com o bloco de posicionamento
+</div>
+
+</div>
+</body>
+</html>
