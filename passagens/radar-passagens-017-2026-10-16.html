@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar de Passagens Nº 017 · 2026-10-16</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">✈️ Radar de Passagens · Edição de sexta-feira</div>
+    <h1>Fim de semana em Recife em dezembro por R$ 939 ida e volta, em voo direto, 28% abaixo do normal. Na Semana Santa, Barcelona segue em R$ 3.985 por pessoa saindo em 19/03</h1>
+    <p class="chamada">Fortaleza–Recife de sexta 4 a domingo 6 de dezembro sai R$ 361 abaixo do preço normal dessas datas, segundo o Google Flights das 9h15 de hoje. Para os quatro, são R$ 1.444 a menos. Não é promoção com prazo: é preço do dia. Na viagem da família, nada mudou desde a edição das 8h: nenhum bônus Esfera → Iberia aberto, e o prazo da casa para emitir é agora.</p>
+    <div class="dateline">Edição Nº 017 · sexta-feira, 16 de outubro de 2026 · saindo de Fortaleza</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <span class="rot">Nesta edição</span>
+    <ol style="counter-reset:sm -1">
+      <li><div><a href="#semana-santa">Semana Santa 2027: a viagem da família</a><div class="d">Barcelona, Madri e Lisboa em 19–29/03 com o mesmo preço das 8h. Sair em 17 ou 20/03 não compensa. Nenhum bônus Esfera → Iberia. Cruzeiro de Páscoa 2027: nada anunciado.</div></div></li>
+      <li><div><a href="#melhor">A melhor da edição</a><div class="d">Recife ida e volta de 04 a 06/12 por R$ 939, LATAM direto, 28% abaixo do normal: a conta, o passo a passo e os riscos.</div></div></li>
+      <li><div><a href="#dinheiro">Saindo de Fortaleza, em dinheiro</a><div class="d">Os feriados de Finados e 20/11 seguem caros para Natal, João Pessoa, São Luís e Maceió. Lisboa e Madri em novembro e Recife em 30/12 continuam da edição das 8h.</div></div></li>
+      <li><div><a href="#milhas">Com milhas: onde a milha rende</a><div class="d">Nada novo saindo de Fortaleza. As emissões novas do dia saem de São Paulo e Rio. A Iberia por 16 mil Avios continua valendo.</div></div></li>
+      <li><div><a href="#bonus">Bônus, compra de pontos e clubes</a><div class="d">Nenhum bônus novo para Livelo ou Esfera. ALL Accor e Clube Esfera vencem hoje; o Clube Smiles vence às 10h.</div></div></li>
+      <li><div><a href="#estadias">Estadias e pacotes</a><div class="d">Mercure Salvador Pituba a partir de R$ 191 a diária em novembro, sem preço normal para comparar.</div></div></li>
+      <li><div><a href="#internacional">Garimpo internacional</a><div class="d">Milão saindo de Recife por R$ 3.732 e a liquidação da Volotea dentro da Espanha, útil para encaixar Barcelona.</div></div></li>
+      <li><div><a href="#regua">A régua de Fortaleza</a><div class="d">22 destinos em 15/11 e 30/12: só Recife em 30/12 abaixo do normal. Orlando e Cancún caíram desde as 8h. As 7 vigias da família.</div></div></li>
+      <li><div><a href="#calendario">Calendário: o que vence quando</a><div class="d">ALL Accor e Clube Esfera hoje; aniversário da Smiles domingo (previsto); bônus da Iberia previsto para 28–30/10.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">As fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <!-- 00 SEMANA SANTA -->
+  <section class="materia" id="semana-santa">
+    <div class="titulo"><span class="n">00</span><h2>Semana Santa 2027 — a viagem da família</h2><span class="fio"></span></div>
+    <p class="abertura">Nenhuma oferta nova para a Páscoa nesta edição. O que vale saber: os preços de 19 a 29 de março ficaram parados desde as 8h, e as outras datas testadas saíram mais caras.</p>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">R$ 5.572</div><div class="lbl"><b>Barcelona 18–28/03</b> (TAP, 1 parada): por pessoa. <b>R$ 22.288 os quatro.</b> Igual à edição das 8h. Na quarta era R$ 4.969: <b>subiu R$ 603</b>. Meta: R$ 4.100.</div></div>
+      <div class="numero"><div class="big">R$ 4.326</div><div class="lbl"><b>Lisboa 18–28/03</b> (LATAM, 1 parada): por pessoa. <b>R$ 17.304 os quatro.</b> Igual às 8h. Na quarta, R$ 4.291: <b>subiu R$ 35</b>. Meta: R$ 4.000.</div></div>
+      <div class="numero"><div class="big">R$ 4.590</div><div class="lbl"><b>Madri 18–28/03</b> (TAP, 1 parada): por pessoa. <b>R$ 18.360 os quatro.</b> Igual às 8h. Na quarta, R$ 4.731: <b>caiu R$ 141</b>. Iberia direto: R$ 5.783. Meta: R$ 3.800.</div></div>
+      <div class="numero"><div class="big">R$ 9.555</div><div class="lbl"><b>Cancún 18–28/03</b> (2 paradas): por pessoa. <b>R$ 38.220 os quatro.</b> Igual às 8h. Na quarta, R$ 5.676: <b>subiu R$ 3.879</b>. Mais caro que o normal.</div></div>
+    </div>
+
+    <p class="texto">As vigias são o termômetro fixo: mesma data, todo dia, sem promoção. Nenhuma está abaixo da meta. O Google chama os preços de Barcelona, Lisboa e Madri de "normais" para março, e os de Cancún de "altos".</p>
+
+    <div class="nota"><span class="r">Medido agora, às 9h15 (Google Flights, 1 adulto, ida e volta)</span>
+      <ul class="lista">
+        <li><b>Barcelona 19–29/03 (sexta a segunda):</b> R$ 3.985 por pessoa, R$ 15.940 os quatro. TAP, 1 parada em Lisboa, sai 23h00. <b>O mesmo preço das 8h16.</b> Segue a melhor data da família.</li>
+        <li><b>Barcelona 17–28/03 (quarta a domingo):</b> R$ 5.328 por pessoa, R$ 21.312 os quatro. A opção mais barata tem 30h50 de viagem; com 14h, R$ 5.541. Não compensa.</li>
+        <li><b>Barcelona 20–28/03 (sábado a domingo):</b> R$ 4.581 por pessoa, R$ 18.324 os quatro (TAP, 17h05). Iberia com 1 parada, 10h de viagem: R$ 5.450. Perde dois dias e ainda custa R$ 596 a mais por pessoa que 19–29/03.</li>
+        <li><b>Madri 19–29/03:</b> R$ 4.025 por pessoa (TAP, 1 parada), R$ 16.100 os quatro. Igual às 8h.</li>
+        <li><b>Lisboa 19–29/03:</b> R$ 3.584 pela Gol (1 parada, 16h05) e <b>R$ 4.223 pela TAP direta</b> (7h20), R$ 16.892 os quatro no direto. Igual às 8h.</li>
+        <li><b>Punta Cana 19–28/03:</b> o Google não mostrou voos saindo de Fortaleza nessa data (já tinha acontecido em 23/09).</li>
+      </ul>
+    </div>
+
+    <p class="texto">É como feira no fim da manhã: o tomate não baixou, mas também não subiu. Quem já decidiu a data não ganha nada esperando o sábado.</p>
+
+    <div class="nota"><span class="r">Ainda valendo para a Semana Santa, da edição das 8h (Nº 016)</span>
+      <ul class="lista">
+        <li><b>Barcelona 19–29/03 pela TAP:</b> R$ 3.985 por pessoa, R$ 15.940 os quatro. 👀 De olho: preço "normal" sem valor de comparação. Reconferido às 9h15. <a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20BCN%20on%202027-03-19%20through%202027-03-29&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir</a></li>
+        <li><b>Iberia direto Fortaleza–Madri com Avios, 18–28/03:</b> 39.000 Avios + ~R$ 892 por pessoa. Comprando os pontos Esfera a R$ 31,50: ~R$ 3.349 por pessoa, ~R$ 13.396 os quatro. Cada mil Avios rende R$ 125,41, quase 2× o custo (R$ 63). 👀: ninguém conferiu se há 4 lugares. <a href="https://www.melhoresdestinos.com.br/milhas/iberia-madri-for-rec-out26">abrir</a></li>
+        <li><b>Livelo → Qatar a 3 pontos por 1 Avios</b> (desde 15/10): R$ 83,61 por mil Avios com Livelo pontos + dinheiro, contra R$ 63 pela Esfera. Só vale para saldo Livelo parado, e a passagem dos Avios da Qatar para a Iberia não foi confirmada. 👀 <a href="https://passageirodeprimeira.com/oficial-livelo-anuncia-parceria-com-a-qatar-airways/">abrir</a></li>
+        <li><b>Andorra na Páscoa</b> (21–28/03, 7 noites + 6 dias de esqui): vitrine da Estiber a partir de € 500 por pessoa (Hotel Sant Eloi). No euro a R$ 5,61, cerca de R$ 2.805 por pessoa e R$ 11.220 os quatro. 👀 Preço de vitrine, sem 2027 confirmado. <a href="https://www.estiber.com/es_ES/ofertas-esqui-andorra/semana-santa">abrir</a></li>
+        <li><b>MSC "Dia das Crianças":</b> até 17 anos sem tarifa de navio (só taxas), cruzeiros na América do Sul, 12x sem juros, até quinta 29/10 às 23h59. Nenhuma saída achada dentro de 18–28/03. 👀 <a href="https://catracalivre.com.br/viagem-livre/criancas-viajam-gratis-em-cruzeiros-da-msc-pela-america-do-sul/">abrir</a></li>
+      </ul>
+    </div>
+
+    <p class="texto">Garimpo de hoje para a Páscoa: nenhum cruzeiro de março de 2027 com preço anunciado (as promoções achadas da Royal Caribbean e da Costa são para o verão europeu e para novembro a fevereiro). Nenhum pacote de Andorra com data de 2027. Nenhum bônus Esfera → Iberia. A Volotea abriu uma liquidação dentro da Espanha que pode servir de encaixe para Barcelona (seção 6).</p>
+
+    <div class="nota"><span class="r">Datas de olho para a Semana Santa</span>
+      <ul class="lista">
+        <li><b>Agora (meados de outubro):</b> prazo da casa para emitir os quatro lugares. Decisão do projeto. Vence nesta semana.</li>
+        <li><b>Domingo, 18/10:</b> aniversário da Smiles. <b>Prevista</b>, sem anúncio até hoje às 9h (busca de hoje).</li>
+        <li><b>Por volta de 28–30/10:</b> bônus Esfera → Iberia. Em 2025 foi 28–30/10, com 30% para o Clube Esfera e 15% para os demais. <b>Prevista</b>, sem anúncio. O crédito levou até 7 dias úteis em 2025; a regra da casa é contar 15.</li>
+        <li><b>Quinta, 29/10:</b> fim do MSC "Dia das Crianças". <b>Confirmada</b> (VOENEWS 01/10).</li>
+        <li><b>Sábado, 31/10:</b> em 2025, a Black Friday da MSC abriu nesta data (até 50%, só 5 cabines por saída). <b>Prevista</b>, sem anúncio de 2026 achado hoje.</li>
+        <li><b>Sexta, 27/11:</b> Black Friday 2026. <b>Confirmada</b> (guairanews 16/09).</li>
+        <li><b>Por volta de 02/12:</b> em 2025, a Black Friday da MSC foi prorrogada até aqui (depois até 07/12). <b>Prevista.</b></li>
+        <li><b>Fevereiro de 2027:</b> comprar o forfait de esqui online (até 15% mais barato) e conferir a neve. Decisão do projeto.</li>
+      </ul>
+    </div>
+
+    <div class="olho"><p>Conferi de novo: Barcelona saindo sexta 19 e voltando segunda 29 continua R$ 3.985 por pessoa, R$ 15.940 nós quatro. Outras datas ficaram mais caras. Antes de comprar, vou olhar se a Iberia tem 4 lugares com milhas.</p><span class="quem">a frase para o grupo da família</span></div>
+
+    <div class="hoje"><span class="r">O passo desta semana para a Semana Santa</span>
+      <p>Até domingo, 18/10: entre no Iberia Club e procure 4 lugares com Avios Fortaleza–Madri em 18 ou 19/03, volta 28 ou 29/03. Com vaga, transfira da Esfera e emita sem esperar bônus (cerca de R$ 13.400 os quatro). Sem vaga, compre a TAP para Barcelona em 19–29/03 por R$ 15.940 os quatro. O bônus de 28–30/10 é previsão, não anúncio.</p>
+    </div>
+  </section>
+
+  <!-- 01 MELHOR -->
+  <section class="materia" id="melhor">
+    <div class="titulo"><span class="n">01</span><h2>A melhor da edição</h2><span class="fio"></span></div>
+    <p class="abertura">Fortaleza–Recife ida e volta, de sexta 4 a domingo 6 de dezembro: R$ 939 em voo direto da LATAM. O normal para essas datas é R$ 1.300.</p>
+    <p class="texto capitular">Nenhum blog noticiou. A sexta-feira é foco em fim de semana e viagem curta, então fui procurar no Google Flights. Recife no primeiro fim de semana de dezembro saiu "baixos": mais barato que o normal para essa data. Natal e Belém nas mesmas datas estão "normais".</p>
+    <p class="texto">Por que é a melhor: é a única oferta nova conferida hoje, sai da sua porta e tem voo de 1h15. Dá para os quatro irem por R$ 3.756. Pense em hortifrúti na quarta-feira verde: o mesmo produto, num dia em que pouca gente compra.</p>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">R$ 1.444</div><div class="lbl"><b>Maior economia nova conferida hoje</b>, para os quatro: Recife 04–06/12, R$ 3.756 contra R$ 5.200.</div></div>
+      <div class="numero"><div class="big">28%</div><div class="lbl"><b>Maior desconto conferido:</b> Recife 04–06/12, R$ 939 contra R$ 1.300 por pessoa.</div></div>
+      <div class="numero"><div class="big">R$ 125</div><div class="lbl"><b>Melhor rendimento de milha:</b> cada mil Avios na Iberia direto da Páscoa (conta da seção 0; vaga não conferida).</div></div>
+      <div class="numero"><div class="big">hoje 23h59</div><div class="lbl"><b>Prazo mais curto:</b> LATAM Pass → ALL Accor com até 20%. 15 ofertas na edição, 4 conferidas hoje.</div></div>
+    </div>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Fortaleza → Recife ida e volta 04–06/12 por R$ 939, LATAM direto, 28% abaixo do normal</h3>
+          <div class="credito"><span class="frescor hoje">✅ Vale a pena</span><span>preço do dia, sem prazo</span><span>sai de FOR</span><span>Google Flights, 16/10 às 9h15</span></div>
+          <p class="texto">LATAM direto, sai às 14h30 da sexta 04/12, 1h15 de voo. Volta no domingo 06/12. A Azul tem direto por R$ 985 (sai 00h35) e R$ 1.061 (sai 05h05). Preço por adulto, com taxas.</p>
+          <p class="texto">Para 4 pessoas: R$ 3.756. Para dois adultos: R$ 1.878. Lucca (17) e Lynda (12) pagam tarifa de adulto.</p>
+          <div class="traduz"><span class="r">A conta</span><p>O próprio Google diz que o normal para essas datas é <b>R$ 1.300</b>. R$ 1.300 − R$ 939 = <b>R$ 361 a menos por pessoa, 28%</b>. Para os quatro: R$ 5.200 − R$ 3.756 = <b>R$ 1.444</b>. Régua da mesma rota, ida e volta, mesmas datas. Fica entre 15% e 35%: "vale a pena".</p></div>
+          <div class="traduz"><span class="r">Como pegar, passo a passo</span><p>1) Abra o link e mude para 4 passageiros: o preço pode subir se faltarem 4 lugares na tarifa mais barata. 2) Compre no site da LATAM e compare com a agência mostrada pelo Google. 3) A tarifa mais barata da LATAM costuma não incluir mala despachada: some a mala antes de decidir. 4) Se preferir a Azul, o direto de R$ 985 sai de madrugada.</p></div>
+          <div class="link"><a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20REC%20on%202026-12-04%20through%202026-12-06&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir a busca no Google Flights</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="nota"><span class="r">Prazo e riscos</span>
+      <ul class="lista">
+        <li>Não há prazo de promoção: é o preço que o Google mostrou às 9h15 de hoje, para 1 adulto. Pode subir na próxima busca.</li>
+        <li>Mala, parcelas e preço para 4 passageiros não foram conferidos no site da LATAM.</li>
+        <li>O início de dezembro é a janela barata do Nordeste há semanas (registros de 18 e 21/09 na régua da casa). Não é sorte de um dia, mas também não é garantia.</li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Se um fim de semana em Recife cabe em 4–6/12, compre neste fim de semana: o preço é de hoje e não tem garantia. Busque com 4 passageiros e com a mala antes de pagar.</p>
+    </div>
+  </section>
+
+  <!-- 02 DINHEIRO -->
+  <section class="materia" id="dinheiro">
+    <div class="titulo"><span class="n">02</span><h2>Saindo de Fortaleza, em dinheiro</h2><span class="fio"></span></div>
+    <p class="abertura">Os próximos feriados continuam caros saindo de Fortaleza. Nada novo passou na conta além de Recife em dezembro (seção 1).</p>
+    <p class="texto">Medi hoje as viagens curtas que ainda não tinham sido conferidas. Finados (sábado 31/10 a segunda 02/11): Natal R$ 1.657 (LATAM direto) e João Pessoa R$ 2.513 (Gol, 1 parada), os dois "normais". Consciência Negra (sexta 20 a domingo 22/11): São Luís R$ 1.896 (LATAM direto), João Pessoa R$ 2.425, ambos "normais"; Maceió R$ 2.682, "altos". Preço por pessoa, ida e volta.</p>
+    <p class="texto">É como comprar guarda-chuva em dia de chuva: no feriado todo mundo quer o mesmo voo. Se o feriado não é obrigatório, o primeiro fim de semana de dezembro sai bem mais barato.</p>
+
+    <div class="nota"><span class="r">Ainda valendo, da edição das 8h (Nº 016)</span>
+      <ul class="lista">
+        <li><b>Lisboa ida e volta 10–24/11:</b> R$ 3.364 direto (LATAM) ou R$ 3.186 com parada (Air France), 18–22% abaixo do normal. ✅ Preço das 8h17, não reconferido. <a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20LIS%20on%202026-11-10%20through%202026-11-24&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir</a></li>
+        <li><b>Madri ida e volta 10–24/11:</b> R$ 3.603 (Air France, 1 parada), 18% abaixo do normal (R$ 4.398). ✅ Preço das 8h17, não reconferido. <a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20MAD%20on%202026-11-10%20through%202026-11-24&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir</a></li>
+        <li><b>Recife só ida 30/12:</b> R$ 492 (Azul direto), 25% abaixo do normal (R$ 656). ✅ O coletor das 9h08 repetiu o preço. É o garimpo da régua do Google que ninguém noticiou. <a href="https://www.google.com/travel/flights?q=Voos%20de%20FOR%20para%20REC%20em%202026-12-30%20s%C3%B3%20ida&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">abrir</a></li>
+        <li><b>Porto 10–24/11 (R$ 3.148) e Parnaíba só ida 21/01 (R$ 198,86):</b> seguem de olho, sem régua para comparar. <a href="https://andreoliver2025.github.io/radar-andre/passagens/radar-passagens-016-2026-10-16.html">ver a Nº 016</a></li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Para viagem curta, o melhor preço de hoje é Recife em 4–6/12. Para o Réveillon em Recife, a ida em 30/12 por R$ 492 segue barata: monte a ida e volta neste fim de semana.</p>
+    </div>
+  </section>
+
+  <!-- 03 MILHAS -->
+  <section class="materia" id="milhas">
+    <div class="titulo"><span class="n">03</span><h2>Com milhas: onde a milha rende</h2><span class="fio"></span></div>
+    <p class="abertura">Nenhuma emissão nova saindo de Fortaleza passou no filtro. A jogada da casa segue a Iberia direto para Madri.</p>
+    <p class="texto">As emissões publicadas desde ontem saem de outras cidades: Smiles na executiva a partir de 66.500 milhas (São Paulo–Buenos Aires), LATAM Pass para Paris a partir de 54.916 milhas saindo do Rio, LATAM para Milão a partir de 57 mil milhas. Nenhuma tem Fortaleza nem datas publicadas. Somando o trecho até São Paulo ou Rio, não dá para fechar a conta.</p>
+    <p class="texto">Milha é como moeda estrangeira: o que importa é quanto ela compra na sua cidade. Para quem sai de Fortaleza, a moeda que mais compra é o Avios da Iberia.</p>
+
+    <div class="nota"><span class="r">Ainda valendo, da edição das 8h (Nº 016)</span>
+      <ul class="lista">
+        <li><b>Iberia direto Fortaleza/Recife → Madri por 16 mil Avios o trecho</b> (passagem paga com milhas), viagens de novembro a janeiro, taxas de cerca de R$ 446 por trecho. Rende de R$ 78,75 a R$ 221,63 por mil Avios, conforme o preço em dinheiro do dia. Regra: só use Avios quando o Iberia direto passar de R$ 2.000 o trecho. 👀 <a href="https://www.melhoresdestinos.com.br/milhas/iberia-madri-for-rec-out26">abrir</a></li>
+        <li><b>Flying Blue: Paris → Fortaleza por 22.500 milhas</b> na econômica da Air France, emitir até sábado 31/10 às 23h59, viagens até 31/03/2027. Exige o Flying Blue Extra, uma assinatura paga. 👀 <a href="https://loyaltylobby.com/2026/10/01/air-france-klm-flying-blue-october-promo-extra-exclusive-awards-for-travel-through-march-31-2027/">abrir</a></li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Nada para emitir hoje com milhas além da Semana Santa (seção 0). Não transfira pontos sem uma passagem achada.</p>
+    </div>
+  </section>
+
+  <!-- 04 BONUS -->
+  <section class="materia" id="bonus">
+    <div class="titulo"><span class="n">04</span><h2>Bônus, compra de pontos e clubes</h2><span class="fio"></span></div>
+    <p class="abertura">Nenhum bônus de transferência novo para Livelo ou Esfera desde as 8h. Nenhum Esfera → Iberia.</p>
+    <p class="texto">Os bônus de 100% para a Azul (Itaú, BV, Banestes, Sicredi) não saem dos seus bancos. A compra de pontos da Livelo com 56% acabou em 09/10, e nenhuma nova foi achada hoje. Esperar o bônus certo é como esperar a promoção do supermercado: vale para quem tem tempo, não para quem tem prazo.</p>
+    <p class="texto">O Clube Smiles com até 30 mil milhas na hora (R$ 12,42 o milheiro) vence hoje às 10h, provavelmente antes de você ler esta edição. Se você assinou a tempo, marque na agenda o cancelamento depois do sexto mês.</p>
+
+    <div class="nota"><span class="r">Ainda valendo, da edição das 8h (vencem hoje)</span>
+      <ul class="lista">
+        <li><b>LATAM Pass → ALL Accor</b> com paridade 4:1 e até 20% de bônus, até hoje às 23h59. Cada euro de hotel sai R$ 4,32 com milha LATAM a R$ 25,90; não bate a melhor (R$ 4,00). 👀 <a href="https://pontospravoar.com/ultimo-dia-transfira-pontos-do-latam-pass-para-o-all-accor-com-desconto-e-ganhe-ate-20-de-bonus/">abrir</a></li>
+        <li><b>Clube Esfera com até 60 mil pontos de bônus</b>, até hoje (hora não informada). Milheiro de R$ 28,80 a R$ 33,87; o bônus pinga em 12 parcelas, então não serve para emitir a Páscoa agora. 👀 <a href="https://passageirodeprimeira.com/ganhe-ate-60-000-pontos-bonus-em-12-meses-na-adesao-do-clube-esfera/">abrir</a></li>
+      </ul>
+    </div>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Não transfira Esfera nem Livelo para companhia nenhuma sem um uso marcado. O próximo bônus da Iberia é previsto para 28–30/10, sem anúncio.</p>
+    </div>
+  </section>
+
+  <!-- 05 ESTADIAS -->
+  <section class="materia" id="estadias">
+    <div class="titulo"><span class="n">05</span><h2>Estadias e pacotes</h2><span class="fio"></span></div>
+    <p class="abertura">Uma vitrine de hotéis Mercure apareceu hoje. A única opção no Nordeste é Salvador.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Mercure Salvador Pituba a partir de R$ 191 a diária em novembro</h3>
+          <div class="credito"><span class="frescor antes">👀 De olho</span><span>sem prazo informado</span><span>destino a 1h45 de FOR</span><span>Pontos pra Voar, 16/10</span></div>
+          <p class="texto">Diária é o preço de uma noite de hotel. Valores da fonte: R$ 191 em novembro, R$ 227 em dezembro, R$ 308 em janeiro. Pode ser com ou sem café, paga na reserva, e as taxas do governo são somadas à parte.</p>
+          <div class="traduz"><span class="r">A conta</span><p>A fonte não dá o preço normal do hotel, e eu não abri o site da Accor. Sem preço normal para comparar, a conta fica pendente. Para ter ideia do total: Fortaleza–Salvador só ida em 15/11 está R$ 790 (Gol direto, "normal"). Dois quartos por 2 noites a R$ 191 dariam R$ 764 mais taxas.</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Abra a matéria e o link do hotel no site da ALL Accor. 2) Escolha a data e confira se o preço inclui café. 3) Pontos ALL valem € 20 a cada 2.000 e podem pagar parte da conta.</p></div>
+          <div class="link"><a href="https://pontospravoar.com/hoteis-mercure-brasil-diarias-191-reais/">abrir a matéria</a></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="texto">Ficaram de fora: hotéis em Fortaleza com "até 43%" (sem preço de diária) e Porto de Galinhas a partir de R$ 1.479 (não sai de Fortaleza). É como anúncio de "tudo pela metade" sem etiqueta: não dá para fazer a conta. Andorra e o cruzeiro MSC estão na seção 0.</p>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Se for a Salvador em novembro, confira o Mercure Pituba no site da Accor e compare com outro hotel da mesma rua antes de pagar.</p>
+    </div>
+  </section>
+
+  <!-- 06 INTERNACIONAL -->
+  <section class="materia" id="internacional">
+    <div class="titulo"><span class="n">06</span><h2>Garimpo internacional</h2><span class="fio"></span></div>
+    <p class="abertura">Uma tarifa saindo de Recife e uma liquidação dentro da Espanha. Nenhuma fecha a conta ainda.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Recife → Milão ida e volta por R$ 3.732 na LATAM; em fevereiro e março a partir de R$ 3.940</h3>
+          <div class="credito"><span class="frescor antes">👀 De olho</span><span>sem prazo informado</span><span>sai de REC (não de FOR)</span><span>Melhores Destinos, 15/10</span></div>
+          <p class="texto">Os menores preços são para novembro. A fonte cita Brasília a R$ 3.575 e Recife a R$ 3.732, e "boas tarifas" em fevereiro e março de 2027 a partir de R$ 3.940, sem dizer de qual cidade. Fortaleza não aparece. Bagagem e paradas não informadas.</p>
+          <div class="traduz"><span class="r">A conta</span><p>Falta o trecho Fortaleza–Recife na mesma data, que não medi (as 15 consultas do dia foram usadas). Não há preço normal de Milão saindo de Fortaleza na régua da casa. A conta fica pendente. Para comparar: Lisboa direto em novembro sai R$ 3.364 saindo da sua porta (seção 2).</p></div>
+          <div class="traduz"><span class="r">Como pegar</span><p>1) Abra a matéria e veja as datas de Recife. 2) Busque Fortaleza–Milão direto no Google Flights nas mesmas datas: pode sair igual ou mais barato que somar o trecho até Recife. 3) Só compre separado se a soma ficar abaixo.</p></div>
+          <div class="link"><a href="https://www.melhoresdestinos.com.br/promocao/italia-bom-preco-voo-milao-3575">abrir a matéria</a></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="texto"><b>Volotea:</b> liquidação com voos a partir de € 19 só ida, reservas até 31/10, viagens de 01/11/2026 a 15/10/2027, com remarcação grátis. A melhor oferta é dentro da Espanha e entre Espanha e Portugal (fly4free, 16/10). Não achei preço para março nem rota exata. Serve de ideia para a Semana Santa: chegar a Madri ou Lisboa e pegar um voo barato até Barcelona. Fica como pista, não como oferta.</p>
+    <p class="texto">Descartadas: o desconto de 25% em Avios da Qatar vale para voos saindo de Doha; KrisFlyer, SAS e Turkish são para a Ásia e a Europa. Nenhuma serve para Fortaleza. Pense em cupom de supermercado de outra cidade: o desconto existe, mas não na sua loja.</p>
+
+    <div class="hoje"><span class="r">O que fazer e até quando</span>
+      <p>Nada para comprar hoje no exterior. Se a família for de Lisboa ou Madri, guarde a Volotea para checar a perna até Barcelona antes de 31/10.</p>
+    </div>
+  </section>
+
+  <!-- 07 REGUA -->
+  <section class="materia" id="regua">
+    <div class="titulo"><span class="n">07</span><h2>A régua de Fortaleza</h2><span class="fio"></span></div>
+    <p class="abertura">O coletor mediu de novo, às 9h08, os 22 destinos só de ida em 15/11 e 30/12. Só uma leitura saiu abaixo do normal.</p>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">R$ 492</div><div class="lbl"><b>Recife em 30/12</b>, Azul direto: R$ 164 abaixo do normal (−25%). A única rota "baixa" do dia, igual às 8h.</div></div>
+      <div class="numero"><div class="big">−R$ 421</div><div class="lbl"><b>Orlando em 15/11:</b> caiu de R$ 4.024 (8h) para R$ 3.603. Ainda "alto".</div></div>
+      <div class="numero"><div class="big">−R$ 285</div><div class="lbl"><b>Porto Alegre em 15/11:</b> caiu de R$ 1.432 para R$ 1.147, agora "normal".</div></div>
+      <div class="numero"><div class="big">+R$ 299</div><div class="lbl"><b>Noronha em 15/11:</b> subiu de R$ 2.071 para R$ 2.370.</div></div>
+    </div>
+
+    <p class="texto">"Nível" é a leitura do Google: "baixo" é mais barato que o normal para aquela data; "normal" é o preço de sempre; "alto" é mais caro. 15/11 é domingo de feriado e 30/12 é véspera de Réveillon: datas caras por natureza. A comparação abaixo é com a coleta das 8h03 desta mesma manhã.</p>
+
+    <div class="nota"><span class="r">As rotas do coletor (só ida, 1 adulto) · 15/11 · 30/12</span>
+      <ul class="lista">
+        <li>Recife: R$ 1.620 (alto) · <b>R$ 492 (baixo, −R$ 164)</b>. Sem mudança.</li>
+        <li>Belém: R$ 949 (alto) · R$ 611. Sem mudança.</li>
+        <li>Salvador: R$ 790 · R$ 720. Sem mudança.</li>
+        <li>Brasília: R$ 930 · R$ 811 (alto). Sem mudança.</li>
+        <li>Natal: R$ 823 · R$ 1.232 (alto). Sem mudança.</li>
+        <li>Florianópolis: R$ 909 · R$ 1.467 (alto). Sem mudança.</li>
+        <li>São Paulo (GRU): R$ 937 (+R$ 18) · R$ 997 (alto).</li>
+        <li>Belo Horizonte: R$ 1.050 (−R$ 22) · R$ 960 (alto).</li>
+        <li>Rio (GIG): R$ 1.167 · R$ 1.303 (alto). Sem mudança.</li>
+        <li>Porto Alegre: <b>R$ 1.147 (−R$ 285)</b> · R$ 1.444 (alto).</li>
+        <li>Noronha: R$ 2.370 (+R$ 299) · R$ 2.694.</li>
+        <li>Santiago: R$ 1.246 · R$ 1.902 (alto). Montevidéu: R$ 1.286 · R$ 1.286 (alto). Buenos Aires: R$ 1.604 · R$ 1.347 (alto).</li>
+        <li>Lisboa: R$ 2.261 · R$ 3.640. Madri: R$ 2.700 · R$ 4.337. Paris: R$ 2.852 · R$ 4.496. Porto: R$ 3.130 · R$ 4.298. Todos "normais", sem mudança.</li>
+        <li>Miami: R$ 2.741 (alto) · R$ 4.474 (alto). Orlando: <b>R$ 3.603 (alto, −R$ 421)</b> · R$ 4.452 (alto). Cancún: <b>R$ 5.181 (alto, −R$ 480)</b> · R$ 5.181 (alto). Panamá: R$ 4.672 · sem resultado.</li>
+      </ul>
+    </div>
+
+    <div class="nota"><span class="r">Vigia: viagens marcadas</span>
+      <ul class="lista">
+        <li><b>Semana Santa · Barcelona</b> (18–28/03, 4 pessoas): R$ 5.572 por pessoa, R$ 22.288 os quatro. Na quarta, R$ 4.969: <b>subiu R$ 603</b>. Menor já visto: R$ 4.497 (30/09). Acima da meta (R$ 4.100).</li>
+        <li><b>Semana Santa · Lisboa:</b> R$ 4.326 por pessoa (LATAM direto R$ 4.471), R$ 17.304 os quatro. Na quarta, R$ 4.291: <b>subiu R$ 35</b>. Menor já visto: R$ 3.720 (09/10). Acima da meta (R$ 4.000).</li>
+        <li><b>Semana Santa · Madri:</b> R$ 4.590 por pessoa (Iberia direto R$ 5.783), R$ 18.360 os quatro. Na quarta, R$ 4.731: <b>caiu R$ 141</b>. Menor já visto: R$ 4.163 (07/10). Acima da meta (R$ 3.800).</li>
+        <li><b>Semana Santa · Cancún:</b> R$ 9.555 por pessoa, R$ 38.220 os quatro. Na quarta, R$ 5.676: <b>subiu R$ 3.879</b>. Menor já visto: R$ 5.612 (23/09). Acima da meta (R$ 4.200).</li>
+        <li><b>Disney · julho</b> (03–10/07/2027): R$ 7.063 por pessoa, R$ 28.252 os quatro. Na quarta, R$ 6.736: <b>subiu R$ 327</b>, nível "alto". Menor já visto: R$ 6.390 (18/09). Acima da meta (R$ 5.200).</li>
+        <li><b>Disney · fim de agosto</b> (21–28/08/2027): R$ 5.078 por pessoa (Gol e Avianca, 2 paradas), R$ 20.312 os quatro. Na quarta, R$ 5.037: <b>subiu R$ 41</b>. Menor já visto: R$ 5.017 (12/10). <b>Abaixo da meta (R$ 5.200)</b>: entra no calendário.</li>
+        <li><b>Réveillon em Palmas</b> (27/12–01/01): R$ 2.846 por pessoa, R$ 11.384 os quatro. Na quarta, R$ 2.770: <b>subiu R$ 76</b>. Menor já visto: R$ 1.686 (23/09). Acima da meta (R$ 1.622).</li>
+      </ul>
+    </div>
+    <p class="texto">As vigias vieram com os mesmos números da edição das 8h: a comparação acima é com a coleta de quarta (14/10).</p>
+  </section>
+
+  <!-- 08 CALENDARIO -->
+  <section class="materia" id="calendario">
+    <div class="titulo"><span class="n">08</span><h2>Calendário: o que vence quando</h2><span class="fio"></span></div>
+    <p class="abertura">Em ordem: o que acaba primeiro está no topo.</p>
+    <div class="nota"><span class="r">Prazos</span>
+      <ul class="lista">
+        <li><b>Hoje, sexta 16/10 (hora não informada):</b> Clube Esfera com até 60 mil pontos de bônus.</li>
+        <li><b>Hoje, sexta 16/10, às 23h59:</b> LATAM Pass → ALL Accor com até 20%.</li>
+        <li><b>Esta semana:</b> prazo da casa para emitir os quatro lugares da Semana Santa.</li>
+        <li><b>Domingo, 18/10:</b> aniversário da Smiles (previsto, sem anúncio).</li>
+        <li><b>Por volta de 28–30/10:</b> bônus Esfera → Iberia (previsto pela repetição de 2025).</li>
+        <li><b>Quinta, 29/10, às 23h59:</b> fim do MSC "Dia das Crianças".</li>
+        <li><b>Sábado, 31/10, às 23h59:</b> fim da Flying Blue Paris → Fortaleza por 22.500 milhas. Fim da remarcação grátis da Volotea. Black Friday da MSC abriu nesta data em 2025 (prevista).</li>
+        <li><b>Sem prazo, preço do dia:</b> Recife 04–06/12 (R$ 939), Lisboa 10–24/11 (R$ 3.364 direto), Madri 10–24/11 (R$ 3.603), Recife 30/12 só ida (R$ 492).</li>
+        <li><b>Sem prazo, vigia abaixo da meta:</b> Disney fim de agosto por R$ 5.078 por pessoa. Emitir ou comprar agora se a data estiver fechada: o voo direto da Gol para Orlando acaba em fevereiro.</li>
+        <li><b>Sexta, 27/11:</b> Black Friday 2026.</li>
+      </ul>
+    </div>
+    <div class="hoje"><span class="r">Se só der para fazer uma coisa hoje, faça esta</span>
+      <p>Entre no Iberia Club e veja se há 4 lugares com Avios Fortaleza–Madri em 18 ou 19/03, volta 28 ou 29/03. Com vaga, os quatro saem cerca de R$ 13.400; sem vaga, compre a TAP para Barcelona em 19–29/03 por R$ 15.940.</p>
+    </div>
+  </section>
+
+  <!-- 09 FONTES -->
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">09</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <ol class="src">
+      <li><b>Google Flights</b>, 15 consultas próprias em 16/10/2026, entre 9h12 e 9h16: Barcelona 19–29/03, 17–28/03 e 20–28/03; Madri e Lisboa 19–29/03; Punta Cana 19–28/03; Natal e João Pessoa 31/10–02/11; São Luís, João Pessoa e Maceió 20–22/11; Recife e Natal 04–06/12; Salvador e Belém 04–07/12. <a href="https://www.google.com/travel/flights?q=Flights%20from%20FOR%20to%20REC%20on%202026-12-04%20through%202026-12-06&amp;curr=BRL&amp;hl=pt-BR&amp;gl=BR">exemplo de busca</a></li>
+      <li><b>Coletor do radar no Google Flights</b>, 16/10/2026 às 9h08: 22 destinos só de ida em 15/11 e 30/12 e as 7 vigias da família.</li>
+      <li><b>Melhores Destinos</b>, "Itália com bom preço! Voos para Milão desde R$ 3.575 ida e volta saindo de várias cidades", 15/10/2026. <a href="https://www.melhoresdestinos.com.br/promocao/italia-bom-preco-voo-milao-3575">abrir</a></li>
+      <li><b>Pontos pra Voar</b>, "Hotéis Mercure pelo Brasil com diárias a partir de R$ 191", 16/10/2026. <a href="https://pontospravoar.com/hoteis-mercure-brasil-diarias-191-reais/">abrir</a></li>
+      <li><b>fly4free</b>, "Volotea sale! 1 million seats from €19 + flexible booking for 2027 trips", 16/10/2026. <a href="https://www.fly4free.com/flight-deals/europe/volotea-sale-sale-2021-flights-for-e19-flexible/">abrir</a></li>
+      <li><b>Passageiro de Primeira</b>, "5 sugestões de voos em Classe Executiva a partir de 65 mil milhas Smiles", 15/10/2026 (descartada: não sai de Fortaleza). <a href="https://passageirodeprimeira.com/5-sugestoes-de-voos-em-classe-executiva-a-partir-de-65-mil-milhas-smiles/">abrir</a></li>
+      <li><b>Passageiro de Primeira</b>, "Partiu Europa? Trecho para Paris a partir de 54 mil milhas LATAM Pass + taxas", 13/10/2026 (descartada: sai do Rio). <a href="https://passageirodeprimeira.com/partiu-europa-trecho-paris-a-partir-54-mil-milhas-latam-pass-taxas/">abrir</a></li>
+      <li><b>Passageiro de Primeira</b>, "LATAM oferece voos de ida e volta para destinos internacionais a partir de R$ 1.404", 15/10/2026 (descartada: acabou em 15/10, sem Fortaleza). <a href="https://passageirodeprimeira.com/latam-oferece-voos-de-ida-e-volta-para-destinos-internacionais-a-partir-de-r-1-404/">abrir</a></li>
+      <li><b>Melhores Destinos</b>, "Bahamas! Passagens aéreas para as ilhas caribenhas a partir de R$ 2.616 ida e volta", 15/10/2026 (descartada: sem preço por cidade). <a href="https://www.melhoresdestinos.com.br/promocao/bahamas-passagens-aereas-2795">abrir</a></li>
+      <li><b>Melhores Destinos</b>, "Bora para Orlando! Seleção de passagens aéreas a partir de 2.464 ida e volta", 15/10/2026, e "Europa 2×1! ... a partir de R$ 4.046", 15/10/2026 (descartadas: sem Fortaleza). <a href="https://www.melhoresdestinos.com.br/promocao/bora-orlando-passagens-aereas-2464">abrir</a></li>
+      <li><b>Pontos pra Voar</b>, "Qatar Airways oferece até 25% de desconto em resgates com Avios" (descartada: voos saindo de Doha). <a href="https://pontospravoar.com/qatar-airways-oferece-ate-25-de-desconto-em-resgates-com-avios/">abrir</a></li>
+      <li><b>Mercado &amp; Eventos</b>, "Royal Caribbean libera crianças e adolescentes de graça em cruzeiros do verão de 2027" (busca de cruzeiro de Páscoa; descartada: maio a agosto de 2027). <a href="https://www.mercadoeeventos.com.br/noticias/cruzeiros/royal-caribbean-libera-criancas-e-adolescentes-de-graca-em-cruzeiros-do-verao-de-2027/">abrir</a></li>
+      <li><b>Cartões e Viagens</b>, "Esfera para Iberia com bônus: vale a pena transferir pontos em 2026?" (busca de bônus aberto: nenhum em outubro de 2026). <a href="https://cartoeseviagens.com.br/esfera-para-iberia-com-bonus">abrir</a></li>
+      <li><b>Pontos pra Voar</b>, "Último dia! Transfira pontos do LATAM Pass para o ALL Accor com desconto e ganhe até 20% de bônus", 16/10/2026. <a href="https://pontospravoar.com/ultimo-dia-transfira-pontos-do-latam-pass-para-o-all-accor-com-desconto-e-ganhe-ate-20-de-bonus/">abrir</a></li>
+      <li><b>Edição Nº 016 do radar</b> (hoje, 8h30) e <b>memoria/referencias.md</b>: Lisboa, Madri, Porto, Recife 30/12, Parnaíba, Iberia 16 mil Avios (Melhores Destinos 14/10), tabela Iberia de alta (pesquisa de 22/09), Livelo → Qatar (Passageiro de Primeira 15/10), Clube Esfera (Passageiro de Primeira 13/10), Andorra (Estiber), MSC Dia das Crianças (VOENEWS 01/10), Flying Blue (Loyalty Lobby 01/10), bônus Esfera → Iberia de 28–30/10/2025 (Passageiro de Primeira 07/11/2025). <a href="https://andreoliver2025.github.io/radar-andre/passagens/radar-passagens-016-2026-10-16.html">abrir a Nº 016</a></li>
+    </ol>
+
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de comprar</span>
+      <p><b>Páginas oficiais:</b> nenhuma página oficial de Smiles, Livelo, Esfera ou Iberia foi aberta hoje. A ausência de bônus Esfera → Iberia vem de busca em blogs, não do site da Esfera.</p>
+      <p><b>Recife 04–06/12:</b> preço para 1 adulto; com 4 passageiros pode mudar. Mala e parcelas não conferidas no site da LATAM.</p>
+      <p><b>Ofertas da edição das 8h:</b> Lisboa e Madri em novembro não foram reconferidas nesta edição (o limite de 15 consultas foi usado em datas novas). Valem os preços das 8h17.</p>
+      <p><b>Iberia com Avios na Semana Santa:</b> tabela de alta (19.500 Avios) e taxas (~R$ 892) de 22/09. Ninguém conferiu se há 4 lugares em 18/03 e 28/03.</p>
+      <p><b>Livelo → Qatar → Iberia:</b> nenhuma fonte confirma a passagem dos Avios da Qatar vindos da Livelo para a Iberia.</p>
+      <p><b>Mercure Salvador:</b> preços da fonte, por mês, sem data exata e sem preço normal. <b>Milão:</b> sem preço de Fortaleza; trecho até Recife não medido. <b>Volotea:</b> sem rota nem preço de março confirmados.</p>
+      <p><b>Andorra:</b> preço de vitrine da Estiber, por pessoa em quarto duplo; 2027 não confirmado. <b>Cancún:</b> a regra de visto do México para brasileiros não foi conferida hoje. <b>Clube Esfera:</b> a hora final de hoje não foi informada pela fonte.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">Radar de Passagens · Nº 017 · 2026-10-16<br>Próxima edição: segunda-feira, 19 de outubro de 2026</div>
+</div>
+</body>
+</html>
