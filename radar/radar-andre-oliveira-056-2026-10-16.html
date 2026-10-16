@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A fábrica de aplicativos agora também compra o anúncio — Radar André Oliveira Nº 056</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A fábrica de aplicativos agora também compra o anúncio e cuida do Google — tudo na mesma conversa</h1>
+    <p class="chamada">A Lovable, onde muita gente monta o próprio aplicativo conversando com a IA, pôs na vitrine ferramentas para fazer esse aplicativo crescer: anúncio no Google e no Instagram, aparecer nas buscas e criar as peças. Você só aprova antes de gastar. Apertar o botão de anúncio ficou fácil. O que continua difícil é saber o que aprovar.</p>
+    <div class="dateline">Edição Nº 056 · sexta-feira, 16 de outubro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A Lovable juntou construir e vender no mesmo chat — e o que isso faz com quem vive de tráfego pago e SEO.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: a transcrição que separa até 25 vozes, a conta de corretora ligada ao Claude e o estudo da fadiga de IA.</div></div></li>
+      <li><div><a href="#territorio">Seu território: automação</a><div class="d">O "escritório" que fica ligado para os robôs e o manual que espalha o que um aprendeu para o time inteiro.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "conselho de aprovação": vender o sim e o não antes de o robô gastar o dinheiro do cliente.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">Imagine uma marcenaria que, além de fazer o balcão da sua loja, passa a pendurar a faixa na rua, pôr anúncio no jornal e distribuir panfleto. Tudo no mesmo pedido. Foi isso que a Lovable lançou.</p>
+    <p class="texto capitular">A Lovable é uma das ferramentas mais usadas para montar um aplicativo só conversando com a IA. Agora ela traz as "Growth Tools", as ferramentas de crescimento. A promessa do título: do construir ao crescer, numa conversa só.</p>
+    <p class="texto">Você diz a meta — o exemplo da página é "meus primeiros 100 cadastros". A ferramenta lê o seu aplicativo e monta um plano de lançamento. Depois põe anúncio no Google, no YouTube, no Google Maps, no Facebook e no Instagram.</p>
+    <p class="texto">Ela também trabalha para você aparecer no Google e nas respostas das IAs, com dados da Semrush, uma das ferramentas de SEO mais conhecidas. E cria imagem, vídeo e texto. Uma trava: nada gasta dinheiro antes de você aprovar.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>SEO é o trabalho de fazer o seu site aparecer no Google sem pagar. "Aparecer nas respostas das IAs" (o mercado chama de GEO) é a mesma coisa, só que dentro do ChatGPT e parecidos. A Semrush é como o termômetro que mostra o que as pessoas buscam e quem aparece na frente.</p></div>
+    <div class="numeros">
+      <div class="numero"><div class="big">5</div><div class="lbl">lugares onde a Lovable agora <b>põe anúncio sozinha</b>: Google, YouTube, Maps, Facebook e Instagram</div></div>
+      <div class="numero"><div class="big">100</div><div class="lbl">cadastros: é a meta de exemplo que a ferramenta transforma em <b>plano de lançamento</b></div></div>
+      <div class="numero"><div class="big">36</div><div class="lbl">centavos de dólar é o preço de transcrever <b>uma hora de reunião</b> no Maybloc (recorte 02)</div></div>
+      <div class="numero"><div class="big">25</div><div class="lbl">pessoas falando na mesma gravação que o Maybloc diz <b>separar uma a uma</b></div></div>
+    </div>
+    <div class="olho">
+      <p>Apertar o botão do anúncio virou coisa de qualquer um. Saber em qual anúncio não apertar continua valendo dinheiro.</p>
+      <span class="quem">A frase para levar à reunião</span>
+    </div>
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>A edição anterior mostrou os painéis que juntam vários robôs numa tela. Hoje o mesmo movimento chegou ao seu quintal: tráfego pago, SEO e criação de peça viraram botões dentro da ferramenta que faz o aplicativo.</p>
+      <p>Quem vende só "eu subo a sua campanha" vai disputar preço com um botão. Quem sabe dizer "esta meta está errada" e "este gasto não" tem um serviço novo. Ele está na seção 04.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Sete recortes. Pense na banca de jornal de sexta: a capa grita o assunto da semana, mas o que paga a conta costuma estar nas páginas do meio.</p>
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Lovable passa a fazer anúncio, SEO e peças para o aplicativo que você montou com ela</h3>
+          <div class="credito"><span class="frescor antes">🟡 quarta · 10h16</span><span>Lovable, via Product Hunt</span></div>
+          <p class="texto">É a notícia da capa. Você define uma meta, a ferramenta monta o plano, sobe anúncios em cinco lugares, trabalha o Google e as respostas das IAs e cria imagens, vídeos e textos. Tudo dentro da mesma conversa onde o aplicativo foi feito.</p>
+          <p class="texto">A página fala em "opções gratuitas", mas não mostra preço. O dinheiro dos anúncios, claro, sai do seu bolso — e só depois que você aprova.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O Product Hunt é a vitrine onde produtos novos são lançados. "Plano de lançamento" é a lista do que fazer, em que ordem, para as primeiras pessoas chegarem — como o cronograma de inauguração de uma loja.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/lovable">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Maybloc: a transcrição que diz quem falou o quê, mesmo com 25 pessoas na sala</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 13h51</span><span>Maybloc, via Product Hunt</span></div>
+          <p class="texto">O Maybloc transforma gravação em texto e separa cada voz, até quando duas pessoas falam ao mesmo tempo. Marca o horário de cada palavra, aceita arquivos de até três horas e trabalha em 45 idiomas.</p>
+          <p class="texto">Custa 0,6 centavo de dólar por minuto, cobrado por segundo. Uma reunião de uma hora sai por 36 centavos de dólar. Também esconde dados pessoais, faz resumo, legenda e tradução. Os criadores dizem errar menos que os concorrentes — em testes feitos por eles mesmos.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Para quem vende e atende, é a ligação de vendas virando texto organizado: o que o cliente disse, o que o vendedor prometeu. Como ter uma taquígrafa em toda reunião, por centavos.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/maybloc">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>BOSS Console: um "escritório" sempre ligado onde os seus robôs trabalham e você espia</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 8h37</span><span>Risa Labs, via Product Hunt</span></div>
+          <p class="texto">O BOSS cria robôs que ficam ligados o tempo todo, ou recebe os que você já usa, como Claude Code e Codex. Num espaço comum, com navegador e editor, você vê o que cada um está fazendo e pode intervir.</p>
+          <p class="texto">Você escolhe quais ferramentas cada robô pode usar. É gratuito, de código aberto, e roda no Mac, no Windows e no Linux. Mais sobre ele na seção 03.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Robô, aqui, é um programa que executa uma tarefa do início ao fim sozinho. De código aberto quer dizer que qualquer um pode baixar e rodar por conta, sem pagar licença.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/boss-console">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Tetriz Harness: o que um funcionário ensina ao robô vira regra para o robô de todo mundo</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 8h55</span><span>Tetriz, via Product Hunt</span></div>
+          <p class="texto">São duas ferramentas para empresas cujos programadores usam robôs como Claude Code, Codex e Cursor. A primeira lê as instruções que cada um deu ao seu robô e aponta problemas: regra repetida, regra que não serve para nada, permissão aberta demais.</p>
+          <p class="texto">A segunda distribui as regras aprovadas para todas as máquinas e mostra quem recebeu. É gratuita, de código aberto, e roda nos computadores da própria empresa. Não altera nada sozinha.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Permissão aberta demais" é o robô autorizado a fazer tudo sem perguntar antes — como entregar a chave do cofre ao estagiário no primeiro dia.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/tetriz-harness">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Corretora Axi liga a conta de investimentos do cliente ao Claude</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 13h16</span><span>Tá No Site</span></div>
+          <p class="texto">Segundo a manchete, a Axi lançou um jeito de conectar contas do MetaTrader 5, programa usado para operar na bolsa e em câmbio, ao Claude. Tudo pelo MCP. O radar só leu o título.</p>
+          <p class="texto">Na semana passada foi uma plataforma de viagens corporativas; agora, uma corretora. Cada empresa que liga o próprio sistema à IA é mais um aparelho que passa a usar a mesma tomada.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O MCP é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. Ligar a conta ao Claude é como deixar o assistente olhar o seu extrato e conversar sobre ele.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQYmMtVzJ3M2xydlAzUElNX05qcEdIeXpIaF9GS3dzNS1fb2NfSEc0VHg2VTFFZkdRN0xkX3lSbjNHVXVYVVdCNkpDSUtHV01fbXR5WGNMS29nS2NyY0hPcHBqMDg5cWhaTWNnbnh0V2FUOUZZZ3V5WThvbk5FamRMOWdTaGluNjVuWV9zRUNTMjcwRXN0Tk9LdnkwNHF3aVdneER0ZDc2REc4bUJVaGx5aw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Salvy põe IA para cuidar da conta de telefone das empresas</h3>
+          <div class="credito"><span class="frescor antes">🟡 quarta · 9h58</span><span>Business Moment</span></div>
+          <p class="texto">A Salvy, que gerencia linhas de celular de empresas, anunciou uma integração com IA para automatizar essa gestão, diz a manchete. O radar não abriu o texto.</p>
+          <p class="texto">É o tipo de tarefa chata que a IA está engolindo primeiro: conta, linha, plano, fatura. Ninguém sente falta de fazer isso à mão.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOSzc2RlNmR3lIS2RqNUNuTVBPQ1BtTE1YWFhUS3NIVlMwU2UwRDBjOTNOT1JMYTFqdEV4ZlA2R2ZYcUZ3TXN1NGNhbU1QeThfdklFUlJhYWg4Z0ZVcUtmU01KUkhiWktMZHh2QmMxOXRWaFotbjIwaEFuMlRlVzdQczdDalJVQdIBjgFBVV95cUxOcWFsakZ2Wkg5RVViZEljNDZseUU2NFN4WU1taDA4LTFSSVZuOHhyMVdUVXBkbHB4Q2U1VGYzbUl2T1FjNmdlSC11em5yMlo5OXRMajdwV2c3czBiWEh2Y0lBZnJiU2loZzNxWjRxNnlMbEVnUDh3VGJoeEltVFdkV3FuQnNFd05hQ1pzRVBR?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Excesso de IA no trabalho cansa a cabeça e aumenta erro, diz estudo da BCG</h3>
+          <div class="credito"><span class="frescor antes">🟡 terça · 17h25</span><span>Exame</span></div>
+          <p class="texto">A Exame noticiou um estudo da BCG, uma das maiores consultorias do mundo, sobre o "brain fry" — algo como "cabeça frita". A tese da manchete: usar IA demais no trabalho gera fadiga mental e erros.</p>
+          <p class="texto">É o outro lado da notícia da capa. Quanto mais coisa o robô faz, mais decisões chegam para a pessoa aprovar. A aprovação também cansa.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>É o porteiro da edição anterior, com dez monitores: a câmera não cansa, quem olha para ela cansa. Menos telas e menos "aprova aqui?" valem tanto quanto mais robôs.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPQTFxa3lGS0E4LU9VVjByRWZpWGhicmZqUXhiQU9sY2F5MWYzZXNkdkpESm5BeDU3VGk2ZlhfTlI2MUVZbUs2Nmd6NFFob3hFdHJfX2pyaFFtbXNka1JrTGd3eWFCWUp1aVhRa3FhQl9kNUJIcWhHU01wQzFoMVZmSHRrTVJrRVdoRmM5RU1QWlp1M3VwWk90NzNaRnZqX2R6ODhFTm0xQmFlZXB0MWt3WGN0SkYwTXhDNXpMckJWT0FWUjU1Yjd3WUpJYw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">A edição anterior mostrou o encarregado de obra que confere cada equipe. Os dois lançamentos de ontem cuidam do que vem antes e depois dele: onde a equipe trabalha e qual manual ela segue.</p>
+    <p class="texto"><b>O escritório que não fecha.</b> O BOSS Console é um lugar fixo para os robôs, numa máquina que fica sempre ligada. Você entra de outro aparelho e vê a tela de cada um: o navegador que ele abriu, o arquivo que está mexendo.</p>
+    <p class="texto">E decide, robô por robô, que ferramentas ele pode usar. É o crachá da portaria: o robô do financeiro entra no financeiro, não no estoque. Ferramentas novas entram pelo mesmo padrão de encaixe, o MCP.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>"Sempre ligado" quer dizer que o robô trabalha de madrugada e no fim de semana, sem depender do seu notebook aberto. Como um funcionário de plantão, só que você pode olhar por cima do ombro dele a qualquer hora.</p></div>
+    <p class="texto"><b>O manual da casa.</b> O Tetriz Harness ataca outro problema: cada pessoa ensina o seu robô do seu jeito, e o que uma descobre ninguém mais aproveita. Ele lê essas instruções, acha o que está repetido ou perigoso e sugere regras novas.</p>
+    <p class="texto">Depois, espalha o que foi aprovado para todo mundo. É o caderno de receitas da cozinha: quando um cozinheiro acerta o ponto do molho, a receita vai para a parede, e o turno da noite faz igual.</p>
+    <div class="hoje">
+      <span class="r">O que isso significa para você</span>
+      <p>Somando a semana: quem faz (os robôs), quem confere (o "Capitão"), quem paga (o "taxímetro"), onde trabalham (o BOSS) e qual manual seguem (o Tetriz). O time de robôs ganhou organograma.</p>
+      <p>Tudo isso saiu para programadores. Para o seu cliente pequeno, o equivalente é simples: uma lista de o que cada robô pode fazer sozinho e o que precisa de aprovação. Essa lista é a base da oportunidade abaixo.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O "conselho de aprovação": você vende o sim e o não, antes de o robô gastar o dinheiro do cliente em anúncio.</p>
+    <p class="texto">Pense no síndico que não troca a bomba d'água, mas assina o orçamento. A Lovable acabou de pôr um botão "aprovar" na frente de cada gasto com anúncio. Quem montou o aplicativo sozinho vai olhar para esse botão sem saber se o plano faz sentido.</p>
+    <p class="texto">A meta está certa? Cem cadastros servem, ou deviam ser dez clientes pagando? O anúncio no Maps faz sentido para quem vende pela internet? A peça que a IA criou promete o que o produto entrega?</p>
+    <p class="texto">Você responde isso há anos, com dinheiro de verdade: tráfego, SEO, vendas, follow-up. Só que agora a pergunta chega pronta, numa tela, toda semana. E o estudo da BCG (recorte 07) lembra que aprovar demais também cansa.</p>
+    <div class="nota">
+      <p><b>Como fica o serviço:</b></p>
+      <ul class="lista">
+        <li>Uma conversa por semana, de 30 minutos, com o fundador que montou o aplicativo com IA.</li>
+        <li>Você revisa o plano que o robô propôs: meta, onde anunciar, quanto gastar, o que cortar.</li>
+        <li>Sai com uma régua escrita — "até tanto, aprova sozinho; acima disso, me chama" — que vale para qualquer ferramenta, não só para a Lovable.</li>
+        <li>Combina com o seu outro lado: primeira startup. Quem lança o primeiro aplicativo é exatamente quem não sabe o que aprovar.</li>
+      </ul>
+    </div>
+    <div class="hoje">
+      <span class="r">O primeiro passo, hoje, em uma tarde</span>
+      <p>Abra a Lovable, monte um aplicativo de teste para um negócio que você conhece e peça a meta "primeiros 100 cadastros". Não aprove nenhum gasto.</p>
+      <p>Pegue o plano que ela devolver e escreva, ao lado de cada item, "eu faria", "eu mudaria" ou "eu cortaria", com uma linha do porquê. Essa página é a sua amostra grátis — e o seu post de segunda-feira.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">A nota fiscal da edição. Horários convertidos para Brasília. Selo 🟢 quando saiu hoje, 🟡 quando é de ontem ou antes. Títulos em inglês com a tradução ao lado.</p>
+    <ol class="src">
+      <li>🟡 quarta, 10h16, na vitrine — <b>"Lovable Growth Tools"</b> ("Ferramentas de crescimento da Lovable"), Product Hunt, a vitrine onde produtos novos são lançados · <a href="https://www.producthunt.com/products/lovable">clique aqui</a></li>
+      <li>🟡 ontem, 13h51, na vitrine — <b>"Maybloc"</b>, Product Hunt · <a href="https://www.producthunt.com/products/maybloc">clique aqui</a></li>
+      <li>🟡 ontem, 8h37, na vitrine — <b>"BOSS Console"</b> ("Console BOSS"), Product Hunt · <a href="https://www.producthunt.com/products/boss-console">clique aqui</a></li>
+      <li>🟡 ontem, 8h55, na vitrine — <b>"Tetriz Harness"</b>, Product Hunt · <a href="https://www.producthunt.com/products/tetriz-harness">clique aqui</a></li>
+      <li>🟡 ontem, 13h16 — <b>"Axi Lança Integração MCP para Conexão de Contas MT5 ao Claude"</b>, Tá No Site, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQYmMtVzJ3M2xydlAzUElNX05qcEdIeXpIaF9GS3dzNS1fb2NfSEc0VHg2VTFFZkdRN0xkX3lSbjNHVXVYVVdCNkpDSUtHV01fbXR5WGNMS29nS2NyY0hPcHBqMDg5cWhaTWNnbnh0V2FUOUZZZ3V5WThvbk5FamRMOWdTaGluNjVuWV9zRUNTMjcwRXN0Tk9LdnkwNHF3aVdneER0ZDc2REc4bUJVaGx5aw?oc=5">clique aqui</a></li>
+      <li>🟡 quinta passada (8/10), 4h — <b>"VOLL lança primeira plataforma de viagens corporativas integrada a ChatGPT, Gemini e Claude via MCP"</b>, Exame, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOaFpOUTV3bVZiOE93bVYyeGZMUlVXN2k2NHpEVWpCc2hHWEx5anRlZTZTblI3Sm5fb3A5ei01SHBLYlowMDI5N2E1bmlYSzlvSWhwV0hkeG5pd0hxMEtnTVhYNmN6Q0g4cnhoUWNMbFFHSUd4aGt4UUllZ3dZbW5naVBFVzBjcm9aOVpidkpBWjJOZ0JNeWI2Q1p2MldHOU5QSHgzTUN3?oc=5">clique aqui</a></li>
+      <li>🟡 quarta, 9h58 — <b>"Salvy lança integração com IA para automatizar a gestão de telefonia empresarial"</b>, Business Moment, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOSzc2RlNmR3lIS2RqNUNuTVBPQ1BtTE1YWFhUS3NIVlMwU2UwRDBjOTNOT1JMYTFqdEV4ZlA2R2ZYcUZ3TXN1NGNhbU1QeThfdklFUlJhYWg4Z0ZVcUtmU01KUkhiWktMZHh2QmMxOXRWaFotbjIwaEFuMlRlVzdQczdDalJVQdIBjgFBVV95cUxOcWFsakZ2Wkg5RVViZEljNDZseUU2NFN4WU1taDA4LTFSSVZuOHhyMVdUVXBkbHB4Q2U1VGYzbUl2T1FjNmdlSC11em5yMlo5OXRMajdwV2c3czBiWEh2Y0lBZnJiU2loZzNxWjRxNnlMbEVnUDh3VGJoeEltVFdkV3FuQnNFd05hQ1pzRVBR?oc=5">clique aqui</a></li>
+      <li>🟡 terça, 17h25 — <b>"“Brain fry”: estudo da BCG mostra como excesso de IA no trabalho gera fadiga mental e erros"</b>, Exame, via Google Notícias · <a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPQTFxa3lGS0E4LU9VVjByRWZpWGhicmZqUXhiQU9sY2F5MWYzZXNkdkpESm5BeDU3VGk2ZlhfTlI2MUVZbUs2Nmd6NFFob3hFdHJfX2pyaFFtbXNka1JrTGd3eWFCWUp1aVhRa3FhQl9kNUJIcWhHU01wQzFoMVZmSHRrTVJrRVdoRmM5RU1QWlp1M3VwWk90NzNaRnZqX2R6ODhFTm0xQmFlZXB0MWt3WGN0SkYwTXhDNXpMckJWT0FWUjU1Yjd3WUpJYw?oc=5">clique aqui</a></li>
+    </ol>
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>1.</b> O radar abriu e leu as páginas da Lovable, do Maybloc, do BOSS Console e do Tetriz Harness no Product Hunt. Funções, preços e números são descrição dos próprios criadores. Nada foi testado pelo radar.</p>
+      <p><b>2.</b> Data da Lovable: o sinal registra a postagem na vitrine na quarta, 10h16, mas a página diz "lançando hoje" e aponta para o quadro de lançamentos de hoje, 16 de outubro. O selo ficou 🟡 por cautela. A página não mostra preço das ferramentas.</p>
+      <p><b>3.</b> Maybloc: a afirmação de "40% menos erros" que os concorrentes vem de testes feitos pela própria empresa. Os 36 centavos de dólar por hora são conta do radar: 60 minutos × 0,6 centavo.</p>
+      <p><b>4.</b> Só a manchete foi lida em quatro casos: Axi, VOLL, Salvy e o estudo da BCG. Os links do Google Notícias não abriram o texto. Tudo além do título nesses itens é contexto do radar.</p>
+      <p><b>5.</b> Ficaram de fora: a IA aberta da Meta (Muse Spark) chegou à vitrine ontem, mas já foi assunto da edição 054. O mural dos programadores de hoje e os assuntos mais buscados no Google não trouxeram nada de IA aplicada a negócio.</p>
+    </div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Nº 056 · sexta-feira, 16 de outubro de 2026<br>Próxima edição: Radar Completo de segunda-feira, 19 de outubro, com o bloco de posicionamento</div>
+</div>
+
+</body>
+</html>
