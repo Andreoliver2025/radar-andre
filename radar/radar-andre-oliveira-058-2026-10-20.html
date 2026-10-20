@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 058 · Pulso de 20 de outubro de 2026 — A nuvem do Google apagou em Londres e levou bancos junto</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A nuvem do Google apagou em Londres e levou bancos junto</h1>
+    <p class="chamada">Hoje de madrugada, uma das salas de máquinas do Google em Londres falhou. O Revolut travou e, segundo relatos de clientes, HSBC e Lloyds também. Todo robô de atendimento mora no prédio de alguém. Você precisa saber o que acontece quando a luz desse prédio cai.</p>
+    <div class="dateline">Edição Nº 058 · terça-feira, 20 de outubro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A queda do Google em Londres e por que ela é assunto de atendimento, não de informática.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: a queda, o bilhete escondido nas páginas do WhatsApp, a DeepSeek abrindo o motor, o novo Kling e a conta dos robôs.</div></div></li>
+      <li><div><a href="#territorio">Seu território: automação</a><div class="d">O robô que propõe e a pessoa que aprova, e o aviso de que ninguém sabe quantos robôs tem em casa.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "teste de apagão" do atendimento: um serviço pequeno, vendável, que quase ninguém oferece.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com hora de Brasília, e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">Hoje às <b>3h08 de Brasília</b>, uma das três salas de máquinas do Google em Londres começou a falhar. Em poucas horas, clientes de bancos, do correio e de lojas inglesas estavam reclamando.</p>
+    <p class="texto capitular">Segundo o The Register, sete serviços da nuvem do Google pararam ou ficaram instáveis em Londres. No Revolut, banco digital, login, cartão e transferência foram afetados, segundo relatos. No site Downdetector, clientes de HSBC, Lloyds, Royal Mail e BT também reclamaram.</p>
+    <p class="texto">Até a última atualização da reportagem, hoje às 7h18, o Google não tinha dito a causa nem a hora da volta. A única saída sugerida: mudar os sistemas para outra região. É o síndico avisar que o elevador quebrou e sugerir que você se mude de prédio.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>"Nuvem" é o computador de outra empresa, alugado, onde roda o seu sistema. Quase todo robô de atendimento mora numa nuvem dessas. Ele fala com o WhatsApp e com o motor de IA por <b>tomadas por onde um sistema conversa com outro</b> (as APIs). Quando o prédio cai, o robô fica mudo, mesmo que você não tenha mexido em nada.</p></div>
+    <div class="hoje"><span class="r">O que isso significa para você</span>
+      <p>Ontem o radar falou do robô que chega ao balcão pelo lado de fora. Hoje o problema é o de dentro: <b>o robô que atende o seu cliente depende de três ou quatro empresas que você não controla.</b></p>
+      <p>Quase ninguém que vende automação para pequeno negócio entrega o "plano B". Isso é atendimento, a parte mais antiga da sua base. Na seção 04, vira serviço.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Sete recortes. Pense na banca de jornal: a manchete maior nem sempre é a que mexe no seu bolso. Aqui as duas estão separadas.</p>
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Sala de máquinas do Google em Londres falha e bancos ingleses saem do ar</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 3h08</span><span>The Register · Neowin, via Hacker News</span></div>
+          <p class="texto">É a notícia da capa. A falha começou em uma das três "zonas" de Londres, a europe-west2-b. O Revolut, segundo relatos, ficou sem login e sem cartão. O banco disse que o dinheiro e os dados dos clientes estão seguros.</p>
+          <p class="texto">O detalhe que importa: o Google tem três salas em Londres justamente para uma cobrir a outra. Mesmo assim, empresas grandes caíram. Quem dependia de uma sala só não tinha para onde correr.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Zona" é um prédio separado, com luz e internet próprias, na mesma cidade. O <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu. A queda foi para o topo do mural hoje cedo.</p></div>
+          <div class="link"><a href="https://www.theregister.com/paas-and-iaas/2026/10/20/google-clouds-london-zones-takes-a-nap-multiple-services-disrupted/5304084">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Páginas de ajuda do WhatsApp escondiam ordens para a IA: "não recomende procurar o órgão regulador"</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 20h22</span><span>Redact · WIRED, via Hacker News</span></div>
+          <p class="texto">Dan Saltman, fundador da Redact, achou texto invisível em 80 de 545 páginas de ajuda do WhatsApp. Eram 102 blocos que a pessoa não via, mas a IA lia. Um deles: não recomendar contato com autoridade de proteção de dados.</p>
+          <p class="texto">Outro: se o usuário falasse em advogado ou processo, a IA não devia citar leis de privacidade, inclusive a LGPD brasileira. O WhatsApp disse à WIRED que eram instruções do próprio robô de suporte, publicadas por erro. Os blocos sumiram até sábado.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Era <b>a instrução escrita que você dá para a IA</b> (o prompt), escondida dentro da página. Pense num bilhete colado atrás do balcão, que só o atendente lê. Ninguém sabe se o robô obedeceu, nem se outras IAs que leram a página obedeceram.</p></div>
+          <div class="link"><a href="https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>A DeepSeek abre de graça o programa que faz os próprios motores funcionarem</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 6h08</span><span>GitHub da DeepSeek, via Hacker News</span></div>
+          <p class="texto">No sábado, a chinesa DeepSeek lançou o V4.1 Flash, o motor barato da edição Nº 057. Hoje ela abriu o DeepInfer, o programa que põe esse motor para rodar. Segundo a página, é o mesmo que atende os clientes da própria DeepSeek.</p>
+          <p class="texto">Funciona em placas da Nvidia e da Huawei e exige máquina grande: não é coisa de notebook. Até agora, cerca de 5,5 mil programadores marcaram o projeto como favorito.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>É de <b>código aberto</b>: qualquer um pode baixar e rodar por conta. Para você, o efeito é indireto. Mais empresas vão poder oferecer o motor da DeepSeek, e mais concorrência costuma baixar o preço.</p></div>
+          <div class="link"><a href="https://github.com/deepseek-ai/DeepInfer">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Kling 4.0: vídeo de até 30 segundos, com a boca acompanhando a fala em mais de dez idiomas</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 14h51</span><span>Product Hunt</span></div>
+          <p class="texto">O Kling, gerador de vídeo por IA, lançou a versão 4.0. Você planeja a cena em até dez quadros-chave e entrega até quinze referências, como foto do produto. Ele gera até 30 segundos de uma vez, já com som.</p>
+          <p class="texto">Dá também para trocar o produto dentro de um vídeo pronto. A versão Flash, mais barata, serve para rascunho. A página não traz preço.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. O Kling ganhou também <b>um padrão de encaixe, como a tomada de três pinos</b> (o MCP), que deixa um robô pedir vídeo sozinho. Trocar o produto num anúncio que já deu certo é o uso que paga a conta.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/kling-4-0-4">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Robô de IA trabalha, mas a conta chega: o Valor fala em "nova gestão de custos"</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h</span><span>Valor Econômico</span></div>
+          <p class="texto">O Valor publicou hoje que o uso de robôs de IA pede um novo jeito de controlar gasto. Só conseguimos ver a manchete. O tema bate com o que a consultoria McKinsey já tinha medido: o gasto das empresas com IA triplicou em doze meses.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O robô é cobrado por <b>unidade de texto, como o minuto na conta de telefone antiga</b> (o token). Robô que conversa demais, ou repete tarefa, deixa a conta alta sem ninguém perceber. É telefone sem bloqueio de interurbano.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOSVYyMnQ0MWN3V2FDWXJEclBLbnhvSnMwbVVGUU1HRWpGNndwMXYzaFREQXFVeFNzdnpzTURvT3AzQnZUam9qenhDZGF2ckVWTHlQd1pDWXotS3RhRHpJWDJGNHZVbWo2bmJWTkVQcFM0dTdSTlZVVVZaN2RISUhzQllYbExXclRreTBCVUhaT19mVVdreHVlUXQ4LTRkbzA3TTY4a2w1WThWbW00SXE3a1dR0gHAAUFVX3lxTFB1RjJHUW85d2MzSFhscVhZZm8wMnpTZ0EzX0NWNmVBa0JKa2RaZDB4aC1LYmlFZzhMTGpGc3hfTTRWaU9EcHpBekw4eHJNaUJ3RmEwcDFNSXM4NFQzU2N4TGVVdmM2al9IanhpSDNsSGNVWTBUdzNqaGwxa2lBbTNCSTRLX1gtUllDQVp0X1VPTHNxR3Q4aGxIcDlOd3F2ZlZxSHRyQnZvcVNtVFotYzdYZE1KQzZhNjh4d08zSFhIYQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Seis em cada dez empresas já usam robô de IA, mas só duas em dez usam em mais de uma área</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 5h19</span><span>TechBit (Portugal), sobre estudo da Quidgest</span></div>
+          <p class="texto">A Quidgest, empresa portuguesa de software, divulgou um levantamento. Segundo a manchete do TechBit, 61% das organizações já usam robôs de IA. Só 20% ligaram esses robôs a mais de uma área do negócio.</p>
+          <p class="texto">Traduzindo: a maioria tem um robô no atendimento, ou um no financeiro, e eles não conversam. É a loja em que o estoque não sabe o que o caixa vendeu.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNXJiLUo1WEhFMWFfZXZqNFVfUG1nZ2l6dU1kdlB1VUJGSmpzS2lUN1pocFpsQlNCZVlVZDk4cGItWm4wR2FrTHh3RUpmT2w4NWNFWGJ1R3ZHTmZrdlZmZ3JldjlFYmM?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Nvidia aposta em robôs de IA que rodam no computador da própria empresa, sem depender da nuvem</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h33</span><span>BlockTrends · Nvidia</span></div>
+          <p class="texto">O BlockTrends noticiou ontem a família Nemotron, da Nvidia: motores de IA abertos, feitos para rodar robôs em computador próprio. Em agosto, a Nvidia já tinha lançado o Nemotron 3.5 Lightning com a mesma proposta.</p>
+          <p class="texto">Num dia como hoje, a ideia ganha peso. Robô que roda na sua máquina não cai quando a nuvem do Google cai. Em troca, a manutenção vira problema seu.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O Nemotron é um <b>motor que faz o ChatGPT responder</b> (o modelo de linguagem), só que da Nvidia e para instalar em casa. É a diferença entre ter gerador próprio e depender só da companhia de luz.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5YeUZvSXoycG1FZURPRXBGa0cweHVqdWt4UXB4WkNEMWVXQkoxOWZULTl3RnNEcUlEczd4N2J5YWVvVk51d2VPVWJmNWJKRW9sLTYtQWxmeGxiU1JrM1YxQmRqd1lRcklFQlJGbG1sZ2cxWVZCOWs5T0I2ZFNYNTQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">3h08</div><div class="lbl">hora de Brasília em que <b>a sala do Google em Londres</b> começou a falhar</div></div>
+      <div class="numero"><div class="big">1 de 3</div><div class="lbl">salas do Google em Londres falhou, e mesmo assim <b>bancos grandes</b> pararam</div></div>
+      <div class="numero"><div class="big">102</div><div class="lbl">ordens escondidas para a IA em <b>80 páginas de ajuda</b> do WhatsApp</div></div>
+      <div class="numero"><div class="big">61% · 20%</div><div class="lbl">empresas que <b>usam robô</b> e as que usam <b>em mais de uma área</b> (Quidgest)</div></div>
+    </div>
+
+    <div class="olho"><p>O robô de atendimento tem dois patrões que o cliente não vê: o dono do prédio onde ele roda e quem escreveu o bilhete atrás do balcão.</p><span class="quem">A frase para levar à reunião</span></div>
+  </section>
+
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">Dois sinais de ontem desenham o jeito certo de entregar robô: <b>ele propõe, uma pessoa aprova, e alguém sabe quantos robôs existem.</b></p>
+    <p class="texto"><b>O robô que propõe e não publica.</b> A Mintlify lançou ontem, no Product Hunt, o Autopilot. Ele fica de olho no sistema e nas conversas do time no Slack. Quando algo muda, escreve a atualização do manual e manda para alguém aprovar.</p>
+    <p class="texto">Ele aprende o estilo da casa pelo que é aceito e pelo que é recusado. Tire "manual de programador" da frase e sobra um molde para qualquer pequena empresa: tabela de preço, roteiro de atendimento, respostas prontas do WhatsApp. É o estagiário que prepara e o gerente que assina.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>É um <b>robô que executa uma tarefa do início ao fim sozinho</b> (agente de IA), mas com uma trava: a última palavra é de gente. Depois do caso do WhatsApp, essa trava deixou de ser cuidado extra e virou argumento de venda.</p></div>
+    <p class="texto"><b>Ninguém sabe quantos robôs tem em casa.</b> Também ontem, a empresa de segurança Tanium alertou, segundo o TI Inside: sem enxergar os robôs que rodam na empresa, não dá para controlar o que eles fazem. Some isso aos 20% da Quidgest e ao Valor falando de custo.</p>
+    <p class="texto">A pergunta do mercado está mudando de "qual robô comprar" para "quem cuida dos robôs".</p>
+    <div class="hoje"><span class="r">O que isso significa para você</span>
+      <p>Você monta times de robôs. O próximo pedido do cliente não será "mais um robô". Será <b>uma lista do que cada robô faz, quanto custa, quem aprova e o que acontece se ele cair.</b></p>
+      <p>Quem entregar essa lista de uma página junto com o robô vende manutenção todo mês, não só a instalação.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O <b>"teste de apagão" do atendimento</b>: um serviço curto, de preço fechado. Ele responde à pergunta que a manhã de hoje deixou no ar: se a IA cair às 10h de uma sexta, o que o seu cliente vê?</p>
+    <p class="texto">Pense no teste do gerador que hospital faz todo mês. Ninguém espera faltar luz. Testa porque, quando faltar, não vai ter tempo de improvisar. Pouca clínica, loja ou imobiliária com robô no WhatsApp fez esse teste uma vez sequer.</p>
+    <p class="texto">O serviço tem três partes. Um mapa de uma página: de que empresas o robô depende e o que para se cada uma cair. A mensagem de reserva: o que o cliente recebe com o robô mudo, e quem da equipe é avisado. E a leitura do bilhete atrás do balcão: as instruções do robô, procurando o que ele não deveria dizer ou esconder.</p>
+    <div class="nota"><span class="r">Por que agora</span>
+      <ul class="lista">
+        <li><b>Hoje:</b> a queda de Londres dá o exemplo concreto, com nome de banco, para abrir a conversa.</li>
+        <li><b>Ontem:</b> o caso do WhatsApp mostra que o bilhete do robô pode virar notícia ruim, e envolve a LGPD.</li>
+        <li><b>A semana:</b> Valor e Quidgest mostram que as empresas já têm robô e agora querem saber quanto custa e quem cuida.</li>
+      </ul>
+    </div>
+    <p class="texto">É produto de entrada. Barato o bastante para o dono topar sem reunião, e abre a porta para a manutenção mensal da seção 03.</p>
+    <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span>
+      <p>Pegue <b>um cliente ou projeto seu que já tem robô no WhatsApp</b>. Numa folha, liste as empresas de que ele depende: o WhatsApp, o motor de IA, a nuvem onde ele roda, a planilha ou a agenda.</p>
+      <p>Ao lado de cada uma, escreva o que o cliente final vê se ela cair. Depois escreva a mensagem de reserva, em três linhas. Essa folha, com a notícia de hoje no topo, é a sua primeira proposta do "teste de apagão".</p>
+    </div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Todo recorte tem link. As horas estão em horário de Brasília e marcam quando a notícia saiu ou foi postada no mural.</p>
+    <ol class="src">
+      <li>The Register — "Google Cloud's London zones takes a nap, multiple services disrupted", hoje, atualizada às 7h18. <a href="https://www.theregister.com/paas-and-iaas/2026/10/20/google-clouds-london-zones-takes-a-nap-multiple-services-disrupted/5304084">theregister.com</a></li>
+      <li>Neowin — "Google cloud outage takes down banks", postada no Hacker News hoje às 7h26. <a href="https://www.neowin.net/news/google-cloud-outage-takes-down-hsbc-revolut-bank-of-scotland-llyods-equifax-more/">neowin.net</a></li>
+      <li>BBC — "Revolut down as users report app not working", postada no Hacker News hoje às 6h54. <a href="https://www.bbc.com/news/articles/cxdd8mm6qy4mo">bbc.com</a></li>
+      <li>Cybernews — "Google Cloud outage hits Revolut, Lloyds, and HSBC", hoje. <a href="https://cybernews.com/tech/google-cloud-outage-revolut-hsbc-lloyds/">cybernews.com</a></li>
+      <li>Redact — "WhatsApp's help pages hid LLM instructions", postada no Hacker News ontem às 20h22. <a href="https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions">redact.dev</a></li>
+      <li>DeepSeek — repositório "DeepInfer" no GitHub, postado no Hacker News hoje às 6h08. <a href="https://github.com/deepseek-ai/DeepInfer">github.com/deepseek-ai/DeepInfer</a></li>
+      <li>Product Hunt — "Kling 4.0", ontem às 14h51. <a href="https://www.producthunt.com/products/kling-4-0-4">producthunt.com</a></li>
+      <li>Product Hunt — "Mintlify Autopilot", ontem às 15h29. <a href="https://www.producthunt.com/products/mintlify">producthunt.com</a></li>
+      <li>Valor Econômico — "Uso de agentes de IA demanda uma nova gestão de custos", hoje às 5h. <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOSVYyMnQ0MWN3V2FDWXJEclBLbnhvSnMwbVVGUU1HRWpGNndwMXYzaFREQXFVeFNzdnpzTURvT3AzQnZUam9qenhDZGF2ckVWTHlQd1pDWXotS3RhRHpJWDJGNHZVbWo2bmJWTkVQcFM0dTdSTlZVVVZaN2RISUhzQllYbExXclRreTBCVUhaT19mVVdreHVlUXQ4LTRkbzA3TTY4a2w1WThWbW00SXE3a1dR0gHAAUFVX3lxTFB1RjJHUW85d2MzSFhscVhZZm8wMnpTZ0EzX0NWNmVBa0JKa2RaZDB4aC1LYmlFZzhMTGpGc3hfTTRWaU9EcHpBekw4eHJNaUJ3RmEwcDFNSXM4NFQzU2N4TGVVdmM2al9IanhpSDNsSGNVWTBUdzNqaGwxa2lBbTNCSTRLX1gtUllDQVp0X1VPTHNxR3Q4aGxIcDlOd3F2ZlZxSHRyQnZvcVNtVFotYzdYZE1KQzZhNjh4d08zSFhIYQ?oc=5">valor.globo.com (via Google News)</a></li>
+      <li>McKinsey — "Vale a pena investir nesse agente de IA?", sobre o gasto com IA que triplicou. <a href="https://www.mckinsey.com/featured-insights/destaques/vale-a-pena-investir-nesse-agente-de-ia-a-dinamica-economica-agentica-e-o-modelo-operacional-moderno/pt">mckinsey.com</a></li>
+      <li>TechBit — "Quidgest: 61% das organizações já utilizam agentes de IA, mas apenas 20% os integraram em múltiplas áreas de negócio", hoje às 5h19. <a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1FNXJiLUo1WEhFMWFfZXZqNFVfUG1nZ2l6dU1kdlB1VUJGSmpzS2lUN1pocFpsQlNCZVlVZDk4cGItWm4wR2FrTHh3RUpmT2w4NWNFWGJ1R3ZHTmZrdlZmZ3JldjlFYmM?oc=5">techbit.pt (via Google News)</a></li>
+      <li>BlockTrends — "Nvidia lança modelos abertos Nemotron para rodar agentes de IA localmente em PCs e data centers corporativos", ontem às 15h33. <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5YeUZvSXoycG1FZURPRXBGa0cweHVqdWt4UXB4WkNEMWVXQkoxOWZULTl3RnNEcUlEczd4N2J5YWVvVk51d2VPVWJmNWJKRW9sLTYtQWxmeGxiU1JrM1YxQmRqd1lRcklFQlJGbG1sZ2cxWVZCOWs5T0I2ZFNYNTQ?oc=5">blocktrends.com.br (via Google News)</a></li>
+      <li>IT Brief — "Nvidia unveils Nemotron 3.5 Lightning for local agents", agosto. <a href="https://itbrief.co.uk/story/nvidia-unveils-nemotron-3-5-lightning-for-local-agents">itbrief.co.uk</a></li>
+      <li>TI Inside — "Sem visibilidade, as empresas não conseguem governar os agentes de IA, alerta Tanium", ontem às 13h31. <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxObDRlbzVzcGlQYzd2aTZzQ3dmVmxDNU9vV2YycFRFR2tiMVRhNGZ3c1pGUkhZeGpWVFpuRlRmVVBHaGdsWDFvWTlSV0ZBRmJEUmY1MmRUUlFHdVNPMHlYQjVDTTdxeHB3UnAzd3FKd3BlYlR2c0NHdFN3TVhYcWV0T0xUUVJZZ2h6clh3S2Fjd3FHYmlmVWJpZmdQdHlEVVlSN0NuQjlOem1lcWhWd1gtVEhEeE5wYnRLQXc?oc=5">tiinside.com.br (via Google News)</a></li>
+    </ol>
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>Bancos:</b> os problemas no Revolut aparecem em várias reportagens. HSBC, Lloyds e os demais aparecem só por reclamação de clientes no Downdetector; a ligação com o Google não foi confirmada. Até as 7h18, causa e hora da volta não tinham sido divulgadas. <b>WhatsApp:</b> não se sabe se o robô obedeceu às ordens escondidas, nem por quanto tempo elas ficaram no ar. <b>Valor:</b> só vimos a manchete; o conteúdo da matéria não foi conferido. <b>Quidgest:</b> os números 61% e 20% vêm da manchete do TechBit; o estudo original não foi encontrado. <b>Nvidia:</b> não achamos anúncio novo da Nvidia em outubro; a notícia de ontem pode estar repercutindo o lançamento de agosto. <b>Ficou de fora:</b> a reportagem do Baguete sobre um invasor que teria usado robôs contra mais de 100 empresas. Não achamos confirmação em outra fonte.</p></div>
+  </section>
+
+  <div class="assinatura">Radar · Nº 058 · 20 de outubro de 2026<br>Próxima edição: quarta-feira, 21 de outubro · Pulso diário</div>
+</div>
+
+</body>
+</html>
