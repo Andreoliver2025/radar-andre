@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 063 · A conta da IA chegou, e o robô barato quer decidir por você</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A conta da IA chegou, e agora a briga é por quem decide mais barato</h1>
+    <p class="chamada">Um robô novo promete tomar as decisões pequenas de um time de robôs por uma fração do preço. Um motor chinês saiu pela metade do preço do anterior. E o Valor avisa: empresa que usa robô de IA agora precisa de gestão de custo própria. Depois de uma semana falando de confiança, o cliente vai perguntar outra coisa: quanto isso me custa por mês?</p>
+    <div class="dateline">Edição Nº 063 · quarta-feira, 21 de outubro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A pergunta do cliente mudou de "dá para confiar?" para "quanto custa?".</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Motor pela metade do preço, robô que decide barato, o Valor sobre custo e mais quatro.</div></div></li>
+      <li><div><a href="#territorio">Seu território: automação</a><div class="d">O desenho do porteiro: nem toda decisão precisa do motor mais caro.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "raio-x da conta de IA": um serviço curto para quem já paga robô e não sabe quanto gasta.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">As fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">O assunto da semana era segurança. Hoje o sinal virou para o bolso.</p>
+    <p class="texto capitular">Ontem o Valor Econômico publicou que o uso de robôs de IA pede uma nova gestão de custos. Na mesma noite, o Mouse-1 entrou na vitrine de lançamentos com uma promessa direta: cuidar das decisões pequenas de um time de robôs gastando bem menos que os motores grandes.</p>
+    <p class="texto">Na segunda-feira, a chinesa MiniMax tinha lançado o M3.1 Flash pela metade do preço do modelo anterior dela. Três sinais, um recado: rodar robô de IA tem uma conta, e ela está ficando visível.</p>
+    <p class="texto">É como a conta de luz de uma loja que trocou tudo por ar-condicionado. No primeiro mês ninguém olha. No terceiro, o dono quer saber qual aparelho está gastando.</p>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Você já vende robô que funciona e robô em que dá para confiar. A próxima pergunta do cliente é quanto custa cada tarefa que o robô faz. Quem chegar com essa conta pronta, em reais e por tarefa, fala a língua do dono da empresa.</p></div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Sete recortes. Quase todos giram em torno da mesma pergunta: quem paga a conta, e quanto.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Mouse-1: um robô pequeno que toma as decisões miúdas para o motor grande pensar só no que importa</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · no ranking da vitrine</span><span>Product Hunt</span></div>
+          <p class="texto">Um robô que faz uma tarefa inteira toma dezenas de decisões pequenas no caminho: qual ferramenta abrir, se a resposta serve, para quem passar o caso. O Mouse-1 assume essas escolhas e devolve a chance de cada opção dar certo.</p>
+          <p class="texto">O fabricante diz que, nos testes dele, sai cerca de 190 vezes mais barato e 13 vezes mais rápido que o Claude Opus 5.5. É número do próprio vendedor, sem teste independente. A empresa afirma que não guarda os dados enviados e oferece um plano gratuito.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Pense na recepção de uma clínica. A recepcionista decide quem vai para qual sala; o médico só atende quem precisa dele. O Mouse-1 quer ser a recepcionista do seu time de robôs, para o motor caro (o médico) não perder tempo com triagem. Ele se liga pela "tomada por onde um sistema conversa com outro".</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/mouse-1">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>A chinesa MiniMax lança um motor de IA pela metade do preço do anterior</h3>
+          <div class="credito"><span class="frescor antes">🟡 segunda-feira, 19 de outubro</span><span>Artificial Analysis · OrcaRouter</span></div>
+          <p class="texto">O MiniMax M3.1 Flash custa 15 centavos de dólar por milhão de unidades lidas e 60 centavos por milhão escritas. É exatamente metade do preço do MiniMax M3, segundo a OrcaRouter, e fica abaixo da média de modelos parecidos, segundo a Artificial Analysis.</p>
+          <p class="texto">A MiniMax diz que vai liberar o modelo para qualquer um baixar no dia 23. Isso ainda não aconteceu.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Motor de IA" é o que faz o ChatGPT responder. A "unidade" é como as empresas de IA cobram, como o minuto na conta de telefone antiga. Um milhão dessas unidades dá, grosso modo, alguns livros inteiros de texto.</p></div>
+          <div class="link"><a href="https://artificialanalysis.ai/pt/models/minimax-m3-1-flash">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Valor: quem usa robô de IA precisa de uma nova gestão de custos</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 5h</span><span>Valor Econômico</span></div>
+          <p class="texto">O título já diz o essencial. Robô de IA não cobra mensalidade fixa como um programa comum. Ele cobra pelo que trabalha, e um robô mal desenhado trabalha demais.</p>
+          <p class="texto">Não conseguimos abrir o texto inteiro do Valor. Uma pesquisa da McKinsey sobre o mesmo tema conta que 93% das empresas ouvidas estouraram o orçamento de IA.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOSVYyMnQ0MWN3V2FDWXJEclBLbnhvSnMwbVVGUU1HRWpGNndwMXYzaFREQXFVeFNzdnpzTURvT3AzQnZUam9qenhDZGF2ckVWTHlQd1pDWXotS3RhRHpJWDJGNHZVbWo2bmJWTkVQcFM0dTdSTlZVVVZaN2RISUhzQllYbExXclRreTBCVUhaT19mVVdreHVlUXQ4LTRkbzA3TTY4a2w1WThWbW00SXE3a1dR0gHAAUFVX3lxTFB1RjJHUW85d2MzSFhscVhZZm8wMnpTZ0EzX0NWNmVBa0JKa2RaZDB4aC1LYmlFZzhMTGpGc3hfTTRWaU9EcHpBekw4eHJNaUJ3RmEwcDFNSXM4NFQzU2N4TGVVdmM2al9IanhpSDNsSGNVWTBUdzNqaGwxa2lBbTNCSTRLX1gtUllDQVp0X1VPTHNxR3Q4aGxIcDlOd3F2ZlZxSHRyQnZvcVNtVFotYzdYZE1KQzZhNjh4d08zSFhIYQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>IT Forum: o profissional que vale mais agora é quem coordena os robôs</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 17h24</span><span>IT Forum</span></div>
+          <p class="texto">A manchete resume a tese: o valor sai de quem executa a tarefa e vai para quem organiza o time de robôs que executa. É o mesmo movimento que o Radar vem apontando para você desde o começo.</p>
+          <p class="texto">Só confirmamos o título. O texto completo não abriu para nós.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE01ZHotT0FFMV96M25vbU4xbnR2VVUwZHhYcmh4UVoyZndRS2l1SGNubk4zcWlDYWxWMFBxN2t1NWxBSGdBYldnamlEbHlMUXoyR1BLR2FhNFp0QWFSTk40YWRvaHZ6RnVKV2dLRmRXamdSeWtxUUVCeEtPZ9IBgAFBVV95cUxQR0hnbEVTX2ladmlTdThRZy15OXcxUEVhOGhEOUt6ZGNFcU4xSEMwUThoZ3Q2VXAtdkRvam82ZnpzU00xaTRrVWpxVnd6TG5QUXVBX3p4NTlzQ09fa3Q0R3ZVTjlhQkoxUnNXcXNodnNBTzhqUlZQRWlNYzdCV2pWdw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>GPT Maker vende robôs de atendimento e vendas montados sem escrever código</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h49</span><span>ABC Agora</span></div>
+          <p class="texto">A plataforma brasileira monta assistentes que respondem cliente e ajudam a vender, inclusive no WhatsApp, a partir dos documentos da própria empresa. A reportagem é de ontem; guias anteriores da Data Hackers descrevem o mesmo funcionamento.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Sem código" quer dizer as telas de arrastar caixinhas: você monta o robô como quem monta um formulário. Ferramenta assim deixa o robô simples barato para qualquer um. O que continua valendo dinheiro é saber o que o robô deve dizer e quando ele deve passar para um humano.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFAwejNtU04wajc1RXV4UTBnUTg3SjVrRlNCZGViU3lEcEVXSmhWVFMyMXZxTW1SY21WOGdxLThpNm9Vb081b1Z5eVp3eTkyUVFYVEFjWC1fSmdKUHJOZUN1N3p1RkFtNGs4WVdnc3gzeGh1RWV5NXc?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>O cofundador do Figma diz que o padrão de encaixe da IA não é perfeito</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 12h30</span><span>Boa Informação</span></div>
+          <p class="texto">Dylan Field, do Figma, teria dito que o MCP tem defeitos. Não achamos a fala original dele, só a manchete em português. O debate em si é real: há textos críticos ao MCP e outros defendendo que as críticas miram versões antigas.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>MCP é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Quando alguém grande critica a tomada, não quer dizer que ela vai sumir. Quer dizer que ela ainda vai mudar. Não amarre a entrega do cliente a um detalhe que pode trocar daqui a seis meses.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ3VFUmdMSFFmcklNa0xnMWtHNWtBb1Q3Ymx5Q0VZMlNLSUNEcWtTc2hHMjRPRHpFZkJMRUV6WkIxdnVaNkF6SXVpc1dHRlN2elM2eVQweF9EMjltTFpMNjFmM1dSS0hEejJWaXpxWjJFVFVuc0hzYXRUV1g3Nll5bnphN0FQTXBYR0p0WFVKS0Yxb2pDbXBPajItWmhnMVZMOE1Gc180VUZzbHhqT0Y5ejJ3SmY?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>Hotly: cobre para responder mensagem direta, sem comissão se rodar no seu servidor</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · no ranking da vitrine</span><span>Product Hunt</span></div>
+          <p class="texto">Você compartilha um link e quem quer falar com você paga por uma mensagem avulsa ou assina um plano semanal. As respostas saem de uma caixa só, e o pagamento passa pelo Stripe.</p>
+          <p class="texto">É de código aberto: qualquer um pode baixar e rodar por conta, sem comissão. Na versão hospedada, os primeiros 30 dias são grátis.</p>
+          <div class="link"><a href="https://www.producthunt.com/products/hotly">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">US$ 0,15</div><div class="lbl">preço do <b>MiniMax M3.1 Flash</b> por milhão de unidades lidas</div></div>
+      <div class="numero"><div class="big">metade</div><div class="lbl">do preço do modelo anterior da <b>MiniMax</b>, o M3</div></div>
+      <div class="numero"><div class="big">~190×</div><div class="lbl">mais barato que o Opus 5.5, segundo o próprio <b>Mouse-1</b> (sem teste independente)</div></div>
+      <div class="numero"><div class="big">93%</div><div class="lbl">das empresas ouvidas pela <b>McKinsey</b> estouraram o orçamento de IA</div></div>
+    </div>
+
+    <div class="olho"><p>O robô que funciona você já vende. O próximo contrato é do robô que custa pouco por tarefa, e de quem consegue provar isso em reais.</p><span class="quem">A frase para levar à reunião</span></div>
+  </section>
+
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">O desenho que aparece hoje tem nome simples: o porteiro. Nem toda decisão do seu time de robôs precisa passar pelo motor mais caro.</p>
+    <p class="texto">Um time de robôs que atende cliente faz dois tipos de trabalho. Um é pensar de verdade: escrever a proposta, entender a reclamação difícil. O outro é triagem: isso é dúvida ou reclamação? Vai para vendas ou para o suporte? O cliente respondeu sim ou não?</p>
+    <p class="texto">Hoje, a maioria dos robôs manda tudo para o mesmo motor, o caro. O Mouse-1 e o MiniMax M3.1 Flash apontam para o mesmo desenho: um motor barato faz a triagem, e o caro só entra quando precisa.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>Pense numa loja de material de construção. O vendedor sênior não deveria ficar no balcão dizendo onde fica o corredor de tintas. Quem faz isso é a placa e o atendente da entrada. O sênior fica para o cliente que vai reformar a casa inteira. Em robô é igual: o motor barato é a placa, o caro é o vendedor sênior.</p></div>
+    <p class="texto">Isso conversa com o arco das últimas edições. Primeiro o robô precisava funcionar. Depois precisava ser confiável, com crachá, tranca e regra de uso. Agora precisa caber na conta.</p>
+    <div class="nota"><span class="r">O arco, em seis edições</span>
+      <ul class="lista">
+        <li><b>Nº 058 a 061:</b> a nuvem cai, robôs invadem, a tomada ganha fechadura, a portaria não reconhece robô.</li>
+        <li><b>Nº 062:</b> o vazamento veio do botão de compartilhar. A regra de uso é a última tranca.</li>
+        <li><b>Nº 063:</b> com a porta trancada, o cliente olha a fatura. Quem decide barato ganha.</li>
+      </ul>
+    </div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Na próxima proposta de time de robôs, separe as etapas em duas colunas: "triagem" e "pensar de verdade". Diga ao cliente que a triagem roda num motor barato e só o resto usa o caro. É um argumento de preço que o concorrente que só "liga o ChatGPT" não tem.</p></div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O "raio-x da conta de IA": um serviço curto para a empresa que já paga robô ou assinatura de IA e não sabe quanto gasta por tarefa.</p>
+    <p class="texto">Muita empresa pequena hoje paga três ou quatro assinaturas de IA, mais um robô de atendimento cobrado por uso. Ninguém sabe quanto custa cada atendimento, cada proposta, cada resposta no WhatsApp. A notícia do Valor é o gancho: até a imprensa de economia está falando disso.</p>
+    <p class="texto">O serviço tem três partes. Uma: listar tudo o que a empresa paga de IA. Duas: dividir a conta pelo número de tarefas feitas, chegando ao custo por atendimento ou por proposta. Três: apontar as etapas de triagem que poderiam ir para um motor mais barato.</p>
+    <p class="texto">É como a vistoria da conta de luz: você não troca a instalação, só mostra qual aparelho gasta mais. E a vistoria abre o próximo contrato, que é refazer o robô do jeito econômico.</p>
+    <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span><p>Escolha um robô seu ou de um cliente e escreva cada etapa dele numa folha. Marque com "T" as de triagem (classificar, sim ou não, passar adiante) e com "P" as de pensar de verdade. Depois abra o painel de cobrança do fornecedor e anote o gasto do último mês. Dividido pelo número de tarefas, esse número em reais é o exemplo do primeiro post e da primeira proposta.</p></div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Cada recorte tem link. Abaixo, a lista completa, com os títulos originais.</p>
+    <ol class="src">
+      <li>Product Hunt — "Mouse-1: A decision model for your agent harness", no ranking de 21 de outubro. Números de custo e velocidade são do fabricante. <a href="https://www.producthunt.com/products/mouse-1">producthunt.com</a></li>
+      <li>Artificial Analysis — "MiniMax-M3.1-Flash: análise de inteligência, desempenho e preço", lançamento em 19 de outubro. <a href="https://artificialanalysis.ai/pt/models/minimax-m3-1-flash">artificialanalysis.ai</a></li>
+      <li>OrcaRouter — "MiniMax M3.1 Flash vs MiniMax M3" (comparação de preço). <a href="https://www.orcarouter.ai/pt/blog/minimax-m3-1-flash-vs-minimax-m3">orcarouter.ai</a></li>
+      <li>Valor Econômico — "Uso de agentes de IA demanda uma nova gestão de custos", 20 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOSVYyMnQ0MWN3V2FDWXJEclBLbnhvSnMwbVVGUU1HRWpGNndwMXYzaFREQXFVeFNzdnpzTURvT3AzQnZUam9qenhDZGF2ckVWTHlQd1pDWXotS3RhRHpJWDJGNHZVbWo2bmJWTkVQcFM0dTdSTlZVVVZaN2RISUhzQllYbExXclRreTBCVUhaT19mVVdreHVlUXQ4LTRkbzA3TTY4a2w1WThWbW00SXE3a1dR0gHAAUFVX3lxTFB1RjJHUW85d2MzSFhscVhZZm8wMnpTZ0EzX0NWNmVBa0JKa2RaZDB4aC1LYmlFZzhMTGpGc3hfTTRWaU9EcHpBekw4eHJNaUJ3RmEwcDFNSXM4NFQzU2N4TGVVdmM2al9IanhpSDNsSGNVWTBUdzNqaGwxa2lBbTNCSTRLX1gtUllDQVp0X1VPTHNxR3Q4aGxIcDlOd3F2ZlZxSHRyQnZvcVNtVFotYzdYZE1KQzZhNjh4d08zSFhIYQ?oc=5">news.google.com</a></li>
+      <li>McKinsey — "Vale a pena investir nesse agente de IA? A dinâmica econômica agêntica e o modelo operacional moderno" (o dado dos 93%). <a href="https://www.mckinsey.com/featured-insights/destaques/vale-a-pena-investir-nesse-agente-de-ia-a-dinamica-economica-agentica-e-o-modelo-operacional-moderno/pt">mckinsey.com</a></li>
+      <li>IT Forum — "IA muda o perfil do profissional de TI e valoriza quem coordena agentes", 20 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE01ZHotT0FFMV96M25vbU4xbnR2VVUwZHhYcmh4UVoyZndRS2l1SGNubk4zcWlDYWxWMFBxN2t1NWxBSGdBYldnamlEbHlMUXoyR1BLR2FhNFp0QWFSTk40YWRvaHZ6RnVKV2dLRmRXamdSeWtxUUVCeEtPZ9IBgAFBVV95cUxQR0hnbEVTX2ladmlTdThRZy15OXcxUEVhOGhEOUt6ZGNFcU4xSEMwUThoZ3Q2VXAtdkRvam82ZnpzU00xaTRrVWpxVnd6TG5QUXVBX3p4NTlzQ09fa3Q0R3ZVTjlhQkoxUnNXcXNodnNBTzhqUlZQRWlNYzdCV2pWdw?oc=5">news.google.com</a></li>
+      <li>ABC Agora — "GPT Maker facilita criação de agentes de IA sem programação para vendas e atendimento", 20 de outubro. <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFAwejNtU04wajc1RXV4UTBnUTg3SjVrRlNCZGViU3lEcEVXSmhWVFMyMXZxTW1SY21WOGdxLThpNm9Vb081b1Z5eVp3eTkyUVFYVEFjWC1fSmdKUHJOZUN1N3p1RkFtNGs4WVdnc3gzeGh1RWV5NXc?oc=5">news.google.com</a> · Data Hackers — guia do GPT Maker. <a href="https://www.datahackers.news/p/gpt-maker-o-que-e-como-us-lo-para-criar-seu-pr-prio-agente-de-ia">datahackers.news</a></li>
+      <li>Boa Informação — "O cofundador da Figma, Dylan Field, acha que o MCP não é um protocolo perfeito", 20 de outubro. <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ3VFUmdMSFFmcklNa0xnMWtHNWtBb1Q3Ymx5Q0VZMlNLSUNEcWtTc2hHMjRPRHpFZkJMRUV6WkIxdnVaNkF6SXVpc1dHRlN2elM2eVQweF9EMjltTFpMNjFmM1dSS0hEejJWaXpxWjJFVFVuc0hzYXRUV1g3Nll5bnphN0FQTXBYR0p0WFVKS0Yxb2pDbXBPajItWmhnMVZMOE1Gc180VUZzbHhqT0Y5ejJ3SmY?oc=5">news.google.com</a> · Arcade — "MCP has already won" (o outro lado do debate). <a href="https://www.arcade.dev/blog/mcp-has-already-won/">arcade.dev</a></li>
+      <li>Product Hunt — "Hotly: Get paid to answer your DMs. Open source", 21 de outubro. <a href="https://www.producthunt.com/products/hotly">producthunt.com</a></li>
+    </ol>
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>Mouse-1:</b> os "190 vezes mais barato" e "13 vezes mais rápido" são testes do próprio fabricante; a página não mostra preço fechado. <b>Valor e IT Forum:</b> só confirmamos os títulos; os textos completos não abriram. <b>Dylan Field:</b> não achamos a fala original, só a manchete de um site brasileiro. <b>MiniMax:</b> a liberação do modelo para download está prometida para 23 de outubro e ainda não aconteceu. <b>Character.ai:</b> o nome aparece entre as buscas em alta no Google hoje; uma única fonte (Wikipédia) fala em pedido de recuperação judicial nos EUA em 12 de outubro. Ficou de fora até sair em imprensa.</p></div>
+  </section>
+
+  <div class="assinatura">Radar · Nº 063 · 21 de outubro de 2026<br>Próxima edição: quinta-feira, 22 de outubro · Pulso diário</div>
+</div>
+</body>
+</html>
