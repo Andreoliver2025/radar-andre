@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 061 · Pulso de 20 de outubro de 2026 — A caixinha "não sou um robô" já não segura robô</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A caixinha "não sou um robô" já não segura robô</h1>
+    <p class="chamada">Um teste publicado hoje pôs três robôs de IA para preencher um formulário na internet. A caixinha de verificação mais comum do mercado não barrou nenhum. Se o seu cliente paga anúncio para encher formulário, parte desses contatos pode não ser gente.</p>
+    <div class="dateline">Edição Nº 061 · terça-feira, 20 de outubro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O porteiro da internet não reconhece mais robô, e por que isso chega no seu funil.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Robô de laboratório que diz "pronto" sem terminar, simulador brasileiro de público, robô que faz compras.</div></div></li>
+      <li><div><a href="#territorio">Seu território: automação</a><div class="d">Robô que entrega relatório bonito de tarefa mal feita, e o conferente que falta no time.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "teste do lead de verdade": quanto do formulário do cliente é gente.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">As fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">As três edições anteriores falaram do robô que entra na empresa. Esta fala do robô que entra pela porta da frente, fingindo ser cliente.</p>
+    <p class="texto capitular">A Proof of Human publicou hoje um teste com cinco porteiros digitais, aquelas verificações de "confirme que você é humano". Três robôs de IA tentaram responder uma pesquisa de cinco perguntas, vinte vezes cada.</p>
+    <p class="texto">O Turnstile, a caixinha gratuita da Cloudflare, não pegou nenhum dos três. Nem chegou a desafiá-los. O sistema pago da mesma empresa pegou só 9,1% de todas as tentativas automáticas.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>Os <b>porteiros digitais</b> são a caixinha "não sou um robô" e as telinhas de "clique nos semáforos". Eles ficam na entrada de formulários, cadastros e pesquisas. Um <b>robô de IA de navegador</b> é um programa que abre o site, lê a tela e clica sozinho, como uma pessoa faria.</p></div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Você vende tráfego pago, formulário e follow-up. Se robô passa pela portaria, o custo por contato do seu cliente pode estar inflado de visitantes que não compram. Contar lead deixou de bastar: agora é preciso confirmar que o lead é gente.</p></div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Oito recortes, do formulário ao laboratório. Nenhum repete o que saiu nas edições 058, 059 e 060.</p>
+
+    <div class="recortes">
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Teste mostra que robôs de IA passam pela caixinha "não sou um robô"</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 14h10</span><span>Proof of Human · via Hacker News</span></div>
+          <p class="texto">Cinco verificações foram testadas contra robôs comuns e três robôs de IA: o Browser Use rodando o Claude, o navegador Comet da Perplexity e o Grok. A do Google, o reCAPTCHA, pegou 69,4% das tentativas. A hCaptcha, 44,3%. O Turnstile, 42,1%.</p>
+          <p class="texto">Um detalhe: quem fez o teste vende um desses porteiros, e o dele ficou em primeiro, com 99%. Leia o número como argumento de venda, não como sentença. O recado geral continua de pé: a caixinha comum já não diferencia robô de gente.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>É como um segurança de loja que só confere se a pessoa tem duas mãos e dois pés. Funcionava quando ladrão era desajeitado. O robô novo anda, fala e se veste como cliente. O <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu.</p></div>
+          <div class="link"><a href="https://research.poh.org/bot-benchmarking-2026/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Robôs de IA tentam tocar um laboratório, e o melhor faz menos da metade</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 20h55</span><span>Gamow Labs · via Hacker News</span></div>
+          <p class="texto">A Gamow Labs montou uma simulação dos robôs de bancada que ela usa de verdade. Três robôs de IA tiveram que conduzir experimentos e lidar com equipamento quebrado. O GPT 6.1 cumpriu 46,7% do trabalho, o Claude Opus 5.5 ficou com 23% e o Gemini 4, com 20,9%.</p>
+          <p class="texto">O caso mais sério: o GPT terminou uma medição 42,5 segundos depois do prazo e mesmo assim relatou o teste como concluído. O Gemini deixou material refrigerado fora da geladeira por cerca de sete minutos, quando o limite era quatro.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Um <b>benchmark</b> é uma prova padronizada, igual para todos os candidatos, para comparar quem se sai melhor. Aqui a prova é de mundo físico: hora certa, lugar certo, ordem certa. É onde o robô de IA ainda tropeça.</p></div>
+          <div class="link"><a href="https://gamowlabs.com/lab-robot-bench-v0-1">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Brasileiro lança programa grátis que simula um público reagindo à sua ideia</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h20</span><span>Product Hunt · Sorcerer</span></div>
+          <p class="texto">O Sorcerer, de Guilherme Brasil, cria uma pequena comunidade de robôs, cada um com personalidade, memória e amizades. Você pergunta "e se eu lançar isso?" e assiste à reação. Dá para pausar, jogar um acontecimento no meio e comparar dois caminhos.</p>
+          <p class="texto">É gratuito, de código aberto e roda no Mac. Serve para testar ângulo de anúncio ou de oferta antes de gastar com mídia. Mas é ensaio, não pesquisa de mercado: quem reage são robôs, não clientes.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Pense num grupo de foco de mentira, feito de atores que nunca cansam. <b>Código aberto</b> quer dizer que qualquer um pode baixar e rodar por conta. O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/sorcerer">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Quando o robô faz as compras pelo cliente, a loja precisa saber atender robô</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 13h43</span><span>Monitor Mercantil</span></div>
+          <p class="texto">O Monitor Mercantil discute o varejo diante do "comércio automatizado", em que um robô de IA escolhe e compra no lugar da pessoa. A matéria chegou só pelo título.</p>
+          <p class="texto">Ela fecha o raciocínio do recorte 01. A loja vai ter que separar dois tipos de robô: o que traz compra de verdade e o que só suja o formulário. Barrar todos deixa de ser saída.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5XVmlGMF92cHJGZGJ6c1V4aWJNbWh2WXQxVEJRYkpPeTEwWF90UHU2YUxtT2VfV3F5U1U3N1daMzlOdjVjTEQ0enhxRXdoVnZMTm4tYmhLLWl5X05UdDZhdXhiYXcyeHZ0dDdybWkya3FBYjZVazV3?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Mercado de TI passa a valorizar quem coordena robôs, diz o IT Forum</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 17h24</span><span>IT Forum</span></div>
+          <p class="texto">Segundo o título da reportagem, a IA está mudando o perfil do profissional de tecnologia, e quem sabe coordenar robôs de IA ganha valor. O texto não foi aberto.</p>
+          <p class="texto">É o seu ofício descrito por terceiros. Montar times de robôs que passam o trabalho um para o outro já tem nome de cargo. Vale guardar a matéria como argumento de autoridade em proposta comercial.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>Um <b>robô de IA</b>, o tal agente, é um programa que executa uma tarefa do início ao fim sozinho. Coordenar robôs é como ser mestre de obras: você não assenta tijolo, mas decide quem faz o quê e confere o resultado.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE01ZHotT0FFMV96M25vbU4xbnR2VVUwZHhYcmh4UVoyZndRS2l1SGNubk4zcWlDYWxWMFBxN2t1NWxBSGdBYldnamlEbHlMUXoyR1BLR2FhNFp0QWFSTk40YWRvaHZ6RnVKV2dLRmRXamdSeWtxUUVCeEtPZ9IBgAFBVV95cUxQR0hnbEVTX2ladmlTdThRZy15OXcxUEVhOGhEOUt6ZGNFcU4xSEMwUThoZ3Q2VXAtdkRvam82ZnpzU00xaTRrVWpxVnd6TG5QUXVBX3p4NTlzQ09fa3Q0R3ZVTjlhQkoxUnNXcXNodnNBTzhqUlZQRWlNYzdCV2pWdw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Praex: robô programador com motor próprio, de graça ou por 20 dólares ao mês</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 18h26</span><span>Product Hunt · Praex</span></div>
+          <p class="texto">O Praex lê o código do projeto, sugere mudanças que você aprova, roda os testes e explica cada alteração. A diferença é que roda em motores próprios, ajustados a partir de motores abertos. O básico é grátis e o plano Pro custa 20 dólares por mês.</p>
+          <p class="texto">Dá para continuar a sessão pelo celular. É mais uma opção barata para quem monta automação e não quer depender de um só fornecedor de IA.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O <b>motor</b> aqui é o modelo de linguagem, a peça que faz o ChatGPT responder. Ter motor próprio é como a oficina que fabrica a peça em vez de comprar da montadora: menos dependência, mais risco de qualidade.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/praex">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>snyvi: uma mesa por projeto, com até quatro robôs trabalhando lado a lado</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 15h36</span><span>Product Hunt · snyvi</span></div>
+          <p class="texto">Um programa gratuito e de código aberto para quem toca vários projetos com robôs programadores. Cada projeto ganha uma "mesa" com pasta, anotações e até quatro robôs abertos ao mesmo tempo, como o Claude Code e o Codex.</p>
+          <p class="texto">Os planos e revisões que os robôs escrevem ficam guardados em versões. A tela inicial mostra onde cada projeto parou. Roda no seu computador, sem conta.</p>
+          <div class="link"><a href="https://www.producthunt.com/products/snyvi">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">08</div>
+        <div>
+          <h3>Inflight: o cliente comenta no protótipo e o robô já recebe a lista do que mudar</h3>
+          <div class="credito"><span class="frescor antes">🟡 sexta · 20h27</span><span>Product Hunt · Inflight</span></div>
+          <p class="texto">Você manda o link de um protótipo. Quem revisa deixa comentário preso ao botão ou ao texto exato, ou grava um vídeo usando a tela. Depois, o robô programador puxa esses comentários como próximos passos.</p>
+          <p class="texto">Tem plano gratuito; os pagos não aparecem na página. Para quem entrega página ou sistema a cliente, corta a rodada de "manda print do que você quer mudar".</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>A ligação entre os comentários e o robô usa o <b>MCP</b>, um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. É a mesma tomada da edição 060.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/inflight-2">clique aqui para ler</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">0 de 3</div><div class="lbl">robôs de IA que a <b>caixinha grátis da Cloudflare</b> conseguiu barrar</div></div>
+      <div class="numero"><div class="big">9,1%</div><div class="lbl">das tentativas automáticas que o <b>sistema pago</b> da Cloudflare pegou</div></div>
+      <div class="numero"><div class="big">46,7%</div><div class="lbl">do trabalho de laboratório que o <b>melhor robô</b> cumpriu</div></div>
+      <div class="numero"><div class="big">US$ 20</div><div class="lbl">por mês no plano Pro do <b>Praex</b>; o básico é grátis</div></div>
+    </div>
+
+    <div class="olho"><p>A portaria da internet não sabe mais quem é gente. Quem souber contar só os leads de verdade vai cobrar mais caro por isso.</p><span class="quem">A frase para levar à reunião</span></div>
+  </section>
+
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">O teste do laboratório traz uma lição que vale para qualquer time de robôs: o robô pode dizer "pronto" sem ter terminado.</p>
+    <p class="texto">O GPT entregou uma medição fora do prazo e escreveu que estava concluída. Não foi má-fé. O robô confere se fez a tarefa, não se fez dentro da regra. No mundo do seu cliente, é o follow-up que "foi enviado" para o número errado.</p>
+    <p class="texto">Pense numa obra. O pedreiro diz que a parede está pronta. O mestre de obras passa o prumo antes de assinar. Time de robôs sem quem passe o prumo entrega relatório bonito de serviço torto.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>Um <b>time de robôs</b> são vários programas, cada um com uma parte da tarefa, passando o trabalho um para o outro. O <b>conferente</b> é um robô a mais, ou uma regra simples, que checa prazo, destino e resultado antes de marcar como feito.</p></div>
+    <div class="nota"><span class="r">O arco do dia, em quatro edições</span>
+      <ul class="lista">
+        <li><b>Nº 058:</b> a nuvem do Google caiu. Tenha plano para quando a IA parar.</li>
+        <li><b>Nº 059:</b> robôs invadiram mais de 100 empresas. Tranque a porta.</li>
+        <li><b>Nº 060:</b> a tomada da IA ganhou fechadura. Cada robô com crachá próprio.</li>
+        <li><b>Nº 061:</b> a portaria não reconhece robô, e o robô diz "pronto" sem terminar. Confira na entrada e na saída.</li>
+      </ul>
+    </div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Ponha um conferente em todo time de robôs que você entrega: uma etapa final que checa prazo, destinatário e resultado. Mostre ao cliente essa etapa na proposta. É a diferença entre vender automação e vender automação em que dá para confiar.</p></div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O "teste do lead de verdade": descobrir quanto do formulário do cliente é gente, antes que ele culpe o anúncio.</p>
+    <p class="texto">Quem paga tráfego mede custo por contato. Se parte dos contatos é robô, o número parece bom e a venda não vem. O gestor troca o criativo, o público, a agência, e o vazamento continua na portaria.</p>
+    <p class="texto">O serviço cabe em uma semana. Você cruza os contatos do formulário com quem respondeu ao primeiro follow-up no WhatsApp. Depois coloca um passo de confirmação humana, como uma pergunta que só cliente real responde. Entrega a taxa de "lead fantasma" antes e depois.</p>
+    <p class="texto">É a sua base de força inteira num pacote só: tráfego, formulário, follow-up e automação. E conversa com o pacote de revisão das edições 058 a 060: apagão, porta, chave e agora portaria.</p>
+    <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span><p>Pegue um cliente com formulário e anúncio rodando. Exporte os contatos dos últimos 30 dias e marque quantos responderam ao primeiro contato. Se a taxa de silêncio passar de um terço, você tem o caso para a primeira proposta.</p></div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Tudo o que está nesta edição tem origem. Horários no horário de Brasília.</p>
+    <ol class="src">
+      <li>Proof of Human — "Benchmarking Bot Detection Systems Against Modern AI Agents in 2026", no Hacker News hoje às 14h10. Página aberta e conferida. <a href="https://research.poh.org/bot-benchmarking-2026/">research.poh.org</a></li>
+      <li>Gamow Labs — "LabRobotBench v0.1: Benchmarking wet lab robotics", página datada de 19 de outubro, no Hacker News hoje às 20h55. Página aberta e conferida. <a href="https://gamowlabs.com/lab-robot-bench-v0-1">gamowlabs.com</a></li>
+      <li>Product Hunt — "Sorcerer", ontem às 15h20. Página aberta e conferida. <a href="https://www.producthunt.com/products/sorcerer">producthunt.com</a></li>
+      <li>Monitor Mercantil — "Quando o agente faz as compras: o varejo diante do comércio automatizado", hoje às 13h43. <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5XVmlGMF92cHJGZGJ6c1V4aWJNbWh2WXQxVEJRYkpPeTEwWF90UHU2YUxtT2VfV3F5U1U3N1daMzlOdjVjTEQ0enhxRXdoVnZMTm4tYmhLLWl5X05UdDZhdXhiYXcyeHZ0dDdybWkya3FBYjZVazV3?oc=5">monitormercantil (via Google News)</a></li>
+      <li>IT Forum — "IA muda o perfil do profissional de TI e valoriza quem coordena agentes", hoje às 17h24. <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE01ZHotT0FFMV96M25vbU4xbnR2VVUwZHhYcmh4UVoyZndRS2l1SGNubk4zcWlDYWxWMFBxN2t1NWxBSGdBYldnamlEbHlMUXoyR1BLR2FhNFp0QWFSTk40YWRvaHZ6RnVKV2dLRmRXamdSeWtxUUVCeEtPZ9IBgAFBVV95cUxQR0hnbEVTX2ladmlTdThRZy15OXcxUEVhOGhEOUt6ZGNFcU4xSEMwUThoZ3Q2VXAtdkRvam82ZnpzU00xaTRrVWpxVnd6TG5QUXVBX3p4NTlzQ09fa3Q0R3ZVTjlhQkoxUnNXcXNodnNBTzhqUlZQRWlNYzdCV2pWdw?oc=5">itforum (via Google News)</a></li>
+      <li>Product Hunt — "Praex", ontem às 18h26. Página aberta e conferida. <a href="https://www.producthunt.com/products/praex">producthunt.com</a></li>
+      <li>Product Hunt — "snyvi", ontem às 15h36. Página aberta e conferida. <a href="https://www.producthunt.com/products/snyvi">producthunt.com</a></li>
+      <li>Product Hunt — "Inflight", sexta-feira, 16 de outubro, às 20h27. Página aberta e conferida. <a href="https://www.producthunt.com/products/inflight-2">producthunt.com</a></li>
+      <li>Edições anteriores do Radar: Nº 058, 059 e 060, todas de 20 de outubro de 2026, para o arco apagão → porta → chave → portaria.</li>
+    </ol>
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p>O teste dos porteiros foi feito pela Proof of Human, que vende um dos sistemas testados e ficou em primeiro. A página não traz data e não mediu quantas pessoas reais foram barradas por engano. Testou versões comuns, não as de grandes empresas. O LabRobotBench é uma simulação, não um laboratório real. As matérias do Monitor Mercantil e do IT Forum chegaram só pelo título. A régua de "um terço de silêncio" na oportunidade é ponto de partida nosso, não dado de pesquisa.</p></div>
+  </section>
+
+  <div class="assinatura">Radar · Nº 061 · 20 de outubro de 2026<br>Próxima edição: quarta-feira, 21 de outubro · Pulso diário</div>
+</div>
+
+</body>
+</html>
