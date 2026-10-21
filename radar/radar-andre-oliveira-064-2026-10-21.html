@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 064 — O robô que pede licença · 21/10/2026</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>A Anthropic lançou um robô que cuida do dia a dia do dono do negócio, e pede licença antes de mexer no dinheiro</h1>
+    <p class="chamada">O Claude Duet saiu hoje: um robô que olha seu e-mail, seus pagamentos e suas planilhas a cada poucas horas e só chama você quando precisa. Ele faz o rascunho sozinho, mas pede autorização antes de enviar, pagar ou assinar. Por enquanto é só nos Estados Unidos e por lista de espera, e isso abre uma janela aqui.</p>
+    <div class="dateline">Edição Nº 064 · quarta-feira, 21 de outubro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O robô deixou de esperar a sua ordem e passou a vir avisar você.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Claude Duet, o motor grande da Mistral, a Clicksign plugada na IA e mais quatro.</div></div></li>
+      <li><div><a href="#territorio">Seu território: automação</a><div class="d">A lista de três colunas: o que o robô faz sozinho, o que pede licença e o que nunca faz.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "resumo da manhã" para o dono de empresa brasileira, que o Duet ainda não atende.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">As fontes e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">Até ontem, robô de IA esperava você pedir. O Claude Duet inverte a ordem: ele vem até você.</p>
+    <p class="texto capitular">A Anthropic, dona do Claude, abriu hoje a lista de espera do Claude Duet. Ele roda num computador próprio, na nuvem, e confere as contas ligadas a ele a cada poucas horas. De manhã, manda um resumo do que importa. No resto do dia, só escreve quando algo pede a sua decisão.</p>
+    <p class="texto">O exemplo que a própria Anthropic usa é o dono de um café. Não é um programador, não é uma multinacional. É o cliente que você atende.</p>
+    <p class="texto">É como ter um gerente que chega antes de você, lê tudo, separa três papéis em cima da mesa e diz: "estes precisam da sua assinatura, o resto eu resolvi".</p>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>A maior empresa de IA do momento acabou de dizer, com produto, que o dono de pequeno negócio é o cliente do robô que trabalha sozinho. Ontem a pergunta era quanto custa cada tarefa. Hoje é outra: o que o robô pode fazer sem perguntar? Quem tiver essa resposta escrita para o cliente brasileiro sai na frente.</p></div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Sete recortes. O fio que liga quase todos: o robô ganhou acesso a mais coisas, e todo mundo está correndo para decidir onde fica a trava.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Claude Duet: o robô da Anthropic que trabalha enquanto você está longe e avisa quando precisa de você</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 16h40, no mural dos programadores</span><span>Anthropic</span></div>
+          <p class="texto">O Duet tem um navegador próprio numa máquina na nuvem. Seu celular e seu computador podem ficar desligados. Ele se liga a mais de 6.000 ferramentas, como Gmail, Slack, QuickBooks, Stripe, HubSpot, Docusign e Shopify, e monta um resumo da manhã.</p>
+          <p class="texto">Ele lê e rascunha sozinho. Antes de enviar mensagem, pagar, assinar documento ou apagar algo, mostra o que vai fazer e espera o seu "ok". Comprar ações e mover dinheiro entre contas ficam proibidos mesmo com autorização.</p>
+          <p class="texto">Está em teste, por lista de espera, só para assinantes Pro e Max nos Estados Unidos. Não tem preço separado: entra no limite de uso do plano. A própria Anthropic avisa que ele pode entender errado uma conversa ou errar no que é urgente.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>É um robô, um programa que executa uma tarefa do início ao fim sozinho. As "6.000 ferramentas" são as tomadas por onde ele conversa com os sistemas que você já usa. A novidade não é o robô fazer. É ele decidir sozinho a hora de aparecer, como um funcionário que não precisa ser chamado.</p></div>
+          <div class="link"><a href="https://claude.com/resources/articles/claude-duet">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>A francesa Mistral mostra o maior motor de IA dela, com preço baixo e servido da Europa</h3>
+          <div class="credito"><span class="frescor antes">🟡 anunciado em 6 de outubro · voltou ao mural hoje às 16h20</span><span>Mistral AI</span></div>
+          <p class="texto">O Mistral Large 4 está em teste aberto. Custa 1,36 dólar por milhão de unidades lidas e 4,18 dólares por milhão escritas. A Mistral promete liberá-lo para qualquer um baixar até o fim do mês, e roda o teste em servidores europeus.</p>
+          <p class="texto">Nos testes divulgados pela própria Mistral, ele aparece forte em segurança digital. São números do fabricante.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Motor de IA" é o que faz o ChatGPT responder. A "unidade" é como as empresas de IA cobram, como o minuto na conta de telefone antiga. "Liberar para baixar" quer dizer código aberto: a empresa pode rodar o motor no próprio servidor, sem mandar dado para fora.</p></div>
+          <div class="link"><a href="https://mistral.ai/news/mistral-large-4/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>A Clicksign, de assinatura digital, abre uma porta para os robôs de IA</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 11h05</span><span>Band</span></div>
+          <p class="texto">A empresa brasileira de assinatura eletrônica lançou um servidor MCP. Na prática, um robô de IA passa a conseguir conversar com a Clicksign: por exemplo, mandar contrato e acompanhar quem já assinou.</p>
+          <p class="texto">Coincidência que vale anotar: no mesmo dia, o Duet lista "assinar documento" entre as ações que exigem o seu "ok". A porta chegou. A regra de quem gira a chave é com você.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>MCP é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Quando uma empresa "lança um servidor MCP", ela está instalando essa tomada no produto dela.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPRzRFb1lUWWsxaURtOWlwelFTN1dVR1Z0MmlweWhBcmsyMENDNG55enpuX0JLRUs4MzZacExyeU45MDY3MnZoU0plYVBjYi1aMlB3dXlaWjB5MXZHSVh4elVsRnJkd3hiYzU1dDJUWWpFTkJOQW11VUNqbmVHX0xfSV92VGpVZ2dkMW01MTF1ZHNXa1FtWllhcFJ1NmtUOENGX0dwMi1aNXFPRmxoTWtjYWZhdndqU1V5TGc?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Nvidia lança um kit para empresas personalizarem e controlarem os próprios robôs de IA</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 15h</span><span>Inforchannel</span></div>
+          <p class="texto">A Nvidia, que fabrica os chips onde a IA roda, lançou o Agent Toolkit. Pelo título da reportagem, a promessa é dupla: ajustar o robô ao jeito da empresa e manter controle sobre o que ele faz.</p>
+          <p class="texto">Só confirmamos o título; o texto completo não abriu para nós. O recado bate com o resto do dia: controle virou argumento de venda.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQbVJxQ1h0bnJ3RUg0WXhhdldjWUdQQTZldTF6SGhHVVREd3RlckZaNGhMNndtd24xMjMzZzIwbTNaN2ZpdmlWZTBKa2pJSVZnZEUySWMwNEYxdHJZWDNmSlFTcFpmTjY0TXJ2dllTbjVIaU5hdEFHZlg3Z3RxYktjUE9JQWRIczNWT0dYakNBeTUwNzFuTWJndE9VWGYwbnhMXzNvdjJyajNEbXgxMzA4T29YOHlBUU4xZjE0VA?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>O presidente da Microsoft defende um "freio de emergência" para a IA</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 11h02</span><span>StartSe</span></div>
+          <p class="texto">A StartSe explica como seria o botão de parar que o presidente da Microsoft quer para a IA. É o mesmo raciocínio do Duet, em escala de país: antes de soltar o robô, decida onde fica o botão vermelho.</p>
+          <p class="texto">Só confirmamos o título da reportagem.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOajNyYS1lM3ZXRWlBZVFGUXZqSDhoSUFVMm9uVC0wRU5IVm53VVJSc1Z6ZWk4VjVWZXhTNTdDVjdzMkNRdURaU0RCRnE0R2RSTGc4RkJaRHNpTmZ0S2Z3STJQMWJGWmthSURIR3FOUDZvNFZJSnJiVlh1Q2NjeTBYZEZGNC1ocklXLUR4Q3V0YUZtRUtNNWE0bU1HT0xxOHJuTzFlVlp2MA?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Um invasor usou automação com IA para entrar em mais de 100 empresas</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 10h30</span><span>SINDPD</span></div>
+          <p class="texto">A automação que acelera o atendimento também acelera o golpe. Segundo a manchete do sindicato dos profissionais de tecnologia, um único invasor chegou a mais de cem empresas usando automação com IA.</p>
+          <p class="texto">É o outro lado do Duet: quanto mais portas o robô abre, mais importa quem tem a chave.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE94R3ZONTRvbDdZV0xsSkZ1clpTNC1maUtKY004RnlkRlFqeGFZd0ktM1lWQ3N4cjJhV3dvcnVYSjBuTDNHb2hkeWVvRmdTQ2ZWaW1jX3piVER1eFBlY1Fib3NQNmZ3QVdMbUJ3Q3A5MDRBSVE?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">07</div>
+        <div>
+          <h3>A tomada da IA ganha uma regra nova de autorização</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 8h08</span><span>iMasters</span></div>
+          <p class="texto">O iMasters explica o que muda com o OAuth 2.1 nos servidores MCP. É a peça que decide quem pode usar a tomada e até onde.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>OAuth é aquela tela de "Permitir que este aplicativo acesse sua conta Google?". É o crachá que você entrega ao robô, dizendo em quais salas ele pode entrar. A versão 2.1 é a regra nova de como esse crachá é emitido e conferido.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQU2NXTFZRVU04TE1MQUYxb01vNTZoR2lXZDZNR0o4YWhmaVliWGtkc3FGVS1PX1Y3aDdTeWJ3a05NZVFVMVNZRE9XTGFaMTZKbVVWd3NQMElUa2JiWlZRdWU5a1cyazg5MWhGRUFvZDZ3Tm4yVnJTa3NtVldLeGMtUlhvU1RwQVo5Qkd3VmtTM25HdzIyNGJRMEZGNlI2QlVQREVQSTNOMVZUMXAwU2kzaUVxdzJvSGRyZ2h0WQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="numeros">
+      <div class="numero"><div class="big">6.000+</div><div class="lbl">ferramentas que o <b>Claude Duet</b> consegue acessar, segundo a Anthropic</div></div>
+      <div class="numero"><div class="big">2</div><div class="lbl">ações que o Duet <b>nunca</b> faz, nem com autorização: comprar ações e mover dinheiro entre contas</div></div>
+      <div class="numero"><div class="big">US$ 1,36</div><div class="lbl">preço do <b>Mistral Large 4</b> por milhão de unidades lidas</div></div>
+      <div class="numero"><div class="big">100+</div><div class="lbl">empresas invadidas por um só atacante usando <b>automação com IA</b></div></div>
+    </div>
+
+    <div class="olho"><p>O robô bom não é o que faz tudo sozinho. É o que sabe a hora de bater na sua porta.</p><span class="quem">A frase para levar à reunião</span></div>
+  </section>
+
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">O Duet entrega, sem querer, o modelo de contrato que faltava: a lista de três colunas.</p>
+    <p class="texto">Leia a página da Anthropic com olho de quem vende robô. Ela separa as ações em três grupos. Coluna um, faz sozinho: ler, resumir, rascunhar. Coluna dois, pede licença: enviar, pagar, assinar, apagar. Coluna três, nunca: comprar ações e mover dinheiro entre contas.</p>
+    <p class="texto">Pouco robô de atendimento vendido por aí vem com isso escrito. O cliente assina sem saber o que o robô pode fazer em nome dele. E, no dia em que der errado, a briga começa exatamente aí.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>Pense na chave da loja que você entrega ao funcionário novo. Ele abre a porta e arruma a vitrine sozinho. Para dar desconto grande, liga para você. No cofre, não mexe. Ninguém acha isso desconfiança. É só o combinado escrito antes do primeiro dia.</p></div>
+    <p class="texto">A Clicksign plugando assinatura em robô e o kit de controle da Nvidia, no mesmo dia, mostram que a coluna dois vai encher rápido. Cada tomada nova é uma ação a mais que precisa de regra.</p>
+    <div class="nota"><span class="r">O arco, em sete edições</span>
+      <ul class="lista">
+        <li><b>Nº 058 a 061:</b> a nuvem cai, robôs invadem, a tomada ganha fechadura, a portaria não reconhece robô.</li>
+        <li><b>Nº 062:</b> o vazamento veio do botão de compartilhar.</li>
+        <li><b>Nº 063:</b> com a porta trancada, o cliente olha a fatura.</li>
+        <li><b>Nº 064:</b> o robô passa a agir sem ser chamado. A regra agora é o que ele pode fazer sem perguntar.</li>
+      </ul>
+    </div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Coloque a lista de três colunas em toda proposta de robô a partir de hoje: "faz sozinho", "pede licença", "nunca faz". Uma página, assinada pelo cliente. Vira seu diferencial de venda e, de quebra, sua proteção se algo der errado.</p></div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O "resumo da manhã" para o dono de empresa brasileira, montado por você, enquanto o Duet ainda é só americano e por lista de espera.</p>
+    <p class="texto">O produto da Anthropic acabou de ensinar ao mercado o que esperar. Só que ele ainda não está disponível no Brasil, e o WhatsApp não aparece na lista de exemplos dele. Por enquanto, quem quer isso aqui precisa de alguém que monte.</p>
+    <p class="texto">O serviço é simples de explicar. Todo dia, às 7h, o dono recebe no WhatsApp três coisas que pedem decisão: um cliente esperando resposta, um boleto vencendo, um pedido travado. O resto o robô resolve ou apenas registra. Por cima, vai a lista de três colunas.</p>
+    <p class="texto">É como o jornal que chegava embaixo da porta. Ninguém lia inteiro, mas a manchete decidia o dia. Você está vendendo a manchete do negócio dele.</p>
+    <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span><p>Escolha um cliente que já usa WhatsApp e planilha. Liste as cinco fontes de onde vêm os problemas dele (e-mail, WhatsApp, banco, agenda, planilha de pedidos). Escreva à mão o resumo de amanhã: as três coisas que ele precisaria decidir. Mande para ele às 7h e pergunte: "isso vale quanto por mês para você?". A resposta é o seu preço.</p></div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Cada recorte tem link. Abaixo, a lista completa, com os títulos originais.</p>
+    <ol class="src">
+      <li>Anthropic — "Claude Duet" (artigo de lançamento, 21 de outubro), visto no Hacker News, o mural onde programadores do mundo todo postam o que saiu. <a href="https://claude.com/resources/articles/claude-duet">claude.com</a> · página do produto: <a href="https://claude.com/product/claude-duet">claude.com/product</a></li>
+      <li>Mistral AI — "Mistral Large 4", anunciado em 6 de outubro, no Hacker News hoje. Preços e testes são do fabricante. <a href="https://mistral.ai/news/mistral-large-4/">mistral.ai</a></li>
+      <li>Band — "Clicksign lança MCP Server e se torna pronta para a era dos agentes de IA", 21 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPRzRFb1lUWWsxaURtOWlwelFTN1dVR1Z0MmlweWhBcmsyMENDNG55enpuX0JLRUs4MzZacExyeU45MDY3MnZoU0plYVBjYi1aMlB3dXlaWjB5MXZHSVh4elVsRnJkd3hiYzU1dDJUWWpFTkJOQW11VUNqbmVHX0xfSV92VGpVZ2dkMW01MTF1ZHNXa1FtWllhcFJ1NmtUOENGX0dwMi1aNXFPRmxoTWtjYWZhdndqU1V5TGc?oc=5">news.google.com</a></li>
+      <li>Inforchannel — "Nvidia Agent Toolkit permite personalizar e controlar agentes de IA corporativos", 21 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQbVJxQ1h0bnJ3RUg0WXhhdldjWUdQQTZldTF6SGhHVVREd3RlckZaNGhMNndtd24xMjMzZzIwbTNaN2ZpdmlWZTBKa2pJSVZnZEUySWMwNEYxdHJZWDNmSlFTcFpmTjY0TXJ2dllTbjVIaU5hdEFHZlg3Z3RxYktjUE9JQWRIczNWT0dYakNBeTUwNzFuTWJndE9VWGYwbnhMXzNvdjJyajNEbXgxMzA4T29YOHlBUU4xZjE0VA?oc=5">news.google.com</a></li>
+      <li>StartSe — "Como seria o 'freio de emergência' para IA que defende o CEO da Microsoft", 21 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOajNyYS1lM3ZXRWlBZVFGUXZqSDhoSUFVMm9uVC0wRU5IVm53VVJSc1Z6ZWk4VjVWZXhTNTdDVjdzMkNRdURaU0RCRnE0R2RSTGc4RkJaRHNpTmZ0S2Z3STJQMWJGWmthSURIR3FOUDZvNFZJSnJiVlh1Q2NjeTBYZEZGNC1ocklXLUR4Q3V0YUZtRUtNNWE0bU1HT0xxOHJuTzFlVlp2MA?oc=5">news.google.com</a></li>
+      <li>SINDPD — "Hacker usa automação de IA para invadir mais de 100 empresas", 20 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE94R3ZONTRvbDdZV0xsSkZ1clpTNC1maUtKY004RnlkRlFqeGFZd0ktM1lWQ3N4cjJhV3dvcnVYSjBuTDNHb2hkeWVvRmdTQ2ZWaW1jX3piVER1eFBlY1Fib3NQNmZ3QVdMbUJ3Q3A5MDRBSVE?oc=5">news.google.com</a></li>
+      <li>iMasters — "MCP OAuth 2.1: o que muda na autorização de servidores", 20 de outubro, via Google Notícias. <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQU2NXTFZRVU04TE1MQUYxb01vNTZoR2lXZDZNR0o4YWhmaVliWGtkc3FGVS1PX1Y3aDdTeWJ3a05NZVFVMVNZRE9XTGFaMTZKbVVWd3NQMElUa2JiWlZRdWU5a1cyazg5MWhGRUFvZDZ3Tm4yVnJTa3NtVldLeGMtUlhvU1RwQVo5Qkd3VmtTM25HdzIyNGJRMEZGNlI2QlVQREVQSTNOMVZUMXAwU2kzaUVxdzJvSGRyZ2h0WQ?oc=5">news.google.com</a></li>
+      <li>TI INSIDE Online — "Sem visibilidade, as empresas não conseguem governar os agentes de IA, alerta Tanium", 19 de outubro (contexto do território). <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxObDRlbzVzcGlQYzd2aTZzQ3dmVmxDNU9vV2YycFRFR2tiMVRhNGZ3c1pGUkhZeGpWVFpuRlRmVVBHaGdsWDFvWTlSV0ZBRmJEUmY1MmRUUlFHdVNPMHlYQjVDTTdxeHB3UnAzd3FKd3BlYlR2c0NHdFN3TVhYcWV0T0xUUVJZZ2h6clh3S2Fjd3FHYmlmVWJpZmdQdHlEVVlSN0NuQjlOem1lcWhWd1gtVEhEeE5wYnRLQXc?oc=5">news.google.com</a></li>
+      <li>YouTube — "Building AI Agents that actually work (Full Course)", Greg Isenberg, cerca de 826 mil visualizações: o interesse em robô que funciona de verdade segue alto. <a href="https://www.youtube.com/watch?v=eA9Zf2-qYYM">youtube.com</a></li>
+    </ol>
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>Claude Duet:</b> está em teste, por lista de espera, só nos Estados Unidos; não há data para o Brasil nem preço separado. Os números do exemplo do café na página são ilustrativos, não dados reais de uso. <b>Mistral Large 4:</b> os resultados de testes são do fabricante, sem verificação independente; a liberação para baixar é promessa para o fim do mês. <b>Clicksign, Nvidia, StartSe, SINDPD e iMasters:</b> só confirmamos os títulos; os textos completos não abriram para nós. O que a Clicksign permite fazer, na prática, é a nossa leitura do que um servidor desses costuma oferecer. <b>Boato no YouTube:</b> um vídeo diz que um "Claude Fable 5.5" vazou; não achamos nenhuma confirmação e deixamos de fora. <b>Buscas do Google no Brasil:</b> hoje foram dominadas por futebol; nenhum termo de IA entrou entre os mais buscados.</p></div>
+  </section>
+
+  <div class="assinatura">Radar · Nº 064 · 21 de outubro de 2026<br>Próxima edição: quinta-feira, 22 de outubro · Pulso diário</div>
+</div>
+</body>
+</html>
