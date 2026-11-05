@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 076 · Pulso de 5 de novembro de 2026 — A IA de imagem agora lembra o personagem</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>A IA de imagem da OpenAI agora lembra o personagem e faz GIF</h1>
+  <p class="chamada">Ontem à noite a OpenAI colocou na vitrine o ChatGPT Images 2.6. Ele guarda a foto de referência de um personagem para reaproveitar, cria imagem animada e, segundo a página, gera 50% mais rápido. A 22 dias da Black Friday, criar a imagem ficou mais rápido. Saber qual imagem vende continua sendo o seu trabalho.</p>
+  <div class="dateline">Edição Nº 076 · quinta-feira, 5 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O gerador de imagens que a Nº 075 só conhecia pelo título agora tem ficha completa.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: o Images 2.6, a transcrição gratuita da NVIDIA, um dia de cadeado, as listas entupidas de lixo feito por IA e mais.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">A tomada para marketplace que já vem com interruptor, e o robô que entra na reunião com cara e voz.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O kit de Black Friday com personagem fixo, montado em uma tarde.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ═════════ 01 ═════════ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Todo desenhista de gibi tem a folha do personagem pregada na parede: o rosto de frente, de lado, sorrindo. É ela que faz a Mônica ser a mesma em todas as páginas. A IA da OpenAI acabou de ganhar essa folha.</p>
+
+  <p class="texto capitular">Hoje cedo, a Nº 075 avisou que a página da OpenAI chamada "Images 2.6" estava trancada e que só sabíamos o título. Ontem às 21h41 o produto entrou no Product Hunt, com descrição completa. É a nova versão do gerador de imagens que funciona dentro do ChatGPT.</p>
+
+  <p class="texto">Segundo a página, são três novidades. Você salva imagens de referência de você, de um bicho ou de um personagem e reaproveita depois. Ele cria GIF a partir de uma frase ou de uma foto, com velocidade e quadros ajustáveis. E gera as imagens 50% mais rápido, com menos diferença de uma edição para outra.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>GIF</b> é a imagem animada curtinha, como as figurinhas que se mexem no WhatsApp. <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. A "imagem de referência" é a folha do personagem: você mostra uma vez e a IA mantém o mesmo rosto nas próximas.</p>
+  </div>
+
+  <p class="texto">Para quem faz criativo de anúncio, o problema mais chato da IA sempre foi esse: o mascote mudava de cara a cada imagem. Se a referência funcionar como a página promete, uma campanha inteira pode ter o mesmo personagem. Ainda não testamos.</p>
+
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>Você já vende tráfego pago e IA de imagem. A parte que era trabalho braçal, refazer a imagem dez vezes até o personagem ficar igual, acabou de encolher. Sobra para vender o que a ferramenta não faz: <b>saber qual imagem, para qual público, em qual anúncio.</b></p>
+  </div>
+</section>
+
+<!-- ═════════ 02 ═════════ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Sete recortes desde ontem à noite. Como a feira de quinta: nem tudo vai para a sacola, mas vale passar por todas as bancas.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>O ChatGPT Images 2.6 guarda personagem, faz GIF e gera 50% mais rápido</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 21h41</span><span>Product Hunt · Hacker News (20h35)</span></div>
+        <p class="texto">É o destaque da seção 01. A página diz que ele está no ChatGPT, no Codex e na tomada para programadores. Para estes, há dois modelos: o Flare, que entrega imagem em até seis segundos, e o Sunburst, de mais qualidade. Também exporta em SVG.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p><b>Codex</b> é a versão do ChatGPT feita para programadores. A <b>API</b> é a tomada por onde um sistema conversa com outro: é por ela que um robô seu pode pedir imagens sozinho. <b>SVG</b> é o formato de desenho que aumenta sem borrar, bom para logo e ícone.</p>
+        </div>
+        <p class="texto">O Product Hunt marca o preço como "grátis". Isso não diz o que cada plano do ChatGPT inclui nem quando chega a todos no Brasil.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/chatgpt-images-2-6">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>A NVIDIA solta de graça uma IA que transcreve 40 idiomas e separa quem fala</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 1h51</span><span>Product Hunt</span></div>
+        <p class="texto">Chama-se Nemotron 3.5 Transcribe. Segundo a página, transcreve ao pé da letra ou já em texto arrumado, aponta quem falou cada trecho e marca o segundo de cada palavra. Aceita gravações de até uma hora.</p>
+        <p class="texto">A NVIDIA diz que, em testes em inglês feitos por ela, erra em média cerca de 5 palavras a cada 100 (4,71%). Os arquivos estão para baixar, com um kit para treinar com dados próprios.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>É de <b>código aberto</b>: qualquer um pode baixar e rodar por conta. Para o seu atendimento, é a peça que transforma ligação e áudio de WhatsApp em texto que um robô consegue ler. <b>Treinar com dados próprios</b> é ensinar o modelo com as conversas da própria empresa. A taxa de erro em português não foi informada.</p>
+        </div>
+        <div class="link"><a href="https://www.producthunt.com/products/nvidia">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Dia de cadeado: correção urgente no programa que abre servidores e um texto de segurança da OpenAI</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 6h46</span><span>Hacker News · Mastodon de Damien Miller · site da OpenAI</span></div>
+        <p class="texto">Hoje às 6h46 subiu no Hacker News o aviso de que saiu o OpenSSH 10.6p2. Segundo o título, ele traz um remendo para uma falha crítica. Ontem às 20h33, a OpenAI publicou um texto cujo título, em tradução nossa, é "Mil caminhos a menos até o controle total".</p>
+        <p class="texto">Não conseguimos abrir nenhum dos dois. Mas a dupla combina com outro sinal de hoje: "hacker" está entre as buscas que mais sobem no Google Brasil.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>O <b>OpenSSH</b> é a porta pela qual os técnicos entram à distância nos servidores, os computadores que deixam sites e sistemas no ar. "<b>Root</b>", no título da OpenAI, é a chave-mestra do computador. Se você ou um cliente tem servidor próprio, peça hoje a quem cuida dele para conferir a atualização.</p>
+        </div>
+        <div class="link"><a href="https://hachyderm.io/@damienmiller/117563026759098135">clique aqui para ler (OpenSSH)</a> · <a href="https://openai.com/index/a-thousand-fewer-paths-to-root/">clique aqui para ler (OpenAI)</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>As listas de indicações da internet estão entupidas de ferramenta feita às pressas com IA</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 8h16</span><span>Erik Gahner · Hacker News</span></div>
+        <p class="texto">O pesquisador Erik Gahner escreveu sobre as listas "awesome", coleções de indicações mantidas por voluntários. Uma delas, de ferramentas grátis, tem 13 estrelas e 91 pedidos de inclusão parados. Os que ele abriu propunham ferramentas genéricas feitas com IA.</p>
+        <p class="texto">Ele achou um único usuário com pelo menos seis sites desse tipo e mais de cem pedidos espalhados pelas listas. Alguns entraram.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>É a lista telefônica que qualquer um pode editar, sendo inundada de anúncio. Quando produzir ficou barato, a <b>curadoria</b> virou o produto caro. Vale para o seu radar, para o seu conteúdo e para qualquer lista de "melhores ferramentas" que você mandar a cliente.</p>
+        </div>
+        <div class="link"><a href="https://erikgahner.github.io/posts/2026/awesome-repositories-are-no-longer-awesome/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Portal de Fortaleza: robôs de IA avançam nas empresas e ampliam a automação</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 9h05</span><span>Conexão 085</span></div>
+        <p class="texto">O Conexão 085, portal com o DDD de Fortaleza no nome, publicou hoje de manhã a avaliação de Luciano Moreira sobre os robôs de IA chegando à operação das empresas. É a mesma manchete que o Valor deu ontem, agora na sua praça.</p>
+        <p class="texto">Só lemos o título. Mas é o sinal que interessa a quem vende em Fortaleza: o assunto saiu da imprensa de São Paulo e chegou à conversa do empresário local.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOUnJmVmxXNmZtOFNJNlpGVEVqLVhDRE5CcUpaQ0EwSXV4MjNjM00tRXF1cUNzX3NHRTQ0bVJBVmEybElMZm0yY2cwcUk1TkJoejFMWEJKNi1YY2dpcEM2ZENwRC13RWVBOFhCR2FfZkRsc0NPRGRNdi1fbUZ3Z0E3UFVhMnF6SmpMV2lSQnp3bnVaU1AtYnBOakMtdmhKTjZyZnl6UlR1TW51RG9VZHlKc2QtYzBBMk03R0N1R0ZCcw?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>No YouTube, quem procura robô procura um que funcione e que faça follow-up</h3>
+        <div class="credito"><span class="frescor antes">🟡 visualizações contadas hoje · data de publicação não informada</span><span>YouTube</span></div>
+        <p class="texto">Na busca por robôs e automação para negócios, o curso "Construindo robôs de IA que funcionam de verdade", de Greg Isenberg, tem 861 mil visualizações. Na busca por atendimento, aparecem só tutoriais de follow-up com IA: CRM Kommo, imobiliárias, recuperação de cliente sumido.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p><b>Follow-up</b> é a mensagem de retorno para quem pediu orçamento e sumiu. O <b>CRM</b> é a agenda de clientes da empresa. O recado é o que você já faz: o público não quer mais saber o que é robô. Quer o robô que manda a segunda mensagem sem parecer robô.</p>
+        </div>
+        <div class="link"><a href="https://www.youtube.com/watch?v=eA9Zf2-qYYM">clique aqui para ver</a> · <a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">e o tutorial do Kommo</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>A IA aberta da Tencent continua na vitrine. Só o nome, por enquanto</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 5h07</span><span>Product Hunt</span></div>
+        <p class="texto">O Tencent Hy4, citado na Nº 075, segue entre os destaques da vitrine. A Tencent é a dona do WeChat, o WhatsApp da China. Continuamos sem uma descrição que valha repetir. Fica no radar, não na proposta para cliente.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/hunyuan-a13b">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">50%</div><div class="lbl">mais rápido para gerar imagem no <b>ChatGPT Images 2.6</b>, segundo a OpenAI</div></div>
+    <div class="numero"><div class="big">40</div><div class="lbl">idiomas transcritos pela IA gratuita da <b>NVIDIA</b>, com gravações de até uma hora</div></div>
+    <div class="numero"><div class="big">91</div><div class="lbl">pedidos de inclusão parados numa lista com só <b>13 estrelas</b>, muitos com ferramentas feitas às pressas com IA</div></div>
+    <div class="numero"><div class="big">861 mil</div><div class="lbl">visualizações do curso <b>"robôs que funcionam de verdade"</b> no YouTube</div></div>
+  </div>
+
+  <div class="olho">
+    <p>"Fazer a imagem ficou rápido e barato. O que continua caro é saber qual imagem vende."</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+</section>
+
+<!-- ═════════ 03 ═════════ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Quem já chamou eletricista sabe: tomada boa vem com o disjuntor do lado. Você liga o aparelho e, se der problema, desliga num clique. As tomadas da IA estão começando a vir assim.</p>
+
+  <p class="texto">Na terça às 13h06 entrou no Product Hunt o backlane. A frase de venda: "Gerencie marketplaces pelo ChatGPT e pelo Claude". Você pergunta na conversa o estoque, as vendas, as ofertas e o resultado dos anúncios de lojas como Best Buy, Lowe's e Nordstrom. Walmart, Target e Amazon estão na fila.</p>
+
+  <p class="texto">O que interessa está no rodapé. O administrador pode <b>proibir o robô de alterar qualquer coisa</b>, esconder os dados dos clientes finais e ver o registro de cada alteração feita. Está grátis durante o teste aberto.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>Marketplace</b> é o shopping online onde várias lojas vendem, como o Mercado Livre. O backlane usa <b>MCP</b>: um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Ele ainda não atende os marketplaces brasileiros. O modelo é o que vale copiar.</p>
+  </div>
+
+  <p class="texto">O segundo sinal é o Vibeconferencing, lançado na segunda. Ele põe um robô de programação, como o Claude Code, dentro da chamada de Meet, Zoom, Teams ou WhatsApp, com rosto e voz. O robô ouve a conversa, responde em voz alta e desenha num quadro compartilhado. É gratuito, de código aberto e roda no seu computador.</p>
+
+  <div class="nota"><span class="r">O arco das últimas edições</span>
+    <ul class="lista">
+      <li><b>Nº 073:</b> o crachá. O robô só sai da sala com a sua assinatura.</li>
+      <li><b>Nº 074:</b> o cartão com limite e o disjuntor.</li>
+      <li><b>Nº 075:</b> o robô de fora, que vem comprar.</li>
+      <li><b>Nº 076:</b> o disjuntor virou item de fábrica. A tomada para marketplace já vem com "só pode olhar, não pode mexer".</li>
+    </ul>
+  </div>
+
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>O "só pode olhar" está virando o jeito padrão de entregar robô. Use isso na venda: o primeiro robô de um cliente <b>só lê</b>, seja estoque, pedido ou anúncio, e responde no WhatsApp do dono. Mexer vem no segundo mês. Assim o cliente diz sim sem medo.</p>
+  </div>
+</section>
+
+<!-- ═════════ 04 ═════════ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Toda campanha de supermercado tem um garoto-propaganda: o mesmo rosto no encarte, no cartaz e no carro de som. É a repetição que faz o cliente lembrar. Agora dá para ter isso em toda campanha de pequena empresa.</p>
+
+  <p class="texto">A oferta é o <b>kit de Black Friday com personagem fixo</b>. Você cria ou escolhe um personagem para o cliente, como um mascote, e salva como referência no Images 2.6. Com ele, monta as peças da campanha com o mesmo rosto. E, junto, dois GIFs para o status do WhatsApp e para os stories.</p>
+
+  <p class="texto">Por que vende agora: faltam 22 dias para o dia 27, e o pequeno lojista quer "fazer alguma coisa de Black Friday" sem contratar agência. O personagem resolve o que ele mais sente: a campanha que parece feita por cinco pessoas diferentes.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p>O que você vende não é a imagem, que ficou barata. É o <b>roteiro</b>: qual oferta, para qual público, em qual peça, com qual chamada. E um aviso honesto, como na Nº 075: imagem feita por IA está cada vez mais fácil de identificar. Combine com o cliente antes de publicar.</p>
+  </div>
+
+  <p class="texto">Um cuidado. A página fala em referência de pessoas, bichos e personagens, não de produtos. Se o cliente quer a embalagem igual em todas as peças, teste antes de prometer.</p>
+
+  <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Abra o ChatGPT e veja se o Images 2.6 já aparece para você. Escolha um cliente com loja e crie um personagem simples para ele. Salve como referência e peça cinco peças da Black Friday: oferta, frete grátis, contagem regressiva, depoimento e "últimas horas". Peça também um GIF.</p>
+    <p>No fim da tarde, mande as seis peças para o dono pelo WhatsApp com uma frase: "Essa é a sua Black Friday com cara própria. Quer que eu monte a campanha inteira?"</p>
+  </div>
+</section>
+
+<!-- ═════════ 05 ═════════ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Como a nota fiscal no fim da compra: cada informação desta edição com a origem ao lado. Títulos em inglês com a tradução entre parênteses.</p>
+
+  <ol class="src">
+    <li>🟡 ontem, 21h41 — <b>"ChatGPT Images 2.6"</b>, Product Hunt · <a href="https://www.producthunt.com/products/chatgpt-images-2-6">clique aqui</a></li>
+    <li>🟡 ontem, 20h35 (Hacker News) — <b>"Images 2.6"</b>, OpenAI · <a href="https://openai.com/index/introducing-images-2-6/">clique aqui</a></li>
+    <li>🟢 hoje, 1h51 — <b>"Nemotron 3.5 Transcribe"</b>, NVIDIA no Product Hunt · <a href="https://www.producthunt.com/products/nvidia">clique aqui</a></li>
+    <li>🟢 hoje, 6h46 (Hacker News) — <b>"OpenSSH 10.6p2 has been released with a workaround for a critical vulnerability"</b> ("Saiu o OpenSSH 10.6p2, com um remendo para uma falha crítica"), Damien Miller · <a href="https://hachyderm.io/@damienmiller/117563026759098135">clique aqui</a></li>
+    <li>🟡 ontem, 20h33 (Hacker News) — <b>"A thousand fewer paths to root"</b> ("Mil caminhos a menos até o controle total"), OpenAI · <a href="https://openai.com/index/a-thousand-fewer-paths-to-root/">clique aqui</a></li>
+    <li>🟢 hoje — "hacker" entre as buscas em alta no Google Trends Brasil (sinal coletado às 10h01)</li>
+    <li>🟢 hoje, 8h16 (Hacker News) — <b>"Awesome repositories are no longer awesome"</b> ("As listas awesome não são mais tão boas"), Erik Gahner · <a href="https://erikgahner.github.io/posts/2026/awesome-repositories-are-no-longer-awesome/">clique aqui</a></li>
+    <li>🟢 hoje, 9h05 — <b>"Agentes de IA avançam nas empresas e ampliam possibilidades de automação, aponta Luciano Moreira"</b>, Conexão 085 · <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOUnJmVmxXNmZtOFNJNlpGVEVqLVhDRE5CcUpaQ0EwSXV4MjNjM00tRXF1cUNzX3NHRTQ0bVJBVmEybElMZm0yY2cwcUk1TkJoejFMWEJKNi1YY2dpcEM2ZENwRC13RWVBOFhCR2FfZkRsc0NPRGRNdi1fbUZ3Z0E3UFVhMnF6SmpMV2lSQnp3bnVaU1AtYnBOakMtdmhKTjZyZnl6UlR1TW51RG9VZHlKc2QtYzBBMk03R0N1R0ZCcw?oc=5">clique aqui</a></li>
+    <li>🟡 YouTube — <b>"Building AI Agents that actually work (Full Course)"</b> ("Construindo robôs de IA que funcionam de verdade"), Greg Isenberg · <a href="https://www.youtube.com/watch?v=eA9Zf2-qYYM">clique aqui</a></li>
+    <li>🟡 YouTube — <b>"Kommo CRM | Follow-up com IA"</b>, RBMIDIA · <a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">clique aqui</a> · <b>"DESENHEI um follow-up com IA para IMOBILIÁRIAS"</b>, Rafael Milagre · <a href="https://www.youtube.com/watch?v=2y-9KI1mddo">clique aqui</a></li>
+    <li>🟡 ontem, 5h07 — <b>"Tencent Hy4"</b>, Product Hunt · <a href="https://www.producthunt.com/products/hunyuan-a13b">clique aqui</a></li>
+    <li>🟡 terça, 13h06 — <b>"backlane"</b>, Product Hunt · <a href="https://www.producthunt.com/products/backlane-2">clique aqui</a></li>
+    <li>🟡 segunda, 19h49 — <b>"Vibeconferencing"</b>, Product Hunt · <a href="https://www.producthunt.com/products/vibeconferencing">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>Images 2.6:</b> tudo vem da página do Product Hunt; o site da OpenAI segue trancado para leitura automática. Não testamos a imagem de referência, o GIF nem a velocidade. O "grátis" da vitrine não diz o que cada plano do ChatGPT inclui nem quando chega ao Brasil.</p>
+    <p><b>NVIDIA:</b> a taxa de erro de 4,71% é da própria NVIDIA, em testes só em inglês. A página não informa a licença de uso nem o desempenho em português.</p>
+    <p><b>OpenSSH e OpenAI ("Mil caminhos a menos…"):</b> as duas páginas não abriram daqui e a busca não achou outra fonte. Só sabemos os títulos. A tradução do título da OpenAI é nossa.</p>
+    <p><b>Conexão 085:</b> o link do Google News não abriu a matéria; o que está escrito vem do título.</p>
+    <p><b>YouTube:</b> visualizações contadas pelo coletor hoje; a data de publicação dos vídeos não veio no sinal.</p>
+    <p><b>backlane e Vibeconferencing:</b> lemos as páginas do Product Hunt, mas não testamos. Tencent Hy4: só o nome.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 076 · quinta-feira, 5 de novembro de 2026<br>
+  Próxima edição: Pulso diário de sexta-feira, 6 de novembro
+</div>
+
+</div>
+</body>
+</html>
