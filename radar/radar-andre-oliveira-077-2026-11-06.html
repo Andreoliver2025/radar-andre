@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 077 · Pulso de 6 de novembro de 2026 — Os robôs entraram na operação; falta quem confira</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>Quatro em cada dez empresas grandes já soltaram robôs no dia a dia. Falta alguém para conferir o que eles fazem</h1>
+  <p class="chamada">A McKinsey mediu: os robôs de IA saíram da sala de testes em 40% das empresas grandes, contra 27% um ano atrás. Só que pouco mais de um terço vê o efeito no lucro. No meio desse buraco tem trabalho para quem sabe montar e conferir robô.</p>
+  <div class="dateline">Edição Nº 077 · sexta-feira, 6 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">Os robôs entraram na operação. O lucro ainda não apareceu.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: McKinsey, a dificuldade na América Latina, a Apple, a UFMG, a App Store e duas estreias na vitrine.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">Saiu do teste, entrou no balcão. Agora a pergunta é quem confere a resposta.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">A "prova das 30 perguntas" no robô de atendimento, antes da Black Friday.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todas as fontes, com horário, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============ 01 ============ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">O robô de IA deixou de ser demonstração. Nas empresas que faturam mais de um bilhão de dólares por ano, 40% já usam esses robôs em escala.</p>
+
+  <p class="texto capitular">O número é do estudo anual da McKinsey sobre IA, repercutido ontem pelo Paraíba Business. Um ano atrás, eram 27%. No total, 89% das empresas pesquisadas usam IA em pelo menos uma área.</p>
+  <p class="texto">O outro lado da mesma pesquisa é o que interessa a você. Só 37% dizem que a IA já melhorou o lucro da empresa. É como comprar uma máquina nova para a fábrica e ainda não ver a conta fechar.</p>
+  <p class="texto">Ontem o TI INSIDE trouxe a versão latino-americana da mesma história: IA em 92% das empresas da região e 80% relatando dificuldade para fazer funcionar. Esse estudo a gente só conhece pelo título — está explicado na seção 05.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>Robô de IA</b> (o "agente de IA" das reportagens) é um programa que executa uma tarefa do início ao fim sozinho: responde o cliente, preenche o sistema, manda o follow-up. <b>"Em escala"</b> quer dizer que saiu do teste com cinco pessoas e foi para a operação de verdade.</p>
+  </div>
+
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>A conversa com o cliente mudou de "vale a pena usar IA?" para "por que a IA que eu já pago não dá resultado?". A segunda pergunta é melhor para você: quem a faz já tem orçamento e já tem dor. O seu produto é fazer o robô que já existe entregar.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Sete recortes. O fio que liga quase todos: a IA já está instalada — o que falta é saber se ela está fazendo a coisa certa.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>McKinsey: 40% das empresas grandes já usam robôs de IA na operação</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 12h40</span><span>Paraíba Business · estudo McKinsey</span></div>
+        <p class="texto">O estudo anual da McKinsey diz que 40% das empresas com faturamento acima de um bilhão de dólares já usam robôs de IA em escala. Em 2025, eram 27%.</p>
+        <p class="texto">O mesmo estudo mostra o freio: 80% dizem que a IA melhorou o trabalho de cada pessoa, mas só 37% veem efeito no lucro. A fatia de empresas que de fato ganha muito com IA segue parada em 6%.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>É a diferença entre cada vendedor ter uma calculadora melhor e a loja vender mais. A primeira já aconteceu. A segunda depende de alguém redesenhar o processo em volta do robô.</p>
+        </div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeHR3V3RrMTllWENvX3lzVWpteEFZYnB1cE9rbjVpUllocDZ4NFRObEJqMDYtNWpWbUlyeVctNEM0RHpKSzdXeHpYRnJkLWxYM1lldURGTXE3c1g1UGhROFNHUGxxeFJRNUN1bUhyNlVleF90WE5ITTlUUFVCd2xEeDh6XzBiQ2lWLVRScTR2M3N3VktpQ0VVR1pJbllncXBaZHNHVnBNaXc4dw?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>Na América Latina, a IA está em quase toda empresa. E quase toda empresa tropeça nela</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 14h07</span><span>TI INSIDE Online</span></div>
+        <p class="texto">Pelo título da reportagem, 92% das empresas latino-americanas já usam IA e 80% relatam dificuldade na implementação. A matéria não abriu daqui e não achamos o estudo original.</p>
+        <p class="texto">Trate como sinal, não como número para slide. Mas o desenho bate com o da McKinsey: entrar é fácil, fazer render é que trava.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQNE4yZUFVbUdZVXhHRUtLdk41U2F3TFM3cjhwZV9xNUd5QjRDN0tQMHpVZzZsYUdfZU41RjFOa29vUFNnZDFHaUJ3LWFoMFRQOENiQlozUDZYeTJMb2NBcWFzU0RaQjRiQi1jZjhSN3VaZmJUZ1RDMkRGeDJxekszTWNZa2Q2Sk9qckJCemc5REoySE55OE80UnVfaXdONVdPMFlFQUc2RjZmYlBfbG1wWWdkNEtIT3RXc1NRUUNLMmJueFIzZmRR?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Apple põe IA da OpenAI dentro do Pages, Keynote e Numbers — e abre a tomada para robôs de fora</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 14h58</span><span>SempreUpdate</span></div>
+        <p class="texto">O Apple Creator Studio, o pacote pago de programas da Apple, ganha assistentes de IA feitos com modelos da própria Apple e da OpenAI. A atualização foi anunciada em 27 de outubro e chega em novembro, ainda em teste.</p>
+        <p class="texto">A parte que importa: os programas passam a aceitar o MCP. Um robô de fora poderá montar a apresentação no Keynote ou mexer na planilha do Numbers. Nos EUA, o pacote custa 12,99 dólares por mês.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p><b>MCP</b> é um padrão de encaixe — como a tomada de três pinos — que faz a IA conversar com as suas ferramentas. Quando a Apple adota a mesma tomada que o Figma adotou ontem, o padrão deixa de ser aposta e vira regra de mercado.</p>
+        </div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE40ekMwWUhabktoZF93Rk5rYjJGNTVIbGdMVEh1ai0xazNUcnFEdnRZNGNobzh0NVZJRGUzb3JTVUtTTGNJMG9wNm9WN2dObWpKN1BSYTd1REpiQ1Q3RHFTTHk1cXgxb0R4akt6eTF5c24?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>A UFMG escreve a regra que serve para qualquer empresa: só entregue à IA o que você consegue conferir</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 5h04</span><span>UFMG</span></div>
+        <p class="texto">A universidade lançou um guia de uso responsável de IA para alunos, professores e funcionários. Uma das recomendações: só delegue à IA tarefas que você entende por completo ou cujo resultado consegue checar.</p>
+        <p class="texto">Para a parte administrativa, o guia pede transparência sobre onde a IA é usada e cuidado com dados pessoais. O texto é de universidade, mas a lógica cabe em qualquer escritório.</p>
+        <div class="link"><a href="https://www.ufmg.br/comunicacao/noticias/institucional/ufmg-lanca-documento-com-diretrizes-para-uso-responsavel-da-inteligencia-artificial/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>A App Store em números: um em cada dez aplicativos se vende como "com IA"</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 4h59</span><span>Obelisk, via Hacker News</span></div>
+        <p class="texto">Um levantamento com quase 179 mil aplicativos dos rankings da loja da Apple achou "IA" no nome ou na descrição de 9,8% deles. Nos apps de design e imagem, a fatia chega a 43%.</p>
+        <p class="texto">O dado mais útil é outro. Nas avaliações de uma e duas estrelas, a reclamação número um é assinatura e preço (12,7%). Fica à frente até de defeito no aplicativo (10,9%).</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>O <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu. A lição para quem vende serviço com IA: o cliente perdoa o defeito antes de perdoar a cobrança que ele não entendeu.</p>
+        </div>
+        <div class="link"><a href="https://obelisk.club/research/app-store-2026">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Na vitrine: um robô que mexe sozinho no site para trazer mais visita</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 4h15</span><span>Product Hunt</span></div>
+        <p class="texto">O Letterpress-1 promete propor sozinho mudanças no site: ajustar páginas para o Google, escrever posts de blog, criar páginas de venda e testar duas versões para ver qual converte mais. São mais de 50 estratégias, segundo a página.</p>
+        <p class="texto">Ele entrega cada mudança como uma proposta que alguém aprova antes de ir ao ar. É o seu território de SEO e growth virando robô — e ainda pedindo um humano para assinar embaixo.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. <b>SEO</b> é o trabalho de fazer o site aparecer no Google. O "teste A/B" é como pôr duas vitrines diferentes na mesma loja e contar qual vende mais.</p>
+        </div>
+        <div class="link"><a href="https://www.producthunt.com/products/letterpress-1">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>Na vitrine: a ferramenta que avisa o cliente quando o pedido dele virou realidade</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 15h10</span><span>Product Hunt</span></div>
+        <p class="texto">O Shipnoted junta num lugar só o mural de sugestões dos clientes, a lista do que vem por aí e o histórico do que mudou. Quando a sugestão de alguém sai do papel, essa pessoa recebe um e-mail automático.</p>
+        <p class="texto">É follow-up de pós-venda no piloto automático. Tem plano gratuito para um projeto; o pago custa 9 dólares por mês.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/shipnoted">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">A semana fechou com a mesma frase em quatro jornais diferentes: o robô saiu do laboratório e chegou ao balcão.</p>
+
+  <p class="texto">Na quarta, o Valor Econômico publicou que o uso de IA nas empresas cresce e os robôs chegam à operação. Ontem veio a McKinsey. Também ontem, o SEGS tratou do desafio de garantir que os robôs deem respostas precisas. Na segunda, a Forbes Brasil perguntou quem tem o controle desses robôs.</p>
+  <p class="texto">Junte as quatro manchetes e o recado é um só. Instalar ficou fácil. A plataforma Sana, por exemplo, vende montagem de robôs sem programar, nas telas de arrastar caixinhas. O que ninguém vende pronto é a garantia de que o robô responde certo.</p>
+  <p class="texto">Pense no atendente novo de uma loja. Ninguém o põe sozinho no balcão na véspera da Black Friday sem antes ouvir como ele responde. Com o robô, muita empresa fez exatamente isso.</p>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">40%</div><div class="lbl">das <b>empresas grandes</b> já usam robôs de IA em escala, segundo a McKinsey</div></div>
+    <div class="numero"><div class="big">27%</div><div class="lbl">era a mesma fatia <b>um ano atrás</b></div></div>
+    <div class="numero"><div class="big">37%</div><div class="lbl">dizem que a IA já <b>melhorou o lucro</b> da empresa</div></div>
+    <div class="numero"><div class="big">21 dias</div><div class="lbl">até a <b>Black Friday</b>, em 27 de novembro</div></div>
+  </div>
+
+  <div class="olho">
+    <p>"A IA já está dentro da empresa. O que falta é alguém que confira o que ela anda respondendo em seu nome."</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+
+  <div class="nota"><span class="r">O arco das últimas edições</span>
+    <ul class="lista">
+      <li><b>Nº 074:</b> a conta da IA estourou em sete de cada dez empresas.</li>
+      <li><b>Nº 075:</b> quem chega pela IA compra mais — e o comprador pode ser um robô.</li>
+      <li><b>Nº 076:</b> fazer imagem ficou barato; saber qual vende continua caro.</li>
+      <li><b>Nº 077:</b> o robô entrou na operação; conferir o que ele faz virou o serviço.</li>
+    </ul>
+  </div>
+
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>Seu argumento de venda muda de "eu monto o robô" para "eu provo que o seu robô responde certo — e conserto o que não responde". O primeiro compete com plataforma barata. O segundo compete com quase ninguém.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">A prova das 30 perguntas: um check-up do robô de atendimento, vendido para quem vai entrar na Black Friday com IA no WhatsApp.</p>
+
+  <p class="texto">O roteiro é simples. Você pega as 30 perguntas que os clientes mais fazem, dispara cada uma no robô e confere as respostas com o dono do negócio. Preço, prazo, troca, frete, horário.</p>
+  <p class="texto">Cada resposta ganha uma cor. Verde: certa. Amarelo: certa, mas fria ou longa demais. Vermelho: errada ou inventada. O cliente recebe a planilha e a lista de ajustes na instrução escrita do robô.</p>
+  <p class="texto">É a regra da UFMG virando serviço: só deixe a IA fazer o que dá para conferir. E é a resposta direta para os 63% da McKinsey que ainda não viram o lucro chegar.</p>
+
+  <div class="traduz"><span class="r">Por que funciona como oferta</span>
+    <p>Cabe numa tarde, tem começo e fim, e o resultado é visível — uma planilha com vermelhos que o dono nunca tinha visto. Quem vê o vermelho costuma contratar o conserto. É a porta de entrada para o seu serviço de atendimento e follow-up.</p>
+  </div>
+
+  <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Escolha um cliente que já tem robô no WhatsApp. Peça as últimas 200 conversas, separe as 30 perguntas que mais se repetem e rode a prova. Mande a planilha colorida com uma linha: "antes da Black Friday, estes são os vermelhos".</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Como a nota fiscal no fim da compra: cada informação desta edição com a origem ao lado. Títulos em inglês com a tradução entre parênteses.</p>
+
+  <ol class="src">
+    <li>🟡 ontem, 12h40 — <b>"40% das grandes empresas já usam agentes de IA em larga escala, diz McKinsey"</b>, Paraíba Business · <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeHR3V3RrMTllWENvX3lzVWpteEFZYnB1cE9rbjVpUllocDZ4NFRObEJqMDYtNWpWbUlyeVctNEM0RHpKSzdXeHpYRnJkLWxYM1lldURGTXE3c1g1UGhROFNHUGxxeFJRNUN1bUhyNlVleF90WE5ITTlUUFVCd2xEeDh6XzBiQ2lWLVRScTR2M3N3VktpQ0VVR1pJbllncXBaZHNHVnBNaXc4dw?oc=5">clique aqui</a></li>
+    <li>🟡 detalhes do estudo da McKinsey (27% em 2025, 89%, 80%, 37%, 6%) — <b>"McKinsey: 40% de grandes empresas ya escalan agentes de IA"</b>, Ecosistema Startup · <a href="https://ecosistemastartup.com/mckinsey-40-de-grandes-empresas-ya-escalan-agentes-de-ia/">clique aqui</a></li>
+    <li>🟡 ontem, 14h07 — <b>"IA já está em 92% das empresas na América Latina, mas 80% relatam dificuldades na implementação"</b>, TI INSIDE Online · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQNE4yZUFVbUdZVXhHRUtLdk41U2F3TFM3cjhwZV9xNUd5QjRDN0tQMHpVZzZsYUdfZU41RjFOa29vUFNnZDFHaUJ3LWFoMFRQOENiQlozUDZYeTJMb2NBcWFzU0RaQjRiQi1jZjhSN3VaZmJUZ1RDMkRGeDJxekszTWNZa2Q2Sk9qckJCemc5REoySE55OE80UnVfaXdONVdPMFlFQUc2RjZmYlBfbG1wWWdkNEtIT3RXc1NRUUNLMmJueFIzZmRR?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 14h58 — <b>"Apple Creator Studio ganha IA da OpenAI e suporte ao MCP"</b>, SempreUpdate · <a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE40ekMwWUhabktoZF93Rk5rYjJGNTVIbGdMVEh1ai0xazNUcnFEdnRZNGNobzh0NVZJRGUzb3JTVUtTTGNJMG9wNm9WN2dObWpKN1BSYTd1REpiQ1Q3RHFTTHk1cXgxb0R4akt6eTF5c24?oc=5">clique aqui</a> · preço e datas: <b>"Apple Adds OpenAI and MCP to Pages, Keynote in $12.99 Suite"</b> ("Apple põe OpenAI e MCP no Pages e no Keynote, num pacote de 12,99 dólares"), FourWeekMBA · <a href="https://fourweekmba.com/ai-apple-adds-openai-and-mcp-to-pages-keynote-in-12-99-suite/">clique aqui</a></li>
+    <li>🟢 hoje, 5h04 — <b>"UFMG lança documento com diretrizes para uso responsável da Inteligência Artificial"</b>, UFMG · <a href="https://www.ufmg.br/comunicacao/noticias/institucional/ufmg-lanca-documento-com-diretrizes-para-uso-responsavel-da-inteligencia-artificial/">clique aqui</a></li>
+    <li>🟢 hoje, 4h59 (Hacker News) — <b>"App Store 2026 in numbers: AI, pricing, abandoned apps"</b> ("A App Store de 2026 em números: IA, preços e apps abandonados"), Obelisk · <a href="https://obelisk.club/research/app-store-2026">clique aqui</a></li>
+    <li>🟢 hoje, 4h15 — <b>"Letterpress-1"</b>, Product Hunt · <a href="https://www.producthunt.com/products/letterpress-1">clique aqui</a></li>
+    <li>🟡 ontem, 15h10 — <b>"Shipnoted"</b>, Product Hunt · <a href="https://www.producthunt.com/products/shipnoted">clique aqui</a></li>
+    <li>🟡 quarta, 16h36 — <b>"Uso de IA nas empresas cresce e agentes chegam à operação"</b>, Valor Econômico · <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNZ2hwSVN6N0lLQUt3ZkdEOGNnUUgxR1VaUHA2amNHY3hONDFDODJtXzQtbVFpRFpCMlRqcEdleVg3RHloaE5HT19OcU1zZTlNVXZjcTlwQk5QN3cxbXNpUE5CNlVVM2dVTTFRbzNnR3BUa0NDbW81b01WX2JZMkxsSklaTE9EaW1WOFhXM0ltU1ZGRUxJRlFzN3lmdmc4MUk5VUtwNGNoN2NCRmR1ODJpb1h3LUVRdmF6dDMzZHJkNUM4cGfSAdIBQVVfeXFMTjFLX05ISmdSdEc4Zlo5dWVjWXZwYjFkZmlZd25hckRWWFBjb2hzRk5kOFpfNlJZb194WjVkaDAxYUZCb1RKSjQxdWxpZTJ4QjBrX0VJZllYNVJwOHU5WGdTbzlJWFRRRmRTMFhqRlFTNXJDWF8tb0FRbVlWeVhsSnBQcXREVnFtVFpmNkZfcXRvMWZBLW9oY2xnRVhCUVFvRlRuQ19oNVdVTkcxTXdva29Db3hVNDdvNHlDbmdIT3VvVVFNVTlrRXVqSkVSU25YUm1B?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 15h46 — <b>"Inteligência artificial nas empresas: os desafios para garantir respostas precisas com agentes de IA"</b>, SEGS Portal Nacional · <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZGE2TkpBTmZlVlhvT1U4Zy00TnNUaFN2UGNTX3VCSHdGYmZSSzhBVmJFY3JpWUFWeFpUcEo2SUZxNkFGYlBWVndMUHJEay1Xa0xvc3VZZmozczEyWnBOekZmenNiUlIzMXN0Y0xtR1g4U0VOZl9rbnlLb0pkcXJOVWxYR3U2YXdmeDE4MTU2REw5TkF3OWRUOVNiTlZQNVo3RjcyRjZoVjhfUXFPWkRPZ0pxVFZfMGtWRy1rcjZRYmJGX2ZLQnh2OEJHNVNZUUZQRjlHc9IB2gFBVV95cUxNTENwcUJvS21jM241djJiSkRGTXk1Qzk1VTZwVDhUZGo0NEJKdmlSM2g5c1dwRXBjYmJ5TGtyTVI4ZXJnTEtQeVl0ZVpIYlhRSDZla3ZjQW15MGxCVmVLMmp2VGlPcUZwVFloZXdXRzNxVzZYcDBCUFNBUGhLRnJJWmx2dDJTR3EzNDBveDZCeU1SQ1Q5VUJvV3plSm1WT0FpOHZWTy1VTkp3aTFDVHRIb3dSbXdlbDJFd1hZRGdzS0ZBbnBxU21faHFmNF9GVXN6OUNUQWlSbUpKQQ?oc=5">clique aqui</a></li>
+    <li>🟡 segunda, 5h05 — <b>"Com a Implementação da IA nas Empresas, Quem Tem o Controle dos Agentes?"</b>, Forbes Brasil · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPRVlHN1JNWEY2NjN1LUo5RFdqbGVXT0FSbnJZOGJzOEJIRzVGX21jMVFzQ1piS2dvcFVGMkpBTExmUENDUmJRNlJtMmMwaW5QeVEwTkhKaktFSFhrZ3RTYUxVSXBMN0kzUTVheFpDMlhyRG14ZWJPT190bnJKOTY4MGc2dElReEowWlpYWG5mYjVHa0F6VUp4b21LbkZPYnNBMldvb3B2OE5nYzFOSUphcU5Vbw?oc=5">clique aqui</a></li>
+    <li>🟡 quarta, 9h21 — <b>"Sana: A plataforma de agentes de IA sem código para conhecimento e automação empresarial."</b>, quasa.io · <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPV2tWVlNGWFNEMzlDTmJMVlVaUkVwdXNLU1ZaTEtLdV9VR2RhQ3AzTldycXhMbmRnM0c5Qjk1YzdRV2tHZ0F0VUZvZklwV1djMmNCcDExaG5ZM0JqbEc4N29KaDRFejE0NGx6cmRYX0Y5a2s5aUZ5bkozSHVvcUJuOEZZamRUOWZaQk5SQ0JPZ1NlcVpRT2FEUWZwdTdBUFZMVVRDYTNjOFZHUFRwN2lBT002RQ?oc=5">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>McKinsey:</b> não lemos o relatório original. Os números vêm do Paraíba Business (título) e do Ecosistema Startup (detalhes). O 40% vale para empresas que faturam mais de um bilhão de dólares e é o que os entrevistados declaram, não uma contagem.</p>
+    <p><b>TI INSIDE (92% e 80%):</b> a matéria não abriu daqui e a busca não achou o estudo de origem. Só temos o título. Não use o número em proposta sem conferir antes.</p>
+    <p><b>Apple:</b> a Apple não disse qual modelo da OpenAI usa, nem o que exatamente os robôs de fora poderão fazer nos programas. O preço de 12,99 dólares é o dos EUA; o valor no Brasil não apareceu.</p>
+    <p><b>Valor, SEGS, Forbes e Sana:</b> os links do Google News não abriram as matérias. O que está escrito sobre elas vem dos títulos.</p>
+    <p><b>Letterpress-1 e Shipnoted:</b> lemos as páginas do Product Hunt, mas não testamos. As promessas são dos fabricantes.</p>
+    <p><b>Ficou de fora:</b> o filme com a voz e a imagem da Grimes (Terra) e a TOTVS juntando marketing, vendas e atendimento (Estadão). Não achamos detalhe confiável além dos títulos.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 077 · sexta-feira, 6 de novembro de 2026<br>
+  Próxima edição: Radar Completo de segunda-feira, 9 de novembro — com o bloco de posicionamento
+</div>
+
+</div>
+</body>
+</html>
