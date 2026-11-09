@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 078 · Completo de 9 de novembro de 2026 — O robô mudou de lado do balcão</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Edição completa</div>
+  <h1>O robô mudou de lado do balcão. Agora ele também faz as compras</h1>
+  <p class="chamada">A plataforma de robôs da chinesa DeepSeek passou de 1,5 milhão de usuários por dia. A Apple abriu a Siri para os aplicativos ensinarem tarefas a ela. E 72% dos brasileiros já usaram ou topam usar um robô para comprar. A sua loja precisa atender gente e também o robô que a pessoa mandou.</p>
+  <div class="dateline">Edição Nº 078 · segunda-feira, 9 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#movimento">O movimento da semana</a><div class="d">O robô deixou de ser só o atendente da loja. Agora ele é também o comprador.</div></div></li>
+    <li><div><a href="#novidades">As novidades da semana</a><div class="d">Oito recortes: DeepSeek, Apple, a chave que o ChatGPT empresta, a Copastur e três estreias na vitrine.</div></div></li>
+    <li><div><a href="#territorio">Seu território: robôs, automação e encaixes</a><div class="d">O robô ganhou procuração. E a empresa continua assinando embaixo do que ele faz.</div></div></li>
+    <li><div><a href="#negocio">IA aplicada a negócio</a><div class="d">Quem chega pela IA gasta mais, o Itaú conversa, e a loja que o robô não consegue ler.</div></div></li>
+    <li><div><a href="#imagem">IA de imagem e vídeo</a><div class="d">Vídeo do Google mais barato e mais fiel, edição por conversa e o intérprete de Libras de uma empresa brasileira.</div></div></li>
+    <li><div><a href="#mundo">🌍 Para onde o mundo vai</a><div class="d">A empresa de uma pessoa só, a China na frente no uso de robôs e a máquina alugada que muda sem avisar.</div></div></li>
+    <li><div><a href="#posicionamento">⭐ Onde você deve estar agora</a><div class="d">Três movimentos com o primeiro passo de cada, para esta semana.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ===================== 01 ===================== -->
+<section class="materia" id="movimento">
+  <div class="titulo"><span class="n">01</span><h2>O movimento da semana</h2><span class="fio"></span></div>
+
+  <p class="abertura">Até agora, o robô de IA trabalhava atrás do balcão: atendia, respondia, mandava o follow-up. Esta semana ficou claro que ele também está chegando pela porta da frente, com a lista de compras de alguém na mão.</p>
+
+  <p class="texto capitular">Três sinais saíram em sete dias. Ontem à tarde, o Valor Econômico publicou que a plataforma de robôs da DeepSeek, a rival chinesa do ChatGPT, soma 1,54 milhão de usuários por dia. Em 30 de setembro, segundo os números divulgados pela própria equipe, eram 271 mil.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>Robô</b>, aqui, é o <b>agente de IA</b>: um programa que executa uma tarefa do início ao fim sozinho. A diferença para o ChatGPT comum é a mesma entre perguntar o caminho e pedir para alguém dirigir. A plataforma da DeepSeek, chamada Harness, é desse segundo tipo.</p>
+  </div>
+
+  <p class="texto">Hoje cedo, o Notícias ao Minuto escreveu que a Apple quer transformar a Siri num robô desses. Desde o dia 3, os programadores podem ensinar à Siri tarefas dos seus aplicativos: consultar um pedido, reservar uma mesa. Para o público, isso chega só na primavera do hemisfério norte.</p>
+
+  <p class="texto">E o lado de quem compra já respondeu. Uma pesquisa da Global Payments diz que 72% dos brasileiros já usaram ou topam usar um robô de IA para fazer compras por eles. Um ano antes, eram 39%. Entre sete países, o Brasil só perde para a China.</p>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">1,54 milhão</div><div class="lbl">de pessoas por dia usam a plataforma de robôs da <b>DeepSeek</b>. Eram 271 mil cinco semanas antes. Número da própria empresa, repercutido pelo Valor</div></div>
+    <div class="numero"><div class="big">72%</div><div class="lbl">dos brasileiros já usaram ou usariam um robô para comprar por eles, segundo a <b>Global Payments</b> (pesquisa de maio). Um ano antes, eram 39%</div></div>
+    <div class="numero"><div class="big">83%</div><div class="lbl">a mais de receita por visita trazem os clientes que chegam pela IA às lojas on-line dos EUA, segundo a <b>Adobe</b> (dados de setembro)</div></div>
+    <div class="numero"><div class="big">18 dias</div><div class="lbl">até a Black Friday, em 27 de novembro</div></div>
+  </div>
+
+  <div class="olho">
+    <p>O seu próximo cliente pode não ler o seu anúncio. Ele vai mandar um robô ler por ele. A pergunta é se o robô entende a sua loja.</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+
+  <div class="nota">
+    <span class="r">O arco das últimas edições</span>
+    <ul class="lista">
+      <li><b>Nº 072, segunda passada:</b> a empresa pôs o robô para trabalhar e pediu o boletim com nota.</li>
+      <li><b>Nº 074:</b> a conta da IA estourou em sete de cada dez empresas.</li>
+      <li><b>Nº 075:</b> quem chega pela IA compra mais, e o próximo cliente pode ser um robô.</li>
+      <li><b>Nº 077:</b> 40% das empresas grandes já usam robôs na operação. Falta quem confira.</li>
+      <li><b>Hoje:</b> a previsão da 075 virou número. O robô está dos dois lados do balcão.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>Na semana passada, o seu serviço era conferir o robô que atende o cliente. Esta semana apareceu o segundo trabalho: preparar a loja para ser lida pelo robô que compra.</p>
+    <p>É o mesmo músculo que você usou anos em SEO. Antes, a vitrine precisava agradar ao Google. Agora precisa agradar ao ChatGPT, ao Gemini e, em breve, à Siri. A seção 07 mostra por onde começar.</p>
+  </div>
+</section>
+
+<!-- ===================== 02 ===================== -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades da semana</h2><span class="fio"></span></div>
+
+  <p class="abertura">Oito recortes. Pense na feira de domingo: muita barraca, mas você só volta para casa com o que vai usar na semana. Ficou aqui o que entra na sacola.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>A plataforma de robôs da DeepSeek chega a 1,54 milhão de usuários por dia</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 15h38</span><span>Valor Econômico · Yicai</span></div>
+        <p class="texto">A DeepSeek, empresa chinesa que assustou o mercado no começo de 2025, divulgou pela primeira vez quantas pessoas usam o Harness por dia. O número saiu em 4 de novembro: 1,54 milhão por dia e 5,48 milhões por mês.</p>
+        <p class="texto">O Harness é uma mesa de trabalho para robôs, com aplicativo para computador desde 29 de setembro. O salto em cinco semanas foi de quase seis vezes. A contagem inclui quem usa pela tomada técnica, não só pelo aplicativo.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>A "tomada técnica" é a <b>API</b>: a tomada por onde um sistema conversa com outro. Ou seja, parte desses usuários são outros programas, não pessoas. O número é da própria empresa e ainda não foi auditado por ninguém de fora.</p>
+        </div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQa09RY0RaUWdJQ00yZkY2bFhnWE1UYV9UR1ZlcnlTYVJjZnN4akFjalFfMERRUEktQTJibHg5Qkx0aHRCT1Q1b2RpUUs3Y3ZDNGZrWlBZS3dPaE12VVdhVDRDOEFPeUtKLUNiTFQ0cjBRcVl4LUhYdjdiU3Q0YnVPdjhoem04WEVhdjFQN3NmMlJBNnZRSW1ZbHV5UTFfMEtXVVBmbTMyQzV3c3gxRExlbXBTWVYzcXlma2lmU0h1Uzh5LWMxa2NfOWdHWEY5YmFjX29UTWVmY0tsRkFtNG1XZE5CRFTSAfMBQVVfeXFMT1ZDYXpPUjVWWElUU09QY0JSOVY4azhBNTJUSTZaSjRFMEZ4Ml9uQnlFZFItNEZIOUNrTGNiSUUtejA5UDAxUk9IYy1LQjJzY3U4d29IcldNckNfYUlkSGR2SGJ6UHJMOE9zQk9ZcGVNRXpOVl9sazMtM3hPTjZpeWxJdzd5UGY1NDNKdXFKSjBLLXhOUTVDX2NPUDRCaGdmbDZNRjRHZ0FsSHMzLUoxa1U3MVB0S3ZCLWpGcDZ5aXhqZlR0SGhLeXQwWVVNVE1SNHdwdkt2Zkk5WFFxMWwtY2NNTEFMN3JSTS1ZeVBfc0k4QUJR?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>A Apple quer que a Siri faça as tarefas por você, dentro dos aplicativos</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h10</span><span>Notícias ao Minuto · PPC Land</span></div>
+        <p class="texto">A Siri nova, anunciada em junho, deixa de só responder e passa a agir entre aplicativos. No dia 3, a Apple liberou para os programadores uma versão de teste em que cada app ensina à Siri o que ela pode fazer lá dentro.</p>
+        <p class="texto">Os aplicativos da loja da Apple só poderão oferecer isso na primavera de lá, e as regras de uso ainda não saíram. Em português, a Siri nova foi prometida "em breve" para o Mac.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOS3l0RHZnbGo2T1E5eTBFYzVhdFJ1aC1oQUxPVXNKc2JCOFg0YVd1c1o2Wk5WcEdRblRhRTN2eEtTeS1ZcWVZSGtzejRCaEFKZTNNeGJhTWN6MmpqckExNVRSMlBhZjN1Z0duM2VBWjVvR1NBbm9iMnpGNjVpeTl6eW8xV0MyODBzMjFycDkwQjIxUlVfa1dTa1BLZFZUR1FuMFhjS1JUekJXWF9GT1hXcVVnQzI?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>O ChatGPT para computador empresta a sua chave mestra para robôs em outras máquinas</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 5h17</span><span>Hacker News</span></div>
+        <p class="texto">Um programador mostrou que o ChatGPT de computador repassa automaticamente a sua chave de acesso a servidores para os robôs que rodam em máquinas remotas. Com ela, o robô pode, por exemplo, mexer nos seus arquivos privados no GitHub como se fosse você.</p>
+        <p class="texto">A OpenAI não respondeu na discussão. Os programadores sugerem chaves físicas, que pedem um toque no aparelho a cada uso.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>A <b>chave SSH</b> é a chave mestra que abre os servidores onde ficam sistemas e códigos. É como deixar o molho de chaves do escritório com o motoboy porque ele precisa entrar só na recepção. Saiu no <b>Hacker News</b>, o mural onde programadores do mundo todo postam o que saiu.</p>
+        </div>
+        <div class="link"><a href="https://news.ycombinator.com/item?id=50422628">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>A Copastur põe a mesma tomada de IA em viagens, despesas e seguros, e fala em 130 milhões de reais</h3>
+        <div class="credito"><span class="frescor antes">🟡 terça · 18h00</span><span>Brasil Inovador · Brasil Turis</span></div>
+        <p class="texto">A Biosfera Copastur, de viagens corporativas, lançou o C+ Maestro. Ele liga assistentes de IA aos serviços do grupo: viagens, mobilidade, despesas, seguros e logística. Respeita as permissões e as aprovações de cada empresa cliente.</p>
+        <p class="texto">O grupo diz ter criado mais de 100 automações com robôs, das quais umas 40 rodam todo dia. Os 130 milhões de reais são o investimento total em tecnologia previsto para 2026, segundo a própria empresa.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>A peça central é o <b>MCP</b>: um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Quando uma empresa de viagens brasileira adota a tomada, ela deixou de ser assunto só de programador.</p>
+        </div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQcTZXdGlnVG0xUHpvblpLdDNRLWg0SkQ2UmJkeFpLem93bndjdnZQSktGYnVLNlpaQnhCUzVkdlBGc2dqWGZhZTNieldTbFEweEEwd21RMll6c1RVUE1CMTBKaUlhX25CMmF5c1RQb2s5ZzJkajIwOVNla3c5c1pfOHExcHIzYVNrOTJ6NDJYTXhEOTRjM0ZFYmhPMTItSThiX2NRT28za3QyVzZTd0xZNXRVUi1WcllsVExQckRremkwNWtoZWNr?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>O robô pode parar no meio da tarefa e perguntar antes de agir</h3>
+        <div class="credito"><span class="frescor hoje">🟢 ontem · 10h04</span><span>iMasters</span></div>
+        <p class="texto">Dois textos do iMasters, na sexta e ontem, explicam um recurso do MCP chamado "elicitation". Com ele, o robô interrompe a tarefa e pede ao usuário a informação que falta, em vez de chutar.</p>
+        <p class="texto">O recurso não é novo: está na regra desde junho de 2025. A novidade é ele virar tutorial em português, sinal de que as empresas brasileiras estão montando isso agora.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>É o funcionário que liga antes de fechar o pedido: "o cliente quer na cor azul ou na preta?". Um robô que pergunta erra menos do que um robô que adivinha.</p>
+        </div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPSTlOX19GdkxpY1lfdnh4ZUp0clUwcUtQTEpfV1hwT3lwdktkTVRJal9KcnlKZnliaXpSTEhlYThGdXlaLXd0dXBGZnVYVjZuNHJlMUd1MDVLaGtKZ0lhd1FCUTVoWkloZEZUMzc4UXNjenREem1FVlBSakdwMkVTN09HQ1N3R2ZENURqSjlpWktTWHlxLVhKZFBIWlVWYkxDQnZyRWtYdnAtYnFuQ1dSQWZCY3N4X18xRm84eW43MHgzcDE2UjZN?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Na vitrine: a ferramenta que mostra se o ChatGPT indica você ou o concorrente</h3>
+        <div class="credito"><span class="frescor antes">🟡 terça · 7h49</span><span>Product Hunt</span></div>
+        <p class="texto">O Dageno AI 2.0 confere se dez IAs, entre elas ChatGPT, Gemini e Perplexity, citam a sua marca ou a do concorrente nas respostas. E mostra quais sites essas IAs usam como fonte.</p>
+        <p class="texto">A consulta por mercado é gratuita, segundo a página. Paga-se para acompanhar as suas próprias perguntas.</p>
+        <div class="traduz"><span class="r">Em português claro</span>
+          <p>O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. O serviço que o Dageno vende tem nome: <b>GEO</b>, aparecer nas respostas da IA, como antes se buscava aparecer no Google.</p>
+        </div>
+        <div class="link"><a href="https://www.producthunt.com/products/agent-powered-geo-by-dageno">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>Na vitrine: um editor de vídeo que você comanda escrevendo o que quer</h3>
+        <div class="credito"><span class="frescor antes">🟡 quinta · 12h56</span><span>Product Hunt</span></div>
+        <p class="texto">O Cardboard AI lançou o aplicativo para Mac. Você descreve o corte e ele monta o vídeo a partir das suas gravações brutas. As imagens ficam no seu computador, e dá para usar a assinatura do Claude ou do ChatGPT que você já paga.</p>
+        <p class="texto">Tem plano gratuito, segundo a página. Mais detalhes na seção 05.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/cardboard-3">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">08</div>
+      <div>
+        <h3>Na vitrine, uma brasileira: intérprete de Libras em vídeos que já estão no ar</h3>
+        <div class="credito"><span class="frescor antes">🟡 quinta · 15h00</span><span>Product Hunt</span></div>
+        <p class="texto">A Panda Video, plataforma brasileira de vídeo para quem vende curso, lançou o recurso no Product Hunt. Você grava o intérprete e liga o vídeo dele a uma aula já publicada, sem reeditar nada.</p>
+        <p class="texto">O aluno ganha um botão de "língua de sinais" no player. Se o intérprete foi gravado em fundo liso, o fundo some sozinho. A ferramenta não traduz: o intérprete continua sendo uma pessoa.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/panda-video">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== 03 ===================== -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: robôs, automação e encaixes</h2><span class="fio"></span></div>
+
+  <p class="abertura">Quando você assina uma procuração, o cartório não pergunta se o procurador é bom. Pergunta o que ele pode fazer em seu nome. Os robôs ganharam procuração esta semana, e quase ninguém escreveu o que ela permite.</p>
+
+  <p class="texto">Na sexta, o TI Inside resumiu no título: os robôs de IA já estão agindo, e a empresa continua respondendo por eles. Na quarta, a CNDL, a confederação dos lojistas, disse que a automação entrou numa fase de sistemas que "pensam" e decidem.</p>
+
+  <p class="texto">O caso do ChatGPT de computador mostra o risco na prática. O robô recebeu a chave mestra sem que ninguém escolhesse dar. O outro lado da moeda é o recurso que o iMasters explicou: o robô que para e pergunta antes de agir.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p>Todo robô que age em nome de alguém precisa de três listas escritas. O que ele faz sozinho. O que ele faz só depois de perguntar. E o que ele nunca faz. Na linguagem técnica, isso se chama <b>permissões</b> e <b>aprovação humana</b>. A Copastur, por exemplo, diz que o C+ Maestro respeita as aprovações de cada cliente.</p>
+  </div>
+
+  <p class="texto">Perto de você, o Conexão 085, site de Fortaleza, publicou na quinta que os robôs avançam nas empresas e ampliam a automação. A Terra e o Paraná Portal fizeram o mesmo no fim de semana. A conversa saiu da revista de tecnologia e chegou ao jornal da cidade.</p>
+
+  <div class="olho">
+    <p>O robô já tem procuração. O que falta é alguém escrever, numa página, o que ele pode e o que ele não pode fazer em nome da empresa.</p>
+    <span class="quem">A segunda frase para levar à reunião</span>
+  </div>
+
+  <div class="nota">
+    <span class="r">A tomada se espalhou em sete dias</span>
+    <ul class="lista">
+      <li><b>Copastur:</b> viagens, despesas e seguros ligados a assistentes de IA pela mesma tomada (MCP).</li>
+      <li><b>Apple:</b> os aplicativos ensinam tarefas à Siri. Na edição 077, os programas da Apple já tinham adotado o MCP.</li>
+      <li><b>iMasters:</b> dois tutoriais em português sobre como o robô pergunta antes de agir.</li>
+      <li><b>DeepSeek:</b> uma mesa de trabalho para robôs com 1,54 milhão de usuários por dia.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>A "prova do robô", da edição 072, responde se ele acerta. A procuração responde até onde ele pode ir. As duas juntas formam o serviço que o dono de empresa entende de primeira: "eu sei o que o seu robô faz, e provo todo mês".</p>
+  </div>
+</section>
+
+<!-- ===================== 04 ===================== -->
+<section class="materia" id="negocio">
+  <div class="titulo"><span class="n">04</span><h2>IA aplicada a negócio</h2><span class="fio"></span></div>
+
+  <p class="abertura">Imagine um cliente que entra na loja já sabendo o que quer, com o preço anotado e o cartão na mão. É assim que chega quem vem indicado pela IA. Os números desta semana dizem que ele gasta mais.</p>
+
+  <p class="texto">A Adobe mede as compras on-line dos Estados Unidos. Em setembro, cada visita que veio de um link de IA rendeu 83% mais do que as outras. Essas visitas também viraram compra 90% mais vezes. Em agosto de 2025, convertiam 9% pior.</p>
+
+  <p class="texto">Para as festas de fim de ano, a Adobe prevê 130% mais visitas vindas de IA. A ressalva é dela mesma: a base ainda é pequena, e a conta só pega quem clicou no link.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>Receita por visita</b> é quanto cada pessoa que entrou na loja deixou no caixa, em média. <b>Converter</b> é a visita virar compra. O cliente que vem da IA chega com a pesquisa feita, como quem já viu o produto na casa do vizinho.</p>
+  </div>
+
+  <p class="texto">No Brasil, o movimento é juntar tudo num balcão só. Na quinta, o Estadão contou que a TOTVS aposta em IA para integrar marketing, vendas e atendimento. No fim de outubro, a RD Station lançou recursos com a mesma promessa.</p>
+
+  <p class="texto">Os bancos já estão lá. No dia 3, o TI Inside mostrou o Itaú usando IA de conversa para dar atendimento personalizado. E o AdNews já tinha avisado: na Black Friday, a conversa com IA no WhatsApp ganhou peso na venda.</p>
+
+  <p class="texto">O alerta da semana veio do Mundo do Marketing: a IA acelera os gargalos quando entra antes de alguém arrumar o processo de vendas. Robô em cima de funil bagunçado só bagunça mais rápido.</p>
+
+  <div class="nota">
+    <span class="r">O que o mercado está procurando no YouTube</span>
+    <ul class="lista">
+      <li><b>"Kommo CRM | Follow-up com IA…"</b> (RBMIDIA): 19.017 visualizações. Eram 18.967 na segunda passada. Busca constante, não moda.</li>
+      <li><b>"Agente de IA que faz follow-up automático e recupera leads"</b> (Rodrigo Alves): 2.883.</li>
+      <li><b>"Desenhei um follow-up com IA para imobiliárias"</b> (Rafael Milagre): 4.581.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que fazer com isso</span>
+    <p>Antes de 20 de novembro, separe nos relatórios de cada cliente as visitas que vêm do ChatGPT, do Gemini e do Perplexity. Se a Adobe estiver certa, esse vai ser o canal com o melhor resultado por visita da Black Friday. Quem mostrar isso primeiro ao cliente vira a referência no assunto.</p>
+  </div>
+</section>
+
+<!-- ===================== 05 ===================== -->
+<section class="materia" id="imagem">
+  <div class="titulo"><span class="n">05</span><h2>IA de imagem e vídeo</h2><span class="fio"></span></div>
+
+  <p class="abertura">Um bom ator de novela não muda de cara entre uma cena e outra. Até pouco tempo, o vídeo feito por IA mudava. Esta semana o Google disse que resolveu boa parte disso, e baixou o preço.</p>
+
+  <p class="texto">O Google liberou para todos o Gemini Omni 1.2 Flash, segundo o Tecnoblog. Ele faz vídeos de até 15 segundos, já com som. A promessa é manter o rosto, o objeto e o cenário iguais do começo ao fim.</p>
+
+  <p class="texto">O preço de um vídeo em qualidade média (720p) caiu 30%, para 7 centavos de dólar por segundo. Um vídeo de 15 segundos sai por cerca de 1 dólar. Dá para fazer rascunhos em qualidade menor antes de gastar com a versão final.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>Consistência</b> é o personagem continuar o mesmo em todas as cenas. Para anúncio, isso é tudo: a vendedora do vídeo 1 precisa ser a mesma do vídeo 5. <b>720p</b> é a qualidade de imagem boa para celular, abaixo do Full HD.</p>
+  </div>
+
+  <p class="texto">Do lado da edição, o Cardboard AI deixou você cortar vídeo escrevendo o que quer, como quem dá instrução a um editor. E a brasileira Panda Video pôs intérprete de Libras em aulas já publicadas. Acessibilidade virou recurso de prateleira para quem vende curso.</p>
+
+  <p class="texto">O lado escuro também apareceu na busca da semana. As notícias sobre vídeo com IA trazidas pelo radar foram quase todas sobre montagens falsas e abuso. Para campanha de Black Friday, a regra é simples: avise quando a pessoa do vídeo foi gerada por IA.</p>
+
+  <div class="hoje">
+    <span class="r">O que fazer com isso</span>
+    <p>Para os anúncios de Black Friday, faça cinco variações de 15 segundos com o mesmo personagem e pague cerca de 5 dólares. Teste no tráfego pago e deixe o número de vendas escolher a vencedora. Fazer ficou barato. Saber qual vende continua sendo o seu trabalho.</p>
+  </div>
+</section>
+
+<!-- ===================== 06 ===================== -->
+<section class="materia" id="mundo">
+  <div class="titulo"><span class="n">06</span><h2>🌍 Para onde o mundo vai</h2><span class="fio"></span></div>
+
+  <p class="abertura">Antigamente, abrir uma empresa era alugar a sala, contratar a secretária e o vendedor. Hoje cedo, a GZH contou casos na Serra Gaúcha de empresa de uma pessoa só, com a equipe formada por IA.</p>
+
+  <p class="texto">A reportagem só foi lida pelo título, mas o desenho aparece em todo canto. No YouTube, "como abrir uma agência de automação com IA" (Mikey No Code) tem 57 mil visualizações. "Como automatizar vários negócios com robôs sendo uma pessoa só" (Elton Luiz) começou a aparecer.</p>
+
+  <p class="texto">A China está um passo à frente no uso. A DeepSeek multiplicou os usuários de robôs por quase seis em cinco semanas. Na pesquisa da Global Payments, 86% dos chineses já usaram ou usariam robô para comprar. O Brasil vem em segundo, com 72%.</p>
+
+  <p class="texto">E veio um aviso para quem constrói em cima da IA alheia. No Hacker News, hoje cedo, programadores perguntaram se o Claude Opus 5.5 mudou o jeito de "pensar" desde o dia 3. É só suspeita de usuário, sem confirmação. Mas lembra que a máquina alugada pode mudar sem avisar.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p>O <b>Opus 5.5</b> é o motor que faz o Claude responder, da empresa Anthropic. Construir em cima dele é como montar a loja num ponto alugado: o dono do prédio pode mudar a fachada. Por isso a prova mensal do robô, da edição 072, vale também para descobrir quando o motor mudou.</p>
+  </div>
+
+  <p class="texto">Para quem quer prosperar na primeira startup, a lição desta semana tem número. O TI Inside diz que a IA está em 92% das empresas da América Latina, mas 80% têm dificuldade para fazer funcionar. A dor está na implantação, não na ferramenta.</p>
+
+  <div class="nota">
+    <span class="r">Termômetro: o que o Brasil buscou no Google hoje</span>
+    <ul class="lista">
+      <li>As dez buscas em alta foram celesc, canva, jiu-jítsu, procon, prefeitura, saa, agenda, fenatran, rochele santrelly e argus.</li>
+      <li>Nenhuma é sobre IA. A mais perto é o Canva, a ferramenta de design que vem enchendo o produto de IA.</li>
+      <li>Leitura: o grande público não procura "IA". Procura a ferramenta que já usa. Venda o resultado, não a tecnologia.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <span class="r">O que isso significa para você</span>
+    <p>A empresa de uma pessoa com time de robôs não é teoria para você. É o que roda este radar, toda manhã, com custo zero. Isso é prova pronta para a sua marca: você não fala de time de robôs, você mostra o seu.</p>
+  </div>
+</section>
+
+<!-- ===================== 07 ===================== -->
+<section class="materia" id="posicionamento">
+  <div class="titulo"><span class="n">07</span><h2>⭐ Onde você deve estar agora</h2><span class="fio"></span></div>
+
+  <p class="abertura">Cruzando as suas forças com o sinal da semana, três movimentos têm vantagem fora do normal agora. Um junta o seu SEO antigo com o comprador novo. Outro dá ao robô do cliente uma procuração escrita. O terceiro transforma este radar em vitrine.</p>
+
+  <div class="nota">
+    <span class="r">A tese da semana, em uma frase</span>
+    <p class="texto">O robô está dos dois lados do balcão. A empresa precisa que o robô dela tenha regras e que o robô do cliente consiga ler a loja. Quem resolve as duas coisas, com número, vira fornecedor fixo.</p>
+    <p class="texto"><b>Ancorado em:</b> a DeepSeek (Valor, ontem) · a Siri (Notícias ao Minuto, hoje) · os 72% da Global Payments · os 83% da Adobe · a Copastur (terça) · o "a empresa continua respondendo" (TI Inside, sexta) · o ChatGPT e a chave mestra (Hacker News, hoje) · a empresa de uma pessoa só (GZH, hoje).</p>
+    <p class="texto">Os movimentos da edição 072 continuam de pé: a prova mensal do robô, o plantão de Black Friday com placar e a pergunta "o seu robô passou na prova?". Os de hoje somam o que faltava: o comprador que também é robô.</p>
+  </div>
+
+  <p class="texto"><b>Movimento 01 · o que junta a sua força mais antiga com a mais nova</b></p>
+  <p class="abertura">A loja que o robô consegue ler: SEO para quem compra pela IA</p>
+  <p class="texto">O serviço é um diagnóstico com nome simples: "a IA indica você?". Você faz as perguntas que um comprador faria ao ChatGPT, ao Gemini e ao Perplexity. Anota quem aparece, quem não aparece e quais sites a IA usou como fonte. Depois arruma o que falta.</p>
+  <p class="texto"><b>Por que agora:</b> 72% dos brasileiros toparam o robô comprador, e a Adobe mostra que essa visita vale mais. A Black Friday é daqui a 18 dias. <b>Por que você:</b> SEO, tráfego e vendas são a sua base. É a mesma vitrine, com um leitor novo.</p>
+  <p class="texto"><b>Como cobrar:</b> diagnóstico com preço fechado, e o acompanhamento mensal do placar "aparece ou não aparece". <b>Cuidado real:</b> ninguém controla a resposta da IA. Prometa medir e melhorar, nunca "colocar você no ChatGPT".</p>
+  <div class="hoje">
+    <span class="r">O primeiro passo, esta semana</span>
+    <p>Escolha um cliente de Fortaleza. Escreva dez perguntas de compra do ramo dele, como "melhor clínica de estética na Aldeota". Rode as dez no ChatGPT, no Gemini e no Perplexity, e anote numa planilha quem aparece.</p>
+    <p>Compare com a consulta gratuita do Dageno. Mande ao dono o resultado com uma frase: "a IA indicou você em X de 30 respostas".</p>
+    <p><b>Esforço:</b> uma tarde · <b>Ativo gerado:</b> o modelo de diagnóstico e o primeiro placar · <b>Risco:</b> baixo</p>
+  </div>
+
+  <p class="texto"><b>Movimento 02 · o que vira receita mensal, somado à prova da 072</b></p>
+  <p class="abertura">A procuração do robô: uma página com o que ele pode e o que ele não pode fazer</p>
+  <p class="texto">Você escreve, com o dono, a procuração do robô dele. Três colunas: o que ele faz sozinho, o que faz só depois de perguntar e o que nunca faz. Depois confere, toda semana, se ele respeitou. É o regulamento que faltava à prova mensal.</p>
+  <p class="texto"><b>Por que agora:</b> o TI Inside lembrou que a empresa responde pelo robô. O caso do ChatGPT mostrou o robô recebendo a chave mestra sem ninguém escolher. <b>Por que você:</b> você monta robôs, times de robôs e automações. Sabe onde cada um encosta no caixa e no cliente.</p>
+  <p class="texto"><b>Como cobrar:</b> a procuração com preço fechado, e a conferência dentro da mensalidade da prova mensal. <b>Cuidado real:</b> isso não substitui advogado nem a lei de dados pessoais. É regra de operação, e precisa estar escrito assim.</p>
+  <div class="hoje">
+    <span class="r">O primeiro passo, esta semana</span>
+    <p>Pegue o robô que você já tem rodando, seu ou de um cliente. Escreva a procuração dele em uma página, com as três colunas. Coloque pelo menos uma regra de "pergunta antes": desconto acima de um valor, por exemplo.</p>
+    <p>Mostre a página ao dono e pergunte: "você sabia que hoje o robô pode fazer tudo isto sem te perguntar?".</p>
+    <p><b>Esforço:</b> duas horas · <b>Ativo gerado:</b> o modelo de procuração · <b>Risco:</b> nenhum</p>
+  </div>
+
+  <p class="texto"><b>Movimento 03 · o que vira marca</b></p>
+  <p class="abertura">Mostrar o seu time de robôs trabalhando: a empresa de uma pessoa, em público</p>
+  <p class="texto">A GZH fez reportagem sobre a empresa de uma pessoa só com equipe de IA. Você já é esse caso. O radar roda sozinho toda manhã, confere fontes e entrega no WhatsApp com custo zero. Mostrar isso vale mais do que qualquer curso sobre robôs.</p>
+  <p class="texto"><b>Por que agora:</b> o assunto chegou ao jornal da cidade, da GZH ao Conexão 085. Os vídeos sobre "agência de uma pessoa" crescem. <b>Por que você:</b> pouca gente no Ceará mostra a operação de verdade, com o erro e o conserto.</p>
+  <p class="texto"><b>Como cobrar:</b> não cobra ainda. É o que leva cliente aos movimentos 01 e 02. <b>Cuidado real:</b> mostre a operação, não prometa faturamento. Cite os números da DeepSeek como dado da empresa.</p>
+  <div class="hoje">
+    <span class="r">O primeiro passo, esta semana</span>
+    <p>Grave um vídeo de um minuto com a tela do celular abrindo esta edição. Diga: "isto foi feito por um time de robôs enquanto eu dormia. Custo: zero real. Eu só confiro". Mostre um erro que você pegou na conferência.</p>
+    <p>Feche com: "quer saber se a IA indica a sua empresa? Mande 'IA' aqui". A resposta leva direto ao movimento 01.</p>
+    <p><b>Esforço:</b> uma hora · <b>Ativo gerado:</b> a primeira peça da série "o meu time de robôs" · <b>Risco:</b> nenhum</p>
+  </div>
+</section>
+
+<!-- ===================== 08 ===================== -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">08</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Todos os links, com data no horário de Brasília. Título em inglês vem traduzido ao lado. Como numa nota fiscal: dá para conferir item por item.</p>
+
+  <ol class="src">
+    <li>🟢 ontem, 8 de novembro, 15h38 — <b>"Plataforma de agentes de IA da DeepSeek, rival do ChatGPT, soma 1,54 milhão de usuários diários"</b>, Valor Econômico · <a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQa09RY0RaUWdJQ00yZkY2bFhnWE1UYV9UR1ZlcnlTYVJjZnN4akFjalFfMERRUEktQTJibHg5Qkx0aHRCT1Q1b2RpUUs3Y3ZDNGZrWlBZS3dPaE12VVdhVDRDOEFPeUtKLUNiTFQ0cjBRcVl4LUhYdjdiU3Q0YnVPdjhoem04WEVhdjFQN3NmMlJBNnZRSW1ZbHV5UTFfMEtXVVBmbTMyQzV3c3gxRExlbXBTWVYzcXlma2lmU0h1Uzh5LWMxa2NfOWdHWEY5YmFjX29UTWVmY0tsRkFtNG1XZE5CRFTSAfMBQVVfeXFMT1ZDYXpPUjVWWElUU09QY0JSOVY4azhBNTJUSTZaSjRFMEZ4Ml9uQnlFZFItNEZIOUNrTGNiSUUtejA5UDAxUk9IYy1LQjJzY3U4d29IcldNckNfYUlkSGR2SGJ6UHJMOE9zQk9ZcGVNRXpOVl9sazMtM3hPTjZpeWxJdzd5UGY1NDNKdXFKSjBLLXhOUTVDX2NPUDRCaGdmbDZNRjRHZ0FsSHMzLUoxa1U3MVB0S3ZCLWpGcDZ5aXhqZlR0SGhLeXQwWVVNVE1SNHdwdkt2Zkk5WFFxMWwtY2NNTEFMN3JSTS1ZeVBfc0k4QUJR?oc=5">clique aqui</a> · "DeepSeek Harness Releases DAU Data for First Time, Topping 1.5 Million" ("DeepSeek Harness divulga pela primeira vez os usuários diários: mais de 1,5 milhão"), Yicai · <a href="https://www.yicaiglobal.com/news/deepseek-harness-releases-dau-data-for-first-time-topping-15-million">clique aqui</a> · números de 271 mil e 5,48 milhões · <a href="https://deepseekv4pro.com/pt/news/deepseek-harness-1-54m-dau-92t-tokens-plugin-community">clique aqui</a></li>
+    <li>🟢 hoje, 7h10 — <b>"Apple quer transformar a Siri numa agente de Inteligência Artificial"</b>, Notícias ao Minuto · <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOS3l0RHZnbGo2T1E5eTBFYzVhdFJ1aC1oQUxPVXNKc2JCOFg0YVd1c1o2Wk5WcEdRblRhRTN2eEtTeS1ZcWVZSGtzejRCaEFKZTNNeGJhTWN6MmpqckExNVRSMlBhZjN1Z0duM2VBWjVvR1NBbm9iMnpGNjVpeTl6eW8xV0MyODBzMjFycDkwQjIxUlVfa1dTa1BLZFZUR1FuMFhjS1JUekJXWF9GT1hXcVVnQzI?oc=5">clique aqui</a> · "Apple opens Siri AI to all developers but apps can't ship it until spring" ("Apple abre a Siri AI aos programadores, mas os apps só podem usar na primavera"), PPC Land · <a href="https://ppc.land/apple-opens-siri-ai-to-all-developers-but-apps-cant-ship-it-until-spring/">clique aqui</a> · Siri em português, Apple Newsroom, setembro · <a href="https://www.apple.com/pt/newsroom/2026/09/next-generation-of-apple-intelligence-is-available-today/">clique aqui</a></li>
+    <li>🟡 maio de 2026, repercutido em 14 de outubro — <b>"Uso de IA para fazer compras salta de 39% para 72% no Brasil"</b>, Mercado &amp; Consumo, sobre o Agentic Commerce Report 2026 da Global Payments (8.027 pessoas, sete países) · <a href="https://mercadoeconsumo.com.br/14/10/2026/tecnologia/uso-de-ia-para-fazer-compras-salta-de-39-para-72-no-brasil/">clique aqui</a></li>
+    <li>🟡 quarta, 4 de novembro, 6h07 — <b>"Adobe: Tráfego de IA gera 83% mais receita para varejistas (2026)"</b>, ALM Corp · <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOZ1RNUTNfWGQ0RktCUDBxWG5LcmRwR1F2Q1RmY0dnaUFweVZiQXE0SncyS1FHOGtOZzQ1b0xScVpXRmt4WFF2NW1CRGNXN1BzcHZrYU9RM3VxVXQ4TFEzYU5YUjBQSHBqYzNhLXBtcWx0QjVGY3ViN0RkNDhfWDVOU3pBZUxWOUE1RGtTcG9GTWJIQlZxRlBVOUxuVTQ?oc=5">clique aqui</a> · original, "AI Traffic Drives 83% Higher Revenue Per Visit" ("tráfego vindo de IA rende 83% mais por visita"), Adobe · <a href="https://business.adobe.com/blog/ai-traffic-higher-revenue-per-visit-retail-holiday">clique aqui</a> · previsão de 130% para as festas · <a href="https://www.relevantaudience.com/ecommerce-marketing/adobe-2026-holiday-forecast-275-billion-ai-traffic-130-percent/">clique aqui</a></li>
+    <li>🟢 hoje, 5h17 — "ChatGPT Desktop forwards your SSH agent to remote machines" ("o ChatGPT para computador repassa a sua chave SSH para máquinas remotas"), Hacker News · <a href="https://news.ycombinator.com/item?id=50422628">clique aqui</a></li>
+    <li>🟡 terça, 3 de novembro, 18h00 — <b>"Biosfera Copastur lança C+ Maestro com protocolo MCP e prevê R$ 130 milhões para orquestração de IA"</b>, Brasil Inovador · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQcTZXdGlnVG0xUHpvblpLdDNRLWg0SkQ2UmJkeFpLem93bndjdnZQSktGYnVLNlpaQnhCUzVkdlBGc2dqWGZhZTNieldTbFEweEEwd21RMll6c1RVUE1CMTBKaUlhX25CMmF5c1RQb2s5ZzJkajIwOVNla3c5c1pfOHExcHIzYVNrOTJ6NDJYTXhEOTRjM0ZFYmhPMTItSThiX2NRT28za3QyVzZTd0xZNXRVUi1WcllsVExQckRremkwNWtoZWNr?oc=5">clique aqui</a> · Brasil Turis · <a href="https://brasilturis.com.br/2026/11/03/biosfera-copastur-lanca-c-maestro-para-integrar-inteligencia-artificial-a-gestao-corporativa/">clique aqui</a></li>
+    <li>🟢 ontem, 10h04 — <b>"MCP 2025-06-18: o que muda na autorização e no elicitation"</b>, iMasters · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPSTlOX19GdkxpY1lfdnh4ZUp0clUwcUtQTEpfV1hwT3lwdktkTVRJal9KcnlKZnliaXpSTEhlYThGdXlaLXd0dXBGZnVYVjZuNHJlMUd1MDVLaGtKZ0lhd1FCUTVoWkloZEZUMzc4UXNjenREem1FVlBSakdwMkVTN09HQ1N3R2ZENURqSjlpWktTWHlxLVhKZFBIWlVWYkxDQnZyRWtYdnAtYnFuQ1dSQWZCY3N4X18xRm84eW43MHgzcDE2UjZN?oc=5">clique aqui</a> · <b>"Elicitation MCP: como implementar no servidor"</b>, iMasters, sexta · <a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOSy1UQVdMMnE3b3Rycmk3Y0J1ZWF6T1M0aWhnc1haVmZTVVlFS3ZVS19XQkJkQnc1QmJ3b1ZaVHg0YTRaVVJuWnpJMEkyNVcwWEh5UVMtY2hBTkt4V2EtcnNxNEJneDdkSFRRQ0Zta3lKT0lJNzlNNVNzazJ2aXFEWU5vY0IyVFdKeGJjODJMdW5wNWJsSmxPZ2d2WEt1VERtSzFJd1FUNXk2dGtHd19kYnV3eGRMLU16RGJJZXlR?oc=5">clique aqui</a></li>
+    <li>🟡 sexta, 6 de novembro, 11h31 — <b>"Agentes de IA já estão agindo. A empresa continua respondendo por eles"</b>, TI Inside · <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQTRKM1htYjBoLVNuME1MY250dHBHWTM4NFlmWHhDbWpCMDJITEJQc1N1c2NWUWQ2YXUzbk54Rl9oTExGYTdwdDF3dnVBak5HU0xKM2pqQ2s3UnNLamJaVUFZWVpXM2d2NlJCNVk0UXpsUzctdkMwcU52Qlg5bXUxd3E1WmRCRkkycmhTTnU1dk1Bd3FEZHI1TUJBcU51ZXdTckZETzZ5dm0?oc=5">clique aqui</a></li>
+    <li>🟡 quarta, 4 de novembro — <b>"Automação evolui e entra em nova fase com sistemas de IA que 'pensam' e decidem"</b>, CNDL · <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTThLVVR5c3RIUW5rbndEX0V2dWtxLU9iSTFockRRN2NuTzhBRXA1SnJrVEVaNV85NlcxelB3SUxWSTRheEtiblZvNXpFX2tCZVVjaWR2SXJUWlBHY0UtRVhIX3hvNURaTTJ6ZllEbWM2ZDVJNkhFdENqZXV1WVJxVUtMSFlLa0QyclFmZG1JUTgwdzRVM1NLRUdfOVVrak56Q1E0eHhRb1k5ZEE?oc=5">clique aqui</a> · <b>"Agentes de IA avançam nas empresas e ampliam possibilidades de automação, aponta Luciano Moreira"</b>, Conexão 085, quinta · <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOUnJmVmxXNmZtOFNJNlpGVEVqLVhDRE5CcUpaQ0EwSXV4MjNjM00tRXF1cUNzX3NHRTQ0bVJBVmEybElMZm0yY2cwcUk1TkJoejFMWEJKNi1YY2dpcEM2ZENwRC13RWVBOFhCR2FfZkRsc0NPRGRNdi1fbUZ3Z0E3UFVhMnF6SmpMV2lSQnp3bnVaU1AtYnBOakMtdmhKTjZyZnl6UlR1TW51RG9VZHlKc2QtYzBBMk03R0N1R0ZCcw?oc=5">clique aqui</a> · <b>"Agentes de IA nas empresas: onde eles já economizam tempo no Brasil"</b>, Terra, sábado · <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxNMHQ1SjFmbzFlRElRSHZULWg3SDRaSHRSMTZTZ0loc2R3ei1ZRHlMLXd1WU41VXd4TFRIWTd1SmlGU1V3OE1CVlBCdEQzeUR0YkxQcVY3eHFtRW1FOWpJNEhYWjRBaFVLMW5SaTRxQXNSZXVhVzhDUGQ5RlJNVmxOazZrck5Nel8wR0MwQU9qdnJfTjlDR0hkNzhzQTljbEdJem15azNOemQ0ekg3c0FwbnFnQjFsdWQ2eHJ6emdEOWJFZlNTLW55M0dKWmQ3ZThadGFPTTZwZzBvUQ?oc=5">clique aqui</a> · <b>"Agentes de IA transformam operações nas empresas"</b>, Paraná Portal, ontem · <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQZ25TSjVVdjJJanZ0NWtrX01HbWhQbXZsQnA5MHozcFdPZlJNVFFfNnVUMnY3NTFCYmlHVjhvYU05amtKMTlrakZNRGI0SHBrbUFkWlFNM21EQkNFOGtSZkYzbGlsRHhxejlwX1FqdElCQWxCblNwQ2hSMmNwWTBMZ01IVQ?oc=5">clique aqui</a></li>
+    <li>🟡 quarta, 4 de novembro — <b>"Agentes de compras com IA podem ameaçar os negócios de Amazon e Walmart"</b>, CNN Brasil · <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTlUtWTFKczhPZTFDb29LN2tlRGg5Z2phWnlOY1pJTkkzQ05ydGd1SExnWGhNN2FuazJfVGxndV9WUWh2dFJaR2lBY0poTHVMczdsTFFmQVdLUW5ZakdWVDgtMFNoM1pVTXlvR0RaXzI5SVB4YVBJeDRqc3M5RHVFTHduRG50VnhoWHNlaktkMVoyem1xaDhUeVAxdHhUUlRPNVJzUEFQUDlCQ2wwYm9OVDVvaVRHcjhQYl9oTmdaSlk1QzlvR3Y5Q1NtS3NYY1l6bGlrNG1uYw?oc=5">clique aqui</a></li>
+    <li>🟡 quinta, 5 de novembro — <b>"TOTVS aposta em IA para integrar marketing, vendas e atendimento"</b>, Estadão · <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNbW01aEFHYWRJeHFvaG95TF9icmFOM0tSc1BROVdJbTN4QjRhY29jVndWamJHMU9wWWRoNUtycDQ1UzNKWnBFZzlZTHpfODlweG1rNjV6REFCX0dWYVBVOFBNZVExbUVYRnlTX0RKNmtaZWZrNk4xMlQ0aUdUQk9hb3lmNXhKZ2UwYjIwVlNiMVhFZEtnVEx1X19rSms3MENjZGfSAacBQVVfeXFMTmI5LWwxcWVoZkhxVGNIUWRudmh4b2ttalJac3hZVnlveGxTa3R2cG5rQWdSV3R5a05TcW9LY1ZBdi10MnlMVWJXU245WGdYelhiWld3aXV3UDlDZkxoYzNPLWtxRFkxTHgxTnhqOWh1TkZCVGxaMEIxT1JBaVRFdlVSVXdocWxGa3R3NVlzejlsTEFJbnJZeU54U3hZcGo0Si1uQ1ZXREk?oc=5">clique aqui</a> · <b>"RD Station lança recursos de IA para conectar marketing, vendas e atendimento"</b>, Inforchannel, 30 de outubro · <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOb2xwQUNqOV9XT2tvM2NCb3VCSjJMQ3FRMEZvOWY2YVZlRktRa3JMYzVLSVNBVXNHUzVLZnQ2MUE2Zjh6S0s0MUt1Y2FQV2NQZEhYaWxCdzBWVEt0T1JSc1hyMTl3NnBkM2xCdmEydkdjaDN4WXlQVkNTaVNwcWl1NFpaZXNITUFTazFXdTNGMTA1allsSkFaOVB0NTRqUUoxeWtSV2tybXBEcmFlZ085S2tjT2lIeWc?oc=5">clique aqui</a> · <b>"IA pode acelerar gargalos quando entra antes da arquitetura de vendas"</b>, Mundo do Marketing, 26 de outubro · <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQdUo4djJSdTZOaEhHT2lDYktSTkFpRkdFb0tOMzRKbndXcTB0UGNzVDNzdk1xRU5NMFIxZUJPVFBLN29XLWU1cGpZT3MxdDU0cWpfb0Frdk95UUtkVkJYX2ZZSzV0Yld2SWF6a1B4UURtWm8tNUJkMnBhRi1STGhVcjdjVnFlRWo2cS1GVmFONjZvTFFaby02RTFWekNIbzgzTkdr?oc=5">clique aqui</a></li>
+    <li>🟡 terça, 3 de novembro — <b>"Itaú utiliza IA conversacional para ampliar o atendimento personalizado aos clientes"</b>, TI Inside · <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQSWdNVU5zR2liYXJFTnUzLXlodEVvdmIwTVdvZ2FZYjRSRUNFZXpadWgzM1BZa3RYaHFtcEo4WGFrbzAtT1F5SFlLbE5wUjluTUd3OEJDN1dYOGxybXRXUTlYekZjLTZ6NG9MVUxaekhMcjRoTE8yOWdnTll0MXotWmFPVFB1ZTR5NW5hcC1JSlRmQ3pUVUpIRkFqREtnalhrTUZIUmYzQXlZRkU4dEstcXlEWTVtX1NwVFdyNQ?oc=5">clique aqui</a> · <b>"Black Friday 2026: IA conversacional ganha peso na conversão pelo WhatsApp"</b>, AdNews, 29 de outubro · <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPYU1rNjk5Y29RR3NLRGxEeUU5Y1lqZTVNemlhZDY5RnNwRXZHbWxPSHNhWGo1RWtfZEdHZlg4RWM4Z0VxWkZXOFVHdnZidy1CcjN6QWtiVEhDU2RiVlRpZ01rRlNsX1BFSmtaT0duaGhxel9Kc1lEWXR6X3QtREhBb0NOUXE1UHN6WTJPQkRkdlh2dTFSalgwTGxhcGFxbDFtcC1v?oc=5">clique aqui</a></li>
+    <li>🟡 semana passada — <b>"Google anuncia Gemini Omni 1.2 Flash para criar vídeos de até 15 segundos"</b>, Tecnoblog · <a href="https://tecnoblog.net/noticias/google-anuncia-gemini-omni-1-2-flash-para-criar-videos-de-ate-15-segundos/">clique aqui</a></li>
+    <li>🟡 Product Hunt, 3 a 5 de novembro — Dageno AI 2.0 · <a href="https://www.producthunt.com/products/agent-powered-geo-by-dageno">clique aqui</a> · Cardboard AI · <a href="https://www.producthunt.com/products/cardboard-3">clique aqui</a> · Sign Language by Panda Video ("língua de sinais, da Panda Video") · <a href="https://www.producthunt.com/products/panda-video">clique aqui</a></li>
+    <li>🟢 hoje, 6h33 — <b>"Equipe formada por IA e empresa de uma pessoa só: como a inteligência artificial está inserida em empresas da Serra"</b>, GZH · <a href="https://news.google.com/rss/articles/CBMitgJBVV95cUxNd3dENkkydnN4UmNDck9jalpaY0ZERWJvemRqMWFSSFVNUUd2Ujdlc3lYREV2VGttUk5Ea185RnVERVloZ3RKUnhMTGNPREpncGNEME12a3JQWlp0R2dsRU5PbHVPZkJfTTVTUEdObHdvNUc5Qk9hd3lQQWh5dEI5SXd5R2F5SWtMU19vOUlabWl2UzllWUZJNXFRZ0NEVHFTWkxtT193X3FFamFaZ25xZlhReWsyMjNaSVlHOUFMZHRuNUcyMDJUOHhMVjFDaFBCOHYxQ1dlSlJFaFJJel9VanlaeUVRX0pQUXBmRTdnTWRheGlFc3pGci0zbHI5MDBYSFY1dEIxRW5VWjI0QU16NlhqSGk5ZzBqTUdXX2ZvaExKZm5DU1lNRldCWjBTcnR1R0FZRGd3?oc=5">clique aqui</a></li>
+    <li>🟡 quinta, 5 de novembro, 14h07 — <b>"IA já está em 92% das empresas na América Latina, mas 80% relatam dificuldades na implementação"</b>, TI Inside · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQNE4yZUFVbUdZVXhHRUtLdk41U2F3TFM3cjhwZV9xNUd5QjRDN0tQMHpVZzZsYUdfZU41RjFOa29vUFNnZDFHaUJ3LWFoMFRQOENiQlozUDZYeTJMb2NBcWFzU0RaQjRiQi1jZjhSN3VaZmJUZ1RDMkRGeDJxekszTWNZa2Q2Sk9qckJCemc5REoySE55OE80UnVfaXdONVdPMFlFQUc2RjZmYlBfbG1wWWdkNEtIT3RXc1NRUUNLMmJueFIzZmRR?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 4h04 — "Is Opus 5.5 nerfed? Thinking patterns changed on November 3" ("o Opus 5.5 piorou? O jeito de pensar mudou em 3 de novembro"), publicação no X que chegou ao Hacker News · <a href="https://twitter.com/shanemelaugh/status/2119192075505893695">clique aqui</a></li>
+    <li>🟡 YouTube, visualizações no momento da coleta — "How to Start an AI Automation Agency in 2026" ("como abrir uma agência de automação com IA", Mikey No Code, 57.007) · <a href="https://www.youtube.com/watch?v=i4z0kCcByY8">clique aqui</a> · "Como automatizar vários negócios com agentes de IA sendo uma pessoa só" (Elton Luiz, 1.993) · <a href="https://www.youtube.com/watch?v=Gdkd6J8zzMI">clique aqui</a> · "Kommo CRM | Follow-up com IA…" (RBMIDIA, 19.017) · <a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">clique aqui</a> · "Agente de IA que faz follow-up automático e recupera leads" (Rodrigo Alves, 2.883) · <a href="https://www.youtube.com/watch?v=EjvTU2zmtYE">clique aqui</a> · "Desenhei um follow-up com IA para imobiliárias" (Rafael Milagre, 4.581) · <a href="https://www.youtube.com/watch?v=2y-9KI1mddo">clique aqui</a></li>
+    <li>🟢 hoje — Google Trends Brasil, as dez buscas em alta: "celesc", "canva", "jiu-jítsu", "procon", "prefeitura", "saa", "agenda", "fenatran", "rochele santrelly", "argus".</li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>Os textos do Valor, Notícias ao Minuto, GZH, TI Inside, CNDL, Conexão 085, Terra, Paraná Portal, CNN Brasil, Estadão, Inforchannel, Mundo do Marketing, AdNews e iMasters não foram abertos.</b> Os links do Google Notícias passam por um redirecionamento. Usamos só a manchete, e os detalhes vieram de outras fontes, citadas ao lado.</p>
+    <p><b>DeepSeek:</b> os números são da própria empresa e incluem quem usa pela tomada técnica (API). Um site alemão questionou o que esse "usuário" significa. Não há auditoria independente.</p>
+    <p><b>Apple:</b> a manchete fala em "agente", mas as funções de agir sozinho ainda são promessa. O que existe hoje é a versão de teste para programadores, desde 3 de novembro.</p>
+    <p><b>Adobe:</b> os 83% são de setembro e medem receita por visita, não receita total. Valem para os EUA e só contam quem clicou num link de IA.</p>
+    <p><b>Global Payments:</b> os 72% somam quem já usou (24%) e quem usaria nos próximos 12 meses (48%). É intenção, não compra feita.</p>
+    <p><b>Copastur:</b> os 130 milhões de reais e as 100 automações vêm de material da própria empresa.</p>
+    <p><b>ChatGPT e a chave SSH:</b> é relato de um usuário, com 49 pontos e 10 comentários no Hacker News. A OpenAI não se pronunciou ali.</p>
+    <p><b>Opus 5.5:</b> é suspeita levantada por um usuário no X. Não há confirmação da Anthropic.</p>
+    <p><b>Gemini Omni 1.2:</b> o preço e a duração vêm do Tecnoblog e de blogs de terceiros. Confira a página do Google antes de orçar.</p>
+    <p><b>CNN Brasil:</b> não achamos o texto. O contexto da Amazon bloqueando robôs e do Walmart abrindo a loja para eles vem de outras reportagens e não entrou como fato desta semana.</p>
+    <p><b>Product Hunt:</b> o que cada produto faz vem da página dele. São promessas das empresas. Flic Cue, Arcjet, Watchflows, ProtoMap, Terse, Pawse.ai e skuttr ficaram de fora por não tocarem a tese da semana.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 078 · segunda-feira, 9 de novembro de 2026<br>
+  Próxima edição: Pulso diário de terça-feira, 10 de novembro
+</div>
+
+</div>
+
+</body>
+</html>
