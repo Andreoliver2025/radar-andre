@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 081 · Pulso · Quando a IA cai, o que o seu robô responde?</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>A IA também tem dia de luz cortada. O seu robô sabe o que dizer quando isso acontece?</h1>
+  <p class="chamada">Hoje cedo, o Claude ficou cerca de duas horas com o acesso falhando. Na madrugada, o mural dos programadores registrava o Outlook da Microsoft fora do ar havia mais de 12 horas. A 14 dias da Black Friday, a pergunta deixou de ser "qual IA usar" e virou "o que acontece quando ela cai".</p>
+  <div class="dateline">Edição Nº 081 · sexta-feira, 13 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">Dois apagões em menos de um dia, e o que eles dizem sobre o robô do seu cliente.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: os apagões, quem paga a conta dos robôs, a IA que lê o Figma, vídeo de produto feito na conversa e o site que sai da prisão do Webflow.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">O robô com gerador: a peça que ninguém vende e todo mundo vai precisar.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "teste do apagão", antes da Black Friday, em uma tarde.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todas as fontes, com horário, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============ 01 ============ -->
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+
+  <p class="abertura">Toda loja séria tem um plano para quando falta luz. Quase nenhum robô de atendimento tem um plano para quando falta a IA.</p>
+
+  <p class="texto capitular">Hoje às 6h58, a Anthropic avisou na página oficial de status que usuários não conseguiam entrar no Claude nem no Claude Code. O conserto subiu às 8h05 e o caso foi encerrado às 8h58. Foram cerca de duas horas.</p>
+  <p class="texto">Na madrugada, às 2h08, o mural Hacker News trazia outro título: "Microsoft Outlook/365 ainda fora do ar depois de 12 horas". Esse não conseguimos confirmar por fonte oficial; o detalhe está na seção 05.</p>
+  <p class="texto">Na quarta, o Radar falou das regras do que o robô pode dizer em nome da empresa. Hoje a pergunta é a de baixo: o que o robô diz quando ele mesmo fica sem cérebro.</p>
+
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>Se o robô do WhatsApp de um cliente depende de uma IA só, ele fica mudo junto com ela. Em dia comum, é incômodo. Na Black Friday, é venda perdida e cliente irritado. Saber montar o "plano B" do robô é serviço de atendimento, não de programação. E é o seu terreno.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">Sete recortes. O fio que liga quase todos: a IA virou encanamento da empresa. E encanamento a gente só nota quando entope.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>O Claude ficou cerca de duas horas com o acesso falhando hoje cedo</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 6h58</span><span>Página de status da Anthropic · via Hacker News</span></div>
+        <p class="texto">O aviso cobriu o site do Claude, o Claude Code, o Cowork e o painel para empresas. O problema era na entrada: as pessoas não conseguiam se identificar. A Anthropic publicou o conserto às 8h05 e encerrou o caso às 8h58.</p>
+        <p class="texto">O aviso final só confirma a volta do site do Claude e do Cowork. Não diz se o painel para empresas, por onde os robôs dos clientes se conectam, caiu junto.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Hacker News</b> é o mural onde programadores do mundo todo postam o que saiu. O "painel para empresas" é a <b>API</b>, a tomada por onde um sistema conversa com outro. É por ela que um robô de atendimento liga na IA.</p></div>
+        <div class="link"><a href="https://status.claude.com/incidents/nn11wk485zfn">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>Outlook e Microsoft 365 aparecem fora do ar por mais de 12 horas</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 2h08</span><span>CNN e conta oficial de status da Microsoft · via Hacker News</span></div>
+        <p class="texto">Dois títulos no mesmo mural: "Apagão global da Microsoft", com link para a cobertura ao vivo da CNN, e "Outlook/365 ainda fora do ar depois de 12 horas". Nenhum dos dois abriu daqui, e a busca não achou a confirmação.</p>
+        <p class="texto">Se confirmar, é o e-mail e a agenda de milhões de empresas parados por meio dia. Muita automação de vendas começa num e-mail que chega.</p>
+        <div class="link"><a href="https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Meta, OpenAI e SpaceX querem todo mundo usando robôs de IA. Mas quem paga a conta?</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 5h08</span><span>InvestNews</span></div>
+        <p class="texto">É a pergunta do título da reportagem de hoje cedo. A matéria não abriu daqui, então não sabemos que números ela traz.</p>
+        <p class="texto">A pergunta vale para o seu cliente também. Robô que trabalha 24 horas gasta 24 horas. Quem vende robô sem mostrar o custo por conversa vende surpresa no fim do mês.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>As empresas de IA cobram por <b>token</b>: a unidade que elas cobram, como o minuto na conta de telefone antiga. Cada mensagem que o robô lê e escreve gasta minutos dessa conta.</p></div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcTd6YXBVUUdkeUtXZGc0OUZ2U0tnU2lDcXpJbzU4WmNGQmlSRExKckl3aDd2TjNKNVJLNWk4bUQtNUF6NVBpMjZ6YUhnLVI2VnV2RzlKSmgzRlFBUkpOaWItS1dSa3RXclFBSzJpRS15NU15cTdlTHRJZnI0Z1oxNEk1ampDdFZyamtoYnR0TWdQUThrQnNDNF9oZXlMcDB0ZEJZSlA0Y0c1RTgwQVU4X0N0SmVHTTllYlJEdkRkZGR6YVFBa3BUZNIBzgFBVV95cUxQUDNlak5rdWFFNmdScndkaEpTeGQ5N0NKdDJvX1o2c3VxN0ZiU2t4MjJKeEN2MkFseHNadXEtWnRpMThGQzk3b3RDX1l2WVRwTHBIRnhGYm5zQlFNb0d5cGF3TE9VYjVRNUNzR0pGcGM5Z2VFMzFGVEtRd2VGeGxXYkliZ09NTWV2c0JCNUVzN3ZTVjAzdklWbDM0bTBVQzBRVWRlZHVjMUs5S1BPYzBZZS01UVJJU3BSRGJyRzR6bzRBRDJ2eFcxZFp2dHczUQ?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>O que a IA enxerga de um design no Figma, e onde ela tropeça</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 8h05</span><span>iMasters</span></div>
+        <p class="texto">O iMasters publicou hoje um guia de configuração e dos limites do encaixe oficial do Figma com a IA. Na quarta, o mesmo site já tinha mostrado "o que a IA vê do design". Só lemos os títulos.</p>
+        <p class="texto">É a mesma onda da Adobe, que o Radar trouxe na quarta: os programas de design abrindo a porta para a IA mexer direto no arquivo.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p><b>MCP</b> é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Aqui, ele deixa a IA ler as telas que o designer desenhou e transformar em site.</p></div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPYXpxVkViSGE2bkl5SUpWNVdSTjI4WEpETU5XdDEzSU0zUUh6ZV85SzM2YWpPX0Y5WW8zTGRIRXhFUDVxZGhaa0NPUEVydG9RRTQxTDNrYjd4WEtCN1R4U1I1ZHVrVEdsVEdtX3hwRFlZMzFkYTJTYXA3clNXM3F6ZkZCMXcwOGpUZWtCaVlobDlKQlZMMTRKZHlUR2FydldOYWl5M19nUDV0VWZVTTJPSFRkcHI?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Vídeo de produto e curso feitos de dentro da conversa com o ChatGPT ou o Claude</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 2h01</span><span>Product Hunt · Trainn</span></div>
+        <p class="texto">O Trainn liga a IA à ferramenta dele. Você pede na conversa e ele transforma uma gravação de tela em vídeo com narração por IA, zoom e destaque. Também faz artigo de ajuda e curso a partir de anotações.</p>
+        <p class="texto">O detalhe bom é o freio: tudo fica como rascunho até alguém aprovar. Segundo um comentário do fabricante, o plano com esse encaixe custa 19 dólares, com 14 dias grátis.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. Para quem vende software ou serviço, é o tutorial do cliente novo pronto na mesma tarde, sem editor de vídeo.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/trainn">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Uma ferramenta grátis tira o site de dentro do Webflow e do Framer e entrega o código para você</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 23h06</span><span>Product Hunt · Replicate</span></div>
+        <p class="texto">O nome confunde: não é a conhecida Replicate de modelos de IA. É uma ferramenta nova, gratuita, que copia um site montado no Webflow ou no Framer e devolve o mesmo site em código próprio, pronto para a IA editar.</p>
+        <p class="texto">O criador diz que endereços, animações e textos de busca do Google são preservados, com 99,98% de fidelidade em muitos sites. O número é dele, sem teste independente. Ficou em 5º lugar do dia na vitrine.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>Webflow e Framer são <b>as telas de arrastar caixinhas</b> para montar site. São práticas, mas é como morar de aluguel: a mensalidade é eterna e a reforma depende do dono. Sair com o código é comprar o imóvel.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/replicate-10">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>IA pequena ficou até 6,5 vezes mais rápida para ler textos em processadores baratos</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h28</span><span>GitHub · via Hacker News</span></div>
+        <p class="texto">Um programador publicou uma melhoria no llama.cpp, o programa mais usado para rodar IA no próprio computador. Em servidores de processador Arm, mais baratos, a leitura do pedido ficou até 6,5 vezes mais rápida.</p>
+        <p class="texto">Os limites são do próprio autor: testou uma IA pequena, em servidores alugados. A resposta não ficou mais rápida, só a leitura. E ninguém de fora revisou ainda.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>É <b>uma IA pequena, que roda em máquina fraca</b>, e <b>de código aberto</b>: qualquer um pode baixar e rodar por conta. Ela é o "gerador" possível: quando a IA grande cai, uma pequena dentro de casa pode segurar o básico.</p></div>
+        <div class="link"><a href="https://github.com/hardwiredagent/silicon-forge-arm-neon-study">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Hospital tem gerador. Supermercado tem gerador. O robô que atende o cliente no WhatsApp, em geral, não tem nem lanterna.</p>
+
+  <p class="texto">Um time de robôs bem montado depende de várias peças de fora: a IA que pensa, o WhatsApp que entrega, a planilha que guarda o pedido. Basta uma cair para a fila inteira parar.</p>
+  <p class="texto">O conserto não é técnico. É escrever antes o que acontece em cada queda. A IA caiu: o robô manda "um atendente te responde até as 10h" e avisa a equipe. Se a planilha caiu, o pedido vai para um e-mail de reserva.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span>
+    <p><b>Time de robôs</b> (o "squad de agentes" das reportagens) são vários programas, cada um com uma tarefa, trabalhando juntos. O plano B se chama "contingência" no jargão. Na prática, é a placa "volto em 10 minutos" na porta da loja, escrita antes de precisar.</p>
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">2 horas</div><div class="lbl">com o acesso ao <b>Claude</b> falhando hoje cedo, pela página oficial</div></div>
+    <div class="numero"><div class="big">12 horas</div><div class="lbl">de <b>Outlook fora do ar</b>, segundo o título no Hacker News (sem confirmação)</div></div>
+    <div class="numero"><div class="big">6,5 vezes</div><div class="lbl">mais rápida a leitura de uma <b>IA pequena</b> em processador barato</div></div>
+    <div class="numero"><div class="big">14 dias</div><div class="lbl">até a <b>Black Friday</b>, em 27 de novembro</div></div>
+  </div>
+
+  <div class="olho">
+    <p>"Todo mundo te vende o robô. Ninguém te diz o que ele responde no dia em que a IA cair. Eu começo por aí."</p>
+    <span class="quem">A frase para levar à reunião</span>
+  </div>
+
+  <p class="texto">Tem outro sinal na mesma direção. Ontem, a StartSe publicou o caso de três empresas em que a IA virou CEO: uma cresceu 127% e outra encolheu. O Administradores lembrou que ninguém sabe quantas empresas no Brasil já usam robôs de IA. Só lemos os títulos.</p>
+
+  <div class="nota"><span class="r">O arco das últimas edições</span>
+    <ul class="lista">
+      <li><b>Segunda:</b> o trabalho que sobrou é dizer ao robô o que é "pronto".</li>
+      <li><b>Quarta:</b> alguém precisa dizer ao robô do cliente o que é verdade sobre a empresa.</li>
+      <li><b>Hoje:</b> alguém precisa dizer o que o robô faz quando ele mesmo falha.</li>
+    </ul>
+  </div>
+
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>O valor não está mais em montar o robô; isso qualquer tutorial ensina. Está nas <b>regras em volta dele</b>: o que ele pode dizer, o que volta para um humano e o que acontece quando ele cai. São três peças de atendimento, e você já opera as três.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+
+  <p class="abertura">O "teste do apagão": desligar de propósito a IA do robô de um cliente e ver o que o comprador recebe.</p>
+
+  <p class="texto">É como o simulado de incêndio de um prédio. Ninguém quer o incêndio, mas todo síndico quer saber se a porta de emergência abre. Na Black Friday, o robô vai atender o triplo e não pode ficar mudo.</p>
+  <p class="texto">O serviço é curto e cabe numa página: a lista de tudo de que o robô depende, o que acontece em cada queda e a mensagem de reserva já escrita. Dá para mostrar no celular do dono, com o antes e o depois.</p>
+  <p class="texto">E ele abre conversa para o resto. Quem testa o apagão logo pergunta pelo custo por conversa, pela ficha da empresa da edição de quarta e pelo follow-up.</p>
+
+  <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p>Escolha um cliente que atende por robô no WhatsApp. Liste numa folha tudo de que ele depende: a IA, o WhatsApp, a planilha, o e-mail. Num número de teste, desligue a chave da IA e mande "quero comprar". Anote o que chega. Depois escreva a mensagem de reserva e o aviso para a equipe, e ligue isso. Mande ao dono o print de antes e de depois com uma linha: "isso é o que seu cliente via hoje às 7h; isso é o que ele vê agora".</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Como a nota fiscal no fim da compra: cada informação desta edição com a origem ao lado. Horários no fuso de Fortaleza. Títulos em inglês com a tradução entre parênteses.</p>
+
+  <ol class="src">
+    <li>🟢 hoje, 6h58 a 8h58 — <b>"Elevated errors on claude.ai, Claude Code, and platform.claude.com"</b> ("Mais erros que o normal no Claude, no Claude Code e no painel para empresas"), página de status da Anthropic · <a href="https://status.claude.com/incidents/nn11wk485zfn">clique aqui</a> · histórico: <a href="https://status.claude.com/history">clique aqui</a></li>
+    <li>🟢 hoje, 3h18 (Hacker News) — <b>"Global Microsoft Outage"</b> ("Apagão global da Microsoft"), CNN · <a href="https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk">clique aqui</a></li>
+    <li>🟢 hoje, 2h08 (Hacker News) — <b>"Microsoft Outlook/365 still down after 12 hours"</b> ("Outlook/365 ainda fora do ar depois de 12 horas"), conta de status do Microsoft 365 no X · <a href="https://twitter.com/MSFT365Status/status/2121079061774491735">clique aqui</a></li>
+    <li>🟢 hoje, 5h08 — <b>"Meta, OpenAI e SpaceX querem que todos usem agentes de IA. Mas quem paga a conta?"</b>, InvestNews · <a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcTd6YXBVUUdkeUtXZGc0OUZ2U0tnU2lDcXpJbzU4WmNGQmlSRExKckl3aDd2TjNKNVJLNWk4bUQtNUF6NVBpMjZ6YUhnLVI2VnV2RzlKSmgzRlFBUkpOaWItS1dSa3RXclFBSzJpRS15NU15cTdlTHRJZnI0Z1oxNEk1ampDdFZyamtoYnR0TWdQUThrQnNDNF9oZXlMcDB0ZEJZSlA0Y0c1RTgwQVU4X0N0SmVHTTllYlJEdkRkZGR6YVFBa3BUZNIBzgFBVV95cUxQUDNlak5rdWFFNmdScndkaEpTeGQ5N0NKdDJvX1o2c3VxN0ZiU2t4MjJKeEN2MkFseHNadXEtWnRpMThGQzk3b3RDX1l2WVRwTHBIRnhGYm5zQlFNb0d5cGF3TE9VYjVRNUNzR0pGcGM5Z2VFMzFGVEtRd2VGeGxXYkliZ09NTWV2c0JCNUVzN3ZTVjAzdklWbDM0bTBVQzBRVWRlZHVjMUs5S1BPYzBZZS01UVJJU3BSRGJyRzR6bzRBRDJ2eFcxZFp2dHczUQ?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 8h05 — <b>"Figma Dev Mode MCP Server: guia de configuração e limites"</b>, iMasters · <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPYXpxVkViSGE2bkl5SUpWNVdSTjI4WEpETU5XdDEzSU0zUUh6ZV85SzM2YWpPX0Y5WW8zTGRIRXhFUDVxZGhaa0NPUEVydG9RRTQxTDNrYjd4WEtCN1R4U1I1ZHVrVEdsVEdtX3hwRFlZMzFkYTJTYXA3clNXM3F6ZkZCMXcwOGpUZWtCaVlobDlKQlZMMTRKZHlUR2FydldOYWl5M19nUDV0VWZVTTJPSFRkcHI?oc=5">clique aqui</a></li>
+    <li>🟡 quarta, 8h06 — <b>"Figma Dev Mode MCP Server: o que a IA vê do design"</b>, iMasters · <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNbDdPU0xoZTFZZTRNdzBQZmJhb1d0RzRyekI1VnB2ejkxdllxaVA2RUJwY1NsMXAwcms5WDZWcS1rRXpMYXVYM2g4YlZZdEg2T2cxX2lieVRwaGQyVHdRenZoVGFQejhRTElwMkFCMHFkeVk1NzM5cjgwenM5eFhrNGhOT05iNHZnM0daazZKYnFKdkEtUDVpQUt3S1c3VDdBeEhUOU9DeWt2Y3M2?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 2h01 — <b>"Trainn MCP"</b> ("Crie vídeos de produto e cursos a partir de qualquer conversa com IA"), Product Hunt · <a href="https://www.producthunt.com/products/trainn">clique aqui</a></li>
+    <li>🟡 ontem, 23h06 — <b>"Replicate"</b> ("Transforme seu site do Webflow ou Framer num projeto do Claude ou do Codex, de graça"), Product Hunt · <a href="https://www.producthunt.com/products/replicate-10">clique aqui</a></li>
+    <li>🟢 hoje, 7h28 (Hacker News) — <b>"Llama.cpp: 6.5x faster prompt processing on Arm with a NEON kernel"</b> ("llama.cpp: leitura do pedido 6,5 vezes mais rápida em processador Arm"), GitHub · <a href="https://github.com/hardwiredagent/silicon-forge-arm-neon-study">clique aqui</a></li>
+    <li>🟡 ontem, 9h03 — <b>"A IA virou CEO de três empresas. Uma cresceu 127%, outra encolheu"</b>, StartSe · <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQM3M0elpHU0FTVk1JOTZ0Z18wZ19ybVpUWVYyaUp3WUt1NzBxOWx2X0RVWF91RDdwYndzQlkxeS00MUhoTjJRU2RnQzRRMUxtVVlVb01XNmlWT1BxX3JYTnZQWWlLYTdxWWlKZ05TSHdNYndVc2RwUE9ydGw5X2ZScGJhcGZiclRzSk9wcnNtYUxPeWxJeEFYUlBhZVRnRVRmQ2k1UA?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 13h05 — <b>"Ninguém sabe ao certo quantas empresas usam agentes de IA no Brasil"</b>, Administradores · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQcUV4b2hKRWR3TUk5NGhka1BSVVNOZnFmV1JhRkVZV0hTTURDUFZYNmRYeDdyWS1CamUzX25BNmtSOVZrdURWZlc3RTdhNWViVlZkalpldG9GNjVUM09BZndOeFZaeFI1WFlEWm1OOE5WaGxBX0M5LVhMeElFdWwwT3JULXpwdFUxSnlRdVRIU0FzMnJsVjhRZ1VjVHdiYzRMU1VaelQyVDdXaHpxbUxj?oc=5">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>Apagão da Microsoft:</b> só temos dois títulos no Hacker News. A página da CNN bloqueou o acesso daqui e a busca não achou relato de queda global da Microsoft em 12 de novembro de 2026; achou só um problema menor no Outlook na Europa, no dia 9. Trate as "12 horas" como relato, não como fato, até a Microsoft confirmar.</p>
+    <p><b>Claude:</b> a página oficial dá o horário do primeiro aviso, não o minuto exato em que o problema começou. O aviso final só confirma a volta do site do Claude e do Cowork, não do painel para empresas.</p>
+    <p><b>InvestNews, iMasters, StartSe e Administradores:</b> as matérias não abriram pelo link do Google News. Usamos só os títulos.</p>
+    <p><b>Trainn e Replicate:</b> lemos as páginas do Product Hunt, mas não testamos. O preço do Trainn vem de um comentário do fabricante, não da tabela oficial. O 99,98% da Replicate é número do criador.</p>
+    <p><b>llama.cpp:</b> é estudo de um programador, ainda não revisado nem incorporado ao programa oficial. Testado em uma IA pequena, em servidores alugados, não em celular.</p>
+    <p><b>Ficou de fora:</b> a RemotePC ligando assistentes de IA ao controle remoto de computadores (Unite.AI) e a startup gaúcha de IA para lojas virtuais (bra1). Os assuntos do Google Trends hoje não tinham nada de IA.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 081 · sexta-feira, 13 de novembro de 2026<br>
+  Próxima edição: Radar Completo de segunda-feira, 16 de novembro, com o bloco de posicionamento
+</div>
+
+</div>
+</body>
+</html>
