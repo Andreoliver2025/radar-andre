@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 084 — O segredo é quem confere o robô</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>Nove de cada dez linhas já são escritas por robô. O segredo de quem faz isso dar certo é quem confere</h1>
+  <p class="chamada">A equipe que constrói o Claude Code abriu como trabalha: o robô escreve quase tudo, e outro robô confere antes de valer. Quando a conferência reprova três vezes, chama uma pessoa. É exatamente o que falta no robô de WhatsApp dos seus clientes, a dez dias da Black Friday.</p>
+  <div class="dateline">Edição Nº 084 · terça-feira, 17 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">A regra de ouro de quem mais usa robô no mundo: ninguém aprova o próprio trabalho.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Sete recortes: o fim de um app de segundo cérebro, o alerta da Apple e os robôs entrando no organograma.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">Robô que entra na reunião do Zoom e atendente de voz com supervisor que pode assumir a ligação.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O fiscal do robô: uma segunda IA dando nota nas conversas do atendimento antes da Black Friday.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+  <p class="abertura">Hoje cedo, às 7h20, chegou ao mural dos programadores um texto da equipe que faz o Claude Code. O assunto não é o robô. É o conferente do robô.</p>
+  <p class="texto capitular">Segundo o texto, assinado por Addy Osmani, cerca de 90% do programa do Claude Code é escrito e revisado pelo próprio Claude. Isso só funciona porque cada entrega passa por um segundo robô, que confere tudo contra uma lista de critérios. Nos testes internos, separar quem faz de quem confere aumentou o acerto em até 10 pontos.</p>
+  <p class="texto">Há duas regras que valem para qualquer negócio. A primeira: depois de três tentativas sem passar, o robô para e chama uma pessoa. A segunda: as regras da conferência ficam num lugar que o robô não pode mexer. Ninguém altera a régua que vai medir o próprio trabalho.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Claude Code</b> é um robô que escreve programas de computador sozinho, do início ao fim. <b>Verificação</b> é a conferência: como o fiscal de obra que confere a parede antes de pintar, e não depois que o cliente reclama da rachadura.</p></div>
+  <p class="texto">Para você, a leitura é direta. O mercado está cheio de gente vendendo robô que responde. Quase ninguém vende o fiscal que garante que a resposta está certa. Esse é o pedaço que ainda está vago na prateleira.</p>
+  <div class="hoje"><span class="r">O que isso significa para você</span><p>Quando oferecer robô de atendimento ou de follow-up, venda junto o conferente: a lista de critérios, a nota de cada conversa e a regra de quando chamar uma pessoa. É o que separa um robô de demonstração de um robô que dá para deixar ligado na Black Friday.</p></div>
+</section>
+
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+  <p class="abertura">Um dia de arrumação: um app de anotações fecha as portas, a Apple avisa para não sair entregando a chave de casa, e o noticiário brasileiro discute robô no organograma.</p>
+
+  <div class="recortes">
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>Como a equipe do Claude Code confere o trabalho dos robôs antes de valer</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 7h20</span><span>Blog do Claude, via Hacker News</span></div>
+        <p class="texto">O texto conta o método inteiro. O robô roda o programa de verdade antes de entregar, como quem dá a partida no carro depois do conserto. Cada entrega sai carimbada com o tipo de conferência que recebeu, inclusive "nenhuma".</p>
+        <p class="texto">Há uma lista de 39 pontos de checagem, mas cada mudança só aciona de 3 a 10 deles. A equipe também conta quantas entregas precisaram ser desfeitas, para medir se o fiscal está funcionando.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Hacker News</b> é um mural onde programadores do mundo todo postam o que saiu. Um <b>teste</b> é uma pergunta com resposta conhecida: você sabe o que tem que sair, roda e vê se saiu.</p></div>
+        <div class="link"><a href="https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>O Mem, app de anotações com IA, vai fechar em 15 de janeiro</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 23h13</span><span>Blog do Mem, via Hacker News</span></div>
+        <p class="texto">O Mem vendia exatamente a ideia de segundo cérebro: anotar tudo e deixar a IA organizar. Em 18 de dezembro as notas viram só leitura. Em 15 de janeiro, o acesso acaba. A empresa não explicou o motivo e já parou de cobrar.</p>
+        <p class="texto">A lição vale para quem monta segundo cérebro para cliente: se a memória da empresa mora no app de outra empresa, ela pode ter data de validade. O Mem publicou um guia para levar as notas ao Notion, Obsidian, Google Docs e outros.</p>
+        <div class="link"><a href="https://get.mem.ai/blog/mem-is-shutting-down">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Ferramenta grátis ensina o padrão da sua marca aos robôs de design uma vez só</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 5h11</span><span>Product Hunt · Superhands</span></div>
+        <p class="texto">O Superhands transforma as decisões de design de uma equipe, como cores, espaçamentos e componentes, em instruções que qualquer robô de IA segue. Quando o resultado sai torto, você corrige a instrução uma vez, e não cada tela.</p>
+        <p class="texto">É a mesma ideia do recorte 01 aplicada a design: em vez de consertar cada peça, conserta-se a régua. A página diz que é grátis para começar.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Product Hunt</b> é uma vitrine onde produtos novos são lançados. Pense no Superhands como o manual da marca que a agência entrega ao gráfico, só que escrito para o robô ler.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/stencil-by-superhands">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Ferramenta lê posts e comentários públicos e diz o que eles significam para a sua marca</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 16h37</span><span>Product Hunt · Clamor</span></div>
+        <p class="texto">O Clamor é para quem faz marketing e estratégia. Agora ele analisa perfis públicos sem precisar de senha nem de ser dono da conta. Dá para fazer perguntas de acompanhamento e puxar os achados para outras ferramentas.</p>
+        <p class="texto">Na prática, é olhar o perfil do concorrente e perguntar: "do que o público dele reclama?". A página indica opção grátis, sem detalhar planos.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/clamor-2">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>A Apple avisa: pense duas vezes antes de dar "acesso total" a um aplicativo no Mac</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 23h17</span><span>Suporte da Apple, via Hacker News</span></div>
+        <p class="texto">A Apple publicou uma página explicando que o "acesso total ao disco" deixa o app ler, alterar e apagar tudo: mensagens, e-mails e fotos. Uma permissão ainda mais forte deixa o app ver todas as janelas e cada tecla digitada.</p>
+        <p class="texto">Muitos robôs de IA pedem exatamente esse tipo de permissão para "trabalhar por você". A recomendação é liberar só as pastas necessárias e revisar de tempos em tempos.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>Dar acesso total é como entregar a chave de casa ao eletricista que veio trocar uma tomada. Talvez ele precise só da chave da cozinha.</p></div>
+        <div class="link"><a href="https://support.apple.com/en-us/149699">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Valor e iMasters discutem o funcionário que divide a mesa com um robô</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 15h52</span><span>Valor Econômico · iMasters</span></div>
+        <p class="texto">Dois textos de ontem tratam do mesmo assunto: o robô deixando de ser ferramenta e virando "colega" no organograma. O Valor fala de funcionários atuando lado a lado com robôs. O iMasters, do que muda quando eles entram nas equipes.</p>
+        <p class="texto">Quando o tema chega ao Valor, chega à mesa do diretor. É sinal de que a conversa com o cliente ficou mais fácil.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxPeTNPTXFjZVFiTHNCN2Iwems5czNmb29sRmV3WC05WjR0TXVQLVMtb3FuVGIzYmNCTkR4RGRVeDZhV3B6dlBtLW5reG1qR2M5X2x2cVhaMUpQdm1TUXZObHRLdlBwT2VSYTJXWnR5elVyNmdrTU5hMVJXVkJ1bS1BMXY2UElXcm9XRXpMYnVYQklhbldoTmNNUDBweHdVSFZ1X1JjNnZuWDhPbW8ycVQ5a21IcFVDN1M0OWRyNWZWWmp2UHBSSHEtcFFNNEFxcjVRcXduVzFUVFJoRDFtVkJraExWMnV1aV93LTZlSG9oTDjSAf8BQVVfeXFMUDlVNzdGZ19ORW1VdE4tX3hKSjd3RHpiSmgxODZ3ZHJyX3dPVjhhWnNLNENxNlNiOTJOQlZFRjRzSUk5TW5EajA2X0tWZlNmbTluRDlBVFJadENTVnNsckRPYkhQZ3FXbEh5OUZNcDRwamxUUmRfTHRIVWZnVDVqSFItQVBvN2gzV2h1WTZKbWhQRGVvb0pJTHVrd3lMUERVT3hyeVJjcHBaWXJ5RzBtZzItZFo3dXNWY1E0d1BrTzZUeXVseUhUVVVzNWF4NnJKSjRfanN2U0I4aXFSLU94ZlNVOUxaYXF6QTVuSXVseFBHTldWS2xWendPWEEwUWc4?oc=5">clique aqui para ler (Valor)</a> · <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQWEhTSm5aZ0JWS2lkQW9sRjhxZXRvOUxBa1NkVlRncHUxQ282MTlNVWFEa0ZlSFM3SDBVQjJQU0RlbUdSbUJZemlZMlk0WGNfS0RnV3M2Y01JQkhjeERqLVFFWEd6R3lWZ1NuVDBrQU82UGEyUUtuUFJuSTBvRDVzSFR3cmlTQ2N0aEczOWRPRQ?oc=5">clique aqui para ler (iMasters)</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>A Synchro cria robôs de IA para a rotina fiscal das empresas</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 14h09</span><span>Startups</span></div>
+        <p class="texto">A Synchro, de sistemas fiscais, anunciou robôs para a rotina de impostos, rodando na nuvem da Oracle. Imposto é o lugar onde errar custa multa. Por isso é o tipo de tarefa em que o conferente do recorte 01 deixa de ser luxo.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxOZndreUxyU0xITWFxeXIweXFvZE9DZks2d25zR2JtUVpqV2ZHa3BwUTYyWXY1RUtLRUI0T09yeEpuRmJPZ0dveFpheGhUOUN0M2JsS0JaUFFNYXdJS052cTJEb3RiaE9nb3ZfaFBicUhoSTlJZk5OUXFsWjZET3F1QUlTcHhwbkhqN1VBdXNrTkdYeU52cUQ3VDJFeDZueF9yZy1NaHk5Zk5YMm81R3lnWGhKMlVDN0JBbXdTU2tVSG5semhOTV8wWG53?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><b>90%</b><span>do programa do Claude Code é escrito e revisado pelo próprio robô, segundo a equipe</span></div>
+    <div class="numero"><b>+10</b><span>pontos de acerto, no máximo, quando um segundo robô confere o primeiro</span></div>
+    <div class="numero"><b>3</b><span>tentativas sem passar, e o robô para e chama uma pessoa</span></div>
+    <div class="numero"><b>59</b><span>dias até o Mem fechar. Em 31, as notas já viram só leitura</span></div>
+  </div>
+</section>
+
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+  <p class="abertura">Dois lançamentos de ontem levam o robô para onde a conversa acontece de verdade: a reunião de vídeo e a ligação telefônica.</p>
+  <p class="texto"><b>A Recall.ai lançou um jeito de mandar um robô para dentro da reunião.</b> Ele entra no Zoom, Google Meet, Teams e Webex. Escuta, responde em voz alta, aparece na câmera, compartilha tela e escreve no chat. Basta um comando para colocá-lo na sala. <a href="https://www.producthunt.com/products/recall-ai">Clique aqui para ler</a>.</p>
+  <p class="texto"><b>O Pinecall é uma plataforma de código aberto para atendentes de voz.</b> O detalhe que importa: um supervisor pode ouvir a ligação, soprar uma orientação ao robô ou assumir a chamada. Cada ligação termina com um parecer e o passo a passo do que aconteceu. Há 120 minutos grátis para testar. <a href="https://www.producthunt.com/products/pinecall">Clique aqui para ler</a>.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>A Recall.ai vende <b>uma tomada por onde um sistema conversa com outro</b>: é peça para quem constrói, não app para o dono da loja. <b>Código aberto</b> quer dizer que qualquer um pode baixar e rodar por conta. O Pinecall funciona como a central de telemarketing antiga, com a supervisora de fone ouvindo e pronta para pegar a linha.</p></div>
+  <div class="olho">Robô sem conferente é estagiário sem chefe: rápido, confiante e, de vez em quando, errado na frente do cliente.</div>
+  <p class="texto">Repare que o Pinecall vende o mesmo que a equipe do Claude Code descreveu hoje. O valor não está só no robô que fala. Está no parecer de cada ligação e na pessoa que entra quando ele trava.</p>
+  <div class="hoje"><span class="r">O que isso significa para você</span><p>Robô de reunião e de telefone ainda são peças para quem constrói, não produto pronto. Se você monta times de robôs, guarde os dois nomes. Use o Pinecall como modelo do que mostrar ao cliente: parecer por conversa e botão de "pessoa assume".</p></div>
+</section>
+
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+  <p class="abertura">O fiscal do robô: uma segunda IA que dá nota nas conversas do atendimento do seu cliente antes da Black Friday, no dia 27.</p>
+  <p class="texto">Muita loja ligou robô no WhatsApp neste ano. Quase nenhuma tem alguém lendo o que ele responde. É como abrir uma filial e nunca passar lá para ver como os vendedores atendem.</p>
+  <p class="texto">O serviço é simples de explicar: uma lista de critérios, uma segunda IA dando nota em cada conversa e um relatório com as piores. Inclui a regra que a equipe do Claude Code usa: errou três vezes, passa para uma pessoa.</p>
+  <div class="nota">
+    <p class="texto"><b>A lista de critérios, em linguagem de dono de loja:</b></p>
+    <ul class="lista">
+      <li>Deu o preço e o prazo certos, conferindo com a tabela atual?</li>
+      <li>Prometeu algo que a loja não faz, como frete grátis ou troca sem nota?</li>
+      <li>Quando o cliente pediu uma pessoa, passou rápido?</li>
+      <li>Ficou sem resposta ou mandou a mesma frase duas vezes?</li>
+      <li>Terminou com um próximo passo: link, horário ou pedido?</li>
+    </ul>
+  </div>
+  <p class="texto">O argumento de venda está nos recortes de hoje: quem mais usa robô no mundo não deixa ele aprovar o próprio trabalho. O seu cliente também não deveria.</p>
+  <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span><p>Peça a um cliente com robô no WhatsApp as 20 últimas conversas, sem dados pessoais. Escreva os cinco critérios acima numa folha. Cole cada conversa numa segunda IA, como o Claude ou o ChatGPT, e peça nota de 0 a 10 por critério, com o motivo. Leve as três piores conversas para o cliente, com a frase: "isso aconteceu na sua loja na semana passada".</p></div>
+</section>
+
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+  <p class="abertura">Cada recorte tem link. Os horários estão no horário de Brasília e marcam quando a notícia apareceu no sinal do Radar.</p>
+  <ol class="src">
+    <li>🟢 hoje, 7h20 — "How the Claude Code team thinks about verification" ("Como a equipe do Claude Code pensa a conferência"), Addy Osmani, blog do Claude, via Hacker News · <a href="https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/">clique aqui</a></li>
+    <li>🟡 ontem, 23h13 — "Mem Is Shutting Down" ("O Mem vai fechar"), blog do Mem, via Hacker News · <a href="https://get.mem.ai/blog/mem-is-shutting-down">clique aqui</a></li>
+    <li>🟡 ontem, 23h17 — "If an App Asks for Full Disk Access or System and App Protection Override" ("Se um app pedir acesso total ao disco ou para contornar a proteção do sistema"), suporte da Apple, via Hacker News · <a href="https://support.apple.com/en-us/149699">clique aqui</a></li>
+    <li>🟡 ontem, 5h11 — Superhands ("Desenhe o sistema, não cada tela"), Product Hunt · <a href="https://www.producthunt.com/products/stencil-by-superhands">clique aqui</a></li>
+    <li>🟡 ontem, 16h37 — Clamor (leitura de redes sociais para marketing), Product Hunt · <a href="https://www.producthunt.com/products/clamor-2">clique aqui</a></li>
+    <li>🟡 ontem, 21h38 — Agents API by Recall.ai (robô que entra em reuniões de vídeo), Product Hunt · <a href="https://www.producthunt.com/products/recall-ai">clique aqui</a></li>
+    <li>🟡 ontem, 7h54 — Pinecall ("A plataforma de código aberto para atendentes de voz com IA"), Product Hunt · <a href="https://www.producthunt.com/products/pinecall">clique aqui</a></li>
+    <li>🟡 ontem, 15h52 — <i>"Funcionários atuando lado a lado com agentes de IA: é assim que vamos trabalhar num futuro (bem) próximo"</i>, Valor Econômico · <a href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxPeTNPTXFjZVFiTHNCN2Iwems5czNmb29sRmV3WC05WjR0TXVQLVMtb3FuVGIzYmNCTkR4RGRVeDZhV3B6dlBtLW5reG1qR2M5X2x2cVhaMUpQdm1TUXZObHRLdlBwT2VSYTJXWnR5elVyNmdrTU5hMVJXVkJ1bS1BMXY2UElXcm9XRXpMYnVYQklhbldoTmNNUDBweHdVSFZ1X1JjNnZuWDhPbW8ycVQ5a21IcFVDN1M0OWRyNWZWWmp2UHBSSHEtcFFNNEFxcjVRcXduVzFUVFJoRDFtVkJraExWMnV1aV93LTZlSG9oTDjSAf8BQVVfeXFMUDlVNzdGZ19ORW1VdE4tX3hKSjd3RHpiSmgxODZ3ZHJyX3dPVjhhWnNLNENxNlNiOTJOQlZFRjRzSUk5TW5EajA2X0tWZlNmbTluRDlBVFJadENTVnNsckRPYkhQZ3FXbEh5OUZNcDRwamxUUmRfTHRIVWZnVDVqSFItQVBvN2gzV2h1WTZKbWhQRGVvb0pJTHVrd3lMUERVT3hyeVJjcHBaWXJ5RzBtZzItZFo3dXNWY1E0d1BrTzZUeXVseUhUVVVzNWF4NnJKSjRfanN2U0I4aXFSLU94ZlNVOUxaYXF6QTVuSXVseFBHTldWS2xWendPWEEwUWc4?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 16h15 — <i>"Equipes híbridas: o que muda quando agentes de IA entram no organograma"</i>, iMasters · <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQWEhTSm5aZ0JWS2lkQW9sRjhxZXRvOUxBa1NkVlRncHUxQ282MTlNVWFEa0ZlSFM3SDBVQjJQU0RlbUdSbUJZemlZMlk0WGNfS0RnV3M2Y01JQkhjeERqLVFFWEd6R3lWZ1NuVDBrQU82UGEyUUtuUFJuSTBvRDVzSFR3cmlTQ2N0aEczOWRPRQ?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 14h09 — <i>"Synchro desenvolve agentes de IA para a rotina fiscal com Oracle Cloud Infrastructure (OCI)"</i>, Startups · <a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxOZndreUxyU0xITWFxeXIweXFvZE9DZks2d25zR2JtUVpqV2ZHa3BwUTYyWXY1RUtLRUI0T09yeEpuRmJPZ0dveFpheGhUOUN0M2JsS0JaUFFNYXdJS052cTJEb3RiaE9nb3ZfaFBicUhoSTlJZk5OUXFsWjZET3F1QUlTcHhwbkhqN1VBdXNrTkdYeU52cUQ3VDJFeDZueF9yZy1NaHk5Zk5YMm81R3lnWGhKMlVDN0JBbXdTU2tVSG5semhOTV8wWG53?oc=5">clique aqui</a></li>
+    <li>🟡 29 de outubro — <i>"Black Friday 2026: IA conversacional ganha peso na conversão pelo WhatsApp"</i>, AdNews · <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxPYU1rNjk5Y29RR3NLRGxEeUU5Y1lqZTVNemlhZDY5RnNwRXZHbWxPSHNhWGo1RWtfZEdHZlg4RWM4Z0VxWkZXOFVHdnZidy1CcjN6QWtiVEhDU2RiVlRpZ01rRlNsX1BFSmtaT0duaGhxel9Kc1lEWXR6X3QtREhBb0NOUXE1UHN6WTJPQkRkdlh2dTFSalgwTGxhcGFxbDFtcC1v?oc=5">clique aqui</a></li>
+    <li>Google Trends Brasil — as dez buscas em alta de hoje são de futebol, loteria e cidades. Nenhuma sobre IA.</li>
+  </ol>
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>Claude Code:</b> os números (90%, até 10 pontos, 39 itens, três tentativas) são da própria equipe, sobre testes internos, sem auditoria de fora. O texto saiu no blog em 16 de novembro e chegou ao Hacker News hoje cedo. <b>Mem:</b> a empresa não deu o motivo do fechamento. <b>Superhands, Clamor, Recall.ai e Pinecall:</b> tudo vem das páginas de lançamento, escritas pelos fabricantes. Não testamos nenhum, e nenhum informa preço dos planos pagos. A data exata dos lançamentos é deduzida da página de ranking do dia. <b>Valor, iMasters, Synchro e AdNews:</b> lemos só as manchetes. <b>Black Friday no dia 27:</b> é a última sexta-feira de novembro de 2026, pelo calendário. <b>A oportunidade do dia:</b> é uma proposta do Radar, não um caso medido. A nota da segunda IA também erra e precisa ser lida por você.</p></div>
+</section>
+
+<div class="assinatura">Radar André Oliveira · Nº 084 · terça-feira, 17 de novembro de 2026<br>Próxima edição: Pulso de quarta-feira, 18 de novembro.</div>
+</div>
+
+</body>
+</html>
