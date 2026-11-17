@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 083 · Completo de 16 de novembro de 2026 — O robô ganhou e-mail, agenda e voz. O próximo cliente a ligar para a sua loja pode ser um robô</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Edição completa</div>
+  <h1>O robô ganhou e-mail, agenda e voz. O próximo cliente a ligar para a sua loja pode ser um robô</h1>
+  <p class="chamada">Ontem, um produto novo passou a dar a cada robô de IA o próprio endereço de e-mail e a própria agenda. No mesmo dia, a Cal.com lançou um assistente que liga para empresas em nome do cliente. O robô saiu dos bastidores: agora tem nome, endereço e telefone. Falta alguém ensinar a empresa a falar com ele.</p>
+  <div class="dateline">Edição Nº 083 · segunda-feira, 16 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#movimento">O movimento da semana</a><div class="d">O robô ganhou crachá e caixa de correio. E começou a bater na porta das empresas.</div></div></li>
+    <li><div><a href="#novidades">As novidades da semana</a><div class="d">Sete recortes: o e-mail do robô, o assistente que liga, o Windows que anota os seus robôs, o atendente de voz e mais.</div></div></li>
+    <li><div><a href="#territorio">Seu território: robôs, automação e encaixes</a><div class="d">Crachá, regra de conduta e caderno de registro: o robô ganha as três peças de um porteiro.</div></div></li>
+    <li><div><a href="#negocio">IA aplicada a negócio</a><div class="d">Você otimizou o site para o Google ler. Agora quem lê, e liga, é o assistente do cliente.</div></div></li>
+    <li><div><a href="#imagem">IA de imagem e vídeo</a><div class="d">Semana sem grande gerador de imagem. A novidade foi de voz, e de desenho técnico.</div></div></li>
+    <li><div><a href="#mundo">🌍 Para onde o mundo vai</a><div class="d">O robô ficou barato, até grátis. O que continua caro é alguém responder por ele.</div></div></li>
+    <li><div><a href="#posicionamento">⭐ Onde você deve estar agora</a><div class="d">Três movimentos: o balcão pronto para robô, o robô com crachá e o recibo do robô.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com horário de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============ 01 ============ -->
+<section class="materia" id="movimento">
+  <div class="titulo"><span class="n">01</span><h2>O movimento da semana</h2><span class="fio"></span></div>
+
+  <p class="abertura">Quando uma empresa contrata alguém, a primeira coisa que faz é criar o e-mail da pessoa. Nome, ponto, sobrenome, arroba da empresa. <b>Desde ontem, isso também vale para o robô.</b></p>
+
+  <p class="texto capitular">Ontem às 16h51, pelo horário de Brasília, a Puffin entrou na vitrine do Product Hunt. A proposta: dar a cada robô de IA o próprio endereço de e-mail, uma agenda e um lugar no Slack, no Discord e no Telegram.</p>
+  <p class="texto">O dono escolhe o regime. Ou aprova cada mensagem que sai, ou deixa o robô no piloto automático. Tem limite diário de envio, checagem de vírus nos anexos e um registro de tudo o que o robô fez. Custa a partir de 25 dólares por mês.</p>
+  <p class="texto">Do outro lado do balcão, a Cal.com, ferramenta de agendamento, lançou a versão 7 ontem de manhã. Uma das peças é o Discover. Você pede um serviço do jeito que falaria com uma pessoa, e ele acha quem atende. Se a empresa não usa a Cal.com, a IA liga para o telefone público dela.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Robô de IA</b> (o "agente" das reportagens) é um programa que executa uma tarefa do início ao fim sozinho. <b>Product Hunt</b> é a vitrine onde produtos novos são lançados. <b>Slack</b> é o grupo de conversa interno de muitas empresas, um WhatsApp do escritório.</p></div>
+
+  <p class="texto">Junte as duas pontas. De um lado, o seu robô ganha crachá e caixa de correio. Do outro, o robô do cliente começa a bater na porta da sua empresa, por e-mail e por telefone.</p>
+  <p class="texto">Na edição 082, a pergunta era quem tem a chave da loja. Hoje ela anda um passo. Quem atende quando o visitante é um robô? E quem responde pelo que o seu robô falou em nome da empresa?</p>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">25 dólares</div><div class="lbl">por mês é o preço de entrada para dar a um robô <b>e-mail, agenda e registro próprios</b>, na Puffin. Fonte: página do produto</div></div>
+    <div class="numero"><div class="big">84%</div><div class="lbl">dos casos de atendimento resolvidos numa <b>prova padronizada</b>, segundo a fabricante do Fluid, um atendente de voz. Número da própria empresa</div></div>
+    <div class="numero"><div class="big">7</div><div class="lbl">programas de robô, como Claude, Codex e Cursor, que o <b>Windows 11 anota pelo nome</b>, segundo um pesquisador independente</div></div>
+    <div class="numero"><div class="big">320 mil</div><div class="lbl">visualizações do vídeo da BBC Brasil que pergunta se a <b>"bolha" da IA</b> está para estourar. A dúvida chegou ao público comum</div></div>
+  </div>
+
+  <div class="olho"><p>"O próximo cliente que ligar para a sua empresa pode ser o robô dele. A sua empresa sabe atender um robô?"</p><div class="quem">A frase para levar à reunião</div></div>
+
+  <div class="nota">
+    <div class="r">O arco das últimas edições</div>
+    <ul class="lista">
+      <li><b>Nº 079 (segunda passada):</b> o robô já trabalha. Falta a ficha de vistoria que diz o que é trabalho bem feito.</li>
+      <li><b>Nº 080 (quarta):</b> o primeiro a ler a sua proposta é a IA do cliente.</li>
+      <li><b>Nº 081 (sexta):</b> a IA também tem apagão. O robô precisa de um plano B.</li>
+      <li><b>Nº 082:</b> cada robô é uma chave da loja. Alguém precisa fazer a lista.</li>
+      <li><b>Hoje:</b> o robô ganhou identidade. O seu fala em nome da empresa, e o do cliente liga para ela. A 080 dizia que a IA do cliente lê. Agora ela também telefona.</li>
+    </ul>
+  </div>
+
+  <div class="hoje">
+    <div class="r">O que isso significa para você</div>
+    <p>Robô com nome e endereço precisa de regra de conduta, como qualquer funcionário que fala com cliente. E balcão que recebe robô precisa de resposta pronta: horário, serviço, preço, como agendar.</p>
+    <p><b>As duas pontas são atendimento, a sua base mais antiga.</b> A seção 07 transforma isso em três serviços, com o primeiro passo de cada um.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades da semana</h2><span class="fio"></span></div>
+
+  <p class="abertura">Sete recortes que a edição 082 não trouxe. O fio que liga quase todos: o robô deixou de ser ferramenta escondida e virou alguém, com endereço, voz e ficha de registro.</p>
+
+  <div class="recortes">
+
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>O robô ganha e-mail, agenda e lugar no grupo da empresa, com o dono aprovando o que sai</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 16h51</span><span>Product Hunt · Puffin</span></div>
+        <p class="texto">A Puffin cria uma identidade para cada robô: endereço de e-mail, agenda, presença no Slack, no Discord e no Telegram. Ela se liga ao Gmail e à agenda do Google. O robô responde com a IA da própria Puffin ou com um robô que você já tem.</p>
+        <p class="texto">As travas são o que mais interessa. Dá para aprovar cada mensagem antes de sair, segurar mensagens suspeitas, limitar envios por dia e consultar um registro de tudo. A partir de 25 dólares por mês, com desconto para os 100 primeiros.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O tal <b>registro</b> (em inglês, "audit log") é o livro de ocorrências da portaria. Cada entrada e cada saída anotada, com hora. Se algo der errado, é ali que você descobre quem fez o quê.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/puffin-2">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>A Cal.com lança um assistente que procura o serviço por você e liga para a empresa se precisar</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 11h46</span><span>Product Hunt · Cal.com</span></div>
+        <p class="texto">A versão 7 da Cal.com, ferramenta de agendamento, trouxe venda de ingresso para eventos, chamada de vídeo sem instalar nada e um assistente de agenda. A peça que importa para você é o Discover.</p>
+        <p class="texto">Você pede o serviço em linguagem comum. Ele acha empresas próximas que usam a Cal.com e aprende as suas favoritas. Se a empresa não está lá, segundo a página, a IA liga para o telefone público dela. A página não traz preços.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/cal">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Pesquisador mostra que o Windows 11 anota quais robôs de programação você usa</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 19h58</span><span>Hacker News · xusheng.dev</span></div>
+        <p class="texto">Um pesquisador abriu uma peça do Windows 11 e achou uma lista com nomes de programas de robô: Claude, Codex, Copilot, Cursor e outros. Quando um deles roda, o Windows marca. A marca vai num relatório para a Microsoft.</p>
+        <p class="texto">Segundo ele, o relatório diz só quais robôs apareceram, sem o texto do que você pediu e sem o seu código. Ele vai no pacote de "dados de diagnóstico opcionais", que dá para desligar. No teste dele, vinha ligado de fábrica. A Microsoft não comentou no texto.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p><b>Dados de diagnóstico</b> são o odômetro que a montadora lê na revisão. Ela não sabe para onde você foi, mas sabe quanto rodou. Aqui, a Microsoft fica sabendo qual robô roda nas máquinas. Para desligar: Configurações, Privacidade e segurança, Diagnóstico e comentários.</p></div>
+        <div class="link"><a href="https://xusheng.dev/posts/windows-coding-agent-telemetry/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Um atendente de voz que diz "só um instante, estou vendo" enquanto consulta o pedido</h3>
+        <div class="credito"><span class="frescor antes">🟡 sexta · 5h49</span><span>Product Hunt · KugelAudio</span></div>
+        <p class="texto">O Fluid, da KugelAudio, é um robô que ouve e responde em voz, feito para atendimento ao cliente. Ele faz "aham" enquanto você fala e avisa o que está fazendo enquanto procura uma informação. Fala mais de 24 línguas.</p>
+        <p class="texto">Para consultar o pedido, ele passa a tarefa ao motor de IA que você escolher. A fabricante diz que ele resolve 84% das tarefas numa prova padronizada de atendimento. Tem opção gratuita; a página não detalha os planos pagos.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>A <b>prova padronizada</b> (em inglês, "benchmark") é um simulado igual para todos os robôs, como o Enem. Serve para comparar. Mas nota de simulado não é resultado na sua loja: quem fez a prova foi a própria fabricante.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/kugelaudio">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Um sistema gratuito em que o robô só sugere a mudança, e uma pessoa aprova</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 20h25</span><span>Hacker News · Sutra-OS</span></div>
+        <p class="texto">O Sutra-OS organiza os dados de um negócio como um mapa: o que existe, como se liga e quais mudanças são permitidas. O exemplo é uma fazenda com lotes de feno e vendas. O estoque é calculado, não digitado à mão.</p>
+        <p class="texto">Toda mudança vira proposta até alguém aprovar, e todo número mostra de onde veio. O robô recebe só as ferramentas que você liberar, e por padrão só propõe. É de código aberto, ainda em teste, e tocado por uma pessoa só.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p><b>De código aberto</b> quer dizer que qualquer um pode baixar e rodar por conta. <b>Roda no seu servidor</b> quer dizer que fica na sua casa, não no prédio de outra empresa. E o "robô só propõe" é o estagiário que prepara o cheque, mas quem assina é o dono.</p></div>
+        <div class="link"><a href="https://github.com/0nelight/sutra-os">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Robô que escreve programas de graça, pago com anúncio</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 14h59</span><span>Product Hunt · Freebuff</span></div>
+        <p class="texto">O Freebuff se vende como "o robô de programação 100% grátis". Promete montar aplicativos completos sem pagar ferramentas como Claude Code, Cursor ou Replit. Usa motores de IA de código aberto.</p>
+        <p class="texto">A página não explica de onde vem o dinheiro. Mas a mesma empresa lançou um produto de anúncios para quem usa o robô, e um avaliador diz ter visto anúncio na tela. Há um saldo de uso, então o "grátis" tem teto.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>É o modelo da TV aberta aplicado ao robô. Você não paga a assinatura, mas assiste ao comercial. Quando o produto é grátis, alguém está pagando por outro lado.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/freebuff-2">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">07</div>
+      <div>
+        <h3>Extensão gratuita recusa sozinha os avisos de cookies, até os que escondem o botão de recusar</h3>
+        <div class="credito"><span class="frescor antes">🟡 9 de novembro · 13h38</span><span>Product Hunt · Cookie Away</span></div>
+        <p class="texto">O Cookie Away é uma extensão para o Chrome. Quando o aviso de cookies não mostra o botão "recusar", ela abre as configurações, desliga tudo o que é opcional e salva. O criador testou em 69 sites europeus e publicou até os erros.</p>
+        <p class="texto">É grátis e de código aberto. Para quem faz tráfego pago, é sinal de rumo: cada visitante que recusa é um visitante a menos no pixel. Mais na seção 04.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p><b>Cookie</b> é a etiqueta que o site cola no seu navegador para lembrar de você. <b>Pixel</b> é o contador do Meta ou do Google que diz ao anúncio quem comprou. Sem etiqueta, o contador fica cego.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/cookie-away">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: robôs, automação e encaixes</h2><span class="fio"></span></div>
+
+  <p class="abertura">Um porteiro novo recebe três coisas: crachá, o regulamento do prédio e o livro de ocorrências. <b>O robô está ganhando as três, um produto de cada vez.</b></p>
+
+  <p class="texto">O crachá veio ontem, com a Puffin: e-mail, agenda e nome próprios. O regulamento aparece em dois lugares. Na Puffin, o dono aprova cada mensagem que sai. No Sutra-OS, o robô só propõe e uma pessoa assina.</p>
+  <p class="texto">O livro de ocorrências também está nos dois: todo envio anotado, todo número com origem. Na edição 082, o OpenFrame já fazia o mesmo com o suporte de informática. Quatro produtos em uma semana, com a mesma ideia, já não é coincidência. É o padrão do setor.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span><p>A Puffin oferece 44 ferramentas por um <b>encaixe</b> (em inglês, MCP). É o padrão que liga a IA às suas ferramentas, como a tomada de três pinos. Também traz <b>habilidades</b> prontas: manuais curtos que ensinam o robô a fazer uma tarefa específica, como uma receita de bolo.</p></div>
+
+  <p class="texto">Outro sinal no seu terreno: a Vercel lançou ontem o UI SDK, de graça. São peças prontas para o robô montar telas que funcionam no teclado e para quem tem deficiência visual. Vem com uma habilidade própria, para o robô aprender a usar as peças.</p>
+  <p class="texto">Repare na direção. Os grandes já não vendem só o robô. Vendem o manual que ensina o robô a trabalhar direito. É o que você faz quando monta habilidades e times de robôs.</p>
+  <p class="texto">E tem quem esteja contando. O Windows 11, segundo o pesquisador, anota se Claude, Codex ou Cursor rodaram na máquina. Quando a dona do sistema mais usado do mundo quer saber qual robô você usa, é porque essa briga vale dinheiro.</p>
+
+  <div class="hoje">
+    <div class="r">O que isso significa para você</div>
+    <p>Na 082, a proposta era a ficha de cargo do robô. Hoje ela ganha três campos novos: <b>em nome de quem ele fala, de qual endereço, e o que precisa da assinatura do dono antes de sair.</b></p>
+    <p>Isso é o regulamento do porteiro. Não exige programar, exige conhecer a operação. É o movimento 02, na seção 07.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="materia" id="negocio">
+  <div class="titulo"><span class="n">04</span><h2>IA aplicada a negócio</h2><span class="fio"></span></div>
+
+  <p class="abertura">Durante anos, você arrumou o site para o Google ler. <b>Agora quem lê, e às vezes liga, é o assistente do cliente.</b></p>
+
+  <p class="texto">Pense numa clínica, num salão ou numa oficina. Hoje, o cliente abre o Google, acha o telefone e liga. Com o Discover da Cal.com, ele pede ao assistente, e o assistente liga. Do outro lado da linha, alguém precisa saber dizer horário, preço e vaga.</p>
+  <p class="texto">E do lado das empresas, a voz também está virando robô. No dia 3, a Vivo anunciou que vai trocar a URA, aquele "digite 1 para", por IA de conversa, segundo o Teletime. No mesmo dia, o TI Inside contou que o Itaú usa IA de conversa no atendimento. Lemos só as manchetes.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Aparecer nas respostas da IA</b> (em inglês, GEO) é o novo SEO. Antes, você brigava pelo primeiro lugar no Google. Agora, briga para ser a resposta que o ChatGPT ou o Gemini dá quando alguém pergunta "onde eu marco isso amanhã?".</p></div>
+
+  <p class="texto">Tem um alerta no mesmo pacote. Em outubro, o portal SEGS publicou que as empresas avançam na automação das vendas entre empresas, mas têm dificuldade para medir resultados. Também lemos só a manchete. Robô que ninguém mede vira custo que ninguém defende.</p>
+  <p class="texto">No tráfego pago, o recado vem pelo Cookie Away. Hoje é uma extensão pequena, testada em sites europeus. Mas aponta o rumo: cada vez mais visitantes, e programas, vão recusar a etiqueta que alimenta o pixel. Quem mede só pelo pixel vai enxergar cada vez menos.</p>
+  <p class="texto">No YouTube, o público segue montando follow-up com robô. O vídeo "Desenhei um follow-up com IA para imobiliárias", de Rafael Milagre, passa de 4,6 mil visualizações. Repare no recorte: um nicho só. É assim que tutorial vira cliente.</p>
+
+  <div class="hoje">
+    <div class="r">O que isso significa para você</div>
+    <p>O serviço mais simples da semana é a <b>ficha de balcão</b>: uma página com tudo o que um assistente de IA precisa para marcar com o seu cliente. Horário, serviços, faixa de preço, link de agenda, regra de cancelamento.</p>
+    <p>Serve ao humano, ao Google e ao robô ao mesmo tempo. É o movimento 01, na seção 07.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="materia" id="imagem">
+  <div class="titulo"><span class="n">05</span><h2>IA de imagem e vídeo</h2><span class="fio"></span></div>
+
+  <p class="abertura">Pela segunda edição seguida, nenhum gerador grande de imagem ou vídeo apareceu nas nossas fontes. <b>A novidade veio da voz e do desenho técnico.</b></p>
+
+  <p class="texto">A voz primeiro. Além do Fluid, o atendente da seção 02, o ByteVoice chegou ontem à noite à vitrine. Ele deixa você falar com os seus robôs em vez de digitar, e lê em voz alta o que eles respondem. Funciona com Claude Code, Codex, Cursor e Slack. Tem opção gratuita.</p>
+  <p class="texto">Agora o desenho. O LexiCAD, lançado ontem, transforma a descrição de uma peça em desenho técnico de 3D. Você fala, manda foto ou medida, ele pergunta o que falta e confere o resultado antes de mostrar. Exporta para impressora 3D e corte a laser. A página não mostra preço.</p>
+
+  <div class="traduz"><span class="r">Em português claro</span><p><b>CAD</b> é o programa que engenheiro e arquiteto usam para desenhar peça e planta com medida exata. É a régua e o esquadro dentro do computador. O LexiCAD troca o mouse pela conversa.</p></div>
+
+  <p class="texto">O lado escuro continua na pauta. Em outubro, o Estadão explicou os perigos do DeepNude, ferramenta que gera imagem íntima falsa. Para quem produz imagem para marca, a regra prática não muda: avisar que é IA protege o cliente.</p>
+
+  <div class="hoje">
+    <div class="r">O que isso significa para você</div>
+    <p>Se o atendimento vai virar voz, <b>a voz do robô vira marca</b>, como o uniforme do vendedor. Antes de vender robô de voz a um cliente, ligue para a demonstração como um cliente bravo. Escute se ele avisa o que está fazendo e se sabe passar para um humano.</p>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="materia" id="mundo">
+  <div class="titulo"><span class="n">06</span><h2>🌍 Para onde o mundo vai</h2><span class="fio"></span></div>
+
+  <p class="abertura">Quando a gasolina fica barata, quem ganha não é o posto. <b>É quem sabe a rota.</b> O robô está ficando barato, e às vezes grátis.</p>
+
+  <p class="texto">O Freebuff dá robô de programação de graça, pago com anúncio. No YouTube, o vídeo "A Alibaba acabou de quebrar o mercado de IA por 3 dólares", de Paula Bernardes, passa de 9 mil visualizações. Só vimos o título. Mas a direção é clara: o preço da ferramenta cai.</p>
+  <p class="texto">Ao mesmo tempo, o público pergunta se é bolha. O vídeo da BBC News Brasil sobre analistas que falam em "bolha" da IA passa de 320 mil visualizações. O "Giro da IA" de Rafa Voss chamou esta de "a semana mais assustadora da IA", com 164 mil.</p>
+
+  <div class="olho"><p>"Robô ficou barato. O que continua caro é alguém que responda pelo que ele faz."</p><div class="quem">A segunda frase para levar à reunião</div></div>
+
+  <p class="texto">Um detalhe simbólico fechou o dia. O BugMeNot, site onde as pessoas compartilhavam login e senha para entrar em sites sem cadastro, anunciou que fechou. Não deu motivo. A era da senha emprestada acaba no mesmo dia em que o robô ganha login próprio.</p>
+  <p class="texto">Para quem quer prosperar na primeira startup, um dado do YouTube. O vídeo "Como abrir uma agência de automação com IA em 2026", de Mikey No Code, passa de 64 mil visualizações. Muita gente está abrindo a mesma loja. Em abril, o Startupi já alertava que a IA cria excesso de iniciativas e falta de foco.</p>
+  <p class="texto">A saída é a do Rafael Milagre: um nicho, uma dor, um resultado que dá para medir. Agência genérica de robô vai brigar por preço com o Freebuff. Agência que entrega agenda cheia para clínica, com recibo, não.</p>
+
+  <div class="traduz"><span class="r">Termômetro: o que o Brasil buscou no Google hoje à noite</span><p>A coleta da noite trouxe dez buscas em alta: timberwolves x trail blazers, magno malta, lotomania 3000, quina 7169, ana livia alves acidente, pelicans x warriors, lotofácil 3831, cnh, praia e nets x 76ers. Nenhuma é sobre IA. O Brasil de segunda à noite busca loteria, basquete e notícia. IA ainda é assunto de quem trabalha com ela.</p></div>
+
+  <div class="hoje">
+    <div class="r">O que isso significa para você</div>
+    <p>Com a ferramenta virando produto barato, o dinheiro migra para três lugares: <b>o nicho, a regra e a prova.</b> Quem conhece a operação de um setor, escreve as regras do robô e mostra o resultado em número fica com a margem.</p>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="materia" id="posicionamento">
+  <div class="titulo"><span class="n">07</span><h2>⭐ Onde você deve estar agora</h2><span class="fio"></span></div>
+
+  <p class="abertura">Cruzando as suas forças com o sinal da semana, a vantagem está num papel: <b>o gerente de atendimento dos robôs</b>. Ele prepara a empresa para ser atendida por robô. Dá regra ao robô que fala por ela. E mostra a conta no fim do mês.</p>
+
+  <div class="nota">
+    <div class="r">A tese da semana, em uma frase</div>
+    <p class="texto">O robô ganhou nome, endereço e voz. Quem prepara o balcão para recebê-lo, dá regulamento ao robô da casa e entrega o recibo do que ele fez vira o fornecedor de atendimento da nova era.</p>
+    <p class="texto">Ancorado em: o robô com e-mail próprio (Puffin, ontem) · o assistente que liga para empresas (Cal.com, ontem) · o atendente de voz (Fluid) · o robô que só propõe (Sutra-OS, hoje) · o robô grátis (Freebuff) · a dificuldade de medir (SEGS) · a conversa da bolha (BBC Brasil).</p>
+  </div>
+
+  <p class="texto">Os movimentos da 082 continuam de pé: a revista dos encaixes, a checagem do e-mail antes da Black Friday e a ficha de cargo. Os de hoje põem o robô para conversar com gente, e com outros robôs.</p>
+
+  <div class="nota">
+    <div class="r">Movimento 01 · o que vende já</div>
+    <p class="texto"><b>O balcão pronto para robô: a empresa do seu cliente encontrada e agendada pela IA</b></p>
+    <p class="texto">O serviço deixa a empresa pronta para quando o assistente do cliente vier procurar. Uma ficha de balcão publicada no site, no perfil do Google e no WhatsApp: horário, serviços, faixa de preço, link de agenda e regra de cancelamento. Depois, o teste: você pergunta às IAs como marcar ali e confere a resposta.</p>
+    <p class="texto"><b>Por que agora:</b> a Cal.com acabou de pôr na rua um assistente que procura e liga. Vivo e Itaú trocam atendimento por IA de conversa. O cliente vai se acostumar a pedir para o robô.</p>
+    <p class="texto"><b>Por que você:</b> é SEO, atendimento e aparecer nas respostas da IA no mesmo pacote. Você já faz os três.</p>
+    <p class="texto"><b>Como cobrar:</b> preço fechado por unidade, com o relatório do "antes e depois" das respostas das IAs.</p>
+    <p class="texto"><b>Cuidado real:</b> o Discover acabou de sair e não há número de uso, nem sinal de que chegou ao Brasil. Não venda "clientes vindos de robô". Venda a arrumação que serve ao Google, ao humano e ao robô.</p>
+  </div>
+
+  <div class="hoje">
+    <div class="r">O primeiro passo, esta semana</div>
+    <p>Escolha um cliente que vive de agenda: clínica, salão ou oficina. Abra o ChatGPT e o Gemini e pergunte: "quero marcar [serviço] em [bairro] amanhã às 10h. Qual o telefone, o preço e como eu agendo?". Veja se o seu cliente aparece e se a resposta está certa. Tire print e mande ao dono: "é isso que a IA diz da sua empresa".</p>
+    <p><b>Esforço:</b> trinta minutos · <b>Ativo gerado:</b> o modelo da ficha de balcão · <b>Risco:</b> nenhum</p>
+  </div>
+
+  <p class="texto">O segundo movimento mora no seu terreno mais técnico, os robôs que você já monta, e vira mensalidade.</p>
+
+  <div class="nota">
+    <div class="r">Movimento 02 · o que vira mensalidade</div>
+    <p class="texto"><b>O robô com crachá: endereço próprio, regulamento e livro de ocorrências</b></p>
+    <p class="texto">Todo robô que fala com o cliente final ganha três coisas. Um endereço próprio, que não é o e-mail do dono. Um regulamento curto: o que responde sozinho, o que precisa de aprovação, quantas mensagens por dia. E um registro que você lê toda semana com o dono.</p>
+    <p class="texto"><b>Por que agora:</b> a Puffin transformou isso em produto ontem. O Sutra-OS e o OpenFrame seguem a mesma regra: o robô propõe, o humano assina. O setor decidiu o padrão. Falta quem implante na empresa pequena.</p>
+    <p class="texto"><b>Por que você:</b> follow-up, automação e times de robôs são a sua base. Você já sabe montar o robô; agora vende a regra que deixa o dono dormir.</p>
+    <p class="texto"><b>Como cobrar:</b> implantação com preço fechado, e mensalidade pela leitura semanal do registro.</p>
+    <p class="texto"><b>Cuidado real:</b> endereço novo de e-mail precisa das três assinaturas da edição 082, ou cai no lixo eletrônico. E robô que escreve para cliente usa dado pessoal: o dono precisa saber e autorizar, por causa da LGPD.</p>
+  </div>
+
+  <div class="hoje">
+    <div class="r">O primeiro passo, esta semana</div>
+    <p>Pegue o robô de follow-up de um cliente. Numa folha, responda quatro linhas: de qual endereço ele manda, em nome de quem assina, quantas mensagens manda por dia e quem lê o que ele mandou. Toda linha em branco é um item da proposta. Mande a folha ao dono com o título "o regulamento do seu robô".</p>
+    <p><b>Esforço:</b> uma hora · <b>Ativo gerado:</b> o modelo do regulamento do robô · <b>Risco:</b> nenhum</p>
+  </div>
+
+  <p class="texto">O terceiro movimento responde à conversa da bolha com a sua força mais rara: medir resultado, coisa que quem faz tráfego pago faz há anos.</p>
+
+  <div class="nota">
+    <div class="r">Movimento 03 · o que vira marca</div>
+    <p class="texto"><b>O recibo do robô: o que ele fez, quanto custou e quanto rendeu</b></p>
+    <p class="texto">Um relatório mensal de uma página, igual a uma nota fiscal. Quantas conversas o robô teve. Quantas viraram agenda ou venda. Quantas horas de gente ele poupou. Quanto custou. E os erros que cometeu.</p>
+    <p class="texto"><b>Por que agora:</b> a BBC Brasil pôs a palavra "bolha" na boca de 320 mil pessoas. O SEGS diz que as empresas não sabem medir. E o robô grátis faz o preço da ferramenta sumir da conta. Sobra o resultado.</p>
+    <p class="texto"><b>Por que você:</b> no tráfego pago, você mede custo por resultado todo dia. É a mesma conta, aplicada ao robô. Quase ninguém que vende robô faz isso.</p>
+    <p class="texto"><b>Como cobrar:</b> o modelo é isca grátis. O recibo mensal preenchido entra na mensalidade do movimento 02.</p>
+    <p class="texto"><b>Cuidado real:</b> não invente hora poupada. Conte só o que dá para provar. Recibo inflado mata a marca mais rápido que recibo nenhum.</p>
+  </div>
+
+  <div class="hoje">
+    <div class="r">O primeiro passo, esta semana</div>
+    <p>Faça o recibo do robô que monta este radar. Conte as edições de novembro, estime com honestidade quanto tempo cada uma levaria à mão e anote o custo de envio. Publique a página com a frase: "o seu robô tem recibo? Comente 'recibo' que eu mando o modelo em branco".</p>
+    <p><b>Esforço:</b> uma hora · <b>Ativo gerado:</b> o modelo público do recibo do robô · <b>Risco:</b> nenhum</p>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">08</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+
+  <p class="abertura">Todos os links, com data no horário de Brasília. Título em inglês vem traduzido ao lado. Como numa nota fiscal: dá para conferir item por item.</p>
+
+  <ol class="src">
+    <li>🟡 ontem, 16h51 — Puffin ("Identidade e caixa de entrada para robôs de IA"), Product Hunt · <a href="https://www.producthunt.com/products/puffin-2">clique aqui</a></li>
+    <li>🟡 ontem, 11h46 — Cal.com v7 (agendamento, eventos e o assistente Discover), Product Hunt · <a href="https://www.producthunt.com/products/cal">clique aqui</a></li>
+    <li>🟢 hoje, 19h58 — "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use" ("O Windows 11 está coletando dados sobre quais robôs de programação e ferramentas você usa"), xusheng.dev, via Hacker News · <a href="https://xusheng.dev/posts/windows-coding-agent-telemetry/">clique aqui</a></li>
+    <li>🟡 sexta, 13 de novembro, 5h49 — Fluid ("Voz para voz feita para resolver problemas"), KugelAudio, Product Hunt · <a href="https://www.producthunt.com/products/kugelaudio">clique aqui</a></li>
+    <li>🟢 hoje, 20h25 — "Show HN: Sutra-OS – A self-hosted ontology platform" ("Sutra-OS: um sistema para mapear os dados do negócio, que roda no seu servidor"), via Hacker News · <a href="https://github.com/0nelight/sutra-os">clique aqui</a></li>
+    <li>🟡 ontem, 14h59 — Freebuff ("O robô de programação 100% grátis"), Product Hunt · <a href="https://www.producthunt.com/products/freebuff-2">clique aqui</a></li>
+    <li>🟡 9 de novembro, 13h38 — Cookie Away ("Recusa os avisos de cookies por você, até os traiçoeiros"), Product Hunt · <a href="https://www.producthunt.com/products/cookie-away">clique aqui</a></li>
+    <li>🟡 ontem, 9h01 — UI SDK by Vercel ("Dê aos robôs de IA as peças para criar telas"), Product Hunt · <a href="https://www.producthunt.com/products/ui-sdk">clique aqui</a></li>
+    <li>🟡 ontem, 22h45 — ByteVoice ("Fale com os seus robôs de programação e ouça a resposta"), Product Hunt · <a href="https://www.producthunt.com/products/bytevoice">clique aqui</a></li>
+    <li>🟡 ontem, 20h41 — LexiCAD ("Descreva uma peça em linguagem comum e receba o desenho técnico"), Product Hunt · <a href="https://www.producthunt.com/products/lexicad">clique aqui</a></li>
+    <li>🟢 hoje, 18h32 — "BugMeNot has closed" ("O BugMeNot fechou"), via Hacker News · <a href="https://www.bugmenot.com/">clique aqui</a></li>
+    <li>🟡 3 de novembro — <i>"Vivo vai substituir URA de atendimento por IA conversacional"</i>, Teletime · <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFBDbzJFcks1SzIzYTN5QnExT05BQ0taajVXOEhrQ0REQTNJX2FDVHB4UUpvTm42Nndqb1h6TVRJQWkyQ052SlBEdjctN1JUMndSX0U3NUtVWHpQM1UwMjg2MjRPUjRCdzdqS01DYXdXU1NhUnE0NEJhSGRjTmF4Ujg?oc=5">clique aqui</a></li>
+    <li>🟡 3 de novembro — <i>"Itaú utiliza IA conversacional para ampliar o atendimento personalizado aos clientes"</i>, TI Inside · <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQSWdNVU5zR2liYXJFTnUzLXlodEVvdmIwTVdvZ2FZYjRSRUNFZXpadWgzM1BZa3RYaHFtcEo4WGFrbzAtT1F5SFlLbE5wUjluTUd3OEJDN1dYOGxybXRXUTlYekZjLTZ6NG9MVUxaekhMcjRoTE8yOWdnTll0MXotWmFPVFB1ZTR5NW5hcC1JSlRmQ3pUVUpIRkFqREtnalhrTUZIUmYzQXlZRkU4dEstcXlEWTVtX1NwVFdyNQ?oc=5">clique aqui</a></li>
+    <li>🟡 28 de outubro, 18h10 — <i>"Vendas B2B com IA: empresas avançam na automação, mas têm dificuldade para medir resultados"</i>, SEGS · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNX01HR09SMkNyd1BQTlk4SWtPdVZ6X09SeDRESncwT1Q1dW5KVmRDdFc1NEVjeDJwUUhfZE1kb05EUnZGZzUzTmJrRVAtUFNmR0FkSlNZd3h5SklLUXdSMnVkeGpyazl1SEFvbXFzZnNmblpPLWpmVGktejlvb3hkYzVpYUtSNGVYclM2bTM5ZUViVDZoLTVEUVRLU2I0c0g4SHRIUEVnVElwT3JQUWg2ejVjdXdtaU12amdxSDVjZnZhbmc2aWNN0gHMAUFVX3lxTFBfcHZWWkp0MzlTSUhmMzl5a3U5VE0tTUMzYVhhaUs1eDRoSndxQ01YRHQtc0NvbUdhQUgyNkhFWGhHenVCcjQ0SkJQY3JKV3Z1ZDhhNFphTFVaWEY3czl5MV81LUdESERtWmtZOU1yWjBBTHRjc2tQR2doa2hkaW9OQm9CU3oyaUZiMUFjN3FUd0pCa2RaUDRLWmJiblpNQlNfTkc2cldfNU1PWlZldlNESnphWUQ0NnA1NVItZ2tnSm5XWVR3TS1fWWk4eg?oc=5">clique aqui</a></li>
+    <li>🟡 20 de outubro — <i>"Pornô gerado por IA: entenda os perigos por trás do DeepNude"</i>, Estadão · <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQeWJkNVpFMWItSFdCSTd5UzA3ZElhMmE0VzFwNUJTOUJNTTUwTGhwLXBjTE9oQ2ZJdkF0TUJHQkdqQk5QcUhlVHhxMnZnV0ZiR3oxaDRGbVllV0NpN2pQLTdSbl9oNVUxUm5KczNCdnBhM2RpX1JybVc2dTN4eUp0bUJRckllWTY0RExBaHdGamJyQ1FJS2VtZV9hUC0tVjVsX0pGQjdKRmpHdDVyUVHSAbMBQVVfeXFMUGNxSWRXdE8wSnVGYWctQ05sWGVpTks2ZF91NlRVR3BDUWUyTE1lUGhQX0RrZVk2SFd0ZUJGYzZQRzQtWktHbVMxeXNVSnBRSlBhck9NV1djdlRIUEU0dW1DUFRtSEthbnl3MWFfallvejB0b2VEOC1MLTdNcFl5WktkdjZ2WllvZ2xVcUVPS1pFc0hBbFdycWlKLXFrRW00c1lZeG5lamhaOWt1VFBuUG9fYUk?oc=5">clique aqui</a></li>
+    <li>🟡 20 de abril — <i>"A era da IA está criando um novo problema nas startups: excesso de iniciativas e falta de foco"</i>, Startupi · <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNcWtOaHhtQUw5RmdPRGwyN0ZSUkxwN1QzcVdsSURIaU1NM0Z0eVY0QUlMQW1wYWpHdU9NM2M2TkFrTWZULW5Sc0c3ZEpCNExpUS1TSFgwYVk2ZHZnTi1nS1RyYV9YdXhhN0x6aGwxTVZmUTMwc1VXQkFzdjB5VWR1Z2Y4YmFidw?oc=5">clique aqui</a></li>
+    <li>YouTube — "Por que cada vez mais analistas falam em 'bolha' da inteligência artificial prestes a estourar", BBC News Brasil, cerca de 320 mil visualizações · <a href="https://www.youtube.com/watch?v=65AnDszCevA">clique aqui</a></li>
+    <li>YouTube — "A SEMANA MAIS ASSUSTADORA DA IA (Giro da IA)", Rafa Voss, cerca de 164 mil visualizações · <a href="https://www.youtube.com/watch?v=WyJQci2-ArA">clique aqui</a></li>
+    <li>YouTube — "Alibaba Just Broke the AI Market for $3" ("A Alibaba acabou de quebrar o mercado de IA por 3 dólares"), Paula Bernardes, cerca de 9 mil visualizações · <a href="https://www.youtube.com/watch?v=bn2qvh-_Z9I">clique aqui</a></li>
+    <li>YouTube — "How to Start an AI Automation Agency in 2026 (Step by Step)" ("Como abrir uma agência de automação com IA em 2026, passo a passo"), Mikey No Code, cerca de 64 mil visualizações · <a href="https://www.youtube.com/watch?v=i4z0kCcByY8">clique aqui</a></li>
+    <li>YouTube — "DESENHEI um follow-up com IA para IMOBILIÁRIAS", Rafael Milagre, cerca de 4,6 mil visualizações · <a href="https://www.youtube.com/watch?v=2y-9KI1mddo">clique aqui</a></li>
+    <li>Google Trends Brasil — as dez buscas em alta, coletadas pelo motor do Radar hoje à noite.</li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><b>Puffin, Cal.com, Fluid, Freebuff, Cookie Away, UI SDK, ByteVoice e LexiCAD:</b> tudo vem das páginas de lançamento, escritas pelos próprios fabricantes. Não testamos nenhum. <b>Cal.com Discover:</b> a página não diz em quais países funciona, em que língua liga, nem quanto custa. <b>Fluid:</b> os 84% são da própria fabricante, numa prova de simulado, não em operação real. <b>Windows 11:</b> é a pesquisa de uma pessoa só. Ela mesma diz que, na imagem pública do Windows, a função vinha desligada, e que não dá para afirmar que está ativa em todas as máquinas. A Microsoft não se manifestou no texto. O número 7 conta os nomes distintos de programas de robô na lista dele. <b>Sutra-OS:</b> versão de teste, mantida por uma pessoa. <b>Freebuff:</b> a página não diz que é pago com anúncio; a conclusão vem do produto de anúncios da mesma empresa e de um avaliador. <b>Cookie Away:</b> testado pelo criador em 69 sites europeus. <b>BugMeNot:</b> a página não traz motivo nem data. <b>Teletime, TI Inside, SEGS, Estadão e Startupi:</b> lemos só as manchetes. <b>YouTube:</b> não assistimos aos vídeos; usamos títulos e visualizações. <b>Termômetro:</b> o Google Trends não diz por que cada termo subiu.</p></div>
+</section>
+
+<div class="assinatura">Radar André Oliveira · Nº 083 · segunda-feira, 16 de novembro de 2026<br>Próxima edição: Pulso de terça-feira, 17 de novembro.</div>
+</div>
+
+</body>
+</html>
