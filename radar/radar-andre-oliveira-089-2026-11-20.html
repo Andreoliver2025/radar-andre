@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 089 · O Signal trancou a porta para os robôs de IA</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+  <h1>O Signal trancou a porta para os robôs de IA lerem as suas conversas</h1>
+  <p class="chamada">O aplicativo de mensagens passou a restringir a captura de tela para impedir que robôs de IA leiam o que está escrito ali. É um app de conversa fechando a porta para esse tipo de robô de propósito. Para quem monta automação, o recado é claro: robô que entra pela janela pode acordar trancado do lado de fora.</p>
+  <div class="dateline">Edição Nº 089 · sexta-feira, 20 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O Signal bloqueia robôs que leem a tela, e por que isso importa a uma semana da Black Friday.</div></div></li>
+    <li><div><a href="#novidades">As novidades do dia</a><div class="d">Seis recortes: o Signal, os funcionários do Google contra a IA forçada nas escolas, o estudo da IA que reescreve a si mesma, a Motorola, as regras da Apple e a pergunta sobre segurança.</div></div></li>
+    <li><div><a href="#territorio">Seu território: automação</a><div class="d">O padrão de encaixe dos robôs ganhou regras novas, e mais uma caixa de ferramentas para montar robôs aparece.</div></div></li>
+    <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O "mapa das portas": descobrir por onde cada robô do cliente entra, antes que alguém tranque uma delas.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todas as fontes, com horário, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<section class="materia" id="hoje">
+  <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+  <p class="abertura">Durante anos, o entregador entrou no prédio pela garagem porque o portão vivia aberto. Um dia o síndico põe um cadeado. Ninguém avisa o entregador.</p>
+  <p class="texto capitular">Hoje às 13h54, o Valor Econômico noticiou que o Signal passou a restringir capturas de tela. O motivo, segundo a manchete: impedir que robôs de IA leiam as conversas.</p>
+  <p class="texto">Muitos robôs funcionam assim: "olham" a tela como uma pessoa olharia e copiam o que está escrito. É prático, mas é entrar pela garagem. Funciona até alguém trancar.</p>
+  <p class="texto">Na edição da manhã, o Radar contou que o robô da Apple quer ficar entre as empresas e os clientes. Agora um app de conversa decide quem pode ler o quê. As donas das plataformas estão escolhendo quais robôs entram.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>Existem dois jeitos de um robô conversar com um aplicativo. Pela <b>porta oficial</b>: a tomada por onde um sistema conversa com outro, com permissão do dono. Ou <b>pela janela</b>: lendo a tela ou usando um atalho não autorizado. A janela é mais rápida de montar e pode ser fechada a qualquer momento.</p></div>
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>O Signal é pequeno no Brasil, mas a pergunta vale para o WhatsApp, o Instagram e o e-mail dos seus clientes: <b>o robô entra pela porta ou pela janela?</b></p>
+    <p>A Black Friday é na sexta que vem, dia 27. É a pior semana do ano para descobrir que uma janela foi trancada.</p>
+  </div>
+</section>
+
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+  <p class="abertura">Seis recortes. O fio da tarde: quem manda na plataforma está começando a dizer até onde a IA pode ir.</p>
+
+  <div class="recortes">
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>Signal restringe a captura de tela para que robôs de IA não leiam as conversas</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 13h54</span><span>Valor Econômico</span></div>
+        <p class="texto">O aplicativo de mensagens, conhecido pela privacidade, passou a limitar as capturas de tela. Segundo o Valor, o alvo são os robôs de IA que leem o conteúdo das conversas.</p>
+        <p class="texto">É uma plataforma tratando robô como visita indesejada. Para quem vende automação, vira argumento a favor do caminho oficial: dá mais trabalho, mas não some do dia para a noite.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>"Robô de IA" é o que o mercado chama de agente: um programa que executa uma tarefa do início ao fim sozinho. Alguns deles trabalham "olhando" a tela do celular ou do computador, como se fossem uma pessoa sentada ali.</p></div>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxPdkZ3N1lJbzhXQTRMNlI2SEpySG85WEVjbHpWYUd3SkpaUG9vZGZkelhBbExwdU1VQ3ZGd3lRWjl2RFhocVNZbVpBQ1lFc3V2WXFGdk44cjQ0aW1kOEQwLXI4X0RVYnV5UlhRUFU0WUk5MmlFa3RGeGhVZ2FoVzhuQ1B2MTc1NjVSVDBMdXhBY3ZUSTdlS0NCa2oxNUlBcTdkcG9RYzRuZkpHSHBaWGJnd204bU1tYVJURkZ4LUU0Z0xlajRBSjBzT2JYOGFZeFdDMnAtRjVWNEVaTlMtbm9Bbl9EQnpCRkNnOE9EcDhCUDNmN2fSAYICQVVfeXFMTzB0RDZrdmxXN0x0aU91ajdPZ0VqTkM4WEo1a2RVTy1JRjBhalAtMXBVNVRibHMtOFc2WXpFRXBVX2FrNldJSG1RdExPc1JJcUIzb2RpWi0wNmRsUGlQNzdvemxoeVVYOVRnLVVhakg5a29wbDgtMFNublU0N0dsek51eXZfekZUWUxtZXFoU3A1QW5hOFJzQnhxWHljVHVfNXZSRDRoRFJmNmNFZkJ1MnRxdF9FLTB3XzctdlRtY3ItNmNIMEI2LWhNZXVEMlRWd1gzbkxlTGQ4S3BDR0xSZDNEbE5RMmE3cnFJOG1Tc01sbDlLSjBNNGF1bUNOb3Y4LUV3?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>Funcionários do Google pedem que a empresa não puna escolas que não querem IA</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 13h59</span><span>Mother Jones · via Hacker News</span></div>
+        <p class="texto">A revista americana Mother Jones conta que trabalhadores do Google pediram à empresa que não penalize escolas que recusam a IA. O endereço da matéria liga o pedido ao Gemini, a IA do Google.</p>
+        <p class="texto">Quando quem constrói a ferramenta pede freio, o sinal é de cansaço com a IA empurrada de cima para baixo. Para você, reforça a regra: robô bom é escolhido pelo cliente, não imposto a ele.</p>
+        <div class="link"><a href="https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Estudo afirma que a IA consegue reescrever a própria "memória de fábrica"</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 13h29</span><span>arXiv · via Hacker News</span></div>
+        <p class="texto">Subiu no Hacker News um estudo chamado "Modelos de linguagem podem reescrever os próprios pesos". A ideia é uma IA que ajusta a si mesma, sem um engenheiro mexendo por fora.</p>
+        <p class="texto">É pesquisa, não produto. Não muda nada na operação do seu cliente amanhã. Vale guardar o nome: é o tipo de assunto que vira manchete assustada daqui a alguns meses.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>"Modelo de linguagem" é o motor que faz o ChatGPT responder. Os "pesos" são o que ele aprendeu no treino, como a memória de fábrica de um aparelho. O arXiv é o site onde pesquisadores publicam estudos antes da revista científica. O Hacker News é o mural onde programadores do mundo todo postam o que saiu.</p></div>
+        <div class="link"><a href="https://arxiv.org/abs/2611.21885">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Motorola confirma IA nova para 21 modelos de celular</h3>
+        <div class="credito"><span class="frescor antes">🟡 ontem · 23h06</span><span>Oficina da Net</span></div>
+        <p class="texto">Segundo o Oficina da Net, a Motorola confirmou uma nova inteligência artificial para 21 celulares, com a lista dos aparelhos na matéria.</p>
+        <p class="texto">Cada celular com IA de fábrica é um consumidor mais acostumado a conversar com máquina. O atendimento por robô vai deixando de ser estranho para o público do seu cliente.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOaEZ5TkloY0o4cmU1djdSYmJxRVc1TDZySUYyQTRGVzVLbHdoU3g3UkZ6amZqb1hlb3FES3FHc3Y0cEN3TmJCV2djbkJqVEhFTTJIRDZQb1NTRFR1QlpXUGRTeFRmUTFrbEJDdzZ6RVhhQWU3bkRKR2lRRXRrU1ZTVkhGV0E3eVgzdU5Yd2gzaHRseWhBNGdSY19Ga2l2eGlpbElsSkV4X2h5MEFhbmtmVlBSLVhGbWVJWmpBSVJoMNIBxAFBVV95cUxPM3hjSmxSalBIV0lfanFsZzhxeHRwX2cyV3lnNEk3SWJqOUVvS1B3NVV2d3BkLUlSOEtzWkFZZzBITHJNOTdQV25BTkRfeXhzWm13a1hFakhOcllkcVp5ZGIwUTUzS0pWSTNSQnVVSU1sZUx3S2ZwOTZDV1Fscllfakk5alVWbDlCTndXa1ZjblBnMUptNU9YR0xDb2lvZTdQXy1UZVdFV0xVa1ZwUmVkU1ZyWEdBQU1OQVFPblh5Y3V6RkNm?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Mozilla explica por que ainda não existe navegador diferente de verdade no iPhone</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 12h03</span><span>blog da Mozilla · via Hacker News</span></div>
+        <p class="texto">A Mozilla, dona do Firefox, publicou por que, no iPhone, todo navegador ainda roda por baixo o mesmo motor da Apple. O endereço do texto aponta as regras da Apple como causa.</p>
+        <p class="texto">Não é notícia de IA, mas é a mesma história do Signal. Quem é dono da plataforma decide o que entra. Ontem eram navegadores. Agora são robôs.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>Navegador é o programa que abre sites, como o Chrome e o Safari. No iPhone, o Chrome é a fachada: por dentro, quem trabalha é o motor da Apple. São várias lojas com letreiros diferentes, todas abastecidas pelo mesmo depósito.</p></div>
+        <div class="link"><a href="https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>"A IA pode aumentar a segurança. Mas aumentar o quê?"</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 12h56</span><span>Unite.AI</span></div>
+        <p class="texto">O título do Unite.AI faz uma pergunta incômoda. Se a IA amplia o que já existe, ela amplia também os buracos.</p>
+        <p class="texto">É a mesma lógica do robô de atendimento: ele copia o processo que encontra. Processo bagunçado vira bagunça mais rápida.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aQkVXUEpoanhTY21MaE4wYjhGQzRJZkZNLWtwSjBSWlRqc3ZCV2QxWVBId3VGR1d4azFRWFJDT2NvQXFBQTEwRlV3eGlUU2FMUmRZbUN2bFllbzB0cHJ1OEpFLXNBcDRDRm1TN3F4SGM1M3gtSlNuMQ?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">7 dias</div><div class="lbl">até a <b>Black Friday</b>, sexta-feira, 27 de novembro.</div></div>
+    <div class="numero"><div class="big">21</div><div class="lbl">modelos de celular <b>Motorola</b> com a IA nova, segundo o Oficina da Net.</div></div>
+    <div class="numero"><div class="big">3</div><div class="lbl">regras novas no <b>padrão de encaixe dos robôs</b>: perguntar no meio da tarefa, responder em formulário e chave de acesso própria.</div></div>
+    <div class="numero"><div class="big">380 mil</div><div class="lbl">visualizações do tutorial <b>"robôs de IA para automatizar tudo"</b>, do canal Negócios em Mente.</div></div>
+  </div>
+
+  <div class="olho"><p>"Robô que entra pela janela é o primeiro a ficar trancado do lado de fora."</p><span class="quem">A frase para levar à reunião</span></div>
+</section>
+
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+  <p class="abertura">Se o Signal é o cadeado, o padrão de encaixe é a chave oficial. E essa chave acabou de ganhar regras novas.</p>
+  <p class="texto">Nesta semana, o iMasters publicou duas matérias sobre a versão nova do MCP, o padrão que liga a IA às ferramentas da empresa. O recado: quem já tem robô no ar precisa ajustar antes de atualizar.</p>
+  <p class="texto">As três novidades, em português de gente: o robô pode <b>parar no meio e fazer uma pergunta</b> a você. Pode <b>responder em formato de formulário</b>, não em texto solto. E entra com <b>uma chave de acesso própria</b>, em vez da sua senha.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>O MCP é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. A chave de acesso nova (o nome técnico é OAuth) funciona como o cartão do hotel: abre só os quartos combinados e pode ser cancelada na recepção, sem trocar a fechadura.</p></div>
+  <p class="texto">O segundo destaque saiu hoje às 14h29. O site quasa.io apresentou o Mastra, uma caixa de ferramentas para programadores montarem robôs de IA. Pelo título, ela organiza a ordem das tarefas e mostra o que cada robô fez.</p>
+  <div class="nota"><span class="r">Por que juntar as duas</span><p class="texto">As duas apontam para o mesmo lugar: robô que entra pela porta oficial, com chave própria, e deixa registro do que fez. É o oposto do robô que lê a tela escondido, o que o Signal acabou de barrar.</p></div>
+  <div class="hoje"><span class="r">O que isso significa para você</span>
+    <p>Se algum robô seu usa o padrão de encaixe, confira a versão antes de qualquer atualização. Segundo o iMasters, a mudança exige ajuste em quem já está no ar.</p>
+    <p>E quando o cliente perguntar "isso é seguro?", você tem resposta concreta: <b>chave própria, que se cancela num clique, e registro de tudo</b>.</p>
+  </div>
+</section>
+
+<section class="materia" id="oportunidade">
+  <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+  <p class="abertura">Antes de uma festa grande, o dono do salão confere todas as portas: qual abre, qual tem chave, qual está escorada com um tijolo.</p>
+  <p class="texto">Esta semana o Radar sugeriu o boletim do robô, a ficha do robô e a foto do antes. Falta uma peça para a semana da Black Friday: <b>o mapa das portas</b>.</p>
+  <p class="texto">É uma folha só. Para cada robô ou automação do cliente, três colunas: onde ele entra, se entra pela porta oficial ou pela janela, e o que para se ela fechar.</p>
+  <p class="texto">O Signal mostrou hoje que uma janela pode fechar sem aviso. Ninguém quer descobrir isso no dia 27, com a caixa de mensagens lotada.</p>
+  <div class="traduz"><span class="r">O que fazer com isso</span><p>Ofereça o mapa como uma revisão pré-Black Friday, de preço fechado. Cada porta marcada como "janela" vira uma proposta de troca para o caminho oficial. Você entra pela segurança e sai com o próximo projeto.</p></div>
+  <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span>
+    <p><b>1.</b> Abra uma planilha com três colunas: "onde o robô entra", "porta oficial ou janela?" e "se fechar, o que para?".</p>
+    <p><b>2.</b> Preencha com as automações de um cliente seu: WhatsApp, Instagram, e-mail, sistema de clientes. Uma hora basta.</p>
+    <p><b>3.</b> Mande a folha com uma frase: "na semana da Black Friday, estas são as portas que eu vigiaria". Até segunda, você sabe se a conversa abre.</p>
+  </div>
+</section>
+
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+  <p class="abertura">Cada fato desta edição, com o horário em que apareceu no sinal. Horários de Brasília.</p>
+
+  <ol class="src">
+    <li>🟢 hoje, 13h54 — <b>"Aplicativo de mensagem Signal restringe capturas de tela para impedir que agentes de IA leiam conversas"</b>, Valor Econômico · <a href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxPdkZ3N1lJbzhXQTRMNlI2SEpySG85WEVjbHpWYUd3SkpaUG9vZGZkelhBbExwdU1VQ3ZGd3lRWjl2RFhocVNZbVpBQ1lFc3V2WXFGdk44cjQ0aW1kOEQwLXI4X0RVYnV5UlhRUFU0WUk5MmlFa3RGeGhVZ2FoVzhuQ1B2MTc1NjVSVDBMdXhBY3ZUSTdlS0NCa2oxNUlBcTdkcG9RYzRuZkpHSHBaWGJnd204bU1tYVJURkZ4LUU0Z0xlajRBSjBzT2JYOGFZeFdDMnAtRjVWNEVaTlMtbm9Bbl9EQnpCRkNnOE9EcDhCUDNmN2fSAYICQVVfeXFMTzB0RDZrdmxXN0x0aU91ajdPZ0VqTkM4WEo1a2RVTy1JRjBhalAtMXBVNVRibHMtOFc2WXpFRXBVX2FrNldJSG1RdExPc1JJcUIzb2RpWi0wNmRsUGlQNzdvemxoeVVYOVRnLVVhakg5a29wbDgtMFNublU0N0dsek51eXZfekZUWUxtZXFoU3A1QW5hOFJzQnhxWHljVHVfNXZSRDRoRFJmNmNFZkJ1MnRxdF9FLTB3XzctdlRtY3ItNmNIMEI2LWhNZXVEMlRWd1gzbkxlTGQ4S3BDR0xSZDNEbE5RMmE3cnFJOG1Tc01sbDlLSjBNNGF1bUNOb3Y4LUV3?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 13h59 — <b>"Google Workers Tell Their Employer Not to Punish Schools That Don't Want AI"</b> ("Funcionários do Google pedem à empresa que não puna escolas que não querem IA"), Mother Jones, via Hacker News · <a href="https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/">clique aqui</a></li>
+    <li>🟢 hoje, 13h29 — <b>"Language Models Can Rewrite Their Own Weights"</b> ("Modelos de linguagem podem reescrever os próprios pesos"), arXiv, via Hacker News · <a href="https://arxiv.org/abs/2611.21885">clique aqui</a></li>
+    <li>🟡 ontem, 23h06 — <b>"Motorola confirma nova inteligência artificial para 21 celulares; veja lista"</b>, Oficina da Net · <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOaEZ5TkloY0o4cmU1djdSYmJxRVc1TDZySUYyQTRGVzVLbHdoU3g3UkZ6amZqb1hlb3FES3FHc3Y0cEN3TmJCV2djbkJqVEhFTTJIRDZQb1NTRFR1QlpXUGRTeFRmUTFrbEJDdzZ6RVhhQWU3bkRKR2lRRXRrU1ZTVkhGV0E3eVgzdU5Yd2gzaHRseWhBNGdSY19Ga2l2eGlpbElsSkV4X2h5MEFhbmtmVlBSLVhGbWVJWmpBSVJoMNIBxAFBVV95cUxPM3hjSmxSalBIV0lfanFsZzhxeHRwX2cyV3lnNEk3SWJqOUVvS1B3NVV2d3BkLUlSOEtzWkFZZzBITHJNOTdQV25BTkRfeXhzWm13a1hFakhOcllkcVp5ZGIwUTUzS0pWSTNSQnVVSU1sZUx3S2ZwOTZDV1Fscllfakk5alVWbDlCTndXa1ZjblBnMUptNU9YR0xDb2lvZTdQXy1UZVdFV0xVa1ZwUmVkU1ZyWEdBQU1OQVFPblh5Y3V6RkNm?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 12h03 — <b>"Why there are still no non-WebKit browsers on iOS"</b> ("Por que ainda não há navegadores sem o WebKit no iPhone"), blog da Mozilla, via Hacker News · <a href="https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/">clique aqui</a></li>
+    <li>🟢 hoje, 12h56 — <b>"A IA pode ampliar a segurança. Mas ampliar o quê?"</b>, Unite.AI · <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5aQkVXUEpoanhTY21MaE4wYjhGQzRJZkZNLWtwSjBSWlRqc3ZCV2QxWVBId3VGR1d4azFRWFJDT2NvQXFBQTEwRlV3eGlUU2FMUmRZbUN2bFllbzB0cHJ1OEpFLXNBcDRDRm1TN3F4SGM1M3gtSlNuMQ?oc=5">clique aqui</a></li>
+    <li>🟡 segunda, 6h06 — <b>"Spec do MCP 2025-06-18 traz elicitation, saída estruturada e OAuth: o que ajustar antes de atualizar em produção"</b>, iMasters · <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxORElrLXdaNTMzVVBFUGtZZjN3VnZTbzh4bHdlRGxFVHlxQjY2dU5nbmZYZEdOYkJtZzUzcjVtLWhVblJFb3NSUlZwbU4yYUxZUmd2MG00b2t1Xy0tSmlFMm1OYkExSjV0RElGWnBVNlpwT0lVNVByQTFjT0JYdWlvVGdjaTVvXy14elFwX2hpUUw5N0lZY0VIRmFlMUNBSHhINEU0QVpWd194UGRnd3Q1ekRpcjYyS1dYdkpfbGVQSDVzLTBjQlE?oc=5">clique aqui</a></li>
+    <li>🟡 domingo, 6h11 — <b>"MCP 2025-06-18: elicitation e saída estruturada exigem migrar servers em produção"</b>, iMasters · <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxOWTQwR25zRlBJNVhoN2QwV2djdjFpYWxCV2RZQ3pzSlc3REJtc1Rtbk9rR1FKaV9VQXRObUo3MXg4eXdDSFJEVFl4SlFCcmgwMmpROVZWa3ZFMHBKeENMM1pGMjFPMFVqSjFxM3VRa2lzbXBXd01STHcxMy1iUlprb29ocW1MSV96YW93UXRlanAwYW1Qc0h1dHctTVMyZDNBV2tpS1FlX1VmcWh1RGlrNWRSb3JER1lhN1ZRRWVsZG9TT0ZYZXJR?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 14h29 — <b>"Mastra – Framework TypeScript para agentes de IA, orquestração de fluxos de trabalho e observabilidade"</b>, quasa.io · <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQY3FST3hJTDlVRWFtcWlETTZKd0ZxbThObVV6TVdVVzZLWG5XOUlVUEt4U1A4VXhXY0hTSWFUYWZXTFVpbUxwXzZ0UnJYMUJsd2FoNnJuNGFUNmkycVIwVGFiQXlIOXo1V2lPdUJlbzhKeTc1WVJVb3l4dlNqY2J6cExTY21PWjRFcjE1SXc2RndZYWdlNG9oVGhaOC04NjJPeWpWTDJCeTdsS3lMUDMtTUROTXA4LXNKU3NxcHVWeUdTRFU?oc=5">clique aqui</a></li>
+    <li>🟡 ontem, 21h23 — <b>"Agente de IA da Apple avança e pode mudar acesso de empresas aos clientes"</b>, Economic News Brasil (já contado na edição 087) · <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPendXcmRIbTFYSEIzQndaLTl3cU4xX0Q0MTdhVTNjZkMtRnFIaWlUN29qbHlnVWIydzhiODFxVGw3WkJwbEU4YVRKakVLRWNPQ2p3dnZRdnVLVnJ2eUFMcmxOUmZ2cTVXZnlnM1M4cGVCeDQxNUd1eU1rVkRUaVYyRkl1STA0Yk8xUkN0Y25OT3g3RjA?oc=5">clique aqui</a></li>
+    <li>YouTube — <b>"AI AGENTS: How to CREATE and USE them to AUTOMATE EVERYTHING in 2026 | Full FREE Tutorial"</b> ("Robôs de IA: como criar e usar para automatizar tudo em 2026"), Negócios em Mente, 380.036 visualizações · <a href="https://www.youtube.com/watch?v=UiK9pl8tKao">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>Só os títulos:</b> não abrimos as matérias. Do Signal, não sabemos se a restrição vale para todo mundo, em quais aparelhos, nem como funciona por dentro. Da Motorola, não sabemos o nome da IA nem a data de chegada. Do estudo do arXiv, não sabemos o método nem o tamanho do resultado. Do Mastra, a descrição vem só do título.</p>
+    <p><b>Google e Mozilla:</b> a ligação com o Gemini e com as regras da Apple vem do endereço das matérias, não do texto.</p>
+    <p><b>O MCP:</b> as três novidades vêm dos títulos do iMasters. A especificação leva a data de junho de 2025, mas as matérias são desta semana. Antes de mexer num robô no ar, leia a especificação oficial, não o resumo.</p>
+    <p><b>WhatsApp e Instagram:</b> nada no sinal de hoje diz que eles vão fazer o mesmo que o Signal. A comparação desta edição é um alerta de risco, não uma notícia.</p>
+    <p><b>Black Friday no dia 27:</b> é a data do calendário (última sexta de novembro), não veio do sinal.</p>
+    <p><b>Notícias do Google News (Valor, Oficina da Net, Unite.AI, iMasters, quasa.io):</b> os links passam por um redirecionamento do Google. Antes de citar um número a um cliente, abra a matéria original.</p>
+    <p><b>Ficou de fora:</b> no Product Hunt, Volcano, Rox, Storiara e tripps vieram só com o nome, sem descrição; não dá para dizer o que fazem sem inventar. A estreia da Anthropic na bolsa, o pacote adulterado da Microsoft, a TIM, a Cielo e o Gemini 4 Neon já saíram em edições anteriores. Os assuntos do Google Trends (futebol, previsão do tempo, nomes de famosos) não tinham relação com IA aplicada a negócio.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 089 · sexta-feira, 20 de novembro de 2026<br>
+  Próxima edição: Radar Completo de segunda-feira, 23 de novembro, com o bloco de posicionamento
+</div>
+
+</div>
+</body>
+</html>
