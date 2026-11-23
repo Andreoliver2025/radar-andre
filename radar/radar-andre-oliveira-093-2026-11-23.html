@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 093 · A Cielo lança produto em 12 dias com robôs; a pequena empresa ainda está no curso</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Edição completa</div>
+  <h1>A Cielo passou a lançar produto em 12 dias, não em 50, com robôs de IA. A empresa pequena ainda está na fila do curso</h1>
+  <p class="chamada">Hoje, a Cielo apareceu no noticiário com um número: o preparo de um produto novo caiu de 50,5 para 12,3 dias com robôs de IA. No mesmo dia, o Valor contou que a adoção desses robôs pelas pequenas e médias empresas brasileiras é desigual. Esse vão entre a grande e a pequena é o seu mercado.</p>
+  <div class="dateline">Edição Nº 093 · segunda-feira, 23 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#movimento">O movimento da semana</a><div class="d">A Cielo corta três quartos do tempo de lançar produto. A pequena empresa fica para trás.</div></div></li>
+    <li><div><a href="#novidades">As novidades da semana</a><div class="d">Sete recortes que as edições 091 e 092 não trouxeram: Cielo, Replit, um motor grátis que roda no Mac, a Nvidia e mais.</div></div></li>
+    <li><div><a href="#territorio">Seu território: robôs, automação e encaixes</a><div class="d">Robô agora trabalha com orçamento, meta e um juiz que confere o resultado.</div></div></li>
+    <li><div><a href="#negocio">IA aplicada a negócio</a><div class="d">O robô que lê o que o cliente reclama antes de a empresa decidir o que fazer.</div></div></li>
+    <li><div><a href="#imagem">IA de imagem e vídeo</a><div class="d">Nenhum lançamento grande. O avanço foi a IA que lê a tela como você lê.</div></div></li>
+    <li><div><a href="#mundo">🌍 Para onde o mundo vai</a><div class="d">A maior fabricante de chips de IA ficou dez dias sem o fundador. A lição do "dono insubstituível".</div></div></li>
+    <li><div><a href="#posicao">⭐ Onde você deve estar agora</a><div class="d">Três movimentos: o relatório da voz do cliente, o primeiro robô em 30 dias e o contrato por missão.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links, com horário de Brasília, e o que não deu para confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============ 01 ============ -->
+<section class="materia" id="movimento">
+  <div class="titulo"><span class="n">01</span><h2>O movimento da semana</h2><span class="fio"></span></div>
+  <p class="abertura">Numa cozinha de restaurante, o que atrasa o prato quase nunca é o fogão. É o pré-preparo: lavar, cortar, separar. A Cielo acaba de mostrar que os robôs de IA servem justamente para isso.</p>
+  <p class="texto capitular">Hoje ao meio-dia, o Paraíba Business publicou: a Cielo reduziu de 50,5 para 12,3 dias o preparo de produtos com robôs de IA. A Cielo é a empresa das maquininhas de cartão, presente em boa parte do comércio brasileiro.</p>
+  <p class="texto">O texto do Paraíba Business não abriu para o Radar. Mas o mesmo número aparece no Ecosistema Startup, que diz que são mais de 20 projetos desde julho. O corte é de 76% no tempo médio.</p>
+  <p class="texto">E o detalhe que importa é o "como". Segundo esse relato, os robôs não escrevem o produto. Eles preparam a decisão: leem pesquisas de satisfação, conversas do atendimento e o uso dos produtos. Quem decide o que fazer continua sendo gente.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>Robô de IA (o "agente" das reportagens) é um programa que executa uma tarefa do início ao fim sozinho. Aqui, a tarefa é a do estagiário mais caprichoso: ler tudo o que os clientes disseram e entregar ao chefe um resumo do que fazer primeiro.</p></div>
+  <p class="texto">Agora o outro lado. Às 9h53, o Valor Econômico publicou que a adoção de robôs de IA pelas pequenas e médias empresas brasileiras é desigual. À tarde, a Omie, sistema de gestão usado por pequenas empresas, lançou um curso de IA aplicada aos negócios.</p>
+  <p class="texto">Quando o fornecedor do sistema da pequena empresa precisa dar aula, é sinal de que ela ainda não sabe por onde começar. A grande corta 38 dias de trabalho. A pequena ainda está na fila do curso.</p>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">50,5 → 12,3</div><div class="lbl">dias para <b>preparar um produto novo</b> na Cielo, antes e depois dos robôs. Paraíba Business, hoje</div></div>
+    <div class="numero"><div class="big">76%</div><div class="lbl">de <b>corte no tempo médio</b>, em mais de 20 projetos desde julho, segundo o Ecosistema Startup</div></div>
+    <div class="numero"><div class="big">3 mil</div><div class="lbl">dólares e <b>dois dias</b>: o orçamento de um aplicativo feito por um time de robôs no Replit, segundo o criador</div></div>
+    <div class="numero"><div class="big">32 GB</div><div class="lbl">de memória: o <b>Mac</b> que já roda o novo motor de IA gratuito da Thinking Machines</div></div>
+  </div>
+
+  <div class="olho"><p>"A grande empresa já usa robô para decidir mais rápido. A pequena ainda está aprendendo o que é robô. Quem fizer a ponte entre as duas não precisa disputar com ninguém."</p><div class="quem">A frase para levar à reunião</div></div>
+
+  <div class="nota">
+    <div class="r">O arco das últimas edições</div>
+    <ul class="lista">
+      <li><b>Nº 083:</b> o robô ganhou e-mail, agenda e voz.</li>
+      <li><b>Nº 086:</b> os robôs ganharam gerente. Vigiar o que eles fazem virou negócio.</li>
+      <li><b>Nº 091 (hoje cedo):</b> o robô chegou ao caixa: 40% dos brasileiros topam deixar a IA comprar por eles.</li>
+      <li><b>Nº 092 (hoje):</b> a CrowdStrike pagou 43,9 bilhões de dólares para vigiar o caminho dos robôs.</li>
+      <li><b>Hoje, à tarde:</b> chega o primeiro resultado medido de uma grande brasileira. Robô deixou de ser promessa e virou prazo.</li>
+    </ul>
+  </div>
+
+  <div class="hoje"><div class="r">O que isso significa para você</div>
+    <p>Até agora, o argumento para vender robô era "vai economizar tempo". A partir de hoje você tem um caso brasileiro, conhecido de qualquer lojista, com antes e depois em dias.</p>
+    <p>E a Cielo mostra onde começar: não pelo robô que faz, mas pelo robô que <b>lê o que o cliente disse</b>. Isso é atendimento com segundo cérebro, as suas duas bases. A seção 07 transforma isso em oferta.</p>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades da semana</h2><span class="fio"></span></div>
+  <p class="abertura">Sete recortes que as edições 091 e 092 não trouxeram. O fio que liga quase todos: o robô de IA passou a ser medido como funcionário, com prazo, orçamento e conferência.</p>
+
+  <div class="recortes">
+
+  <article class="recorte">
+    <div class="ordem">01</div>
+    <div>
+      <h3>A Cielo corta de 50,5 para 12,3 dias o preparo de produtos com robôs de IA</h3>
+      <div class="credito"><span class="frescor hoje">🟢 hoje · 12h10</span><span>Paraíba Business · detalhes do Ecosistema Startup</span></div>
+      <p class="texto">É a notícia da seção 01. O relato mais completo diz que os robôs partem de pesquisas de satisfação, do atendimento e do uso dos produtos. Eles organizam as informações antes de qualquer linha de programação.</p>
+      <p class="texto">A priorização, segundo o mesmo texto, continua com as pessoas. O número de 76% vem de um comunicado da Amdocs, a fornecedora de tecnologia, citado pela reportagem.</p>
+      <div class="link"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNYkVLLUo2bDVPZFh3cG94YWJSbWR3eE41Z0xoV0pyS3g1blhERmxqZ3c4a1RBc0xYOFVKTC1nTmUtd2kxQUFGQ1Q0SHZaWFducng4ZThoOVJORkwzY1FVaTBpWXhHSEdiY29WaDNNNmoxUFRwcVRQbk1JTTY5T2tmSzUwX2xMa2llYjRHWHdhdVA2WUJPdG9HZW1uRHV0Y0x2d0F3QQ?oc=5">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  <article class="recorte">
+    <div class="ordem">02</div>
+    <div>
+      <h3>O Replit lança "missões": você dá o orçamento e a meta, um time de robôs trabalha e um juiz confere</h3>
+      <div class="credito"><span class="frescor antes">🟡 domingo · 14h13</span><span>Product Hunt · Replit Missions</span></div>
+      <p class="texto">O Replit é uma ferramenta para criar aplicativos conversando com a IA. Com o Missions, você define um orçamento, coordena um time de robôs e acompanha o progresso contra critérios de sucesso.</p>
+      <p class="texto">No fim, um juiz de IA independente confere o resultado. O criador cita um aplicativo feito em dois dias com 3 mil dólares de orçamento. A página não mostra preço, só que é pago.</p>
+      <div class="traduz"><span class="r">Em português claro</span><p>É a empreitada de obra: preço fechado, prazo e um fiscal que vistoria antes de pagar. O "juiz independente" é um segundo robô que não fez o trabalho e só confere se ele bate com o combinado.</p></div>
+      <div class="link"><a href="https://www.producthunt.com/products/replit">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  <article class="recorte">
+    <div class="ordem">03</div>
+    <div>
+      <h3>Um motor de IA grátis, feito para robôs, roda num Mac comum</h3>
+      <div class="credito"><span class="frescor hoje">🟢 hoje · 0h37</span><span>Product Hunt · Inkling 2 Mini, da Thinking Machines</span></div>
+      <p class="texto">A Thinking Machines lançou o Inkling 2 Mini, um motor de IA pensado para robôs que executam tarefas. É gratuito e de código aberto. Segundo a página, roda num Mac com 32 GB de memória.</p>
+      <p class="texto">Para você, o ponto é o custo. Um robô que roda na máquina do cliente não paga por uso a ninguém. E os dados não saem do escritório.</p>
+      <div class="traduz"><span class="r">Em português claro</span><p>O motor de IA é o que faz o ChatGPT responder. Os grandes cobram por uso, como o minuto na conta de telefone antiga. Código aberto quer dizer que qualquer um pode baixar e rodar por conta. É ter o gerador em casa em vez de pagar a conta de luz.</p></div>
+      <div class="link"><a href="https://www.producthunt.com/products/tinker-2">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  <article class="recorte">
+    <div class="ordem">04</div>
+    <div>
+      <h3>Pequenas e médias empresas brasileiras adotam robôs de IA de forma desigual</h3>
+      <div class="credito"><span class="frescor hoje">🟢 hoje · 9h53</span><span>Valor Econômico</span></div>
+      <p class="texto">O título do Valor resume a manchete da edição. A reportagem não abriu para o Radar, então os números dela ficam de fora. O recado do título basta: entre as pequenas, umas já usam e muitas não começaram.</p>
+      <p class="texto">No mesmo dia, o IT Forum publicou que a governança de IA está defasada em quase metade das empresas do Brasil. Governança é ter regra escrita sobre quem usa a IA, para quê e com que limite.</p>
+      <div class="link"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNFVzLW56LXh5V2xzS2VDbHRxWjM4X2dWVkdVeE9nS3RsY3VZTlp1aDBFSlhjTXl2RmhoV3RqQkg2d1ZNVTJudERWbE1jY0ZEOUJONkFDRTRNU1dsN1VuMHQzemFhNGlJQlpxU3BmVFJfampJTmlVU1plWm44aUtRbUtfeWpfSUR0OUI0bXlrWHVDbjhqOGhmSWJCSHl2OG44amhkdXBaLWlrZGRXQi1GOVNZN0JVTk1QZTR0T29xOWPSAc8BQVVfeXFMT2JuOVBJSTR5cFJMVWRXWTN2RTJJblctTHhlR2NQQVZQOUZBWmZFU3k5cGZXenFldnl6RnZjWXVuQ2NKVklUNm5XMzVBRDJSVE16T1NzUGJyZUYtUnJRRzZnVUxuY1JMdXhrTnVpQUFxQW9Vbm44ZHg1MlUxVU83VjlNemRrWS04NUxwcXY3VG5sUDlWY3l3LVgyZm5MaGZQYTdBanhUczlsWS04YzNNOW9XVGNldHpDcmM0dkhyX3NQZkx0VjFxN2d6QjQ3ZUhV?oc=5">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  <article class="recorte">
+    <div class="ordem">05</div>
+    <div>
+      <h3>A Omie, sistema de gestão de pequenas empresas, lança curso de IA aplicada a negócios</h3>
+      <div class="credito"><span class="frescor hoje">🟢 hoje · 14h11</span><span>Omie</span></div>
+      <p class="texto">Pelo título, o curso quer ajudar pequenas empresas a adotar IA "com segurança". O formato e o preço não vieram no sinal, e a página não abriu.</p>
+      <p class="texto">O sinal é o que importa. Quem vende o sistema que a pequena empresa usa todo dia decidiu que ela precisa de aula. Curso ensina a pensar. Não instala o robô. Esse passo continua sem dono.</p>
+      <div class="link"><a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBpYjVmeERHMGhkeGhha3lCWmo1V05HR3ptSndtcU1zVmk0ejI4T1JMcTRrWkM1SW1jMFJKV0ZzU2xTVWhsODVHSm56T3kxdzQ0MGFXY2JMNmpBaE5jRE9jQU5XWEMzWHNPdTRfQVJR?oc=5">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  <article class="recorte">
+    <div class="ordem">06</div>
+    <div>
+      <h3>A Nvidia traz de volta o fundador, dez dias depois de ele sair</h3>
+      <div class="credito"><span class="frescor hoje">🟢 hoje · 11h00</span><span>CNBC, via Hacker News</span></div>
+      <p class="texto">A Nvidia fabrica os chips onde roda quase toda a IA do mundo. O fundador, Jensen Huang, deixou o comando em 13 de novembro, depois de reportagens sobre a vida pessoal dele.</p>
+      <p class="texto">Hoje, a diretoria o reconduziu por unanimidade, com efeito imediato. Segundo a CNBC, ela disse ter ouvido os níveis mais altos do governo americano. Ele vai depor no Congresso americano em 1º e 3 de dezembro.</p>
+      <div class="traduz"><span class="r">Em português claro</span><p>O Hacker News é o mural onde programadores do mundo todo postam o que saiu. Chip é o "motor físico" dentro do computador. A Nvidia é como a única fábrica de motores de uma cidade cheia de carros: quando ela balança, todo mundo olha.</p></div>
+      <div class="link"><a href="https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  <article class="recorte">
+    <div class="ordem">07</div>
+    <div>
+      <h3>Selecione um texto, aperte uma tecla, e ele vira e-mail, lembrete ou tradução</h3>
+      <div class="credito"><span class="frescor antes">🟡 sábado · 6h34</span><span>Product Hunt · Jot 1.5</span></div>
+      <p class="texto">O Jot é um atalho para Mac com mais de 70 ações sobre qualquer texto: corrigir, traduzir, resumir, virar lembrete ou e-mail. Custa 14,99 dólares, pagos uma vez. Na semana de lançamento, até dia 30, sai por 8,99.</p>
+      <p class="texto">Não é o robô mais esperto da semana. Mas é o tipo de ferramenta que o dono de empresa entende em dez segundos. E é assim que muita gente entra na IA: por um atalho, não por um projeto.</p>
+      <div class="link"><a href="https://www.producthunt.com/products/jot-15">clique aqui para ler</a></div>
+    </div>
+  </article>
+
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: robôs, automação e encaixes</h2><span class="fio"></span></div>
+  <p class="abertura">Ninguém contrata pedreiro dizendo "faz uma casa aí". Combina preço, prazo e quem vistoria. Os robôs de IA estão ganhando esse mesmo contrato.</p>
+  <p class="texto">O Replit Missions, recorte 02, é o exemplo mais claro. O cliente diz quanto pode gastar e o que conta como pronto. Um time de robôs trabalha. No fim, um robô que não participou da obra confere a entrega.</p>
+  <p class="texto">Na edição 092, o Radar falou do crachá: o que cada robô pode tocar. Hoje aparece a outra metade. Além do limite de acesso, o robô ganha limite de gasto e uma régua de sucesso.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>Time de robôs trabalhando juntos é o que você chama de squad. "Critério de sucesso" é a frase que diz quando o serviço acabou. Por exemplo: "responder 100% das mensagens em até 5 minutos". Sem ela, o robô não sabe a hora de parar.</p></div>
+  <p class="texto">Outra novidade muda a conta do custo. O Inkling 2 Mini, recorte 03, é um motor grátis que roda num Mac de 32 GB. Para tarefas simples e repetidas, o robô pode rodar no escritório do cliente, sem conta por uso.</p>
+  <p class="texto">E as regras do jogo seguem em discussão. Hoje cedo, o Let's Money publicou que OpenAI, Anthropic e Google buscam regras comuns para robôs. O texto não abriu. O que existe de concreto é antigo: desde dezembro de 2025, uma fundação reúne os padrões de encaixe dos robôs, incluindo o MCP.</p>
+  <div class="nota">
+    <div class="r">O contrato de um robô, em quatro linhas</div>
+    <ul class="lista">
+      <li><b>Missão:</b> o que ele entrega, numa frase que o dono entende.</li>
+      <li><b>Orçamento:</b> quanto pode gastar por mês, em reais, antes de parar e avisar.</li>
+      <li><b>Régua:</b> o número que diz se deu certo.</li>
+      <li><b>Fiscal:</b> quem confere, e com que frequência. Pode ser um segundo robô, mas o aceite final é humano.</li>
+    </ul>
+  </div>
+  <p class="texto">O MCP citado acima é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Quanto mais padrão a tomada, mais fácil trocar o robô sem refazer a instalação.</p>
+  <div class="hoje"><div class="r">O que isso significa para você</div>
+    <p>Robô sem contrato vira discussão no fim do mês. Robô com missão, orçamento, régua e fiscal vira mensalidade renovada. Você já monta os times. Falta escrever o contrato de cada um, no idioma do dono.</p>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section class="materia" id="negocio">
+  <div class="titulo"><span class="n">04</span><h2>IA aplicada a negócio</h2><span class="fio"></span></div>
+  <p class="abertura">Todo dono de loja tem uma caixa de sugestões que ninguém abre. Hoje ela é o WhatsApp: milhares de mensagens com reclamação, pedido e elogio, e ninguém lendo o conjunto.</p>
+  <p class="texto">A Cielo fez o contrário. Segundo o Ecosistema Startup, os robôs dela partem do que os clientes já disseram: pesquisas, atendimento, uso dos produtos. Só depois a empresa decide o que construir.</p>
+  <p class="texto">Para a empresa pequena, a versão de bolso é simples. Um robô lê as conversas do mês e entrega uma página: o que mais pediram, do que mais reclamaram e quem sumiu sem comprar.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>As empresas grandes chamam isso de "voz do cliente". É o resumo do que o cliente falou, em vez da opinião do dono sobre o que o cliente quer. Fazer a IA consultar as conversas da empresa para responder é o que os técnicos chamam de RAG.</p></div>
+  <p class="texto">Do lado da busca, hoje às 8h25 o iMasters publicou como controlar a citação do seu site nos resumos da IA do Google. Na edição 092, o assunto era medir. Agora aparece o passo seguinte: mexer no que a IA lê de você.</p>
+  <p class="texto">No YouTube, o vídeo "IA em vendas", de Thiago Reis, da Growth Machine, passa de 21 mil visualizações. E circula um tutorial sobre o robô de atendimento da própria Meta para o WhatsApp Business. O assunto saiu do nicho.</p>
+  <div class="olho"><p>"O seu cliente já disse o que quer. Só ninguém leu."</p><div class="quem">A frase para abrir a conversa com qualquer dono de empresa</div></div>
+  <div class="hoje"><div class="r">O que isso significa para você</div>
+    <p>Você monta atendimento e follow-up há anos. O passo novo é virar a conversa do avesso: em vez de só responder o cliente, entregar ao dono o que os clientes disseram. É o mesmo robô, com um relatório no fim. E o relatório é o que o dono mostra para o sócio.</p>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section class="materia" id="imagem">
+  <div class="titulo"><span class="n">05</span><h2>IA de imagem e vídeo</h2><span class="fio"></span></div>
+  <p class="abertura">Funcionário novo aprende o sistema olhando a tela por cima do ombro de quem já sabe. A IA está aprendendo do mesmo jeito.</p>
+  <p class="texto">Sendo honesto: o sinal de hoje não trouxe lançamento de gerador de imagem ou de vídeo. A edição 092 já mostrou o Motionflare, que transforma um site em vídeo, e o gravador LeanTake.</p>
+  <p class="texto">O avanço da semana foi na outra metade da IA de imagem: a que lê. A Greptile, empresa americana, publicou na quinta um teste sobre como um robô deve "ver" a tela do computador para usá-lo sozinho.</p>
+  <p class="texto">O resultado em 172 tarefas: os motores mais fracos melhoram muito quando recebem um mapa da tela. Um deles foi de 5,4% para 29,3% de acerto. O motor mais forte acertou 83,8% só olhando a foto da tela.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>"Ver pela foto da tela" é o robô tirar um print e decidir onde clicar, como você faria. O "mapa da tela" é uma lista escrita de cada botão e campo. O motor forte já não precisa da lista. Ele lê a imagem.</p></div>
+  <p class="texto">Por que isso importa para quem não é técnico? Muita empresa usa sistema antigo, sem tomada para outro sistema se ligar. Até aqui, robô nenhum entrava ali. Um robô que enxerga a tela entra pela mesma porta que o funcionário.</p>
+  <div class="hoje"><div class="r">O que isso significa para você</div>
+    <p>Quando um cliente disser "meu sistema é velho, não dá para automatizar", a resposta mudou. Ainda é experimento, e erra. Mas vale anotar quais clientes estão presos num sistema assim: são os primeiros candidatos quando a tecnologia firmar.</p>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section class="materia" id="mundo">
+  <div class="titulo"><span class="n">06</span><h2>🌍 Para onde o mundo vai</h2><span class="fio"></span></div>
+  <p class="abertura">Padaria que só abre quando o dono está não é empresa, é emprego. A empresa mais valiosa da IA acabou de viver isso em escala gigante.</p>
+  <p class="texto">Por dez dias, a Nvidia ficou sem Jensen Huang, o fundador. Hoje ele voltou, por decisão unânime da diretoria, segundo a CNBC. O mercado inteiro passou a semana perguntando se a empresa funcionava sem ele.</p>
+  <p class="texto">A lição vale para você em dois sentidos. Para os seus clientes: o negócio deles depende de uma pessoa que sabe tudo de cabeça? Para você mesmo: o seu serviço depende só de você?</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>O mercado chama isso de "risco de pessoa-chave". É o medo de que a empresa trave se uma pessoa faltar. O segundo cérebro e os times de robôs documentados são, na prática, o seguro contra esse risco.</p></div>
+  <p class="texto">O outro movimento é o da educação. O Santander já oferece mais de 60 cursos grátis de IA para pequenas empresas, desde outubro. Hoje a Omie lança o dela. Os grandes estão pagando para ensinar a pequena empresa a querer IA.</p>
+  <p class="texto">E no YouTube crescem os tutoriais de "negócio de uma pessoa só com robôs de IA" e de "agência de automação com IA". A ideia de que um profissional sozinho atende como uma equipe virou conteúdo de massa.</p>
+  <div class="nota">
+    <div class="r">Como prosperar na primeira startup, pela lição de hoje</div>
+    <ul class="lista">
+      <li><b>Pegue carona em quem educa.</b> Banco e sistema de gestão estão criando a demanda. Esteja pronto para atender quem sai do curso querendo aplicar.</li>
+      <li><b>Mostre caso com número.</b> A Cielo virou notícia por um antes e depois em dias. O seu primeiro cliente precisa do mesmo: um número que ele repete para os outros.</li>
+      <li><b>Não seja a pessoa-chave do seu próprio negócio.</b> Documente cada robô e cada processo desde o primeiro cliente. É o que deixa você crescer sem travar.</li>
+    </ul>
+  </div>
+  <div class="hoje"><div class="r">O que isso significa para você</div>
+    <p>O espaço aberto é o depois do curso. Milhares de donos de pequena empresa vão terminar uma aula de IA nesta temporada sem saber o que instalar na segunda-feira. Quem chegar com uma oferta de preço fechado para esse momento colhe a procura que os grandes plantaram.</p>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section class="materia" id="posicao">
+  <div class="titulo"><span class="n">07</span><h2>⭐ Onde você deve estar agora</h2><span class="fio"></span></div>
+  <p class="abertura">Cruzando a semana com o que você já entrega, aparecem três movimentos. Eles continuam os seis das edições 091 e 092 sem repeti-los: a voz do cliente, o primeiro robô em 30 dias e o contrato por missão.</p>
+
+  <p class="texto"><b>Movimento 1: o relatório da voz do cliente.</b> A Cielo mostrou que o maior ganho vem de ler o que o cliente já disse antes de decidir. Você monta atendimento, follow-up e segundo cérebro. Juntando os três, sai um produto que a pequena empresa nunca teve.</p>
+  <p class="texto">Por que agora: é a primeira vez que um caso brasileiro conhecido mostra o ganho em dias. E a Black Friday desta sexta vai encher o WhatsApp dos seus clientes. Na semana seguinte, haverá muita conversa para ler e nenhum tempo para ler.</p>
+  <div class="hoje"><div class="r">O primeiro passo, esta semana</div>
+    <p>Escolha um cliente que já usa robô seu no WhatsApp. Junte as conversas dos últimos 30 dias e peça a um robô uma página só: os 5 pedidos mais comuns, as 5 reclamações e as pessoas que perguntaram preço e sumiram. Entregue de graça na segunda, dia 30. Pergunte se ele quer isso todo mês.</p>
+  </div>
+
+  <p class="texto"><b>Movimento 2: o primeiro robô em 30 dias, depois do curso.</b> O Valor diz que a pequena empresa está atrasada. A Omie e o Santander estão dando aula. Falta quem transforme a aula em robô funcionando, com preço fechado.</p>
+  <p class="texto">Você tem atendimento, vendas, tráfego e automação. É a combinação exata para escolher o primeiro robô certo, aquele que paga a conta rápido. Para a maioria, é o atendimento e o acompanhamento no WhatsApp.</p>
+  <div class="traduz"><span class="r">Leia antes de agir</span><p>O Radar não sabe se a Omie tem programa de parceiros nem como é o curso. A ideia não depende disso. O dono que fez qualquer curso de IA é o seu público, venha de onde vier. E o contador é quem fala com esse dono todo mês.</p></div>
+  <div class="hoje"><div class="r">O primeiro passo, esta semana</div>
+    <p>Escreva uma página: "Seu primeiro robô de IA em 30 dias". Um robô só, preço fechado, um número de sucesso combinado antes. Mande para três contadores que atendem pequenas empresas em Fortaleza, oferecendo uma conversa de 20 minutos com os clientes deles.</p>
+  </div>
+
+  <p class="texto"><b>Movimento 3: o contrato por missão.</b> O Replit acabou de transformar "time de robôs" em produto com orçamento, meta e juiz. É exatamente o que você monta com squads e skills. A diferença é a embalagem: o cliente compra a missão cumprida, não as horas.</p>
+  <p class="texto">Isso fecha o arco das últimas edições. Na 090, o "piloto com bônus" atrelava parte do preço ao resultado. Na 092, o crachá dizia o que o robô pode tocar. A missão junta os dois: o limite, o orçamento e a régua, numa folha.</p>
+  <div class="hoje"><div class="r">O primeiro passo, esta semana</div>
+    <p>Pegue um dos seus squads em uso e escreva o contrato dele nas quatro linhas da seção 03: missão, orçamento, régua e fiscal. Comece por este Radar, se quiser, com um robô juiz que confere cada edição. Depois use a mesma folha na próxima proposta.</p>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">08</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+  <p class="abertura">Todos os links, com horário de Brasília. Títulos em inglês vêm com a tradução entre parênteses.</p>
+  <ol class="src">
+    <li>🟢 hoje, 12h10 — <b>"Cielo reduz de 50,5 para 12,3 dias preparo de produtos com agentes de IA"</b>, Paraíba Business · <a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNYkVLLUo2bDVPZFh3cG94YWJSbWR3eE41Z0xoV0pyS3g1blhERmxqZ3c4a1RBc0xYOFVKTC1nTmUtd2kxQUFGQ1Q0SHZaWFducng4ZThoOVJORkwzY1FVaTBpWXhHSEdiY29WaDNNNmoxUFRwcVRQbk1JTTY5T2tmSzUwX2xMa2llYjRHWHdhdVA2WUJPdG9HZW1uRHV0Y0x2d0F3QQ?oc=5">clique aqui</a></li>
+    <li>🟡 — <b>"Cielo: procesadora de pagos corta 76% el tiempo de producto"</b> ("Cielo: empresa de pagamentos corta 76% do tempo de produto"), Ecosistema Startup (lido pelo resumo da busca) · <a href="https://ecosistemastartup.com/?p=133335">clique aqui</a></li>
+    <li>🟡 — <b>"Cielo cuts product build time 76% with AI"</b> ("Cielo corta 76% do tempo de construir produto com IA"), The Rio Times · <a href="https://www.riotimesonline.com/cielo-cuts-product-build-time-76-with-ai/">clique aqui</a></li>
+    <li>🟢 hoje, 9h53 — <b>"Adoção de agentes de IA por PMEs brasileiras é desigual"</b>, Valor Econômico · <a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNFVzLW56LXh5V2xzS2VDbHRxWjM4X2dWVkdVeE9nS3RsY3VZTlp1aDBFSlhjTXl2RmhoV3RqQkg2d1ZNVTJudERWbE1jY0ZEOUJONkFDRTRNU1dsN1VuMHQzemFhNGlJQlpxU3BmVFJfampJTmlVU1plWm44aUtRbUtfeWpfSUR0OUI0bXlrWHVDbjhqOGhmSWJCSHl2OG44amhkdXBaLWlrZGRXQi1GOVNZN0JVTk1QZTR0T29xOWPSAc8BQVVfeXFMT2JuOVBJSTR5cFJMVWRXWTN2RTJJblctTHhlR2NQQVZQOUZBWmZFU3k5cGZXenFldnl6RnZjWXVuQ2NKVklUNm5XMzVBRDJSVE16T1NzUGJyZUYtUnJRRzZnVUxuY1JMdXhrTnVpQUFxQW9Vbm44ZHg1MlUxVU83VjlNemRrWS04NUxwcXY3VG5sUDlWY3l3LVgyZm5MaGZQYTdBanhUczlsWS04YzNNOW9XVGNldHpDcmM0dkhyX3NQZkx0VjFxN2d6QjQ3ZUhV?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 14h11 — <b>"Omie lança curso de IA aplicada aos negócios para ajudar pequenas empresas a adotar a tecnologia com segurança"</b>, Omie · <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBpYjVmeERHMGhkeGhha3lCWmo1V05HR3ptSndtcU1zVmk0ejI4T1JMcTRrWkM1SW1jMFJKV0ZzU2xTVWhsODVHSm56T3kxdzQ0MGFXY2JMNmpBaE5jRE9jQU5XWEMzWHNPdTRfQVJR?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 12h17 — <b>"Governança de IA no Brasil é defasada em quase metade das empresas"</b>, IT Forum · <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE4wdC10RVBDYnZoU2xOYk1FWkRMTGhYbEdVVWN1bjJpQlBqUkxSM0pHTTRqM3RvUFBFSW5US0VTOEVGd0FqSXRLNG5sX2FvYW55X3QxOTZ1VmJaRkFyTExsbFFFR3BRMGRKTHBpQVpUSXcyckNaTXBpNFRB0gF_QVVfeXFMUEt0dG5MS0hWa2xLeHdIN1NSdHgwLWx6VGh2X2JYazRiNS1wWjVCTTBMa21FZUxka2gxc0hDTGU5Q2poWXZ2S3FDNFAxaVE2SW1GVWQwR25KNmxaaWtxakxkN25LSEVidEtsekdWVDlGeGlKQ3RTVl9aUTdHdWF4Yw?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 13h07 — <b>"71% planejam usar agentes de IA, mas só 21% têm governança para controlar riscos"</b>, bra1 · <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWTBBQWdlSHFjU2FsOWFBNURCNEVRS201aTRlSUJic1dCNlRHVGVSQ2ZyU3JIYWMtd19OcVQ1X3BwRHRNNmRqUldlZ3dxM1htM2hLT3pQNnRnckRPQjA1QTh0dTlkdFcxb081cVN3QXpGZjkwQnZ2MGdvU1hmeDNvZkUtcVhfZjAyWFdTLXBxTTdkRWJFd3BNSl90VFk2Q0UtTElKenBfcjV4OUprUmZFQXFtRVBUMm9nNnBVQklkcjRad2s?oc=5">clique aqui</a></li>
+    <li>🟡 domingo, 14h13 — <b>"Replit Missions"</b>, Product Hunt (página lida) · <a href="https://www.producthunt.com/products/replit">clique aqui</a></li>
+    <li>🟢 hoje, 0h37 — <b>"Inkling 2 Mini"</b>, Product Hunt (página lida) · <a href="https://www.producthunt.com/products/tinker-2">clique aqui</a></li>
+    <li>🟢 hoje, 11h00 — <b>"Nvidia Reinstates Jensen Huang as CEO"</b> ("Nvidia reconduz Jensen Huang ao cargo de presidente-executivo"), CNBC, via Hacker News (lido na íntegra) · <a href="https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html">clique aqui</a></li>
+    <li>🟡 sábado, 6h34 — <b>"Jot 1.5"</b>, Product Hunt (página lida) · <a href="https://www.producthunt.com/products/jot-15">clique aqui</a></li>
+    <li>🟢 hoje, 14h19 no Hacker News (texto de quinta, 19) — <b>"How should an LLM see a computer?"</b> ("Como um motor de IA deve enxergar um computador?"), Greptile (lido na íntegra) · <a href="https://www.greptile.com/blog/trex-computer-use">clique aqui</a></li>
+    <li>🟢 hoje, 9h46 — <b>"OpenAI, Anthropic e Google buscam regras comuns para agentes"</b>, Let's Money · <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE1qcVE5cmI2NFg1N0k5Uy1TMU9kU2Vucl9jRl91eWNwVGh4ejBkNGY1c3gwVmFoZ1EtZVU1dV9aVC16Wi1HbnpJWjlFcWhLbHVWNUJiSFU5R29PQVp1cGhDU0w1VVRHRHlrUFFILUNvVlFvcUJYVzJyVTNtcw?oc=5">clique aqui</a></li>
+    <li>🟡 dezembro de 2025 — <b>"Agentic AI Foundation"</b> (a fundação dos padrões de robôs de IA), OpenAI · <a href="https://openai.com/pt-BR/index/agentic-ai-foundation/">clique aqui</a></li>
+    <li>🟢 hoje, 8h25 — <b>"AI Overviews: como controlar a citação do seu site"</b>, iMasters · <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQeGw1NDdHZlc0WDd5bjJJZ29FOVNDa2N4WHNITlVuRjdnOVBSNXo4WG1UOEswVWNRM0dXSUdiLTV1bnoybnRmUjFKWkdRelRLTDRIWXVWeVpSTXFZVzFSZnA3YWhpVTB2V2ZKQTlfYVBaeEJCTjltd0tqNXBnQkdtd3FjZFhQQkw2X01nSlBBVWZKRlEyYkt1OVV0SU9VWHEzRE1SZEFucjEtWjdz?oc=5">clique aqui</a></li>
+    <li>🟢 hoje, 12h35 — <b>"Concentre-se nos agentes de IA antes de se preocupar com um apocalipse da IA"</b>, Unite.AI (só o título) · <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9HNDJpOUlNc3NhVkZUOUZTMXZmTy1vR2xnTVdHYzlSNEtsd3B2SEtkVnZjcmtGekN1RDhBMjRBZTVpQ1hoamF2SmRsLXdfSWZPaDhfdGI2ZU15S25scVE?oc=5">clique aqui</a></li>
+    <li>🟡 5 de outubro — <b>"Santander X oferece mais de 60 cursos online gratuitos de IA, marketing digital, finanças e dados para PMEs"</b>, Santander · <a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOSjRtSVExejAtWmpVb29naVhwZlROQmpsak15OVFNZUN1cUpQRXRueGpYRmZmNFkwbV9FXzhac0YyZ3NsUUJpUm84QTA5TXJaVmZuZk0tUUZuN1hJbFdDNmxhN0otRzlVME9NdEpnV1FVN21oZXd6QUt0ZG81WUhWTnkxRGlKc3kwMkJOcEVYN0FDQWFvZGNWZ1NBdWlSb01tR2IyR0t5UjFsYTZaYWtZYzlmend5cnVZY0R1dDlPRWhwamNSb3F1aTc4Nms1bzBMbUhDdXN3?oc=5">clique aqui</a></li>
+    <li>YouTube — <b>"AI in Sales: Learn the Best Strategies"</b> ("IA em vendas: as melhores estratégias"), Thiago Reis, Growth Machine, 21.496 visualizações · <a href="https://www.youtube.com/watch?v=I11SWK7ZYW4">clique aqui</a></li>
+    <li>YouTube — <b>"WhatsApp Business Automation: How to Use the Meta Business Agent?"</b> ("Como usar o robô de atendimento da Meta no WhatsApp Business"), visualizações não informadas · <a href="https://www.youtube.com/watch?v=vdjN537MpsA">clique aqui</a></li>
+    <li>YouTube — <b>"How to Build a 1-Person Business with AI Agents"</b> ("Como montar um negócio de uma pessoa só com robôs de IA"), visualizações não informadas · <a href="https://www.youtube.com/watch?v=YD8uRumP8cM">clique aqui</a></li>
+    <li>YouTube — <b>"How to Start an AI Automation Agency in 2026"</b> ("Como abrir uma agência de automação com IA em 2026"), visualizações não informadas · <a href="https://www.youtube.com/watch?v=i4z0kCcByY8">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>Lido na íntegra:</b> a CNBC, o texto da Greptile e as páginas do Product Hunt (Replit Missions, Inkling 2 Mini, Jot). Os links do Google News (Paraíba Business, Valor, Omie, IT Forum, bra1, Let's Money, iMasters, Unite.AI) não abriram: vêm só do título.</p>
+    <p><b>Cielo:</b> o 50,5 e o 12,3 estão no título do Paraíba Business. O 76%, os mais de 20 projetos e o "como" vêm do Ecosistema Startup, lido pelo resumo da busca, que cita um comunicado da Amdocs de agosto. O The Rio Times pergunta se o 76% pode ser verificado. Ninguém de fora conferiu o número.</p>
+    <p><b>71% e 21%:</b> o Radar não achou a pesquisa original. Um estudo da Deloitte, citado por terceiros, traz os mesmos 21% de governança madura, mas com 97% planejando adotar. Por isso o número não entrou na grade da seção 01.</p>
+    <p><b>Regras comuns entre OpenAI, Anthropic e Google:</b> o Radar não sabe o que o Let's Money descreve. A busca só achou conversas sem data nem formato definidos e a fundação de padrões de dezembro de 2025.</p>
+    <p><b>Nvidia:</b> a CNBC fala em alta forte das ações, mas o Radar não conferiu o período da alta, por isso ela ficou de fora. Os motivos da saída foram resumidos de propósito: são a vida pessoal de Huang e não mudam a leitura de negócio.</p>
+    <p><b>Inkling 2 Mini e Replit:</b> "roda num Mac de 32 GB" e "3 mil dólares em dois dias" são afirmações de quem lançou, não testes do Radar. Os preços em dólar do Jot são o que a página informava hoje.</p>
+    <p><b>Os três movimentos da seção 07 são sugestão do Radar, não notícia.</b> O efeito da Black Friday no volume de conversas é leitura do Radar.</p>
+    <p><b>Ficou de fora:</b> o navegador Ladybird, o Kagi Mail, o Branchery e o Modem, por não terem ligação com o seu terreno. A CrowdStrike, o Search Console, o Figma, o Orpheus, o Motionflare e a Black Friday já saíram nas edições 091 e 092 de hoje. Os assuntos do Google Trends (futebol, música e política) não têm ligação com IA.</p>
+  </div>
+</section>
+
+<div class="assinatura">
+  Radar André Oliveira · Nº 093 · segunda-feira, 23 de novembro de 2026<br>
+  Próxima edição: Pulso de terça-feira, 24 de novembro
+</div>
+
+</div>
+
+</body>
+</html>
