@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 094 · A escala 5x2 começa em 16 de dezembro: quem atende o cliente nas horas que sobram?</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+<header class="capa">
+  <div class="selo">🧠 Radar André Oliveira · Edição completa</div>
+  <h1>Daqui a 23 dias, o Brasil trabalha um pouco menos. Quem vai atender o cliente nas horas que sobram?</h1>
+  <p class="chamada">A escala 6x1 acaba em 16 de dezembro. O teto cai de 44 para 42 horas por semana, e o STF negou mais prazo às empresas. Comércio e serviços vão ter de cobrir o mesmo balcão com menos horas de gente. É a primeira vez que uma lei cria, com data marcada, a pergunta que o seu trabalho responde.</p>
+  <div class="dateline">Edição Nº 094 · segunda-feira, 23 de novembro de 2026</div>
+  <div class="fio"></div>
+</header>
+
+<div class="sumario">
+  <div class="rot">Nesta edição</div>
+  <ol>
+    <li><div><a href="#movimento">O movimento da semana</a><div class="d">A escala 5x2 começa em 16 de dezembro. O que muda e por que é assunto seu.</div></div></li>
+    <li><div><a href="#novidades">As novidades da semana</a><div class="d">Seis recortes que as edições de mais cedo não trouxeram: a escala, a Exame, robôs que pedem licença e mais.</div></div></li>
+    <li><div><a href="#territorio">Seu território: robôs, automação e encaixes</a><div class="d">O robô que trabalha de noite e pede licença antes de mexer. É o formato que o dono aceita.</div></div></li>
+    <li><div><a href="#negocio">IA aplicada a negócio</a><div class="d">Atendimento e acompanhamento no WhatsApp: os vídeos de hoje mostram imobiliária e clínica.</div></div></li>
+    <li><div><a href="#imagem">IA de imagem e vídeo</a><div class="d">A Microsoft lança o MAI Image 2.7, um editor de imagem que já briga no topo.</div></div></li>
+    <li><div><a href="#mundo">🌍 Para onde o mundo vai</a><div class="d">De um lado, o medo da IA. Do outro, um dono de loja com duas horas a menos por funcionário.</div></div></li>
+    <li><div><a href="#posicao">⭐ Onde você deve estar agora</a><div class="d">Três movimentos com o primeiro passo de cada, todos com prazo: 16 de dezembro.</div></div></li>
+    <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links e o que o Radar não conseguiu confirmar.</div></div></li>
+  </ol>
+</div>
+
+<!-- ============================ 01 ============================ -->
+<section class="materia" id="movimento">
+  <div class="titulo"><span class="n">01</span><h2>O movimento da semana</h2><span class="fio"></span></div>
+  <p class="abertura">As três edições de hoje falaram de robô comprando, de robô com crachá e de robô lendo o cliente. Esta fala de uma coisa mais simples: o relógio. A partir de 16 de dezembro, cada funcionário com carteira assinada trabalha duas horas a menos por semana.</p>
+  <p class="texto capitular">A Emenda Constitucional 141, promulgada em 16 de outubro, troca a escala 6x1 pela 5x2. São cinco dias de trabalho e dois de folga paga. O teto semanal cai de 44 para 42 horas agora, e para 40 horas em dezembro de 2027. O salário não pode cair.</p>
+  <p class="texto">A CNC, que representa o comércio, e a CNI, que representa a indústria, pediram mais tempo ao Supremo. No dia 12, o ministro Flávio Dino negou. O prazo ficou mantido, segundo O Liberal e o Jornal Contábil. Dino deu só um alívio: durante a transição, o dia pode ter até 8 horas e 24 minutos sem virar hora extra.</p>
+  <p class="texto">Na decisão, Dino citou os setores que mais sentem a mudança: comércio, serviços, turismo, hotelaria e agricultura. É exatamente quem vive de atender cliente no balcão, no telefone e no WhatsApp. E hoje a Startupi publicou que a nova escala traz desafios e também oportunidades para as startups.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Escala 6x1</b> é trabalhar seis dias e folgar um. <b>5x2</b> é trabalhar cinco e folgar dois. Pense numa loja que abria de segunda a sábado com a mesma equipe. Agora, alguém da equipe precisa folgar um dia a mais. Ou a loja contrata, ou fecha mais cedo, ou alguém (ou alguma coisa) cobre o buraco.</p></div>
+
+  <div class="numeros">
+    <div class="numero"><div class="big">23</div><div class="lbl">dias até <b>16 de dezembro</b>, quando a escala 5x2 começa a valer. O Liberal, 12 de novembro</div></div>
+    <div class="numero"><div class="big">44 → 42</div><div class="lbl">horas por semana: o <b>novo teto</b>. Em dezembro de 2027, cai para 40. Diário do Pará</div></div>
+    <div class="numero"><div class="big">32,5%</div><div class="lbl">dos empregos com carteira estão em <b>empresas de até 19 pessoas</b>, pela RAIS de 2024. Diário do Pará</div></div>
+    <div class="numero"><div class="big">51%</div><div class="lbl">dos donos de <b>pequenos negócios</b> acham que a regra não vai atingi-los, segundo o Sebrae. Diário do Pará</div></div>
+  </div>
+
+  <p class="texto">Olhe o último número com atenção. Metade dos pequenos donos acha que a mudança não é com eles. Em 23 dias, muitos vão descobrir que é. Duas horas por pessoa parecem pouco. Numa loja de dez funcionários, são vinte horas por semana. É meio funcionário que some do quadro.</p>
+
+  <div class="olho"><p>"A lei tirou duas horas de cada funcionário. O cliente não tirou nenhuma. Alguém vai ter de atender nesse intervalo."</p><div class="quem">A frase para levar à reunião</div></div>
+
+  <div class="nota">
+    <div class="r">O arco das edições de hoje</div>
+    <ul class="lista">
+      <li><b>Nº 091:</b> o robô do cliente começou a comprar sozinho.</li>
+      <li><b>Nº 092:</b> o dinheiro grande foi para dar crachá e limite aos robôs.</li>
+      <li><b>Nº 093:</b> a grande empresa usa robô para decidir. A pequena ainda está no curso.</li>
+      <li><b>Nº 094:</b> a pequena ganhou um prazo. A partir de 16 de dezembro, o robô deixa de ser curiosidade e vira cobertura de horário.</li>
+    </ul>
+  </div>
+
+  <div class="hoje"><div class="r">O que isso significa para você</div><p>Até hoje, você vendia robô de atendimento como "ganho de eficiência". É uma ideia abstrata, e o dono adia. A partir de agora, você pode vender cobertura de um buraco concreto, com data marcada por lei. A conversa deixa de ser "quer modernizar?" e vira "quem atende o seu WhatsApp no horário que a equipe vai perder?".</p></div>
+</section>
+
+<!-- ============================ 02 ============================ -->
+<section class="materia" id="novidades">
+  <div class="titulo"><span class="n">02</span><h2>As novidades da semana</h2><span class="fio"></span></div>
+  <p class="abertura">Seis recortes que as edições 091, 092 e 093 não trouxeram. A Cielo, a CrowdStrike, o Search Console e a Nvidia já saíram mais cedo e não se repetem aqui.</p>
+
+  <div class="recortes">
+    <article class="recorte">
+      <div class="ordem">01</div>
+      <div>
+        <h3>O Supremo mantém a data: a escala 5x2 começa em 16 de dezembro</h3>
+        <div class="credito"><span class="frescor antes">🟡 12 de novembro</span><span>O Liberal · Jornal Contábil · Diário do Pará</span></div>
+        <p class="texto">O ministro Flávio Dino negou o pedido da CNC e da CNI por mais prazo. O teto cai para 42 horas em 16 de dezembro e para 40 horas em dezembro de 2027. Durante a transição, sem acordo coletivo, o dia pode ter 8 horas e 24 minutos sem contar hora extra.</p>
+        <p class="texto">Ficou para o Congresso a regra das micro e pequenas empresas e a dos operadores de telemarketing, que têm jornada de seis horas. A decisão ainda vai ao plenário do STF.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p><b>Acordo coletivo</b> é o combinado entre o sindicato e a empresa. <b>Plenário</b> é quando os onze ministros do Supremo votam juntos. Por ora vale a decisão de um ministro só, mas a data está de pé.</p></div>
+        <div class="link"><a href="https://www.oliberal.com/economia/dino-nega-pedido-de-empresarios-e-mantem-prazo-para-inicio-do-fim-da-escala-6x1-1.1193651">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">02</div>
+      <div>
+        <h3>A Exame: empresas brasileiras disputam o mercado de automação com as estrangeiras</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 13h06</span><span>Exame</span></div>
+        <p class="texto">A Exame publicou hoje que empresas brasileiras desafiam o domínio estrangeiro no mercado de automação. O Radar não conseguiu abrir o texto, então fica o título.</p>
+        <p class="texto">Mesmo só com o título, o sinal é útil. A maior revista de negócios do país está tratando automação como uma briga de mercado, não como coisa de nerd. Você joga nesse time, o nacional.</p>
+        <div class="link"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNRExfVkhzZXgzMDNXaHFaM1labzRlM2V4blNGcTJDNmFSdlNxR3oyMmVqZzdLYWVmdFVYZ3lVbnJGU0dacV9XMUtnUk5NaVVqQUFJdUUxY3VsWDJ5Snoyek1rcXlYUVdicHo3bTMzblhjNDVnVnVwLVBQa1hPMkNYbkk3c1JZWjVwQ0FVMDZWRi1FSGlHeWhKei1fM1ROeG1YaktfQTFRU0dEUFVqUVJn?oc=5">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">03</div>
+      <div>
+        <h3>Um robô feito na Europa que pede a sua decisão antes de mexer em qualquer coisa</h3>
+        <div class="credito"><span class="frescor antes">🟡 sábado · 6h06</span><span>Product Hunt · Chat with Work</span></div>
+        <p class="texto">O Chat with Work cria robôs a partir de uma frase sua. Eles se ligam a mais de 1.920 ferramentas e param para pedir a sua aprovação antes de mudar algo. O slogan diz tudo: "eles trabalham, você decide". Dá para testar com 300 créditos, sem cartão.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Product Hunt</b> é uma vitrine onde produtos novos são lançados. <b>Integração</b> é a tomada por onde um sistema conversa com outro: o robô se pluga na agenda, na planilha, no e-mail.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/chat-with-work">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">04</div>
+      <div>
+        <h3>Um vigia para os robôs que trabalham a noite toda no seu computador</h3>
+        <div class="credito"><span class="frescor antes">🟡 domingo · 14h08</span><span>Product Hunt · Plango</span></div>
+        <p class="texto">O Plango relançou com a frase "deixe os seus robôs de IA trabalharem a noite toda, com segurança". Ele roda no próprio Mac ou Windows. Vigia o que os robôs fazem, protege arquivos e senhas e bloqueia conexões estranhas.</p>
+        <p class="texto">É o mesmo assunto da edição 092, a portaria dos robôs, só que no tamanho de um computador de escritório.</p>
+        <div class="link"><a href="https://www.producthunt.com/products/plango">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">05</div>
+      <div>
+        <h3>Uma mesa de trabalho com IA que promete achar os seus próximos 100 clientes</h3>
+        <div class="credito"><span class="frescor antes">🟡 domingo · 5h35</span><span>Product Hunt · Omi Work</span></div>
+        <p class="texto">O Omi Work pega uma tarefa longa, mostra o plano antes de começar e divide o trabalho entre vários robôs menores. Ele pesquisa na internet e entrega documento, planilha com fórmulas e apresentação. O slogan fala em achar os próximos 100 clientes.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>Dividir entre <b>robôs menores</b> é o que você chama de squad: um time de robôs, cada um com uma parte da tarefa, como uma cozinha em que um corta, outro cozinha e outro monta o prato.</p></div>
+        <div class="link"><a href="https://www.producthunt.com/products/omi-work">clique aqui para ler</a></div>
+      </div>
+    </article>
+
+    <article class="recorte">
+      <div class="ordem">06</div>
+      <div>
+        <h3>Yann LeCun, um dos pais da IA moderna, acusa a Anthropic de exagerar no medo</h3>
+        <div class="credito"><span class="frescor hoje">🟢 hoje · 14h07</span><span>Hacker News · post de Yann LeCun</span></div>
+        <p class="texto">Subiu hoje no Hacker News um post de Yann LeCun, um dos pais da IA moderna. O título acusa Dario Amodei, presidente da Anthropic, de inflar os perigos da IA. O objetivo, segundo LeCun, seria tornar ilegais os motores de IA de código aberto e ficar no controle.</p>
+        <div class="traduz"><span class="r">Em português claro</span><p>O <b>Hacker News</b> é um mural onde programadores do mundo todo postam o que saiu. <b>Código aberto</b> quer dizer que qualquer um pode baixar e rodar por conta. A briga é sobre quem vai poder fabricar o motor da IA: só as gigantes ou qualquer um.</p></div>
+        <div class="link"><a href="https://twitter.com/ylecun/status/2124550037912920090">clique aqui para ler</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ 03 ============================ -->
+<section class="materia" id="territorio">
+  <div class="titulo"><span class="n">03</span><h2>Seu território: robôs, automação e encaixes</h2><span class="fio"></span></div>
+  <p class="abertura">Dois lançamentos do fim de semana, o Chat with Work e o Plango, vendem a mesma coisa: o robô trabalha quando você não está, mas não faz nada grave sem a sua licença.</p>
+  <p class="texto">Pense num caseiro. Você viaja e ele cuida da casa. Mas, se quiser trocar a fechadura, ele liga antes. Esse é o formato que os fabricantes descobriram que o dono aceita. Não é o robô que decide tudo, nem o que só responde "oi".</p>
+  <p class="texto">Para a nova escala, isso encaixa direitinho. O robô cobre o horário que a equipe perdeu: responde, agenda, manda o lembrete, puxa quem sumiu. O que for decisão (desconto, troca, reclamação séria) fica numa fila para o primeiro humano que chegar.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>O termo técnico para isso é <b>"humano no circuito"</b>. Quer dizer que o robô para e espera alguém aprovar antes de dar um passo arriscado. É como o caixa de supermercado que chama o gerente para liberar um estorno.</p></div>
+  <p class="texto">Também por isso o Omi Work mostra o plano antes de começar. Quem compra robô quer ver o que ele vai fazer. Num cliente pequeno, essa transparência vale mais do que qualquer recurso novo.</p>
+  <div class="hoje"><div class="r">O que isso significa para você</div><p>Nos seus próximos robôs de atendimento, deixe escrito o que ele resolve sozinho e o que ele passa para gente. Uma lista de duas colunas. É ela que vai convencer o dono a ligar o robô no horário em que ninguém da equipe está olhando.</p></div>
+</section>
+
+<!-- ============================ 04 ============================ -->
+<section class="materia" id="negocio">
+  <div class="titulo"><span class="n">04</span><h2>IA aplicada a negócio</h2><span class="fio"></span></div>
+  <p class="abertura">Os vídeos que o YouTube devolve hoje para "IA no atendimento e acompanhamento" falam todos a mesma língua: WhatsApp, imobiliária, clínica e lembrete automático.</p>
+  <p class="texto">Um ensina a parar de perder contato na imobiliária com acompanhamento automático no WhatsApp. Outro mostra um robô para clínicas que atende, marca consulta e faz o acompanhamento. Um terceiro promete "acompanhamento humanizado, sem parecer robô". E um quarto monta uma secretária de IA com o WhatsApp oficial, de graça e rodando no próprio computador.</p>
+  <p class="texto">Imobiliária e clínica são justamente negócios que abrem no sábado e vivem de retorno rápido. São os primeiros a sentir a escala 5x2. Quem responde em cinco minutos fecha. Quem responde na segunda perde.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Follow-up</b> é o acompanhamento: a mensagem de volta para quem pediu orçamento e sumiu. É o vendedor de loja antiga que ligava na semana seguinte perguntando se você ainda queria a geladeira.</p></div>
+  <p class="texto">Na busca, o vento segue contra o clique. A TradingView perguntou no dia 14 se o Modo AI do Google está matando o modelo de negócio da busca na internet. Quanto menos gente chega pelo Google, mais vale não perder quem chega pelo WhatsApp.</p>
+  <div class="hoje"><div class="r">O que isso significa para você</div><p>O atendimento no WhatsApp deixou de ser diferencial e virou o produto mais pedido do mercado. O seu jeito de ganhar não é ter o robô. É ter o robô certo para um setor, com o horário certo e a lista do que ele pode fazer sozinho.</p></div>
+</section>
+
+<!-- ============================ 05 ============================ -->
+<section class="materia" id="imagem">
+  <div class="titulo"><span class="n">05</span><h2>IA de imagem e vídeo</h2><span class="fio"></span></div>
+  <p class="abertura">A Microsoft colocou no ar o MAI Image 2.7, um editor de imagem com IA. Ele apareceu no Product Hunt no dia 17 e, nos rankings de edição, já briga com os melhores da OpenAI.</p>
+  <p class="texto">No ranking da Arena, que mede a preferência de quem testa às cegas, ele ficou em terceiro na edição de peças comerciais. No da Artificial Analysis, em segundo, colado no primeiro. Ainda é uma versão de teste, e com bem menos votos que os rivais.</p>
+  <p class="texto">É como um carro novo que aparece no pódio logo na primeira corrida, mas com poucas voltas na pista. Vale testar, não vale apostar a campanha inteira nele ainda.</p>
+  <div class="traduz"><span class="r">Em português claro</span><p><b>Editor de imagem com IA</b> é diferente de gerador. Você entrega a foto do produto e pede "troque o fundo", "ponha na mesa de madeira", "deixe com luz de fim de tarde". Ele mexe na foto que já existe, em vez de inventar uma do zero.</p></div>
+  <p class="texto">Para o pequeno comércio, editar vale mais que gerar. A loja já tem a foto do produto. O que falta é transformar uma foto em dez peças para a semana. E, com a nova escala, sobra menos hora de gente para isso também.</p>
+  <div class="hoje"><div class="r">O que isso significa para você</div><p>Pegue a foto de um produto de um cliente e rode a mesma edição no MAI Image 2.7 e na ferramenta que você já usa. Compare lado a lado. Se ganhar, você tem uma peça a mais no pacote de "vitrine semanal" sem gastar mais hora.</p></div>
+</section>
+
+<!-- ============================ 06 ============================ -->
+<section class="materia" id="mundo">
+  <div class="titulo"><span class="n">06</span><h2>🌍 Para onde o mundo vai</h2><span class="fio"></span></div>
+  <p class="abertura">Duas conversas correm ao mesmo tempo. Uma é sobre medo da IA. A outra é sobre um dono de loja com duas horas a menos por funcionário. Só uma delas paga a sua conta.</p>
+  <p class="texto">De um lado, o Fantástico falou dos perigos da IA para a humanidade, com mais de 1,5 milhão de visualizações. A BBC Brasil explicou por que tanto analista fala em "bolha". E LeCun acusou a Anthropic de exagerar o medo para controlar o mercado.</p>
+  <p class="texto">Do outro lado, a vida real. A lei mudou, o prazo é 16 de dezembro, e o dono precisa resolver o sábado. Esse dono não quer saber se a IA vai dominar o mundo. Quer saber quem responde o cliente às 17h de sábado.</p>
+  <div class="olho"><p>"Enquanto o mundo discute se a IA é perigosa, o seu cliente está discutindo a escala do sábado. Fale da escala."</p><div class="quem">A frase para separar você do barulho</div></div>
+  <p class="texto">Para quem está na primeira startup, a lição é velha e funciona: venda para uma dor com data marcada. Uma mudança de lei é o melhor tipo de dor. Ela tem prazo, atinge todo mundo do setor e não depende de convencer ninguém de que o problema existe.</p>
+  <div class="nota">
+    <div class="r">Leia antes de agir</div>
+    <ul class="lista">
+      <li>O Radar não é advogado. A regra fina (acordo coletivo, banco de horas, setores com jornada especial) é com o contador ou o advogado do cliente.</li>
+      <li>O que você vende é a cobertura do atendimento, não a interpretação da lei.</li>
+      <li>A regra para micro e pequenas empresas ainda vai ao Congresso. Pode haver alívio para elas.</li>
+    </ul>
+  </div>
+  <div class="hoje"><div class="r">O que isso significa para você</div><p>Não entre no debate do medo. Use a mudança de lei como porta. Ela é notícia, tem data e põe o dono para fazer conta, que é quando ele compra.</p></div>
+</section>
+
+<!-- ============================ 07 ============================ -->
+<section class="materia" id="posicao">
+  <div class="titulo"><span class="n">07</span><h2>⭐ Onde você deve estar agora</h2><span class="fio"></span></div>
+  <p class="abertura">Cruzando a semana com o que você já entrega, aparecem três movimentos. Todos têm o mesmo prazo, 16 de dezembro, e continuam os das edições 091 a 093 sem repeti-los.</p>
+
+  <p class="texto"><b>Movimento 1: o plantão do WhatsApp.</b> Um pacote fechado para comércio e serviços: o robô cobre o horário que a equipe perde com a 5x2. Ele responde, agenda, manda lembrete e puxa quem sumiu. O que for decisão vai para uma fila que o primeiro humano a chegar resolve.</p>
+  <p class="texto">Por que você: é a soma exata de atendimento, IA conversacional, follow-up e automação. Por que agora: a lei deu prazo, e metade dos pequenos donos ainda não percebeu que é com eles. Quem chegar antes de 16 de dezembro chega antes do susto.</p>
+  <div class="hoje"><div class="r">O primeiro passo, esta semana</div><p>Escolha um setor só: clínica ou imobiliária, os dois dos vídeos de hoje. Liste dez em Fortaleza que abrem no sábado. Mande uma mensagem curta: "A partir de 16 de dezembro, sua equipe trabalha duas horas a menos por semana. Quem vai responder o seu WhatsApp nesse horário?" Ofereça montar um piloto antes do dia 16.</p></div>
+
+  <p class="texto"><b>Movimento 2: a conta das horas.</b> Uma planilha de uma página que o dono preenche em cinco minutos. Número de funcionários vezes duas horas dá as horas perdidas por semana. Do lado, as tarefas repetitivas que um robô pode assumir: responder preço, marcar horário, confirmar, cobrar retorno.</p>
+  <p class="texto">Isso fecha o arco com a edição 093, que sugeriu falar com contadores. Agora o contador tem um assunto urgente para levar ao cliente, e você entrega a ferramenta. Ele é quem está recebendo a pergunta "e agora, o que eu faço com a escala?".</p>
+  <div class="traduz"><span class="r">Em português claro</span><p>A conta é simples de propósito. Dez funcionários vezes duas horas são vinte horas por semana. É meio funcionário. O dono entende na hora porque é dinheiro e é gente, não é tecnologia.</p></div>
+  <div class="hoje"><div class="r">O primeiro passo, esta semana</div><p>Monte a planilha com três linhas: funcionários, horas perdidas e tarefas que o robô assume. Mande para os três contadores da edição 093 com uma frase: "Seus clientes vão perguntar da escala até o dia 16. Isto aqui responde a parte do atendimento."</p></div>
+
+  <p class="texto"><b>Movimento 3: a série "23 dias para a 5x2".</b> O Radar vira conteúdo. Uma publicação curta por dia útil até 16 de dezembro, cada uma com um setor e uma tarefa que o robô cobre. Sempre com fonte, nunca com promessa jurídica.</p>
+  <p class="texto">Quase ninguém está falando de IA e escala 5x2 juntos. Os sites de contabilidade falam da lei. Os canais de IA falam de robô. Quem amarrar os dois primeiro vira a referência local no assunto, e o assunto dura até 2027, quando o teto cai de novo.</p>
+  <div class="hoje"><div class="r">O primeiro passo, esta semana</div><p>Publique amanhã a primeira peça: "Sua loja perde meio funcionário em 16 de dezembro. Faça a conta." Use os números da seção 01 com as fontes. No fim, convide quem quiser a planilha do movimento 2 a mandar mensagem. Cada pedido vira um contato para o movimento 1.</p></div>
+</section>
+
+<!-- ============================ 08 ============================ -->
+<section class="materia" id="fontes">
+  <div class="titulo"><span class="n">08</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+  <p class="abertura">Todos os links, com horário de Brasília. Títulos em inglês vêm com a tradução entre parênteses.</p>
+  <ol class="src">
+    <li>🟡 12 de novembro, 16h20 — <b>"Dino nega pedido de empresários e mantém prazo para início do fim da escala 6x1"</b>, O Liberal (lido na íntegra) · <a href="https://www.oliberal.com/economia/dino-nega-pedido-de-empresarios-e-mantem-prazo-para-inicio-do-fim-da-escala-6x1-1.1193651">clique aqui</a></li>
+    <li>🟡 13 de novembro, 9h07 — <b>"Escala 5x2: Dino flexibiliza regras e muda adaptação das empresas"</b>, Jornal Contábil (lido na íntegra) · <a href="https://jornalcontabil.com.br/noticia/escala-5x2-dino-flexibiliza-regras-e-muda-adaptacao-das-empresas/">clique aqui</a></li>
+    <li>🟡 12 de novembro, 13h07 — <b>"Escala 5x2: o que muda nas empresas a partir de dezembro"</b>, Diário do Pará (lido na íntegra) · <a href="https://diariodopara.com.br/seu-bolso/escala-5x2-o-que-muda-nas-empresas-a-partir-de-dezembro/">clique aqui</a></li>
+    <li>🟢 hoje, 5h00 — <b>"Nova escala de trabalho no Brasil traz desafios e oportunidades para startups"</b>, Startupi (só o título) · <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNTmZIX01NWjRfSWszMXdLU21HREgwUWFEWVVkRTgxNXRPSmRpT3RYM1BBc0FFMXZVdC0yelpFN2NTMUZYbWxmZnpaT1JXOWhZdjhKU0U3THFTb3pBbm9tNEJFaVlIaHZZNXBlTS1uNkNNSEc4QlFPaWlRRW4xYTZkUEtZSQ?oc=5">clique aqui</a></li>
+    <li>🟡 1º de junho — <b>"Menos dias, mesma tração: como proteger seu caixa e evitar o turnover na nova escala de trabalho"</b>, Startupi, artigo de opinião (lido na íntegra) · <a href="https://startupi.com.br/menos-dias-mesma-tracao-como-proteger-seu-caixa-e-evitar-o-turnover-na-nova-escala-de-trabalho/">clique aqui</a></li>
+    <li>🟢 hoje, 13h06 — <b>"Empresas brasileiras desafiam domínio estrangeiro no mercado de automação"</b>, Exame (só o título) · <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxNRExfVkhzZXgzMDNXaHFaM1labzRlM2V4blNGcTJDNmFSdlNxR3oyMmVqZzdLYWVmdFVYZ3lVbnJGU0dacV9XMUtnUk5NaVVqQUFJdUUxY3VsWDJ5Snoyek1rcXlYUVdicHo3bTMzblhjNDVnVnVwLVBQa1hPMkNYbkk3c1JZWjVwQ0FVMDZWRi1FSGlHeWhKei1fM1ROeG1YaktfQTFRU0dEUFVqUVJn?oc=5">clique aqui</a></li>
+    <li>🟡 sábado, 6h06 — <b>"Chat with Work"</b> ("Converse com o trabalho"), Product Hunt (página lida) · <a href="https://www.producthunt.com/products/chat-with-work">clique aqui</a></li>
+    <li>🟡 domingo, 14h08 — <b>"Plango"</b>, Product Hunt (página lida) · <a href="https://www.producthunt.com/products/plango">clique aqui</a></li>
+    <li>🟡 domingo, 5h35 — <b>"Omi Work"</b>, Product Hunt (página lida) · <a href="https://www.producthunt.com/products/omi-work">clique aqui</a></li>
+    <li>🟢 hoje, 14h07 — <b>"Dario is hyping the dangers so OSS models are illegal and *he* stays in control"</b> ("Dario exagera os perigos para tornar ilegais os modelos abertos e ficar no controle"), post de Yann LeCun, via Hacker News (só o título) · <a href="https://twitter.com/ylecun/status/2124550037912920090">clique aqui</a></li>
+    <li>🟡 17 de novembro, 15h42 — <b>"MAI Image 2.7"</b>, Product Hunt · <a href="https://www.producthunt.com/products/mai-image-2-3">clique aqui</a></li>
+    <li>🟡 27 de outubro — <b>"MAI Image 2.7 reaches the image-editing top tier, but Microsoft has not priced the preview"</b> ("MAI Image 2.7 chega ao topo da edição de imagem, mas a Microsoft não divulgou o preço da versão de teste"), Magica (lido na íntegra) · <a href="https://magica.com/news/microsoft-mai-image-2-7-preview-rankings">clique aqui</a></li>
+    <li>🟡 14 de novembro — <b>"O Modo AI está matando o modelo de negócios de busca da internet?"</b>, TradingView (só o título) · <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE5fZ3E4OV9jeFNEcEk4dzRSbXVhejk5aXJNb1AxTm9lamNWa1dsN3YtblVKSVJDWjc0SU5wbVVUblc2TnRGT1NpZ1ByR1RXeDZqQ0FWRlljUllweFJzVkV2Q0NKN3Vwdw?oc=5">clique aqui</a></li>
+    <li>YouTube — <b>"Pare de Perder Leads na sua IMOBILIARIA: Follow-up Automático no WhatsApp"</b>, visualizações não informadas · <a href="https://www.youtube.com/watch?v=lgnhN5vE18M">clique aqui</a></li>
+    <li>YouTube — <b>"I created an AI AGENT on WhatsApp for CLINICS"</b> ("Criei um robô de IA no WhatsApp para clínicas"), visualizações não informadas · <a href="https://www.youtube.com/watch?v=sCEIyXbo9PY">clique aqui</a></li>
+    <li>YouTube — <b>"IA para WhatsApp: Como fazer follow-up inteligente e humanizado sem parecer robô"</b>, visualizações não informadas · <a href="https://www.youtube.com/watch?v=KiY6fFw79hs">clique aqui</a></li>
+    <li>YouTube — <b>"Build Your AI Secretary — It Installs Itself: Official WhatsApp + Open Source + Local AI [Free]"</b> ("Monte a sua secretária de IA: WhatsApp oficial, código aberto e IA no seu computador, de graça"), visualizações não informadas · <a href="https://www.youtube.com/watch?v=P7Dy1vdCVhw">clique aqui</a></li>
+    <li>YouTube — <b>"Fantástico: Futuro das inteligências artificiais e os perigos para a humanidade"</b>, g1, 1.510.204 visualizações · <a href="https://www.youtube.com/watch?v=D2KIu_yDeJk">clique aqui</a></li>
+    <li>YouTube — <b>"Por que cada vez mais analistas falam em 'bolha' da inteligência artificial prestes a estourar"</b>, BBC News Brasil, 320.930 visualizações · <a href="https://www.youtube.com/watch?v=65AnDszCevA">clique aqui</a></li>
+  </ol>
+
+  <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span>
+    <p><b>Lido na íntegra:</b> O Liberal, Jornal Contábil, Diário do Pará, o artigo de junho da Startupi, a Magica e as páginas do Product Hunt (Chat with Work, Plango, Omi Work). Os links do Google News (Startupi de hoje, Exame, TradingView) e o post de LeCun não foram abertos: vêm só do título.</p>
+    <p><b>Data da escala:</b> a maioria das fontes diz 16 de dezembro. Uma das buscas citou 15 de dezembro. O 15 é o último dia para fechar acordo coletivo, o que pode explicar a confusão. A decisão de Dino ainda vai ao plenário do STF e pode mudar.</p>
+    <p><b>Sebrae, 51%:</b> o número vem do Diário do Pará, que não informa a data nem o método da pesquisa. Os 32,5% da RAIS de 2024 também vêm do jornal, não da base oficial.</p>
+    <p><b>"Meio funcionário":</b> é conta do Radar (10 pessoas vezes 2 horas = 20 horas, sobre uma jornada de 42). Serve para conversa, não é laudo.</p>
+    <p><b>MAI Image 2.7:</b> as fontes não batem na data. A Magica registra a versão de teste em 27 de outubro, e o Product Hunt traz o lançamento em 17 de novembro. Os rankings são de outubro, com poucos votos. Uma busca citou o primeiro lugar num ranking de 16 de novembro, mas o Radar não conferiu.</p>
+    <p><b>Product Hunt:</b> "1.920 integrações", "trabalhar a noite toda com segurança" e "achar os próximos 100 clientes" são promessas de quem lançou, não testes do Radar. Os horários dos dois lançamentos de domingo são os do registro no Product Hunt.</p>
+    <p><b>Os três movimentos da seção 07 são sugestão do Radar, não notícia.</b> Nada aqui é orientação jurídica ou trabalhista.</p>
+    <p><b>Ficou de fora:</b> o fim do site sobre a ARM, a briga do app com a Apple, o Kagi Mail, o Ladybird e o vazamento do GTA 6, por não terem ligação com o seu terreno. A Cielo, a Omie, a CrowdStrike, o Search Console, o Figma, a Nvidia e a governança já saíram nas edições 091 a 093 de hoje. Os assuntos do Google Trends (futebol, TV e celebridades) não têm ligação com IA.</p>
+  </div>
+</section>
+
+<div class="assinatura">Radar André Oliveira · Nº 094 · segunda-feira, 23 de novembro de 2026<br>Próxima edição: Pulso de terça-feira, 24 de novembro</div>
+</div>
+
+</body>
+</html>
