@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 099 · As gigantes estão aposentando o &quot;digite 1&quot;. O orçamento que o pequeno deixa esfriar continua sem ninguém cuidando.</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>As gigantes estão aposentando o "digite 1". O orçamento que o pequeno deixa esfriar continua sem ninguém cuidando.</h1>
+    <p class="chamada">A Vivo anunciou que vai trocar a gravação do "digite 1" por uma IA que conversa. O Itaú também usa IA para atender cada cliente de um jeito. Enquanto isso, o pequeno negócio ainda perde venda no "vou pensar e te aviso". Esse buraco é o seu terreno.</p>
+    <div class="dateline">Edição Nº 099 · terça-feira, 24 de novembro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O atendimento das grandes virou conversa com robô. E o do pequeno?</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Seis recortes: Vivo, Itaú, a pesquisa das regras, o follow-up no YouTube, a Motiva e um lançamento na vitrine.</div></div></li>
+      <li><div><a href="#territorio">Seu território: automação</a><div class="d">Ferramenta para montar robô, e a Uber mostrando como vigiar o que eles fazem.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">Ressuscitar orçamento parado com mensagem de retomada, antes de vender qualquer robô.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Todos os links e o que ficou sem confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">A edição da manhã mostrou a Cielo cortando prazo. A seguinte mostrou que achar cliente ficou mais caro. Esta fecha o dia no balcão: o que acontece depois que o cliente chega.</p>
+    <p class="texto capitular">Neste mês, a Vivo anunciou que vai substituir a gravação do "digite 1" por uma IA que conversa. O Itaú contou que usa IA para dar atendimento personalizado. E hoje cedo o iMasters repetiu o número da semana: 95% das empresas brasileiras querem robôs de IA, só 27% têm regras para eles.</p>
+    <p class="texto">É como a troca do orelhão pelo celular. As grandes já trocaram. O pequeno negócio ainda atende como orelhão: quando dá, se tiver alguém perto.</p>
+    <p class="texto">Atendimento e follow-up, que é voltar a falar com quem pediu preço e sumiu, estão na sua base de força. As grandes provam que o cliente aceita conversar com robô. O pequeno ainda não tem quem monte isso para ele.</p>
+
+    <div class="numeros">
+      <div class="numero"><b>95%</b><span>das empresas brasileiras dizem querer robôs de IA (iMasters, hoje)</span></div>
+      <div class="numero"><b>27%</b><span>têm regras maduras para controlar esses robôs</span></div>
+      <div class="numero"><b>1 bilhão de reais</b><span>é o que a Motiva diz investir em inovação, com plataforma nova de IA</span></div>
+      <div class="numero"><b>19 mil</b><span>visualizações de um tutorial de follow-up com IA no YouTube</span></div>
+    </div>
+
+    <div class="olho"><p>"As gigantes trocaram o 'digite 1' por conversa. O pequeno ainda deixa o orçamento morrer no 'vou pensar'."</p></div>
+
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Você não precisa convencer ninguém de que robô atende bem. Vivo e Itaú fizeram isso por você. Use os dois como exemplo na conversa com o dono de negócio, e venda o pedaço que as grandes não olham: o cliente que pediu preço e não voltou.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Seis recortes. Dois deles são do começo do mês, mas explicam o dia de hoje.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>A Vivo vai trocar o "digite 1" por uma IA que conversa</h3>
+          <div class="credito"><span class="frescor antes">🟡 3 e 5 de novembro</span><span>TELETIME News e IT Forum</span></div>
+          <p class="texto">Dois veículos de telecomunicação noticiaram o plano. A gravação que pede para você apertar números vai dar lugar a uma IA que entende o que você fala. O IT Forum chama de "IA agêntica" e fala em prazo até 2026.</p>
+          <p class="texto">Quando uma operadora desse tamanho faz isso, o cliente final se acostuma a conversar com máquina. Isso facilita a sua venda no pequeno negócio.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>A "URA" é a gravação do "para segunda via, digite 1". "IA agêntica" é um robô que executa a tarefa do início ao fim sozinho, em vez de só responder pergunta.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFBDbzJFcks1SzIzYTN5QnExT05BQ0taajVXOEhrQ0REQTNJX2FDVHB4UUpvTm42Nndqb1h6TVRJQWkyQ052SlBEdjctN1JUMndSX0U3NUtVWHpQM1UwMjg2MjRPUjRCdzdqS01DYXdXU1NhUnE0NEJhSGRjTmF4Ujg?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>O Itaú usa IA para atender cada cliente de um jeito</h3>
+          <div class="credito"><span class="frescor antes">🟡 3 de novembro</span><span>TI INSIDE Online</span></div>
+          <p class="texto">O banco usa IA que conversa para ampliar o atendimento personalizado. A matéria saiu no mesmo dia da notícia da Vivo.</p>
+          <p class="texto">Banco é o setor mais cauteloso com cliente. Se o Itaú confia a conversa a um robô, o argumento "meu cliente não aceita" perde força.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQSWdNVU5zR2liYXJFTnUzLXlodEVvdmIwTVdvZ2FZYjRSRUNFZXpadWgzM1BZa3RYaHFtcEo4WGFrbzAtT1F5SFlLbE5wUjluTUd3OEJDN1dYOGxybXRXUTlYekZjLTZ6NG9MVUxaekhMcjRoTE8yOWdnTll0MXotWmFPVFB1ZTR5NW5hcC1JSlRmQ3pUVUpIRkFqREtnalhrTUZIUmYzQXlZRkU4dEstcXlEWTVtX1NwVFdyNQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Quase todo mundo quer robô de IA. Só uma em quatro empresas tem regra para ele</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje cedo</span><span>iMasters</span></div>
+          <p class="texto">A pesquisa que a Exame publicou ontem à noite apareceu hoje no iMasters: 95% querem adotar, 27% têm governança madura. A edição de segunda já tinha trazido o número. Ele voltou porque continua sendo o dado da semana.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Governança" é o manual de regras: o que o robô pode responder, o que precisa passar por uma pessoa e quem confere o trabalho. É o regulamento interno da loja, só que para a máquina.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQZl9ZT0dKdmlKTXRfU0doQXpwbEp5LVRSalpjQ25KTE5XME5mMkc3VVpqbkVMOHJrYjhLUVNLd3VMTTRnbGV0dHExX0RyenJJNlNoVWQwZkVjVC1odWN5dnhhc2xQc0czYnVMVXdKQ242ckVwbkpuSXpLZlJUUWJlOThOa3lraHg2MlBiM3hrOXRPZ3hxVG1lRXp4Q0VJamRGd1M3ckUyWVFUb0xvOFZmYW0xcUVIZw?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>No YouTube, "follow-up com IA" virou aula de sete minutos</h3>
+          <div class="credito"><span class="frescor antes">🟡 data não informada</span><span>YouTube</span></div>
+          <p class="texto">Na busca do Radar, o tutorial mais visto sobre o tema é do canal RBMIDIA: follow-up com IA no Kommo, um programa de controle de clientes, com 19 mil visualizações. Ao lado aparece "Desenhei um follow-up com IA para imobiliárias", de Rafael Milagre, com 4,6 mil.</p>
+          <p class="texto">Quem procura isso é gente de agência e de vendas. É sinal de demanda, e também de que a concorrência está estudando.</p>
+          <div class="link"><a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>A Motiva anuncia 1 bilhão de reais em inovação e uma plataforma nova de IA</h3>
+          <div class="credito"><span class="frescor antes">🟡 19 de novembro</span><span>IT Forum</span></div>
+          <p class="texto">A Motiva é a antiga CCR, das concessões de rodovias, aeroportos e metrôs. O título fala no investimento e numa plataforma de IA, sem detalhe de para que serve.</p>
+          <p class="texto">Vale como termômetro. Empresa de estrada e trilho colocando IA no centro mostra que o assunto saiu da sala de tecnologia.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQcVQxeW9pTFFwNmZHeENNUXBlVDFaSW9hZC1yeUNZWEV1QjY1NFk1UEFva0J6Sm94ZkNwa3dpVC1zWGtSMUR2TzhuQWFYbVc0dTh1SHR3LVQ1VjFEa0ZSZXEtbndmbTdYUkczdzhuSG1NT0QwLW5aUDJuR2lBeWZwWnVn0gGCAUFVX3lxTFBxVDF5b2lMUXA2Zkd4Q01RcGVUMVpJb2FkLXJ5Q1lYRXVCNjU0WTVQQW9rQnpKb3hmQ3Brd2lULXNYa1IxRHZPOG5BYVhtVzR1OHVIdHctVDVWMURrRlJlcS1ud2ZtN1hSRzN3OG5IbU1PRDAtblpQMm5HaUF5ZnBadWc?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Um lançamento chamado "Claude Ship" entra na vitrine</h3>
+          <div class="credito"><span class="frescor hoje">🟢 ontem às 18h</span><span>Product Hunt</span></div>
+          <p class="texto">O produto foi apresentado por Chris Messina, um caçador de lançamentos conhecido na vitrine. A página fica dentro da área do Claude Code, o assistente de programação da Anthropic.</p>
+          <p class="texto">O Radar não conseguiu abrir a descrição. Fica aqui como pista para você olhar, não como notícia confirmada.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O Product Hunt é a vitrine onde produtos novos são lançados. Estar lá não quer dizer que o produto é bom. Quer dizer que alguém quer que você o veja.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/claude-code">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="territorio">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">Montar o robô ficou mais fácil. Vigiar o que ele faz virou assunto de empresa grande.</p>
+    <p class="texto">O primeiro destaque é o Mastra. É uma caixa de ferramentas para programadores montarem robôs de IA, organizarem a sequência de tarefas e acompanharem o que cada robô fez. Ele saiu no quasa.io na sexta passada.</p>
+    <p class="texto">O segundo é da Uber. O iMasters explicou o "Uber Secure AI Framework", o jeito como a empresa protege os próprios robôs de IA. Em outras palavras, a Uber escreveu o manual de segurança que 73% das empresas ainda não têm.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>"Framework" é um kit de peças prontas, como um jogo de montar com manual. "Observabilidade" é a câmera de segurança do robô: um registro de tudo o que ele fez, para você conferir depois.</p></div>
+    <p class="texto">Pense num restaurante. O Mastra é a cozinha montada. O manual da Uber é a câmera na cozinha e o checklist da vigilância sanitária. O dono pequeno quer as duas coisas, mas não vai montar nenhuma sozinho.</p>
+    <div class="nota">
+      <div class="r">O que liga as notícias de hoje</div>
+      <ul class="lista">
+        <li><b>A peça ficou barata:</b> kits como o Mastra deixam montar robô sem começar do zero.</li>
+        <li><b>A regra ficou cara:</b> a Uber precisou escrever o próprio manual, e só 27% das empresas têm um.</li>
+        <li><b>O alerta continua valendo:</b> na edição 098, o kit oficial de robôs da Microsoft foi adulterado na loja de peças.</li>
+      </ul>
+    </div>
+    <div class="hoje">
+      <div class="r">O que isso significa para você</div>
+      <p>Todo robô de follow-up que você entregar precisa vir com o "manual da loja" junto. Uma página: o que o robô pode prometer, quando passa para uma pessoa e onde fica o registro das conversas. É isso que separa você de quem só sabe montar.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Ressuscitar o orçamento parado. Primeiro à mão, com mensagem escrita pela IA. O robô vem depois que o número aparecer.</p>
+    <p class="texto">Todo pequeno negócio tem uma gaveta de "vou pensar e te aviso". Clínica, imobiliária, oficina, escola. Ninguém volta a falar com essas pessoas porque falta tempo, não porque falta vontade.</p>
+    <p class="texto">Você sabe escrever a mensagem que reabre a conversa e sabe automatizar o envio. Mas vender robô logo de cara é pedir confiança demais. Vender o resultado de uma semana é pedir pouca.</p>
+    <p class="texto">É como a amostra grátis no supermercado. A pessoa prova o queijo antes de levar a peça inteira.</p>
+    <div class="hoje">
+      <div class="r">O primeiro passo, hoje, em uma tarde</div>
+      <p>Escolha um negócio de Fortaleza que você conhece. Peça a lista de quem pediu orçamento nos últimos 30 dias e não fechou. Com a IA, escreva três versões de mensagem de retomada no tom do dono, e ele mesmo envia pelo WhatsApp. Em sete dias, conte quantos responderam. Esse número é o seu argumento para vender o robô.</p>
+    </div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Todos os links, na ordem em que aparecem. Títulos originais entre aspas.</p>
+    <ol class="src">
+      <li>TELETIME News: "Vivo vai substituir URA de atendimento por IA conversacional", 03/11/2026. <a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFBDbzJFcks1SzIzYTN5QnExT05BQ0taajVXOEhrQ0REQTNJX2FDVHB4UUpvTm42Nndqb1h6TVRJQWkyQ052SlBEdjctN1JUMndSX0U3NUtVWHpQM1UwMjg2MjRPUjRCdzdqS01DYXdXU1NhUnE0NEJhSGRjTmF4Ujg?oc=5">link via Google Notícias</a></li>
+      <li>IT Forum: "Vivo substitui URA por IA agêntica no atendimento até 2026", 05/11/2026. <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBCdVJkeW41Q1drT3JDcnJMNGVpTDNtNXR3YzNqaTd4a2dPVDNVOUZteElYY2UxSEFMVHN3NnJoZGUwUmlJeVh6Um5pSEhBX3NWbjNsUmZaMDlPTHRUcGw0am53SlhjdTBiQnBiekpPLVZoUGxnUVHSAXtBVV95cUxQaU8xc0xEOUx0UTlHY2FWUy05VTVLWG9OaVNOd0xOcGVMZF91V1FQQjRvVUFGS2hTUXdoUWJONTBhb2pMZk1QeGJSNFFWeG5iTi04V3d6eFlPdkJsUUdDUkpNd2FmRG95b2poVmxyeGhnTzl2dnN0RW9nSlU?oc=5">link via Google Notícias</a></li>
+      <li>TI INSIDE Online: "Itaú utiliza IA conversacional para ampliar o atendimento personalizado aos clientes", 03/11/2026. <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQSWdNVU5zR2liYXJFTnUzLXlodEVvdmIwTVdvZ2FZYjRSRUNFZXpadWgzM1BZa3RYaHFtcEo4WGFrbzAtT1F5SFlLbE5wUjluTUd3OEJDN1dYOGxybXRXUTlYekZjLTZ6NG9MVUxaekhMcjRoTE8yOWdnTll0MXotWmFPVFB1ZTR5NW5hcC1JSlRmQ3pUVUpIRkFqREtnalhrTUZIUmYzQXlZRkU4dEstcXlEWTVtX1NwVFdyNQ?oc=5">link via Google Notícias</a></li>
+      <li>iMasters: "IA agêntica no Brasil: 95% querem adotar, só 27% têm governança", 24/11/2026. <a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQZl9ZT0dKdmlKTXRfU0doQXpwbEp5LVRSalpjQ25KTE5XME5mMkc3VVpqbkVMOHJrYjhLUVNLd3VMTTRnbGV0dHExX0RyenJJNlNoVWQwZkVjVC1odWN5dnhhc2xQc0czYnVMVXdKQ242ckVwbkpuSXpLZlJUUWJlOThOa3lraHg2MlBiM3hrOXRPZ3hxVG1lRXp4Q0VJamRGd1M3ckUyWVFUb0xvOFZmYW0xcUVIZw?oc=5">link via Google Notícias</a></li>
+      <li>Exame: "95% das empresas brasileiras querem adotar IA agêntica, mas só 27% têm governança madura", 23/11/2026. <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQNmVQeWJacVdhdE9BSExTMHNIS3BTR3h3MkpZX3Yzb2JZX2hqYUVPRWhMUEZuMThlb1BxbWRCVFVFMk90TE5NcVd1WmF0M05QT0lyOTFyOTVVWUNVcC0zZENJLXJLNTdfemhWWm4weTlCNFNnV0hpOUZRQVY3dElRY1N4ckx2ZWhBSm5KVlBudFowSG11X3FNcDFJRVNBd3pLM1phN1RrdF92ZjZ3MU9USnNlbExkQ1NtRC1fSmlCaXNaRGhZaE5F?oc=5">link via Google Notícias</a></li>
+      <li>YouTube, RBMIDIA: "Kommo CRM | Follow-up com IA - [SUA OPERAÇÃO NO AUTOMÁTICO] em 7 minutos", 19.196 visualizações na coleta. <a href="https://www.youtube.com/watch?v=2jbWT5-oAoU">youtube.com</a></li>
+      <li>YouTube, Rafael Milagre: "DESENHEI um follow-up com IA para IMOBILIÁRIAS", 4.666 visualizações na coleta. <a href="https://www.youtube.com/watch?v=2y-9KI1mddo">youtube.com</a></li>
+      <li>IT Forum: "Motiva investe R$ 1 bi em inovação e apresenta nova plataforma de IA", 19/11/2026. <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQcVQxeW9pTFFwNmZHeENNUXBlVDFaSW9hZC1yeUNZWEV1QjY1NFk1UEFva0J6Sm94ZkNwa3dpVC1zWGtSMUR2TzhuQWFYbVc0dTh1SHR3LVQ1VjFEa0ZSZXEtbndmbTdYUkczdzhuSG1NT0QwLW5aUDJuR2lBeWZwWnVn0gGCAUFVX3lxTFBxVDF5b2lMUXA2Zkd4Q01RcGVUMVpJb2FkLXJ5Q1lYRXVCNjU0WTVQQW9rQnpKb3hmQ3Brd2lULXNYa1IxRHZPOG5BYVhtVzR1OHVIdHctVDVWMURrRlJlcS1ud2ZtN1hSRzN3OG5IbU1PRDAtblpQMm5HaUF5ZnBadWc?oc=5">link via Google Notícias</a></li>
+      <li>Product Hunt: "Claude Ship", apresentado por Chris Messina em 23/11/2026. <a href="https://www.producthunt.com/products/claude-code">producthunt.com/products/claude-code</a></li>
+      <li>quasa.io: "Mastra – Framework TypeScript para agentes de IA, orquestração de fluxos de trabalho e observabilidade", 20/11/2026. <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQY3FST3hJTDlVRWFtcWlETTZKd0ZxbThObVV6TVdVVzZLWG5XOUlVUEt4U1A4VXhXY0hTSWFUYWZXTFVpbUxwXzZ0UnJYMUJsd2FoNnJuNGFUNmkycVIwVGFiQXlIOXo1V2lPdUJlbzhKeTc1WVJVb3l4dlNqY2J6cExTY21PWjRFcjE1SXc2RndZYWdlNG9oVGhaOC04NjJPeWpWTDJCeTdsS3lMUDMtTUROTXA4LXNKU3NxcHVWeUdTRFU?oc=5">link via Google Notícias</a></li>
+      <li>iMasters: "Uber Secure AI Framework: como protege agentes de IA", 16/11/2026. <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPSTFPbzBZbDJMdmFxWWYyMjJzclhxSXE3VG5Ja0llNHo1R0ZhMjZGMDUzWVRFRjctZGlGbDZmM0lfWm40OEQyTnJnelZYcTAyLWNqWm9HNFozZ1lvLTRRWmlIVmgwMHJsTFRFTHY0SFUtbHU4ZHRyRjJKd19MVEN0d1c2OUN1WFBfRUNGYkpMaWh5djR5M25PMDQ1NWxzaDZOODQydHViZk5pUmludnZ6QmtB?oc=5">link via Google Notícias</a></li>
+    </ol>
+    <div class="traduz">
+      <span class="r">O que não deu para confirmar — leia antes de usar</span>
+      <p><b>Esta é a terceira edição do dia.</b> A 097 e a 098 saíram hoje com o mesmo sinal. A 099 não repete a Cielo, a Ticket, a Omie, a tday, a Granular.Build nem o ataque ao kit da Microsoft, que só aparece como lembrete na seção 03.</p>
+      <p><b>Notícias lidas só pelo título:</b> nenhuma matéria foi aberta nesta coleta. O que está escrito sobre Vivo, Itaú, Motiva, Mastra e Uber vem dos títulos. Ficaram sem confirmar: o prazo exato da Vivo, quais áreas do Itaú usam a IA, para que serve a plataforma da Motiva e o que o manual da Uber exige.</p>
+      <p><b>Motiva = antiga CCR:</b> a troca de nome é informação pública anterior a esta edição, não vem do sinal de hoje.</p>
+      <p><b>Claude Ship:</b> só o nome, quem apresentou e o endereço da página. Não sabemos o que o produto faz.</p>
+      <p><b>YouTube:</b> as visualizações são as da coleta de hoje. O Radar não sabe a data de publicação dos vídeos.</p>
+      <p><b>A oportunidade da seção 04 é sugestão do Radar, não notícia.</b> Não há dado público, no sinal de hoje, de quantos orçamentos parados voltam com mensagem de retomada. O teste de sete dias existe justamente para produzir esse número.</p>
+      <p><b>Ficou de fora:</b> o resto do Hacker News (processadores, iPod, investigação de apostas), lançamentos do Product Hunt sem ligação clara com IA de negócio e os assuntos do Google Trends (música, reality show, calendário).</p>
+    </div>
+  </section>
+
+  <div class="assinatura">Radar André Oliveira · Nº 099 · terça-feira, 24 de novembro de 2026<br>Próxima edição: Pulso de quarta-feira, 25 de novembro</div>
+</div>
+</body>
+</html>
