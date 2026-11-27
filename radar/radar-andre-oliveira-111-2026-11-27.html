@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 111 · Seus robôs de IA ganharam um diário de bordo, e ele não sai do seu computador</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>Seus robôs de IA ganharam um diário de bordo, e ele não sai do seu computador</h1>
+    <p class="chamada">À tarde, a edição 110 mostrou um complemento de IA que mandava dados para fora sem avisar. No começo da noite, apareceu no mural dos programadores um programa que faz o contrário. Ele junta tudo o que seus robôs já fizeram num mapa só, sem enviar nada para a internet.</p>
+    <div class="dateline">Edição Nº 111 · sexta-feira, 27 de novembro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O SessionGraph e por que o histórico dos robôs vale dinheiro para quem trabalha com eles.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">Seis recortes: o autor que tirou do ar um livro famoso de IA, um curso para empresas, a Flytour, o robô da Meta no WhatsApp e a "bolha".</div></div></li>
+      <li><div><a href="#automacao">Seu território: automação</a><div class="d">Uma agência de 32 pessoas trocada por 16 robôs, e a memória que deixa um time de robôs lembrar do que já fez.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O relatório do mês dos robôs: um serviço que começa no seu próprio computador.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">As fontes, a hora de cada uma e o que não deu para confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">Quem trabalha com robôs de IA todo dia acumula centenas de conversas com eles. Até hoje, isso ficava espalhado e esquecido. Agora há um jeito gratuito de ver tudo num mapa.</p>
+    <p class="texto capitular">Hoje às 18h07, o SessionGraph apareceu no Hacker News. O site diz que o programa lê o histórico de conversas dos seus robôs de programação, monta um índice e abre um aplicativo para você navegar. Tudo acontece no seu computador.</p>
+    <p class="texto">A lista de compatíveis tem 58 programas, entre eles o Claude Code, o Codex, o Cursor e o Gemini CLI. Dá para buscar uma conversa antiga, retomar de onde parou ou ver o que mudou. O site também oferece um modo de comparar o seu mapa com o de amigos.</p>
+    <p class="texto">Pense no diário de bordo de um navio. Ninguém lê todo dia, mas, quando algo dá errado ou quando alguém pergunta "o que foi feito este mês?", é ele que responde.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>O Hacker News é o mural onde programadores do mundo todo postam o que saiu. "Sessão" é cada conversa de trabalho com o robô, do pedido até a entrega. O site chama de "harness" o programa onde o robô trabalha, como o Claude Code. É a cabine do robô.</p></div>
+    <div class="olho"><p>O robô trabalha a noite toda e não lembra de nada no dia seguinte. Quem guarda a memória dele guarda o valor do trabalho.</p></div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Você roda squads todo dia. O histórico dessas conversas é a prova do que foi entregue e a matéria-prima do seu conteúdo. Até ontem, ele estava espalhado em pastas. A partir de hoje, há uma ferramenta gratuita que mostra esse histórico como um mapa. Antes de instalar, passe nela o raio-x da edição 110.</p></div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Seis recortes da noite e da semana que as edições 108, 109 e 110 não trouxeram. A Black Friday ficou com elas.</p>
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Programa gratuito junta tudo o que seus robôs de IA já fizeram num mapa só</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 18h07</span><span>SessionGraph · via Hacker News</span></div>
+          <p class="texto">O SessionGraph lê o histórico das conversas com robôs de programação, como o Claude Code e o Codex, e transforma tudo num gráfico. O site afirma que funciona "totalmente local e privado".</p>
+          <p class="texto">Ele também tem uma tomada para o robô consultar conversas antigas. Você pede: "ache minhas sessões sobre cobrança repetida". O robô encontra e retoma o trabalho.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>A instalação usa um comando chamado "npx". Ele baixa o programa da internet e roda na hora, como abrir um anexo de e-mail. Por isso vale a checagem da edição 110 antes: veja o que o programa lê e para onde ele envia.</p></div>
+          <div class="link"><a href="https://sessiongraph.ai/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Autor de um dos livros mais lidos sobre IA tira a obra do ar em protesto</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 16h31</span><span>Michael Nielsen · via Hacker News</span></div>
+          <p class="texto">Michael Nielsen escreveu o livro gratuito "Neural Networks and Deep Learning" entre 2011 e 2015. Por anos, foi porta de entrada para quem queria aprender como a IA funciona por dentro.</p>
+          <p class="texto">Em novembro, ele trocou o livro por uma carta. Diz que as grandes empresas de IA agem de forma "extraordinariamente imprudente". Diz também que não quer ajudar, nem um pouco, a formar gente para esse trabalho.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Redes neurais" é a técnica por trás do motor que faz o ChatGPT responder. O livro ensinava a montar esse motor do zero. É como se o autor de um manual clássico de engenharia o recolhesse das livrarias por discordar das obras que ele ajudou a ensinar.</p></div>
+          <div class="link"><a href="https://neuralnetworksanddeeplearning.com/">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Cidade portuguesa monta um intensivo de IA para as empresas locais</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 13h06</span><span>Diário do Sul</span></div>
+          <p class="texto">O startUP Montemor-o-Novo, programa de apoio a negócios de uma cidade do Alentejo, promove um curso intensivo para ensinar empresas a usar inteligência artificial.</p>
+          <p class="texto">Quem paga um curso desses não é a empresa de tecnologia. É o poder público e o pequeno negócio local. É o mesmo público que, aqui, procura o Sebrae.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Bootcamp" é um curso curto e puxado, de dias ou semanas, feito para a pessoa sair aplicando. É o oposto da faculdade: menos teoria, mais mão na massa.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxOVDdrYWdqQzVtUGE3eEtHT19pOTV5SFdRNmExcWJIWVhjd1VxUTh0dFNCcmF6VnNPOFRZVnp3Z2k1UGVMYmNiS0hKcExoUHpBNHB5NTZWYVBqd0duci1kcnNpcEJ5UEprT3ZFTndnTFhPVW1DX01rXy1HVHVIdF9PeHl6N0pDb0k3Z19QVjY4bjFHM0ptZXlPUGNCdEJDcGxmQnBlVVJvSXVvNTRhZVJlUHk1UmlBeURVQ2JpSmQ4SHp2RGpBaVYzYThaSE5qeTVuSWNfMXAyQQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Flytour prepara uma plataforma de IA para 2027</h3>
+          <div class="credito"><span class="frescor antes">🟡 quarta-feira · 9h42</span><span>Brasilturis</span></div>
+          <p class="texto">A Flytour, uma das grandes operadoras de viagem do país, projeta as novidades de 2027. Uma delas é uma plataforma de inteligência artificial.</p>
+          <p class="texto">Turismo é um setor de atendimento pesado: cotação, remarcação e dúvida de última hora. Quando uma empresa desse porte anuncia IA, os agentes de viagem parceiros vão precisar aprender a usar.</p>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOOUxyUWlHeHpjbnhjVjV6ZEp3N0RlZjEzZ00wZDAzM3p3Sks2a2N4WDBSWk1vakFhd1pTNmExNUo4S0llWXNsbzBvVVdqUVd2WFBTa3h3RGdtZlVfNGxUTzl5MVBxa25DVU50WHNieGlNbW44SHI4b01fSUpGYzNidGtaclNQc2FFb0NkbHNCX1E5a1FDbThZY2dCV0Jwd1dpMGVSY2lXQm5NWFZ1SFhwQW1jTWtURm9DTlhEWC13SQ?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Vídeo sobre o robô da Meta para o WhatsApp Business passa de 50 mil visualizações</h3>
+          <div class="credito"><span class="frescor antes">🟡 em alta no YouTube · data não informada</span><span>Caroline Manchini</span></div>
+          <p class="texto">O vídeo "Como usar o Meta Business Agent?" ensina a automatizar o WhatsApp Business com o robô de atendimento da própria Meta. Tinha 51.833 visualizações quando o radar passou.</p>
+          <p class="texto">É sinal de procura. Quem tem loja quer responder cliente no WhatsApp sem contratar mais gente, e foi buscar o caminho oficial.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O "Meta Business Agent" é um robô da dona do WhatsApp que atende o cliente do início ao fim sozinho. É como o porteiro que já vem com o condomínio, em vez de você contratar um de fora.</p></div>
+          <div class="link"><a href="https://www.youtube.com/watch?v=vdjN537MpsA">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>BBC explica por que cada vez mais analistas falam em "bolha" da IA</h3>
+          <div class="credito"><span class="frescor antes">🟡 em alta no YouTube · data não informada</span><span>BBC News Brasil</span></div>
+          <p class="texto">O vídeo da BBC News Brasil sobre a possível bolha da inteligência artificial tinha 321.291 visualizações. É o maior número entre os vídeos de IA no sinal de hoje.</p>
+          <p class="texto">A conversa sobre bolha chegou ao público geral. Seu cliente vai perguntar se a IA "vai passar". A melhor resposta é um resultado medido no negócio dele.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>"Bolha" é quando o preço de algo sobe muito acima do que ele rende, como terreno em loteamento sem asfalto. Quando a conta não fecha, o preço cai de uma vez.</p></div>
+          <div class="link"><a href="https://www.youtube.com/watch?v=65AnDszCevA">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="automacao">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">Dois sinais apontam para o mesmo lugar. Os times de robôs estão crescendo, e quem não registra o que eles fazem perde o controle.</p>
+    <p class="texto">O primeiro vem do canal da Hotmart, com Leandro Mastellini. O título do vídeo é "Ele trocou uma agência de 32 pessoas por 16 robôs de IA". Vimos só o título. O vídeo tinha 6.015 visualizações quando o radar passou.</p>
+    <p class="texto">Mesmo que a conta tenha exagero, a pergunta fica. Uma agência com 32 pessoas tem gerente, reunião e relatório. Com 16 robôs, quem faz o relatório?</p>
+    <div class="numeros">
+      <div class="numero"><div class="big">58</div><div class="lbl">programas de robôs que o SessionGraph diz conseguir ler</div></div>
+      <div class="numero"><div class="big">32 → 16</div><div class="lbl">pessoas trocadas por robôs, segundo o título do vídeo da Hotmart</div></div>
+      <div class="numero"><div class="big">321 mil</div><div class="lbl">visualizações do vídeo da BBC sobre a "bolha" da IA</div></div>
+      <div class="numero"><div class="big">51 mil</div><div class="lbl">visualizações do vídeo sobre o robô da Meta para o WhatsApp</div></div>
+    </div>
+    <p class="texto">O segundo sinal é o próprio SessionGraph. Além do mapa, ele traz uma tomada (MCP) para o robô consultar o que já foi feito. Também traz uma porta (API) para seus programas fazerem a mesma busca.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p>MCP é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. API é a tomada por onde um sistema conversa com outro. Juntas, deixam o robô de hoje ler o caderno do robô de ontem, como o turno da noite lendo o livro de ocorrências da portaria.</p></div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Seu segundo cérebro e seus squads acabam de ganhar uma peça que faltava: a memória do trabalho feito, guardada no seu computador. Quem monta time de robôs para cliente vai ouvir a pergunta "o que eles fizeram?". Ter essa resposta pronta separa quem vende robô de quem gerencia robô.</p></div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O relatório do mês dos robôs: uma página que mostra ao dono do negócio o que o time de robôs fez, quanto fez e onde travou.</p>
+    <p class="texto">Funcionário entrega relatório. Robô, até hoje, não. Sem relatório, o dono desconfia e cancela. É o mesmo motivo de a BBC estar falando em bolha: muita promessa e pouco resultado mostrado.</p>
+    <p class="texto">O relatório é a prestação de contas da obra. O cliente não precisa entender de concreto, só ver a foto de cada andar subindo.</p>
+    <div class="nota"><span class="r">O que entra no relatório</span>
+      <ul class="lista">
+        <li><b>Volume:</b> quantas tarefas os robôs fizeram no mês, por tipo.</li>
+        <li><b>Entregas:</b> as cinco mais importantes, cada uma em uma frase de gente.</li>
+        <li><b>Travas:</b> onde o robô parou e precisou de alguém.</li>
+        <li><b>Próximo mês:</b> o que vale automatizar a seguir.</li>
+      </ul>
+    </div>
+    <p class="texto">As três primeiras linhas saem do histórico das sessões, com contagem simples e sem custo. A IA entra só para escrever as frases e sugerir o próximo passo, onde há julgamento.</p>
+    <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span><p>Faça o relatório de novembro dos seus próprios squads. Primeiro, o raio-x da edição 110 no SessionGraph: confira o que ele lê e para onde envia. Se passar, rode no seu computador e abra o mapa do mês. Escreva a página com as quatro linhas acima. Ela vira seu modelo para oferecer e o post de segunda-feira.</p></div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Cada recorte, com a fonte original e a hora em que saiu, no horário de Brasília.</p>
+    <ol class="src">
+      <li>SessionGraph, "Visualize your coding agent history", página oficial; no Hacker News (mural onde programadores do mundo todo postam o que saiu) hoje às 18h07, como "SessionGraph: Visualize all your coding agent sessions in one interactive graph". <a href="https://sessiongraph.ai/">abrir</a></li>
+      <li>Michael Nielsen, "Neural Networks and Deep Learning", página do livro com a carta de novembro de 2026; no Hacker News hoje às 16h31, como "Michael Nielsen took down his book on neural nets". <a href="https://neuralnetworksanddeeplearning.com/">abrir</a></li>
+      <li>Diário do Sul, "startUP Montemor-o-Novo promove Bootcamp para capacitar empresas na utilização da Inteligência Artificial", hoje às 13h06. <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxOVDdrYWdqQzVtUGE3eEtHT19pOTV5SFdRNmExcWJIWVhjd1VxUTh0dFNCcmF6VnNPOFRZVnp3Z2k1UGVMYmNiS0hKcExoUHpBNHB5NTZWYVBqd0duci1kcnNpcEJ5UEprT3ZFTndnTFhPVW1DX01rXy1HVHVIdF9PeHl6N0pDb0k3Z19QVjY4bjFHM0ptZXlPUGNCdEJDcGxmQnBlVVJvSXVvNTRhZVJlUHk1UmlBeURVQ2JpSmQ4SHp2RGpBaVYzYThaSE5qeTVuSWNfMXAyQQ?oc=5">abrir</a></li>
+      <li>Brasilturis, "Flytour projeta novidades para 2027 e prepara plataforma de inteligência artificial", quarta-feira, 25 de novembro, às 9h42. <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOOUxyUWlHeHpjbnhjVjV6ZEp3N0RlZjEzZ00wZDAzM3p3Sks2a2N4WDBSWk1vakFhd1pTNmExNUo4S0llWXNsbzBvVVdqUVd2WFBTa3h3RGdtZlVfNGxUTzl5MVBxa25DVU50WHNieGlNbW44SHI4b01fSUpGYzNidGtaclNQc2FFb0NkbHNCX1E5a1FDbThZY2dCV0Jwd1dpMGVSY2lXQm5NWFZ1SFhwQW1jTWtURm9DTlhEWC13SQ?oc=5">abrir</a></li>
+      <li>YouTube, Caroline Manchini, "WhatsApp Business Automation: How to Use the Meta Business Agent?", 51.833 visualizações na coleta de hoje. <a href="https://www.youtube.com/watch?v=vdjN537MpsA">abrir</a></li>
+      <li>YouTube, BBC News Brasil, "Por que cada vez mais analistas falam em 'bolha' da inteligência artificial prestes a estourar", 321.291 visualizações na coleta de hoje. <a href="https://www.youtube.com/watch?v=65AnDszCevA">abrir</a></li>
+      <li>YouTube, Hotmart e Leandro Mastellini, "He Swapped a 32-PERSON Agency for 16 AI AGENTS", 6.015 visualizações na coleta de hoje. <a href="https://www.youtube.com/watch?v=TO8SooZ8nAg">abrir</a></li>
+    </ol>
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p>As páginas do SessionGraph e de Michael Nielsen foram lidas na íntegra. A promessa de que o SessionGraph é "totalmente local e privado" é do próprio site e não foi auditada por nós; o programa não foi instalado nem testado. A lista de 58 programas compatíveis foi contada na página. As matérias do Diário do Sul e da Brasilturis foram lidas só pela manchete; datas, valores e detalhes estão nos links. Dos três vídeos do YouTube, vimos só título, canal e visualizações. A data de publicação não veio no sinal, e a história das 32 pessoas trocadas por 16 robôs não foi conferida.</p></div>
+  </section>
+
+  <div class="assinatura">Radar · Nº 111 · 27 de novembro de 2026<br>Próxima edição: segunda-feira, 30 de novembro, dia de Cyber Monday (Completo, com o bloco de posicionamento).</div>
+</div>
+</body>
+</html>
