@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Radar André Oliveira Nº 109 · Na Black Friday, o ladrão de cartão entrou na loja pelo pixel do anúncio</title>
+<style>
+  /* ============================================================
+     RADAR ANDRÉ OLIVEIRA — SISTEMA EDITORIAL "REVISTA"  v2
+     Princípios:
+     1. UMA escala tipográfica (não seis tamanhos avulsos)
+     2. Medida de leitura ~62 caracteres — a coluna estreita é o que faz parecer revista
+     3. Respiro em degraus: seção respira 4x mais que bloco
+     4. Serifa no texto longo, sans nos rótulos — o contraste é a linguagem de revista
+     5. Todo jargão tem tradução ao lado (.traduz), nunca solto
+     6. WCAG AA em todos os pares de cor, claro e escuro
+     ============================================================ */
+  :root{
+    /* — cor — */
+    --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80);
+    --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70);
+    --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82);
+    --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78);
+    --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62);
+    --shadow:0 8px 30px oklch(0.55 0.05 65 / 0.10);
+
+    /* — tipografia — */
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+    --t-xs:12px; --t-sm:13.5px; --t-base:17px; --t-md:19px;
+    --t-lg:clamp(20px,4.4vw,24px); --t-xl:clamp(28px,7.4vw,42px);
+    --lh-tight:1.22; --lh-mid:1.45; --lh-read:1.72;
+
+    /* — espaço (degraus, não valores avulsos) — */
+    --sp-1:6px; --sp-2:12px; --sp-3:20px; --sp-4:32px; --sp-5:52px; --sp-6:84px;
+
+    /* — medida de leitura — */
+    --medida:62ch;
+  }
+  @media (prefers-color-scheme:dark){ :root{
+    --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64);
+    --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78);
+    --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66);
+    --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66);
+    --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75);
+    --shadow:0 8px 30px oklch(0 0 0 / 0.45);
+  }}
+  :root[data-theme="light"]{ --paper:oklch(0.977 0.008 85); --surface:oklch(0.993 0.006 85); --panel:oklch(0.958 0.013 80); --ink:oklch(0.235 0.012 68); --ink-soft:oklch(0.435 0.015 68); --ink-faint:oklch(0.545 0.014 70); --gold:oklch(0.68 0.086 67); --gold-deep:oklch(0.515 0.09 60); --gold-tint:oklch(0.947 0.03 82); --line:oklch(0.875 0.015 78); --line-soft:oklch(0.925 0.01 78); --card-dark:oklch(0.235 0.02 62); --amber:oklch(0.62 0.13 62); }
+  :root[data-theme="dark"]{ --paper:oklch(0.185 0.014 65); --surface:oklch(0.235 0.016 65); --panel:oklch(0.262 0.017 64); --ink:oklch(0.945 0.012 82); --ink-soft:oklch(0.80 0.015 80); --ink-faint:oklch(0.685 0.015 78); --gold:oklch(0.79 0.088 72); --gold-deep:oklch(0.845 0.085 76); --gold-tint:oklch(0.295 0.032 66); --line:oklch(0.345 0.02 66); --line-soft:oklch(0.285 0.016 66); --card-dark:oklch(0.145 0.016 60); --amber:oklch(0.82 0.11 75); }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+        font-family:var(--sans); font-size:var(--t-base); line-height:var(--lh-read); }
+  ::selection{ background:var(--gold-tint); color:var(--ink); }
+  a{ color:var(--gold-deep); text-underline-offset:3px; }
+  a:focus-visible,[tabindex]:focus-visible{ outline:2px solid var(--gold-deep); outline-offset:3px; border-radius:3px; }
+
+  /* ── container ── */
+  .revista{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  /* medida de leitura: a coluna de texto é estreita mesmo quando a página é larga */
+  .medida{ max-width:var(--medida); }
+
+  /* ══════════ CAPA ══════════ */
+  .capa{ padding:var(--sp-3) 0 var(--sp-4); }
+  .capa .selo{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  .capa h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl);
+    line-height:var(--lh-tight); letter-spacing:-.015em; margin:var(--sp-2) 0 0; max-width:20ch; }
+  .capa .chamada{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    color:var(--ink-soft); margin:var(--sp-3) 0 0; max-width:46ch; }
+  .capa .dateline{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.12em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-4); }
+  .capa .fio{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold);
+    margin-top:var(--sp-2); }
+
+  /* ══════════ SUMÁRIO ══════════ */
+  .sumario{ margin-top:var(--sp-5); }
+  .sumario .rot{ font-size:var(--t-xs); font-weight:700; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  .sumario ol{ list-style:none; counter-reset:sm; padding:0; margin:var(--sp-3) 0 0;
+    border-top:1px solid var(--line); }
+  .sumario li{ counter-increment:sm; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.6rem 1fr; gap:var(--sp-2); padding:var(--sp-2) 0; }
+  .sumario li::before{ content:counter(sm,decimal-leading-zero); font-family:var(--serif);
+    font-weight:700; font-size:15px; color:var(--gold); line-height:1.6; }
+  .sumario a{ font-family:var(--sans); font-weight:600; font-size:15px; line-height:1.4;
+    text-decoration:none; color:var(--ink); display:block; }
+  .sumario a:hover{ color:var(--gold-deep); }
+  .sumario .d{ font-size:var(--t-sm); color:var(--ink-faint); line-height:1.5; margin-top:2px; }
+
+  /* ══════════ MATÉRIA (seção) ══════════ */
+  .materia{ margin-top:var(--sp-6); scroll-margin-top:var(--sp-3); }
+  .materia > .titulo{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .materia > .titulo .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .materia > .titulo h2{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.18em; text-transform:uppercase; margin:0; color:var(--ink); }
+  .materia > .titulo .fio{ flex:1; height:1px; background:var(--line); align-self:center; }
+
+  /* ── texto corrido ── */
+  .abertura{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid);
+    max-width:var(--medida); margin:0 0 var(--sp-3); }
+  .abertura b{ color:var(--gold-deep); font-weight:700; }
+  .texto{ font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read);
+    max-width:var(--medida); margin:0 0 var(--sp-3); color:var(--ink); }
+  .texto:last-child{ margin-bottom:0; }
+  .texto b{ font-weight:700; }
+  /* capitular discreta: abre a matéria principal como revista */
+  .capitular::first-letter{ font-family:var(--serif); font-weight:700; float:left;
+    font-size:3.1em; line-height:.84; padding:6px 10px 0 0; color:var(--gold-deep); }
+
+  /* ── TRADUZ: o dispositivo central da linguagem não-técnica ──
+     Nunca deixe um termo técnico sozinho. Traduza ao lado, sem apagar a fonte. */
+  .traduz{ max-width:var(--medida); margin:var(--sp-3) 0; padding:var(--sp-2) var(--sp-3);
+    background:var(--gold-tint); border-radius:10px; border-left:3px solid var(--gold); }
+  .traduz .r{ display:block; font-family:var(--sans); font-size:var(--t-xs); font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:var(--sp-1); }
+  .traduz p{ font-family:var(--sans); font-size:15px; line-height:1.6; margin:0; color:var(--ink); }
+
+  /* ── OLHO: frase solta que dá pausa e permite ler só os destaques ── */
+  .olho{ margin:var(--sp-5) 0; padding:var(--sp-3) 0; border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line); max-width:var(--medida); }
+  .olho p{ font-family:var(--serif); font-style:italic; font-size:var(--t-lg);
+    line-height:var(--lh-mid); margin:0; color:var(--ink); }
+  .olho .quem{ font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:var(--sp-2); display:block; }
+
+  /* ── NÚMEROS ── */
+  .numeros{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .numero{ background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:var(--sp-3); }
+  .numero .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep);
+    line-height:1; letter-spacing:-.02em; }
+  .numero .lbl{ font-family:var(--sans); font-size:var(--t-sm); line-height:1.5;
+    color:var(--ink-soft); margin-top:var(--sp-1); }
+  .numero .lbl b{ color:var(--ink); }
+
+  /* ── NOTA (painel de apoio) ── */
+  .nota{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) - 4px); margin:var(--sp-4) 0; }
+  .nota .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--gold-deep); }
+  .nota .texto{ margin-top:var(--sp-2); }
+  .lista{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  .lista li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0;
+    font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .lista li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px;
+    border-radius:50%; background:var(--gold); }
+  .lista li b{ color:var(--ink); }
+
+  /* ── HOJE: o bloco de ação, escuro, fim de seção ── */
+  .hoje{ background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px;
+    padding:var(--sp-3) var(--sp-3) calc(var(--sp-3) + 2px); margin:var(--sp-4) 0 0; }
+  .hoje .r{ font-family:var(--sans); font-size:var(--t-xs); font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--gold); }
+  .hoje p{ font-family:var(--serif); font-size:var(--t-base); line-height:1.62;
+    margin:var(--sp-2) 0 0; max-width:var(--medida); }
+  .hoje p + p{ margin-top:var(--sp-2); }
+  .hoje b{ color:oklch(0.90 0.09 82); }
+  .hoje a{ color:oklch(0.86 0.09 82); }
+
+  /* ── RECORTE (uma novidade) ── */
+  .recortes{ border-top:1px solid var(--line); }
+  .recorte{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft);
+    display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .recorte .ordem{ font-family:var(--serif); font-weight:700; font-size:17px; color:var(--gold);
+    line-height:1.35; }
+  .recorte h3{ font-family:var(--sans); font-weight:600; font-size:var(--t-md);
+    line-height:1.32; margin:0; letter-spacing:-.01em; max-width:34ch; }
+  .recorte .credito{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-1) var(--sp-2);
+    margin-top:var(--sp-2); font-family:var(--sans); font-size:var(--t-xs); color:var(--ink-faint); }
+  /* inline-flex + line-height fixo: sem isso o emoji do selo estica a linha e desalinha o crédito */
+  .frescor{ display:inline-flex; align-items:center; line-height:1.45;
+    font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; white-space:nowrap; }
+  .frescor.hoje{ background:var(--gold-tint); color:var(--gold-deep); }
+  .frescor.antes{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .recorte .texto{ margin-top:var(--sp-2); margin-bottom:0; }
+  .recorte .traduz{ margin:var(--sp-2) 0 0; }
+  .recorte .link{ margin-top:var(--sp-2); }
+  .recorte .link a{ font-family:var(--sans); font-size:var(--t-sm); font-weight:700;
+    text-decoration:none; border-bottom:2px solid var(--gold-tint); padding-bottom:1px; }
+  .recorte .link a:hover{ border-bottom-color:var(--gold); }
+
+  /* ── FONTES ── */
+  ol.src{ list-style:none; counter-reset:s; padding:0; margin:var(--sp-2) 0 0; }
+  ol.src li{ counter-increment:s; position:relative; padding-left:var(--sp-4);
+    margin:var(--sp-2) 0; font-family:var(--sans); font-size:var(--t-sm); line-height:1.6;
+    color:var(--ink-soft); }
+  ol.src li::before{ content:counter(s,decimal-leading-zero); position:absolute; left:0; top:0;
+    font-family:var(--serif); font-weight:700; color:var(--gold); }
+  ol.src b{ color:var(--ink); } ol.src a{ font-weight:600; }
+
+  /* ── assinatura ── */
+  .assinatura{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold);
+    text-align:center; font-family:var(--sans); font-size:var(--t-xs); letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+
+  /* ── telas pequenas: menos margem lateral, mesma hierarquia ── */
+  @media (max-width:520px){
+    :root{ --sp-6:60px; --sp-5:40px; }
+    .revista{ padding:var(--sp-3) 16px var(--sp-5); }
+    .recorte{ grid-template-columns:1.9rem 1fr; }
+    .capitular::first-letter{ font-size:2.7em; }
+  }
+
+  /* ── impressão / salvar como PDF pelo navegador ── */
+  @media print{
+    :root{ --paper:#fff; --surface:#fff; --panel:#faf7f0; --ink:#1a1a1a; --ink-soft:#3d3d3d;
+           --ink-faint:#5a5a5a; --line:#d8d2c4; --line-soft:#e8e4da; --card-dark:#2a2419; }
+    body{ font-size:11.5pt; }
+    .revista{ max-width:none; padding:0; }
+    .materia{ margin-top:28pt; break-inside:auto; }
+    .recorte,.nota,.hoje,.numero,.olho,.traduz{ break-inside:avoid; }
+    .sumario{ break-after:page; }
+    a{ text-decoration:none; }
+    .recorte .link a::after{ content:" (" attr(href) ")"; font-size:8pt; color:#5a5a5a; word-break:break-all; }
+  }
+
+  /* ══════════ COMPATIBILIDADE (edições 001-005) ══════════
+     Mapeia os nomes antigos para o sistema novo. Não use em edições novas. */
+  .wrap{ max-width:780px; margin:0 auto; padding:var(--sp-4) var(--sp-3) var(--sp-6); }
+  .eyebrow{ font-size:var(--t-xs); font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-deep); }
+  h1{ font-family:var(--serif); font-weight:700; font-size:var(--t-xl); line-height:var(--lh-tight); margin:var(--sp-2) 0 var(--sp-1); }
+  .dateline{ font-size:var(--t-xs); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); }
+  .rule2{ height:4px; border-top:3px solid var(--gold); border-bottom:1px solid var(--gold); margin:var(--sp-2) 0 0; }
+  section{ scroll-margin-top:var(--sp-3); margin-top:var(--sp-6); }
+  .sechead{ display:flex; align-items:baseline; gap:var(--sp-2); margin-bottom:var(--sp-4); }
+  .sechead .n{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--gold); }
+  .sechead h2{ font-size:var(--t-xs); font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .sechead .fill{ flex:1; height:1px; background:var(--line); align-self:center; }
+  .standfirst{ font-family:var(--serif); font-size:var(--t-lg); line-height:var(--lh-mid); max-width:var(--medida); }
+  .standfirst b{ color:var(--gold-deep); }
+  .action{ margin-top:var(--sp-3); padding-top:var(--sp-2); border-top:1px solid var(--line); font-family:var(--sans); font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  .action b{ color:var(--ink); }
+  .fmt{ display:block; margin-top:var(--sp-1); font-size:var(--t-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+  .news{ border-top:1px solid var(--line); }
+  .item{ padding:var(--sp-4) 0; border-bottom:1px solid var(--line-soft); display:grid; grid-template-columns:2.4rem 1fr; gap:var(--sp-2); }
+  .item .num{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:17px; }
+  .item .h{ font-weight:600; font-size:var(--t-md); line-height:1.32; }
+  .item .sub{ margin-top:var(--sp-2); font-size:var(--t-xs); color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:var(--sp-1) var(--sp-2); align-items:center; }
+  .fresh{ font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; padding:3px 9px; border-radius:100px; }
+  .fresh.hoje{ background:var(--gold-tint); color:var(--gold-deep); } .fresh.sem{ border:1px solid var(--gold); color:var(--ink-soft); }
+  .item .read{ margin-top:var(--sp-2); font-family:var(--serif); font-size:var(--t-base); line-height:var(--lh-read); color:var(--ink); max-width:var(--medida); }
+  .item .more{ margin-top:var(--sp-2); } .item .more a{ font-size:var(--t-sm); font-weight:700; text-decoration:none; border-bottom:2px solid var(--gold-tint); }
+  .panel{ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:var(--sp-3); margin:var(--sp-4) 0; }
+  .panel .flag{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  ul.clean{ list-style:none; padding:0; margin:var(--sp-2) 0 0; }
+  ul.clean li{ position:relative; padding-left:var(--sp-3); margin:var(--sp-2) 0; font-size:15px; line-height:1.62; color:var(--ink-soft); max-width:var(--medida); }
+  ul.clean li::before{ content:""; position:absolute; left:2px; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  ul.clean li b{ color:var(--ink); }
+  .stat{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:var(--sp-2); margin:var(--sp-4) 0; }
+  .stat .s{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:var(--sp-3); }
+  .stat .big{ font-family:var(--serif); font-size:26px; font-weight:700; color:var(--gold-deep); line-height:1; }
+  .stat .lbl{ font-size:var(--t-sm); line-height:1.5; color:var(--ink-soft); margin-top:var(--sp-1); }
+  .sop{ margin-top:var(--sp-4); background:var(--card-dark); color:oklch(0.955 0.03 85); border-radius:14px; padding:var(--sp-3); }
+  .sop .l{ font-size:var(--t-xs); font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .sop p{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-size:var(--t-base); line-height:1.62; max-width:var(--medida); }
+  .sop b{ color:oklch(0.90 0.09 82); } .sop a{ color:oklch(0.86 0.09 82); }
+  .idea{ margin:var(--sp-4) 0; }
+  .idea .t{ font-size:var(--t-xs); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
+  .idea blockquote{ margin:var(--sp-2) 0 0; font-family:var(--serif); font-style:italic; font-size:var(--t-lg); line-height:var(--lh-mid); padding-left:var(--sp-3); position:relative; max-width:var(--medida); }
+  .idea blockquote::before{ content:"\201C"; position:absolute; left:-2px; top:-6px; font-size:30px; color:var(--gold); }
+  .idea .b{ font-size:15px; line-height:1.62; color:var(--ink-soft); margin-top:var(--sp-2); max-width:var(--medida); }
+  nav.toc{ display:flex; gap:var(--sp-1); overflow-x:auto; padding:var(--sp-2) 0; margin:var(--sp-3) 0 0; border-bottom:1px solid var(--line); }
+  nav.toc a{ flex:0 0 auto; font-size:var(--t-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; color:var(--ink-soft); padding:6px 12px; border-radius:100px; border:1px solid var(--line); white-space:nowrap; }
+  nav.toc a:hover{ color:var(--gold-deep); border-color:var(--gold); }
+  .foot{ margin-top:var(--sp-6); padding-top:var(--sp-3); border-top:2px solid var(--gold); text-align:center; font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="revista">
+
+  <header class="capa">
+    <div class="selo">🧠 Radar André Oliveira · Pulso diário</div>
+    <h1>Na Black Friday, o ladrão de cartão entrou na loja pelo pixel do anúncio</h1>
+    <p class="chamada">Um código escondido num pixel de anúncio e num aviso de cookies copiava o cartão de quem pagava pelo celular. Cinco lojas grandes, Samsonite entre elas. De manhã o Radar falou do robô que compra; à tarde, da porta que ficou aberta no caixa.</p>
+    <div class="dateline">Edição Nº 109 · sexta-feira, 27 de novembro de 2026</div>
+    <div class="fio"></div>
+  </header>
+
+  <div class="sumario">
+    <div class="rot">Nesta edição</div>
+    <ol>
+      <li><div><a href="#hoje">O que aconteceu hoje</a><div class="d">O golpe do pixel na semana da Black Friday, e por que ele é assunto de quem faz tráfego pago.</div></div></li>
+      <li><div><a href="#novidades">As novidades do dia</a><div class="d">O golpe em detalhe, robôs para licitação, um robô para o LinkedIn e IA para vídeo de produto.</div></div></li>
+      <li><div><a href="#automacao">Seu território: automação</a><div class="d">Figma e um site de podcasts ganham a "tomada" para o robô. Virou item de série.</div></div></li>
+      <li><div><a href="#oportunidade">A oportunidade do dia</a><div class="d">O check-up do caixa do cliente: uma tarde, antes da Cyber Monday de segunda.</div></div></li>
+      <li><div><a href="#fontes">De onde veio cada informação</a><div class="d">Cada link, com hora, e o que o Radar não conseguiu confirmar.</div></div></li>
+    </ol>
+  </div>
+
+  <section class="materia" id="hoje">
+    <div class="titulo"><span class="n">01</span><h2>O que aconteceu hoje</h2><span class="fio"></span></div>
+    <p class="abertura">A edição da manhã mostrou o cliente mandando um robô às compras. A da tarde mostra o outro lado do balcão: o caixa da loja.</p>
+    <p class="texto capitular">Uma empresa de segurança, a InfoHawk, achou um ladrão de cartão em cinco lojas virtuais: Lascana, Samsonite, American Tourister, Revolve e FWRD. A matéria chegou ao Hacker News hoje às 12h40. O código copiava número, validade, código de segurança, nome, endereço e telefone de quem pagava.</p>
+    <p class="texto">A porta de entrada é o que mais chama atenção. Numa das lojas, o código veio dentro de um pixel de marketing. Em outras, dentro do aviso de cookies. Ninguém arrombou a loja: o ladrão chegou junto com um fornecedor.</p>
+    <p class="texto">E ele só agia no celular, na tela de pagamento. Quem testava o site no computador não via nada.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p><strong>Pixel de marketing</strong> é um pedacinho de código que a plataforma de anúncio pede para colar no site. Funciona como a câmera que conta quem entrou e quem comprou. O problema: é código de outra empresa rodando dentro da sua loja, inclusive no caixa.</p></div>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Quem cola pixel no site do cliente é justamente quem faz tráfego pago. Ou seja, você. Isso transforma um tema de "segurança da informação" num serviço que você já sabe entregar: dizer o que está instalado na loja, por quê, e o que pode sair.</p></div>
+  </section>
+
+  <section class="materia" id="novidades">
+    <div class="titulo"><span class="n">02</span><h2>As novidades do dia</h2><span class="fio"></span></div>
+    <p class="abertura">Duas notícias de hoje, quatro lançamentos da semana. Um fio liga quase todas: a IA entrando onde antes só havia gente olhando.</p>
+
+    <div class="recortes">
+
+      <article class="recorte">
+        <div class="ordem">01</div>
+        <div>
+          <h3>Ladrão de cartão escondido em pixel de anúncio atinge cinco lojas na semana da Black Friday</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 12h40</span><span>InfoHawk, via Hacker News</span></div>
+          <p class="texto">O código pegava os dados do cartão antes de a loja aprovar o pagamento. Então o roubo acontecia mesmo se a compra fosse recusada. Para o cliente, nada parecia errado.</p>
+          <p class="texto">As lojas tiraram o código nos dias 24 e 25 de novembro, antes da Black Friday. A InfoHawk diz que não sabe quantos cartões, se algum, foram levados. E acha provável que outras lojas tenham o mesmo problema.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p>O ladrão usou a mesma linha que o navegador usa para chamada de vídeo (o nome técnico é <strong>WebRTC</strong>). É como sair do prédio pela porta da garagem: o porteiro vigia a entrada social, não aquela. A correção sugerida é uma "lista de convidados" na página de pagamento, que só deixa o site falar com endereços autorizados.</p></div>
+          <div class="link"><a href="https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">02</div>
+        <div>
+          <h3>Startup brasileira Settle cria robôs de IA para disputar editais de compras do governo</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 14h11</span><span>Mobile Time</span></div>
+          <p class="texto">Edital de licitação é o caso clássico de trabalho chato e caro: documento longo, prazo curto, um erro desclassifica. É exatamente o tipo de tarefa que o robô de IA lê inteira sem cansar.</p>
+          <p class="texto">O Radar leu só o título da matéria. Vale como sinal de nicho: robô especializado num processo burocrático brasileiro, não assistente genérico.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><strong>Robô de IA</strong> (o mercado chama de "agente") é um programa que executa uma tarefa do início ao fim sozinho. Aqui, ler o edital, separar exigências e montar a papelada.</p></div>
+          <div class="link"><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE55ekVIM09JTVZualpiN0JGYlpleGhyclE0SXlLSmRwR1VyOVEyUE0tVUZibTBkSDhYckZocjFCUDE5MWh6Q3FGalVhYy1Fdkc2ZXBQSGlSaXZWbm5zOEVUenhRX3pNQVNa?oc=5">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">03</div>
+        <div>
+          <h3>Depost AI: um robô para o LinkedIn que aprende o que funciona para a sua marca</h3>
+          <div class="credito"><span class="frescor hoje">🟢 hoje · 0h17</span><span>Product Hunt</span></div>
+          <p class="texto">É a descrição do próprio lançamento, na vitrine do Product Hunt. A promessa é escrever e ajustar posts conforme o que dá resultado no seu perfil.</p>
+          <p class="texto">Para quem constrói marca pessoal, é a categoria a observar. A pergunta que decide é simples: ele aprende com os seus números ou só imita o tom de todo mundo?</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><strong>Product Hunt</strong> é a vitrine onde produtos novos são lançados e votados pelo público.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/depost-ai">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">04</div>
+        <div>
+          <h3>Ploid promete achar pessoas para robôs de IA, numa base de mais de 2 bilhões de perfis</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 18h06</span><span>Product Hunt</span></div>
+          <p class="texto">O produto é uma busca de gente feita para o robô usar, não para a pessoa. Na prática, é a lista de prospecção entregue direto para o vendedor automático.</p>
+          <p class="texto">O número de 2 bilhões é do próprio fabricante. Antes de usar com cliente, confira de onde vêm os dados: lista de contatos tem regra de privacidade no Brasil.</p>
+          <div class="link"><a href="https://www.producthunt.com/products/ploid">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">05</div>
+        <div>
+          <h3>Onset: IA que revisa vídeos e sugere títulos e capas para quem cria no YouTube</h3>
+          <div class="credito"><span class="frescor antes">🟡 ontem · 16h18</span><span>Product Hunt</span></div>
+          <p class="texto">Título e capa decidem se alguém clica. É o mesmo raciocínio do anúncio pago, aplicado ao vídeo. A ferramenta promete avaliar o vídeo e propor as duas coisas.</p>
+          <p class="texto">Funciona como o vendedor experiente que olha a vitrine antes de a loja abrir. Útil se você publica o próprio Radar em vídeo.</p>
+          <div class="link"><a href="https://www.producthunt.com/products/onset">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+      <article class="recorte">
+        <div class="ordem">06</div>
+        <div>
+          <h3>Wizstar R1 promete vídeo de produto com qualidade de ponta por um custo menor</h3>
+          <div class="credito"><span class="frescor antes">🟡 quarta · 4h56</span><span>Product Hunt</span></div>
+          <p class="texto">A frase de lançamento compara o resultado ao Seedance 2.0, um dos geradores de vídeo mais citados do ano. É comparação do próprio fabricante, sem teste independente.</p>
+          <p class="texto">Para loja virtual, o que importa é o preço por vídeo. Se cair de verdade, todo produto do catálogo pode ganhar o seu vídeo, não só o carro-chefe.</p>
+          <div class="traduz"><span class="r">Em português claro</span><p><strong>Gerador de vídeo por IA</strong>: você descreve a cena por escrito (ou manda a foto do produto) e o programa entrega o vídeo pronto, sem câmera nem estúdio.</p></div>
+          <div class="link"><a href="https://www.producthunt.com/products/wizstar">clique aqui para ler</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="materia" id="automacao">
+    <div class="titulo"><span class="n">03</span><h2>Seu território: automação</h2><span class="fio"></span></div>
+    <p class="abertura">Prédio novo já sai da obra com tomada em toda parede. Com as ferramentas de trabalho está acontecendo a mesma coisa: a tomada para o robô virou item de série.</p>
+    <p class="texto">Na terça, o iMasters noticiou que a Figma consolidou o seu servidor MCP como o caminho oficial para robôs de IA. A Figma é onde designers desenham telas e sites. Agora o robô pode ler esse desenho direto, sem alguém copiar e colar.</p>
+    <p class="texto">Na quarta, o Castnews contou que a Podpage, que faz sites para podcasts, lançou o seu MCP. Com ele, dá para editar o site do podcast conversando com o Claude ou o ChatGPT. Ferramenta grande e ferramenta de nicho, na mesma semana.</p>
+    <div class="traduz"><span class="r">Em português claro</span><p><strong>MCP</strong> é um padrão de encaixe, como a tomada de três pinos, que faz a IA conversar com as suas ferramentas. Ferramenta "com MCP" é ferramenta em que o robô consegue mexer sozinho, sem gambiarra.</p></div>
+    <div class="numeros">
+      <div class="numero"><div class="big">5</div><div class="lbl">lojas virtuais com o ladrão de cartão instalado, segundo a InfoHawk</div></div>
+      <div class="numero"><div class="big">3</div><div class="lbl">portas diferentes usadas: pixel de anúncio, aviso de cookies e arquivo da própria loja</div></div>
+      <div class="numero"><div class="big">2</div><div class="lbl">ferramentas que ganharam "tomada" para robô nesta semana: Figma e Podpage</div></div>
+      <div class="numero"><div class="big">397 mil</div><div class="lbl">visualizações do vídeo "Agentes de IA: como criar e usar para automatizar tudo em 2026", do Negócios em Mente</div></div>
+    </div>
+    <div class="olho"><p>Cada pixel no site do cliente é uma chave da loja entregue a um terceiro. Nesta Black Friday, alguém usou uma delas.</p></div>
+    <p class="texto">As duas histórias do dia se encontram aqui. Tomada para robô e pixel de anúncio são a mesma coisa vista de ângulos diferentes: um terceiro com acesso à operação. Quanto mais tomadas, mais vale saber quem está plugado em cada uma.</p>
+    <div class="hoje"><span class="r">O que isso significa para você</span><p>Ao recomendar uma ferramenta para cliente, faça duas perguntas. Primeira: tem tomada para o robô (MCP)? Se não tem, ela tende a ficar para trás. Segunda: o que essa tomada deixa o robô fazer? Ler é uma coisa; apagar, pagar ou publicar é outra.</p></div>
+  </section>
+
+  <section class="materia" id="oportunidade">
+    <div class="titulo"><span class="n">04</span><h2>A oportunidade do dia</h2><span class="fio"></span></div>
+    <p class="abertura">O check-up do caixa: um inventário de tudo o que roda na página de pagamento do cliente. Dá para vender na segunda, dia de Cyber Monday.</p>
+    <p class="texto">Pense na loja física. Ninguém deixa um desconhecido ficar atrás do caixa. No site, a página de pagamento costuma ter pixel do Google, do Meta, do TikTok, chat, aviso de cookies e outros. Cada um de uma empresa diferente.</p>
+    <p class="texto">A InfoHawk deu o roteiro do que procurar. Você junta o que já sabe de tráfego pago: qual pixel ainda serve a uma campanha viva e qual ficou esquecido de 2024. Pixel morto no caixa é risco sem retorno.</p>
+    <div class="nota"><span class="r">O que entra no check-up</span>
+      <ul class="lista">
+        <li><b>Inventário:</b> a lista de todo código de terceiro na página de pagamento, com dono e motivo.</li>
+        <li><b>Limpeza:</b> o que pode sair hoje, porque nenhuma campanha usa mais.</li>
+        <li><b>Pedido ao programador:</b> a "lista de convidados" da página de pagamento, a correção indicada pela InfoHawk.</li>
+        <li><b>Os sinais da matéria:</b> conferir se aparecem os arquivos e endereços citados pela InfoHawk.</li>
+      </ul>
+    </div>
+    <p class="texto">Um aviso honesto: isso não é auditoria de segurança completa, e não deve ser vendido como tal. É arrumação de casa feita por quem instalou os móveis. Se achar algo suspeito, o caso vai para um especialista.</p>
+    <div class="hoje"><span class="r">O primeiro passo, hoje, em uma tarde</span><p>Escolha um cliente de loja virtual. Abra a página de pagamento <strong>no celular</strong>, porque o golpe só aparecia ali. Liste cada pixel e script que você ou a agência instalaram, numa planilha de três colunas: o que é, para que serve, ainda precisa? Mande ao cliente na segunda de manhã com a pergunta: "posso tirar estes antes da Cyber Monday?".</p></div>
+  </section>
+
+  <section class="materia" id="fontes">
+    <div class="titulo"><span class="n">05</span><h2>De onde veio cada informação</h2><span class="fio"></span></div>
+    <p class="abertura">Cada recorte, com a fonte original e a hora em que saiu, no horário de Brasília.</p>
+    <ol class="src">
+      <li>InfoHawk, "Credit card skimming scripts using WebRTC found on popular shopping sites", hoje às 12h40, em destaque no Hacker News (mural onde programadores do mundo todo postam o que saiu). <a href="https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer">abrir</a></li>
+      <li>Mobile Time, "Settle: startup cria agentes de IA para editais de compras governamentais", hoje às 14h11. <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE55ekVIM09JTVZualpiN0JGYlpleGhyclE0SXlLSmRwR1VyOVEyUE0tVUZibTBkSDhYckZocjFCUDE5MWh6Q3FGalVhYy1Fdkc2ZXBQSGlSaXZWbm5zOEVUenhRX3pNQVNa?oc=5">abrir</a></li>
+      <li>Product Hunt, "Depost AI — The LinkedIn AI agent that learns what works for your brand", hoje às 0h17. <a href="https://www.producthunt.com/products/depost-ai">abrir</a></li>
+      <li>Product Hunt, "Ploid — People search for AI agents, across 2B+ profiles", ontem às 18h06. <a href="https://www.producthunt.com/products/ploid">abrir</a></li>
+      <li>Product Hunt, "Onset — AI reviews, titles and thumbnails for YouTube creators", ontem às 16h18. <a href="https://www.producthunt.com/products/onset">abrir</a></li>
+      <li>Product Hunt, "Wizstar R1 — Seedance 2.0-level product videos at a lower cost", quarta-feira às 4h56. <a href="https://www.producthunt.com/products/wizstar">abrir</a></li>
+      <li>iMasters, "Figma consolida Dev Mode MCP Server como caminho oficial para agentes de IA", terça-feira, 24 de novembro, às 10h11. <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNZjdQdVY1OTNoemdWWDNzcUZUNGJzaU9yNmVoMVhCMkFfQWxEMDR0Z2c1eFVGX0VubUhWQUt4a2NJSHB5N0lUNjA2czQxaUd1YkNfOFlTQTNsMUdaemg0RDk5b0VqcTkxVWhDZ05ESk1qcEZXTW5sTVJad3dSWHZaTUI5WlZTb1g0SjhhVUllWFpxNVRtNTVFcFlSRDc5TTJMWWRxQXVmb3JRZFpDVXc?oc=5">abrir</a></li>
+      <li>Castnews, "Podpage lança MCP para editar site de podcast pelo Claude e ChatGPT", quarta-feira, 25 de novembro, às 3h04. <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQOTlhN0JWcDU5NW1JQllFSFlGNFp6VzRtVDNLbkNqZGdZSkdMMXRJTmdxWXJaeW1tOHB2MG9sbmJ4WGtMZXY4SHFrSms4TUw0Qnl5em5KQW1VR0xvLXFZOEg4aW9SUUJwRnh5dENuV1U0X0RTTVlVcWRlMU1JZFkyNzAwTUh2dGVtcjRqV0pZY0k1M1NPX0NES2NXRVU?oc=5">abrir</a></li>
+      <li>YouTube, Negócios em Mente, "AI AGENTS: How to CREATE and USE them to AUTOMATE EVERYTHING in 2026", 396.845 visualizações na coleta de hoje. <a href="https://www.youtube.com/watch?v=UiK9pl8tKao">abrir</a></li>
+    </ol>
+    <div class="traduz"><span class="r">O que não deu para confirmar — leia antes de usar</span><p><strong>Golpe do pixel:</strong> o Radar leu a matéria inteira da InfoHawk, mas os fatos são da própria empresa. Ela mesma diz não saber se algum cartão foi levado. As lojas não foram procuradas pelo Radar. <strong>Settle, Figma e Podpage:</strong> o Radar leu só os títulos no Google Notícias; detalhes, preços e clientes não foram conferidos. <strong>Lançamentos do Product Hunt:</strong> as descrições são frases dos próprios fabricantes, incluindo os "2 bilhões de perfis" do Ploid e a comparação do Wizstar com o Seedance 2.0. Nada foi testado. <strong>Check-up do caixa:</strong> é um método sugerido pelo Radar, não uma auditoria de segurança. <strong>Assuntos mais buscados no Google hoje:</strong> nenhum dos 10 fala de IA, por isso não entraram na edição.</p></div>
+  </section>
+
+  <div class="assinatura">Radar · Nº 109 · 27 de novembro de 2026<br>Próxima edição: segunda-feira, 30 de novembro, dia de Cyber Monday (Completo, com o bloco de posicionamento).</div>
+</div>
+</body>
+</html>
